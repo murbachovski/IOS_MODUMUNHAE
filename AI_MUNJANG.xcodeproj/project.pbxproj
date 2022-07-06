@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507C287531AE00454F26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507B287531AE00454F26 /* SceneDelegate.swift */; };
-		C6ED507E287531AE00454F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* ViewController.swift */; };
+		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
 		C6ED5083287531AF00454F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6ED5082287531AF00454F26 /* Assets.xcassets */; };
 		C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED5084287531AF00454F26 /* LaunchScreen.storyboard */; };
 		C6ED5091287531B000454F26 /* AI_MUNJANGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5090287531B000454F26 /* AI_MUNJANGTests.swift */; };
 		C6ED509B287531B000454F26 /* AI_MUNJANGUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED509A287531B000454F26 /* AI_MUNJANGUITests.swift */; };
 		C6ED509D287531B000454F26 /* AI_MUNJANGUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED509C287531B000454F26 /* AI_MUNJANGUITestsLaunchTests.swift */; };
+		C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AA287532C500454F26 /* AiRequest.swift */; };
+		C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AE287534D900454F26 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507B287531AE00454F26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C6ED507D287531AE00454F26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C6ED5080287531AE00454F26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6ED5082287531AF00454F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6ED5085287531AF00454F26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		C6ED5096287531B000454F26 /* AI_MUNJANGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AI_MUNJANGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED509A287531B000454F26 /* AI_MUNJANGUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI_MUNJANGUITests.swift; sourceTree = "<group>"; };
 		C6ED509C287531B000454F26 /* AI_MUNJANGUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AI_MUNJANGUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C6ED50AA287532C500454F26 /* AiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRequest.swift; sourceTree = "<group>"; };
+		C6ED50AE287534D900454F26 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +103,11 @@
 		C6ED5078287531AE00454F26 /* AI_MUNJANG */ = {
 			isa = PBXGroup;
 			children = (
+				C6ED50A92875329A00454F26 /* Network */,
 				C6ED5079287531AE00454F26 /* AppDelegate.swift */,
 				C6ED507B287531AE00454F26 /* SceneDelegate.swift */,
-				C6ED507D287531AE00454F26 /* ViewController.swift */,
+				C6ED507D287531AE00454F26 /* MainViewController.swift */,
+				C6ED50AE287534D900454F26 /* TestViewController.swift */,
 				C6ED507F287531AE00454F26 /* Main.storyboard */,
 				C6ED5082287531AF00454F26 /* Assets.xcassets */,
 				C6ED5084287531AF00454F26 /* LaunchScreen.storyboard */,
@@ -125,6 +131,15 @@
 				C6ED509C287531B000454F26 /* AI_MUNJANGUITestsLaunchTests.swift */,
 			);
 			path = AI_MUNJANGUITests;
+			sourceTree = "<group>";
+		};
+		C6ED50A92875329A00454F26 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C6ED50AA287532C500454F26 /* AiRequest.swift */,
+			);
+			name = Network;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6ED507E287531AE00454F26 /* ViewController.swift in Sources */,
+				C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */,
+				C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */,
+				C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */,
 				C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */,
 				C6ED507C287531AE00454F26 /* SceneDelegate.swift in Sources */,
 			);
@@ -367,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -422,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
