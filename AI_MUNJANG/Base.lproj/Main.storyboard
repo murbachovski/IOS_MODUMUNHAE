@@ -173,6 +173,74 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
+        <!--On Boarding View Controller-->
+        <scene sceneID="yJS-qd-7jf">
+            <objects>
+                <viewController storyboardIdentifier="OnBoardingViewController" id="gcq-6c-Ck2" customClass="OnBoardingViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b8s-el-QyW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WrB-hp-kwh">
+                                <rect key="frame" x="8" y="52" width="398" height="696"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="GLN-gw-lQ1">
+                                <rect key="frame" x="20" y="756" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wM8-7V-lux" customClass="AdaptiveLayoutConstraint" customModule="AI_MUNJANG" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="setAdaptiveLayout" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAc-JL-p6U">
+                                <rect key="frame" x="20" y="798" width="374" height="40"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EPk-V9-Pk4" customClass="AdaptiveLayoutConstraint" customModule="AI_MUNJANG" customModuleProvider="target">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="setAdaptiveLayout" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="계속보기">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Thq-eu-GqI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WrB-hp-kwh" firstAttribute="leading" secondItem="Thq-eu-GqI" secondAttribute="leading" constant="8" id="0IK-dv-QzE"/>
+                            <constraint firstItem="rAc-JL-p6U" firstAttribute="top" secondItem="GLN-gw-lQ1" secondAttribute="bottom" constant="12" id="1Qs-a9-FVs" customClass="AdaptiveLayoutConstraint" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="setAdaptiveLayout" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </constraint>
+                            <constraint firstItem="rAc-JL-p6U" firstAttribute="leading" secondItem="Thq-eu-GqI" secondAttribute="leading" constant="20" id="8xS-ex-UzU"/>
+                            <constraint firstItem="WrB-hp-kwh" firstAttribute="top" secondItem="Thq-eu-GqI" secondAttribute="top" constant="8" id="I75-F2-fUO"/>
+                            <constraint firstItem="Thq-eu-GqI" firstAttribute="bottom" secondItem="rAc-JL-p6U" secondAttribute="bottom" constant="24" id="MXy-at-PQl"/>
+                            <constraint firstItem="Thq-eu-GqI" firstAttribute="trailing" secondItem="rAc-JL-p6U" secondAttribute="trailing" constant="20" id="VNq-RT-XOK"/>
+                            <constraint firstItem="GLN-gw-lQ1" firstAttribute="leading" secondItem="Thq-eu-GqI" secondAttribute="leading" constant="20" id="eSn-k2-nGs"/>
+                            <constraint firstAttribute="trailing" secondItem="WrB-hp-kwh" secondAttribute="trailing" constant="8" id="g7w-CD-5S6"/>
+                            <constraint firstItem="Thq-eu-GqI" firstAttribute="trailing" secondItem="GLN-gw-lQ1" secondAttribute="trailing" constant="20" id="rbj-O6-Dg0"/>
+                            <constraint firstItem="GLN-gw-lQ1" firstAttribute="top" secondItem="WrB-hp-kwh" secondAttribute="bottom" constant="8" symbolic="YES" id="twP-2R-9aQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="rAc-JL-p6U" id="OtU-3V-1cL"/>
+                        <outlet property="holderView" destination="WrB-hp-kwh" id="7V0-9c-JRP"/>
+                        <outlet property="pageControl" destination="GLN-gw-lQ1" id="HtA-fA-aXy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qvc-FU-DTu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-649.27536231884062" y="-575.22321428571422"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">

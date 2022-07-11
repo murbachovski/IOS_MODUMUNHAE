@@ -13,6 +13,7 @@
 		840071D8287BE67F00B07551 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D0287BE2EF00B07551 /* CGFloatExtension.swift */; };
 		840071D9287BE68100B07551 /* TextFieldsFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071CF287BE2EF00B07551 /* TextFieldsFont.swift */; };
 		840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071CE287BE2EF00B07551 /* StackViewExtension.swift */; };
+		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLayoutConstraint.swift; sourceTree = "<group>"; };
 		840071D2287BE30500B07551 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		840071D5287BE41300B07551 /* AdaptiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveViewController.swift; sourceTree = "<group>"; };
+		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = Sample;
 			sourceTree = "<group>";
 		};
+		8474DCF9287BFDC7008275FC /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		C6ED506D287531AE00454F26 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 				840071D4287BE3F400B07551 /* Sample */,
 				C6ED50A92875329A00454F26 /* Network */,
 				840071CD287BE2EF00B07551 /* Adaptive */,
+				8474DCF9287BFDC7008275FC /* Intro */,
 			);
 			path = AI_MUNJANG;
 			sourceTree = "<group>";
@@ -289,6 +300,7 @@
 				840071D9287BE68100B07551 /* TextFieldsFont.swift in Sources */,
 				C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */,
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
+				8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

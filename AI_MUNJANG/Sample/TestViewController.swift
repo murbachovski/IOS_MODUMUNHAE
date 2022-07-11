@@ -11,16 +11,25 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
 
-        
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if Core.shared.isNewUser(){
+            let vc = storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableViewItems.count
@@ -47,11 +56,15 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             let sen = "달팽이는 오렌지에서 기어 나온다."
             requestByEight(url:url, sen: sen)
         
-        } else if indexPath.row == 2 {
-      
-        guard let adaptiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdaptiveViewController")  as? AdaptiveViewController else {return}
-        navigationController?.pushViewController(adaptiveViewController, animated: true)
-        }
+        }else if indexPath.row == 2 {
+            //아이패드와 모바일 대응
+            guard let adaptiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdaptiveViewController")  as? AdaptiveViewController else {return}
+            navigationController?.pushViewController(adaptiveViewController, animated: true)
+        
+        }else if indexPath.row == 3 {
+            //OnBoarding 보여주기
+         
+       }
     }
 
 }
