@@ -11,7 +11,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,11 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             let url = "http://118.67.133.8/eight/m"
             let sen = "달팽이는 오렌지에서 기어 나온다."
             requestByEight(url:url, sen: sen)
+        
+        } else if indexPath.row == 2 {
+      
+        guard let adaptiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdaptiveViewController")  as? AdaptiveViewController else {return}
+        navigationController?.pushViewController(adaptiveViewController, animated: true)
         }
     }
 

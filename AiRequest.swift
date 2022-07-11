@@ -49,12 +49,11 @@ func requestByEight(url:String, sen:String){
                 print("===============================")
                 print("")
 
-        let resultStr :Dictionary<String, Any> = dicData["result"] as! [String:Any]
         print("===============================")
-        print("eight_div_sen : ", resultStr["eight_div_sen"] ?? "")
-        print("sen : ", resultStr["sen"] ?? "")
+        print("eight_div_sen : ", dicData["eight_div_sen"] ?? "")
+        print("sen : ", dicData["sen"] ?? "")
         
-        let eight_div :Dictionary<String, Any> = resultStr["eight_div_sen"] as! [String:Any]
+        let eight_div :Dictionary<String, Any> = dicData["eight_div_sen"] as! [String:Any]
         print("문장확장 : ", eight_div["문장확장"] ?? "")
         print("앞정보확장 : ", eight_div["앞정보확장"] ?? "")
         print("대상 : ", eight_div["대상"] ?? "")
@@ -105,16 +104,13 @@ func requestByDanmun(url:String, sen:String){
                 print("===============================")
                 print("[ViewController >> Json String to Dictionary]")
                 print("dicData : ", dicData)
-                print("result : ", dicData["result"] ?? "")
-                print("message : ", dicData["message"] ?? "")
                 print("===============================")
                 print("")
 
-        let resultStr :Dictionary<String, Any> = dicData["result"] as! [String:Any]
         print("===============================")
-        print("sen : ", resultStr["sen"] ?? "")
+ 
         
-        let resultDiv : Array<String> = resultStr["div_sen"] as! [String]
+        let resultDiv : Array<String> = dicData["div_sen"] as! [String]
         print("div_sen : ", resultDiv)
           
     }
