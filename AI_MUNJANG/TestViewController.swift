@@ -11,7 +11,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        
         
         if indexPath.row == 0 {
             //단문AI 요청,
@@ -64,7 +64,11 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }else if indexPath.row == 3 {
             //OnBoarding 보여주기
          
-       }
+       }else if indexPath.row == 4 {
+           //OnBoarding 보여주기
+           guard let commonUIViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommonUIViewController")  as? CommonUIViewController else {return}
+           navigationController?.pushViewController(commonUIViewController, animated: true)
+      }
     }
 
 }

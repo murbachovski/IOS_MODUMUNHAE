@@ -173,6 +173,87 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="97.767857142857139"/>
         </scene>
+        <!--CommonUI View Controller-->
+        <scene sceneID="j2i-Mt-tmM">
+            <objects>
+                <viewController storyboardIdentifier="CommonUIViewController" id="Mbw-rZ-b20" customClass="CommonUIViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3ST-WQ-0Z6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-cN-IBD" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="124" width="366" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="sUY-xR-axG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNT-K7-JUc" userLabel="CustomBV2" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="232" width="366" height="60"/>
+                                <viewLayoutGuide key="safeArea" id="ebZ-4a-npT"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vs4-7i-dE0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuV-50-smH" customClass="CustomTextFieldView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="312" width="374" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="4OY-Lo-N87"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTh-F1-bzY" customClass="CustomTextView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="412" width="374" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="ejf-YM-Z5z"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMA-ux-ZWK">
+                                <rect key="frame" x="354" y="44" width="60" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="pLh-pT-jjh"/>
+                                    <constraint firstAttribute="width" constant="60" id="yrb-UF-87t"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="drop"/>
+                                <connections>
+                                    <action selector="clickedDrop:" destination="Mbw-rZ-b20" eventType="touchUpInside" id="hyL-s7-jYp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UwX-dQ-cNT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YuV-50-smH" firstAttribute="top" secondItem="JNT-K7-JUc" secondAttribute="bottom" constant="20" id="NZ9-E0-n7A"/>
+                            <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="HlW-cN-IBD" secondAttribute="trailing" constant="24" id="Ngi-h0-syu"/>
+                            <constraint firstItem="YuV-50-smH" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="20" id="VtG-Dv-Ddi"/>
+                            <constraint firstItem="HlW-cN-IBD" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="24" id="blk-R3-i3d"/>
+                            <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="AMA-ux-ZWK" secondAttribute="trailing" id="cYb-Ue-3Qq"/>
+                            <constraint firstItem="JNT-K7-JUc" firstAttribute="top" secondItem="HlW-cN-IBD" secondAttribute="bottom" constant="8" id="gCK-wI-CpE"/>
+                            <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="TTh-F1-bzY" secondAttribute="trailing" constant="20" id="pJ1-QD-STG"/>
+                            <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="JNT-K7-JUc" secondAttribute="trailing" constant="24" id="pc3-Ev-PEa"/>
+                            <constraint firstItem="AMA-ux-ZWK" firstAttribute="top" secondItem="UwX-dQ-cNT" secondAttribute="top" id="rP2-7D-ZXa"/>
+                            <constraint firstItem="TTh-F1-bzY" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="20" id="siA-oE-lwG"/>
+                            <constraint firstItem="HlW-cN-IBD" firstAttribute="top" secondItem="UwX-dQ-cNT" secondAttribute="top" constant="80" id="vhz-gD-V3D"/>
+                            <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="YuV-50-smH" secondAttribute="trailing" constant="20" id="xbu-5I-fVa"/>
+                            <constraint firstItem="TTh-F1-bzY" firstAttribute="top" secondItem="YuV-50-smH" secondAttribute="bottom" constant="20" id="yzz-qQ-xbn"/>
+                            <constraint firstItem="JNT-K7-JUc" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="24" id="zLw-D0-a3k"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="customBV" destination="HlW-cN-IBD" id="vrw-WY-U8R"/>
+                        <outlet property="customBV2" destination="JNT-K7-JUc" id="MHR-b1-4hc"/>
+                        <outlet property="emailTextField" destination="YuV-50-smH" id="oxu-KU-sWS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vnV-He-KvB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633.33333333333337" y="-1235.4910714285713"/>
+        </scene>
         <!--On Boarding View Controller-->
         <scene sceneID="yJS-qd-7jf">
             <objects>

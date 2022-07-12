@@ -101,7 +101,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         currentPageNumber = Int(floor(scrollView.contentOffset.x / holderView.frame.size.width))
         
         pageControl.currentPage = currentPageNumber //pageControl 업데이트
-        print("pageCurrentNum: \(pageControl.currentPage)")
+        
         
         if currentPageNumber == 2 { //버튼의 타이틀 업데이트
             button.setTitle("시작하기", for: .normal)
