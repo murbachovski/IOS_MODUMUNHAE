@@ -182,42 +182,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlW-cN-IBD" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="124" width="366" height="100"/>
+                                <rect key="frame" x="24" y="74" width="366" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="sUY-xR-axG"/>
+                                    <constraint firstAttribute="height" constant="40" id="sUY-xR-axG"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNT-K7-JUc" userLabel="CustomBV2" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="232" width="366" height="60"/>
+                                <rect key="frame" x="24" y="122" width="366" height="60"/>
                                 <viewLayoutGuide key="safeArea" id="ebZ-4a-npT"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="vs4-7i-dE0"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuV-50-smH" customClass="CustomTextFieldView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="20" y="312" width="374" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YuV-50-smH" customClass="CustomEmailView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="202" width="374" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="4OY-Lo-N87"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5L-qV-7N3" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="302" width="374" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ae6-T7-8Bc"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTh-F1-bzY" customClass="CustomTextView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="20" y="412" width="374" height="120"/>
+                                <rect key="frame" x="20" y="402" width="374" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="ejf-YM-Z5z"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMA-ux-ZWK">
-                                <rect key="frame" x="354" y="44" width="60" height="31"/>
+                                <rect key="frame" x="342" y="44" width="72" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="pLh-pT-jjh"/>
-                                    <constraint firstAttribute="width" constant="60" id="yrb-UF-87t"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="yrb-UF-87t"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="drop"/>
+                                <buttonConfiguration key="configuration" style="plain" image="iphone.slash" catalog="system" title="drop"/>
                                 <connections>
                                     <action selector="clickedDrop:" destination="Mbw-rZ-b20" eventType="touchUpInside" id="hyL-s7-jYp"/>
                                 </connections>
@@ -226,19 +233,23 @@
                         <viewLayoutGuide key="safeArea" id="UwX-dQ-cNT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="p5L-qV-7N3" secondAttribute="trailing" constant="20" id="A3B-en-T3J"/>
+                            <constraint firstItem="p5L-qV-7N3" firstAttribute="top" secondItem="YuV-50-smH" secondAttribute="bottom" constant="20" id="LU4-Bp-f74"/>
+                            <constraint firstItem="TTh-F1-bzY" firstAttribute="top" secondItem="p5L-qV-7N3" secondAttribute="bottom" constant="20" id="MBM-xn-vy3"/>
                             <constraint firstItem="YuV-50-smH" firstAttribute="top" secondItem="JNT-K7-JUc" secondAttribute="bottom" constant="20" id="NZ9-E0-n7A"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="HlW-cN-IBD" secondAttribute="trailing" constant="24" id="Ngi-h0-syu"/>
                             <constraint firstItem="YuV-50-smH" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="20" id="VtG-Dv-Ddi"/>
                             <constraint firstItem="HlW-cN-IBD" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="24" id="blk-R3-i3d"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="AMA-ux-ZWK" secondAttribute="trailing" id="cYb-Ue-3Qq"/>
                             <constraint firstItem="JNT-K7-JUc" firstAttribute="top" secondItem="HlW-cN-IBD" secondAttribute="bottom" constant="8" id="gCK-wI-CpE"/>
+                            <constraint firstItem="p5L-qV-7N3" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="20" id="kKI-91-VXu"/>
+                            <constraint firstItem="AMA-ux-ZWK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UwX-dQ-cNT" secondAttribute="leading" symbolic="YES" id="lV3-39-1j3"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="TTh-F1-bzY" secondAttribute="trailing" constant="20" id="pJ1-QD-STG"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="JNT-K7-JUc" secondAttribute="trailing" constant="24" id="pc3-Ev-PEa"/>
                             <constraint firstItem="AMA-ux-ZWK" firstAttribute="top" secondItem="UwX-dQ-cNT" secondAttribute="top" id="rP2-7D-ZXa"/>
                             <constraint firstItem="TTh-F1-bzY" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="20" id="siA-oE-lwG"/>
-                            <constraint firstItem="HlW-cN-IBD" firstAttribute="top" secondItem="UwX-dQ-cNT" secondAttribute="top" constant="80" id="vhz-gD-V3D"/>
+                            <constraint firstItem="HlW-cN-IBD" firstAttribute="top" secondItem="UwX-dQ-cNT" secondAttribute="top" constant="30" id="vhz-gD-V3D"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="YuV-50-smH" secondAttribute="trailing" constant="20" id="xbu-5I-fVa"/>
-                            <constraint firstItem="TTh-F1-bzY" firstAttribute="top" secondItem="YuV-50-smH" secondAttribute="bottom" constant="20" id="yzz-qQ-xbn"/>
                             <constraint firstItem="JNT-K7-JUc" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="24" id="zLw-D0-a3k"/>
                         </constraints>
                     </view>
@@ -248,6 +259,7 @@
                         <outlet property="customBV" destination="HlW-cN-IBD" id="vrw-WY-U8R"/>
                         <outlet property="customBV2" destination="JNT-K7-JUc" id="MHR-b1-4hc"/>
                         <outlet property="emailTextField" destination="YuV-50-smH" id="oxu-KU-sWS"/>
+                        <outlet property="passwordTextField" destination="p5L-qV-7N3" id="v61-Jw-ty0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vnV-He-KvB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -324,6 +336,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iphone.slash" catalog="system" width="112" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

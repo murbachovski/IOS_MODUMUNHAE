@@ -17,11 +17,15 @@
 		8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFD287D02DC008275FC /* CustomButtonView.swift */; };
 		8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DCFE287D02DC008275FC /* CustomButtonView.xib */; };
 		8474DD08287D0573008275FC /* CommonUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD07287D0573008275FC /* CommonUIViewController.swift */; };
-		8474DD0C287D16E4008275FC /* CustomTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DD0B287D16E4008275FC /* CustomTextFieldView.xib */; };
-		8474DD0E287D1A52008275FC /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD0D287D1A52008275FC /* CustomTextFieldView.swift */; };
+		8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DD0B287D16E4008275FC /* CustomEmailView.xib */; };
+		8474DD0E287D1A52008275FC /* CustomEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD0D287D1A52008275FC /* CustomEmailView.swift */; };
 		8474DD10287D33B8008275FC /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD0F287D33B8008275FC /* CustomTextView.swift */; };
 		8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DD11287D33C3008275FC /* CustomTextView.xib */; };
 		8474DD1A287D4176008275FC /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 8474DD19287D4176008275FC /* DropDown */; };
+		8474DD1C287E56D3008275FC /* CustomPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD1B287E56D3008275FC /* CustomPasswordView.swift */; };
+		8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DD1D287E573C008275FC /* CustomPasswordView.xib */; };
+		8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */; };
+		8474DD22287E6C78008275FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD21287E6C78008275FC /* Utils.swift */; };
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
@@ -59,10 +63,14 @@
 		8474DCFD287D02DC008275FC /* CustomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8474DCFE287D02DC008275FC /* CustomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonView.xib; sourceTree = "<group>"; };
 		8474DD07287D0573008275FC /* CommonUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUIViewController.swift; sourceTree = "<group>"; };
-		8474DD0B287D16E4008275FC /* CustomTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextFieldView.xib; sourceTree = "<group>"; };
-		8474DD0D287D1A52008275FC /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		8474DD0B287D16E4008275FC /* CustomEmailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomEmailView.xib; sourceTree = "<group>"; };
+		8474DD0D287D1A52008275FC /* CustomEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomEmailView.swift; sourceTree = "<group>"; };
 		8474DD0F287D33B8008275FC /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		8474DD11287D33C3008275FC /* CustomTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextView.xib; sourceTree = "<group>"; };
+		8474DD1B287E56D3008275FC /* CustomPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPasswordView.swift; sourceTree = "<group>"; };
+		8474DD1D287E573C008275FC /* CustomPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPasswordView.xib; sourceTree = "<group>"; };
+		8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		8474DD21287E6C78008275FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -107,10 +115,13 @@
 			children = (
 				8474DCFD287D02DC008275FC /* CustomButtonView.swift */,
 				8474DCFE287D02DC008275FC /* CustomButtonView.xib */,
-				8474DD0D287D1A52008275FC /* CustomTextFieldView.swift */,
-				8474DD0B287D16E4008275FC /* CustomTextFieldView.xib */,
+				8474DD0D287D1A52008275FC /* CustomEmailView.swift */,
+				8474DD0B287D16E4008275FC /* CustomEmailView.xib */,
+				8474DD1B287E56D3008275FC /* CustomPasswordView.swift */,
+				8474DD1D287E573C008275FC /* CustomPasswordView.xib */,
 				8474DD0F287D33B8008275FC /* CustomTextView.swift */,
 				8474DD11287D33C3008275FC /* CustomTextView.xib */,
+				8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */,
 			);
 			name = CommonUI;
 			sourceTree = "<group>";
@@ -153,6 +164,14 @@
 			path = Intro;
 			sourceTree = "<group>";
 		};
+		8474DD23287E6C7D008275FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8474DD21287E6C78008275FC /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		C6ED506D287531AE00454F26 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +204,7 @@
 				8474DD02287D02FB008275FC /* Network */,
 				8474DD01287D02E8008275FC /* Sample */,
 				8474DCFC287D02C7008275FC /* CommonUI */,
+				8474DD23287E6C7D008275FC /* Utils */,
 			);
 			path = AI_MUNJANG;
 			sourceTree = "<group>";
@@ -300,10 +320,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */,
-				8474DD0C287D16E4008275FC /* CustomTextFieldView.xib in Resources */,
+				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
 				C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */,
 				C6ED5083287531AF00454F26 /* Assets.xcassets in Resources */,
 				C6ED5081287531AE00454F26 /* Main.storyboard in Resources */,
+				8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */,
 				8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,15 +353,18 @@
 				C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */,
 				C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */,
 				840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */,
-				8474DD0E287D1A52008275FC /* CustomTextFieldView.swift in Sources */,
+				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
+				8474DD0E287D1A52008275FC /* CustomEmailView.swift in Sources */,
 				8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */,
 				840071D3287BE30500B07551 /* RoundedView.swift in Sources */,
 				C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */,
 				840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */,
 				840071D8287BE67F00B07551 /* CGFloatExtension.swift in Sources */,
 				840071D9287BE68100B07551 /* TextFieldsFont.swift in Sources */,
+				8474DD22287E6C78008275FC /* Utils.swift in Sources */,
 				8474DD08287D0573008275FC /* CommonUIViewController.swift in Sources */,
 				8474DD10287D33B8008275FC /* CustomTextView.swift in Sources */,
+				8474DD1C287E56D3008275FC /* CustomPasswordView.swift in Sources */,
 				C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */,
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
 				8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */,

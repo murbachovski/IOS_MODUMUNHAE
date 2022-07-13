@@ -21,7 +21,9 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
     @IBAction func clickedDrop(_ sender: Any) {
         dropdown.show() // 아이템 팝업을 보여준다.
     }
-    @IBOutlet weak var emailTextField: CustomTextFieldView!
+    @IBOutlet weak var emailTextField: CustomEmailView!
+    
+    @IBOutlet weak var passwordTextField: CustomPasswordView!
     
     let dropdown = DropDown()
     override func viewDidLoad() {
@@ -37,16 +39,24 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
         //2. 공통UI 중 하나인 버튼이 비활성화된 경우
         customBV2.convertButtonStatus(status: false, title: "네이버로그인", completion: {})
         
-        emailTextField.setupTextOfLabel(title: "이메일을 입력해주세요")
+        emailTextField.setupTextOfLabel(title: "비밀번호 찾기에 이용되니 정확히 입력해주세요.")
         emailTextField.isEmailMode = true
         emailTextField.delegate = self
+        emailTextField.textField.keyboardType = .emailAddress
         
+        passwordTextField.setupTextOfLabel(title: "영문,숫자,기호를 모두 조합하여 8~12자 이내로")
+        passwordTextField.textField.isSecureTextEntry =  true
+        passwordTextField.textField.clearButtonMode = .never
+        
+        passwordTextField.textField.enablePasswordToggle()
+//        txtConfirmPassword.enablePasswordToggle()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         initUI()
         setDropdown()
+        
     }
     
     var itemList = ["@naver.com","@hanmail.com","@daum.net","@gmail.com","@nate.com","@hotmail.com","@outlook.com","@icloud.com","@yahoo.com",

@@ -1,24 +1,17 @@
 //
-//  CustomTextFieldView.swift
+//  CustomPasswordView.swift
 //  AI_MUNJANG
 //
-//  Created by admin on 2022/07/12.
+//  Created by admin on 2022/07/13.
 //
 
 import UIKit
 
-protocol ShowDropDelegate: AnyObject {
-    func showDrop()
-}
-
-
-class CustomTextFieldView: UIView, UITextFieldDelegate{
+class CustomPasswordView: UIView, UITextFieldDelegate{
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
-    
-    weak var delegate:ShowDropDelegate?
     
     var isEmailMode:Bool = false
     
@@ -36,7 +29,7 @@ class CustomTextFieldView: UIView, UITextFieldDelegate{
 
     //방법 1: loadNibNamed(_:owner:options:) 사용
     func customInit() {
-        if let view = Bundle.main.loadNibNamed("CustomTextFieldView", owner: self, options: nil)?.first as? UIView {
+        if let view = Bundle.main.loadNibNamed("CustomEmailView", owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
             addSubview(view)
             
@@ -49,6 +42,7 @@ class CustomTextFieldView: UIView, UITextFieldDelegate{
             textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             textField.leftViewMode = .always
             textField.autocorrectionType = .no
+            textField.rightViewMode = .always
 
         }
     }
@@ -73,12 +67,21 @@ class CustomTextFieldView: UIView, UITextFieldDelegate{
     // return NO to not change text
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
         
-        if isEmailMode == true && string == "@" {
-            print("@추가되어 키보드 내림")
-            textField.resignFirstResponder()
-            self.delegate?.showDrop()
+        // Range(range, in: text): 갱신된 range값과 기존 string을 가지고 객체 변환: NSRange > Range
+       guard let oldString = textField.text, let newRange = Range(range, in: oldString) else { return true }
+
+       // range값과 inputString을 가지고 replacingCharacters(in:with:)을 이용하여 string 업데이트
+       let inputString = string.trimmingCharacters(in: .whitespacesAndNewlines)
+       let newString = oldString.replacingCharacters(in: newRange, with: inputString)
+        
+        
+        if newString.count > 12 { //12제한을
+            errorInTextField()
+            return true
         }
-        if let count = textField.text?.count , count > 10 {
+        
+        let isValid = isValidPassword(password: newString)
+        if !isValid {
             errorInTextField()
             return true
         }
@@ -89,13 +92,13 @@ class CustomTextFieldView: UIView, UITextFieldDelegate{
     func errorInTextField(){
         containerView.layer.borderColor = UIColor.red.cgColor
         label.textColor = .red
-        label.text = "오류 메시지 텍스트"
+        
     }
     
     func normalInTextField(){
         containerView.layer.borderColor = UIColor.blue.cgColor
         label.textColor = .black
-        label.text = "이메일을 입력해주세요"
+        label.text = "영문,숫자,기호를 모두 조합하여 8~12자 이내로."
     }
     
     func setupTextOfLabel(title:String){

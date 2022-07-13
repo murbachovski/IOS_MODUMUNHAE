@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomTextFieldView" customModule="AI_MUNJANG" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomEmailView" customModule="AI_MUNJANG" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="aaw-PG-wd5" id="ryf-yt-BU3"/>
                 <outlet property="label" destination="Idr-0k-ZtE" id="1py-tR-ZTm"/>
