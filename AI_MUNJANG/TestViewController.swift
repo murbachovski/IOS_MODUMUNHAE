@@ -11,7 +11,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
 
     @IBOutlet weak var tableView: UITableView!
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,13 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
            //OnBoarding 보여주기
            guard let commonUIViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommonUIViewController")  as? CommonUIViewController else {return}
            navigationController?.pushViewController(commonUIViewController, animated: true)
-      }
+      }else if indexPath.row == 5 {
+          //OnBoarding 보여주기
+          guard let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")  as? LoginViewController else {return}
+//          navigationController?.pushViewController(loginViewController, animated: true)
+          loginViewController.modalPresentationStyle = .fullScreen
+          self.present(loginViewController, animated: true)
+     }
     }
 
 }

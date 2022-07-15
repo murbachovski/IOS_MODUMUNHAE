@@ -32,24 +32,22 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
         
 
         //1. 공통UI 중 하나인 버튼이 활성화된 경우, 클릭 이벤트는 completion 핸들러를 통해 받아온다.
-        customBV.convertButtonStatus(status: true, title: "다음") {
+        customBV.convertButtonStatus(status: true , backgroundColor: .white, titleColor: .darkGray) {
             print("button is clicked")
         }
         
         //2. 공통UI 중 하나인 버튼이 비활성화된 경우
-        customBV2.convertButtonStatus(status: false, title: "네이버로그인", completion: {})
+        customBV2.convertButtonStatus(status: false,backgroundColor: .lightGray, titleColor: .darkGray, completion: {})
         
         emailTextField.setupTextOfLabel(title: "비밀번호 찾기에 이용되니 정확히 입력해주세요.")
         emailTextField.isEmailMode = true
         emailTextField.delegate = self
         emailTextField.textField.keyboardType = .emailAddress
         
-        passwordTextField.setupTextOfLabel(title: "영문,숫자,기호를 모두 조합하여 8~12자 이내로")
         passwordTextField.textField.isSecureTextEntry =  true
         passwordTextField.textField.clearButtonMode = .never
         
         passwordTextField.textField.enablePasswordToggle()
-//        txtConfirmPassword.enablePasswordToggle()
     }
     
     override func viewDidLayoutSubviews() {
@@ -85,7 +83,7 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
         dropdown.anchorView = self.emailTextField.containerView
         
         // View를 갖리지 않고 View아래에 Item 팝업이 붙도록 설정
-        dropdown.bottomOffset = CGPoint(x: 0, y: 60)
+        dropdown.bottomOffset = CGPoint(x: 0, y: 76)
         
         // Item 선택 시 처리
         dropdown.selectionAction = { [weak self] (index, item) in

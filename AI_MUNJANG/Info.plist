@@ -6,6 +6,17 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>Fonts provided by application</key>
+		<dict>
+			<key>item01</key>
+			<string>NanumSquareOTF_acB.otf</string>
+			<key>item02</key>
+			<string>NanumSquareOTF_acEB.otf</string>
+			<key>item03</key>
+			<string>NanumSquareOTF_acL.otf</string>
+			<key>item04</key>
+			<string>NanumSquareOTF_acR.otf</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

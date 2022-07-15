@@ -42,9 +42,9 @@ class CustomEmailView: UIView, UITextFieldDelegate{
             
             textField.delegate = self
           
-            containerView.layer.borderWidth = 1
-            containerView.layer.borderColor = UIColor.black.cgColor
-            containerView.layer.cornerRadius = 10
+//            containerView.layer.borderWidth = 1
+//            containerView.layer.borderColor = UIColor.black.cgColor
+//            containerView.layer.cornerRadius = 10
             
             textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             textField.leftViewMode = .always
@@ -95,7 +95,7 @@ class CustomEmailView: UIView, UITextFieldDelegate{
     func normalInTextField(){
         containerView.layer.borderColor = UIColor.blue.cgColor
         label.textColor = .black
-        label.text = "비밀번호 찾기에 이용되니 정확히 입력해주세요."
+//        label.text = "비밀번호 찾기에 이용되니 정확히 입력해주세요."
     }
     
     func setupTextOfLabel(title:String){

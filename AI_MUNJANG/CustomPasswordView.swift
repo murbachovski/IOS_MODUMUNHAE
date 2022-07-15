@@ -11,7 +11,9 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var noticeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var isEmailMode:Bool = false
     
@@ -27,22 +29,25 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
         
     }
 
+    
+    
     //방법 1: loadNibNamed(_:owner:options:) 사용
     func customInit() {
-        if let view = Bundle.main.loadNibNamed("CustomEmailView", owner: self, options: nil)?.first as? UIView {
+        if let view = Bundle.main.loadNibNamed("CustomPasswordView", owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
             addSubview(view)
             
             textField.delegate = self
           
-            containerView.layer.borderWidth = 1
-            containerView.layer.borderColor = UIColor.black.cgColor
-            containerView.layer.cornerRadius = 10
+//            containerView.layer.borderWidth = 1
+//            containerView.layer.borderColor = UIColor.black.cgColor
+//            containerView.layer.cornerRadius = 10
             
             textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             textField.leftViewMode = .always
             textField.autocorrectionType = .no
             textField.rightViewMode = .always
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
 
         }
     }
@@ -75,33 +80,48 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
        let newString = oldString.replacingCharacters(in: newRange, with: inputString)
         
         
-        if newString.count > 12 { //12제한을
-            errorInTextField()
+        let isValid = isValidPassword(password: newString)
+        
+        
+        if newString.count <= 7 {
+            errorInTextField(errorMessage: "8자 이상 입력해주세요.")
             return true
         }
         
-        let isValid = isValidPassword(password: newString)
-        if !isValid {
-            errorInTextField()
+        if newString.count > 12 { //12제한을
+            errorInTextField(errorMessage: "12자 이내로 입력해주세요.")
+            return true
+        }
+        
+       
+        if !isValid && (newString.count > 7 && newString.count < 12) {
+            errorInTextField(errorMessage: "영문, 숫자, 기호를 모두 조합해주세요." )
             return true
         }
         normalInTextField()
         return true
     }
     
-    func errorInTextField(){
+    func errorInTextField(errorMessage:String){
         containerView.layer.borderColor = UIColor.red.cgColor
-        label.textColor = .red
+        noticeLabel.text = errorMessage
+        noticeLabel.textColor = .red
         
     }
     
     func normalInTextField(){
-        containerView.layer.borderColor = UIColor.blue.cgColor
-        label.textColor = .black
-        label.text = "영문,숫자,기호를 모두 조합하여 8~12자 이내로."
+        noticeLabel.text = ""
     }
     
     func setupTextOfLabel(title:String){
-        label.text = title
+        noticeLabel.text = title
     }
+    
+
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+         print("keyboardWillHide")
+        
+    }
+    
 }

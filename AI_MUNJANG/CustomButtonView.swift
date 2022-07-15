@@ -28,25 +28,24 @@ class CustomButtonView: UIView {
     func customInit() {
         if let view = Bundle.main.loadNibNamed("CustomButtonView", owner: self, options: nil)?.first as? UIView {
             view.frame = self.bounds
+            
             addSubview(view)
             
         }
     }
     
-    func convertButtonStatus(status:Bool, title:String, completion:@escaping ()->(Void)){
+    func convertButtonStatus(status:Bool,backgroundColor:UIColor, titleColor:UIColor, completion:@escaping ()->(Void)){
         if status == true {
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.black.cgColor
-            button.setTitle(title, for: .normal)
+            
             button.setTitleColor(.black, for: .normal)
             button.isUserInteractionEnabled = true
             button.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
             completionHandler = completion
+            
         }else{
-            button.layer.borderWidth = 1
-            button.layer.borderColor = UIColor.lightGray.cgColor
-            button.setTitle(title, for: .normal)
-            button.setTitleColor(.lightGray, for: .normal)
+            
+            button.backgroundColor = .lightGray
+            button.setTitleColor(.darkGray, for: .normal)
             button.isUserInteractionEnabled = false
         }
     }
@@ -54,11 +53,7 @@ class CustomButtonView: UIView {
     @objc func buttonClicked(_ button:UIButton){
         completionHandler()
     }
-    //방법 2: UINib 생성 후 instantiate
-//    func alternativeCustomInit() {
-//        if let view = UINib(nibName: "CustomButtonView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
-//            view.frame = self.bounds
-//            addSubview(view)
-//        }
-//    }
+    
+    
+
 }
