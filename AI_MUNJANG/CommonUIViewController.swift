@@ -18,9 +18,6 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
     @IBOutlet weak var customBV: CustomButtonView!
     @IBOutlet weak var customBV2: CustomButtonView!
     
-    @IBAction func clickedDrop(_ sender: Any) {
-        dropdown.show() // 아이템 팝업을 보여준다.
-    }
     @IBOutlet weak var emailTextField: CustomEmailView!
     
     @IBOutlet weak var passwordTextField: CustomPasswordView!
@@ -32,15 +29,13 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
         
 
         //1. 공통UI 중 하나인 버튼이 활성화된 경우, 클릭 이벤트는 completion 핸들러를 통해 받아온다.
-        customBV.convertButtonStatus(status: true , backgroundColor: .white, titleColor: .darkGray) {
-            print("button is clicked")
-        }
+        customBV.convertButtonStatus(status: true , backgroundColor: .white, titleColor: .darkGray) 
         
         //2. 공통UI 중 하나인 버튼이 비활성화된 경우
-        customBV2.convertButtonStatus(status: false,backgroundColor: .lightGray, titleColor: .darkGray, completion: {})
+        customBV2.convertButtonStatus(status: false,backgroundColor: .lightGray, titleColor: .darkGray)
         
         emailTextField.setupTextOfLabel(title: "비밀번호 찾기에 이용되니 정확히 입력해주세요.")
-        emailTextField.isEmailMode = true
+        
         emailTextField.delegate = self
         emailTextField.textField.keyboardType = .emailAddress
         

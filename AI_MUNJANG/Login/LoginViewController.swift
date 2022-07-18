@@ -8,7 +8,9 @@
 import UIKit
 import DropDown
 
-class LoginViewController: UIViewController, ShowDropDelegate {
+class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPasswordValid {
+   
+    
     
     let dropdown = DropDown()
     
@@ -35,7 +37,9 @@ class LoginViewController: UIViewController, ShowDropDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
+        
         setupUI()
     
     }
@@ -49,25 +53,32 @@ class LoginViewController: UIViewController, ShowDropDelegate {
  
     fileprivate func setupUI() {
     
-        emailContainerView.isEmailMode = true
+        
         emailContainerView.delegate = self
+        emailContainerView.checkEmailDelegate = self
         emailContainerView.textField.keyboardType = .emailAddress
         
         passwordContainerView.textField.isSecureTextEntry = true
         passwordContainerView.textField.enablePasswordToggle()
+        passwordContainerView.checkEmailDelegate = self
         
         
         appleLoginButtonView.button.layer.cornerRadius = 8
         appleLoginButtonView.button.setTitle("  Apple 계정으로 로그인", for: .normal)
         appleLoginButtonView.button.setImage(UIImage(named: "Apple Logo"), for: .normal)
         appleLoginButtonView.button.backgroundColor = .black
+        appleLoginButtonView.buttonCompletion {
+            self.clickedByAppleUser()            
+        }
         
         
         loginButtonView.button.layer.cornerRadius = 8
         loginButtonView.button.setTitle("로그인", for: .normal)
-        loginButtonView.button.backgroundColor = hexStringToUIColor(hex: "#2ECC46")        
-        loginButtonView.button.isUserInteractionEnabled = false
-//        loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray, completion: {})
+//        loginButtonView.button.backgroundColor = hexStringToUIColor(hex: "#2ECC46")
+        loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
+        loginButtonView.buttonCompletion {
+            self.clickedByEmailUser()
+        }
     }
     
     func initDropDownUI(){
@@ -110,5 +121,43 @@ class LoginViewController: UIViewController, ShowDropDelegate {
     func showDrop() {
         dropdown.show() // 아이템 팝업을 보여준다.
     }
+    
+    func checkEmailAndPasswordValid() {
+        print("checkEmailAndPasswordValid is called")
+        //Email의
+        if emailContainerView.isValidStatus == true && passwordContainerView.isValidStatus == true {
+            loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: "#2ECC46"), titleColor: .white)
+        }else{
+            loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+         print("keyboardWillHide")
+        
+        //이메일과 비밀번호가 정상적으로 입력되었는지 판단하여 이메일 버튼 활성화 여부 판단
+        checkEmailAndPassword()
+    }
+    
+    fileprivate func checkEmailAndPassword(){
+        if let emailError = emailContainerView.label.text, emailError.count == 0, let passwordError = passwordContainerView.noticeLabel.text, passwordError.count == 0  {
+            if emailContainerView.textField.text?.count ?? -1 > 0 && passwordContainerView.textField.text?.count ?? -1 > 7 {
+                    loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: "#2ECC46"), titleColor: .white)
+                }
+            }
+    }
+    
+    
+    
+    fileprivate func clickedByAppleUser(){
+        print("appleloginbutton is clicked")
+    }
+    
+    fileprivate func clickedByEmailUser(){
+        print("EmailUser is clicked")
+    }
+    
+    
+     
     
 }

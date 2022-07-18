@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class CustomPasswordView: UIView, UITextFieldDelegate{
 
     @IBOutlet weak var containerView: UIView!
@@ -15,7 +16,9 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
     @IBOutlet weak var noticeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var isEmailMode:Bool = false
+    weak var checkEmailDelegate:CheckEmailAndPasswordValid?
+    
+    var isValidStatus = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,15 +42,12 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
             
             textField.delegate = self
           
-//            containerView.layer.borderWidth = 1
-//            containerView.layer.borderColor = UIColor.black.cgColor
-//            containerView.layer.cornerRadius = 10
             
             textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             textField.leftViewMode = .always
             textField.autocorrectionType = .no
             textField.rightViewMode = .always
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
+           
 
         }
     }
@@ -80,8 +80,8 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
        let newString = oldString.replacingCharacters(in: newRange, with: inputString)
         
         
-        let isValid = isValidPassword(password: newString)
-        
+        isValidStatus = isValidPassword(password: newString)
+        self.checkEmailDelegate?.checkEmailAndPasswordValid()
         
         if newString.count <= 7 {
             errorInTextField(errorMessage: "8자 이상 입력해주세요.")
@@ -94,11 +94,13 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
         }
         
        
-        if !isValid && (newString.count > 7 && newString.count < 12) {
+        if !isValidStatus && (newString.count > 7 && newString.count < 12) {
             errorInTextField(errorMessage: "영문, 숫자, 기호를 모두 조합해주세요." )
             return true
         }
         normalInTextField()
+        
+        
         return true
     }
     
@@ -119,9 +121,5 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
     
 
     
-    @objc func keyboardWillHide(notification: NSNotification){
-         print("keyboardWillHide")
-        
-    }
     
 }

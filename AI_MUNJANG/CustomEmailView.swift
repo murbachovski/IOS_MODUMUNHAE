@@ -11,6 +11,9 @@ protocol ShowDropDelegate: AnyObject {
     func showDrop()
 }
 
+protocol CheckEmailAndPasswordValid: AnyObject {
+    func checkEmailAndPasswordValid()
+}
 
 class CustomEmailView: UIView, UITextFieldDelegate{
 
@@ -19,8 +22,10 @@ class CustomEmailView: UIView, UITextFieldDelegate{
     @IBOutlet weak var label: UILabel!
     
     weak var delegate:ShowDropDelegate?
+    weak var checkEmailDelegate:CheckEmailAndPasswordValid?
     
-    var isEmailMode:Bool = false
+    
+    var isValidStatus = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,14 +46,13 @@ class CustomEmailView: UIView, UITextFieldDelegate{
             addSubview(view)
             
             textField.delegate = self
-          
-//            containerView.layer.borderWidth = 1
-//            containerView.layer.borderColor = UIColor.black.cgColor
-//            containerView.layer.cornerRadius = 10
+            
             
             textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             textField.leftViewMode = .always
             textField.autocorrectionType = .no
+            
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
 
         }
     }
@@ -72,17 +76,36 @@ class CustomEmailView: UIView, UITextFieldDelegate{
 
     // return NO to not change text
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        // Range(range, in: text): 갱신된 range값과 기존 string을 가지고 객체 변환: NSRange > Range
+       guard let oldString = textField.text, let newRange = Range(range, in: oldString) else { return true }
+
+       // range값과 inputString을 가지고 replacingCharacters(in:with:)을 이용하여 string 업데이트
+       let inputString = string.trimmingCharacters(in: .whitespacesAndNewlines)
+       let newString = oldString.replacingCharacters(in: newRange, with: inputString)
         
-        if isEmailMode == true && string == "@" {
+        if newString.contains("@") {
             print("@추가되어 키보드 내림")
             textField.resignFirstResponder()
             self.delegate?.showDrop()
+            isValidStatus = true
+        }else{
+            isValidStatus = false
         }
-        if let count = textField.text?.count , count > 10 {
+        self.checkEmailDelegate?.checkEmailAndPasswordValid()
+        
+        if newString.count > 10 {
             errorInTextField()
             return true
         }
         normalInTextField()
+        
+        
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        isValidStatus = false
+        self.checkEmailDelegate?.checkEmailAndPasswordValid()
         return true
     }
     
@@ -101,4 +124,23 @@ class CustomEmailView: UIView, UITextFieldDelegate{
     func setupTextOfLabel(title:String){
         label.text = title
     }
+    
+    @objc func keyboardWillHide(notification: NSNotification){
+         print("keyboardWillHide")
+        
+        //이메일의 입력된 내용 중 @가 있다면 isValidStatus를 true
+        if ((textField.text?.contains("@")) != nil){
+            isValidStatus = true
+        }
+        
+    }
+    
+    
 }
+
+
+//이메일과 비밀번호의 입력상태가 유효한지 코드 작성중
+
+//이메일의 상태가 정상이라면 isValidStatus는 true
+
+//키보드 off될 때 판단해야한다.

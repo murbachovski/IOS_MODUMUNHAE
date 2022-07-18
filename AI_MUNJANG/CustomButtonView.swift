@@ -23,7 +23,8 @@ class CustomButtonView: UIView {
         customInit()
         
     }
-
+   
+    
     //방법 1: loadNibNamed(_:owner:options:) 사용
     func customInit() {
         if let view = Bundle.main.loadNibNamed("CustomButtonView", owner: self, options: nil)?.first as? UIView {
@@ -34,26 +35,29 @@ class CustomButtonView: UIView {
         }
     }
     
-    func convertButtonStatus(status:Bool,backgroundColor:UIColor, titleColor:UIColor, completion:@escaping ()->(Void)){
+    func buttonCompletion(buttonCompletion:@escaping ()->(Void)){
+        completionHandler = buttonCompletion
+    }
+    
+    
+    func convertButtonStatus(status:Bool?,backgroundColor:UIColor?, titleColor:UIColor?){
         if status == true {
             
-            button.setTitleColor(.black, for: .normal)
             button.isUserInteractionEnabled = true
-            button.addTarget(self, action: #selector(buttonClicked(_:)), for: .touchUpInside)
-            completionHandler = completion
+            button.setTitleColor(titleColor ?? .black, for: .normal)
+            button.backgroundColor = backgroundColor ?? .lightGray
             
         }else{
-            
-            button.backgroundColor = .lightGray
-            button.setTitleColor(.darkGray, for: .normal)
             button.isUserInteractionEnabled = false
+            button.setTitleColor(titleColor ?? .darkGray, for: .normal)
+            button.backgroundColor = backgroundColor ?? .lightGray
+                        
         }
     }
 
-    @objc func buttonClicked(_ button:UIButton){
+  
+    @IBAction func clickedButton(_ sender: UIButton) {
         completionHandler()
     }
-    
-    
 
 }
