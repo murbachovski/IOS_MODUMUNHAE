@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 class CustomPasswordView: UIView, UITextFieldDelegate{
 
     @IBOutlet weak var containerView: UIView!

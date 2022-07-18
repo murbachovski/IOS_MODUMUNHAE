@@ -10,15 +10,15 @@ import UIKit
 class TestViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
@@ -71,10 +71,23 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
       }else if indexPath.row == 5 {
           //OnBoarding 보여주기
           guard let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")  as? LoginViewController else {return}
-//          navigationController?.pushViewController(loginViewController, animated: true)
           loginViewController.modalPresentationStyle = .fullScreen
           self.present(loginViewController, animated: true)
-     }
+     }else if indexPath.row == 6 {
+         let alertVC = AlertService().alert(title: "공지사항",
+                                            body: "이게 기본이에요! 하지만 나는 애니메이션 하는동안...cell 클릭하면 그에 맞는행동들이 실행됐으면 좋겠어 하면 allowUserInteraction옵션을 사용하면 됩니다",
+                                            cancelTitle: "아니요",
+                                            confirTitle: "좋아요" ,
+                                            thirdButtonCompletion: {
+                                                 print("thirdButton Clicked -> 취소")
+                                             }, fourthButtonCompletion: {
+                                                 print("fourthButton Clicked -> 확인")
+                                             }
+         )
+         present(alertVC, animated: true, completion: nil)
+    }
+        
+        
     }
 
 }

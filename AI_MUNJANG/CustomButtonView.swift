@@ -23,8 +23,7 @@ class CustomButtonView: UIView {
         customInit()
         
     }
-   
-    
+
     //방법 1: loadNibNamed(_:owner:options:) 사용
     func customInit() {
         if let view = Bundle.main.loadNibNamed("CustomButtonView", owner: self, options: nil)?.first as? UIView {

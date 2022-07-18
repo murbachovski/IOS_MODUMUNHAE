@@ -132,15 +132,6 @@ class CustomEmailView: UIView, UITextFieldDelegate{
         if ((textField.text?.contains("@")) != nil){
             isValidStatus = true
         }
-        
     }
-    
-    
 }
 
-
-//이메일과 비밀번호의 입력상태가 유효한지 코드 작성중
-
-//이메일의 상태가 정상이라면 isValidStatus는 true
-
-//키보드 off될 때 판단해야한다.
