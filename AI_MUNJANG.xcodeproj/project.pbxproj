@@ -16,6 +16,8 @@
 		842B035F28812B010000BEDA /* Nanumsquare_ac_OTF in Resources */ = {isa = PBXBuildFile; fileRef = 842B035E28812B010000BEDA /* Nanumsquare_ac_OTF */; };
 		842B0361288502550000BEDA /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0360288502540000BEDA /* AlertService.swift */; };
 		842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03622885025D0000BEDA /* CustomAlertViewController.swift */; };
+		842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0364288504EB0000BEDA /* CustomCheckBoxLabel.swift */; };
+		842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B0366288504FE0000BEDA /* CustomCheckBoxLabel.xib */; };
 		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
 		8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFD287D02DC008275FC /* CustomButtonView.swift */; };
 		8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DCFE287D02DC008275FC /* CustomButtonView.xib */; };
@@ -66,6 +68,8 @@
 		842B035E28812B010000BEDA /* Nanumsquare_ac_OTF */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nanumsquare_ac_OTF; sourceTree = "<group>"; };
 		842B0360288502540000BEDA /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		842B03622885025D0000BEDA /* CustomAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		842B0364288504EB0000BEDA /* CustomCheckBoxLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckBoxLabel.swift; sourceTree = "<group>"; };
+		842B0366288504FE0000BEDA /* CustomCheckBoxLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCheckBoxLabel.xib; sourceTree = "<group>"; };
 		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8474DCFD287D02DC008275FC /* CustomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8474DCFE287D02DC008275FC /* CustomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonView.xib; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				8474DD0F287D33B8008275FC /* CustomTextView.swift */,
 				8474DD11287D33C3008275FC /* CustomTextView.xib */,
 				8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */,
+				842B0364288504EB0000BEDA /* CustomCheckBoxLabel.swift */,
+				842B0366288504FE0000BEDA /* CustomCheckBoxLabel.xib */,
 			);
 			name = CommonUI;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 			files = (
 				8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */,
 				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
+				842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */,
 				C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */,
 				C6ED5083287531AF00454F26 /* Assets.xcassets in Resources */,
 				C6ED5081287531AE00454F26 /* Main.storyboard in Resources */,
@@ -391,6 +398,7 @@
 				C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */,
 				840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */,
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
+				842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */,
 				8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,
 				8474DD0E287D1A52008275FC /* CustomEmailView.swift in Sources */,

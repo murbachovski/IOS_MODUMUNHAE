@@ -394,6 +394,13 @@
                                     <constraint firstAttribute="height" constant="120" id="ejf-YM-Z5z"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggJ-cY-nNh" customClass="CustomCheckBoxLabel" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="654" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cpW-M5-yD2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UwX-dQ-cNT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -401,11 +408,14 @@
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="p5L-qV-7N3" secondAttribute="trailing" constant="20" id="A3B-en-T3J"/>
                             <constraint firstItem="p5L-qV-7N3" firstAttribute="top" secondItem="YuV-50-smH" secondAttribute="bottom" constant="20" id="LU4-Bp-f74"/>
                             <constraint firstItem="TTh-F1-bzY" firstAttribute="top" secondItem="p5L-qV-7N3" secondAttribute="bottom" constant="20" id="MBM-xn-vy3"/>
+                            <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="ggJ-cY-nNh" secondAttribute="trailing" id="MoI-pM-I4g"/>
                             <constraint firstItem="YuV-50-smH" firstAttribute="top" secondItem="JNT-K7-JUc" secondAttribute="bottom" constant="20" id="NZ9-E0-n7A"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="HlW-cN-IBD" secondAttribute="trailing" constant="24" id="Ngi-h0-syu"/>
                             <constraint firstItem="YuV-50-smH" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="20" id="VtG-Dv-Ddi"/>
                             <constraint firstItem="HlW-cN-IBD" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="24" id="blk-R3-i3d"/>
+                            <constraint firstItem="ggJ-cY-nNh" firstAttribute="top" secondItem="TTh-F1-bzY" secondAttribute="bottom" constant="20" id="cPx-Vd-Dy6"/>
                             <constraint firstItem="JNT-K7-JUc" firstAttribute="top" secondItem="HlW-cN-IBD" secondAttribute="bottom" constant="8" id="gCK-wI-CpE"/>
+                            <constraint firstItem="ggJ-cY-nNh" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" id="j7R-pG-zWI"/>
                             <constraint firstItem="p5L-qV-7N3" firstAttribute="leading" secondItem="UwX-dQ-cNT" secondAttribute="leading" constant="20" id="kKI-91-VXu"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="TTh-F1-bzY" secondAttribute="trailing" constant="20" id="pJ1-QD-STG"/>
                             <constraint firstItem="UwX-dQ-cNT" firstAttribute="trailing" secondItem="JNT-K7-JUc" secondAttribute="trailing" constant="24" id="pc3-Ev-PEa"/>
