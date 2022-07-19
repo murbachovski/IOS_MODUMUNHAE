@@ -15,14 +15,20 @@ protocol CheckEmailAndPasswordValid: AnyObject {
     func checkEmailAndPasswordValid()
 }
 
+protocol CheckConfirmPassword: AnyObject {
+    func checkConfirmPassword()
+}
+
 class CustomEmailView: UIView, UITextFieldDelegate{
 
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
     
     weak var delegate:ShowDropDelegate?
     weak var checkEmailDelegate:CheckEmailAndPasswordValid?
+    
     
     
     var isValidStatus = false
@@ -66,6 +72,10 @@ class CustomEmailView: UIView, UITextFieldDelegate{
     // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
     func textFieldDidEndEditing(_ textField: UITextField){
         containerView.layer.borderColor = UIColor.black.cgColor
+        if ((textField.text?.contains("@")) == false){
+            isValidStatus = false
+            errorInTextField(errorMessage: "이메일 형식이 올바르지 않습니다.")
+        }
     }
     
     // called when 'return' key pressed. return NO to ignore.
@@ -93,10 +103,10 @@ class CustomEmailView: UIView, UITextFieldDelegate{
         }
         self.checkEmailDelegate?.checkEmailAndPasswordValid()
         
-        if newString.count > 10 {
-            errorInTextField()
-            return true
-        }
+//        if newString.count > 10 {
+//            errorInTextField("10자 이내로 ")
+//            return true
+//        }
         normalInTextField()
         
         
@@ -109,28 +119,29 @@ class CustomEmailView: UIView, UITextFieldDelegate{
         return true
     }
     
-    func errorInTextField(){
+    func errorInTextField(errorMessage:String){
         containerView.layer.borderColor = UIColor.red.cgColor
-        label.textColor = .red
-        label.text = "오류 메시지 텍스트"
+        subLabel.textColor = .red
+        subLabel.text = errorMessage
     }
     
     func normalInTextField(){
         containerView.layer.borderColor = UIColor.blue.cgColor
-        label.textColor = .black
-//        label.text = "비밀번호 찾기에 이용되니 정확히 입력해주세요."
+        subLabel.textColor = .black
+        subLabel.text = ""
     }
     
     func setupTextOfLabel(title:String){
-        label.text = title
+        subLabel.text = title
     }
     
     @objc func keyboardWillHide(notification: NSNotification){
          print("keyboardWillHide")
         
         //이메일의 입력된 내용 중 @가 있다면 isValidStatus를 true
-        if ((textField.text?.contains("@")) != nil){
+        if ((textField.text?.contains("@")) == true){
             isValidStatus = true
+            
         }
     }
 }

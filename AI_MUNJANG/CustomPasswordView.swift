@@ -16,8 +16,11 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
     @IBOutlet weak var titleLabel: UILabel!
     
     weak var checkEmailDelegate:CheckEmailAndPasswordValid?
+    weak var checkConfirmPasswordDelegate:CheckConfirmPassword?
+
     
     var isValidStatus = false
+    var isConfirmPasswordView = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +31,6 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         customInit()
-        
     }
 
     
@@ -60,11 +62,15 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
     // may be called if forced even if shouldEndEditing returns NO (e.g. view removed from window) or endEditing:YES called
     func textFieldDidEndEditing(_ textField: UITextField){
         containerView.layer.borderColor = UIColor.black.cgColor
+        if isConfirmPasswordView == true {
+            self.checkConfirmPasswordDelegate?.checkConfirmPassword()
+        }
     }
     
     // called when 'return' key pressed. return NO to ignore.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         textField.resignFirstResponder()
+
         return true
     }
 
@@ -80,8 +86,13 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
         
         
         isValidStatus = isValidPassword(password: newString)
-        self.checkEmailDelegate?.checkEmailAndPasswordValid()
+        if !isConfirmPasswordView{
+            self.checkEmailDelegate?.checkEmailAndPasswordValid()
+        }
         
+        if newString.count == 0 {
+            errorInTextField(errorMessage: "")
+        }
         if newString.count <= 7 {
             errorInTextField(errorMessage: "8자 이상 입력해주세요.")
             return true
@@ -93,7 +104,7 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
         }
         
        
-        if !isValidStatus && (newString.count > 7 && newString.count < 12) {
+        if !isValidStatus && (newString.count > 7 && newString.count <= 12) {
             errorInTextField(errorMessage: "영문, 숫자, 기호를 모두 조합해주세요." )
             return true
         }
@@ -104,10 +115,11 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
     }
     
     func errorInTextField(errorMessage:String){
-        containerView.layer.borderColor = UIColor.red.cgColor
-        noticeLabel.text = errorMessage
-        noticeLabel.textColor = .red
-        
+        if isConfirmPasswordView == false {
+            containerView.layer.borderColor = UIColor.red.cgColor
+            noticeLabel.text = errorMessage
+            noticeLabel.textColor = .red
+        }
     }
     
     func normalInTextField(){
@@ -119,6 +131,14 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
     }
     
 
+    func okInConfirmPassword(){
+        noticeLabel.text = ""
+        noticeLabel.textColor = .black
+    }
     
+    func errorInConfirmPassword(errorMessage:String){
+        noticeLabel.text = errorMessage
+        noticeLabel.textColor = .red
+    }
     
 }

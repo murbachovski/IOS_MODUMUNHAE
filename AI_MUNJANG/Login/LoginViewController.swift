@@ -59,6 +59,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         emailContainerView.textField.keyboardType = .emailAddress
         
         passwordContainerView.textField.isSecureTextEntry = true
+        passwordContainerView.textField.textContentType = .oneTimeCode
         passwordContainerView.textField.enablePasswordToggle()
         passwordContainerView.checkEmailDelegate = self
         
@@ -140,7 +141,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     }
     
     fileprivate func checkEmailAndPassword(){
-        if let emailError = emailContainerView.label.text, emailError.count == 0, let passwordError = passwordContainerView.noticeLabel.text, passwordError.count == 0  {
+        if let emailError = emailContainerView.subLabel.text, emailError.count == 0, let passwordError = passwordContainerView.noticeLabel.text, passwordError.count == 0  {
             if emailContainerView.textField.text?.count ?? -1 > 0 && passwordContainerView.textField.text?.count ?? -1 > 7 {
                 loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
                 }

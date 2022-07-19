@@ -40,6 +40,7 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
         emailTextField.textField.keyboardType = .emailAddress
         
         passwordTextField.textField.isSecureTextEntry =  true
+        passwordTextField.textField.textContentType = .oneTimeCode
         passwordTextField.textField.clearButtonMode = .never
         
         passwordTextField.textField.enablePasswordToggle()

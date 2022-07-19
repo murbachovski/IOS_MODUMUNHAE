@@ -848,6 +848,97 @@
             </objects>
             <point key="canvasLocation" x="-1288" y="-575"/>
         </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="Dhm-Fh-W3X">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" id="HOg-y4-HGt" customClass="SignUpViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NTI-YQ-HPB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-ZP-hL9" customClass="CustomEmailView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="144" width="366" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ltw-EC-KYa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhs-du-kif" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="260" width="366" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Hzl-6l-XbV"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9x-bT-Rca" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="376" width="366" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="FJI-1n-NpM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JvY-x7-H9d" customClass="CustomTextField" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="492" width="366" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qqK-ZN-8WQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hp9-6q-kbb" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="786" width="366" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="i7f-Ah-kSO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMY-zD-vbz">
+                                <rect key="frame" x="358" y="68" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="ORg-D8-zV6"/>
+                                    <constraint firstAttribute="width" constant="32" id="TYh-mu-rEn"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="clickedClose:" destination="HOg-y4-HGt" eventType="touchUpInside" id="Crr-fB-PjF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pne-EO-pa4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Hp9-6q-kbb" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="3Nx-mC-WKf"/>
+                            <constraint firstItem="zW6-ZP-hL9" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="8BE-TU-kg4"/>
+                            <constraint firstItem="uMY-zD-vbz" firstAttribute="top" secondItem="Pne-EO-pa4" secondAttribute="top" constant="24" id="AiX-rO-VxJ"/>
+                            <constraint firstItem="zW6-ZP-hL9" firstAttribute="top" secondItem="Pne-EO-pa4" secondAttribute="top" constant="100" id="Bug-7S-duX"/>
+                            <constraint firstItem="Lhs-du-kif" firstAttribute="top" secondItem="zW6-ZP-hL9" secondAttribute="bottom" constant="16" id="CK6-fK-Ha0"/>
+                            <constraint firstItem="n9x-bT-Rca" firstAttribute="top" secondItem="Lhs-du-kif" secondAttribute="bottom" constant="16" id="HvJ-je-wbe"/>
+                            <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="JvY-x7-H9d" secondAttribute="trailing" constant="24" id="IJv-QC-xtE"/>
+                            <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="Lhs-du-kif" secondAttribute="trailing" constant="24" id="SXV-hs-4xg"/>
+                            <constraint firstItem="JvY-x7-H9d" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="TNK-cV-PXu"/>
+                            <constraint firstItem="JvY-x7-H9d" firstAttribute="top" secondItem="n9x-bT-Rca" secondAttribute="bottom" constant="16" id="VSp-5S-yMs"/>
+                            <constraint firstItem="Pne-EO-pa4" firstAttribute="bottom" secondItem="Hp9-6q-kbb" secondAttribute="bottom" constant="24" id="Y0F-HW-4zt"/>
+                            <constraint firstItem="Lhs-du-kif" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="ZOU-95-eQ6"/>
+                            <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="uMY-zD-vbz" secondAttribute="trailing" constant="24" id="ZRU-gG-pV5"/>
+                            <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="Hp9-6q-kbb" secondAttribute="trailing" constant="24" id="iLI-oH-k4v"/>
+                            <constraint firstItem="n9x-bT-Rca" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="sMe-if-FlC"/>
+                            <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="zW6-ZP-hL9" secondAttribute="trailing" constant="24" id="uMi-fD-aMT"/>
+                            <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="n9x-bT-Rca" secondAttribute="trailing" constant="24" id="zEJ-Sx-a9v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailView" destination="zW6-ZP-hL9" id="G9p-vM-zep"/>
+                        <outlet property="nicknameView" destination="JvY-x7-H9d" id="WUl-e8-baO"/>
+                        <outlet property="passwordConfirmView" destination="n9x-bT-Rca" id="f7e-vU-s3f"/>
+                        <outlet property="passwordView" destination="Lhs-du-kif" id="kkD-9H-3wJ"/>
+                        <outlet property="registerView" destination="Hp9-6q-kbb" id="AbN-yn-Ysg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRS-vb-if4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1955" y="-611"/>
+        </scene>
     </scenes>
     <resources>
         <image name="test.png" width="700" height="525"/>
@@ -863,6 +954,9 @@
         </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
