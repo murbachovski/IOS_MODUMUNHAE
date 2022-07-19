@@ -12,7 +12,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
 
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +85,12 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
                                              }
          )
          present(alertVC, animated: true, completion: nil)
-    }
+    }else if indexPath.row == 7 {
+        //OnBoarding 보여주기
+        guard let termsViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsViewController")  as? TermsViewController else {return}
+        termsViewController.modalPresentationStyle = .fullScreen
+        self.present(termsViewController, animated: true)
+   }
         
         
     }

@@ -74,7 +74,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         
         loginButtonView.button.layer.cornerRadius = 8
         loginButtonView.button.setTitle("로그인", for: .normal)
-//        loginButtonView.button.backgroundColor = hexStringToUIColor(hex: "#2ECC46")
+
         loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
         loginButtonView.buttonCompletion {
             self.clickedByEmailUser()
@@ -126,7 +126,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         print("checkEmailAndPasswordValid is called")
         //Email의
         if emailContainerView.isValidStatus == true && passwordContainerView.isValidStatus == true {
-            loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: "#2ECC46"), titleColor: .white)
+            loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
         }else{
             loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
         }
@@ -142,7 +142,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     fileprivate func checkEmailAndPassword(){
         if let emailError = emailContainerView.label.text, emailError.count == 0, let passwordError = passwordContainerView.noticeLabel.text, passwordError.count == 0  {
             if emailContainerView.textField.text?.count ?? -1 > 0 && passwordContainerView.textField.text?.count ?? -1 > 7 {
-                    loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: "#2ECC46"), titleColor: .white)
+                loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
                 }
             }
     }
