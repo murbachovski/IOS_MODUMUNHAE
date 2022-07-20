@@ -76,6 +76,7 @@ class CustomEmailView: UIView, UITextFieldDelegate{
             isValidStatus = false
             errorInTextField(errorMessage: "이메일 형식이 올바르지 않습니다.")
         }
+        
     }
     
     // called when 'return' key pressed. return NO to ignore.
@@ -93,7 +94,7 @@ class CustomEmailView: UIView, UITextFieldDelegate{
        let inputString = string.trimmingCharacters(in: .whitespacesAndNewlines)
        let newString = oldString.replacingCharacters(in: newRange, with: inputString)
         
-        if newString.contains("@") {
+        if inputString == "@" {
             print("@추가되어 키보드 내림")
             textField.resignFirstResponder()
             self.delegate?.showDrop()

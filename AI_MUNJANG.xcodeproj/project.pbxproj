@@ -29,6 +29,9 @@
 		842B0398288647850000BEDA /* CustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B0397288647850000BEDA /* CustomTextField.xib */; };
 		842B039B28864A2F0000BEDA /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 842B039A28864A2F0000BEDA /* DropDown */; };
 		842B039E288688D40000BEDA /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B039D288688D40000BEDA /* ResetPasswordViewController.swift */; };
+		842B03A02886931E0000BEDA /* ResetPasswordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B039F2886931E0000BEDA /* ResetPasswordDetailViewController.swift */; };
+		842B03A328869ACF0000BEDA /* ResignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A228869ACF0000BEDA /* ResignViewController.swift */; };
+		842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A428869AFC0000BEDA /* ResignReasonViewController.swift */; };
 		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
 		8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFD287D02DC008275FC /* CustomButtonView.swift */; };
 		8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DCFE287D02DC008275FC /* CustomButtonView.xib */; };
@@ -91,6 +94,9 @@
 		842B0395288647760000BEDA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		842B0397288647850000BEDA /* CustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTextField.xib; sourceTree = "<group>"; };
 		842B039D288688D40000BEDA /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		842B039F2886931E0000BEDA /* ResetPasswordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDetailViewController.swift; sourceTree = "<group>"; };
+		842B03A228869ACF0000BEDA /* ResignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignViewController.swift; sourceTree = "<group>"; };
+		842B03A428869AFC0000BEDA /* ResignReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignReasonViewController.swift; sourceTree = "<group>"; };
 		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8474DCFD287D02DC008275FC /* CustomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8474DCFE287D02DC008275FC /* CustomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonView.xib; sourceTree = "<group>"; };
@@ -177,8 +183,18 @@
 			isa = PBXGroup;
 			children = (
 				842B039D288688D40000BEDA /* ResetPasswordViewController.swift */,
+				842B039F2886931E0000BEDA /* ResetPasswordDetailViewController.swift */,
 			);
 			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		842B03A128869AAB0000BEDA /* Resign */ = {
+			isa = PBXGroup;
+			children = (
+				842B03A228869ACF0000BEDA /* ResignViewController.swift */,
+				842B03A428869AFC0000BEDA /* ResignReasonViewController.swift */,
+			);
+			name = Resign;
 			sourceTree = "<group>";
 		};
 		8474DCFC287D02C7008275FC /* CommonUI */ = {
@@ -286,6 +302,7 @@
 		C6ED5078287531AE00454F26 /* AI_MUNJANG */ = {
 			isa = PBXGroup;
 			children = (
+				842B03A128869AAB0000BEDA /* Resign */,
 				842B039C288688B40000BEDA /* ResetPassword */,
 				842B0386288642200000BEDA /* Fonts */,
 				842B037F288543DC0000BEDA /* SignUp */,
@@ -461,9 +478,11 @@
 				C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */,
 				840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */,
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
+				842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */,
 				842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */,
 				8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,
+				842B03A328869ACF0000BEDA /* ResignViewController.swift in Sources */,
 				842B0396288647760000BEDA /* CustomTextField.swift in Sources */,
 				8474DD0E287D1A52008275FC /* CustomEmailView.swift in Sources */,
 				8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */,
@@ -480,6 +499,7 @@
 				8474DD1C287E56D3008275FC /* CustomPasswordView.swift in Sources */,
 				C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */,
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
+				842B03A02886931E0000BEDA /* ResetPasswordDetailViewController.swift in Sources */,
 				842B0381288543FB0000BEDA /* TermsViewController.swift in Sources */,
 				842B0394288645010000BEDA /* SignUpViewController.swift in Sources */,
 				8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */,

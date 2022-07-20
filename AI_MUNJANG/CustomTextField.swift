@@ -13,7 +13,7 @@ class CustomTextField: UIView, UITextFieldDelegate{
     @IBOutlet weak var titleLabel: UILabel!
     
     //일단 notice라벨은 무시, 다른 customView와 크기를 맞추기 위해 남겨둔다.
-    
+    var isActive = false
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -37,7 +37,13 @@ class CustomTextField: UIView, UITextFieldDelegate{
         }
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        isActive = true
+    }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        isActive = false
+    }
     
     // called when 'return' key pressed. return NO to ignore.
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{

@@ -29,11 +29,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2H-fz-auV">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rDg-HJ-CzP">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="불편하셨던 점 또는 개선할 점을 알려주세요" translatesAutoresizingMaskIntoConstraints="NO" id="rDg-HJ-CzP">
                             <rect key="frame" x="4" y="4" width="406" height="120.5"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <color key="textColor" systemColor="labelColor"/>
-                            <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/50자" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEn-rM-kRm">

@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
     @IBAction func clickedClose(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
+    var currentTextField: UITextField?
     
     let dropdown = DropDown()
     
@@ -39,6 +39,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification , object: nil)
         
         setupUI()
         
@@ -171,7 +172,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
     
     @objc func keyboardWillHide(notification: NSNotification){
          print("keyboardWillHide")
-        
+        self.view.frame.origin.y = 0
         //이메일과 비밀번호가 정상적으로 입력되었는지 판단하여 이메일 버튼 활성화 여부 판단
         checkConfirmPassword()
     }
@@ -189,5 +190,26 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
             //TODO: 추후에 로컬에 저장하자
             
         }
+    }
+    
+ 
+    @objc func keyboardWillShow(notification: NSNotification){
+        print("keyboardWillShow")
+        
+        guard let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+        let borderLimitY = keyboardFrame.cgRectValue.minY
+        let  bottomTextView = nicknameView.frame.maxY
+        
+        print(borderLimitY, bottomTextView)
+        //활성화된 텍스트필드가 이름필드인지 확인 필요
+        if borderLimitY < bottomTextView  && nicknameView.isActive == true {
+            let diff = bottomTextView - borderLimitY
+            self.view.frame.origin.y = -diff - 4
+        }else{
+            self.view.frame.origin.y = 0
+        }
+       
     }
 }

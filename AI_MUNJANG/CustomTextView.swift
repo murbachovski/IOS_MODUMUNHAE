@@ -13,7 +13,8 @@ class CustomTextView: UIView,UITextViewDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var label: UILabel!
     
-    let textViewPlaceHolder = "텍스트를 입력하세요"
+    var textViewPlaceHolder = "텍스트를 입력하세요"
+    var restrictedCharacters = 50
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,11 +39,9 @@ class CustomTextView: UIView,UITextViewDelegate {
             containerView.layer.borderWidth = 1
             containerView.layer.borderColor = UIColor.darkGray.cgColor
             containerView.layer.cornerRadius = 10
-            
-            
-            
+
             textView.textContainerInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
-            textView.font = .systemFont(ofSize: 18)
+            textView.font = .systemFont(ofSize: 16)
             textView.text = textViewPlaceHolder
             textView.textColor = .lightGray
         }
@@ -70,7 +69,7 @@ class CustomTextView: UIView,UITextViewDelegate {
             let newString = oldString.replacingCharacters(in: newRange, with: inputString).trimmingCharacters(in: .whitespacesAndNewlines)
 
             let characterCount = newString.count
-            guard characterCount <= 50 else { return false }
+            guard characterCount <= restrictedCharacters else { return false }
             updateCountLabel(characterCount: characterCount)
             if(text == "\n") {
                 textView.resignFirstResponder()
@@ -80,18 +79,20 @@ class CustomTextView: UIView,UITextViewDelegate {
         }
     
     private func updateCountLabel(characterCount: Int) {
-         label.text = "\(characterCount)/50자"
+         label.text = "\(characterCount)/\(restrictedCharacters)자"
          label.asColor(targetString: "\(characterCount)", color: characterCount == 0 ? .lightGray : .blue)
      }
+    
+    
+    func changePlaceHolder(placeholder:String){ //외부에서 플레이스홀더를 설정하는 메서드
+        textViewPlaceHolder = placeholder
+        textView.text = placeholder
+    }
 
-}
-
-extension UILabel {
-    func asColor(targetString: String, color: UIColor?) {
-        let fullText = text ?? ""
-        let range = (fullText as NSString).range(of: targetString)
-        let attributedString = NSMutableAttributedString(string: fullText)
-        attributedString.addAttribute(.foregroundColor, value: color as Any, range: range)
-        attributedText = attributedString
+    func changeRestrictedCharacters(res:Int){ //외부에서 플레이스홀더를 설정하는 메서드
+        restrictedCharacters = res
+        updateCountLabel(characterCount: 0)
     }
 }
+
+

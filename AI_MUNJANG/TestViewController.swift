@@ -12,7 +12,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
 
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입","비밀번호 재설정", "비밀번호 재설정 상세","회원탈퇴","회원탈퇴 사유"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,6 +95,27 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             guard let signUpViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController")  as? SignUpViewController else {return}
             signUpViewController.modalPresentationStyle = .fullScreen
             self.present(signUpViewController, animated: true)
+        }else if indexPath.row == 9 {
+            
+            guard let resetPasswordViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResetPasswordViewController")  as? ResetPasswordViewController else {return}
+            resetPasswordViewController.modalPresentationStyle = .fullScreen
+            self.present(resetPasswordViewController, animated: true)
+        }else if indexPath.row == 10 {
+            
+            guard let resetPasswordDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResetPasswordDetailViewController")  as? ResetPasswordDetailViewController else {return}
+            resetPasswordDetailViewController.modalPresentationStyle = .fullScreen
+            self.present(resetPasswordDetailViewController, animated: true)
+        }else if indexPath.row == 11 {
+            
+            guard let resignViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResignViewController")  as? ResignViewController else {return}
+            resignViewController.modalPresentationStyle = .fullScreen
+            self.present(resignViewController, animated: true)
+            
+        }else if indexPath.row == 12 {
+            
+            guard let resignReasonViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResignReasonViewController")  as? ResignReasonViewController else {return}
+            resignReasonViewController.modalPresentationStyle = .fullScreen
+            self.present(resignReasonViewController, animated: true)
         }
         
         
