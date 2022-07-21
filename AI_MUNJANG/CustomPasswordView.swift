@@ -43,7 +43,8 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
             
             textField.delegate = self
           
-            
+            textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+
             textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
             textField.leftViewMode = .always
             textField.autocorrectionType = .no
@@ -109,10 +110,13 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
             return true
         }
         normalInTextField()
-        
+        //비밀번호 재확인시에 반복적으로 확인(애매하네, 여기서 함수를 호출하면 패스워드1과 패스워드2과 불일치하고,
+        //여기서 비교하지 않으면 사용자가 키보드를 내려야 패스워드1과 패스워드2과 비교가능하다)
+
         
         return true
     }
+    
     
     func errorInTextField(errorMessage:String){
         if isConfirmPasswordView == false {
@@ -141,4 +145,15 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
         noticeLabel.textColor = .red
     }
     
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        if isConfirmPasswordView == true {
+            self.checkConfirmPasswordDelegate?.checkConfirmPassword()
+        }
+    }
+    
 }
+
+
+
+//비밀번호 재확인 로직 다시 한번 검토후에 다음 업무로 넘어갈것

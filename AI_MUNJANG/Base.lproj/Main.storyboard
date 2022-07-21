@@ -1386,6 +1386,110 @@
             </objects>
             <point key="canvasLocation" x="-1375.3623188405797" y="716.51785714285711"/>
         </scene>
+        <!--Change Password View Controller-->
+        <scene sceneID="ave-tM-fxB">
+            <objects>
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="hwb-l4-f4i" customClass="ChangePasswordViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbY-EA-NcA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cE5-Vs-oxG" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="94" width="374" height="100"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="jjP-t7-gVl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zM9-RI-n2G" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="202" width="374" height="100"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="KQu-XJ-2wt"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vs9-kr-azr" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="310" width="374" height="100"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="sm1-k5-gha"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-ha-CQL" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="20" y="418" width="374" height="52"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="tVS-FE-jRd"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 잊어버리셨나요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVy-6A-cyB">
+                                <rect key="frame" x="20" y="500" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0Q-40-7jk">
+                                <rect key="frame" x="20" y="521" width="374" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="비밀번호 재설정"/>
+                                <connections>
+                                    <action selector="clickedResetPasswordButton:" destination="hwb-l4-f4i" eventType="touchUpInside" id="cTf-aE-Zlj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIs-WE-eT0">
+                                <rect key="frame" x="362" y="20" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="gGU-zz-cLg"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="clickedClose:" destination="hwb-l4-f4i" eventType="touchUpInside" id="JWV-7Q-hMu"/>
+                                    <action selector="clickedClose:" destination="0VM-ii-uPU" eventType="touchUpInside" id="Wu3-62-Oqq"/>
+                                    <action selector="clickedClose:" destination="1ye-g5-OHN" eventType="touchUpInside" id="hRU-fx-Hle"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hni-jl-pye"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pVy-6A-cyB" firstAttribute="top" secondItem="KvJ-ha-CQL" secondAttribute="bottom" constant="30" id="1tC-aG-L0B"/>
+                            <constraint firstItem="zM9-RI-n2G" firstAttribute="top" secondItem="cE5-Vs-oxG" secondAttribute="bottom" constant="8" id="7iK-4m-shr"/>
+                            <constraint firstItem="hni-jl-pye" firstAttribute="trailing" secondItem="pVy-6A-cyB" secondAttribute="trailing" constant="20" id="9xH-Cc-qs6"/>
+                            <constraint firstItem="hni-jl-pye" firstAttribute="trailing" secondItem="p0Q-40-7jk" secondAttribute="trailing" constant="20" id="Ayh-Io-Tx7"/>
+                            <constraint firstItem="p0Q-40-7jk" firstAttribute="leading" secondItem="hni-jl-pye" secondAttribute="leading" constant="20" id="Kwp-AJ-qvb"/>
+                            <constraint firstItem="hni-jl-pye" firstAttribute="trailing" secondItem="vs9-kr-azr" secondAttribute="trailing" constant="20" id="MGB-GN-jw3"/>
+                            <constraint firstItem="cE5-Vs-oxG" firstAttribute="leading" secondItem="fbY-EA-NcA" secondAttribute="leading" constant="20" id="NAz-ZZ-q4v"/>
+                            <constraint firstItem="EIs-WE-eT0" firstAttribute="top" secondItem="fbY-EA-NcA" secondAttribute="top" constant="20" id="O4a-2F-Dkf"/>
+                            <constraint firstItem="hni-jl-pye" firstAttribute="trailing" secondItem="EIs-WE-eT0" secondAttribute="trailing" constant="20" id="QfS-4X-gtX"/>
+                            <constraint firstItem="EIs-WE-eT0" firstAttribute="width" secondItem="EIs-WE-eT0" secondAttribute="height" id="Y0u-6R-da8"/>
+                            <constraint firstItem="hni-jl-pye" firstAttribute="trailing" secondItem="zM9-RI-n2G" secondAttribute="trailing" constant="20" id="aWC-Gf-ttv"/>
+                            <constraint firstItem="vs9-kr-azr" firstAttribute="leading" secondItem="hni-jl-pye" secondAttribute="leading" constant="20" id="fOa-2F-IXn"/>
+                            <constraint firstItem="hni-jl-pye" firstAttribute="trailing" secondItem="cE5-Vs-oxG" secondAttribute="trailing" constant="20" id="g1l-q4-7A4"/>
+                            <constraint firstItem="hni-jl-pye" firstAttribute="trailing" secondItem="KvJ-ha-CQL" secondAttribute="trailing" constant="20" id="gsb-ih-cIe"/>
+                            <constraint firstItem="p0Q-40-7jk" firstAttribute="top" secondItem="pVy-6A-cyB" secondAttribute="bottom" id="heI-mL-0Rz"/>
+                            <constraint firstItem="KvJ-ha-CQL" firstAttribute="top" secondItem="vs9-kr-azr" secondAttribute="bottom" constant="8" id="kHH-NS-K8B"/>
+                            <constraint firstItem="zM9-RI-n2G" firstAttribute="leading" secondItem="hni-jl-pye" secondAttribute="leading" constant="20" id="lWn-rd-TuB"/>
+                            <constraint firstItem="vs9-kr-azr" firstAttribute="top" secondItem="zM9-RI-n2G" secondAttribute="bottom" constant="8" id="uOY-oZ-02p"/>
+                            <constraint firstItem="cE5-Vs-oxG" firstAttribute="top" secondItem="hni-jl-pye" secondAttribute="top" constant="50" id="ugI-yZ-uLb"/>
+                            <constraint firstItem="KvJ-ha-CQL" firstAttribute="leading" secondItem="hni-jl-pye" secondAttribute="leading" constant="20" id="vEf-P4-fQF"/>
+                            <constraint firstItem="pVy-6A-cyB" firstAttribute="leading" secondItem="hni-jl-pye" secondAttribute="leading" constant="20" id="xWq-SV-Suz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="completionButtonView" destination="KvJ-ha-CQL" id="79A-Br-7C4"/>
+                        <outlet property="currentPasswordView" destination="cE5-Vs-oxG" id="8nr-Yh-Hs9"/>
+                        <outlet property="newConfirmPasswordView" destination="vs9-kr-azr" id="kJc-LA-Kxx"/>
+                        <outlet property="newPasswordView" destination="zM9-RI-n2G" id="due-dO-azQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cr4-mS-cbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2668" y="51"/>
+        </scene>
     </scenes>
     <resources>
         <image name="test.png" width="700" height="525"/>
