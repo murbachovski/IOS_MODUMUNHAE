@@ -33,6 +33,9 @@
 		842B03A328869ACF0000BEDA /* ResignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A228869ACF0000BEDA /* ResignViewController.swift */; };
 		842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A428869AFC0000BEDA /* ResignReasonViewController.swift */; };
 		842B03A72887E7480000BEDA /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A62887E7470000BEDA /* ChangePasswordViewController.swift */; };
+		842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */; };
+		842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */; };
+		842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */; };
 		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
 		8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFD287D02DC008275FC /* CustomButtonView.swift */; };
 		8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DCFE287D02DC008275FC /* CustomButtonView.xib */; };
@@ -99,6 +102,9 @@
 		842B03A228869ACF0000BEDA /* ResignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignViewController.swift; sourceTree = "<group>"; };
 		842B03A428869AFC0000BEDA /* ResignReasonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignReasonViewController.swift; sourceTree = "<group>"; };
 		842B03A62887E7470000BEDA /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarView.swift; sourceTree = "<group>"; };
+		842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNaviBarView.xib; sourceTree = "<group>"; };
 		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8474DCFD287D02DC008275FC /* CustomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8474DCFE287D02DC008275FC /* CustomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonView.xib; sourceTree = "<group>"; };
@@ -200,6 +206,14 @@
 			name = Resign;
 			sourceTree = "<group>";
 		};
+		842B03A82888E3420000BEDA /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
 		8474DCFC287D02C7008275FC /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +232,8 @@
 				8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */,
 				842B0364288504EB0000BEDA /* CustomCheckBoxLabel.swift */,
 				842B0366288504FE0000BEDA /* CustomCheckBoxLabel.xib */,
+				842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */,
+				842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */,
 			);
 			name = CommonUI;
 			sourceTree = "<group>";
@@ -322,6 +338,7 @@
 				8474DD01287D02E8008275FC /* Sample */,
 				8474DCFC287D02C7008275FC /* CommonUI */,
 				842B037C288541680000BEDA /* Constants */,
+				842B03A82888E3420000BEDA /* Subscription */,
 				8474DD23287E6C7D008275FC /* Utils */,
 			);
 			path = AI_MUNJANG;
@@ -451,6 +468,7 @@
 				8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */,
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
 				842B0392288643080000BEDA /* NanumSquareR.ttf in Resources */,
+				842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */,
 				8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +496,7 @@
 			files = (
 				C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */,
 				842B0383288556680000BEDA /* TermsDetailViewController.swift in Sources */,
+				842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */,
 				C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */,
 				840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */,
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
@@ -503,6 +522,7 @@
 				8474DD1C287E56D3008275FC /* CustomPasswordView.swift in Sources */,
 				C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */,
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
+				842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */,
 				842B03A02886931E0000BEDA /* ResetPasswordDetailViewController.swift in Sources */,
 				842B0381288543FB0000BEDA /* TermsViewController.swift in Sources */,
 				842B0394288645010000BEDA /* SignUpViewController.swift in Sources */,
