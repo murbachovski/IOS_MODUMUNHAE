@@ -7,6 +7,8 @@
 
 import UIKit
 import DropDown
+import FirebaseAuth
+
 
 class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPasswordValid, CheckConfirmPassword {
  
@@ -184,12 +186,10 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
 
     fileprivate func clickedRegisterButton(){
         
-        var userEmailToSignUp = ""
-        var userPasswordToSigUp = ""
+       
         guard let userEmail = emailView.textField.text, let userPassword = passwordView.textField.text else {return}
-        userEmailToSignUp = userEmail
-        userPasswordToSigUp = userPassword
-        
+              
+        createUserByEmail(withEmail: userEmail, password: userPassword)
         if let nickName = nicknameView.textField.text , nickName.count > 0 {
             print("userNickname is :: \(nickName)")
             //TODO: 추후에 로컬에 저장하자
@@ -218,4 +218,14 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
        
     }
 
+    func createUserByEmail(withEmail:String, password:String){
+        Auth.auth().createUser(withEmail: withEmail, password: password) { authResult, error in
+             guard let user = authResult?.user, error == nil else {
+               return
+             }
+             print("\(user.email!) created")
+
+           }
+        }
+    
 }

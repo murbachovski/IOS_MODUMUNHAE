@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09910C8354E46D1E4B218FF9 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BE1E7BA397B2DBCA101A46 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
+		1C46D827B841232FF1AE4B3B /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1308B43F21E263CEDD177B58 /* Pods_AI_MUNJANGTests.framework */; };
+		551B0861840764B2CC3F53EB /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */; };
 		840071D3287BE30500B07551 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D2287BE30500B07551 /* RoundedView.swift */; };
 		840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D5287BE41300B07551 /* AdaptiveViewController.swift */; };
 		840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */; };
@@ -36,6 +39,7 @@
 		842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */; };
 		842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */; };
 		842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */; };
+		842B03C4288A8E350000BEDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 842B03C3288A8E2F0000BEDA /* GoogleService-Info.plist */; };
 		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
 		8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFD287D02DC008275FC /* CustomButtonView.swift */; };
 		8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DCFE287D02DC008275FC /* CustomButtonView.xib */; };
@@ -77,6 +81,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D4D7F5FAAEF391050E9E563 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		0E47345844093F77134BFCFC /* Pods-AI_MUNJANGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.release.xcconfig"; sourceTree = "<group>"; };
+		1308B43F21E263CEDD177B58 /* Pods_AI_MUNJANGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C254AE0B3A42AE6562B4D52 /* Pods-AI_MUNJANGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		717B9C3D3E8E06FB519E88B3 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F8A5C8B851B1083EB563982 /* Pods-AI_MUNJANG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.release.xcconfig"; sourceTree = "<group>"; };
+		82BE1E7BA397B2DBCA101A46 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG_AI_MUNJANGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840071CE287BE2EF00B07551 /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 		840071CF287BE2EF00B07551 /* TextFieldsFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsFont.swift; sourceTree = "<group>"; };
 		840071D0287BE2EF00B07551 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
@@ -105,6 +117,7 @@
 		842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarView.swift; sourceTree = "<group>"; };
 		842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNaviBarView.xib; sourceTree = "<group>"; };
+		842B03C3288A8E2F0000BEDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8474DCFD287D02DC008275FC /* CustomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8474DCFE287D02DC008275FC /* CustomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonView.xib; sourceTree = "<group>"; };
@@ -129,6 +142,7 @@
 		C6ED5096287531B000454F26 /* AI_MUNJANGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AI_MUNJANGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED50AA287532C500454F26 /* AiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRequest.swift; sourceTree = "<group>"; };
 		C6ED50AE287534D900454F26 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		D18360754053067223B5126A /* Pods-AI_MUNJANG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +152,7 @@
 			files = (
 				8474DD1A287D4176008275FC /* DropDown in Frameworks */,
 				842B039B28864A2F0000BEDA /* DropDown in Frameworks */,
+				551B0861840764B2CC3F53EB /* Pods_AI_MUNJANG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C46D827B841232FF1AE4B3B /* Pods_AI_MUNJANGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09910C8354E46D1E4B218FF9 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,11 +325,37 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		8B5FF546FE32A902A1BF68DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D18360754053067223B5126A /* Pods-AI_MUNJANG.debug.xcconfig */,
+				7F8A5C8B851B1083EB563982 /* Pods-AI_MUNJANG.release.xcconfig */,
+				0D4D7F5FAAEF391050E9E563 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */,
+				717B9C3D3E8E06FB519E88B3 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */,
+				4C254AE0B3A42AE6562B4D52 /* Pods-AI_MUNJANGTests.debug.xcconfig */,
+				0E47345844093F77134BFCFC /* Pods-AI_MUNJANGTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC2FE6537C9C06F991C945DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */,
+				82BE1E7BA397B2DBCA101A46 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */,
+				1308B43F21E263CEDD177B58 /* Pods_AI_MUNJANGTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C6ED506D287531AE00454F26 = {
 			isa = PBXGroup;
 			children = (
 				C6ED5078287531AE00454F26 /* AI_MUNJANG */,
 				C6ED5077287531AE00454F26 /* Products */,
+				8B5FF546FE32A902A1BF68DD /* Pods */,
+				BC2FE6537C9C06F991C945DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -331,6 +374,7 @@
 			children = (
 				C6ED5079287531AE00454F26 /* AppDelegate.swift */,
 				C6ED507F287531AE00454F26 /* Main.storyboard */,
+				842B03C3288A8E2F0000BEDA /* GoogleService-Info.plist */,
 				C6ED5082287531AF00454F26 /* Assets.xcassets */,
 				C6ED5087287531AF00454F26 /* Info.plist */,
 				842B03B1288A336C0000BEDA /* Main */,
@@ -359,9 +403,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A0287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANG" */;
 			buildPhases = (
+				C61453041135CAB85F9BDE40 /* [CP] Check Pods Manifest.lock */,
 				C6ED5072287531AE00454F26 /* Sources */,
 				C6ED5073287531AE00454F26 /* Frameworks */,
 				C6ED5074287531AE00454F26 /* Resources */,
+				B4E93673FA0D78DA8774B377 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -380,6 +426,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A3287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGTests" */;
 			buildPhases = (
+				D0DFFC547C1A994FF75E3A28 /* [CP] Check Pods Manifest.lock */,
 				C6ED5088287531B000454F26 /* Sources */,
 				C6ED5089287531B000454F26 /* Frameworks */,
 				C6ED508A287531B000454F26 /* Resources */,
@@ -398,9 +445,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A6287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGUITests" */;
 			buildPhases = (
+				A4B9A0A5FBC4AC5E7F5E0679 /* [CP] Check Pods Manifest.lock */,
 				C6ED5092287531B000454F26 /* Sources */,
 				C6ED5093287531B000454F26 /* Frameworks */,
 				C6ED5094287531B000454F26 /* Resources */,
+				CB157254BCFA205C3F14A2DC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -445,8 +494,7 @@
 			);
 			mainGroup = C6ED506D287531AE00454F26;
 			packageReferences = (
-				8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown" */,
-				842B039928864A2F0000BEDA /* XCRemoteSwiftPackageReference "DropDown" */,
+				8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown.git" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -466,6 +514,7 @@
 			files = (
 				842B038F288643080000BEDA /* NanumSquareEB.ttf in Resources */,
 				8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */,
+				842B03C4288A8E350000BEDA /* GoogleService-Info.plist in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
 				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
 				842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */,
@@ -496,6 +545,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A4B9A0A5FBC4AC5E7F5E0679 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AI_MUNJANG-AI_MUNJANGUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E93673FA0D78DA8774B377 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C61453041135CAB85F9BDE40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AI_MUNJANG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB157254BCFA205C3F14A2DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0DFFC547C1A994FF75E3A28 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AI_MUNJANGTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6ED5072287531AE00454F26 /* Sources */ = {
@@ -706,6 +858,7 @@
 		};
 		C6ED50A1287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D18360754053067223B5126A /* Pods-AI_MUNJANG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -734,6 +887,7 @@
 		};
 		C6ED50A2287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F8A5C8B851B1083EB563982 /* Pods-AI_MUNJANG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -762,6 +916,7 @@
 		};
 		C6ED50A4287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C254AE0B3A42AE6562B4D52 /* Pods-AI_MUNJANGTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -782,6 +937,7 @@
 		};
 		C6ED50A5287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E47345844093F77134BFCFC /* Pods-AI_MUNJANGTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -802,6 +958,7 @@
 		};
 		C6ED50A7287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D4D7F5FAAEF391050E9E563 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -820,6 +977,7 @@
 		};
 		C6ED50A8287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 717B9C3D3E8E06FB519E88B3 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -878,15 +1036,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		842B039928864A2F0000BEDA /* XCRemoteSwiftPackageReference "DropDown" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown" */ = {
+		8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
 			requirement = {
@@ -899,12 +1049,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		842B039A28864A2F0000BEDA /* DropDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown" */;
+			package = 8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown.git" */;
 			productName = DropDown;
 		};
 		8474DD19287D4176008275FC /* DropDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown" */;
+			package = 8474DD18287D4176008275FC /* XCRemoteSwiftPackageReference "DropDown.git" */;
 			productName = DropDown;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -51,7 +51,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         
         tourButton.isHidden = true
-        getFontName()
+
     }
     
     

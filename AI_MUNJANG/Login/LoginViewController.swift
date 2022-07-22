@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import FirebaseAuth
 
 class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPasswordValid {
    
@@ -173,6 +174,17 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     fileprivate func clickedByEmailUser(){
         print("EmailUser is clicked")
+        guard let email = emailContainerView.textField.text else { return }
+        guard let password = passwordContainerView.textField.text else {return}
+        
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            if error != nil {
+                print(error)
+            }else{
+                print(authResult?.user)
+            }
+            
+        }
     }
     
     @IBAction func searchPasswordButton(_ sender: Any) {
