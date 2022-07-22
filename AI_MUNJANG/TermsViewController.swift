@@ -24,9 +24,20 @@ class TermsViewController: UIViewController, CheckButtonDelegate {
     
     @IBOutlet weak var nextButton: CustomButtonView!
     
+    var isAppleLogin = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
+
+    }
+    
+    
+    
+    fileprivate func setupUI() {
+        
+        setupTitleOfNavibar(self:self, title: "회원가입")
         
         allCheckLabel.checkButtonLabel.text = "모두 동의합니다."
         allCheckLabel.checkButton.tag = 0
@@ -47,20 +58,24 @@ class TermsViewController: UIViewController, CheckButtonDelegate {
         marketingInfoCheckLabel.checkButtonLabel.text = "[선택] 마케팅 정보 수신 동의"
         marketingInfoCheckLabel.checkButton.tag = 4
         marketingInfoCheckLabel.checkSubButton.tag = 4
-    
+        
         nextButton.button.setTitle("다음", for: .normal)
         nextButton.button.titleLabel?.font = UIFont(name: "NanumSquareB", size: 20)
         nextButton.convertButtonStatus(status: true, backgroundColor: .lightGray, titleColor: .white)
+        nextButton.button.layer.cornerRadius = 8
+        nextButton.buttonCompletion {            
+            self.clickedNextButton()
+        }
+        
         
         allCheckLabel.checkButtonDelegate = self
         useTermsCheckLabel.checkButtonDelegate = self
         personalInfoCheckLabel.checkButtonDelegate = self
         fourteenCheckLabel.checkButtonDelegate = self
         marketingInfoCheckLabel.checkButtonDelegate = self
-        
-        
-        
     }
+    
+ 
     
     
     func checkButtonClicked(_ sender: UIButton) {
@@ -125,4 +140,19 @@ class TermsViewController: UIViewController, CheckButtonDelegate {
         present(termsDetailViewController, animated: true)
     }
 
+    func clickedNextButton(){
+        
+        //출발점이 애플로그인 버튼인지 회원가입 버튼(이메일)인지를 판단하여
+        //애플로그인인 경우는 애플 라이브러리를 통해 회원가입,
+        //회원가입 로그인인 경우는 다음 단계로 이동
+        
+        if isAppleLogin == true {
+            
+        }else{
+            let signUpViewController = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+            self.navigationController?.pushViewController(signUpViewController, animated: true)
+        }
+        
+    }
+    
 }

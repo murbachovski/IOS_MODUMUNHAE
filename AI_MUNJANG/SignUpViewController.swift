@@ -53,16 +53,21 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
     }
 
     fileprivate func setupUI() {
-    
+        
+        setupTitleOfNavibar(self: self, title: "회원가입")
         
         emailView.delegate = self
         emailView.checkEmailDelegate = self
         emailView.textField.keyboardType = .emailAddress
+        emailView.subLabel.text = "비밀번호 찾기에 이용되니 정확히 입력해주세요."
+        emailView.subLabel.textColor = .lightGray
+        
         
         passwordView.textField.isSecureTextEntry = true
         passwordView.textField.textContentType = .oneTimeCode
         passwordView.textField.enablePasswordToggle()
         passwordView.checkEmailDelegate = self
+        passwordView.noticeLabel.text = "영문,숫자,기호를 모두 조합하여 8~12자로 입력해주세요."
         
         passwordConfirmView.textField.isSecureTextEntry = true
         passwordConfirmView.textField.textContentType = .oneTimeCode
@@ -212,4 +217,5 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
         }
        
     }
+
 }

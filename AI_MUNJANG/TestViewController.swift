@@ -23,11 +23,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if Core.shared.isNewUser(){
-            let vc = storyboard?.instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
-        }
+       
     }
     
     
@@ -62,7 +58,8 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             navigationController?.pushViewController(adaptiveViewController, animated: true)
         
         }else if indexPath.row == 3 {
-            //OnBoarding 보여주기
+            //OnBoarding 보여주기 위해 설정값 변경
+            UserDefaults.standard.set(false, forKey: "isNewUser")
          
         }else if indexPath.row == 4 {
            //OnBoarding 보여주기

@@ -49,6 +49,18 @@ func getFontName() {
         }
     }
 
+func changeRootVC(self:UIViewController) {
+     let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        let ad = UIApplication.shared.delegate as! AppDelegate
+        
+        ad.window?.rootViewController = UINavigationController(rootViewController: mainVC)
+}
+
+func setupTitleOfNavibar(self: UIViewController, title:String){
+    self.navigationItem.title = title
+    self.navigationController?.navigationBar.topItem?.title = ""
+    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
+}
 
 extension UILabel {
     func asColor(targetString: String, color: UIColor?) {

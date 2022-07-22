@@ -13,6 +13,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var button:UIButton!
     @IBOutlet var pageControl:UIPageControl!
     @IBOutlet weak var tourButton: UIButton!
+    var nextButtonClicked: ()->Void = {}
     
     let titles = ["문장력을 키웁시다!","문장퀴즈", "문장분석"]
     let subTitles = ["10문장 중 8문장은 어려운 복무.\n꾸준한 문장 학습이 필요한 이유입니다.",
@@ -26,13 +27,16 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         configureView()
+  
     }
 
+  
  
     override func viewDidLayoutSubviews() { //개별 요소들의 Frame 구성시 출발점
         super.viewDidLayoutSubviews()
         configureFrame()
     }
+    
     
     private func configureView(){
 
@@ -43,7 +47,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     
         //button 지정
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .darkGray
+        button.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
         button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         
         tourButton.isHidden = true
@@ -104,20 +108,33 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         currentPageNumber += 1
         pageControl.currentPage = currentPageNumber //pageControl 업데이트
         if currentPageNumber == 2 {
-            button.setTitle("구독하기", for: .normal) //버튼의 타이틀 업데이트
-            tourButton.isHidden = false
+            button.setTitle("시작하기", for: .normal) //버튼의 타이틀 업데이트
+            tourButton.isHidden = true
         }
         
         if currentPageNumber == 3 {
-            Core.shared.setIsNotUser()
-            dismiss(animated: true, completion: nil)
-            return
+
+            enterLoginPage()
+       
         }
     }
     
+    func enterLoginPage(){
+        guard let nc = storyboard?.instantiateViewController(identifier: "LoginNavigationController") as? UINavigationController else { return }
+
+        nc.modalPresentationStyle = .fullScreen
+        nc.modalTransitionStyle = .crossDissolve
+        present(nc, animated: true)
+    }
+    
+    
+  
+    
+    
     @IBAction func clickedTourButton(_ sender: UIButton) {
         //회원가입 페이지 대신 Main화면으로 전환
-        
+        Core.shared.setIsNotUser()
+        dismiss(animated: true)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -127,10 +144,10 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         
         
         if currentPageNumber == 2 { //버튼의 타이틀 업데이트
-            button.setTitle("구독하기", for: .normal)
-            tourButton.isHidden = false
+            button.setTitle("시작하기", for: .normal)
+            tourButton.isHidden = true
         }else{
-            button.setTitle("계속보기", for: .normal)
+            button.setTitle("다음", for: .normal)
             tourButton.isHidden = true
         }
     }

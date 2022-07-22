@@ -17,10 +17,7 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
     let dropdown = DropDown()
     var itemList = ["@naver.com","@hanmail.com","@daum.net","@gmail.com","@nate.com","@hotmail.com","@outlook.com","@icloud.com","@yahoo.com",
                 "@lycos.co.kr","@dreamwiz.com","@empal.com","@korea.com","@paran.com","@empas.com","@me.com","@chol.com"]
- 
-    @IBAction func clickedClose(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

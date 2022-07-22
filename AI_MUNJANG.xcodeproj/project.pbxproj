@@ -214,6 +214,14 @@
 			path = Subscription;
 			sourceTree = "<group>";
 		};
+		842B03B1288A336C0000BEDA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C6ED507D287531AE00454F26 /* MainViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		8474DCFC287D02C7008275FC /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,10 +330,10 @@
 			isa = PBXGroup;
 			children = (
 				C6ED5079287531AE00454F26 /* AppDelegate.swift */,
-				C6ED507D287531AE00454F26 /* MainViewController.swift */,
 				C6ED507F287531AE00454F26 /* Main.storyboard */,
 				C6ED5082287531AF00454F26 /* Assets.xcassets */,
 				C6ED5087287531AF00454F26 /* Info.plist */,
+				842B03B1288A336C0000BEDA /* Main */,
 				842B03A128869AAB0000BEDA /* Resign */,
 				842B039C288688B40000BEDA /* ResetPassword */,
 				842B0386288642200000BEDA /* Fonts */,

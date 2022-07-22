@@ -15,21 +15,16 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     let dropdown = DropDown()
     
 
-    @IBOutlet weak var closeButton: UIButton! //버튼 이미지에서 텍스트 사라지지 않는 Xcode버그로 인해 추가
     @IBOutlet weak var emailContainerView: CustomEmailView!
     @IBOutlet weak var passwordContainerView: CustomPasswordView!
     
     @IBOutlet weak var loginButtonView: CustomButtonView!
     @IBOutlet weak var appleLoginButtonView: CustomButtonView!
     
-
-    @IBAction func clickedClosedButton(_ sender: Any) {
-        print("clicked closedButton")
-        self.dismiss(animated: true)
-        
-    }
-  
-
+    @IBOutlet weak var onlyTourButton: UIButton!
+    
+    @IBOutlet weak var searchPasswordButton: UIButton!
+    
     
     var itemList = ["@naver.com","@hanmail.com","@daum.net","@gmail.com","@nate.com","@hotmail.com","@outlook.com","@icloud.com","@yahoo.com",
                 "@lycos.co.kr","@dreamwiz.com","@empal.com","@korea.com","@paran.com","@empas.com","@me.com","@chol.com"]
@@ -40,9 +35,30 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
         
+        if Core.shared.isNewUser() == true{
+            onlyTourButton.isHidden = false
+            onlyTourButton.layer.cornerRadius = onlyTourButton.frame.size.height / 2
+            onlyTourButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+            
+            searchPasswordButton.isUserInteractionEnabled = false
+        }else{
+            searchPasswordButton.isUserInteractionEnabled = true
+            onlyTourButton.isHidden = true
+        }
         setupUI()
     
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -152,13 +168,31 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     fileprivate func clickedByAppleUser(){
         print("appleloginbutton is clicked")
+        //클릭시 사용자가 애플계정으로 회원가입여부 판단하여 미가입시 약관 페이지로 이동 
     }
     
     fileprivate func clickedByEmailUser(){
         print("EmailUser is clicked")
     }
     
+    @IBAction func searchPasswordButton(_ sender: Any) {
+        print("비밀번호 찾기 클릭됨.")
+        
+        guard let resetPasswordViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResetPasswordViewController")  as? ResetPasswordViewController else {return}
+        self.navigationController?.pushViewController(resetPasswordViewController, animated: true)
+    }
     
-     
+    @IBAction func registerMembershipButton(_ sender: Any) {
+        print("회원가입 버튼 클릭됨")
+        guard let termsViewController = self.storyboard?.instantiateViewController(withIdentifier: "TermsViewController")  as? TermsViewController else {return}
+        self.navigationController?.pushViewController(termsViewController, animated: true)
+    }
+    
+    @IBAction func clickedOnlyTourButton(_ sender: Any) {
+        print("그냥 구경만 할게요 클릭됨.")
+        Core.shared.setIsNotUser()
+        changeRootVC(self: self)
+        
+    }
     
 }
