@@ -12,7 +12,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var holderView:UIView!
     @IBOutlet var button:UIButton!
     @IBOutlet var pageControl:UIPageControl!
-    @IBOutlet weak var tourButton: UIButton!
+    
     var nextButtonClicked: ()->Void = {}
     
     let titles = ["문장력을 키웁시다!","문장퀴즈", "문장분석"]
@@ -50,7 +50,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         button.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
         button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
         
-        tourButton.isHidden = true
+      
 
     }
     
@@ -109,7 +109,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         pageControl.currentPage = currentPageNumber //pageControl 업데이트
         if currentPageNumber == 2 {
             button.setTitle("시작하기", for: .normal) //버튼의 타이틀 업데이트
-            tourButton.isHidden = true
+        
         }
         
         if currentPageNumber == 3 {
@@ -120,6 +120,8 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func enterLoginPage(){
+        Core.shared.setIsNotUser()
+        
         guard let nc = storyboard?.instantiateViewController(identifier: "LoginNavigationController") as? UINavigationController else { return }
 
         nc.modalPresentationStyle = .fullScreen
@@ -127,15 +129,6 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         present(nc, animated: true)
     }
     
-    
-  
-    
-    
-    @IBAction func clickedTourButton(_ sender: UIButton) {
-        //회원가입 페이지 대신 Main화면으로 전환
-        Core.shared.setIsNotUser()
-        dismiss(animated: true)
-    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         currentPageNumber = Int(floor(scrollView.contentOffset.x / holderView.frame.size.width))
@@ -145,10 +138,10 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         
         if currentPageNumber == 2 { //버튼의 타이틀 업데이트
             button.setTitle("시작하기", for: .normal)
-            tourButton.isHidden = true
+            
         }else{
             button.setTitle("다음", for: .normal)
-            tourButton.isHidden = true
+            
         }
     }
 
@@ -165,5 +158,18 @@ class Core {
     
     func setIsNotUser(){
         UserDefaults.standard.set(true, forKey: "isNewUser")
+    }
+    
+ 
+    func isUserLogin()-> Bool {
+        return UserDefaults.standard.bool(forKey: "isLogin")
+    }
+    
+    func setUserLogin(){
+        UserDefaults.standard.set(true, forKey: "isLogin")
+    }
+    
+    func setUserLogout(){
+        UserDefaults.standard.set(false, forKey: "isLogin")
     }
 }

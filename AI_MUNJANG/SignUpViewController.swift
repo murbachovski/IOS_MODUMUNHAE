@@ -219,13 +219,51 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
     }
 
     func createUserByEmail(withEmail:String, password:String){
-        Auth.auth().createUser(withEmail: withEmail, password: password) { authResult, error in
+        Auth.auth().createUser(withEmail: withEmail, password: password) {[weak self] authResult, error in
              guard let user = authResult?.user, error == nil else {
+                 if let errorInforKey = error?._userInfo?["FIRAuthErrorUserInfoNameKey"] {
+                     
+                     if errorInforKey as! String == "ERROR_EMAIL_ALREADY_IN_USE" {
+                         print("ERROR_EMAIL_ALREADY_IN_USE")
+                     }
+                 }
                return
              }
              print("\(user.email!) created")
+            let alert = AlertService().alert(title: "", body: "\(withEmail)계정으로 회원가입이 정상적으로 처리되었습니다.", cancelTitle: "", confirTitle: "획인") {
+                self?.clickedConfirmByUser(withEmail: withEmail, password: password)
+            }
+            
+            self?.present(alert, animated: true)
 
            }
         }
+    
+    fileprivate func clickedConfirmByUser(withEmail:String, password:String){
+        //회원가입한 사용자는 자동적으로 로그인 되도록 처리하는 것이 편하다.
+        Auth.auth().signIn(withEmail: withEmail, password: password) { [weak self] authResult, error in
+            if error != nil {
+                // 1 이렇게 해야 한다. 권장0
+                if let errorInforKey = error?._userInfo?["FIRAuthErrorUserInfoNameKey"] {
+                    if errorInforKey as! String == "ERROR_WRONG_PASSWORD" {
+                        print("ERROR_WRONG_PASSWORD")
+                        let alert = AlertService().alert(title: "", body: "비밀번호가 올바르지 않습니다.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil, fourthButtonCompletion: nil)
+                        self?.present(alert, animated: true)
+                    }
+                }
+                
+            }else{
+                guard let user = authResult?.user, error == nil else {
+                               print(error!.localizedDescription)
+                               return
+                             }
+                print(user.email as Any)
+                Core.shared.setUserLogin()
+                changeRootVC(self: self ?? SignUpViewController())
+                               
+            }
+            
+        }
+    }
     
 }

@@ -14,7 +14,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     
     let dropdown = DropDown()
-    
+    var isNewUserPage = false
 
     @IBOutlet weak var emailContainerView: CustomEmailView!
     @IBOutlet weak var passwordContainerView: CustomPasswordView!
@@ -26,6 +26,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     @IBOutlet weak var searchPasswordButton: UIButton!
     
+    @IBOutlet weak var tourStackView: UIStackView!
     
     var itemList = ["@naver.com","@hanmail.com","@daum.net","@gmail.com","@nate.com","@hotmail.com","@outlook.com","@icloud.com","@yahoo.com",
                 "@lycos.co.kr","@dreamwiz.com","@empal.com","@korea.com","@paran.com","@empas.com","@me.com","@chol.com"]
@@ -34,19 +35,25 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        if ((self.presentingViewController) != nil) {
+            isNewUserPage = true
+        }
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
         
-        if Core.shared.isNewUser() == true{
+        if isNewUserPage {
+            tourStackView.isHidden = false
             onlyTourButton.isHidden = false
             onlyTourButton.layer.cornerRadius = onlyTourButton.frame.size.height / 2
             onlyTourButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
             
-            searchPasswordButton.isUserInteractionEnabled = false
         }else{
-            searchPasswordButton.isUserInteractionEnabled = true
-            onlyTourButton.isHidden = true
+            tourStackView.isHidden = true
+            
         }
         setupUI()
+        
     
     }
     
@@ -174,14 +181,35 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     fileprivate func clickedByEmailUser(){
         print("EmailUser is clicked")
+        
+        emailContainerView.textField.resignFirstResponder()
+        passwordContainerView.textField.resignFirstResponder()
+        
+        
         guard let email = emailContainerView.textField.text else { return }
         guard let password = passwordContainerView.textField.text else {return}
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             if error != nil {
-                print(error)
+                // 1 이렇게 해야 한다. 권장0
+                if let errorInforKey = error?._userInfo?["FIRAuthErrorUserInfoNameKey"] {
+                    if errorInforKey as! String == "ERROR_WRONG_PASSWORD" {
+                        print("ERROR_WRONG_PASSWORD")
+                        let alert = AlertService().alert(title: "", body: "비밀번호가 올바르지 않습니다.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil, fourthButtonCompletion: nil)
+                        self?.present(alert, animated: true)
+                    }
+                }
+                
             }else{
-                print(authResult?.user)
+                guard let user = authResult?.user, error == nil else {
+                               print(error!.localizedDescription)                    
+                               return
+                             }
+                print(user.email as Any)
+                Core.shared.setUserLogin()
+                changeRootVC(self: self ?? LoginViewController())
+               
+                
             }
             
         }

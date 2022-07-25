@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import FirebaseAuth
 
 class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEmailAndPasswordValid{
 
@@ -23,7 +24,8 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
-        
+        self.navigationController?.navigationBar.topItem?.title = " "
+        self.navigationItem.title = "비밀번호 재설정"
         setupUI()
     
     }
@@ -117,11 +119,40 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
     
     fileprivate func clickedByUser(){
         print("appleloginbutton is clicked")
+        didRequestPasswordReset()
     }
     
-    fileprivate func clickedByEmailUser(){
-        print("EmailUser is clicked")
+    func didRequestPasswordReset(){
+        
+        guard let email = emailView.textField.text else{return}
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
+         
+            if let error = error {
+                if let errorInforKey = error._userInfo?["FIRAuthErrorUserInfoNameKey"] {
+                    
+                    if errorInforKey as! String == "ERROR_USER_NOT_FOUND" {
+                        print("ERROR_USER_NOT_FOUND")
+                    }
+                }
+              print(error.localizedDescription)
+                
+              return
+            }else{
+                
+                print("정상적으로 비밀번호 변경 요청 됨. 이메일을 확인할 것")
+                let resetPasswordDetailViewController = self?.storyboard?.instantiateViewController(withIdentifier: "ResetPasswordDetailViewController") as! ResetPasswordDetailViewController
+                resetPasswordDetailViewController.userEmail = email
+                self?.navigationController?.pushViewController(resetPasswordDetailViewController, animated: true)
+            }
+        }
+        
     }
+    
+//
+//    fileprivate func clickedByEmailUser(){
+//        print("EmailUser is clicked")
+//    }
 
 
 }

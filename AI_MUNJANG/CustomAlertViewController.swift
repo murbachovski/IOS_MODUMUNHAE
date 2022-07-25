@@ -29,6 +29,7 @@ class CustomAlertViewController: UIViewController {
     var thirdButtonAction:(()->Void)?
     var fourthButtonAction:(()->Void)?
     
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,8 @@ class CustomAlertViewController: UIViewController {
     
     
     func setupView() {
+        containerView.layer.cornerRadius = 8
+        containerView.layer.masksToBounds = true
         
         if alertTitle != ""{
             titleLabel.text = alertTitle
@@ -74,6 +77,13 @@ class CustomAlertViewController: UIViewController {
             fourthButton.isHidden = true
         }
         
+        firstButton.layer.cornerRadius = 8
+        secondButton.layer.cornerRadius = 8
+        thirdButton.layer.cornerRadius = 8
+        fourthButton.layer.cornerRadius = 8
+        
+        thirdButton.layer.borderWidth = 1
+        thirdButton.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
     }
     
     @IBAction func didTapFirst(_ sender: Any) {
