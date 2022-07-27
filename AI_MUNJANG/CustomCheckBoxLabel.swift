@@ -41,7 +41,16 @@ class CustomCheckBoxLabel: UIView {
             
             addSubview(view)
             
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedLabel(tapGestureRecognizer:)))
+            checkButtonLabel.addGestureRecognizer(tapGesture)
+            checkButtonLabel.isUserInteractionEnabled = true
+            
         }
+    }
+    
+    @objc func tappedLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+      // do stuff here
+        clickedCheckButton(checkButton)
     }
     
     @IBAction func clickedCheckButton(_ sender: UIButton) {

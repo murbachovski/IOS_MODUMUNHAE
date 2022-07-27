@@ -83,7 +83,7 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
 
     
     @IBAction func clickedCancel(_ sender: Any) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func clickedNext(_ sender: Any) {
