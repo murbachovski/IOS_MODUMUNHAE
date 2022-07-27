@@ -14,7 +14,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     
     let dropdown = DropDown()
-    var isNewUserPage = false
+    var isUserSignUp = false
 
     @IBOutlet weak var emailContainerView: CustomEmailView!
     @IBOutlet weak var passwordContainerView: CustomPasswordView!
@@ -34,15 +34,16 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //로그인페이지에서 비밀번호 재설정 혹은 회원가입페이지의 백버튼의 타이틀을 삭제
+        self.navigationItem.backButtonTitle = ""
         
+       
+        isUserSignUp = Core.shared.isUserSignup()
         
-        if ((self.presentingViewController) != nil) {
-            isNewUserPage = true
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
         
-        if isNewUserPage {
+        if isUserSignUp == false {
             tourStackView.isHidden = false
             onlyTourButton.isHidden = false
             onlyTourButton.layer.cornerRadius = onlyTourButton.frame.size.height / 2
@@ -193,11 +194,23 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
             if error != nil {
                 // 1 이렇게 해야 한다. 권장0
                 if let errorInforKey = error?._userInfo?["FIRAuthErrorUserInfoNameKey"] {
+                    
+                    var errorString = ""
                     if errorInforKey as! String == "ERROR_WRONG_PASSWORD" {
                         print("ERROR_WRONG_PASSWORD")
-                        let alert = AlertService().alert(title: "", body: "비밀번호가 올바르지 않습니다.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil, fourthButtonCompletion: nil)
-                        self?.present(alert, animated: true)
+                        errorString = "비밀번호를 다시 한 번 확인해주세요."
+                        self?.passwordContainerView.textField.text = ""
+                    }else if errorInforKey as! String == "ERROR_USER_NOT_FOUND" {
+                        print("ERROR_USER_NOT_FOUND")
+                       errorString = "가입된 이메일이 아닙니다."
+                        self?.emailContainerView.textField.text = ""
+                        self?.passwordContainerView.textField.text = ""
                     }
+                    let alert = AlertService().alert(title: "", body:errorString, cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil, fourthButtonCompletion: nil)
+                    self?.present(alert, animated: true)
+                    
+                    
+                    
                 }
                 
             }else{
@@ -207,7 +220,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
                              }
                 print(user.email as Any)
                 Core.shared.setUserLogin()
-                changeRootVC(self: self ?? LoginViewController())
+                changeMainNC(self: self ?? LoginViewController())
                
                 
             }
@@ -231,7 +244,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     @IBAction func clickedOnlyTourButton(_ sender: Any) {
         print("그냥 구경만 할게요 클릭됨.")
         Core.shared.setIsNotUser()
-        changeRootVC(self: self)
+        changeMainNC(self: self)
         
     }
     

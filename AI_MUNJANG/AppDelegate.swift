@@ -48,3 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+//회원탈퇴 및
+//로그아웃 로직 구현 할 것
+
+//둘러보기_ 사용자의 회원가입 여부로 판단해야 할듯.
+//구독 여부와 _둘러보기 판단할 것

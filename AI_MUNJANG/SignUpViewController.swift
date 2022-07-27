@@ -56,7 +56,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
 
     fileprivate func setupUI() {
         
-        setupTitleOfNavibar(self: self, title: "회원가입")
+        self.navigationItem.title = "회원가입"
         
         emailView.delegate = self
         emailView.checkEmailDelegate = self
@@ -243,7 +243,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
         //회원가입한 사용자는 자동적으로 로그인 되도록 처리하는 것이 편하다.
         Auth.auth().signIn(withEmail: withEmail, password: password) { [weak self] authResult, error in
             if error != nil {
-                // 1 이렇게 해야 한다. 권장0
+                
                 if let errorInforKey = error?._userInfo?["FIRAuthErrorUserInfoNameKey"] {
                     if errorInforKey as! String == "ERROR_WRONG_PASSWORD" {
                         print("ERROR_WRONG_PASSWORD")
@@ -253,13 +253,15 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                 }
                 
             }else{
+                //정상적으로 회원가입
                 guard let user = authResult?.user, error == nil else {
                                print(error!.localizedDescription)
                                return
                              }
                 print(user.email as Any)
                 Core.shared.setUserLogin()
-                changeRootVC(self: self ?? SignUpViewController())
+                Core.shared.setUserSignup()
+                changeMainNC(self: self ?? SignUpViewController())
                                
             }
             

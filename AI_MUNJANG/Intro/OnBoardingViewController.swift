@@ -152,6 +152,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
 class Core {
     static let shared = Core()
     
+    //신규 사용자
     func isNewUser() -> Bool {
         return !UserDefaults.standard.bool(forKey: "isNewUser")
     }
@@ -160,7 +161,7 @@ class Core {
         UserDefaults.standard.set(true, forKey: "isNewUser")
     }
     
- 
+    //로그인 여부
     func isUserLogin()-> Bool {
         return UserDefaults.standard.bool(forKey: "isLogin")
     }
@@ -172,4 +173,32 @@ class Core {
     func setUserLogout(){
         UserDefaults.standard.set(false, forKey: "isLogin")
     }
+    
+    //회원가입 여부
+    func isUserSignup()-> Bool {
+        return UserDefaults.standard.bool(forKey: "isSignup")
+    }
+    
+    func setUserSignup(){
+        UserDefaults.standard.set(true, forKey: "isSignup")
+    }
+    
+    func setUserResign(){
+        UserDefaults.standard.set(false, forKey: "isSignup")
+    }
+    
+    //구독여부
+    func isUserSubscription()-> Bool {
+        return UserDefaults.standard.bool(forKey: "isSubscription")
+    }
+    
+    func setUserSubscription(){
+        UserDefaults.standard.set(true, forKey: "isSubscription")
+    }
+    
+    func setUserCancelSubscription(){
+        UserDefaults.standard.set(false, forKey: "isSubscription")
+    }
+    
+    
 }

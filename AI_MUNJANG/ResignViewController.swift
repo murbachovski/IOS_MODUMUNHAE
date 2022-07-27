@@ -52,11 +52,8 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
     }
     
 
-    @IBAction func clickedClose(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
-    
     @IBAction func cancelSubscribeButton(_ sender: Any) {
+        //실제 기기에서만 연동됨.
         goSubscriptionsManager()
     }
     
@@ -65,7 +62,8 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
     }
     
     @IBAction func clickedNext(_ sender: Any) {
-        
+        guard let resignReasonViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResignReasonViewController")  as? ResignReasonViewController else {return}
+        navigationController?.pushViewController(resignReasonViewController, animated: true)
     }
     
     

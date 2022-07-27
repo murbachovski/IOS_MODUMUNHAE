@@ -8,6 +8,6 @@
 import Foundation
 
 class Constants{
-    static let primaryColor:String = "#2ECC46"
+    static let primaryColor:String = "#04BF55"
 }
 

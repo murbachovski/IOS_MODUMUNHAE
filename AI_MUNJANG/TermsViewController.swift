@@ -36,8 +36,12 @@ class TermsViewController: UIViewController, CheckButtonDelegate {
     
     
     fileprivate func setupUI() {
+     
         
-        setupTitleOfNavibar(self:self, title: "회원가입")
+        
+        self.navigationItem.title = "회원가입"
+        self.navigationItem.backButtonTitle = ""
+        
         
         allCheckLabel.checkButtonLabel.text = "모두 동의합니다."
         allCheckLabel.checkButton.tag = 0
@@ -75,7 +79,10 @@ class TermsViewController: UIViewController, CheckButtonDelegate {
         marketingInfoCheckLabel.checkButtonDelegate = self
     }
     
- 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     
     
     func checkButtonClicked(_ sender: UIButton) {

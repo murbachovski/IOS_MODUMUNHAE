@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ResignReasonViewController: UIViewController,CheckButtonDelegate {
   
@@ -80,11 +81,6 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
     }
     
 
-    @IBAction func clickedClose(_ sender: Any) {
-        
-        dismiss(animated: true)
-    }
-    
     
     @IBAction func clickedCancel(_ sender: Any) {
         dismiss(animated: true)
@@ -96,8 +92,27 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
         //사용자들이 불편해 했던 부분을 수집
         let userText = collectUsersText()
         print("checkItem: \(reasonToResign), userText: \(userText)")
+        
+        
+        Auth.auth().currentUser?.delete(completion: { [weak self] error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }else{
+                //정상적으로 회원탈퇴
+                Core.shared.setUserResign()
+                Core.shared.setUserLogout()
+                
+                let alert = AlertService().alert(title: "", body: "회원탈퇴가 완료되었습니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: {
+                    changeLoginNC(self: self!)
+                })
+                self!.present(alert, animated: true)
+            }
+        })
     }
     
+    
+    
+    //회원탈퇴 부분 확인할 것
     
     func checkButtonClicked(_ sender: UIButton) {
         if sender.tag == 1 {
