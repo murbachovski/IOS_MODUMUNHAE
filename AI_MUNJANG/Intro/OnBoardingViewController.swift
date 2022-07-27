@@ -200,5 +200,20 @@ class Core {
         UserDefaults.standard.set(false, forKey: "isSubscription")
     }
     
+    //애플계정으로 회원 가입 여부
+    func isSignupByApple()-> Bool {
+        return UserDefaults.standard.bool(forKey: "isSignupByApple")
+    }
+    
+    func setSignupByApple(){
+        UserDefaults.standard.set(true, forKey: "isSignupByApple")
+        UserDefaults.standard.set(true, forKey: "isSignup")
+    }
+    
+    func setResignByApple(){
+        UserDefaults.standard.set(false, forKey: "isSignupByApple")
+        UserDefaults.standard.set(false, forKey: "isSignup")
+    }
+    
     
 }

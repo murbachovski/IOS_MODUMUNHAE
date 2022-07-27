@@ -98,8 +98,13 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
             if error != nil {
                 print(error!.localizedDescription)
             }else{
-                //정상적으로 회원탈퇴
-                Core.shared.setUserResign()
+                
+                if Core.shared.isSignupByApple() { //애플계정으로  회원가입한 경우
+                    Core.shared.setResignByApple()                    
+                }else{
+                    //정상적으로 회원탈퇴
+                    Core.shared.setUserResign()
+                }
                 Core.shared.setUserLogout()
                 
                 let alert = AlertService().alert(title: "", body: "회원탈퇴가 완료되었습니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: {

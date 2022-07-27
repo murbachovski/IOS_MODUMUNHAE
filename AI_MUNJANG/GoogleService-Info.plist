@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>676984714419-irh102n20hoe419eaoe7u186st8d3234.apps.googleusercontent.com</string>
+	<string>676984714419-s8q1rf4nqau4jnd4m0rdmrakcbsu7hn1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.676984714419-irh102n20hoe419eaoe7u186st8d3234</string>
+	<string>com.googleusercontent.apps.676984714419-s8q1rf4nqau4jnd4m0rdmrakcbsu7hn1</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAwzE-nfw8uuYItswlSDUTAZ1M6WJ_czno</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.seogamdo.ai-munjang-baksa</string>
+	<string>com.seogamdo.AI-MUNJANG</string>
 	<key>PROJECT_ID</key>
 	<string>aimunjang</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:676984714419:ios:84dbe880349fe9164becc6</string>
+	<string>1:676984714419:ios:4cabdf5e42e9eb3e4becc6</string>
 </dict>
 </plist>

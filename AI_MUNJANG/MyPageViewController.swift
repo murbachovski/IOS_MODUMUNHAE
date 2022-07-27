@@ -125,6 +125,8 @@ class MyPageViewController: UIViewController {
     }
 
     func callLogout(){
+      
+        
         print("cliocked logout")
         do{
             try Auth.auth().signOut()
