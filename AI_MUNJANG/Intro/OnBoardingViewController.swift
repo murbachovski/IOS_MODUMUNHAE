@@ -15,10 +15,10 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     
     var nextButtonClicked: ()->Void = {}
     
-    let titles = ["문장력을 키웁시다!","문장퀴즈", "문장분석"]
-    let subTitles = ["10문장 중 8문장은 어려운 복무.\n꾸준한 문장 학습이 필요한 이유입니다.",
-                     "문장의 8가지 성분,\n다양한 퀴즈로 탄탄하게 익혀보세요.",
-                     "길고 어려운 복문도 단문으로 싹둑!잘라\n 8가지 성분으로 분석해드릴게요."]
+    let titles = ["문해력의 출발은 문장력입니다!","문장공부 해야 합니다!", "모두의 문해력으로 당신의 \n문해력을 UP하세요!"]
+    let subTitles = ["",
+                     "10명 중 1명만이 스스로 공부할 수 있는 \n문해력을 갖고 있다고 합니다. \n-EBS 당신의 문해력 중-",
+                     ""]
     
     let scrollView = UIScrollView()
     var currentPageNumber = 0
@@ -49,6 +49,7 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
         button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
+        button.layer.cornerRadius = 10
         
       
 
@@ -66,31 +67,46 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
             scrollView.addSubview(pageView)
             
             //Title, image, button
-            let titleLabel = UILabel(frame: CGRect(x: 10, y: 10, width: pageView.frame.size.width - 20, height: 60))
+            let titleLabel = UILabel(frame: CGRect(x: 10, y: holderView.frame.size.height * 0.15, width: pageView.frame.size.width, height: 60))
             
-            let subTitleLabel = UILabel(frame: CGRect(x: 10, y: 70, width: pageView.frame.size.width - 20, height: 60))
+            let subTitleLabel = UILabel(frame: CGRect(x: 10, y: holderView.frame.size.height * 0.20, width: pageView.frame.size.width - 20, height: 120))
             
-            let imageView = UIImageView(frame: CGRect(x: 10, y:150, width: pageView.frame.size.width - 20, height: pageView.frame.size.height - 70 - 110))
+            let imageView = UIImageView(frame: CGRect(x: 10, y:0, width: pageView.frame.size.width, height: pageView.frame.size.height * 5/8))
             
             //label 지정
-            titleLabel.textAlignment = .left
+            
 
-            titleLabel.font = UIFont(name: "NanumSquareB", size: 20)
+            titleLabel.font = UIFont(name: "NanumSquareEB", size: 23)
             pageView.addSubview(titleLabel)
             titleLabel.text = titles[x]
-            titleLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
+            titleLabel.numberOfLines = 0
+            let attrString = NSMutableAttributedString(string: titleLabel.text!)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 6
+            attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+            titleLabel.attributedText = attrString
             
-            subTitleLabel.textAlignment = .left
-            subTitleLabel.font = UIFont(name: "NanumSquareR", size: 17)
+            titleLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
+            titleLabel.textAlignment = .center
+            
+            subTitleLabel.font = UIFont(name: "NanumSquareR", size: 15)
             subTitleLabel.numberOfLines = 0
             pageView.addSubview(subTitleLabel)
             
             subTitleLabel.text = subTitles[x]
+            subTitleLabel.textColor = hexStringToUIColor(hex: "#999999")
+            let attStringSub = NSMutableAttributedString(string: subTitleLabel.text!)
+            let paragraphStyleSub = NSMutableParagraphStyle()
+            paragraphStyleSub.lineSpacing = 6
+            attStringSub.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyleSub, range: NSMakeRange(0, attStringSub.length))
+            subTitleLabel.attributedText = attStringSub
             
+            subTitleLabel.textAlignment = .center
             //imageView 지정
             imageView.contentMode = .scaleAspectFit
-            imageView.image = UIImage(named: "welcome_\(x+1)")
+            imageView.image = UIImage(named: "illust\(x+1)")
             pageView.addSubview(imageView)
+            imageView.center = holderView.center
         }
         
         //scrollView 지정
