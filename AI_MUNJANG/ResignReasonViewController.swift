@@ -108,7 +108,7 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
                 Core.shared.setUserLogout()
                 
                 let alert = AlertService().alert(title: "", body: "회원탈퇴가 완료되었습니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: {
-                    changeLoginNC(self: self!)
+                    changeLoginNC()
                 })
                 self!.present(alert, animated: true)
             }

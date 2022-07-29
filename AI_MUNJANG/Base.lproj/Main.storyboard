@@ -1441,9 +1441,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4U-Ln-rlk" userLabel="dummyView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aWx-a6-8kT"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owD-NX-dlG" customClass="CustomNaviBarView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="8" y="44" width="406" height="44"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="d67-CA-iBY"/>
                                 </constraints>
@@ -1583,9 +1590,13 @@
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="Wti-Qi-JwL" secondAttribute="trailing" constant="20" id="G1k-ZJ-xIi"/>
                             <constraint firstItem="8Ez-op-yai" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" constant="20" id="IKW-uM-co4"/>
                             <constraint firstItem="Xfh-u6-V19" firstAttribute="top" secondItem="u8F-jV-edm" secondAttribute="bottom" constant="20" id="K1y-Z1-0Yl"/>
-                            <constraint firstItem="owD-NX-dlG" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" constant="8" id="Ltq-SW-tRW"/>
+                            <constraint firstItem="owD-NX-dlG" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" id="Ltq-SW-tRW"/>
                             <constraint firstItem="u8F-jV-edm" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" constant="20" id="LuG-me-cGQ"/>
                             <constraint firstItem="Wti-Qi-JwL" firstAttribute="top" secondItem="Xfh-u6-V19" secondAttribute="bottom" constant="30" id="NIg-lQ-4vZ"/>
+                            <constraint firstItem="R4U-Ln-rlk" firstAttribute="leading" secondItem="KG9-ed-y2O" secondAttribute="leading" id="RFd-ZN-DlJ"/>
+                            <constraint firstItem="owD-NX-dlG" firstAttribute="top" secondItem="R4U-Ln-rlk" secondAttribute="bottom" id="cwf-Ar-CoD"/>
+                            <constraint firstItem="R4U-Ln-rlk" firstAttribute="top" secondItem="KG9-ed-y2O" secondAttribute="top" id="f1m-dK-LnW"/>
+                            <constraint firstAttribute="trailing" secondItem="R4U-Ln-rlk" secondAttribute="trailing" id="mB1-4f-JYz"/>
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="8Ez-op-yai" secondAttribute="trailing" constant="20" id="rZd-fy-oc5"/>
                             <constraint firstItem="Xfh-u6-V19" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" constant="20" id="szq-PT-iN9"/>
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="u8F-jV-edm" secondAttribute="trailing" constant="20" id="tGc-80-fxz"/>
@@ -1744,15 +1755,31 @@
                                                             <action selector="clickedManageSubscription:" destination="sgu-oM-7xb" eventType="touchUpInside" id="Ivr-c6-r3s"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofz-qE-mjI">
+                                                        <rect key="frame" x="140" y="4" width="120" height="36"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="N9O-hT-gBY"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="구독내역 조회">
+                                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="clickedRestoreSubscription:" destination="sgu-oM-7xb" eventType="touchUpInside" id="S4b-ZW-LaD"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="ofz-qE-mjI" firstAttribute="top" secondItem="hEU-eY-uAN" secondAttribute="top" constant="4" id="1Vb-72-Wlr"/>
                                                     <constraint firstItem="Y4Q-xQ-mas" firstAttribute="leading" secondItem="IGi-zB-WQx" secondAttribute="trailing" constant="10" id="C5h-ni-Wsx"/>
                                                     <constraint firstItem="Y4Q-xQ-mas" firstAttribute="top" secondItem="hEU-eY-uAN" secondAttribute="top" constant="6" id="RSn-C9-Fo7"/>
                                                     <constraint firstAttribute="height" constant="48" id="ZMY-du-hv4"/>
                                                     <constraint firstItem="IGi-zB-WQx" firstAttribute="top" secondItem="hEU-eY-uAN" secondAttribute="top" constant="12" id="ay2-Vo-1Ne"/>
                                                     <constraint firstItem="IGi-zB-WQx" firstAttribute="leading" secondItem="hEU-eY-uAN" secondAttribute="leading" id="izS-dm-nKI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ofz-qE-mjI" secondAttribute="bottom" constant="8" id="nad-D3-PHz"/>
                                                     <constraint firstAttribute="bottom" secondItem="Y4Q-xQ-mas" secondAttribute="bottom" constant="6" id="pdF-C9-0dF"/>
+                                                    <constraint firstItem="ofz-qE-mjI" firstAttribute="leading" secondItem="Y4Q-xQ-mas" secondAttribute="trailing" constant="16" id="wJC-hu-W9k"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두의 문해력 정보" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkG-vi-wzC">
@@ -1984,6 +2011,7 @@
                         <outlet property="logoutButton" destination="310-mo-gql" id="RIz-hB-eSN"/>
                         <outlet property="manageSubscriptionButton" destination="Y4Q-xQ-mas" id="Ffb-F0-E1F"/>
                         <outlet property="resignButton" destination="Z5z-4q-ncO" id="og8-K4-gBI"/>
+                        <outlet property="restoreSubscriptionButton" destination="ofz-qE-mjI" id="luq-Os-vou"/>
                         <outlet property="subscribeButton" destination="jha-uZ-YMh" id="w1d-0m-5jP"/>
                     </connections>
                 </viewController>

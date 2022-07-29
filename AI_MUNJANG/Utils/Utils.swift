@@ -49,36 +49,19 @@ func getFontName() {
         }
     }
 
-func changeMainNC(self:UIViewController) { //
-     let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        let ad = UIApplication.shared.delegate as! AppDelegate
-        
-        ad.window?.rootViewController = UINavigationController(rootViewController: mainVC)
+func changeMainNC() { //
+    let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
+    let ad = UIApplication.shared.delegate as! AppDelegate
+    ad.window?.rootViewController = vc
 }
 
 
-func changeLoginNC(self:UIViewController) { //LoginNavigationController
-     let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        let ad = UIApplication.shared.delegate as! AppDelegate
-        
-        ad.window?.rootViewController = UINavigationController(rootViewController: loginVC)
+func changeLoginNC() { //LoginNavigationController
+    
+    let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "LoginNavigationController") as! UINavigationController
+    let ad = UIApplication.shared.delegate as! AppDelegate
+    ad.window?.rootViewController = vc
 }
-
-
-//func setupTitleOfNavibar(self: UIViewController, title:String){
-//    
-//    self.navigationController?.navigationBar.topItem?.title = " "
-//    self.navigationItem.title = title
-// 
-//    self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
-//    
-// 
-//}
-
-//네비게이션바의 border를 숨김
-//    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
-//    self.navigationController?.navigationBar.shadowImage = UIImage()
-//    self.navigationController?.navigationBar.layoutIfNeeded()
 
 
 extension UILabel {

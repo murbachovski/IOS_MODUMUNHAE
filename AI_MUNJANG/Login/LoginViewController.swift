@@ -225,7 +225,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
                 print(user.displayName!)
                 print(user.email as Any)
                 Core.shared.setUserLogin()
-                changeMainNC(self: self ?? LoginViewController())
+                changeMainNC()
                
                 
             }
@@ -249,7 +249,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     @IBAction func clickedOnlyTourButton(_ sender: Any) {
         print("그냥 구경만 할게요 클릭됨.")
         Core.shared.setIsNotUser()
-        changeMainNC(self: self)
+        changeMainNC()
         
     }
 
@@ -373,7 +373,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
           print(user.displayName ?? "알수 없음")
           print(user.email as Any)
           Core.shared.setUserLogin()
-          changeMainNC(self: self )
+          changeMainNC()
           
       }
     }

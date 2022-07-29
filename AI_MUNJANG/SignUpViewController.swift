@@ -261,7 +261,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                 print(user.email as Any)
                 Core.shared.setUserLogin()
                 Core.shared.setUserSignup()
-                changeMainNC(self: self ?? SignUpViewController())
+                changeMainNC()
                                
             }
             

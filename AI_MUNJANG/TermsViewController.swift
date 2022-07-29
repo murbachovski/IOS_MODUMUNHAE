@@ -276,7 +276,7 @@ extension TermsViewController: ASAuthorizationControllerDelegate {
           print(user.email as Any)
           Core.shared.setSignupByApple()
           Core.shared.setUserLogin()
-          changeMainNC(self: self )
+          changeMainNC()
           
       }
     }

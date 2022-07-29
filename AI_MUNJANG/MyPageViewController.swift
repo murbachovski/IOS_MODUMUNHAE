@@ -22,6 +22,7 @@ class MyPageViewController: UIViewController {
     
     @IBOutlet weak var heartCountLabel: UILabel!
     
+    @IBOutlet weak var restoreSubscriptionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,17 @@ class MyPageViewController: UIViewController {
         
         
         setupUI()
-       
+        NotificationCenter.default.addObserver(self, selector: #selector(methodOfReceivedNotification(notification:)), name: .IAPHelperPurchaseNotification, object: nil)
         
+    }
+    
+    @objc func methodOfReceivedNotification(notification:Notification){
+        print(notification.userInfo as Any)
+        if notification.object as! String == InAppProducts.product{
+            
+            let alert = AlertService().alert(title: "", body: "구독내역을 정상적으로 조회하였습니다.", cancelTitle: "", confirTitle: "확인")
+            present(alert, animated: true)
+        }
     }
     
     func setupUI(){
@@ -73,16 +83,23 @@ class MyPageViewController: UIViewController {
         resignButton.layer.cornerRadius = 8
       
         
-        manageSubscriptionButton.layer.cornerRadius = 8
+        manageSubscriptionButton.layer.cornerRadius = manageSubscriptionButton.frame.size.height / 2
         manageSubscriptionButton.layer.borderWidth = 1
         manageSubscriptionButton.layer.borderColor = hexStringToUIColor(hex: "#04BFB9").cgColor
         
-        homepageButton.layer.cornerRadius = 8
+        restoreSubscriptionButton.layer.cornerRadius = restoreSubscriptionButton.frame.size.height / 2
+        restoreSubscriptionButton.layer.borderWidth = 1
+        restoreSubscriptionButton.layer.borderColor = hexStringToUIColor(hex: "#04BFB9").cgColor
+        
+        homepageButton.layer.cornerRadius = homepageButton.frame.size.height / 2
         homepageButton.layer.borderWidth = 1
         homepageButton.layer.borderColor = hexStringToUIColor(hex: "#04BFB9").cgColor
     }
     
     @IBAction func clickedSubscribe(_ sender: Any) {
+        guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
+        subscriptionViewController.modalPresentationStyle = .fullScreen
+        present(subscriptionViewController, animated: true)
         
         print("cliocked subscribe")
     }
@@ -100,17 +117,7 @@ class MyPageViewController: UIViewController {
     
     @IBAction func clickedResign(_ sender: Any) {
         print("clicked resign")
-      
-//        Auth.auth().currentUser?.delete(completion: { error in
-//            if error != nil {
-//
-//            }else{
-//                //정상적으로 회원탈퇴
-//                Core.shared.setUserResign()
-//                changeLoginNC(self: self)
-//            }
-//        })
-            
+  
         guard let resignViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResignViewController")  as? ResignViewController else {return}
         navigationController?.pushViewController(resignViewController, animated: true)
         
@@ -118,24 +125,33 @@ class MyPageViewController: UIViewController {
     
     @IBAction func clickedManageSubscription(_ sender: Any) {
         print("clicked manageSubscription")
+        if let url = URL(string: "itms-apps://apps.apple.com/account/subscriptions") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }
+    }
+    
+    @IBAction func clickedRestoreSubscription(_ sender: Any) {
+        InAppProducts.store.restorePurchases()
     }
     
     @IBAction func clickedHomepage(_ sender: Any) {
         print("clicked homepage")
+        
     }
 
     func callLogout(){
-      
-        
+
         print("cliocked logout")
         do{
             try Auth.auth().signOut()
             Core.shared.setUserLogout() //에러가 발생하지 않는다면 정상적으로 로그아웃 처리됨.
-            changeLoginNC(self: self)
+            
+            changeLoginNC()
         }catch let e as NSError{
             print(e.localizedDescription)
         }
-      
-        
+
     }
 }
