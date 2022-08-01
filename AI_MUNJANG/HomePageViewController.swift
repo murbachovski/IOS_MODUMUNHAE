@@ -16,7 +16,7 @@ class HomePageViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
-
+        self.navigationItem.title = "서감문해"
         
         loadWebPage("https://blog.naver.com/seogammoonhae")
     }

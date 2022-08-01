@@ -25,7 +25,7 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
         self.navigationItem.title = "비밀번호 재설정"
-        self.navigationItem.backButtonTitle = ""
+        self.navigationItem.backButtonTitle = " "
         
         
         setupUI()

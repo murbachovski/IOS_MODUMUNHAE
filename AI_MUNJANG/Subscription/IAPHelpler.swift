@@ -149,7 +149,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
 
         purchasedProductIdentifiers.insert(identifier)
         UserDefaults.standard.set(true, forKey: identifier)
-        UserDefaults.standard.set(true, forKey: "isSubscription")
+        Core.shared.setUserSubscription() //구독완료시
         NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
     }
 }

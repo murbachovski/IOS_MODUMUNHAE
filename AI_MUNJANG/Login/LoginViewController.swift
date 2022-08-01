@@ -42,7 +42,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     override func viewDidLoad() {
         super.viewDidLoad()
         //로그인페이지에서 비밀번호 재설정 혹은 회원가입페이지의 백버튼의 타이틀을 삭제
-        self.navigationItem.backButtonTitle = ""
+        self.navigationItem.backButtonTitle = " "
         
        
         isUserSignUp = Core.shared.isUserSignup()

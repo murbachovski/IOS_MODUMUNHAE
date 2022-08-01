@@ -44,7 +44,7 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
         
         
         self.navigationItem.title = "회원가입"
-        self.navigationItem.backButtonTitle = ""
+        self.navigationItem.backButtonTitle = " "
         
         
         allCheckLabel.checkButtonLabel.text = "모두 동의합니다."
