@@ -222,7 +222,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
                                print(error!.localizedDescription)                    
                                return
                              }
-                print(user.displayName!)
+                print(user.displayName ?? "displayName 없음")
                 print(user.email as Any)
                 Core.shared.setUserLogin()
                 changeMainNC()

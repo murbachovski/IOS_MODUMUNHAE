@@ -36,6 +36,16 @@ class MyPageViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if Core.shared.isUserSubscription(){
+            subscribeButton.isHidden = true
+        }else{
+            subscribeButton.isHidden = false
+        }
+    }
+    
     @objc func methodOfReceivedNotification(notification:Notification){
         print(notification.userInfo as Any)
         if notification.object as! String == InAppProducts.product{
@@ -72,6 +82,7 @@ class MyPageViewController: UIViewController {
         }else{
             resignButton.isHidden = true
         }
+        
         
         
         
