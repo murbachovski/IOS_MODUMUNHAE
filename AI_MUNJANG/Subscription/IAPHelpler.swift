@@ -127,6 +127,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
         guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
 
         print("restore... \(productIdentifier)")
+        Core.shared.setUserSubscription() //거래내역이 정상적으로 조회된 경우, 구독으로 판단함.
         deliverPurchaseNotificationFor(identifier: productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }

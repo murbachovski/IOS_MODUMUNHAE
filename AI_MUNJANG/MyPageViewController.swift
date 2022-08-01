@@ -58,7 +58,7 @@ class MyPageViewController: UIViewController {
     func setupUI(){
         
       
-        if Core.shared.isUserSignup() {  //회원가입여부에 따라 heartCountView를 노출여부 판단
+        if Core.shared.isUserLogin() {  //로그인된 경우에 heartCountView를 표시
             heartCountView.isHidden = false
         }else{
             heartCountView.isHidden = true
@@ -66,18 +66,18 @@ class MyPageViewController: UIViewController {
 
 
         if Core.shared.isUserSubscription() { //구독여부에 따라 구독하기 버튼 노출여부 판단
-            manageSubscriptionButton.isHidden = true
-        }else{
             manageSubscriptionButton.isHidden = false
+        }else{
+            manageSubscriptionButton.isHidden = true
         }
         
         if Core.shared.isUserLogin() { //로그인 된 경우만 로그아웃 버튼 노출
             logoutButton.isHidden = false
         }else{
-            logoutButton.isHidden = true
+            logoutButton.setTitle("로그인", for: .normal)
         }
         
-        if Core.shared.isUserSignup() { //회원가입된 경우만 회원탈퇴 버튼 노출
+        if Core.shared.isUserLogin() { //로그인 된 경우에 회원탈퇴 버튼 노출
             resignButton.isHidden = false
         }else{
             resignButton.isHidden = true
@@ -116,12 +116,16 @@ class MyPageViewController: UIViewController {
     }
     
     
-    @IBAction func clickedLogout(_ sender: Any) {
+    @IBAction func clickedLogout(_ sender: UIButton) {
+        if sender.titleLabel?.text != "로그인" {
+            let alert = AlertService().alert(title: "", body: "로그아웃 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", fourthButtonCompletion:  {
+                self.callLogout()
+            })
+            present(alert, animated: true)
+        }else{
+            changeLoginNC()
+        }
         
-        let alert = AlertService().alert(title: "", body: "로그아웃 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", fourthButtonCompletion:  {
-            self.callLogout()
-        })
-        present(alert, animated: true)
        
         
     }

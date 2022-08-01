@@ -14,5 +14,7 @@
 		<string>NanumSquareL.ttf</string>
 		<string>NanumSquareR.ttf</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>light</string>
 </dict>
 </plist>

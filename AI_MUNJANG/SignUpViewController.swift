@@ -230,6 +230,10 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                return
              }
              print("\(user.email!) created")
+            
+            Core.shared.setUserSignup()
+            Core.shared.setUserLogin()
+            
             let alert = AlertService().alert(title: "", body: "\(withEmail)계정으로 회원가입이 정상적으로 처리되었습니다.", cancelTitle: "", confirTitle: "획인") {
                 self?.clickedConfirmByUser(withEmail: withEmail, password: password)
             }
@@ -259,8 +263,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                                return
                              }
                 print(user.email as Any)
-                Core.shared.setUserLogin()
-                Core.shared.setUserSignup()
+                
                 changeMainNC()
                                
             }

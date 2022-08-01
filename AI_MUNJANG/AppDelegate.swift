@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Firebase 초기화
         FirebaseApp.configure()
         
+        InAppProducts.store.restorePurchases()
         
         if Core.shared.isNewUser(){
             let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
