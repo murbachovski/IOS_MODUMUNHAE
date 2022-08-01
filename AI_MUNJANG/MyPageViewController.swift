@@ -23,12 +23,14 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var heartCountLabel: UILabel!
     
     @IBOutlet weak var restoreSubscriptionButton: UIButton!
+    var isReferenceRestore = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.topItem?.title = " "
         self.navigationItem.title = "My페이지"
+        self.navigationItem.backButtonTitle = " "
         
         
         setupUI()
@@ -48,8 +50,8 @@ class MyPageViewController: UIViewController {
     
     @objc func methodOfReceivedNotification(notification:Notification){
         print(notification.userInfo as Any)
-        if notification.object as! String == InAppProducts.product{
-            
+        if notification.object as! String == InAppProducts.product && isReferenceRestore == true {
+            isReferenceRestore = false
             let alert = AlertService().alert(title: "", body: "구독내역을 정상적으로 조회하였습니다.", cancelTitle: "", confirTitle: "확인")
             present(alert, animated: true)
         }
@@ -148,11 +150,14 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func clickedRestoreSubscription(_ sender: Any) {
+        isReferenceRestore = true
         InAppProducts.store.restorePurchases()
     }
     
     @IBAction func clickedHomepage(_ sender: Any) {
         print("clicked homepage")
+        guard let homePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController")  as? HomePageViewController else {return}
+        navigationController?.pushViewController(homePageViewController, animated: true)
         
     }
 
