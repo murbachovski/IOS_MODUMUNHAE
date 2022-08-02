@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         //구독여부 판단 - 영수증의 유효성을 판단해야
-        InAppProducts.store.checkReceiptValidation()
+        InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})
         
         if Core.shared.isNewUser(){
             let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController

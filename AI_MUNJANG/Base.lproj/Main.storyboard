@@ -304,28 +304,24 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-zy-sHn">
-                                <rect key="frame" x="0.0" y="830" width="414" height="110"/>
+                                <rect key="frame" x="20" y="816" width="374" height="56"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c30-xf-1sD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="그냥, 구경만 할게요!">
+                                        <state key="normal" title="둘러보기">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="clickedOnlyTourButton:" destination="9dr-vi-YH9" eventType="touchUpInside" id="sDt-QJ-Sve"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OfF-cF-fPN">
-                                        <rect key="frame" x="0.0" y="55" width="414" height="55"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="PBg-wy-DVK"/>
+                                    <constraint firstAttribute="height" constant="56" id="PBg-wy-DVK"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -333,10 +329,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5eZ-To-dZd" firstAttribute="leading" secondItem="k8y-Yw-4jx" secondAttribute="leading" constant="24" id="2I8-ZJ-fOD"/>
-                            <constraint firstAttribute="bottom" secondItem="jqd-zy-sHn" secondAttribute="bottom" constant="-44" id="2ru-jQ-UXc"/>
+                            <constraint firstAttribute="bottom" secondItem="jqd-zy-sHn" secondAttribute="bottom" constant="24" id="2ru-jQ-UXc"/>
                             <constraint firstItem="k8y-Yw-4jx" firstAttribute="trailing" secondItem="0JX-AC-h0A" secondAttribute="trailing" constant="24" id="4Im-Ya-94s"/>
                             <constraint firstItem="PSU-XL-TsV" firstAttribute="leading" secondItem="k8y-Yw-4jx" secondAttribute="leading" constant="24" id="7sy-cb-ilh"/>
-                            <constraint firstItem="jqd-zy-sHn" firstAttribute="leading" secondItem="k8y-Yw-4jx" secondAttribute="leading" id="9mN-ni-TF2"/>
+                            <constraint firstItem="jqd-zy-sHn" firstAttribute="leading" secondItem="k8y-Yw-4jx" secondAttribute="leading" constant="20" id="9mN-ni-TF2"/>
                             <constraint firstItem="0hA-df-zY3" firstAttribute="top" secondItem="PSU-XL-TsV" secondAttribute="bottom" constant="8" id="ACZ-51-HTd"/>
                             <constraint firstItem="pdB-pP-6Se" firstAttribute="top" secondItem="0hA-df-zY3" secondAttribute="bottom" id="B3q-Ix-2a7"/>
                             <constraint firstItem="HgL-YY-bUx" firstAttribute="top" secondItem="k8y-Yw-4jx" secondAttribute="top" constant="16" id="PZe-yB-AwE"/>
@@ -352,7 +348,7 @@
                             <constraint firstItem="k8y-Yw-4jx" firstAttribute="trailing" secondItem="pdB-pP-6Se" secondAttribute="trailing" constant="24" id="o5g-oH-vDE"/>
                             <constraint firstItem="HgL-YY-bUx" firstAttribute="leading" secondItem="k8y-Yw-4jx" secondAttribute="leading" id="pjo-bs-Bql"/>
                             <constraint firstItem="k8y-Yw-4jx" firstAttribute="trailing" secondItem="5eZ-To-dZd" secondAttribute="trailing" constant="24" id="rQo-PM-13m"/>
-                            <constraint firstItem="k8y-Yw-4jx" firstAttribute="trailing" secondItem="jqd-zy-sHn" secondAttribute="trailing" id="rmk-st-fuf"/>
+                            <constraint firstItem="k8y-Yw-4jx" firstAttribute="trailing" secondItem="jqd-zy-sHn" secondAttribute="trailing" constant="20" id="rmk-st-fuf"/>
                             <constraint firstItem="k8y-Yw-4jx" firstAttribute="trailing" secondItem="HgL-YY-bUx" secondAttribute="trailing" id="xMp-jO-4nj"/>
                         </constraints>
                     </view>

@@ -53,8 +53,8 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         if isUserSignUp == false {
             tourStackView.isHidden = false
             onlyTourButton.isHidden = false
-            onlyTourButton.layer.cornerRadius = onlyTourButton.frame.size.height / 2
-            onlyTourButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+            onlyTourButton.layer.cornerRadius = 10
+            
             
         }else{
             tourStackView.isHidden = true

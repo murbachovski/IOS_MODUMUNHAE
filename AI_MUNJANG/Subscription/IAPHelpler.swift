@@ -12,6 +12,7 @@ let sharePassword = "c410db4864b64c72b821131a5893ced3"
 public typealias ProductIdentifier = String
 public typealias ProductsRequestCompletionHandler = (_ success: Bool, _ products: [SKProduct]?) -> Void
 
+
 extension Notification.Name {
     static let IAPHelperPurchaseNotification = Notification.Name("IAPHelperPurchaseNotification")
 }
@@ -21,6 +22,9 @@ open class IAPHelper: NSObject  {
     private var purchasedProductIdentifiers: Set<ProductIdentifier> = []
     private var productsRequest: SKProductsRequest?
     private var productsRequestCompletionHandler: ProductsRequestCompletionHandler?
+    
+    
+    
     
     public init(productIds: Set<ProductIdentifier>) {
         productIdentifiers = productIds
@@ -99,12 +103,14 @@ extension IAPHelper: SKPaymentTransactionObserver {
         for transaction in transactions {
             switch (transaction.transactionState) {
             case .purchased:
+                print("purchased 정상적으로 호출")
                 complete(transaction: transaction)
                 break
             case .failed:
                 fail(transaction: transaction)
                 break
             case .restored:
+                print("restore 정상적으로 호출")
                 restore(transaction: transaction)
                 break
             case .deferred:
@@ -112,9 +118,14 @@ extension IAPHelper: SKPaymentTransactionObserver {
             case .purchasing:
                 break
             @unknown default:
+                print("unknown")
                 fatalError()
             }
         }
+    }
+    
+    public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+       print("restore call is finished")
     }
     
     private func complete(transaction: SKPaymentTransaction) {
@@ -126,7 +137,9 @@ extension IAPHelper: SKPaymentTransactionObserver {
     }
     
     private func restore(transaction: SKPaymentTransaction) {
-        guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
+        guard let productIdentifier = transaction.original?.payment.productIdentifier else {
+            print("구입내역이 없다.")
+            return }
 
         print("restore... \(productIdentifier)")
         
@@ -156,11 +169,12 @@ extension IAPHelper: SKPaymentTransactionObserver {
     
 
       
-    func checkReceiptValidation(isProduction: Bool = true) {
+    func checkReceiptValidation(isProduction: Bool = true, completion: @escaping( (Bool)->Void)) {
+            let completionArg = completion
             let receiptFileURL = Bundle.main.appStoreReceiptURL
             let receiptData = try? Data(contentsOf: receiptFileURL!)
             guard let recieptString = receiptData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0)) else{
-                print("영수증 복원에 장애 발생.")
+                print("영수증 복원에 장애(구매이력없어서).")
                     return
             }
 
@@ -182,8 +196,8 @@ extension IAPHelper: SKPaymentTransactionObserver {
             request.httpBody = try? JSONSerialization.data(withJSONObject: dic, options: [])
             request.httpMethod = "POST"
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
                 guard let data = data,
                       let object = try? JSONSerialization.jsonObject(with: data, options: []),
                       let json = object as? [String: Any] else {
@@ -192,18 +206,28 @@ extension IAPHelper: SKPaymentTransactionObserver {
                 print(json)
                 if let statusCode = json["status"] as? Int,
                    statusCode == 21007 {
-                    self.checkReceiptValidation(isProduction: false)
+                    self.checkReceiptValidation(isProduction: false,completion: { valid in completionArg(valid)  })
                    }
                 if let expireDate = self.getExpirationDateFromResponse(json as NSDictionary) {
                     print(expireDate)
-                    let currentDate:Date = Date()
-                    if expireDate < currentDate {
+                    let currentDateStr = Date().toStringUTC(dateFormat: "yyyy-MM-dd HH:mm:ss VV")
+                    let expireDateStr = expireDate.toStringUTC(dateFormat: "yyyy-MM-dd HH:mm:ss VV")
+                    print("currentDate: \(currentDateStr): KCT-TIME: \(Date().toStringKST(dateFormat: "yyyy-MM-dd HH:mm:ss VV"))")
+                    print("expireDate: \(expireDate)")
+                    
+                    if expireDateStr < currentDateStr {
                         print("☠️구독 만료일자가 지나서 사용자의 사용을 제한해야")
                         Core.shared.setUserCancelSubscription()
+                        completionArg(false)
                     }else{
                         print("😀구독 만료일자가 남아 있다.")
                         Core.shared.setUserSubscription()
+                        
+                        completionArg(true)
+                        
                     }
+                    
+                    
                 }
             }
             task.resume()
@@ -218,7 +242,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
 
-                print("current Date : \(formatter.string(from: NSDate() as Date))")
+                
                 if let expiresDate = lastReceipt["expires_date"] as? String {
                     return formatter.date(from: expiresDate)
                 }

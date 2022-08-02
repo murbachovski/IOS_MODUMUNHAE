@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import StoreKit
 
 class MyPageViewController: UIViewController {
     
@@ -24,7 +25,7 @@ class MyPageViewController: UIViewController {
     
     @IBOutlet weak var restoreSubscriptionButton: UIButton!
     var isReferenceRestore = false
-    
+//    var monthProduct: SKProduct?
    
     
     override func viewDidLoad() {
@@ -34,12 +35,16 @@ class MyPageViewController: UIViewController {
         self.navigationItem.title = "My페이지"
         self.navigationItem.backButtonTitle = " "
         
+//        InAppProducts.store.requestProducts { success, products in
+//            self.monthProduct =  products?.first
+//        }
         
         setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(methodOfReceivedNotification(notification:)), name: .IAPHelperPurchaseNotification, object: nil)
         
        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,6 +54,7 @@ class MyPageViewController: UIViewController {
         }else{
             subscribeButton.isHidden = false
         }
+        
     }
     
     @objc func methodOfReceivedNotification(notification:Notification){
@@ -56,7 +62,24 @@ class MyPageViewController: UIViewController {
         if notification.object as! String == InAppProducts.product && isReferenceRestore == true {
             isReferenceRestore = false
             let alert = AlertService().alert(title: "", body: "구독내역을 정상적으로 조회하였습니다.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil) {
-                InAppProducts.store.checkReceiptValidation()
+                InAppProducts.store.checkReceiptValidation(isProduction: true) { valid in
+                    
+                    DispatchQueue.main.async {
+                        print("구독내역이 정상적으로 조회된 경우")
+                        if valid == true {
+                            print("유효")
+                            self.subscribeButton.isHidden = true
+                        }else{
+                            self.subscribeButton.isHidden = false
+                            print("무효")
+                        }
+                        self.view.layoutIfNeeded()
+                        
+                    }
+                    
+                
+                }
+                
             }
             present(alert, animated: true)
         }
@@ -72,11 +95,12 @@ class MyPageViewController: UIViewController {
         }
 
 
-        if Core.shared.isUserSubscription() { //구독여부에 따라 구독하기 버튼 노출여부 판단
-            manageSubscriptionButton.isHidden = false
-        }else{
-            manageSubscriptionButton.isHidden = true
-        }
+        //불필요한듯
+//        if Core.shared.isUserSubscription() { //구독여부에 따라 구독하기 버튼 노출여부 판단
+//            manageSubscriptionButton.isHidden = false
+//        }else{
+//            manageSubscriptionButton.isHidden = true
+//        }
         
         if Core.shared.isUserLogin() { //로그인 된 경우만 로그아웃 버튼 노출
             logoutButton.isHidden = false
@@ -155,6 +179,7 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func clickedRestoreSubscription(_ sender: Any) {
+        print("clicked clickedRestoreSubscription")
         isReferenceRestore = true
         InAppProducts.store.restorePurchases()
     }
