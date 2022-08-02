@@ -12,12 +12,14 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-       
-
+        
     }
- 
- 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("사용자가 구독 중인가? : \(Core.shared.isUserSubscription())")
+    }
 
     //사용자가 구독 페이지 누른 경우 MainViewCotnroller는 그것을 인지하고 회원가입페이지를 띄어야 한다.
     @IBAction func clickedUserIcon(_ sender: UIBarButtonItem) {

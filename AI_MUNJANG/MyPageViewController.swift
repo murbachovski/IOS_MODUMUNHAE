@@ -25,6 +25,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var restoreSubscriptionButton: UIButton!
     var isReferenceRestore = false
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +38,7 @@ class MyPageViewController: UIViewController {
         setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(methodOfReceivedNotification(notification:)), name: .IAPHelperPurchaseNotification, object: nil)
         
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +55,9 @@ class MyPageViewController: UIViewController {
         print(notification.userInfo as Any)
         if notification.object as! String == InAppProducts.product && isReferenceRestore == true {
             isReferenceRestore = false
-            let alert = AlertService().alert(title: "", body: "구독내역을 정상적으로 조회하였습니다.", cancelTitle: "", confirTitle: "확인")
+            let alert = AlertService().alert(title: "", body: "구독내역을 정상적으로 조회하였습니다.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil) {
+                InAppProducts.store.checkReceiptValidation()
+            }
             present(alert, animated: true)
         }
     }

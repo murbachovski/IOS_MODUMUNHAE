@@ -7,6 +7,7 @@
 
 import StoreKit
 
+let sharePassword = "c410db4864b64c72b821131a5893ced3"
 
 public typealias ProductIdentifier = String
 public typealias ProductsRequestCompletionHandler = (_ success: Bool, _ products: [SKProduct]?) -> Void
@@ -118,6 +119,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
     
     private func complete(transaction: SKPaymentTransaction) {
         print("complete...")
+        Core.shared.setUserSubscription() //구독완료되므로 isSubscription을 ON
         deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
         
@@ -127,7 +129,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
         guard let productIdentifier = transaction.original?.payment.productIdentifier else { return }
 
         print("restore... \(productIdentifier)")
-        Core.shared.setUserSubscription() //거래내역이 정상적으로 조회된 경우, 구독으로 판단함.
+        
         deliverPurchaseNotificationFor(identifier: productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
     }
@@ -149,7 +151,83 @@ extension IAPHelper: SKPaymentTransactionObserver {
 
         purchasedProductIdentifiers.insert(identifier)
         UserDefaults.standard.set(true, forKey: identifier)
-        Core.shared.setUserSubscription() //구독완료시
         NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
     }
+    
+
+      
+    func checkReceiptValidation(isProduction: Bool = true) {
+            let receiptFileURL = Bundle.main.appStoreReceiptURL
+            let receiptData = try? Data(contentsOf: receiptFileURL!)
+            guard let recieptString = receiptData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0)) else{
+                print("영수증 복원에 장애 발생.")
+                    return
+            }
+
+            var urlString: String = ""
+            if isProduction {
+                urlString = "https://buy.itunes.apple.com/verifyReceipt"
+            } else {
+                urlString = "https://sandbox.itunes.apple.com/verifyReceipt"
+            }
+            
+            let url = URL(string: urlString)!
+
+            let dic: [String: Any] = [
+                "password": sharePassword,
+                "receipt-data": recieptString
+            ]
+            
+            var request = URLRequest(url: url)
+            request.httpBody = try? JSONSerialization.data(withJSONObject: dic, options: [])
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                guard let data = data,
+                      let object = try? JSONSerialization.jsonObject(with: data, options: []),
+                      let json = object as? [String: Any] else {
+                    return
+                }
+                print(json)
+                if let statusCode = json["status"] as? Int,
+                   statusCode == 21007 {
+                    self.checkReceiptValidation(isProduction: false)
+                   }
+                if let expireDate = self.getExpirationDateFromResponse(json as NSDictionary) {
+                    print(expireDate)
+                    let currentDate:Date = Date()
+                    if expireDate < currentDate {
+                        print("☠️구독 만료일자가 지나서 사용자의 사용을 제한해야")
+                        Core.shared.setUserCancelSubscription()
+                    }else{
+                        print("😀구독 만료일자가 남아 있다.")
+                        Core.shared.setUserSubscription()
+                    }
+                }
+            }
+            task.resume()
+        }
+    
+
+    func getExpirationDateFromResponse(_ jsonResponse: NSDictionary) -> Date? {
+
+            if let receiptInfo: NSArray = jsonResponse["latest_receipt_info"] as? NSArray {
+
+                let lastReceipt = receiptInfo.firstObject as! NSDictionary
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd HH:mm:ss VV"
+
+                print("current Date : \(formatter.string(from: NSDate() as Date))")
+                if let expiresDate = lastReceipt["expires_date"] as? String {
+                    return formatter.date(from: expiresDate)
+                }
+                
+                return nil
+            }
+            else {
+                return nil
+            }
+        }
+
 }

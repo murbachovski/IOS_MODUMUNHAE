@@ -9,7 +9,7 @@ import UIKit
 import StoreKit
 
 public struct InAppProducts {
-    public static let product = "com.seogamdo.AI_MUNJANG.month"
+    public static let product = "com.seogamdo.AI_MUNJANG.monthly"
     private static let productIdentifiers: Set<ProductIdentifier> = [InAppProducts.product]
     public static let store = IAPHelper(productIds: InAppProducts.productIdentifiers)
 }
@@ -22,6 +22,7 @@ class SubscriptionViewController: UIViewController {
     @IBOutlet weak var subscribeButton: UIButton!
     
     var monthProduct: SKProduct?
+    var isClickedSubscribeButton = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,9 @@ class SubscriptionViewController: UIViewController {
     
     @objc func methodOfReceivedNotification(notification:Notification){
         print(notification.userInfo as Any)
-        if notification.object as! String == InAppProducts.product{
+        if notification.object as! String == InAppProducts.product && isClickedSubscribeButton == true {
             print("정상적으로 구독이 완료됨")
+            isClickedSubscribeButton = false
             dismiss(animated: true)
         }
     }
@@ -62,8 +64,8 @@ class SubscriptionViewController: UIViewController {
         subscribeContainer.layer.masksToBounds = false
         
         
-        let mainString = "￦10,000 /월"
-        let stringToColor = "￦10,000"
+        let mainString = "￦2,000 /월"
+        let stringToColor = "￦2,000"
         let range = (mainString as NSString).range(of: stringToColor)
 
         let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
@@ -87,6 +89,7 @@ class SubscriptionViewController: UIViewController {
     
     @IBAction func clickedSubscribeButton(_ sender: UIButton) {
         print("subscribe clicked")
+        isClickedSubscribeButton = true
         if Core.shared.isUserLogin() {
             guard let monthProduct = monthProduct else {
                 return
