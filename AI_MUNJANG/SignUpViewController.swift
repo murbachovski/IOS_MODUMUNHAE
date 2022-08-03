@@ -78,9 +78,11 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
         passwordConfirmView.checkEmailDelegate = self
         passwordConfirmView.checkConfirmPasswordDelegate = self
         passwordConfirmView.titleLabel.text = "비밀번호 재확인"
+        passwordConfirmView.textField.placeholder = "비밀번호를 다시 입력해주세요."
                 
         registerView.button.layer.cornerRadius = 8
-        registerView.button.setTitle("회원가입", for: .normal)
+        registerView.button.setTitle("완료", for: .normal)
+        registerView.button.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
         registerView.button.backgroundColor = .lightGray
         registerView.buttonCompletion {
             self.clickedRegisterButton()

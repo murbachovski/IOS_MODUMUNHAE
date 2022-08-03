@@ -10,6 +10,7 @@ import UIKit
 class TermsDetailViewController: UIViewController {
 
     @IBOutlet weak var titleOfTerms: UILabel!
+    
     var titleOfLabel:String = ""
     
     override func viewDidLoad() {

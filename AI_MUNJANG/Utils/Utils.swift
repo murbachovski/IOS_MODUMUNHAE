@@ -94,6 +94,14 @@ extension UILabel {
         attributedString.addAttribute(.foregroundColor, value: color as Any, range: range)
         attributedText = attributedString
     }
+    
+    func asFont(targetString: String, font: UIFont?) {
+        let fullText = text ?? ""
+        let range = (fullText as NSString).range(of: targetString)
+        let attributedString = NSMutableAttributedString(string: fullText)
+        attributedString.addAttribute(.font, value: font as Any, range: range)
+        attributedText = attributedString
+    }
 }
 
 

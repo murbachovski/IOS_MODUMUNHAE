@@ -10,6 +10,7 @@ import UIKit
 class ResetPasswordDetailViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
     var userEmail:String = "test@gmail.com"
     
     
@@ -20,7 +21,14 @@ class ResetPasswordDetailViewController: UIViewController {
 
         
         titleLabel.text = "\(userEmail)으로 비밀번호 재설정 이메일을 발송했습니다."
-        // Do any additional setup after loading the view.
+        titleLabel.font =  UIFont(name: "NanumSquareEB", size: 17)
+        titleLabel.textColor = hexStringToUIColor(hex: Constants.Balck_51)
+        
+        
+        subLabel.layer.cornerRadius = 10
+        subLabel.asFont(targetString: "3분 내에 이메일이 오지 않는다면", font: UIFont(name: "NanumSquareB", size: 15))
+        
+        
     }
     
 

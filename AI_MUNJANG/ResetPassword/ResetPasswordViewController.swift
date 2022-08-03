@@ -132,7 +132,7 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
     
     
     fileprivate func clickedByUser(){
-        print("appleloginbutton is clicked")
+        print("resetPasswordButton is clicked")
         didRequestPasswordReset()
     }
     

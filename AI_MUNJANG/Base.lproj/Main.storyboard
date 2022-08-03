@@ -876,28 +876,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-ZP-hL9" customClass="CustomEmailView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="104" width="366" height="100"/>
+                                <rect key="frame" x="24" y="76" width="366" height="100"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ltw-EC-KYa"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhs-du-kif" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="212" width="366" height="100"/>
+                                <rect key="frame" x="24" y="184" width="366" height="100"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Hzl-6l-XbV"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n9x-bT-Rca" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="320" width="366" height="100"/>
+                                <rect key="frame" x="24" y="292" width="366" height="100"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="FJI-1n-NpM"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JvY-x7-H9d" customClass="CustomTextField" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="428" width="366" height="100"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JvY-x7-H9d" customClass="CustomTextField" customModule="AI_MUNJANG" customModuleProvider="target">
+                                <rect key="frame" x="24" y="392" width="366" height="100"/>
                                 <color key="backgroundColor" systemColor="systemGray3Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="qqK-ZN-8WQ"/>
@@ -916,13 +916,13 @@
                         <constraints>
                             <constraint firstItem="Hp9-6q-kbb" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="3Nx-mC-WKf"/>
                             <constraint firstItem="zW6-ZP-hL9" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="8BE-TU-kg4"/>
-                            <constraint firstItem="zW6-ZP-hL9" firstAttribute="top" secondItem="Pne-EO-pa4" secondAttribute="top" constant="60" id="Bug-7S-duX"/>
+                            <constraint firstItem="zW6-ZP-hL9" firstAttribute="top" secondItem="Pne-EO-pa4" secondAttribute="top" constant="32" id="Bug-7S-duX"/>
                             <constraint firstItem="Lhs-du-kif" firstAttribute="top" secondItem="zW6-ZP-hL9" secondAttribute="bottom" constant="8" id="CK6-fK-Ha0"/>
                             <constraint firstItem="n9x-bT-Rca" firstAttribute="top" secondItem="Lhs-du-kif" secondAttribute="bottom" constant="8" id="HvJ-je-wbe"/>
                             <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="JvY-x7-H9d" secondAttribute="trailing" constant="24" id="IJv-QC-xtE"/>
                             <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="Lhs-du-kif" secondAttribute="trailing" constant="24" id="SXV-hs-4xg"/>
                             <constraint firstItem="JvY-x7-H9d" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="TNK-cV-PXu"/>
-                            <constraint firstItem="JvY-x7-H9d" firstAttribute="top" secondItem="n9x-bT-Rca" secondAttribute="bottom" constant="8" id="VSp-5S-yMs"/>
+                            <constraint firstItem="JvY-x7-H9d" firstAttribute="top" secondItem="n9x-bT-Rca" secondAttribute="bottom" id="VSp-5S-yMs"/>
                             <constraint firstItem="Pne-EO-pa4" firstAttribute="bottom" secondItem="Hp9-6q-kbb" secondAttribute="bottom" constant="24" id="Y0F-HW-4zt"/>
                             <constraint firstItem="Lhs-du-kif" firstAttribute="leading" secondItem="Pne-EO-pa4" secondAttribute="leading" constant="24" id="ZOU-95-eQ6"/>
                             <constraint firstItem="Pne-EO-pa4" firstAttribute="trailing" secondItem="Hp9-6q-kbb" secondAttribute="trailing" constant="24" id="iLI-oH-k4v"/>
@@ -1013,7 +1013,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="munjang@gmail.com으로 비밀번호 재설정 이메일을 발송했습니다" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajc-rZ-Xi4">
-                                <rect key="frame" x="24" y="144" width="366" height="40"/>
+                                <rect key="frame" x="24" y="76" width="366" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="H1v-ut-W3c"/>
                                 </constraints>
@@ -1021,13 +1021,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3분 내에 이메일이 오지 않는다면? - 스팸 메일함을 확인해주세요. - 고객센터(070-7778-8688)로 문의해주세요" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bch-FS-qoM">
-                                <rect key="frame" x="24" y="204" width="366" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="TiI-hO-BgN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    3분 내에 이메일이 오지 않는다면?     - 스팸 메일함을 확인해주세요.    - 고객센터(070-7778-8688)로 문의해주세요 " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bch-FS-qoM">
+                                <rect key="frame" x="20" y="144" width="374" height="99.5"/>
+                                <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1035,14 +1033,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ajc-rZ-Xi4" firstAttribute="leading" secondItem="jyl-JL-X84" secondAttribute="leading" constant="24" id="2gA-rd-sRe"/>
-                            <constraint firstItem="bch-FS-qoM" firstAttribute="top" secondItem="Ajc-rZ-Xi4" secondAttribute="bottom" constant="20" id="T5C-iB-b4S"/>
+                            <constraint firstItem="bch-FS-qoM" firstAttribute="leading" secondItem="jyl-JL-X84" secondAttribute="leading" constant="20" id="6O3-1r-Cki"/>
+                            <constraint firstItem="jyl-JL-X84" firstAttribute="trailing" secondItem="bch-FS-qoM" secondAttribute="trailing" constant="20" id="S71-Nb-3de"/>
                             <constraint firstItem="jyl-JL-X84" firstAttribute="trailing" secondItem="Ajc-rZ-Xi4" secondAttribute="trailing" constant="24" id="eVQ-ug-KdO"/>
-                            <constraint firstItem="Ajc-rZ-Xi4" firstAttribute="top" secondItem="jyl-JL-X84" secondAttribute="top" constant="100" id="fj7-Yf-6bi"/>
-                            <constraint firstItem="jyl-JL-X84" firstAttribute="trailing" secondItem="bch-FS-qoM" secondAttribute="trailing" constant="24" id="pgk-iY-ROf"/>
-                            <constraint firstItem="bch-FS-qoM" firstAttribute="leading" secondItem="jyl-JL-X84" secondAttribute="leading" constant="24" id="uHm-aj-AKW"/>
+                            <constraint firstItem="Ajc-rZ-Xi4" firstAttribute="top" secondItem="jyl-JL-X84" secondAttribute="top" constant="32" id="fj7-Yf-6bi"/>
+                            <constraint firstItem="bch-FS-qoM" firstAttribute="top" secondItem="Ajc-rZ-Xi4" secondAttribute="bottom" constant="28" id="ptM-he-Qe2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="subLabel" destination="bch-FS-qoM" id="7Lh-Nt-xlV"/>
                         <outlet property="titleLabel" destination="Ajc-rZ-Xi4" id="gID-SI-jn7"/>
                     </connections>
                 </viewController>
