@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEmailAndPasswordValid{
 
+    @IBOutlet weak var guideTitle: UILabel!
     @IBOutlet weak var emailView: CustomEmailView!
     
     @IBOutlet weak var authenticateButtonView: CustomButtonView!
@@ -42,16 +43,27 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
     fileprivate func setupUI() {
     
         
+        guideTitle.font =  UIFont(name: "NanumSquareEB", size: 19)
+        
         emailView.delegate = self
         emailView.textField.keyboardType = .emailAddress
         emailView.checkEmailDelegate = self
-        emailView.titleLabel.text = "가입한 이메일 주소를 입력해주세요."
+        emailView.titleLabel.text = "이메일"
+        emailView.titleLabel.font = UIFont(name: "NanumSquareR", size: 13)
+        
+        emailView.subLabel.text = "비밀번호 찾기에 이용되니 정확히 입력해주세요."
+        emailView.subLabel.font = UIFont(name: "NanumSquareR", size: 15)
+        emailView.subLabel.textColor = hexStringToUIColor(hex: "#a1a1a1")
+        
+        
+        
         emailView.textField.textContentType = .oneTimeCode
         
         authenticateButtonView.button.layer.cornerRadius = 8
         authenticateButtonView.button.setTitle("인증하기", for: .normal)
         authenticateButtonView.button.backgroundColor = .lightGray
         authenticateButtonView.button.setTitleColor(.white, for: .normal)
+        authenticateButtonView.button.titleLabel!.font = UIFont(name: "NanumSquareEB", size: 17)
         authenticateButtonView.buttonCompletion {
             self.clickedByUser()
         }

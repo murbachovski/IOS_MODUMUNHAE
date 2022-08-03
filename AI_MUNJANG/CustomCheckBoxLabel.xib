@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NanumSquareR.ttf">
+            <string>NanumSquareR</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomCheckBoxLabel" customModule="AI_MUNJANG" customModuleProvider="target">
             <connections>
@@ -22,21 +27,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8go-pG-lnJ">
-                    <rect key="frame" x="16" y="7" width="32" height="29.5"/>
+                    <rect key="frame" x="16" y="6" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="8go-pG-lnJ" secondAttribute="height" id="f4f-MS-YkS"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" backgroundImage="square" catalog="system"/>
-                    <state key="selected" backgroundImage="checkmark.square" catalog="system"/>
+                    <state key="normal" backgroundImage="icCheckbox24PxOff"/>
+                    <state key="selected" backgroundImage="icCheckbox24PxOn"/>
                     <connections>
                         <action selector="clickedCheckButton:" destination="-1" eventType="touchUpInside" id="0Gk-G7-3m3"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[필수] 이용약관 동의 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL5-sR-fm4">
-                    <rect key="frame" x="56" y="6" width="273" height="32"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="58" y="6" width="271" height="32"/>
+                    <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ah-P9-ECe">
@@ -49,13 +54,13 @@
                         <attributedString key="attributedTitle">
                             <fragment content="보기">
                                 <attributes>
-                                    <font key="NSFont" size="17" name="NanumSquareOTF_acR"/>
+                                    <font key="NSFont" size="15" name="NanumSquareOTF_acR"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     <integer key="NSUnderline" value="1"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
-                        <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="baseForegroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="clickedcheckSubButton:" destination="-1" eventType="touchUpInside" id="uAI-hM-pP4"/>
@@ -69,7 +74,7 @@
                 <constraint firstItem="8go-pG-lnJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="E35-CG-OTm"/>
                 <constraint firstItem="9ah-P9-ECe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="JTs-j5-gxR"/>
                 <constraint firstAttribute="trailing" secondItem="9ah-P9-ECe" secondAttribute="trailing" constant="16" id="NOB-cr-U7x"/>
-                <constraint firstItem="lL5-sR-fm4" firstAttribute="leading" secondItem="8go-pG-lnJ" secondAttribute="trailing" constant="8" id="QhO-KR-W0y"/>
+                <constraint firstItem="lL5-sR-fm4" firstAttribute="leading" secondItem="8go-pG-lnJ" secondAttribute="trailing" constant="10" id="QhO-KR-W0y"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="lL5-sR-fm4" secondAttribute="bottom" constant="6" id="W8l-hD-TbL"/>
                 <constraint firstItem="8go-pG-lnJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="fh7-m1-FrE"/>
                 <constraint firstItem="lL5-sR-fm4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="lXv-fX-hsz"/>
@@ -81,8 +86,8 @@
         </view>
     </objects>
     <resources>
-        <image name="checkmark.square" catalog="system" width="128" height="114"/>
-        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="icCheckbox24PxOff" width="24" height="24"/>
+        <image name="icCheckbox24PxOn" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

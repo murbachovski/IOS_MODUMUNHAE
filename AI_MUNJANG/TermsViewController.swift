@@ -15,7 +15,8 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
         return view.window!
     }
 
-   
+    @IBOutlet weak var termsMaintitle: UILabel!
+    
     @IBOutlet weak var allCheckLabel: CustomCheckBoxLabel!
     
     @IBOutlet weak var useTermsCheckLabel: CustomCheckBoxLabel!
@@ -46,10 +47,12 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
         self.navigationItem.title = "회원가입"
         self.navigationItem.backButtonTitle = " "
         
+        termsMaintitle.font =  UIFont(name: "NanumSquareEB", size: 19)
         
         allCheckLabel.checkButtonLabel.text = "모두 동의합니다."
         allCheckLabel.checkButton.tag = 0
         allCheckLabel.checkSubButton.isHidden = true
+        allCheckLabel.checkButtonLabel.font =  UIFont(name: "NanumSquareB", size: 15)
         
         useTermsCheckLabel.checkButtonLabel.text = "[필수] 이용약관 동의"
         useTermsCheckLabel.checkButton.tag = 1
