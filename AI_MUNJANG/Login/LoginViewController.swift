@@ -10,6 +10,7 @@ import DropDown
 import FirebaseAuth
 import CryptoKit
 import AuthenticationServices
+import NVActivityIndicatorView
 
 class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPasswordValid, ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
@@ -18,7 +19,10 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     
    
-    
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50),
+                                            type: .lineSpinFadeLoader,
+                                            color: hexStringToUIColor(hex: "#f7f9fb"),
+                                            padding: 0)
     
     let dropdown = DropDown()
     var isUserSignUp = false
@@ -62,7 +66,8 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         }
         setupUI()
         
-    
+        self.view.addSubview(indicator)
+        indicator.center = view.center
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +78,9 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        if indicator.isAnimating {
+            indicator.stopAnimating()
+        }
     }
     
     
@@ -186,7 +194,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     fileprivate func clickedByEmailUser(){
         print("EmailUser is clicked")
-        
+        indicator.startAnimating()
         emailContainerView.textField.resignFirstResponder()
         passwordContainerView.textField.resignFirstResponder()
         
@@ -195,10 +203,11 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         guard let password = passwordContainerView.textField.text else {return}
         
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            self!.indicator.stopAnimating()
             if error != nil {
                 // 1 이렇게 해야 한다. 권장0
                 if let errorInforKey = error?._userInfo?["FIRAuthErrorUserInfoNameKey"] {
-                    
+                    print("이메일 로그인에러: \(errorInforKey!)")
                     var errorString = ""
                     if errorInforKey as! String == "ERROR_WRONG_PASSWORD" {
                         print("ERROR_WRONG_PASSWORD")
@@ -209,12 +218,15 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
                        errorString = "가입된 이메일이 아닙니다."
                         self?.emailContainerView.textField.text = ""
                         self?.passwordContainerView.textField.text = ""
+                    }else if errorInforKey as! String == "ERROR_NETWORK_REQUEST_FAILED" {
+                        errorString = "네트워크 연결이 불안정합니다."
+                    }else{
+                        errorString = "알 수 없는 원인으로 로그인 요청에 장애가 발생했습니다. 나중에 다시 시도해 주세요."
                     }
+                    
                     let alert = AlertService().alert(title: "", body:errorString, cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil, fourthButtonCompletion: nil)
                     self?.present(alert, animated: true)
-                    
-                    
-                    
+ 
                 }
                 
             }else{

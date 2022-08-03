@@ -7,18 +7,25 @@
 
 import UIKit
 import WebKit
+import NVActivityIndicatorView
 
 class HomePageViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var webView: WKWebView!
     
-    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    let indicator = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50),
+                                            type: .lineSpinFadeLoader,
+                                            color: hexStringToUIColor(hex: "#f7f9fb"),
+                                            padding: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
         self.navigationItem.title = "서감문해"
         
         loadWebPage("https://blog.naver.com/seogammoonhae")
+        self.view.addSubview(indicator)
+        indicator.center = view.center
     }
     
     private func loadWebPage(_ url: String) {
@@ -31,16 +38,16 @@ class HomePageViewController: UIViewController, WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         indicator.startAnimating()
-        indicator.isHidden = false
+        
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         indicator.stopAnimating()
-        indicator.isHidden = true
+        
     }
 
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         indicator.stopAnimating()
-        indicator.isHidden = true
+        
     }
 }
