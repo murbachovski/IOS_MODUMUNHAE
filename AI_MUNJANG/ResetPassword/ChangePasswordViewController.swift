@@ -93,7 +93,7 @@ class ChangePasswordViewController: UIViewController,CheckConfirmPassword {
                 completionButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
             }
         } else{
-            completionButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
+            completionButtonView.convertButtonStatus(status: false, backgroundColor: .white, titleColor: .darkGray)
         }
 
     }

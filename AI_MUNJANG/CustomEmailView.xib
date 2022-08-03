@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NanumSquareOTF_acB.otf">
-            <string>NanumSquareOTF_acB</string>
+        <array key="NanumSquareB.ttf">
+            <string>NanumSquareB</string>
         </array>
         <array key="NanumSquareOTF_acR.otf">
             <string>NanumSquareOTF_acR</string>
@@ -35,8 +35,8 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="iMc-Wb-4Ds"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NanumSquareOTF_acB" family="NanumSquareOTF_ac" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="13"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaw-PG-wd5" userLabel="container">

@@ -43,13 +43,15 @@ class CustomButtonView: UIView {
         if status == true {
             
             button.isUserInteractionEnabled = true
-            button.setTitleColor(titleColor ?? .black, for: .normal)
-            button.backgroundColor = backgroundColor ?? .lightGray
+            button.setTitleColor(titleColor ?? .white, for: .normal)
+            button.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
+            button.backgroundColor = backgroundColor ?? hexStringToUIColor(hex: "#CACACA")
             
         }else{
             button.isUserInteractionEnabled = false
-            button.setTitleColor(titleColor ?? .darkGray, for: .normal)
-            button.backgroundColor = backgroundColor ?? .lightGray
+            button.setTitleColor(titleColor ?? .white, for: .normal)
+            button.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
+            button.backgroundColor = backgroundColor ?? hexStringToUIColor(hex: "#CACACA")
                         
         }
     }

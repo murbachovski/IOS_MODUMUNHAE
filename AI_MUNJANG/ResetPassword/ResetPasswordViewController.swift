@@ -105,7 +105,7 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
         if emailView.isValidStatus == true  {
             authenticateButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
         }else{
-            authenticateButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
+            authenticateButtonView.convertButtonStatus(status: false, backgroundColor: .white, titleColor: .darkGray)
         }
     }
     

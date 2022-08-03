@@ -172,7 +172,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                 registerView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
             }
         } else{
-            registerView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
+            registerView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .white)
         }
 
     }

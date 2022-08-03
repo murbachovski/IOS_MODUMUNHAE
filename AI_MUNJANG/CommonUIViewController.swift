@@ -32,7 +32,7 @@ class CommonUIViewController: UIViewController,ShowDropDelegate {
         customBV.convertButtonStatus(status: true , backgroundColor: .white, titleColor: .darkGray) 
         
         //2. 공통UI 중 하나인 버튼이 비활성화된 경우
-        customBV2.convertButtonStatus(status: false,backgroundColor: .lightGray, titleColor: .darkGray)
+        customBV2.convertButtonStatus(status: false,backgroundColor: .white, titleColor: .darkGray)
         
         emailTextField.setupTextOfLabel(title: "비밀번호 찾기에 이용되니 정확히 입력해주세요.")
         

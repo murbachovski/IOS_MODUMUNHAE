@@ -13,6 +13,9 @@ import AuthenticationServices
 import NVActivityIndicatorView
 
 class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPasswordValid, ASAuthorizationControllerPresentationContextProviding {
+    @IBOutlet weak var logoimag: UIImageView!
+    
+    
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }
@@ -68,6 +71,10 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         
         self.view.addSubview(indicator)
         indicator.center = view.center
+        
+        let image = UIImage(named: "group")?.withRenderingMode(.alwaysTemplate)
+        logoimag.image = image
+        logoimag.tintColor = hexStringToUIColor(hex: Constants.primaryColor)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,6 +114,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         appleLoginButtonView.button.layer.cornerRadius = 8
         appleLoginButtonView.button.setTitle("  Apple 계정으로 로그인", for: .normal)
         appleLoginButtonView.button.setImage(UIImage(named: "Apple Logo"), for: .normal)
+        appleLoginButtonView.button.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
         appleLoginButtonView.button.backgroundColor = .black
         appleLoginButtonView.buttonCompletion {
             self.clickedByAppleUser()            
@@ -116,10 +124,12 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         loginButtonView.button.layer.cornerRadius = 8
         loginButtonView.button.setTitle("로그인", for: .normal)
 
-        loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
+        loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .white)
         loginButtonView.buttonCompletion {
             self.clickedByEmailUser()
         }
+        
+        onlyTourButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
     }
     
     func initDropDownUI(){
@@ -169,7 +179,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         if emailContainerView.isValidStatus == true && passwordContainerView.isValidStatus == true {
             loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
         }else{
-            loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .darkGray)
+            loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .white)
         }
     }
     
