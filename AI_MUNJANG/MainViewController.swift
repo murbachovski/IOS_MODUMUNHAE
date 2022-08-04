@@ -7,18 +7,48 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  
+    
 
 
+    @IBOutlet weak var topTitle: UILabel!
+    @IBOutlet weak var collectionViewEight: UICollectionView!
+    
+    let munjangElements:[String] = ["주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
+    let subElements: [String] = ["대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let layout = UICollectionViewFlowLayout()
+        
+        collectionViewEight.collectionViewLayout = layout
+        layout.estimatedItemSize = CGSize(width: CGFloat(162).relativeToIphone8Width() , height: CGFloat(80).relativeToIphone8Width())
+        collectionViewEight.delegate = self
+        collectionViewEight.dataSource = self
+        collectionViewEight.backgroundColor = .clear
+        
+        setupUI()
+        
+    }
+    
+    func setupUI(){
+        topTitle.font = UIFont(name: "NanumSquareEB", size: 24)
+        
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#F9F9F9")
         print("사용자가 구독 중인가? : \(Core.shared.isUserSubscription())")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.barTintColor = .white
     }
 
     //사용자가 구독 페이지 누른 경우 MainViewCotnroller는 그것을 인지하고 회원가입페이지를 띄어야 한다.
@@ -32,5 +62,44 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(testViewController, animated: true)
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return munjangElements.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? MunjangEightCollectionViewCell else {
+               return UICollectionViewCell()
+           }
+        
+        //셀의 내용 채우기
+        cell.digitTitle.text = "\(indexPath.row + 1)경"
+        
+        cell.mainTitle.text = munjangElements[indexPath.row]
+        cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
+        cell.subTitle.text = subElements[indexPath.row]
+        
+        //셀에 shadow추가
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 10
+        cell.layer.shadowOpacity = 0.8
+        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+        cell.layer.shadowRadius = 2
+        cell.layer.masksToBounds = false
+                
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("clicked : \(indexPath.row)")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+       return 14 // Keep whatever fits for you
+     }
 }
 
