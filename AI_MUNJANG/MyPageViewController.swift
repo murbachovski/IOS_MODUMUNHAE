@@ -12,6 +12,8 @@ import StoreKit
 class MyPageViewController: UIViewController {
     
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var subscribeButton: UIButton! //구독여부
     @IBOutlet weak var resignButton: UIButton!
@@ -87,6 +89,11 @@ class MyPageViewController: UIViewController {
     
     func setupUI(){
         
+        usernameLabel.font =  UIFont(name: "NanumSquareEB", size: 19)
+        
+        heartCountView.layer.cornerRadius = 8
+        
+        subscribeButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 17)
       
         if Core.shared.isUserLogin() {  //로그인된 경우에 heartCountView를 표시
             heartCountView.isHidden = false
@@ -120,9 +127,10 @@ class MyPageViewController: UIViewController {
         logoutButton.layer.cornerRadius = 8
         logoutButton.layer.borderWidth = 1
         logoutButton.layer.borderColor = hexStringToUIColor(hex: "#DEDEDE").cgColor
-        
+        logoutButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 17)
         
         resignButton.layer.cornerRadius = 8
+        resignButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 17)
       
         
         manageSubscriptionButton.layer.cornerRadius = manageSubscriptionButton.frame.size.height / 2
