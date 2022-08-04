@@ -30,6 +30,33 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
         
         setupUI()
         
+        let username = "막길동"
+        userTitle.text = "\(username)님, 탈퇴 전 꼭 확인해주세요!"
+        userTitle.font =  UIFont(name: "NanumSquareEB", size: 19)
+        
+        
+        let userHeartCount = 10
+        let userHeartCountText = "하트 \(userHeartCount)개"
+        noticeToUserLabel.text = "- 탈퇴 시 홍길동님의 \(userHeartCountText)는 모두 삭제되며, 다시 가입해도 복구되지 않습니다.\n\n- 회원 탈퇴와 구독권 해지는 별도로 진행되므로 반드시 회원 탈퇴 전 구독권을 해지해 주세요."
+        //전체적으로 폰트 적용
+        let attStringSub = NSMutableAttributedString(string: noticeToUserLabel.text!)
+        let normalFont: UIFont =  UIFont(name: "NanumSquareR", size: 15)!
+        attStringSub.addAttribute(NSAttributedString.Key.font, value: normalFont, range: NSMakeRange(0, attStringSub.length))
+        
+        //행간 조정
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        attStringSub.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attStringSub.length))
+        
+        //강조 폰트 적용
+        let accentFont: UIFont =  UIFont(name: "NanumSquareEB", size: 17)!
+        let totalText:NSString = NSString(string: noticeToUserLabel.text!)
+        let theRange = totalText.range(of: userHeartCountText)
+        attStringSub.addAttribute(NSAttributedString.Key.font, value: accentFont, range: theRange)
+        
+        noticeToUserLabel.attributedText = attStringSub
+      
+
         
         confirmView.checkButtonDelegate = self
         confirmView.checkButton.tag = 1
@@ -40,17 +67,25 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
         completionCancelView.checkButton.tag = 2
         completionCancelView.checkButtonLabel.text = "[필수] 구독권 해지 완료했습니다."
         completionCancelView.checkSubButton.isHidden = true
+        
+        
+        
     }
     
     func setupUI(){
+        
+        
         cancelButton.layer.borderWidth = 1
-        cancelButton.layer.borderColor = UIColor.green.cgColor
+        cancelButton.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
         cancelButton.layer.cornerRadius = 8
         cancelButton.backgroundColor = .white
-        cancelButton.titleLabel?.textColor = .green
+        cancelButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
+        cancelButton.titleLabel?.textColor = hexStringToUIColor(hex: Constants.primaryColor)
+        
         
         nextButton.layer.cornerRadius = 8
         nextButton.isUserInteractionEnabled = false
+        nextButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
 
     }
     
