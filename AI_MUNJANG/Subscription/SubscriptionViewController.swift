@@ -13,6 +13,7 @@ public struct InAppProducts {
     private static let productIdentifiers: Set<ProductIdentifier> = [InAppProducts.product]
     public static let store = IAPHelper(productIds: InAppProducts.productIdentifiers)
 }
+//
 
 class SubscriptionViewController: UIViewController {
 
@@ -20,6 +21,9 @@ class SubscriptionViewController: UIViewController {
     @IBOutlet weak var customNaviView: CustomNaviBarView!
     @IBOutlet weak var subscribeChargeLabel: UILabel!
     @IBOutlet weak var subscribeButton: UIButton!
+    
+    @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
     
     var monthProduct: SKProduct?
     var isClickedSubscribeButton = false
@@ -51,10 +55,13 @@ class SubscriptionViewController: UIViewController {
     
     func setupUI() {
         
+        mainTitle.font = UIFont(name: "NanumSquareEB", size: 19)
+        
         
         subscribeButton.clipsToBounds = true
         subscribeButton.layer.cornerRadius = 8
         subscribeButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        subscribeButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 17)
         
         subscribeContainer.layer.cornerRadius = 8
         subscribeContainer.layer.shadowOpacity = 1
