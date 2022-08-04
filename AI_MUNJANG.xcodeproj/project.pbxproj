@@ -58,6 +58,8 @@
 		8474DD22287E6C78008275FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD21287E6C78008275FC /* Utils.swift */; };
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
+		84EBC3C6289BAB8C0089F9AC /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */; };
+		84EBC3C8289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */; };
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
@@ -140,6 +142,8 @@
 		8474DD21287E6C78008275FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8474DD26287EB63C008275FC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
+		84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunJangEightDetailViewController.swift; sourceTree = "<group>"; };
+		84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 			children = (
 				C6ED507D287531AE00454F26 /* MainViewController.swift */,
 				84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */,
+				84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */,
+				84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -683,6 +689,8 @@
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
 				842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */,
 				842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */,
+				84EBC3C8289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift in Sources */,
+				84EBC3C6289BAB8C0089F9AC /* MunJangEightDetailViewController.swift in Sources */,
 				8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */,
 				846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,

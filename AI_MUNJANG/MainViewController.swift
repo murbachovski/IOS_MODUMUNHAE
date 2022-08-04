@@ -29,6 +29,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionViewEight.dataSource = self
         collectionViewEight.backgroundColor = .clear
         
+        self.navigationItem.backButtonTitle = " "
         setupUI()
         
     }
@@ -90,12 +91,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.shadowOffset = CGSize(width: 1, height: 1)
         cell.layer.shadowRadius = 2
         cell.layer.masksToBounds = false
+        
+        
                 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
+        
+        guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
+        munJangEightDetailViewController.naviTitle = "\(indexPath.row + 1 )경"
+        munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
+        munJangEightDetailViewController.subTitleText = "(\(subElements[indexPath.row]))"
+        self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
