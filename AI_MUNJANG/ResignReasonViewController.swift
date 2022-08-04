@@ -29,19 +29,21 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
     @IBOutlet weak var cancelButton: UIButton!
     
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var resignReasonTitle: UILabel!
     
     var reasonToResign:[Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "회원탈퇴"
+        self.navigationItem.title = "탈퇴하기"
         self.navigationItem.backButtonTitle = " "
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification , object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification , object: nil)
     
     
+        resignReasonTitle.font =  UIFont(name: "NanumSquareEB", size: 19)
         
         customResignReasonView01.checkButtonDelegate = self
         customResignReasonView01.checkButton.tag = 1
@@ -73,14 +75,18 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
         customResignReasonTextView.changePlaceHolder(placeholder: "불편하셨던 점 또는 개선할 점을 알려주세요.")
         customResignReasonTextView.changeRestrictedCharacters(res: 100)
         
+        
         cancelButton.layer.borderWidth = 1
-        cancelButton.layer.borderColor = UIColor.green.cgColor
+        cancelButton.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
         cancelButton.layer.cornerRadius = 8
         cancelButton.backgroundColor = .white
-        cancelButton.titleLabel?.textColor = .green
+        
+        cancelButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
+        
         
         nextButton.layer.cornerRadius = 8
         nextButton.isUserInteractionEnabled = false
+        nextButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
     }
     
 

@@ -37,7 +37,7 @@ class CustomTextView: UIView,UITextViewDelegate {
             textView.delegate = self
           
             containerView.layer.borderWidth = 1
-            containerView.layer.borderColor = UIColor.darkGray.cgColor
+            containerView.layer.borderColor = UIColor.lightGray.cgColor
             containerView.layer.cornerRadius = 10
 
             textView.textContainerInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
@@ -51,7 +51,7 @@ class CustomTextView: UIView,UITextViewDelegate {
         if textView.text == textViewPlaceHolder {
             textView.text = nil
             textView.textColor = .black
-            containerView.layer.borderColor = UIColor.blue.cgColor
+            containerView.layer.borderColor = UIColor.darkGray.cgColor
         }
     }
     

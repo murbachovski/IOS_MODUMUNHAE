@@ -25,7 +25,7 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "회원탈퇴"
+        self.navigationItem.title = "탈퇴하기"
         self.navigationItem.backButtonTitle = " "
         
         setupUI()
