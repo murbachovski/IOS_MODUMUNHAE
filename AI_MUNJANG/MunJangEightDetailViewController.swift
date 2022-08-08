@@ -19,6 +19,11 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     @IBOutlet weak var subcontainer: UIView!
     
     @IBOutlet weak var detailLabel: UILabel!
+    
+    var currentSectionCotents : QuizContents = []
+    var currentMissionContents : [QuizContents] = []
+    
+    
     var naviTitle:String = ""
     var mainTitleText:String = ""
     var subTitleText:String = ""
@@ -39,6 +44,22 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         navigationItem.title = naviTitle
         mainTitle.text = mainTitleText
         subTitle.text = subTitleText
+        
+        print(currentSectionCotents.count)
+        
+        //다른 개발자 소스 카피함.
+        let grouped: [[QuizContent]] = currentSectionCotents.reduce(into: []) {
+            $0.last?.last?.mission == $1.mission ?
+            $0[$0.index(before: $0.endIndex)].append($1) :
+            $0.append([$1])
+        }
+
+        currentMissionContents = grouped.sorted { (front, behind) -> Bool in
+            
+            return front.first!.mission < behind.first!.mission
+
+        }
+        print("sorted grouped: \(currentMissionContents)")
         
     }
     
@@ -61,7 +82,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return currentMissionContents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,6 +90,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
                return UICollectionViewCell()
            }
 
+        cell.numberTitle.text = "\(indexPath.row + 1)번"
         //셀에 shadow추가
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 10
@@ -88,6 +110,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         
         guard let munjangQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangQuizViewController")  as? MunjangQuizViewController else {return}
         munjangQuizViewController.modalPresentationStyle = .fullScreen
+        munjangQuizViewController.currentQuizFool = currentMissionContents[indexPath.row]
         present(munjangQuizViewController, animated: true)
       
     }

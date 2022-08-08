@@ -10,7 +10,18 @@ import UIKit
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
     
+//
+    var sectionOne :QuizContents = []
+    var sectionTwo :QuizContents = []
+    var sectionThree :QuizContents = []
+    var sectionFour :QuizContents = []
+    var sectionFive :QuizContents = []
+    var sectionSix :QuizContents = []
+    var sectionSeven :QuizContents = []
+    var sectionEight :QuizContents = []
 
+    var sectionTotal :[QuizContents] = []
+    
 
     @IBOutlet weak var topTitle: UILabel!
     @IBOutlet weak var collectionViewEight: UICollectionView!
@@ -32,6 +43,66 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationItem.backButtonTitle = " "
         setupUI()
         
+        guard let quizData = readLocalFile(forName: "quizContents") else { print("quizData is null"); return}
+        guard let quizContents = try? JSONDecoder().decode(QuizContents.self, from: quizData) else { print("quizContens is null");  return }
+        
+        for  content in quizContents {
+
+            if content.section == "1경" {
+                sectionOne.append(content)
+            }
+            if content.section == "2경" {
+                sectionTwo.append(content)
+            }
+            if content.section == "3경" {
+                sectionThree.append(content)
+            }
+            if content.section == "4경" {
+                sectionFour.append(content)
+            }
+            if content.section == "5경" {
+                sectionFive.append(content)
+            }
+            if content.section == "6경" {
+                sectionSix.append(content)
+            }
+            if content.section == "7경" {
+                sectionSeven.append(content)
+            }
+            if content.section == "8경" {
+                sectionEight.append(content)
+            }
+
+            sectionTotal = [sectionOne, sectionTwo, sectionThree, sectionFour, sectionFive, sectionSix, sectionSeven, sectionEight]
+
+            
+        }
+
+        print( "sectionOne.count : \(sectionOne.count)")
+        print("sectionTwo.count: \(sectionTwo.count)")
+        print("sectionThree.count: \(sectionThree.count)")
+        print("sectionFour.count: \(sectionFour.count)")
+
+        print("sectionFive.count: \(sectionFive.count)")
+        print("sectionSix.count: \(sectionSix.count)")
+        print("sectionSeven.count: \(sectionSeven.count)")
+        print("sectionEight.count: \(sectionEight.count)")
+
+        
+    }
+    
+    private func readLocalFile(forName name: String) -> Data? {
+        do {
+            if let bundlePath = Bundle.main.path(forResource: name,
+                                                 ofType: "json"),
+                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                return jsonData
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
     }
     
     func setupUI(){
@@ -104,6 +175,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         munJangEightDetailViewController.naviTitle = "\(indexPath.row + 1 )경"
         munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
         munJangEightDetailViewController.subTitleText = "(\(subElements[indexPath.row]))"
+        
+        munJangEightDetailViewController.currentSectionCotents = sectionTotal[indexPath.row]
         self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }
     

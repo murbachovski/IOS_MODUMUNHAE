@@ -55,36 +55,54 @@ class MunjangQuizViewController: UIViewController {
     @IBOutlet var stopMessageView: UIView!
     
     @IBOutlet weak var stopSubContainer: UIView!
+    
     var quizStatus:QuizStatus = .NONE
+    
+    var currentQuizFool:QuizContents = []
+    
+    var currentQuizIndex = 0
+    lazy var currentQuiz = QuizContent(id: "", type: "", section: "", mission: 0, title: "", jimun: nil, example: "", result: nil, imageName: nil)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+       
 
         
         quizImage.isHidden = false
         quizTextLabel.isHidden = true
         // Do any additional setup after loading the view.
+        
+       
+        currentQuiz = currentQuizFool[0]
+        setupUI()
     }
     
     func setupUI(){
+        
+        let exampleArray = currentQuiz.example.components(separatedBy:"//")
+        answer01Button.titleLabel?.text = exampleArray[0]
         answer01Button.layer.cornerRadius = 8
         answer01Button.layer.borderWidth = 1
         answer01Button.layer.borderColor = UIColor.lightGray.cgColor
         
         
+        answer02Button.titleLabel?.text = exampleArray[1]
         answer02Button.layer.cornerRadius = 8
         answer02Button.layer.borderWidth = 1
         answer02Button.layer.borderColor = UIColor.lightGray.cgColor
         
+        answer03Button.titleLabel?.text = exampleArray[2]
         answer03Button.layer.cornerRadius = 8
         answer03Button.layer.borderWidth = 1
         answer03Button.layer.borderColor = UIColor.lightGray.cgColor
         
+        quizTextLabel.text = currentQuiz.jimun
         quizTextLabel.layer.cornerRadius = 12
         quizTextLabel.layer.masksToBounds = true
         
+//        quizImage.image = UIImage(named: currentQuiz.imageName)
         quizImage.layer.cornerRadius = 12
         quizImage.layer.masksToBounds = true
      
@@ -115,20 +133,27 @@ class MunjangQuizViewController: UIViewController {
     @IBAction func clickedOptions(_ sender: UIButton) {
         print("clicked \(sender.tag) button")
         
-        
-//        return
-        //응답이 참인 경우와 거짓인 경우를 나누어..
-        if sender.tag == 1 {
+        if sender.titleLabel?.text == currentQuiz.result {
             quizStatus = .CORRECT
             showCorrectOrNotView()
-            
-        }else if sender.tag == 2{
+            updateUI()
+        }else{
             quizStatus = .INCORRECT
             showCorrectOrNotView()
-        }else if sender.tag == 3 {
-            completeView.frame = view.frame
-            view.addSubview(completeView)
         }
+        
+        //응답이 참인 경우와 거짓인 경우를 나누어..
+//        if sender.tag == 1 {
+//            quizStatus = .CORRECT
+//            showCorrectOrNotView()
+//
+//        }else if sender.tag == 2{
+//            quizStatus = .INCORRECT
+//            showCorrectOrNotView()
+//        }else if sender.tag == 3 {
+//            completeView.frame = view.frame
+//            view.addSubview(completeView)
+//        }
         
         
         
@@ -163,8 +188,8 @@ class MunjangQuizViewController: UIViewController {
     
     
     func updateUI(){
-        quizImage.isHidden = !quizImage.isHidden
-        quizTextLabel.isHidden = !quizTextLabel.isHidden
+//        quizImage.isHidden = !quizImage.isHidden
+//        quizTextLabel.isHidden = !quizTextLabel.isHidden
    
     }
     
