@@ -86,6 +86,9 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
+        guard let munjangQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangQuizViewController")  as? MunjangQuizViewController else {return}
+        munjangQuizViewController.modalPresentationStyle = .fullScreen
+        present(munjangQuizViewController, animated: true)
       
     }
     

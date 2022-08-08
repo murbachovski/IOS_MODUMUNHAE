@@ -14,7 +14,7 @@ public func isValidPassword(password:String) -> Bool {
 }
 
 
-func hexStringToUIColor (hex:String) -> UIColor {
+func hexStringToUIColor (hex:String, alpha:CGFloat = 1.0) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 
     if (cString.hasPrefix("#")) {
@@ -32,7 +32,7 @@ func hexStringToUIColor (hex:String) -> UIColor {
         red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
         green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
         blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-        alpha: CGFloat(1.0)
+        alpha: alpha
     )
 }
 
@@ -124,4 +124,18 @@ class ActualGradientButton: UIButton {
         layer.insertSublayer(l, at: 0)
         return l
     }()
+}
+
+extension UIButton {
+    func setRightImage(right: UIImage? = nil) {
+       
+        if let rightImage = right{
+            setImage(rightImage, for: .normal)
+            imageEdgeInsets = UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 100)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 10)
+            rightImage.withRenderingMode(.alwaysTemplate)
+            contentHorizontalAlignment = .left
+        }
+
+    }
 }
