@@ -63,48 +63,78 @@ class MunjangQuizViewController: UIViewController {
     var currentQuizIndex = 0
     lazy var currentQuiz = QuizContent(id: "", type: "", section: "", mission: 0, title: "", jimun: nil, example: "", result: nil, imageName: nil)
     
+
+    var answerButtons : [UIButton] = []
+    var answerButtonImages : [UIImageView] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        answerButtons = [answer01Button, answer02Button, answer03Button]
+        answerButtonImages = [button01Image, button02Image, button03Image]
 
         
         quizImage.isHidden = false
         quizTextLabel.isHidden = true
         // Do any additional setup after loading the view.
-        
        
         currentQuiz = currentQuizFool[0]
+        print("CurrentQuiz : \(currentQuiz)")
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setupUI()
     }
     
     func setupUI(){
         
         let exampleArray = currentQuiz.example.components(separatedBy:"//")
-        answer01Button.titleLabel?.text = exampleArray[0]
+        answer01Button.setTitle(exampleArray[0].trimmingCharacters(in: .whitespaces)
+                            , for: .normal)
         answer01Button.layer.cornerRadius = 8
         answer01Button.layer.borderWidth = 1
         answer01Button.layer.borderColor = UIColor.lightGray.cgColor
         
         
-        answer02Button.titleLabel?.text = exampleArray[1]
+        answer02Button.setTitle(exampleArray[1].trimmingCharacters(in: .whitespaces), for: .normal)
         answer02Button.layer.cornerRadius = 8
         answer02Button.layer.borderWidth = 1
         answer02Button.layer.borderColor = UIColor.lightGray.cgColor
         
-        answer03Button.titleLabel?.text = exampleArray[2]
+        answer03Button.setTitle(exampleArray[2].trimmingCharacters(in: .whitespaces), for: .normal)
         answer03Button.layer.cornerRadius = 8
         answer03Button.layer.borderWidth = 1
         answer03Button.layer.borderColor = UIColor.lightGray.cgColor
         
-        quizTextLabel.text = currentQuiz.jimun
-        quizTextLabel.layer.cornerRadius = 12
-        quizTextLabel.layer.masksToBounds = true
+        questionTitle.text = currentQuiz.title
         
-//        quizImage.image = UIImage(named: currentQuiz.imageName)
-        quizImage.layer.cornerRadius = 12
-        quizImage.layer.masksToBounds = true
+        if currentQuiz.type == "Image"{
+            quizTextLabel.isHidden = true
+            quizImage.isHidden = false
+            quizImage.image = UIImage(named: currentQuiz.imageName!)
+            quizImage.layer.cornerRadius = 12
+            quizImage.layer.masksToBounds = true
+
+        }else{
+            quizTextLabel.isHidden = false
+            quizImage.isHidden = true
+            
+            quizTextLabel.text = currentQuiz.jimun
+            quizTextLabel.layer.cornerRadius = 12
+            quizTextLabel.layer.masksToBounds = true
+            
+            let attributedString = NSMutableAttributedString(string: currentQuiz.jimun!)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 3 // Whatever line spacing you want in points
+            attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+            quizTextLabel.attributedText = attributedString
+            quizTextLabel.textAlignment = .center
+            
+        }
+        
      
         quizContainerView.layer.cornerRadius = 12
         quizContainerView.layer.shadowOpacity = 1
@@ -124,40 +154,51 @@ class MunjangQuizViewController: UIViewController {
         stopSubContainer.layer.cornerRadius = 20
         stopSubContainer.layer.maskedCorners = [ .layerMinXMinYCorner, .layerMaxXMinYCorner]
    
+        
     }
     
 
    
     
     
+    
     @IBAction func clickedOptions(_ sender: UIButton) {
         print("clicked \(sender.tag) button")
         
         if sender.titleLabel?.text == currentQuiz.result {
+            
+            
             quizStatus = .CORRECT
+            changeButtonUIByRsult(sender, correct: true)
+            
             showCorrectOrNotView()
-            updateUI()
+            currentQuizIndex += 1
+            currentQuiz = currentQuizFool[currentQuizIndex]
+
         }else{
+            changeButtonUIByRsult(sender, correct: false)
+                        
             quizStatus = .INCORRECT
+            
             showCorrectOrNotView()
         }
-        
-        //응답이 참인 경우와 거짓인 경우를 나누어..
-//        if sender.tag == 1 {
-//            quizStatus = .CORRECT
-//            showCorrectOrNotView()
-//
-//        }else if sender.tag == 2{
-//            quizStatus = .INCORRECT
-//            showCorrectOrNotView()
-//        }else if sender.tag == 3 {
-//            completeView.frame = view.frame
-//            view.addSubview(completeView)
-//        }
-        
-        
+
+    }
+    
+    fileprivate func changeButtonUIByRsult(_ sender: UIButton, correct:Bool) {
+        if correct {
+            answerButtons[sender.tag].layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
+            answerButtonImages[sender.tag].image = UIImage(named: "icCorrect32Px")
+            answerButtonImages[sender.tag].isHidden = false
+        }else{
+            answerButtons[sender.tag].layer.borderColor = hexStringToUIColor(hex: "#ff4343").cgColor
+            answerButtonImages[sender.tag].image = UIImage(named: "icIncorrect32Px")
+            answerButtonImages[sender.tag].isHidden = false
+        }
         
     }
+    
+    
     
     
     func showCorrectOrNotView(){
@@ -170,16 +211,17 @@ class MunjangQuizViewController: UIViewController {
             trueOrNotImageView.image = UIImage(named: "icCorrect24Px") //
             trueOrNotTitle.text = "정답입니다!"
             trueOrNotTitle.textColor =  hexStringToUIColor(hex: "#04bf55")
-            trueOrNotButton.titleLabel?.text = "다음"
+            trueOrNotButton.setTitle("다음", for: .normal)
             trueOrNotButton.backgroundColor = hexStringToUIColor(hex: "#04bf55")
             
+        
             
         }else if quizStatus == .INCORRECT {
             correctViewSubContainerView.backgroundColor = hexStringToUIColor(hex: "#FCEBEA")
             trueOrNotImageView.image = UIImage(named: "icIncorrect24Px")
             trueOrNotTitle.text = "다시 한 번 맞춰보세요!"
             trueOrNotTitle.textColor =  hexStringToUIColor(hex: "#ff4343")
-            trueOrNotButton.titleLabel?.text = "다시 맞추기"
+            trueOrNotButton.setTitle("다시 맞추기", for: .normal)
             trueOrNotButton.backgroundColor = hexStringToUIColor(hex: "#ff4343")
         }
         
@@ -188,8 +230,7 @@ class MunjangQuizViewController: UIViewController {
     
     
     func updateUI(){
-//        quizImage.isHidden = !quizImage.isHidden
-//        quizTextLabel.isHidden = !quizTextLabel.isHidden
+      setupUI()
    
     }
     
@@ -197,7 +238,9 @@ class MunjangQuizViewController: UIViewController {
     @IBAction func clickedTrueOrNotButton(_ sender: Any) {
         quizStatus = .NONE
         correctOrNotView.removeFromSuperview()
-        
+        for item in answerButtonImages {
+            item.isHidden = true
+        }
         updateUI()
     }
     @IBAction func clickedCompleteViewButton(_ sender: Any) {
