@@ -79,7 +79,9 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loginButtonView.button.setTitleColor(.lightGray, for: .normal)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,13 +125,14 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         
         loginButtonView.button.layer.cornerRadius = 8
         loginButtonView.button.setTitle("로그인", for: .normal)
+        
 
-        loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .white)
+        loginButtonView.convertButtonStatus(status: false, backgroundColor: hexStringToUIColor(hex: "#F7F7F7"), titleColor: .white)
         loginButtonView.buttonCompletion {
             self.clickedByEmailUser()
         }
-        
-        onlyTourButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
+    
+        onlyTourButton.titleLabel?.font =  UIFont(name: "NanumSquareB", size: 17)
     }
     
     func initDropDownUI(){
@@ -179,7 +182,9 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         if emailContainerView.isValidStatus == true && passwordContainerView.isValidStatus == true {
             loginButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
         }else{
-            loginButtonView.convertButtonStatus(status: false, backgroundColor: .lightGray, titleColor: .white)
+            loginButtonView.convertButtonStatus(status: false, backgroundColor: hexStringToUIColor(hex: "#F7F7F7"), titleColor: .white)
+            loginButtonView.button.setTitleColor(.lightGray, for: .normal)
+            
         }
     }
     
