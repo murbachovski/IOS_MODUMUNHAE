@@ -258,6 +258,8 @@ class MunjangQuizViewController: UIViewController {
         
         if isCurrentMissionCompleted {
             print("MIssion Completed")
+            completeView.frame = self.view.frame
+            self.view.addSubview(completeView)
         }else{
             updateUI()
         }
