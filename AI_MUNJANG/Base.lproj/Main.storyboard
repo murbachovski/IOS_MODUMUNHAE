@@ -420,28 +420,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSU-XL-TsV" customClass="CustomEmailView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="218" width="366" height="100"/>
+                                <rect key="frame" x="24" y="192" width="366" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="aio-uC-pJn"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hA-df-zY3" customClass="CustomPasswordView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="326" width="366" height="100"/>
+                                <rect key="frame" x="24" y="300" width="366" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="OOB-ar-aze"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdB-pP-6Se" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="24" y="426" width="366" height="56"/>
+                                <rect key="frame" x="24" y="400" width="366" height="56"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="QRz-9C-s2Q"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5eZ-To-dZd">
-                                <rect key="frame" x="24" y="506" width="366" height="24"/>
+                                <rect key="frame" x="24" y="480" width="366" height="24"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6V-CZ-5WX">
                                         <rect key="frame" x="0.0" y="0.0" width="181" height="24"/>
@@ -515,7 +515,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-AC-h0A">
-                                <rect key="frame" x="24" y="570" width="366" height="76"/>
+                                <rect key="frame" x="24" y="544" width="366" height="76"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소셜계정으로 이용하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D7-gC-42A">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="12"/>
@@ -556,11 +556,11 @@
                                     <constraint firstAttribute="height" constant="56" id="PBg-wy-DVK"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-tt-1xT">
-                                <rect key="frame" x="20" y="118" width="374" height="80"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group2" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-tt-1xT">
+                                <rect key="frame" x="20" y="118" width="374" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="zCv-HW-7PF"/>
+                                    <constraint firstAttribute="height" constant="44" id="zCv-HW-7PF"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -575,7 +575,7 @@
                             <constraint firstItem="jqd-zy-sHn" firstAttribute="leading" secondItem="k8y-Yw-4jx" secondAttribute="leading" constant="20" id="9mN-ni-TF2"/>
                             <constraint firstItem="0hA-df-zY3" firstAttribute="top" secondItem="PSU-XL-TsV" secondAttribute="bottom" constant="8" id="ACZ-51-HTd"/>
                             <constraint firstItem="pdB-pP-6Se" firstAttribute="top" secondItem="0hA-df-zY3" secondAttribute="bottom" id="B3q-Ix-2a7"/>
-                            <constraint firstItem="PSU-XL-TsV" firstAttribute="top" secondItem="gpK-tt-1xT" secondAttribute="bottom" constant="20" id="IWs-MS-Huz"/>
+                            <constraint firstItem="PSU-XL-TsV" firstAttribute="top" secondItem="gpK-tt-1xT" secondAttribute="bottom" constant="30" id="IWs-MS-Huz"/>
                             <constraint firstItem="gpK-tt-1xT" firstAttribute="centerX" secondItem="ALw-u5-FSU" secondAttribute="centerX" id="SYX-VA-kT1"/>
                             <constraint firstItem="k8y-Yw-4jx" firstAttribute="trailing" secondItem="PSU-XL-TsV" secondAttribute="trailing" constant="24" id="UUY-qB-MQV"/>
                             <constraint firstItem="5eZ-To-dZd" firstAttribute="top" secondItem="pdB-pP-6Se" secondAttribute="bottom" constant="24" id="Wcn-05-9Mr"/>
@@ -2768,11 +2768,11 @@
     </scenes>
     <designables>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191" height="27"/>
+            <size key="intrinsicContentSize" width="175" height="19"/>
         </designable>
     </designables>
     <resources>
-        <image name="group" width="149" height="102"/>
+        <image name="group2" width="183" height="44"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="icArrowLeft32Px" width="32" height="32"/>
         <image name="icClose32Px" width="34" height="34"/>

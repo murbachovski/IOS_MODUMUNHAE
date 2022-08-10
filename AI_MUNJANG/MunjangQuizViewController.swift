@@ -67,6 +67,7 @@ class MunjangQuizViewController: UIViewController {
 
     var answerButtons : [UIButton] = []
     var answerButtonImages : [UIImageView] = []
+    var progressBarloc: Float = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,8 +82,12 @@ class MunjangQuizViewController: UIViewController {
        
         currentQuiz = currentQuizFool[0]
         print("CurrentQuiz : \(currentQuiz)")
+        
+        quizProgressView.progress = 0.0
+        
 
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -244,7 +249,10 @@ class MunjangQuizViewController: UIViewController {
     
     
     func updateUI(){
-      setupUI()
+        progressBarloc = Float(currentQuizIndex) / Float(currentQuizFool.count)
+        quizProgressView.setProgress(progressBarloc, animated: true)
+        
+        setupUI()
    
     }
     
