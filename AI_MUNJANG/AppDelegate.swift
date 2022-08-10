@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Firebase 초기화
         FirebaseApp.configure()
         
+        _ = QuizContentData.shared.sectionTotal
+        
         //구독여부 판단 - 영수증의 유효성을 판단해야
         InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})
         

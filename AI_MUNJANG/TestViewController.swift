@@ -12,7 +12,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
 
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입","비밀번호 재설정", "비밀번호 재설정 상세","회원탈퇴","회원탈퇴 사유", "비밀번호 변경", "구독페이지"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입","비밀번호 재설정", "비밀번호 재설정 상세","회원탈퇴","회원탈퇴 사유", "비밀번호 변경", "구독페이지", "DummyJson 사용"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,17 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
         cell.textLabel?.text = tableViewItems[indexPath.row]
+        
+        if indexPath.row == 15 {
+            if QuizContentData.shared.isDummyContensts {
+                cell.textLabel?.text = "Dummy Data"
+                    
+            }else{
+                cell.textLabel?.text = "Normal Data"
+            }
+                
+            
+        }
         return cell
     }
     
@@ -123,6 +134,20 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
             subscriptionViewController.modalPresentationStyle = .fullScreen
             self.present(subscriptionViewController, animated: true)
+        }else if indexPath.row == 15 {
+            
+            if QuizContentData.shared.isDummyContensts == false {
+                QuizContentData.shared.isDummyContensts = true
+                QuizContentData.shared.loadingContents(fileName: "dummyContents")
+                tableView.cellForRow(at: indexPath)?.textLabel?.text = "Dummy Data"
+            }else{
+                QuizContentData.shared.isDummyContensts = false
+                QuizContentData.shared.loadingContents(fileName: "quizContents")
+                tableView.cellForRow(at: indexPath)?.textLabel?.text = "Normal Data"
+            }
+            changeMainNC()
+            
+            
         }
         
         

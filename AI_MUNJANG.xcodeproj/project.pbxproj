@@ -44,6 +44,7 @@
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
+		846E2BE628A3585200C5292D /* dummyContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 846E2BE528A3585100C5292D /* dummyContents.json */; };
 		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
 		8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFD287D02DC008275FC /* CustomButtonView.swift */; };
 		8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DCFE287D02DC008275FC /* CustomButtonView.xib */; };
@@ -133,6 +134,7 @@
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
+		846E2BE528A3585100C5292D /* dummyContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummyContents.json; sourceTree = "<group>"; };
 		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8474DCFD287D02DC008275FC /* CustomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8474DCFE287D02DC008275FC /* CustomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonView.xib; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				84EBC3D428A0F1090089F9AC /* quizContents.json */,
+				846E2BE528A3585100C5292D /* dummyContents.json */,
 				84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */,
 				846E2BE128A34FDD00C5292D /* QuizContentData.swift */,
 			);
@@ -572,6 +575,7 @@
 				842B0398288647850000BEDA /* CustomTextField.xib in Resources */,
 				8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */,
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
+				846E2BE628A3585200C5292D /* dummyContents.json in Resources */,
 				842B0392288643080000BEDA /* NanumSquareR.ttf in Resources */,
 				842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */,
 				8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */,
