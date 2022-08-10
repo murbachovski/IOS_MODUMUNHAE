@@ -61,6 +61,7 @@ class MunjangQuizViewController: UIViewController {
     var currentQuizFool:QuizContents = []
     
     var currentQuizIndex = 0
+    var isCurrentMissionCompleted = false
     lazy var currentQuiz = QuizContent(id: "", type: "", section: "", mission: 0, title: "", jimun: nil, example: "", result: nil, imageName: nil)
     
 
@@ -92,6 +93,8 @@ class MunjangQuizViewController: UIViewController {
     func setupUI(){
         
         let exampleArray = currentQuiz.example.components(separatedBy:"//")
+        let exampleCount = exampleArray.count
+        
         answer01Button.setTitle(exampleArray[0].trimmingCharacters(in: .whitespaces)
                             , for: .normal)
         answer01Button.layer.cornerRadius = 8
@@ -104,10 +107,16 @@ class MunjangQuizViewController: UIViewController {
         answer02Button.layer.borderWidth = 1
         answer02Button.layer.borderColor = UIColor.lightGray.cgColor
         
-        answer03Button.setTitle(exampleArray[2].trimmingCharacters(in: .whitespaces), for: .normal)
-        answer03Button.layer.cornerRadius = 8
-        answer03Button.layer.borderWidth = 1
-        answer03Button.layer.borderColor = UIColor.lightGray.cgColor
+        if exampleCount == 2 {
+            answer03Button.isHidden = true
+        }else{
+            answer03Button.isHidden = false
+            answer03Button.setTitle(exampleArray[2].trimmingCharacters(in: .whitespaces), for: .normal)
+            answer03Button.layer.cornerRadius = 8
+            answer03Button.layer.borderWidth = 1
+            answer03Button.layer.borderColor = UIColor.lightGray.cgColor
+        }
+        
         
         questionTitle.text = currentQuiz.title
         
@@ -172,8 +181,13 @@ class MunjangQuizViewController: UIViewController {
             changeButtonUIByRsult(sender, correct: true)
             
             showCorrectOrNotView()
-            currentQuizIndex += 1
-            currentQuiz = currentQuizFool[currentQuizIndex]
+            if currentQuizIndex < currentQuizFool.count - 1 {
+                currentQuizIndex += 1
+                currentQuiz = currentQuizFool[currentQuizIndex]
+            }else{
+                isCurrentMissionCompleted = true
+            }
+            
 
         }else{
             changeButtonUIByRsult(sender, correct: false)
@@ -241,8 +255,15 @@ class MunjangQuizViewController: UIViewController {
         for item in answerButtonImages {
             item.isHidden = true
         }
-        updateUI()
+        
+        if isCurrentMissionCompleted {
+            print("MIssion Completed")
+        }else{
+            updateUI()
+        }
+        
     }
+    
     @IBAction func clickedCompleteViewButton(_ sender: Any) {
 
         
