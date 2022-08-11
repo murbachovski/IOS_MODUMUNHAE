@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 enum QuizStatus {
     case NONE
@@ -70,6 +72,8 @@ class MunjangQuizViewController: UIViewController {
     var answerButtonImages : [UIImageView] = []
     var progressBarloc: Float = 0
     
+    var isCompletedTypeAnimation = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -114,6 +118,11 @@ class MunjangQuizViewController: UIViewController {
     }
     
     func setupUI(){
+        isCompletedTypeAnimation = false
+        answer01Button.isUserInteractionEnabled = false
+        answer02Button.isUserInteractionEnabled = false
+        answer03Button.isUserInteractionEnabled = false
+        
         quizProcessLabel.text = "\(currentQuizIndex)/\(currentQuizPool.count)"
         quizProcessLabel.font = UIFont(name: "NanumSquareEB", size: 17)
         quizProcessLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
@@ -163,7 +172,7 @@ class MunjangQuizViewController: UIViewController {
             quizImage.isHidden = true
             
 //            quizTextLabel.text = currentQuiz.jimun
-            quizTextLabel.typeAnimate(str :currentQuiz.jimun!)
+            typeAnimate(label: quizTextLabel, str :currentQuiz.jimun!)
             quizTextLabel.layer.cornerRadius = 12
             quizTextLabel.layer.masksToBounds = true
             
@@ -207,7 +216,9 @@ class MunjangQuizViewController: UIViewController {
     
     @IBAction func clickedOptions(_ sender: UIButton) {
         print("clicked \(sender.tag) button")
-        
+        if isCompletedTypeAnimation == false {
+            return
+        }
         if sender.titleLabel?.text == currentQuiz.result {
             
             
@@ -325,5 +336,16 @@ class MunjangQuizViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    
+    func typeAnimate(label: UILabel, str:String) {
+        label.text = ""
+        for i in str {
+            AudioServicesPlaySystemSound(1306)
+            label.text! += "\(i)"
+            RunLoop.current.run(until: Date()+0.12)
+        }
+        isCompletedTypeAnimation = true
+        answer01Button.isUserInteractionEnabled = true
+        answer02Button.isUserInteractionEnabled = true
+        answer03Button.isUserInteractionEnabled = true
+    }
 }

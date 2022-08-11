@@ -105,15 +105,6 @@ extension UILabel {
         attributedString.addAttribute(.font, value: font as Any, range: range)
         attributedText = attributedString
     }
-    
-    func typeAnimate(str:String) {
-        self.text = ""
-        for i in str {
-            AudioServicesPlaySystemSound(1306)
-            self.text! += "\(i)"
-            RunLoop.current.run(until: Date()+0.12)
-        }
-    }
 }
 
 
