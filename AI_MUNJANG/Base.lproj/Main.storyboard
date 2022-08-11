@@ -1203,7 +1203,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbf-Ln-WpC" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
                                 <rect key="frame" x="24" y="240" width="366" height="52"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="UlC-Y7-5Ya"/>
                                 </constraints>
@@ -1369,13 +1368,13 @@
                                             <action selector="clickedCancel:" destination="mZF-x9-q7E" eventType="touchUpInside" id="Unc-WH-djR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWB-Xo-WJi">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWB-Xo-WJi">
                                         <rect key="frame" x="195" y="0.0" width="179" height="52"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="다음">
-                                            <color key="baseForegroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
+                                        <color key="backgroundColor" red="0.792156862745098" green="0.792156862745098" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="다음">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="clickedNext:" destination="mZF-x9-q7E" eventType="touchUpInside" id="40O-0M-89t"/>
                                         </connections>
@@ -1520,10 +1519,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le4-x5-LcZ">
                                         <rect key="frame" x="195" y="0.0" width="179" height="52"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="다음">
-                                            <color key="baseForegroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="다음">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="clickedNext:" destination="vMd-v6-wV5" eventType="touchUpInside" id="hsW-bZ-egs"/>
                                             <action selector="clickedNext:" destination="mZF-x9-q7E" eventType="touchUpInside" id="mmY-St-ZFd"/>
@@ -2348,17 +2347,32 @@
                                             <constraint firstAttribute="width" constant="32" id="RVq-E9-qdi"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9c-e5-rdR">
-                                        <rect key="frame" x="347" y="6" width="11" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="11" id="pqL-nA-to1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="0.9882352941176471" green="0.10980392156862745" blue="0.54117647058823526" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9c-e5-rdR">
+                                        <rect key="frame" x="324.5" y="6" width="33.5" height="32"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="5">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.2496431102073069" green="0.27122418972689766" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="Arial-BoldMT"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="/">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.29534430929738353" green="0.44149118165414114" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="Arial-BoldMT"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="10">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.2846860064590413" blue="0.22625856824504453" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="17" name="Arial-BoldMT"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h03-6z-nnJ">
-                                        <rect key="frame" x="73" y="18" width="254" height="8"/>
+                                        <rect key="frame" x="73" y="18" width="231.5" height="8"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="8" id="SQQ-8a-Ubl"/>
                                         </constraints>
@@ -2529,6 +2543,7 @@
                         <outlet property="questionTitle" destination="F0z-nd-emn" id="ag3-eY-saA"/>
                         <outlet property="quizContainerView" destination="fpg-hd-0xa" id="AMd-JQ-tm3"/>
                         <outlet property="quizImage" destination="3ua-i4-CcT" id="BzW-KY-5cD"/>
+                        <outlet property="quizProcessLabel" destination="p9c-e5-rdR" id="zaJ-DS-8CE"/>
                         <outlet property="quizProgressView" destination="h03-6z-nnJ" id="xhk-ab-Rpc"/>
                         <outlet property="quizTextLabel" destination="pVQ-02-xFM" id="LPj-Hm-xyP"/>
                         <outlet property="stopMessageView" destination="YHv-uk-fH8" id="HHg-6U-5sW"/>
@@ -2770,7 +2785,7 @@
     </scenes>
     <designables>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191" height="27"/>
+            <size key="intrinsicContentSize" width="175" height="19"/>
         </designable>
     </designables>
     <resources>

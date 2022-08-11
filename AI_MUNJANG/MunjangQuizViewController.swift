@@ -14,7 +14,8 @@ enum QuizStatus {
 }
 
 class MunjangQuizViewController: UIViewController {
-
+    @IBOutlet var quizProcessLabel: UILabel!
+    
     @IBOutlet var correctOrNotView: UIView!
     
     @IBOutlet weak var trueOrNotImageView: UIImageView!
@@ -58,7 +59,7 @@ class MunjangQuizViewController: UIViewController {
     
     var quizStatus:QuizStatus = .NONE
     
-    var currentQuizFool:QuizContents = []
+    var currentQuizPool:QuizContents = []
     
     var currentQuizIndex = 0
     var isCurrentMissionCompleted = false
@@ -80,12 +81,13 @@ class MunjangQuizViewController: UIViewController {
         quizTextLabel.isHidden = true
         // Do any additional setup after loading the view.
        
-        currentQuiz = currentQuizFool[0]
+        currentQuiz = currentQuizPool[0]
         print("CurrentQuiz : \(currentQuiz)")
         
         quizProgressView.progress = 0.0
+        quizProgressView.tintColor = hexStringToUIColor(hex: Constants.primaryColor)
         
-
+        
     }
     
     
@@ -96,6 +98,14 @@ class MunjangQuizViewController: UIViewController {
     }
     
     func setupUI(){
+        quizProcessLabel.text = "\(currentQuizIndex)/\(currentQuizPool.count)"
+        quizProcessLabel.font = UIFont(name: "NanumSquareEB", size: 17)
+        quizProcessLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
+//        let attributedString = NSMutableAttributedString(string: currentQuiz.jimun!)
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineSpacing = 3 // Whatever line spacing you want in points
+//        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        
         
         let exampleArray = currentQuiz.example.components(separatedBy:"//")
         let exampleCount = exampleArray.count
@@ -186,9 +196,9 @@ class MunjangQuizViewController: UIViewController {
             changeButtonUIByRsult(sender, correct: true)
             
             showCorrectOrNotView()
-            if currentQuizIndex < currentQuizFool.count - 1 {
+            if currentQuizIndex < currentQuizPool.count - 1 {
                 currentQuizIndex += 1
-                currentQuiz = currentQuizFool[currentQuizIndex]
+                currentQuiz = currentQuizPool[currentQuizIndex]
             }else{
                 isCurrentMissionCompleted = true
             }
@@ -249,7 +259,7 @@ class MunjangQuizViewController: UIViewController {
     
     
     func updateUI(){
-        progressBarloc = Float(currentQuizIndex) / Float(currentQuizFool.count)
+        progressBarloc = Float(currentQuizIndex) / Float(currentQuizPool.count)
         quizProgressView.setProgress(progressBarloc, animated: true)
         
         setupUI()

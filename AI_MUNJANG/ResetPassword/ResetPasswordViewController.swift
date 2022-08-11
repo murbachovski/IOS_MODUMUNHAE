@@ -61,8 +61,8 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
         
         authenticateButtonView.button.layer.cornerRadius = 8
         authenticateButtonView.button.setTitle("인증하기", for: .normal)
-        authenticateButtonView.button.backgroundColor = .lightGray
-        authenticateButtonView.button.setTitleColor(.white, for: .normal)
+//        authenticateButtonView.button.backgroundColor = .lightGray
+//        authenticateButtonView.button.setTitleColor(.white, for: .normal)
         authenticateButtonView.button.titleLabel!.font = UIFont(name: "NanumSquareEB", size: 17)
         authenticateButtonView.buttonCompletion {
             self.clickedByUser()
@@ -117,7 +117,7 @@ class ResetPasswordViewController: UIViewController , ShowDropDelegate, CheckEma
         if emailView.isValidStatus == true  {
             authenticateButtonView.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
         }else{
-            authenticateButtonView.convertButtonStatus(status: false, backgroundColor: .white, titleColor: .darkGray)
+            authenticateButtonView.convertButtonStatus(status: false, backgroundColor: hexStringToUIColor(hex: Constants.inActive_status), titleColor: .darkGray)
         }
     }
     

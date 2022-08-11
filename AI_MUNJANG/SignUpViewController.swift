@@ -83,7 +83,8 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
         registerView.button.layer.cornerRadius = 8
         registerView.button.setTitle("완료", for: .normal)
         registerView.button.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
-        registerView.button.backgroundColor = .lightGray
+        registerView.button.setTitleColor(.lightGray, for: .normal)
+        registerView.button.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
         registerView.buttonCompletion {
             self.clickedRegisterButton()
         }
@@ -227,6 +228,10 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                      
                      if errorInforKey as! String == "ERROR_EMAIL_ALREADY_IN_USE" {
                          print("ERROR_EMAIL_ALREADY_IN_USE")
+                         let alert = AlertService().alert(title: "", body: "\(withEmail)은 이미 가입한 계정입니다.", cancelTitle: "", confirTitle: "확인"){
+                             
+                         }
+                         self!.present(alert, animated: true)
                      }
                  }
                return
@@ -236,7 +241,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
             Core.shared.setUserSignup()
             Core.shared.setUserLogin()
             
-            let alert = AlertService().alert(title: "", body: "\(withEmail)계정으로 회원가입이 정상적으로 처리되었습니다.", cancelTitle: "", confirTitle: "획인") {
+            let alert = AlertService().alert(title: "", body: "\(withEmail)계정으로 회원가입이 정상적으로 처리되었습니다.", cancelTitle: "", confirTitle: "확인") {
                 self?.clickedConfirmByUser(withEmail: withEmail, password: password)
             }
             

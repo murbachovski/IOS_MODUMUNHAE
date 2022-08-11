@@ -87,6 +87,8 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
         nextButton.layer.cornerRadius = 8
         nextButton.isUserInteractionEnabled = false
         nextButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
+        nextButton.setTitleColor(.lightGray, for: .normal)
+        nextButton.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
     }
     
 
@@ -170,10 +172,12 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
         
         if isActive == true {
             nextButton.isUserInteractionEnabled = true
+            nextButton.setTitleColor(.white, for: .normal)
             nextButton.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
-        }else{
+        }else {
             nextButton.isUserInteractionEnabled = false
-            nextButton.backgroundColor = .lightGray
+            nextButton.setTitleColor(.lightGray, for: .normal)
+            nextButton.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
         }
     }
     

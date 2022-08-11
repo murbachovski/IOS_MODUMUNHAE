@@ -110,7 +110,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         
         guard let munjangQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangQuizViewController")  as? MunjangQuizViewController else {return}
         munjangQuizViewController.modalPresentationStyle = .fullScreen
-        munjangQuizViewController.currentQuizFool = currentMissionContents[indexPath.row]
+        munjangQuizViewController.currentQuizPool = currentMissionContents[indexPath.row]
         present(munjangQuizViewController, animated: true)
       
     }

@@ -72,7 +72,10 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
         
         nextButton.button.setTitle("다음", for: .normal)
         nextButton.button.titleLabel?.font = UIFont(name: "NanumSquareB", size: 20)
-        nextButton.convertButtonStatus(status: true, backgroundColor: .lightGray, titleColor: .white)
+//        nextButton.convertButtonStatus(status: true, backgroundColor: .lightGray, titleColor: .white)
+        nextButton.button.setTitleColor(.lightGray, for: .normal)
+        nextButton.button.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
+        
         nextButton.button.layer.cornerRadius = 8
         nextButton.buttonCompletion {            
             self.clickedNextButton()
@@ -127,11 +130,26 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
             allCheckLabel.checkButton.isSelected = false
         }
         
+//        if isActive == true {
+//            nextButton.isUserInteractionEnabled = true
+//            nextButton.setTitleColor(.white, for: .normal)
+//            nextButton.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
+//        }else {
+//            nextButton.isUserInteractionEnabled = false
+//            nextButton.setTitleColor(.lightGray, for: .normal)
+//            nextButton.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
+//        }
+        
         //다음버튼 활성화 여부 판단
         if useTermsCheckLabel.checkButton.isSelected && personalInfoCheckLabel.checkButton.isSelected && fourteenCheckLabel.checkButton.isSelected {
-            nextButton.convertButtonStatus(status: true, backgroundColor: hexStringToUIColor(hex: Constants.primaryColor), titleColor: .white)
+            nextButton.button.isUserInteractionEnabled = true
+            nextButton.button.setTitleColor(.white, for: .normal)
+            nextButton.button.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
         }else{
-            nextButton.convertButtonStatus(status: true, backgroundColor: .lightGray, titleColor: .white)
+//            nextButton.convertButtonStatus(status: true, backgroundColor: .lightGray, titleColor: .white)
+            nextButton.button.isUserInteractionEnabled = false
+            nextButton.button.setTitleColor(.lightGray, for: .normal)
+            nextButton.button.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
         }
     }
 

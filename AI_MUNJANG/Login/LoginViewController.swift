@@ -125,6 +125,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         
         loginButtonView.button.layer.cornerRadius = 8
         loginButtonView.button.setTitle("로그인", for: .normal)
+
         
 
         loginButtonView.convertButtonStatus(status: false, backgroundColor: hexStringToUIColor(hex: "#F7F7F7"), titleColor: .white)

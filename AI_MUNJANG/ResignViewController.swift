@@ -28,7 +28,7 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
         self.navigationItem.title = "탈퇴하기"
         self.navigationItem.backButtonTitle = " "
         
-        setupUI()
+        
         
         let username = "막길동"
         userTitle.text = "\(username)님, 탈퇴 전 꼭 확인해주세요!"
@@ -72,6 +72,11 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
+    }
+    
     func setupUI(){
         
         
@@ -86,7 +91,9 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
         nextButton.layer.cornerRadius = 8
         nextButton.isUserInteractionEnabled = false
         nextButton.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
-
+        nextButton.setTitleColor(.lightGray, for: .normal)
+        nextButton.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
+                                    
     }
     
 
@@ -129,10 +136,12 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
     func convertActiveButton(isActive:Bool){
         if isActive == true {
             nextButton.isUserInteractionEnabled = true
+            nextButton.setTitleColor(.white, for: .normal)
             nextButton.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
         }else {
             nextButton.isUserInteractionEnabled = false
-            nextButton.backgroundColor = .lightGray
+            nextButton.setTitleColor(.lightGray, for: .normal)
+            nextButton.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
         }
         
     }
