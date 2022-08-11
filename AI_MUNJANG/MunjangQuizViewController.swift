@@ -76,9 +76,19 @@ class MunjangQuizViewController: UIViewController {
         answerButtons = [answer01Button, answer02Button, answer03Button]
         answerButtonImages = [button01Image, button02Image, button03Image]
 
+        quizTextLabel.layer.cornerRadius = 12
+        quizTextLabel.layer.masksToBounds = true
+        quizContainerView.layer.cornerRadius = 12
+        quizContainerView.layer.shadowOpacity = 1
+        quizContainerView.layer.shadowColor = UIColor.darkGray.cgColor
+        quizContainerView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        quizContainerView.layer.shadowRadius = 2
+        quizContainerView.layer.masksToBounds = false
         
-        quizImage.isHidden = false
+        quizImage.isHidden = true
         quizTextLabel.isHidden = true
+        
+        quizTextLabel.text = ""
         // Do any additional setup after loading the view.
        
         currentQuiz = currentQuizPool[0]
@@ -93,8 +103,14 @@ class MunjangQuizViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+//        setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupUI()
+//        quizTextLabel.typeAnimate(str :currentQuiz.jimun!)
     }
     
     func setupUI(){
@@ -146,7 +162,8 @@ class MunjangQuizViewController: UIViewController {
             quizTextLabel.isHidden = false
             quizImage.isHidden = true
             
-            quizTextLabel.text = currentQuiz.jimun
+//            quizTextLabel.text = currentQuiz.jimun
+            quizTextLabel.typeAnimate(str :currentQuiz.jimun!)
             quizTextLabel.layer.cornerRadius = 12
             quizTextLabel.layer.masksToBounds = true
             
@@ -156,6 +173,8 @@ class MunjangQuizViewController: UIViewController {
             attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
             quizTextLabel.attributedText = attributedString
             quizTextLabel.textAlignment = .center
+            
+
             
         }
         

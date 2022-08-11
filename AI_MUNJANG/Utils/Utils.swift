@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 public func isValidPassword(password:String) -> Bool {
     let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[$@$!%*#?&])[A-Za-z\\d$@$!%*#?&]{7,}$"
@@ -103,6 +104,15 @@ extension UILabel {
         let attributedString = NSMutableAttributedString(string: fullText)
         attributedString.addAttribute(.font, value: font as Any, range: range)
         attributedText = attributedString
+    }
+    
+    func typeAnimate(str:String) {
+        self.text = ""
+        for i in str {
+            AudioServicesPlaySystemSound(1306)
+            self.text! += "\(i)"
+            RunLoop.current.run(until: Date()+0.12)
+        }
     }
 }
 

@@ -73,6 +73,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.barTintColor = .white
+        timer?.invalidate()
+        
     }
 
     //사용자가 구독 페이지 누른 경우 MainViewCotnroller는 그것을 인지하고 회원가입페이지를 띄어야 한다.
@@ -167,8 +169,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 //    }
     
     // 2초마다 실행되는 타이머
-        func bannerTimer() {
-            let _: Timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (Timer) in
+    var timer :Timer?
+    func bannerTimer() {
+            timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (Timer) in
                 self.bannerMove()
             }
         }
