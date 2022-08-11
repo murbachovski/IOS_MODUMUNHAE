@@ -39,6 +39,7 @@
 		842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */; };
 		842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */; };
 		842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */; };
+		843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27BB28A4CA9900E36E33 /* BannerCell.swift */; };
 		844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844226DF2890F66700DCB93B /* GoogleService-Info.plist */; };
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
@@ -128,6 +129,7 @@
 		842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarView.swift; sourceTree = "<group>"; };
 		842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNaviBarView.xib; sourceTree = "<group>"; };
+		843F27BB28A4CA9900E36E33 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		844226DF2890F66700DCB93B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84488C78288F865B008400AC /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AI_MUNJANG.entitlements; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */,
 				84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */,
 				84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */,
+				843F27BB28A4CA9900E36E33 /* BannerCell.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */,
 				840071D3287BE30500B07551 /* RoundedView.swift in Sources */,
 				C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */,
+				843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */,
 				842B037E2885417A0000BEDA /* Constnats.swift in Sources */,
 				84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */,
 				840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */,
