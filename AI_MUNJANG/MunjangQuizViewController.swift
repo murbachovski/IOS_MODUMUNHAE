@@ -300,7 +300,7 @@ class MunjangQuizViewController: UIViewController {
     
     
     @IBAction func clickedTrueOrNotButton(_ sender: Any) {
-        quizStatus = .NONE
+//        quizStatus = .NONE
         correctOrNotView.removeFromSuperview()
         for item in answerButtonImages {
             item.isHidden = true
@@ -339,6 +339,10 @@ class MunjangQuizViewController: UIViewController {
     }
     
     func typeAnimate(label: UILabel, str:String) {
+        if quizStatus == .INCORRECT {
+            changeButtonStatus(true)
+            return
+        }
         label.text = ""
         for i in str {
             AudioServicesPlaySystemSound(1306)
