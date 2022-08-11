@@ -72,7 +72,7 @@ class MunjangQuizViewController: UIViewController {
     var answerButtonImages : [UIImageView] = []
     var progressBarloc: Float = 0
     
-    var isCompletedTypeAnimation = false
+    var isCompletedTypeAnimation = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,7 +100,9 @@ class MunjangQuizViewController: UIViewController {
         
         quizProgressView.progress = 0.0
         quizProgressView.tintColor = hexStringToUIColor(hex: Constants.primaryColor)
-        
+        if currentQuiz.type == "Text" {
+            isCompletedTypeAnimation = false
+        }
         
     }
     
@@ -118,10 +120,10 @@ class MunjangQuizViewController: UIViewController {
     }
     
     func setupUI(){
-        isCompletedTypeAnimation = false
-        answer01Button.isUserInteractionEnabled = false
-        answer02Button.isUserInteractionEnabled = false
-        answer03Button.isUserInteractionEnabled = false
+        if currentQuiz.type == "Text" {
+            changeButtonStatus(false)
+        }
+        
         
         quizProcessLabel.text = "\(currentQuizIndex)/\(currentQuizPool.count)"
         quizProcessLabel.font = UIFont(name: "NanumSquareEB", size: 17)
@@ -343,9 +345,13 @@ class MunjangQuizViewController: UIViewController {
             label.text! += "\(i)"
             RunLoop.current.run(until: Date()+0.12)
         }
-        isCompletedTypeAnimation = true
-        answer01Button.isUserInteractionEnabled = true
-        answer02Button.isUserInteractionEnabled = true
-        answer03Button.isUserInteractionEnabled = true
+        changeButtonStatus(true)
+    }
+    
+    fileprivate func changeButtonStatus(_ isStatus: Bool) {
+        isCompletedTypeAnimation = isStatus
+        answer01Button.isUserInteractionEnabled = isStatus
+        answer02Button.isUserInteractionEnabled = isStatus
+        answer03Button.isUserInteractionEnabled = isStatus
     }
 }
