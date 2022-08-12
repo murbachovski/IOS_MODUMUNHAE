@@ -15,7 +15,7 @@ enum QuizStatus {
     case INCORRECT
 }
 
-class MunjangQuizViewController: UIViewController {
+class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var quizProcessLabel: UILabel!
     
     @IBOutlet var correctOrNotView: UIView!
@@ -58,6 +58,8 @@ class MunjangQuizViewController: UIViewController {
     @IBOutlet var stopMessageView: UIView!
     
     @IBOutlet weak var stopSubContainer: UIView!
+    
+    var audioPlayer: AVAudioPlayer? // AVAudioPlayer 인스턴스 참조체 저장
     
     var quizStatus:QuizStatus = .NONE
     
@@ -110,16 +112,27 @@ class MunjangQuizViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-//        setupUI()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupUI()
-//        quizTextLabel.typeAnimate(str :currentQuiz.jimun!)
+
     }
     
     func setupUI(){
+        
+        let tts = TTS()
+        tts.setText(currentQuiz.title) {
+            if self.currentQuiz.type == "Text" {
+//                tts.voiceTTS()
+//                self.quizTextLabel.text = ""
+                self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!)
+            }
+//            print("실행종료 됐습니다.")
+        }
+//        tts.setText("안녕하세요")
         if currentQuiz.type == "Text" {
             changeButtonStatus(false)
         }
@@ -174,7 +187,7 @@ class MunjangQuizViewController: UIViewController {
             quizImage.isHidden = true
             
 //            quizTextLabel.text = currentQuiz.jimun
-            typeAnimate(label: quizTextLabel, str :currentQuiz.jimun!)
+//            typeAnimate(label: quizTextLabel, str :currentQuiz.jimun!)
             quizTextLabel.layer.cornerRadius = 12
             quizTextLabel.layer.masksToBounds = true
             
@@ -222,7 +235,10 @@ class MunjangQuizViewController: UIViewController {
             return
         }
         if sender.titleLabel?.text == currentQuiz.result {
-            
+            setUpEffectSounds(fileName: "success")
+            if let player = audioPlayer {
+                        player.play()
+                    }
             
             quizStatus = .CORRECT
             changeButtonUIByRsult(sender, correct: true)
@@ -237,6 +253,11 @@ class MunjangQuizViewController: UIViewController {
             
 
         }else{
+            
+            setUpEffectSounds(fileName: "failed")
+            if let player = audioPlayer {
+                        player.play()
+                    }
             changeButtonUIByRsult(sender, correct: false)
                         
             quizStatus = .INCORRECT
@@ -358,4 +379,24 @@ class MunjangQuizViewController: UIViewController {
         answer02Button.isUserInteractionEnabled = isStatus
         answer03Button.isUserInteractionEnabled = isStatus
     }
+    
+    func setUpEffectSounds(fileName: String) {
+        if let filePath = Bundle.main.path(forResource: fileName, ofType: "mp3") {
+                
+                let url = URL.init(fileURLWithPath: filePath)
+                    do {
+                        try audioPlayer = AVAudioPlayer(contentsOf: url)
+                        audioPlayer?.delegate = self
+                        audioPlayer?.prepareToPlay()
+                    } catch {
+                        print("audioPlayer error \(error.localizedDescription)")
+                    }
+                } else {
+                    print("file not found")
+                }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+            
+        }
 }

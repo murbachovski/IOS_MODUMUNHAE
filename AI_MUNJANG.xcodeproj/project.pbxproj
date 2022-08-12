@@ -40,6 +40,9 @@
 		842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */; };
 		842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */; };
 		843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27BB28A4CA9900E36E33 /* BannerCell.swift */; };
+		843F27BF28A5E74200E36E33 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27BE28A5E74200E36E33 /* success.mp3 */; };
+		843F27C128A5E97300E36E33 /* failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27C028A5E97300E36E33 /* failed.mp3 */; };
+		843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27C228A5EA4F00E36E33 /* TTS.swift */; };
 		844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844226DF2890F66700DCB93B /* GoogleService-Info.plist */; };
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
@@ -130,6 +133,9 @@
 		842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarView.swift; sourceTree = "<group>"; };
 		842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNaviBarView.xib; sourceTree = "<group>"; };
 		843F27BB28A4CA9900E36E33 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		843F27BE28A5E74200E36E33 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
+		843F27C028A5E97300E36E33 /* failed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = failed.mp3; sourceTree = "<group>"; };
+		843F27C228A5EA4F00E36E33 /* TTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTS.swift; sourceTree = "<group>"; };
 		844226DF2890F66700DCB93B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84488C78288F865B008400AC /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AI_MUNJANG.entitlements; sourceTree = "<group>"; };
@@ -270,6 +276,15 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		843F27BD28A5E72F00E36E33 /* EffectSounds */ = {
+			isa = PBXGroup;
+			children = (
+				843F27C028A5E97300E36E33 /* failed.mp3 */,
+				843F27BE28A5E74200E36E33 /* success.mp3 */,
+			);
+			name = EffectSounds;
+			sourceTree = "<group>";
+		};
 		84488C77288F861A008400AC /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				8474DD21287E6C78008275FC /* Utils.swift */,
+				843F27C228A5EA4F00E36E33 /* TTS.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -422,6 +438,7 @@
 		C6ED5078287531AE00454F26 /* AI_MUNJANG */ = {
 			isa = PBXGroup;
 			children = (
+				843F27BD28A5E72F00E36E33 /* EffectSounds */,
 				84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */,
 				C6ED5079287531AE00454F26 /* AppDelegate.swift */,
 				C6ED507F287531AE00454F26 /* Main.storyboard */,
@@ -573,8 +590,10 @@
 				842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */,
 				C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */,
 				C6ED5083287531AF00454F26 /* Assets.xcassets in Resources */,
+				843F27C128A5E97300E36E33 /* failed.mp3 in Resources */,
 				844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */,
 				C6ED5081287531AE00454F26 /* Main.storyboard in Resources */,
+				843F27BF28A5E74200E36E33 /* success.mp3 in Resources */,
 				842B0398288647850000BEDA /* CustomTextField.xib in Resources */,
 				8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */,
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
@@ -722,6 +741,7 @@
 				8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */,
 				846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,
+				843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */,
 				842B03A72887E7480000BEDA /* ChangePasswordViewController.swift in Sources */,
 				842B03A328869ACF0000BEDA /* ResignViewController.swift in Sources */,
 				842B0396288647760000BEDA /* CustomTextField.swift in Sources */,
