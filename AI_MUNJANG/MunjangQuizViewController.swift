@@ -330,7 +330,11 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             completeView.frame = self.view.frame
             self.view.addSubview(completeView)
         }else{
-            updateUI()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.updateUI()
+            }
+            
         }
         
     }
