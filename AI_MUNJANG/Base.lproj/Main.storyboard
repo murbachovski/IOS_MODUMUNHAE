@@ -2429,7 +2429,7 @@
                                     <constraint firstItem="p9c-e5-rdR" firstAttribute="top" secondItem="e07-W1-KfT" secondAttribute="top" constant="6" id="zdy-Im-gZM"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'무엇이 세 개 있나요?'" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0z-nd-emn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0z-nd-emn">
                                 <rect key="frame" x="0.0" y="88" width="414" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="33a-bs-N85"/>
@@ -2444,11 +2444,17 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="3ua-i4-CcT">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바구니에 야채가 가득하다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-02-xFM" customClass="PaddingLabel" customModule="AI_MUNJANG" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVQ-02-xFM" customClass="PaddingLabel" customModule="AI_MUNJANG" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="8" width="374" height="234"/>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name=".AppleSDGothicNeoI-Regular" family=".Apple SD Gothic NeoI" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="바구니에 야채가 가득하다.">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -2819,7 +2825,7 @@
     </scenes>
     <designables>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191" height="27"/>
+            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
         </designable>
     </designables>
     <resources>

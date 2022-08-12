@@ -191,12 +191,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             quizTextLabel.layer.cornerRadius = 12
             quizTextLabel.layer.masksToBounds = true
             
-            let attributedString = NSMutableAttributedString(string: currentQuiz.jimun!)
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 3 // Whatever line spacing you want in points
-            attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-            quizTextLabel.attributedText = attributedString
-            quizTextLabel.textAlignment = .center
+        
             
 
             
@@ -314,6 +309,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     func updateUI(){
         progressBarloc = Float(currentQuizIndex) / Float(currentQuizPool.count)
         quizProgressView.setProgress(progressBarloc, animated: true)
+        if quizStatus == .CORRECT{
+            quizTextLabel.text = ""
+        }
         
         setupUI()
    
