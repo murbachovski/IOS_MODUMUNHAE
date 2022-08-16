@@ -8,17 +8,36 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import FirebaseRemoteConfig
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     var window: UIWindow?
-
+    var remoteConfig:  RemoteConfig?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         //Firebase 초기화
         FirebaseApp.configure()
+        //파이어베이스 원격구성
+        remoteConfig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConfig?.configSettings = settings
+        
+        remoteConfig?.fetch { (status, error) -> Void in
+          if status == .success {
+            print("Config fetched!")
+            self.remoteConfig?.activate { changed, error in
+              // ...
+            }
+          } else {
+            print("Config not fetched")
+            print("Error: \(error?.localizedDescription ?? "No error available.")")
+          }
+            print("remote_config:\(self.remoteConfig!["versionNumber"].numberValue)")
+        }
         
         _ = QuizContentData.shared.sectionTotal
         
