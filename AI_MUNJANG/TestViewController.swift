@@ -59,8 +59,10 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             
         }else if indexPath.row == 1 {
             //8필터 AI 요청,
-            let url = "http://118.67.133.8/eight/m"
-            let sen = "달팽이는 오렌지에서 기어 나온다."
+//            let url = "http://118.67.133.8/eight/m" //Ai모델접근용
+            let url = "http://118.67.133.8/eight_logic/m" //단순 8필터 접근용
+//            let url = "http://127.0.0.1:5000/eight_logic/m"
+            let sen = "엄마는 저녁을 먹는다."
             requestByEight(url:url, sen: sen)
         
         }else if indexPath.row == 2 {
@@ -68,7 +70,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             guard let adaptiveViewController = self.storyboard?.instantiateViewController(withIdentifier: "AdaptiveViewController")  as? AdaptiveViewController else {return}
             navigationController?.pushViewController(adaptiveViewController, animated: true)
         
-        }else if indexPath.row == 3 {
+        }else if indexPath.row == 3 { 
             //OnBoarding 보여주기 위해 설정값 변경
             UserDefaults.standard.set(false, forKey: "isNewUser")
          

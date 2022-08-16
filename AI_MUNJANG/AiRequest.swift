@@ -53,8 +53,9 @@ func requestByEight(url:String, sen:String){
         print("eight_div_sen : ", dicData["eight_div_sen"] ?? "")
         print("sen : ", dicData["sen"] ?? "")
         
-        let eight_div :Dictionary<String, Any> = dicData["eight_div_sen"] as! [String:Any]
+        guard let eight_div:Dictionary = (dicData["eight_div_sen"] as? Dictionary<String, Any>) else {return}
         print("문장확장 : ", eight_div["문장확장"] ?? "")
+        print("대상확장 : ", eight_div["대상확장"] ?? "")
         print("앞정보확장 : ", eight_div["앞정보확장"] ?? "")
         print("대상 : ", eight_div["대상"] ?? "")
         print("대상알림 : ", eight_div["대상알림"] ?? "")
