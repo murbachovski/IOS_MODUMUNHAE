@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import FirebaseStorage
+import Firebase
 class TestViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +19,12 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        downloadImg()
     }
     
     override func viewDidLayoutSubviews() {
@@ -154,5 +160,32 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
         
     }
+    
+    func downloadImg() {
+        let storage = Storage.storage()
+//        // Create a reference with an initial file path and name
+//        let pathReference = storage.reference(withPath: "https://firebasestorage.googleapis.com/v0/b/aimunjang.appspot.com/o/M2-1_2.png?alt=media&token=77c3c989-5e61-48aa-860c-992ae953ed68")
+//
+//        // Create a reference from a Google Cloud Storage URI
+//        let gsReference = storage.reference(forURL: "gs://aimunjang.appspot.com/M2-1_2.png")
+//
+        let storageRef = storage.reference(forURL: "https://aimunjang.appspot.com")
+        // Create a reference to the file you want to download
+        let islandRef = storageRef.child("M2-1_2.png")
 
+        // Create local filesystem URL
+        let localURL = URL(string: "https://firebasestorage.googleapis.com/v0/b/aimunjang.appspot.com/o/M2-1_2.png?alt=media&token=77c3c989-5e61-48aa-860c-992ae953ed68")!
+
+        // Download to the local filesystem
+        let downloadTask = islandRef.write(toFile: localURL) { url, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+              print(error.localizedDescription)
+          } else {
+            // Local file URL for "images/island.jpg" is returned
+              print("success")
+          }
+        }
+            
+    }
 }
