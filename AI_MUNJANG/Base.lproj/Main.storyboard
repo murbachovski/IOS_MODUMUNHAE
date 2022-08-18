@@ -667,6 +667,43 @@
             </objects>
             <point key="canvasLocation" x="2686" y="809"/>
         </scene>
+        <!--Download View Controller-->
+        <scene sceneID="ZUZ-1b-0cc">
+            <objects>
+                <viewController storyboardIdentifier="DownloadViewController" id="bRa-Hf-BNA" customClass="DownloadViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2DR-Dh-Isw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-pZ-7dp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="LJ6-qA-coG">
+                                <rect key="frame" x="120" y="390" width="174" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LJ6-qA-coG" secondAttribute="height" multiplier="3:2" id="lNd-o1-SfK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kbu-q0-bhn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LJ6-qA-coG" firstAttribute="centerX" secondItem="2DR-Dh-Isw" secondAttribute="centerX" id="1aq-AO-BmT"/>
+                            <constraint firstItem="XPM-pZ-7dp" firstAttribute="trailing" secondItem="kbu-q0-bhn" secondAttribute="trailing" id="5PW-l3-dEM"/>
+                            <constraint firstItem="LJ6-qA-coG" firstAttribute="centerY" secondItem="2DR-Dh-Isw" secondAttribute="centerY" id="P6m-CN-bg6"/>
+                            <constraint firstItem="kbu-q0-bhn" firstAttribute="trailing" secondItem="LJ6-qA-coG" secondAttribute="trailing" constant="120" id="TXE-Au-a6R"/>
+                            <constraint firstItem="XPM-pZ-7dp" firstAttribute="top" secondItem="2DR-Dh-Isw" secondAttribute="top" id="fsQ-KH-0Ey"/>
+                            <constraint firstItem="LJ6-qA-coG" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" constant="120" id="kG4-Pv-oP1"/>
+                            <constraint firstItem="XPM-pZ-7dp" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" id="xOg-no-hCi"/>
+                            <constraint firstAttribute="bottom" secondItem="XPM-pZ-7dp" secondAttribute="bottom" id="y9q-4X-Ahs"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HEl-ha-Ief" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2685.507246376812" y="1693.5267857142856"/>
+        </scene>
         <!--CommonUI View Controller-->
         <scene sceneID="j2i-Mt-tmM">
             <objects>
@@ -2829,6 +2866,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="group" width="149" height="102"/>
         <image name="group2" width="183" height="44"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="icArrowLeft32Px" width="32" height="32"/>

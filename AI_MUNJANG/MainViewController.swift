@@ -25,6 +25,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var titles :Array<String> = []
     var nowPage: Int = 0
+    
+    var serverVersion = 0
+    
+    
     @IBOutlet var bannerCollectionView: UICollectionView!
     
     @IBOutlet weak var collectionViewEight: UICollectionView!
@@ -50,7 +54,65 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationItem.backButtonTitle = " "
         setupUI()
         
+        prepareCheck()
     }
+    func prepareCheck() {
+        let currentVersion = UserDefaults.standard.integer(forKey: "versionNumber")
+        checkTheVersion { version in
+            self.serverVersion = version
+            if currentVersion < self.serverVersion {
+                print("serverVersion:\(self.serverVersion)")
+                UserDefaults.standard.set(version, forKey: "versionNumber")
+                DispatchQueue.main.async {
+                    let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "DownloadViewController") as! DownloadViewController
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalTransitionStyle = .crossDissolve
+                    self.present(vc, animated: true)
+                }
+        }
+        }
+    }
+    
+    
+    func checkTheVersion(completion: @escaping (_ version: Int) -> Void) {
+            //
+            var urlString = "http://118.67.133.8/version_number"
+            if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                print(encodedString)
+                urlString = encodedString
+            }
+        
+            let newUrl = URL(string: urlString)
+            var request = URLRequest(url: newUrl!)
+            
+            request.httpMethod = "GET"
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+              guard let data = data else {
+                print(String(describing: error))
+
+                return
+              }
+
+                let str = String(decoding: data, as: UTF8.self)
+                       print("결과물: \(str)")
+                
+                var dicData : Dictionary<String, Any> = [String : Any]()
+                        do {
+                            // 딕셔너리에 데이터 저장 실시
+                            dicData = try JSONSerialization.jsonObject(with: Data(str.utf8), options: []) as! [String:Any]
+                            print(dicData["version_number"] as! Int)
+                            print("리턴된 버전값:\(String(describing: dicData["version_number"]!))")
+                            let resVersion = dicData["version_number"] as! Int
+                            completion(resVersion)
+                        } catch {
+                            print(error.localizedDescription)
+                            return
+                        }
+            }
+            task.resume()
+    }
+    
+    
     
     func setupUI(){
         nowPage = 0

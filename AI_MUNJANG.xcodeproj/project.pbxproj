@@ -63,6 +63,8 @@
 		8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */; };
 		8474DD22287E6C78008275FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD21287E6C78008275FC /* Utils.swift */; };
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
+		84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */; };
+		84E7B04C28AE2DF20009E8E1 /* Coe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04B28AE2DF20009E8E1 /* Coe.swift */; };
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
 		84EBC3C6289BAB8C0089F9AC /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */; };
 		84EBC3C8289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */; };
@@ -156,6 +158,8 @@
 		8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		8474DD21287E6C78008275FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8474DD26287EB63C008275FC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		84E7B04B28AE2DF20009E8E1 /* Coe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coe.swift; sourceTree = "<group>"; };
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunJangEightDetailViewController.swift; sourceTree = "<group>"; };
 		84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 			children = (
 				8474DD21287E6C78008275FC /* Utils.swift */,
 				843F27C228A5EA4F00E36E33 /* TTS.swift */,
+				84E7B04B28AE2DF20009E8E1 /* Coe.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 				84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */,
 				C6ED5079287531AE00454F26 /* AppDelegate.swift */,
 				C6ED507F287531AE00454F26 /* Main.storyboard */,
+				84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */,
 				844226DF2890F66700DCB93B /* GoogleService-Info.plist */,
 				C6ED5082287531AF00454F26 /* Assets.xcassets */,
 				C6ED5087287531AF00454F26 /* Info.plist */,
@@ -736,6 +742,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E7B04C28AE2DF20009E8E1 /* Coe.swift in Sources */,
 				C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */,
 				842B0383288556680000BEDA /* TermsDetailViewController.swift in Sources */,
 				842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */,
@@ -750,6 +757,7 @@
 				846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,
 				843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */,
+				84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */,
 				842B03A72887E7480000BEDA /* ChangePasswordViewController.swift in Sources */,
 				842B03A328869ACF0000BEDA /* ResignViewController.swift in Sources */,
 				842B0396288647760000BEDA /* CustomTextField.swift in Sources */,
