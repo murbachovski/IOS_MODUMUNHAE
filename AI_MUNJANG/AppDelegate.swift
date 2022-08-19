@@ -21,9 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         UserDefaults.standard.register(defaults: ["versionNumber" : 1000])
-        
-        //image파일 contents 조회
-        _ = QuizContentData.shared.sectionTotal
+    
         
         //구독여부 판단 - 영수증의 유효성을 판단해야
         InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})

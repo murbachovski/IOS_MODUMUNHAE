@@ -685,20 +685,52 @@
                                     <constraint firstAttribute="width" secondItem="LJ6-qA-coG" secondAttribute="height" multiplier="3:2" id="lNd-o1-SfK"/>
                                 </constraints>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학습콘텐츠 다운로드 중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dR-mj-uuE">
+                                <rect key="frame" x="24" y="778" width="366" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5LC-cw-W4E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-q1-5fr" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="177" y="710" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="kdM-pW-Lg7"/>
+                                    <constraint firstAttribute="width" constant="60" id="kjR-Po-KlK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value=".lineSpinFadeLoader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kbu-q0-bhn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LJ6-qA-coG" firstAttribute="centerX" secondItem="2DR-Dh-Isw" secondAttribute="centerX" id="1aq-AO-BmT"/>
+                            <constraint firstItem="ftA-q1-5fr" firstAttribute="centerX" secondItem="2DR-Dh-Isw" secondAttribute="centerX" id="4F4-sP-AHW"/>
+                            <constraint firstItem="kbu-q0-bhn" firstAttribute="trailing" secondItem="7dR-mj-uuE" secondAttribute="trailing" constant="24" id="4HP-uw-Kpg"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="trailing" secondItem="kbu-q0-bhn" secondAttribute="trailing" id="5PW-l3-dEM"/>
+                            <constraint firstItem="7dR-mj-uuE" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" constant="24" id="JRX-4v-QWt"/>
                             <constraint firstItem="LJ6-qA-coG" firstAttribute="centerY" secondItem="2DR-Dh-Isw" secondAttribute="centerY" id="P6m-CN-bg6"/>
                             <constraint firstItem="kbu-q0-bhn" firstAttribute="trailing" secondItem="LJ6-qA-coG" secondAttribute="trailing" constant="120" id="TXE-Au-a6R"/>
+                            <constraint firstItem="7dR-mj-uuE" firstAttribute="top" secondItem="ftA-q1-5fr" secondAttribute="bottom" constant="8" symbolic="YES" id="b2R-xp-piZ"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="top" secondItem="2DR-Dh-Isw" secondAttribute="top" id="fsQ-KH-0Ey"/>
                             <constraint firstItem="LJ6-qA-coG" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" constant="120" id="kG4-Pv-oP1"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" id="xOg-no-hCi"/>
                             <constraint firstAttribute="bottom" secondItem="XPM-pZ-7dp" secondAttribute="bottom" id="y9q-4X-Ahs"/>
+                            <constraint firstItem="kbu-q0-bhn" firstAttribute="bottom" secondItem="7dR-mj-uuE" secondAttribute="bottom" constant="44" id="zdQ-hZ-FfI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guideLabel" destination="7dR-mj-uuE" id="J3F-MG-TGb"/>
+                        <outlet property="indicator" destination="ftA-q1-5fr" id="fh2-yV-a9P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEl-ha-Ief" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2862,7 +2894,7 @@
     </scenes>
     <designables>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
