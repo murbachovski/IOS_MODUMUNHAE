@@ -138,11 +138,12 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     func enterMainPage(){
         Core.shared.setIsNotUser()
         
-        guard let nc = storyboard?.instantiateViewController(identifier: "mainNavigationController") as? UINavigationController else { return }
-
-        nc.modalPresentationStyle = .fullScreen
-        nc.modalTransitionStyle = .crossDissolve
-        present(nc, animated: true)
+        changeMainNC()
+        
+//        guard let nc = storyboard?.instantiateViewController(identifier: "mainNavigationController") as? UINavigationController else { return }
+//        nc.modalPresentationStyle = .fullScreen
+//        nc.modalTransitionStyle = .crossDissolve
+//        present(nc, animated: true)
     }
     
     

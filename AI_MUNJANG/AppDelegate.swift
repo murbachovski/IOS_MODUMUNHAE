@@ -28,15 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //구독여부 판단 - 영수증의 유효성을 판단해야
         InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})
         
-        if Core.shared.isNewUser(){
-            let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
-            window?.rootViewController = vc
-            return true
-        }
-            let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
-            window?.rootViewController = vc
+        let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "DownloadViewController") as! DownloadViewController
+        window?.rootViewController = vc
         
-        //onBoarding이 실행된 적이 있다면 일반적인 루틴으로 앱 실행
+        
 
         return true
     }
