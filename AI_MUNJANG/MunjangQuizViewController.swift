@@ -175,15 +175,12 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         questionTitle.text = currentQuiz.title
         
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-//        let getImagePath = paths.appendingPathComponent("image/total/" + currentQuiz.imageName!)
-//        let getImagePath = paths.appendingPathComponent("image/total/" + currentQuiz.imageName!)
-        //월요일 작업 영역 이미지 읽어오기 진행중!!
-        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+        let getImagePath = paths.appendingPathComponent("image/total/\(currentQuiz.imageName!)")
+
         if currentQuiz.type == "Image"{
             quizTextLabel.isHidden = true
             quizImage.isHidden = false
-//            quizImage.image = UIImage(named: currentQuiz.imageName!)
             quizImage.image = UIImage(contentsOfFile: getImagePath)
             quizImage.layer.cornerRadius = 12
             quizImage.layer.masksToBounds = true
@@ -192,8 +189,6 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             quizTextLabel.isHidden = false
             quizImage.isHidden = true
             
-//            quizTextLabel.text = currentQuiz.jimun
-//            typeAnimate(label: quizTextLabel, str :currentQuiz.jimun!)
             quizTextLabel.layer.cornerRadius = 12
             quizTextLabel.layer.masksToBounds = true
             
@@ -325,7 +320,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func clickedTrueOrNotButton(_ sender: Any) {
-//        quizStatus = .NONE
+
         correctOrNotView.removeFromSuperview()
         for item in answerButtonImages {
             item.isHidden = true

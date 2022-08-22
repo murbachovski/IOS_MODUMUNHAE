@@ -259,7 +259,13 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
                             self.indicator.stopAnimating()
                             self.guideLabel.isHidden = true
                             
+                            //Quiz와 관련된 json 콘텐츠 설정
                             self.setupContents()
+                            
+                            //화면 전환
+                            changeMainNC()
+                            
+                            
                         }
                     }
                     
