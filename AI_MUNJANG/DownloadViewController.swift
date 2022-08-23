@@ -262,8 +262,18 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
                             //Quiz와 관련된 json 콘텐츠 설정
                             self.setupContents()
                             
-                            //화면 전환
-                            changeMainNC()
+                            
+                            if Core.shared.isNewUser(){
+                                let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+                                vc.modalPresentationStyle = .fullScreen
+                                vc.modalTransitionStyle = .crossDissolve
+                                self.present(vc, animated: true)
+                                
+                            }else{
+                                //화면 전환
+                                changeMainNC()
+                            }
+                           
                             
                             
                         }
