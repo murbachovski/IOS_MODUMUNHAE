@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ResignReasonViewController: UIViewController,CheckButtonDelegate {
   
@@ -32,6 +33,7 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
     @IBOutlet weak var resignReasonTitle: UILabel!
     
     var reasonToResign:[Int] = []
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,6 +118,15 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
                     //정상적으로 회원탈퇴
                     Core.shared.setUserResign()
                 }
+                
+                //탈퇴사유를 전송
+                self!.sendReasonForRevoke(revokeStr:userText)
+                
+                //불편사항 전달
+                if userText != "불편하셨던 점 또는 개선할 점을 알려주세요." {
+                    self!.sendReasonForRevokeString(revokeStr: userText)
+                }
+                
                 Core.shared.setUserLogout()
                 
                 let alert = AlertService().alert(title: "", body: "회원탈퇴가 완료되었습니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: {
@@ -124,6 +135,85 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
                 self!.present(alert, animated: true)
             }
         })
+    }
+    
+    
+    func sendReasonForRevoke( revokeStr:String){
+        
+        
+        let db = Firestore.firestore()
+        
+        let path = db.collection("reasonForRevoke")
+        
+        path.getDocuments { (snapshot, err) in
+            if let err = err {
+                print(err)
+            } else {
+                guard let snapshot = snapshot else { return }
+                for document in snapshot.documents {
+                    if document.documentID == "reasonForRevokeDocument" {
+                        // 딕셔너리 데이터를 가져온다.
+                        guard var data = document["reason"] as? [String:Any] else { return }
+                        
+                        // 딕셔너리 데이터를 수정한다.
+                 
+                        
+                        if self.customResignReasonView01.checkButton.isSelected {
+                            let count = data["rejoin"] as! Int
+                            print(data)
+                            data["rejoin"] = count + 1
+                        }
+                        if self.customResignReasonView02.checkButton.isSelected {
+                            let count = data["notUse"] as! Int
+                            print(data)
+                            data["notUse"] = count + 1
+                        }
+                        if self.customResignReasonView03.checkButton.isSelected {
+                            let count = data["notEnough"] as! Int
+                            print(data)
+                            data["notEnough"] = count + 1
+                        }
+                        if self.customResignReasonView04.checkButton.isSelected {
+                            let count = data["notEasy"] as! Int
+                            print(data)
+                            data["notEasy"] = count + 1
+                        }
+                        if self.customResignReasonView05.checkButton.isSelected {
+                            let count = data["others"] as! Int
+                            print(data)
+                            data["others"] = count + 1
+                        }
+                        
+                        
+                        // 서버의 딕셔너리 데이터를 수정된 데이터로 수정한다.
+                        path.document("reasonForRevokeDocument").updateData(["reason" : data])
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func sendReasonForRevokeString( revokeStr:String){
+
+        let path = db.collection("reasonForRevoke")
+        
+        path.getDocuments { (snapshot, err) in
+            if let err = err {
+                print(err)
+            } else {
+                guard let snapshot = snapshot else { return }
+                for document in snapshot.documents {
+                    if document.documentID == "reasonForRevokeDocument" {
+                        guard var data = document["uncomfortable"] as? [String] else { return }
+                        print(data)
+                        data.append(revokeStr)
+                        // 서버의 딕셔너리 데이터를 수정된 데이터로 수정한다.
+                        path.document("reasonForRevokeDocument").updateData(["uncomfortable" : data])
+                    }
+                }
+            }
+        }
     }
     
     
