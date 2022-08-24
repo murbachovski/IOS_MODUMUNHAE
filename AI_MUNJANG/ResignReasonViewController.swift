@@ -109,7 +109,17 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
         
         Auth.auth().currentUser?.delete(completion: { [weak self] error in
             if error != nil {
+                if let errorCode = error?._code { //Xcode가 다른 함수에서 사용된 FIRAuthErrorUserInfoNameKey를 인식하지 못해 errorCode로 접근하여 분기 처리함.
+                    if errorCode == 17014 {
+                        let alert = AlertService().alert(title: "", body: "회원탈퇴는 중요한 행위이므로 다시 한번 로그인 해주세요.", cancelTitle: "취소", confirTitle: "확인", fourthButtonCompletion: nil)
+                        self!.present(alert, animated: true)
+                    }
+                }
                 print(error!.localizedDescription)
+                
+              return
+               
+             
             }else{
                 
                 if Core.shared.isSignupByApple() { //애플계정으로  회원가입한 경우
@@ -122,6 +132,10 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
                 //탈퇴사유를 전송
                 self!.sendReasonForRevoke(revokeStr:userText)
                 
+                let userID = UserDefaults.standard.value(forKey: "userID")
+                //firebse에서 userinfo삭제
+                DataFromFirestore.share.deleteDoc(userID: userID as! String)
+                
                 //불편사항 전달
                 if userText != "불편하셨던 점 또는 개선할 점을 알려주세요." {
                     self!.sendReasonForRevokeString(revokeStr: userText)
@@ -130,6 +144,8 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
                 Core.shared.setUserLogout()
                 
                 let alert = AlertService().alert(title: "", body: "회원탈퇴가 완료되었습니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: {
+                    //회원탈퇴시 userID를 디폴트 값으로 변경
+                    UserDefaults.standard.setValue("홍길동", forKey: "userID")
                     changeLoginNC()
                 })
                 self!.present(alert, animated: true)

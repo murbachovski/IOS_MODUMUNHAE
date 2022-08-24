@@ -130,15 +130,7 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
             allCheckLabel.checkButton.isSelected = false
         }
         
-//        if isActive == true {
-//            nextButton.isUserInteractionEnabled = true
-//            nextButton.setTitleColor(.white, for: .normal)
-//            nextButton.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
-//        }else {
-//            nextButton.isUserInteractionEnabled = false
-//            nextButton.setTitleColor(.lightGray, for: .normal)
-//            nextButton.backgroundColor = hexStringToUIColor(hex: Constants.inActive_status)
-//        }
+
         
         //다음버튼 활성화 여부 판단
         if useTermsCheckLabel.checkButton.isSelected && personalInfoCheckLabel.checkButton.isSelected && fourteenCheckLabel.checkButton.isSelected {
@@ -295,6 +287,19 @@ extension TermsViewController: ASAuthorizationControllerDelegate {
                        }
           print(user.displayName ?? "알수 없음")
           print(user.email as Any)
+          
+          //회원가입시 사용자 이메일을 로컬에 userID로 설정
+          UserDefaults.standard.setValue(user.email, forKey: "userID")
+          
+          //회원가입시 MyInfo 구성
+          MyInfo.shared.displayName = user.email!
+          MyInfo.shared.learningProgress = 0
+          MyInfo.shared.numberOfHearts = 0
+          
+          
+          //MyInfo를 Firebase에 전송
+          DataFromFirestore.share.settingDoc(userID: user.email!, userInfo: MyInfo.shared)
+          
           Core.shared.setSignupByApple()
           Core.shared.setUserLogin()
           changeMainNC()

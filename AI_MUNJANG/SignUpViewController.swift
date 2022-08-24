@@ -271,6 +271,17 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                              }
                 print(user.email as Any)
                 
+                //회원가입시 사용자 이메일을 로컬에 userID로 지정
+                UserDefaults.standard.setValue(user.email, forKey: "userID")
+                
+                //회원가입시 MyInfo 구성
+                MyInfo.shared.displayName = user.email!
+                MyInfo.shared.learningProgress = 0
+                MyInfo.shared.numberOfHearts = 0
+                
+                
+                //MyInfo를 Firebase에 전송
+                DataFromFirestore.share.settingDoc(userID: user.email!, userInfo: MyInfo.shared)
                 changeMainNC()
                                
             }
