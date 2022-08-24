@@ -292,7 +292,7 @@ extension TermsViewController: ASAuthorizationControllerDelegate {
           UserDefaults.standard.setValue(user.email, forKey: "userID")
           
           //회원가입시 MyInfo 구성
-          MyInfo.shared.displayName = user.email!
+          MyInfo.shared.displayName = (user.email?.components(separatedBy: "@")[0])!
           MyInfo.shared.learningProgress = 0
           MyInfo.shared.numberOfHearts = 0
           

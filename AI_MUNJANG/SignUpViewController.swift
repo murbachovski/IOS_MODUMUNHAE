@@ -228,9 +228,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                      
                      if errorInforKey as! String == "ERROR_EMAIL_ALREADY_IN_USE" {
                          print("ERROR_EMAIL_ALREADY_IN_USE")
-                         let alert = AlertService().alert(title: "", body: "\(withEmail)은 이미 가입한 계정입니다.", cancelTitle: "", confirTitle: "확인"){
-                             
-                         }
+                         let alert = AlertService().alert(title: "", body: "\(withEmail)은 이미 가입한 계정입니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: nil)
                          self!.present(alert, animated: true)
                      }
                  }
@@ -241,10 +239,9 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
             Core.shared.setUserSignup()
             Core.shared.setUserLogin()
             
-            let alert = AlertService().alert(title: "", body: "\(withEmail)계정으로 회원가입이 정상적으로 처리되었습니다.", cancelTitle: "", confirTitle: "확인") {
+            let alert = AlertService().alert(title: "", body: "\(withEmail)계정으로 회원가입이 정상적으로 처리되었습니다.", cancelTitle: "", confirTitle: "확인" ,fourthButtonCompletion: {
                 self?.clickedConfirmByUser(withEmail: withEmail, password: password)
-            }
-            
+            })
             self?.present(alert, animated: true)
 
            }
@@ -275,7 +272,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                 UserDefaults.standard.setValue(user.email, forKey: "userID")
                 
                 //회원가입시 MyInfo 구성
-                MyInfo.shared.displayName = user.email!
+                MyInfo.shared.displayName = (user.email?.components(separatedBy: "@")[0])!
                 MyInfo.shared.learningProgress = 0
                 MyInfo.shared.numberOfHearts = 0
                 

@@ -89,9 +89,12 @@ class MyPageViewController: UIViewController {
     
     func setupUI(){
         
+        usernameLabel.text = MyInfo.shared.displayName + " 님"
         usernameLabel.font =  UIFont(name: "NanumSquareEB", size: 19)
         
         heartCountView.layer.cornerRadius = 8
+        
+        heartCountLabel.text = String(MyInfo.shared.numberOfHearts) 
         
         subscribeButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 17)
       
@@ -101,13 +104,6 @@ class MyPageViewController: UIViewController {
             heartCountView.isHidden = true
         }
 
-
-        //불필요한듯
-//        if Core.shared.isUserSubscription() { //구독여부에 따라 구독하기 버튼 노출여부 판단
-//            manageSubscriptionButton.isHidden = false
-//        }else{
-//            manageSubscriptionButton.isHidden = true
-//        }
         
         if Core.shared.isUserLogin() { //로그인 된 경우만 로그아웃 버튼 노출
             logoutButton.isHidden = false

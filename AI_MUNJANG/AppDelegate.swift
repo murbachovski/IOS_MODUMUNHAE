@@ -33,4 +33,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
+    
+    //앱이 로딩하거나 앱이 다시 화면에 진입시 로그인인 사용자의 userInfo를 갱신
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if Core.shared.isUserLogin() == true {
+            if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
+                print("applicationDidBecomeActive is called: \(userID)")
+                DataFromFirestore.share.gettingDoc(userID: userID) { info in
+                    MyInfo.shared.displayName = info.displayName
+                    MyInfo.shared.learningProgress = info.learningProgress
+                    MyInfo.shared.numberOfHearts = info.numberOfHearts
+                }
+            }
+            
+        }
+    }
+  
+    //앱이 백그라운드로 들어가기 전에 사용자의 정보(userInfo)를 firebase에 전송
+    func applicationWillResignActive(_ application: UIApplication) {
+        if Core.shared.isUserLogin() == true {
+            if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
+                print("applicationWillResignActive is called: \(userID)")
+                DataFromFirestore.share.settingDoc(userID: userID, userInfo: MyInfo.shared)
+            }
+            
+        }
+    }
+  
 }

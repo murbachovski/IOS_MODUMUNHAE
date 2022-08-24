@@ -43,13 +43,17 @@ class DataFromFirestore {
                 let decoder =  JSONDecoder()
                 
                 for document in documents {
-                    do {
-                        let data = document.data()
-                        let jsonData = try JSONSerialization.data(withJSONObject:data)
-                        let info = try decoder.decode(UserInfo.self, from: jsonData)
-                        user = info
-                    } catch let err {
-                        print("err: \(err)")
+                    if document.documentID == userID {
+                        do {
+                            let data = document.data()["userinfo"]
+                            let jsonData = try JSONSerialization.data(withJSONObject:data!)
+                            
+                            let info = try decoder.decode(UserInfo.self, from: jsonData)
+                            user = info
+                            print(user)
+                        } catch let err {
+                            print("err: \(err)")
+                        }
                     }
                 }
                 completionHandler(user)
