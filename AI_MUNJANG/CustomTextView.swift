@@ -89,7 +89,7 @@ class CustomTextView: UIView,UITextViewDelegate {
         textView.text = placeholder
     }
 
-    func changeRestrictedCharacters(res:Int){ //외부에서 플레이스홀더를 설정하는 메서드
+    func changeRestrictedCharacters(res:Int){ 
         restrictedCharacters = res
         updateCountLabel(characterCount: 0)
     }

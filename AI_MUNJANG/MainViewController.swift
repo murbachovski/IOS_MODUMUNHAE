@@ -112,8 +112,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func clickedAnalyzeButton(_ sender: Any) {
-        
         print("clicked analyze Btn")
+        guard let analyzeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AnalyzeViewController")  as? AnalyzeViewController else {return}
+        self.navigationController?.pushViewController(analyzeViewController, animated: true)
+        
     }
     
     @IBAction func clickedTestButton(_ sender: Any) {
@@ -179,8 +181,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
         munJangEightDetailViewController.naviTitle = "\(indexPath.row + 1 )경"
         munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
-//        munJangEightDetailViewController.subTitleText = "(\(subElements[indexPath.row]))"
-        
         munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[indexPath.row]
         self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }
