@@ -66,7 +66,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var descTitleLabel: UILabel!
     @IBOutlet weak var descSubTitleLabel: UILabel!
     @IBOutlet weak var startMissionButton: UIButton!
-    
+    @IBOutlet weak var hintButton: UIButton!
     
     var audioPlayer: AVAudioPlayer? // AVAudioPlayer 인스턴스 참조체 저장
     
@@ -128,6 +128,11 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         startMissionButton.layer.borderColor = UIColor.darkGray.cgColor
         startMissionButton.layer.cornerRadius = startMissionButton.frame.size.width / 2
         
+        
+        hintButton.layer.cornerRadius = 8
+        hintButton.layer.borderWidth = 1
+        hintButton.layer.borderColor = UIColor.lightGray.cgColor
+        
     }
     
     
@@ -155,6 +160,12 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         startTTS()
     }
     
+    @IBAction func clickedHintButton(_ sender: Any) {
+        print("clicked the hint")
+        
+        let alert = AlertService().alert(title: "", body: "문장인지 먼저 확인하세요", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion:nil, fourthButtonCompletion: nil)
+        present(alert, animated: true)
+    }
     
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
         

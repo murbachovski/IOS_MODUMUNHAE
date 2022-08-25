@@ -2675,6 +2675,22 @@
                                     <constraint firstAttribute="width" constant="32" id="JlI-35-28I"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="z17-XG-uLA">
+                                <rect key="frame" x="20" y="790" width="374" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="5j8-Qz-3z2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="힌트">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.8980392157" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedHintButton:" destination="OMf-Fe-WXr" eventType="touchUpInside" id="nUo-1O-cR3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OpT-fn-IpP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2686,10 +2702,13 @@
                             <constraint firstItem="OpT-fn-IpP" firstAttribute="trailing" secondItem="fpg-hd-0xa" secondAttribute="trailing" constant="20" id="7oE-RB-RBN"/>
                             <constraint firstItem="F0z-nd-emn" firstAttribute="top" secondItem="e07-W1-KfT" secondAttribute="bottom" id="A3e-Aj-9DP"/>
                             <constraint firstItem="fpg-hd-0xa" firstAttribute="leading" secondItem="OpT-fn-IpP" secondAttribute="leading" constant="20" id="B63-Pa-jXC"/>
+                            <constraint firstItem="OpT-fn-IpP" firstAttribute="trailing" secondItem="z17-XG-uLA" secondAttribute="trailing" constant="20" id="Bch-IA-1uV"/>
                             <constraint firstItem="3Uh-Yy-54k" firstAttribute="trailing" secondItem="vLd-hE-mHN" secondAttribute="trailing" constant="-13" id="CrO-Wz-Xqm"/>
                             <constraint firstItem="vLd-hE-mHN" firstAttribute="top" secondItem="fpg-hd-0xa" secondAttribute="bottom" constant="20" id="Eu0-lL-DYm"/>
                             <constraint firstItem="Ore-iX-vdt" firstAttribute="trailing" secondItem="DA3-pq-hT7" secondAttribute="trailing" constant="-13" id="Izu-Wc-C7M"/>
+                            <constraint firstItem="z17-XG-uLA" firstAttribute="leading" secondItem="OpT-fn-IpP" secondAttribute="leading" constant="20" id="V2V-Oa-yeM"/>
                             <constraint firstItem="OpT-fn-IpP" firstAttribute="trailing" secondItem="DA3-pq-hT7" secondAttribute="trailing" constant="20" id="XRN-zj-uEx"/>
+                            <constraint firstItem="OpT-fn-IpP" firstAttribute="bottom" secondItem="z17-XG-uLA" secondAttribute="bottom" constant="20" id="cet-30-3si"/>
                             <constraint firstItem="OpT-fn-IpP" firstAttribute="trailing" secondItem="vLd-hE-mHN" secondAttribute="trailing" constant="20" id="fBi-Wy-A94"/>
                             <constraint firstItem="e07-W1-KfT" firstAttribute="top" secondItem="OpT-fn-IpP" secondAttribute="top" id="g5o-hQ-Gq4"/>
                             <constraint firstItem="DA3-pq-hT7" firstAttribute="leading" secondItem="OpT-fn-IpP" secondAttribute="leading" constant="20" id="lfK-ig-6sY"/>
@@ -2719,6 +2738,7 @@
                         <outlet property="descTitleLabel" destination="h7V-if-B8x" id="aso-jQ-Lbs"/>
                         <outlet property="descriptionView" destination="USC-ll-v7E" id="Y7L-w9-aHQ"/>
                         <outlet property="displayUsernameOnMissionClear" destination="PJu-ah-Jcb" id="t1A-eK-X5T"/>
+                        <outlet property="hintButton" destination="z17-XG-uLA" id="HGJ-V2-arr"/>
                         <outlet property="questionTitle" destination="F0z-nd-emn" id="ag3-eY-saA"/>
                         <outlet property="quizContainerView" destination="fpg-hd-0xa" id="AMd-JQ-tm3"/>
                         <outlet property="quizImage" destination="3ua-i4-CcT" id="BzW-KY-5cD"/>
@@ -3016,7 +3036,7 @@
     </scenes>
     <designables>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
         </designable>
     </designables>
     <resources>
