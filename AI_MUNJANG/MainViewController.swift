@@ -28,10 +28,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var serverVersion = 0
     
+    @IBOutlet weak var analyzeSenButton: UIButton!
     
     @IBOutlet var bannerCollectionView: UICollectionView!
     
     @IBOutlet weak var collectionViewEight: UICollectionView!
+    @IBOutlet weak var analyzeContainer: UIView!
+    @IBOutlet weak var searchImage: UIImageView!
+    
+    
     
     let munjangElements:[String] = ["주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     let subElements: [String] = ["대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
@@ -42,7 +47,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let layout = UICollectionViewFlowLayout()
         
         collectionViewEight.collectionViewLayout = layout
-        layout.estimatedItemSize = CGSize(width: CGFloat(162).relativeToIphone8Width() , height: CGFloat(80).relativeToIphone8Width())
+        layout.estimatedItemSize = CGSize(width: CGFloat(collectionViewEight.frame.size.width - 74).relativeToIphone8Width() , height: CGFloat(70).relativeToIphone8Width())
         collectionViewEight.delegate = self
         collectionViewEight.dataSource = self
         
@@ -54,10 +59,27 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationItem.backButtonTitle = " "
         setupUI()
         
+        analyzeContainer.layer.borderWidth = 1
+        analyzeContainer.layer.borderColor = UIColor.darkGray.cgColor
+        analyzeContainer.layer.cornerRadius = 8
+        
+        analyzeSenButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
+        analyzeSenButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
+        
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        searchImage.isUserInteractionEnabled = true
+        searchImage.addGestureRecognizer(tapGestureRecognizer)
+        
     }
 
     
-    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        clickedAnalyzeButton(tappedImage)
+        // Your action
+    }
    
     
     
@@ -65,10 +87,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         nowPage = 0
         dataArray = [UIImage(named: "illust1.png")!, UIImage(named: "illust2.png")!, UIImage(named: "illust3.png")!]
         titles = ["문해력의 출발은 \n문장력입니다!","문장공부 \n해야 합니다!", "꾸준하게 키워가는 \n나의 문해력"]
-//        topTitle.font = UIFont(name: "NanumSquareEB", size: 24)
         
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +111,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         navigationController?.pushViewController(myPageViewController, animated: true)
     }
     
+    @IBAction func clickedAnalyzeButton(_ sender: Any) {
+        
+        print("clicked analyze Btn")
+    }
+    
     @IBAction func clickedTestButton(_ sender: Any) {
         guard let testViewController = self.storyboard?.instantiateViewController(withIdentifier: "TestViewController")  as? TestViewController else {return}
         navigationController?.pushViewController(testViewController, animated: true)
@@ -103,7 +127,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == bannerCollectionView {
                 return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         }   else {
-                return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+                return UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -127,11 +151,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                }
             
             //셀의 내용 채우기
-            cell.digitTitle.text = "\(indexPath.row + 1)경"
+            cell.digitTitle.text = "Mission \(indexPath.row + 1)"
             
             cell.mainTitle.text = munjangElements[indexPath.row]
             cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
-            cell.subTitle.text = subElements[indexPath.row]
+//            cell.subTitle.text = subElements[indexPath.row]
             
             //셀에 shadow추가
             cell.backgroundColor = .white
@@ -155,7 +179,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
         munJangEightDetailViewController.naviTitle = "\(indexPath.row + 1 )경"
         munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
-        munJangEightDetailViewController.subTitleText = "(\(subElements[indexPath.row]))"
+//        munJangEightDetailViewController.subTitleText = "(\(subElements[indexPath.row]))"
         
         munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[indexPath.row]
         self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
@@ -166,17 +190,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
      }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        if scrollView == bannerCollectionView
+
             nowPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
         }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == bannerCollectionView {
-//            return CGSize(width: bannerCollectionView.frame.size.width  , height:  bannerCollectionView.frame.height)
-//        }
-//        return CGSize.zero
-//    }
-    
+
     // 2초마다 실행되는 타이머
     var timer :Timer?
     func bannerTimer() {

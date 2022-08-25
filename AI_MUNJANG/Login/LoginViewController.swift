@@ -72,9 +72,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         self.view.addSubview(indicator)
         indicator.center = view.center
         
-//        let image = UIImage(named: "group2")?.withRenderingMode(.alwaysTemplate)
-//        logoimag.image = image
-////        logoimag.tintColor = hexStringToUIColor(hex: Constants.primaryColor)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
