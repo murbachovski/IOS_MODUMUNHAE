@@ -28,19 +28,5 @@ struct QuizContent: Codable {
         case imageName = "ImageName"
     }
 }
-//
-//enum Section: String, Codable {
-//    case the1경 = "1경"
-//    case the2경 = "2경"
-//    case the3경 = "3경"
-//    case the4경 = "4경"
-//    case the5경 = "5경"
-//    case the6경 = "6경"
-//}
-//
-//enum TypeEnum: String, Codable {
-//    case image = "Image"
-//    case text = "Text"
-//}
 
 typealias QuizContents = [QuizContent]

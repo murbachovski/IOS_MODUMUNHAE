@@ -59,6 +59,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var stopSubContainer: UIView!
     
+    @IBOutlet weak var displayUsernameOnMissionClear: UILabel!
     var audioPlayer: AVAudioPlayer? // AVAudioPlayer 인스턴스 참조체 저장
     
     var quizStatus:QuizStatus = .NONE
@@ -126,13 +127,10 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         let tts = TTS()
         tts.setText(currentQuiz.title) {
             if self.currentQuiz.type == "Text" {
-//                tts.voiceTTS()
-//                self.quizTextLabel.text = ""
                 self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!)
             }
-//            print("실행종료 됐습니다.")
+
         }
-//        tts.setText("안녕하세요")
         if currentQuiz.type == "Text" {
             changeButtonStatus(false)
         }
@@ -141,11 +139,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         quizProcessLabel.text = "\(currentQuizIndex)/\(currentQuizPool.count)"
         quizProcessLabel.font = UIFont(name: "NanumSquareEB", size: 17)
         quizProcessLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
-//        let attributedString = NSMutableAttributedString(string: currentQuiz.jimun!)
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.lineSpacing = 3 // Whatever line spacing you want in points
-//        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-        
+
         
         let exampleArray = currentQuiz.example.components(separatedBy:"//")
         let exampleCount = exampleArray.count
@@ -191,11 +185,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             
             quizTextLabel.layer.cornerRadius = 12
             quizTextLabel.layer.masksToBounds = true
-            
-        
-            
 
-            
         }
         
      
@@ -330,6 +320,17 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             print("MIssion Completed")
             completeView.frame = self.view.frame
             self.view.addSubview(completeView)
+            
+            //미션클리어시 사용자의 정보를 업데이트
+            //앱이 background 진입시 Firebase로 전송됨.
+            MyInfo.shared.numberOfHearts = MyInfo.shared.numberOfHearts + 1
+            MyInfo.shared.learningProgress = currentQuiz.mission
+            
+            //completeView의 사용자이름과 하트수 수정
+            displayUsernameOnMissionClear.text = "\(MyInfo.shared.displayName)님은 총 \(MyInfo.shared.numberOfHearts)개의 하트를 모았어요!"
+            
+            
+            
         }else{
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -340,12 +341,11 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
     }
     
-    @IBAction func clickedCompleteViewButton(_ sender: Any) {
 
-        
+    @IBAction func clickedMissionCompleted(_ sender: Any) {
+
         dismiss(animated: true)
     }
-
     
     @IBAction func clickedClose(_ sender: UIButton) {
         

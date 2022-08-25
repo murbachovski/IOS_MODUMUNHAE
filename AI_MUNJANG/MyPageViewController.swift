@@ -11,7 +11,8 @@ import StoreKit
 
 class MyPageViewController: UIViewController {
     
-
+    @IBOutlet var editNameTextfield: UITextField!
+    
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var logoutButton: UIButton!
@@ -27,9 +28,10 @@ class MyPageViewController: UIViewController {
     
     @IBOutlet weak var restoreSubscriptionButton: UIButton!
     var isReferenceRestore = false
-//    var monthProduct: SKProduct?
    
+    @IBOutlet weak var editButton: UIButton!
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,9 +46,7 @@ class MyPageViewController: UIViewController {
         setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(methodOfReceivedNotification(notification:)), name: .IAPHelperPurchaseNotification, object: nil)
         
-       
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -208,4 +208,50 @@ class MyPageViewController: UIViewController {
         }
 
     }
-}
+    
+    
+    
+    @IBAction func clickedEditButton(_ sender: Any) {
+        
+        var usernameTextField: UITextField?
+        
+        let alertController = UIAlertController(
+            title: "사용자 이름 변경",
+            message: "",
+            preferredStyle: .alert)
+        
+        let changeAction = UIAlertAction(
+            title: "변경",
+            style: .default) { (action) -> Void in
+                if let username = usernameTextField?.text {
+                    if username.count > 0 {
+                        MyInfo.shared.displayName = username
+                        self.usernameLabel.text = username + " 님"
+                    }
+                    
+                } else {
+                    print("No Username entered")
+                }
+            }
+        let cancelAction = UIAlertAction(
+            title: "취소",
+            style: .cancel) { (action) -> Void in
+        }
+         
+        alertController.addTextField {
+            (txtUsername) -> Void in
+            usernameTextField = txtUsername
+            usernameTextField!.placeholder = MyInfo.shared.displayName
+        }
+        
+        alertController.addAction(changeAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+
+    }
+    
+        
+   
+
+    }
+    

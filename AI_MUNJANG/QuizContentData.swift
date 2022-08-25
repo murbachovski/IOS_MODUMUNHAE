@@ -76,10 +76,6 @@ class QuizContentData {
     
     private func readLocalFile(forName name: String) -> Data? {
         do {
-//            if let bundlePath = Bundle.main.path(forResource: name,
-//                                                 ofType: "json"),
-//
-//            }
             
             let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
             let jsonPath = paths.appendingPathComponent(name + ".json")

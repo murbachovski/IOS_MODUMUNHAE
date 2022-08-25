@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     MyInfo.shared.displayName = info.displayName
                     MyInfo.shared.learningProgress = info.learningProgress
                     MyInfo.shared.numberOfHearts = info.numberOfHearts
+                    
+                    print("applicationDidBecomeActive userInfo: \(MyInfo.shared)")
                 }
             }
             
@@ -54,7 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Core.shared.isUserLogin() == true {
             if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
                 print("applicationWillResignActive is called: \(userID)")
+                
                 DataFromFirestore.share.settingDoc(userID: userID, userInfo: MyInfo.shared)
+                print("applicationWillResignActive userInfo: \(MyInfo.shared)")
             }
             
         }
