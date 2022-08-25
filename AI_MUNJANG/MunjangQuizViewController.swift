@@ -77,6 +77,10 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var isCompletedTypeAnimation = true
     
+    let runLoop = CFRunLoopGetCurrent()
+    
+    var runloopStop = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -122,8 +126,13 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        runloopStop = true
+    }
+    
     func setupUI(){
-        
+        runloopStop = false
         let tts = TTS()
         tts.setText(currentQuiz.title) {
             if self.currentQuiz.type == "Text" {
@@ -369,6 +378,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }
         label.text = ""
         for i in str {
+            if runloopStop == true {return}
             AudioServicesPlaySystemSound(1306)
             label.text! += "\(i)"
             RunLoop.current.run(until: Date()+0.12)
@@ -376,6 +386,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         changeButtonStatus(true)
     }
     
+    
+   
     fileprivate func changeButtonStatus(_ isStatus: Bool) {
         isCompletedTypeAnimation = isStatus
         answer01Button.isUserInteractionEnabled = isStatus
