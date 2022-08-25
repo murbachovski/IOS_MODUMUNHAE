@@ -134,8 +134,8 @@
                                     <constraint firstItem="nUY-o0-7x1" firstAttribute="leading" secondItem="827-5Z-GQf" secondAttribute="leading" id="tue-pq-CD4"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장구경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiR-nm-Nhm">
-                                <rect key="frame" x="20" y="368" width="59" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장을 이해하는 필수 미션" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiR-nm-Nhm">
+                                <rect key="frame" x="20" y="368" width="175" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2715,6 +2715,9 @@
                         <outlet property="completeView" destination="rib-7h-Edv" id="cRD-m4-jVA"/>
                         <outlet property="correctOrNotView" destination="6PY-qG-9Vx" id="url-Dw-7wn"/>
                         <outlet property="correctViewSubContainerView" destination="otl-Vk-kbl" id="2Ms-Bh-fHR"/>
+                        <outlet property="descSubTitleLabel" destination="AHD-vx-C9G" id="q6V-PX-Ibr"/>
+                        <outlet property="descTitleLabel" destination="h7V-if-B8x" id="aso-jQ-Lbs"/>
+                        <outlet property="descriptionView" destination="USC-ll-v7E" id="Y7L-w9-aHQ"/>
                         <outlet property="displayUsernameOnMissionClear" destination="PJu-ah-Jcb" id="t1A-eK-X5T"/>
                         <outlet property="questionTitle" destination="F0z-nd-emn" id="ag3-eY-saA"/>
                         <outlet property="quizContainerView" destination="fpg-hd-0xa" id="AMd-JQ-tm3"/>
@@ -2722,6 +2725,7 @@
                         <outlet property="quizProcessLabel" destination="p9c-e5-rdR" id="zaJ-DS-8CE"/>
                         <outlet property="quizProgressView" destination="h03-6z-nnJ" id="xhk-ab-Rpc"/>
                         <outlet property="quizTextLabel" destination="pVQ-02-xFM" id="LPj-Hm-xyP"/>
+                        <outlet property="startMissionButton" destination="JvM-A9-A1d" id="4u8-UF-U2D"/>
                         <outlet property="stopMessageView" destination="YHv-uk-fH8" id="HHg-6U-5sW"/>
                         <outlet property="stopSubContainer" destination="4LW-9o-s98" id="nXi-do-OB4"/>
                         <outlet property="trueOrNotButton" destination="aDV-8w-lsS" id="5a5-DW-rvQ"/>
@@ -2730,6 +2734,57 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9w-fd-mnI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="USC-ll-v7E">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션 1. 문장인지 확인하라" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-if-B8x">
+                            <rect key="frame" x="20" y="104" width="374" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="ASc-TX-H5y"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장을 읽기 전에 문장이 맞는지 확인한다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-vx-C9G">
+                            <rect key="frame" x="20" y="174" width="374" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="raU-CR-UZW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvM-A9-A1d">
+                            <rect key="frame" x="142" y="383" width="130" height="130"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="130" id="IPu-9Y-eL2"/>
+                                <constraint firstAttribute="height" constant="130" id="ZAu-dG-K20"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="미션 수행하기">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="clickedStartMission:" destination="OMf-Fe-WXr" eventType="touchUpInside" id="HvD-uX-ai9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="uay-Ok-6LM"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="JvM-A9-A1d" firstAttribute="centerY" secondItem="USC-ll-v7E" secondAttribute="centerY" id="6b9-PV-mSh"/>
+                        <constraint firstItem="AHD-vx-C9G" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="20" id="Aov-a1-oN5"/>
+                        <constraint firstItem="h7V-if-B8x" firstAttribute="top" secondItem="uay-Ok-6LM" secondAttribute="top" constant="60" id="LnE-7O-XgO"/>
+                        <constraint firstItem="uay-Ok-6LM" firstAttribute="trailing" secondItem="h7V-if-B8x" secondAttribute="trailing" constant="20" id="UTD-GT-x9P"/>
+                        <constraint firstItem="h7V-if-B8x" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="20" id="ifr-ZM-8O5"/>
+                        <constraint firstItem="AHD-vx-C9G" firstAttribute="top" secondItem="h7V-if-B8x" secondAttribute="bottom" constant="20" id="n6b-Oo-0Sq"/>
+                        <constraint firstItem="JvM-A9-A1d" firstAttribute="centerX" secondItem="USC-ll-v7E" secondAttribute="centerX" id="pkb-xu-NTH"/>
+                        <constraint firstItem="uay-Ok-6LM" firstAttribute="trailing" secondItem="AHD-vx-C9G" secondAttribute="trailing" constant="20" id="vzM-rF-t46"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" id="6PY-qG-9Vx" userLabel="correctView">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

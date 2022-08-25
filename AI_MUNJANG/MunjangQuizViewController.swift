@@ -60,6 +60,14 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var stopSubContainer: UIView!
     
     @IBOutlet weak var displayUsernameOnMissionClear: UILabel!
+    
+    @IBOutlet var descriptionView: UIView!
+    
+    @IBOutlet weak var descTitleLabel: UILabel!
+    @IBOutlet weak var descSubTitleLabel: UILabel!
+    @IBOutlet weak var startMissionButton: UIButton!
+    
+    
     var audioPlayer: AVAudioPlayer? // AVAudioPlayer 인스턴스 참조체 저장
     
     var quizStatus:QuizStatus = .NONE
@@ -111,13 +119,22 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             isCompletedTypeAnimation = false
         }
         
+        //TODO: descTitle 과 descSubTitle을 이곳에서 설정해야 currentQuiz 참조
+        
+        descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 20)
+        descSubTitleLabel.font = UIFont(name: "NanumSquareB", size: 17)
+        
+        startMissionButton.layer.borderWidth = 1
+        startMissionButton.layer.borderColor = UIColor.darkGray.cgColor
+        startMissionButton.layer.cornerRadius = startMissionButton.frame.size.width / 2
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-
+        descriptionView.frame = view.frame
+        view.addSubview(descriptionView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,15 +148,29 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         runloopStop = true
     }
     
-    func setupUI(){
-        runloopStop = false
+    @IBAction func clickedStartMission(_ sender: Any) {
+        
+        print("clicked Start Mission")
+        descriptionView.removeFromSuperview()
+        startTTS()
+    }
+    
+    
+    fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
+        
         let tts = TTS()
         tts.setText(currentQuiz.title) {
             if self.currentQuiz.type == "Text" {
                 self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!)
             }
-
+            
         }
+    }
+    
+    func setupUI(){
+        runloopStop = false
+//        startTTS()
+        
         if currentQuiz.type == "Text" {
             changeButtonStatus(false)
         }
@@ -314,6 +345,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         setupUI()
+        startTTS()
    
     }
     
