@@ -34,5 +34,8 @@ class AnalyzeViewController: UIViewController {
 
     @IBAction func clickedAnalyze(_ sender: Any) {
         print("clicked Analyze Button")
+        
+        guard let analyzeResultViewController = self.storyboard?.instantiateViewController(withIdentifier: "AnalyzeResultViewController")  as? AnalyzeResultViewController else {return}
+        navigationController?.pushViewController(analyzeResultViewController, animated: true)
     }
 }

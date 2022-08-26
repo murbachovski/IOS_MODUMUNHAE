@@ -47,6 +47,9 @@
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
 		844A4D5028B4AF73002C7F6B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A4D4F28B4AF73002C7F6B /* UserInfo.swift */; };
 		8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05B28B75F4700613946 /* AnalyzeViewController.swift */; };
+		8455F05E28B8585A00613946 /* AnalyzeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */; };
+		8455F06028B8883600613946 /* AnalyzeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8455F05F28B8883600613946 /* AnalyzeCollectionViewCell.xib */; };
+		8455F06228B88D1200613946 /* AnalyzeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F06128B88D1200613946 /* AnalyzeCollectionViewCell.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -67,7 +70,7 @@
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
 		847C829628AF6CBC005B5192 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 847C829528AF6CBC005B5192 /* Zip */; };
 		84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */; };
-		84E7B04C28AE2DF20009E8E1 /* Coe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04B28AE2DF20009E8E1 /* Coe.swift */; };
+		84E7B04C28AE2DF20009E8E1 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04B28AE2DF20009E8E1 /* Core.swift */; };
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
 		84EBC3C6289BAB8C0089F9AC /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */; };
 		84EBC3C8289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */; };
@@ -146,6 +149,9 @@
 		84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AI_MUNJANG.entitlements; sourceTree = "<group>"; };
 		844A4D4F28B4AF73002C7F6B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		8455F05B28B75F4700613946 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
+		8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeResultViewController.swift; sourceTree = "<group>"; };
+		8455F05F28B8883600613946 /* AnalyzeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalyzeCollectionViewCell.xib; sourceTree = "<group>"; };
+		8455F06128B88D1200613946 /* AnalyzeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeCollectionViewCell.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -164,7 +170,7 @@
 		8474DD21287E6C78008275FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8474DD26287EB63C008275FC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
-		84E7B04B28AE2DF20009E8E1 /* Coe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coe.swift; sourceTree = "<group>"; };
+		84E7B04B28AE2DF20009E8E1 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunJangEightDetailViewController.swift; sourceTree = "<group>"; };
 		84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -324,6 +330,9 @@
 			isa = PBXGroup;
 			children = (
 				8455F05B28B75F4700613946 /* AnalyzeViewController.swift */,
+				8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */,
+				8455F05F28B8883600613946 /* AnalyzeCollectionViewCell.xib */,
+				8455F06128B88D1200613946 /* AnalyzeCollectionViewCell.swift */,
 			);
 			path = AnalyzeSentence;
 			sourceTree = "<group>";
@@ -395,7 +404,7 @@
 			children = (
 				8474DD21287E6C78008275FC /* Utils.swift */,
 				843F27C228A5EA4F00E36E33 /* TTS.swift */,
-				84E7B04B28AE2DF20009E8E1 /* Coe.swift */,
+				84E7B04B28AE2DF20009E8E1 /* Core.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -647,6 +656,7 @@
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
 				846E2BE628A3585200C5292D /* dummyContents.json in Resources */,
 				842B0392288643080000BEDA /* NanumSquareR.ttf in Resources */,
+				8455F06028B8883600613946 /* AnalyzeCollectionViewCell.xib in Resources */,
 				842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */,
 				8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */,
 			);
@@ -777,13 +787,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */,
-				84E7B04C28AE2DF20009E8E1 /* Coe.swift in Sources */,
+				84E7B04C28AE2DF20009E8E1 /* Core.swift in Sources */,
 				C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */,
 				842B0383288556680000BEDA /* TermsDetailViewController.swift in Sources */,
 				842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */,
 				844A4D5028B4AF73002C7F6B /* UserInfo.swift in Sources */,
 				C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */,
 				840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */,
+				8455F05E28B8585A00613946 /* AnalyzeResultViewController.swift in Sources */,
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
 				842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */,
 				842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */,
@@ -819,6 +830,7 @@
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
 				842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */,
 				842B03A02886931E0000BEDA /* ResetPasswordDetailViewController.swift in Sources */,
+				8455F06228B88D1200613946 /* AnalyzeCollectionViewCell.swift in Sources */,
 				84488C79288F865B008400AC /* MyPageViewController.swift in Sources */,
 				842B0381288543FB0000BEDA /* TermsViewController.swift in Sources */,
 				842B0394288645010000BEDA /* SignUpViewController.swift in Sources */,
