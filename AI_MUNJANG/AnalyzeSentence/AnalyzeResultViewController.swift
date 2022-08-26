@@ -15,9 +15,11 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView ==
+    
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? Any else {
-                   return UICollectionViewCell()
+            return UICollectionViewCell()
+            
+        }
                
             
             //셀의 내용 채우기
@@ -38,7 +40,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
             
             
                     
-            return cell
+        return cell as! UICollectionViewCell
     }
     
     @IBOutlet weak var analyzeCollectionView: UICollectionView!
