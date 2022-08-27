@@ -260,7 +260,7 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
                             self.guideLabel.isHidden = true
                             
                             //Quiz와 관련된 json 콘텐츠 설정
-                            self.setupContents()
+//                            self.setupContents()
                             
                             
                             if Core.shared.isNewUser(){
@@ -301,7 +301,7 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
     
     func setupContents() {
         //image파일 contents 조회
-        _ = QuizContentData.shared.sectionTotal
+        _ = QuizContentData.shared.quizContentsList
     }
 }
 

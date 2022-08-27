@@ -72,8 +72,6 @@
 		84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */; };
 		84E7B04C28AE2DF20009E8E1 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04B28AE2DF20009E8E1 /* Core.swift */; };
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
-		84EBC3C6289BAB8C0089F9AC /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */; };
-		84EBC3C8289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */; };
 		84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */; };
 		84EBC3CD28A0B6BB0089F9AC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */; };
 		84EBC3D528A0F1090089F9AC /* quizContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 84EBC3D428A0F1090089F9AC /* quizContents.json */; };
@@ -172,8 +170,6 @@
 		84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		84E7B04B28AE2DF20009E8E1 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
-		84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunJangEightDetailViewController.swift; sourceTree = "<group>"; };
-		84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangQuizViewController.swift; sourceTree = "<group>"; };
 		84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		84EBC3D428A0F1090089F9AC /* quizContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizContents.json; sourceTree = "<group>"; };
@@ -284,8 +280,6 @@
 			children = (
 				C6ED507D287531AE00454F26 /* MainViewController.swift */,
 				84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */,
-				84EBC3C7289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift */,
-				84EBC3C5289BAB8C0089F9AC /* MunJangEightDetailViewController.swift */,
 				84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */,
 				843F27BB28A4CA9900E36E33 /* BannerCell.swift */,
 			);
@@ -798,8 +792,6 @@
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
 				842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */,
 				842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */,
-				84EBC3C8289BB8560089F9AC /* MunjangEightDetailCollectionViewCell.swift in Sources */,
-				84EBC3C6289BAB8C0089F9AC /* MunJangEightDetailViewController.swift in Sources */,
 				8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */,
 				846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,

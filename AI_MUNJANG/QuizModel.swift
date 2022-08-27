@@ -9,7 +9,6 @@ import Foundation
 struct QuizContent: Codable {
     let id: String
     let type: String
-    let section: String
     let mission: Int
     let title: String
     let jimun: String?
@@ -19,7 +18,6 @@ struct QuizContent: Codable {
     enum CodingKeys: String, CodingKey {
         case id = "ID"
         case type = "Type"
-        case section = "Section"
         case mission = "Mission"
         case title = "Title"
         case jimun = "Jimun"

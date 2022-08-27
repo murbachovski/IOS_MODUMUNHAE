@@ -11,16 +11,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
   
     
 //
-    var sectionOne :QuizContents = []
-    var sectionTwo :QuizContents = []
-    var sectionThree :QuizContents = []
-    var sectionFour :QuizContents = []
-    var sectionFive :QuizContents = []
-    var sectionSix :QuizContents = []
-    var sectionSeven :QuizContents = []
-    var sectionEight :QuizContents = []
+    
 
-    var sectionTotal :[QuizContents] = []
+    var missionTotal :[QuizContents] = []
+    var missionList: [QuizContent] = []
     var dataArray :Array<UIImage> = []
     
     var titles :Array<String> = []
@@ -38,8 +32,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     
-    let munjangElements:[String] = ["주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
-    let subElements: [String] = ["대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +63,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         searchImage.isUserInteractionEnabled = true
         searchImage.addGestureRecognizer(tapGestureRecognizer)
-        
+        groupedBysortQuiz()
+    }
+    
+    func groupedBysortQuiz(){
+        missionList = QuizContentData.shared.quizContentsList
+        let grouped: [[QuizContent]] = missionList.reduce(into: []) {
+            $0.last?.last?.mission == $1.mission ?
+            $0[$0.index(before: $0.endIndex)].append($1) :
+            $0.append([$1])
+        }
+
+        missionTotal = grouped.sorted { (front, behind) -> Bool in
+            
+            return front.first!.mission < behind.first!.mission
+
+        }
+        print("sorted grouped: \(missionTotal)")
     }
 
     
@@ -129,14 +138,15 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == bannerCollectionView {
                 return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         }   else {
-                return UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
+                return UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == bannerCollectionView {
                 return 3
         }   else {
-                return munjangElements.count
+            
+            return missionTotal.count
         }
         
     }
@@ -155,7 +165,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             //셀의 내용 채우기
             cell.digitTitle.text = "Mission \(indexPath.row + 1)"
             
-            cell.mainTitle.text = munjangElements[indexPath.row]
+            cell.mainTitle.text = missionTotal[indexPath.row][0].title
             cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
 //            cell.subTitle.text = subElements[indexPath.row]
             
@@ -178,11 +188,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
-        guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
-        munJangEightDetailViewController.naviTitle = "\(indexPath.row + 1 )경"
-        munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
-        munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[indexPath.row]
-        self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
+        guard let munjangQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangQuizViewController")  as? MunjangQuizViewController else {return}
+        munjangQuizViewController.modalPresentationStyle = .fullScreen
+        munjangQuizViewController.currentQuizPool = missionTotal[indexPath.row]
+        present(munjangQuizViewController, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 360, height: 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

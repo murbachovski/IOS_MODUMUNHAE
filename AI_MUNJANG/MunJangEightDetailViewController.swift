@@ -19,9 +19,8 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     @IBOutlet weak var subcontainer: UIView!
     
     @IBOutlet weak var detailLabel: UILabel!
-    
-    var currentSectionCotents : QuizContents = []
-    var currentMissionContents : [QuizContents] = []
+        
+    var currentMissionContents : [QuizContent] = []
     
     
     var naviTitle:String = ""
@@ -45,21 +44,21 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         mainTitle.text = mainTitleText
         subTitle.text = subTitleText
         
-        print(currentSectionCotents.count)
+//        print(currentSectionCotents.count)
         
         //다른 개발자 소스 카피함.
-        let grouped: [[QuizContent]] = currentSectionCotents.reduce(into: []) {
-            $0.last?.last?.mission == $1.mission ?
-            $0[$0.index(before: $0.endIndex)].append($1) :
-            $0.append([$1])
-        }
+//        let grouped: [[QuizContent]] = currentSectionCotents.reduce(into: []) {
+//            $0.last?.last?.mission == $1.mission ?
+//            $0[$0.index(before: $0.endIndex)].append($1) :
+//            $0.append([$1])
+//        }
 
-        currentMissionContents = grouped.sorted { (front, behind) -> Bool in
-            
-            return front.first!.mission < behind.first!.mission
-
-        }
-        print("sorted grouped: \(currentMissionContents)")
+//        currentMissionContents = grouped.sorted { (front, behind) -> Bool in
+//
+//            return front.first!.mission < behind.first!.mission
+//
+//        }
+//        print("sorted grouped: \(currentMissionContents)")
         
     }
     
@@ -108,11 +107,6 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
-        guard let munjangQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangQuizViewController")  as? MunjangQuizViewController else {return}
-        munjangQuizViewController.modalPresentationStyle = .fullScreen
-        munjangQuizViewController.currentQuizPool = currentMissionContents[indexPath.row]
-        present(munjangQuizViewController, animated: true)
-      
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

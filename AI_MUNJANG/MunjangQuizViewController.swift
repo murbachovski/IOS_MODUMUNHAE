@@ -76,7 +76,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizIndex = 0
     var isCurrentMissionCompleted = false
-    lazy var currentQuiz = QuizContent(id: "", type: "", section: "", mission: 0, title: "", jimun: nil, example: "", result: nil, imageName: nil)
+    lazy var currentQuiz = QuizContent(id: "", type: "", mission: 0, title: "", jimun: nil, example: "", result: nil, imageName: nil)
     
 
     var answerButtons : [UIButton] = []
@@ -171,7 +171,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         let tts = TTS()
         tts.setText(currentQuiz.title) {
-            if self.currentQuiz.type == "Text" {
+            if self.currentQuiz.type == "글" {
                 self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!)
             }
             
@@ -223,7 +223,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
         let getImagePath = paths.appendingPathComponent("image/total/\(currentQuiz.imageName!)")
 
-        if currentQuiz.type == "Image"{
+        if currentQuiz.type == "그림"{
             quizTextLabel.isHidden = true
             quizImage.isHidden = false
             quizImage.image = UIImage(contentsOfFile: getImagePath)
