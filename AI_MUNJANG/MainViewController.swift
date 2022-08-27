@@ -64,6 +64,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         searchImage.isUserInteractionEnabled = true
         searchImage.addGestureRecognizer(tapGestureRecognizer)
         groupedBysortQuiz()
+        
+        self.collectionViewEight.register(UINib(nibName: "MunjangEightCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+
+
+        
     }
     
     func groupedBysortQuiz(){
@@ -195,7 +200,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 360, height: 80)
+        return CGSize(width: 370, height: 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

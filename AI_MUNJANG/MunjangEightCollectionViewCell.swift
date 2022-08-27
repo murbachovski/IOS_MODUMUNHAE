@@ -12,7 +12,4 @@ class MunjangEightCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var mainTitle: UILabel!
     
-    @IBOutlet weak var subTitle: UILabel!
-    
-    
 }

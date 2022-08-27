@@ -143,53 +143,21 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aMS-ae-pPb">
                                 <rect key="frame" x="0.0" y="389" width="414" height="481"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nao-em-fny">
-                                    <size key="itemSize" width="373" height="80"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gmN-oA-c0A">
+                                    <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="uKP-L6-OtX" customClass="MunjangEightCollectionViewCell" customModule="AI_MUNJANG" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Id3-1j-v83" customClass="MunjangEightCollectionViewCell" customModule="AI_MUNJANG" customModuleProvider="target">
                                         <rect key="frame" x="22" y="0.0" width="370" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8Ub-Ew-V6m">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q7a-qS-Da0">
                                             <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission 999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-YZ-aaU">
-                                                    <rect key="frame" x="18" y="33" width="80" height="14.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="2zi-Ej-kG0"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="13"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.73725490199999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주어" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDv-uG-elj">
-                                                    <rect key="frame" x="106" y="15" width="27.5" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="qox-lB-jGR"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="15"/>
-                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <viewLayoutGuide key="safeArea" id="mqz-pm-Ncf"/>
-                                            <constraints>
-                                                <constraint firstItem="Wub-YZ-aaU" firstAttribute="leading" secondItem="8Ub-Ew-V6m" secondAttribute="leading" constant="18" id="FIw-XL-nZG"/>
-                                                <constraint firstItem="VDv-uG-elj" firstAttribute="centerY" secondItem="8Ub-Ew-V6m" secondAttribute="centerY" id="I3q-tY-GVd"/>
-                                                <constraint firstItem="Wub-YZ-aaU" firstAttribute="centerY" secondItem="8Ub-Ew-V6m" secondAttribute="centerY" id="O9l-vr-Hzw"/>
-                                                <constraint firstItem="VDv-uG-elj" firstAttribute="leading" secondItem="Wub-YZ-aaU" secondAttribute="trailing" constant="8" id="f3Z-j6-rbh"/>
-                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="370" height="80"/>
-                                        <connections>
-                                            <outlet property="digitTitle" destination="Wub-YZ-aaU" id="wgK-Ry-2Hu"/>
-                                            <outlet property="mainTitle" destination="VDv-uG-elj" id="Zh4-C9-ziw"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
