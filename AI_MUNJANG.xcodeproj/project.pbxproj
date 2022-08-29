@@ -47,11 +47,10 @@
 		844A4D5028B4AF73002C7F6B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A4D4F28B4AF73002C7F6B /* UserInfo.swift */; };
 		8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05B28B75F4700613946 /* AnalyzeViewController.swift */; };
 		8455F05E28B8585A00613946 /* AnalyzeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */; };
-		8455F06028B8883600613946 /* AnalyzeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8455F05F28B8883600613946 /* AnalyzeCollectionViewCell.xib */; };
-		8455F06228B88D1200613946 /* AnalyzeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F06128B88D1200613946 /* AnalyzeCollectionViewCell.swift */; };
 		8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */; };
 		8455F07828BA02F000613946 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 8455F07728BA02F000613946 /* DropDown */; };
 		8455F07B28BA02FF00613946 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 8455F07A28BA02FF00613946 /* Zip */; };
+		8455F0C528BCA40A00613946 /* AnalyzeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -148,9 +147,8 @@
 		844A4D4F28B4AF73002C7F6B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		8455F05B28B75F4700613946 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
 		8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeResultViewController.swift; sourceTree = "<group>"; };
-		8455F05F28B8883600613946 /* AnalyzeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalyzeCollectionViewCell.xib; sourceTree = "<group>"; };
-		8455F06128B88D1200613946 /* AnalyzeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeCollectionViewCell.swift; sourceTree = "<group>"; };
 		8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MunjangEightCollectionViewCell.xib; sourceTree = "<group>"; };
+		8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeCollectionViewCell.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -326,8 +324,7 @@
 			children = (
 				8455F05B28B75F4700613946 /* AnalyzeViewController.swift */,
 				8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */,
-				8455F05F28B8883600613946 /* AnalyzeCollectionViewCell.xib */,
-				8455F06128B88D1200613946 /* AnalyzeCollectionViewCell.swift */,
+				8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */,
 			);
 			path = AnalyzeSentence;
 			sourceTree = "<group>";
@@ -651,7 +648,6 @@
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
 				846E2BE628A3585200C5292D /* dummyContents.json in Resources */,
 				842B0392288643080000BEDA /* NanumSquareR.ttf in Resources */,
-				8455F06028B8883600613946 /* AnalyzeCollectionViewCell.xib in Resources */,
 				842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */,
 				8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */,
 			);
@@ -806,6 +802,7 @@
 				8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */,
 				840071D3287BE30500B07551 /* RoundedView.swift in Sources */,
 				C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */,
+				8455F0C528BCA40A00613946 /* AnalyzeCollectionViewCell.swift in Sources */,
 				843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */,
 				842B037E2885417A0000BEDA /* Constnats.swift in Sources */,
 				84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */,
@@ -823,7 +820,6 @@
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
 				842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */,
 				842B03A02886931E0000BEDA /* ResetPasswordDetailViewController.swift in Sources */,
-				8455F06228B88D1200613946 /* AnalyzeCollectionViewCell.swift in Sources */,
 				84488C79288F865B008400AC /* MyPageViewController.swift in Sources */,
 				842B0381288543FB0000BEDA /* TermsViewController.swift in Sources */,
 				842B0394288645010000BEDA /* SignUpViewController.swift in Sources */,
