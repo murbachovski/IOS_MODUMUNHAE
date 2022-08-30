@@ -3509,43 +3509,63 @@
                                                 <color key="textColor" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iDb-Wf-qWb" userLabel="wordCollectionView">
-                                                <rect key="frame" x="0.0" y="671" width="414" height="181"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aSf-2K-7tT">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iDb-Wf-qWb" userLabel="wordCollectionView" customClass="WordCollectionView" customModule="AI_MUNJANG" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="679" width="414" height="100"/>
+                                                <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="250" constant="100" id="erZ-PJ-ONj"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aSf-2K-7tT">
                                                     <size key="itemSize" width="75" height="36"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JzD-jb-iau">
-                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="36"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="wordCell" id="JzD-jb-iau" customClass="WordCollectionViewCell" customModule="AI_MUNJANG" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="10" width="75" height="36"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mZF-7b-KUw">
                                                             <rect key="frame" x="0.0" y="0.0" width="75" height="36"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-vj-7cJ">
+                                                                    <rect key="frame" x="20" y="0.0" width="35" height="36"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="UNv-vj-7cJ" firstAttribute="top" secondItem="mZF-7b-KUw" secondAttribute="top" id="OXJ-GF-EGb"/>
+                                                                <constraint firstItem="UNv-vj-7cJ" firstAttribute="leading" secondItem="mZF-7b-KUw" secondAttribute="leading" constant="20" id="THT-yt-N8s"/>
+                                                                <constraint firstAttribute="trailing" secondItem="UNv-vj-7cJ" secondAttribute="trailing" constant="20" id="bX3-Dc-cWQ"/>
+                                                                <constraint firstAttribute="bottom" secondItem="UNv-vj-7cJ" secondAttribute="bottom" id="pAt-mx-l7g"/>
+                                                            </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="75" height="36"/>
+                                                        <connections>
+                                                            <outlet property="titleLabel" destination="UNv-vj-7cJ" id="3f1-eR-Mf3"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="iDb-Wf-qWb" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" id="D0m-jI-cyG"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k1v-wZ-f4g" secondAttribute="trailing" constant="20" symbolic="YES" id="IdO-sj-ZZP"/>
                                             <constraint firstItem="h7p-v7-t3v" firstAttribute="top" secondItem="cTP-Qw-BfP" secondAttribute="top" constant="24" id="KBI-eV-1ho"/>
                                             <constraint firstItem="CTS-7d-Uvz" firstAttribute="top" secondItem="k1v-wZ-f4g" secondAttribute="bottom" constant="4" id="QFj-ML-CoN"/>
                                             <constraint firstItem="h7p-v7-t3v" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" constant="20" id="R76-Qg-afs"/>
-                                            <constraint firstItem="iDb-Wf-qWb" firstAttribute="top" secondItem="CTS-7d-Uvz" secondAttribute="bottom" constant="8" id="Uze-vU-ycY"/>
+                                            <constraint firstItem="iDb-Wf-qWb" firstAttribute="top" secondItem="CTS-7d-Uvz" secondAttribute="bottom" constant="16" id="Uze-vU-ycY"/>
                                             <constraint firstItem="CTS-7d-Uvz" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" constant="20" id="YND-Xu-X0m"/>
                                             <constraint firstAttribute="trailing" secondItem="iDb-Wf-qWb" secondAttribute="trailing" id="hCf-TJ-zmG"/>
                                             <constraint firstItem="k1v-wZ-f4g" firstAttribute="top" secondItem="th2-dm-1wh" secondAttribute="bottom" id="jO0-pS-ns4"/>
                                             <constraint firstItem="k1v-wZ-f4g" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" constant="20" id="jn6-6d-e8v"/>
                                             <constraint firstItem="th2-dm-1wh" firstAttribute="top" secondItem="h7p-v7-t3v" secondAttribute="bottom" constant="24" id="nwd-Lr-jM6"/>
+                                            <constraint firstAttribute="bottom" secondItem="iDb-Wf-qWb" secondAttribute="bottom" constant="73" id="qQd-DO-Mx7"/>
                                             <constraint firstAttribute="trailing" secondItem="th2-dm-1wh" secondAttribute="trailing" id="qlg-kR-NvC"/>
-                                            <constraint firstAttribute="bottom" secondItem="iDb-Wf-qWb" secondAttribute="bottom" id="vFi-gE-TBm"/>
                                             <constraint firstItem="th2-dm-1wh" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" id="vXw-Y5-iWx"/>
                                             <constraint firstAttribute="trailing" secondItem="h7p-v7-t3v" secondAttribute="trailing" constant="20" id="vbg-A3-ub5"/>
                                         </constraints>
@@ -3575,6 +3595,7 @@
                     <connections>
                         <outlet property="analyzeCollectionView" destination="SUp-E4-ma6" id="xdB-fs-iUm"/>
                         <outlet property="originSentenceLabel" destination="h7p-v7-t3v" id="J6T-tB-u3g"/>
+                        <outlet property="wordCollectionView" destination="iDb-Wf-qWb" id="BuT-Xt-mmB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qD0-O6-fgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

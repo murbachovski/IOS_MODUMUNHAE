@@ -51,6 +51,7 @@
 		8455F07828BA02F000613946 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 8455F07728BA02F000613946 /* DropDown */; };
 		8455F07B28BA02FF00613946 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 8455F07A28BA02FF00613946 /* Zip */; };
 		8455F0C528BCA40A00613946 /* AnalyzeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */; };
+		8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -146,9 +147,10 @@
 		84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AI_MUNJANG.entitlements; sourceTree = "<group>"; };
 		844A4D4F28B4AF73002C7F6B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		8455F05B28B75F4700613946 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
-		8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeResultViewController.swift; sourceTree = "<group>"; };
+		8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeResultViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MunjangEightCollectionViewCell.xib; sourceTree = "<group>"; };
 		8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeCollectionViewCell.swift; sourceTree = "<group>"; };
+		8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCollectionViewCell.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				8455F05B28B75F4700613946 /* AnalyzeViewController.swift */,
 				8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */,
 				8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */,
+				8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */,
 			);
 			path = AnalyzeSentence;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				8474DD22287E6C78008275FC /* Utils.swift in Sources */,
 				8474DD08287D0573008275FC /* CommonUIViewController.swift in Sources */,
 				84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */,
+				8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */,
 				842B0361288502550000BEDA /* AlertService.swift in Sources */,
 				8474DD10287D33B8008275FC /* CustomTextView.swift in Sources */,
 				8474DD1C287E56D3008275FC /* CustomPasswordView.swift in Sources */,
