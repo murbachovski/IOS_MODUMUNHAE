@@ -88,10 +88,22 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == wordCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: "wordCell", for: indexPath
-            ) as? WordCollectionViewCell else { return .zero }
-            return cell.adjustCellSize(height: 40, label: arr[indexPath.item])
+            
+            //😍아래의 코드 4줄이 아이폰XR에서는 정상, 아이폰XS, 6s에서 Crash 유발😍
+            //collectionView.dequeueReusableCell에서 인덱스 초과에 따른 Crash발생
+            
+            
+            //            guard let cell = collectionView.dequeueReusableCell(
+            //                withReuseIdentifier: "wordCell", for: indexPath
+            //            ) as? WordCollectionViewCell else { return .zero }
+            //            return cell.adjustCellSize(height: 40, label: arr[indexPath.item])
+            
+            
+            
+            
+            //😍일단 Crash를 피하기위해 셀에 들어오는 문자열의 길이에 따라 라벨의 width를 결정😍
+            return CGSize(width: CGFloat(15).relativeToIphone8Width() * CGFloat(arr[indexPath.row].count) + CGFloat(40).relativeToIphone8Width(), height: 40)
+
         }else{
             return CGSize(width: CGFloat(240).relativeToIphone8Height(), height: 420)
         }

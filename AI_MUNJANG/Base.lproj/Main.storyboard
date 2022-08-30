@@ -3531,6 +3531,10 @@
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-vj-7cJ">
                                                                     <rect key="frame" x="20" y="0.0" width="35" height="36"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" priority="250" constant="80" id="3qb-pc-kxR"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="JMJ-oB-EEd"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -3605,7 +3609,7 @@
     </scenes>
     <designables>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
         </designable>
     </designables>
     <resources>
