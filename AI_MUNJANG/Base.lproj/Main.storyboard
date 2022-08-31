@@ -141,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aMS-ae-pPb">
-                                <rect key="frame" x="0.0" y="389" width="414" height="481"/>
+                                <rect key="frame" x="0.0" y="397" width="414" height="473"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gmN-oA-c0A">
                                     <size key="itemSize" width="128" height="128"/>
@@ -151,13 +151,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Id3-1j-v83" customClass="MunjangEightCollectionViewCell" customModule="AI_MUNJANG" customModuleProvider="target">
-                                        <rect key="frame" x="22" y="0.0" width="370" height="80"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q7a-qS-Da0">
-                                            <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="370" height="80"/>
+                                        <size key="customSize" width="170" height="80"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -175,7 +175,7 @@
                             <constraint firstItem="aMS-ae-pPb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b8M-DS-h9g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wqz-Vc-piG" secondAttribute="trailing" id="bwM-fU-5z0"/>
                             <constraint firstItem="Wqz-Vc-piG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cLY-xU-l59"/>
-                            <constraint firstItem="aMS-ae-pPb" firstAttribute="top" secondItem="tiR-nm-Nhm" secondAttribute="bottom" id="lf4-Iv-Ual"/>
+                            <constraint firstItem="aMS-ae-pPb" firstAttribute="top" secondItem="tiR-nm-Nhm" secondAttribute="bottom" constant="8" id="lf4-Iv-Ual"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aMS-ae-pPb" secondAttribute="trailing" id="qX6-0C-xrs"/>
                         </constraints>
                     </view>

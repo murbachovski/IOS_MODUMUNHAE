@@ -9,6 +9,8 @@ import Foundation
 struct QuizContent: Codable {
     let id: String
     let type: String
+    let section:Int
+    let missionSubject:String?  //index0에만 설정
     let mission: Int
     let title: String
     let jimun: String?
@@ -19,6 +21,8 @@ struct QuizContent: Codable {
         case id = "ID"
         case type = "Type"
         case mission = "Mission"
+        case section = "Section"
+        case missionSubject = "MissionSubject"
         case title = "Title"
         case jimun = "Jimun"
         case example = "Example"

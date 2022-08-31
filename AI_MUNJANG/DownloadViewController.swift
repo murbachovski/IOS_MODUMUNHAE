@@ -81,6 +81,8 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
                     self.updateContens()
                 }else{
                     print("업데이트 불필요")
+                    
+                    self.setupContents()
                     self.changeViewController()
                 }
             }
@@ -301,7 +303,7 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
     
     func setupContents() {
         //image파일 contents 조회
-        _ = QuizContentData.shared.quizContentsList
+        _ = QuizContentData.shared.sectionTotal
     }
 }
 

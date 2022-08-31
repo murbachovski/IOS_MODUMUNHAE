@@ -11,15 +11,24 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
   
     
 //
-    
+    var sectionOne :QuizContents = []
+    var sectionTwo :QuizContents = []
+    var sectionThree :QuizContents = []
+    var sectionFour :QuizContents = []
+    var sectionFive :QuizContents = []
+    var sectionSix :QuizContents = []
+    var sectionSeven :QuizContents = []
+    var sectionEight :QuizContents = []
 
-    var missionTotal :[QuizContents] = []
-    var missionList: [QuizContent] = []
+
+    
+    var sectionTotal :[QuizContents] = []
+//    var missionList: [QuizContent] = []
+    //    var missionTotal :[QuizContents] = []
     var dataArray :Array<UIImage> = []
     
     var titles :Array<String> = []
     var nowPage: Int = 0
-    
     var serverVersion = 0
     
     @IBOutlet weak var analyzeSenButton: UIButton!
@@ -31,7 +40,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var searchImage: UIImageView!
     
     
-    
+    let munjangElements:[String] = ["문장","주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
+    let subElements: [String] = ["문장","대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     
     
     override func viewDidLoad() {
@@ -40,7 +50,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let layout = UICollectionViewFlowLayout()
         
         collectionViewEight.collectionViewLayout = layout
-        layout.estimatedItemSize = CGSize(width: CGFloat(collectionViewEight.frame.size.width - 74).relativeToIphone8Width() , height: CGFloat(70).relativeToIphone8Width())
+        layout.estimatedItemSize = CGSize(width: CGFloat(162).relativeToIphone8Width() , height: CGFloat(80).relativeToIphone8Width())
         collectionViewEight.delegate = self
         collectionViewEight.dataSource = self
         
@@ -63,7 +73,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         searchImage.isUserInteractionEnabled = true
         searchImage.addGestureRecognizer(tapGestureRecognizer)
-        groupedBysortQuiz()
+
         
         self.collectionViewEight.register(UINib(nibName: "MunjangEightCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
 
@@ -71,21 +81,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
-    func groupedBysortQuiz(){
-        missionList = QuizContentData.shared.quizContentsList
-        let grouped: [[QuizContent]] = missionList.reduce(into: []) {
-            $0.last?.last?.mission == $1.mission ?
-            $0[$0.index(before: $0.endIndex)].append($1) :
-            $0.append([$1])
-        }
-
-        missionTotal = grouped.sorted { (front, behind) -> Bool in
-            
-            return front.first!.mission < behind.first!.mission
-
-        }
-        print("sorted grouped: \(missionTotal)")
-    }
 
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -143,7 +138,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == bannerCollectionView {
                 return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         }   else {
-                return UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10)
+                return UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
         }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -151,7 +146,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 return 3
         }   else {
             
-            return missionTotal.count
+            return munjangElements.count
         }
         
     }
@@ -168,11 +163,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                }
             
             //셀의 내용 채우기
-            cell.digitTitle.text = "Mission \(indexPath.row + 1)"
+            cell.digitTitle.text = "\(indexPath.row)경"
             
-            cell.mainTitle.text = missionTotal[indexPath.row][0].title
+            cell.mainTitle.text = munjangElements[indexPath.row]
             cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
-//            cell.subTitle.text = subElements[indexPath.row]
+            cell.subTitle.text = subElements[indexPath.row]
             
             //셀에 shadow추가
             cell.backgroundColor = .white
@@ -193,15 +188,21 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
-        guard let munjangQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangQuizViewController")  as? MunjangQuizViewController else {return}
-        munjangQuizViewController.modalPresentationStyle = .fullScreen
-        munjangQuizViewController.currentQuizPool = missionTotal[indexPath.row]
-        present(munjangQuizViewController, animated: true)
+        guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
+              munJangEightDetailViewController.naviTitle = "\(indexPath.row )경"
+              munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
+      //        munJangEightDetailViewController.subTitleText = "(\(subElements[indexPath.row]))"
+              
+              munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[indexPath.row]
+              self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGFloat(350).relativeToIphone8Width(), height: 80)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        if collectionView == bannerCollectionView {
+//            return CGSize(width: CGFloat(350).relativeToIphone8Width(), height: 80)
+//        }
+//        return CGSize.zero
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
        return 14 // Keep whatever fits for you
