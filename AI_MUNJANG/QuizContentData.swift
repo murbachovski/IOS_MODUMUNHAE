@@ -23,7 +23,7 @@ class QuizContentData {
     var sectionTotal :[QuizContents] = []
     
     private init() {
-        loadingContents(fileName:"quizContents")
+//        loadingContents(fileName:"quizContents")
     }
     
     func loadingContents(fileName:String){

@@ -54,6 +54,8 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.curVersion = UserDefaults.standard.integer(forKey: "version_number")
+        
     }
         
     override func viewDidAppear(_ animated: Bool) {
@@ -118,7 +120,7 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
           }
 
             let str = String(decoding: data, as: UTF8.self)
-                   print("결과물: \(str)")
+                   print("serverVersion: \(str)")
             
             var dicData : Dictionary<String, Int> = [String : Int]()
                     do {
@@ -126,7 +128,7 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
                         dicData = try JSONSerialization.jsonObject(with: Data(str.utf8), options: []) as! [String:Int]
                         print("version_number_res: \(dicData["version_number"]! )")
                         self.serverVersion = dicData["version_number"]!
-                        UserDefaults.standard.set(self.serverVersion, forKey: "version_number")
+                        
                         if self.curVersion < self.serverVersion {
                             completion(true)
                         }else{
@@ -213,7 +215,7 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
     }
 
     func clickedZipDownload() {
-            
+        print("🥶🥶clickedZipDownload is called started🥶🥶")
         var savedURL:URL = URL(string: "http:")!
         
         let downloadTask = URLSession.shared.downloadTask(with: URL(string: "http://118.67.133.8/download_image")!) {
@@ -261,10 +263,12 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
                             self.indicator.stopAnimating()
                             self.guideLabel.isHidden = true
                             
+                            UserDefaults.standard.set(self.serverVersion, forKey: "version_number")
+                            self.curVersion = UserDefaults.standard.integer(forKey: "version_number")
                             //Quiz와 관련된 json 콘텐츠 설정
-//                            self.setupContents()
+                            self.setupContents()
                             
-                            
+                            print("🥶🥶clickedZipDownload is called Finished🥶🥶")
                             if Core.shared.isNewUser(){
                                 let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
                                 vc.modalPresentationStyle = .fullScreen
@@ -303,7 +307,7 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
     
     func setupContents() {
         //image파일 contents 조회
-        _ = QuizContentData.shared.sectionTotal
+        _ = QuizContentData.shared.loadingContents(fileName: "quizContents")
     }
 }
 
