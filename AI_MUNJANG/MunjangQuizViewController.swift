@@ -120,7 +120,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         //TODO: descTitle 과 descSubTitle을 이곳에서 설정해야 currentQuiz 참조
         
-        descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 20)
+        descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 20)        
+        
         descSubTitleLabel.font = UIFont(name: "NanumSquareB", size: 17)
         
         startMissionButton.layer.borderWidth = 1
@@ -138,6 +139,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         descriptionView.frame = view.frame
+        
         view.addSubview(descriptionView)
     }
     
@@ -263,6 +265,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
 
    
     
+    @IBAction func clickedBack(_ sender: Any) {
+        dismiss(animated: true)
+    }
     
     
     @IBAction func clickedOptions(_ sender: UIButton) {

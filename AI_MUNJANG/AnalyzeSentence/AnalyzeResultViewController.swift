@@ -16,7 +16,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     
     @IBOutlet weak var wordCollectionView: UICollectionView!
     
-    let samples = "이 나는 아침에 어디까지 맘고생하면 서서히우리는 학교에 간다.이 나는 아침에 어디까지 맘고생하면 서서히우리는 학교에 간다.이 나는 아침에 어디까지 맘고생하면 서서히우리는 학교에 간다.이 나는 아침에 어디까지 맘고생하면 서서히우리는 학교에 간다."
+    let samples = "이 나는 아침에 어디까지 맘고생하면 서서히우리는 학교에 간다."
     var arr:[String] = []
     
     override func viewDidLoad() {
@@ -33,7 +33,6 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         
         arr = samples.components(separatedBy: " ")
         
-//        wordCollectionView.register(wordCollectionView.self, forCellWithReuseIdentifier: "wordCell")
     }
   
 
@@ -110,8 +109,13 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         
     }
     
+   
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if collectionView == wordCollectionView {
+            return 12
+        }
+        
         return 20
     }
     

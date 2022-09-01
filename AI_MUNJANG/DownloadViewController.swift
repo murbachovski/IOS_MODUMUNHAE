@@ -306,8 +306,8 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
     }
     
     func setupContents() {
-        //image파일 contents 조회
-        _ = QuizContentData.shared.loadingContents(fileName: "quizContents")
+        //image파일 contents 조회, 앱 구동시마다. QuizContentData.shared 호출하여 데이터를 파일에서 읽어들인다.
+        _ = QuizContentData.shared.sectionTotal
     }
 }
 

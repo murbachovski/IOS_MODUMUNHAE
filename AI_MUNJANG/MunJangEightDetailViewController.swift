@@ -59,9 +59,9 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
             return front.first!.mission < behind.first!.mission
 
         }
-        print("sorted grouped: \(currentMissionContents)")
-        
     }
+    
+  
     
     func setupUI(){
         subcontainer.layer.cornerRadius = 10
@@ -110,7 +110,10 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         
         guard let munjangQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangQuizViewController")  as? MunjangQuizViewController else {return}
         munjangQuizViewController.modalPresentationStyle = .fullScreen
+        print("선택된 Mission \(indexPath.row + 1)")
+        print("선택된 Mission 내용 : \(currentMissionContents[indexPath.row])")
         munjangQuizViewController.currentQuizPool = currentMissionContents[indexPath.row]
+        munjangQuizViewController.descTitleLabel.text = currentMissionContents[indexPath.row][0].missionSubject
         present(munjangQuizViewController, animated: true)
       
     }

@@ -191,19 +191,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
               munJangEightDetailViewController.naviTitle = "\(indexPath.row )경"
               munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
-      //        munJangEightDetailViewController.subTitleText = "(\(subElements[indexPath.row]))"
               
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[indexPath.row]
-              self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
+            print("😡😡😡 \(indexPath.row)경 선택")
+            
+            self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == bannerCollectionView {
-//            return CGSize(width: CGFloat(350).relativeToIphone8Width(), height: 80)
-//        }
-//        return CGSize.zero
-//    }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
        return 14 // Keep whatever fits for you
      }
