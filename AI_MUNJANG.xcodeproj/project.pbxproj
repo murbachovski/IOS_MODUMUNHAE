@@ -54,6 +54,7 @@
 		8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */; };
 		8455F0C528BCA40A00613946 /* AnalyzeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */; };
 		8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */; };
+		845D5A3C28C1C86100CB67DE /* MunhaeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -155,6 +156,7 @@
 		8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MunjangEightCollectionViewCell.xib; sourceTree = "<group>"; };
 		8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeCollectionViewCell.swift; sourceTree = "<group>"; };
 		8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCollectionViewCell.swift; sourceTree = "<group>"; };
+		845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestViewController.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -338,6 +340,14 @@
 			path = AnalyzeSentence;
 			sourceTree = "<group>";
 		};
+		845D5A3D28C1C88500CB67DE /* MunhaeTest */ = {
+			isa = PBXGroup;
+			children = (
+				845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */,
+			);
+			name = MunhaeTest;
+			sourceTree = "<group>";
+		};
 		8474DCFC287D02C7008275FC /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,7 +482,6 @@
 			children = (
 				8482B8F328AB79B60041BD16 /* DownloadImage */,
 				C6ED5078287531AE00454F26 /* AI_MUNJANG */,
-				C6ED5077287531AE00454F26 /* Products */,
 				8B5FF546FE32A902A1BF68DD /* Pods */,
 				BC2FE6537C9C06F991C945DE /* Frameworks */,
 			);
@@ -486,6 +495,7 @@
 				C6ED5096287531B000454F26 /* AI_MUNJANGUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C6ED5078287531AE00454F26 /* AI_MUNJANG */ = {
@@ -515,7 +525,9 @@
 				842B037C288541680000BEDA /* Constants */,
 				842B03A82888E3420000BEDA /* Subscription */,
 				84488C77288F861A008400AC /* MyPage */,
+				845D5A3D28C1C88500CB67DE /* MunhaeTest */,
 				84EBC3CB28A0B69B0089F9AC /* QuizModel */,
+				C6ED5077287531AE00454F26 /* Products */,
 				8474DD23287E6C7D008275FC /* Utils */,
 				8455F05A28B75F0700613946 /* AnalyzeSentence */,
 			);
@@ -813,6 +825,7 @@
 				840071D3287BE30500B07551 /* RoundedView.swift in Sources */,
 				C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */,
 				8455F0C528BCA40A00613946 /* AnalyzeCollectionViewCell.swift in Sources */,
+				845D5A3C28C1C86100CB67DE /* MunhaeTestViewController.swift in Sources */,
 				843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */,
 				842B037E2885417A0000BEDA /* Constnats.swift in Sources */,
 				84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */,

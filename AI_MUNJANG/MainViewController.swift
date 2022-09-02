@@ -38,6 +38,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var collectionViewEight: UICollectionView!
     @IBOutlet weak var analyzeContainer: UIView!
     @IBOutlet weak var searchImage: UIImageView!
+    @IBOutlet var munhaeTestButton: UIButton!
     
     
     let munjangElements:[String] = ["문장","주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
@@ -118,6 +119,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBAction func clickedUserIcon(_ sender: UIBarButtonItem) {
         guard let myPageViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyPageViewController")  as? MyPageViewController else {return}
         navigationController?.pushViewController(myPageViewController, animated: true)
+    }
+    @IBAction func clickedmunhaeTest(_ sender: Any) {
+        
+        guard let munhaeTestViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestViewController")  as? MunhaeTestViewController else {return}
+        navigationController?.pushViewController(munhaeTestViewController, animated: true)
     }
     
     @IBAction func clickedAnalyzeButton(_ sender: Any) {
