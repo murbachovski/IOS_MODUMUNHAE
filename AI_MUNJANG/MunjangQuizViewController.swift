@@ -87,6 +87,10 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     let runLoop = CFRunLoopGetCurrent()
     
     var runloopStop = false
+    var isBalwhaSound = true
+    
+    
+    @IBOutlet weak var balwhaButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,13 +137,18 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         hintButton.layer.borderWidth = 1
         hintButton.layer.borderColor = UIColor.lightGray.cgColor
         
+        isBalwhaSound = UserDefaults.standard.bool(forKey: "balwhaSound")
+        if isBalwhaSound == true{
+            balwhaButton.setTitle("퀴즈 음성 ON", for: .normal)
+        }else{
+            balwhaButton.setTitle("퀴즈 음성 OFF", for: .normal)
+        }
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         descriptionView.frame = view.frame
-        
         view.addSubview(descriptionView)
     }
     
@@ -170,25 +179,32 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
         
-        let tts = TTS()
-        //TTS가 시작시 버튼 비활성화
-        changeButtonStatus(false)
-        
-        tts.setText(currentQuiz.title) {
-            //TTS가 완료된 후 버튼 활성화
-            self.changeButtonStatus(true)
+   
+        if isBalwhaSound == true {
+            let tts = TTS()
+            //TTS가 시작시 버튼 비활성화
+            changeButtonStatus(false)
             
-            if self.currentQuiz.type == "글" {
-                self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!)
-            }
+            tts.setText(currentQuiz.title) {
+                //TTS가 완료된 후 버튼 활성화
+                self.changeButtonStatus(true)
+                
+                if self.currentQuiz.type == "글" {
+                    self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!, isBalwhaOn: true)
+                }
 
+            }
+        }else{
+            self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!, isBalwhaOn: false)
         }
+        
+        
         
     }
     
     func setupUI(){
         runloopStop = false
-//        startTTS()
+
         
         if currentQuiz.type == "Text" {
             changeButtonStatus(false)
@@ -271,6 +287,17 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
 
    
+    @IBAction func clickedBalwhaButton(_ sender: Any) {
+        isBalwhaSound = !isBalwhaSound
+        if isBalwhaSound == true{
+            balwhaButton.setImage(UIImage(systemName: "speaker"), for: .normal)
+            balwhaButton.setTitle("퀴즈 음성 ON", for: .normal)
+        }else{
+            balwhaButton.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
+            balwhaButton.setTitle("퀴즈 음성 OFF", for: .normal)
+        }
+        UserDefaults.standard.set(isBalwhaSound, forKey: "balwhaSound")
+    }
     
     @IBAction func clickedBack(_ sender: Any) {
         dismiss(animated: true)
@@ -425,7 +452,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         dismiss(animated: true)
     }
     
-    func typeAnimate(label: UILabel, str:String) {
+    func typeAnimate(label: UILabel, str:String, isBalwhaOn:Bool) {
         if quizStatus == .INCORRECT {
             changeButtonStatus(true)
             return
@@ -433,7 +460,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         label.text = ""
         for i in str {
             if runloopStop == true {return}
-            AudioServicesPlaySystemSound(1306)
+            if isBalwhaOn == true {
+                AudioServicesPlaySystemSound(1306)
+            }
             label.text! += "\(i)"
             RunLoop.current.run(until: Date()+0.12)
         }
