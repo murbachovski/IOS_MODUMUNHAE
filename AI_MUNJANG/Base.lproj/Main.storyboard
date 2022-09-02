@@ -2799,6 +2799,7 @@
                         <outlet property="answer01Button" destination="vLd-hE-mHN" id="Ppg-FS-7BA"/>
                         <outlet property="answer02Button" destination="WHd-vt-5bL" id="vWx-cO-4P7"/>
                         <outlet property="answer03Button" destination="DA3-pq-hT7" id="bDj-3F-3a6"/>
+                        <outlet property="balwhaButton" destination="osr-Eg-GaL" id="3n9-f2-rc3"/>
                         <outlet property="button01Image" destination="3Uh-Yy-54k" id="jvs-bB-KSM"/>
                         <outlet property="button02Image" destination="kd5-I6-gxh" id="NBL-OT-EQl"/>
                         <outlet property="button03Image" destination="Ore-iX-vdt" id="iFv-ht-p8F"/>
@@ -2871,6 +2872,32 @@
                                 <action selector="clickedBack:" destination="OMf-Fe-WXr" eventType="touchUpInside" id="sho-Zx-cbl"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7W-Pf-9Zi">
+                            <rect key="frame" x="20" y="732" width="374" height="60"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osr-Eg-GaL">
+                                    <rect key="frame" x="10" y="4" width="354" height="52"/>
+                                    <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="20"/>
+                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="퀴브 음성 ON" image="speaker" catalog="system">
+                                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clickedBalwhaButton:" destination="OMf-Fe-WXr" eventType="touchUpInside" id="7u5-Kq-0Jj"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="2fk-2p-b1h"/>
+                                <constraint firstAttribute="trailing" secondItem="osr-Eg-GaL" secondAttribute="trailing" constant="10" id="ic8-B6-VSD"/>
+                                <constraint firstItem="osr-Eg-GaL" firstAttribute="top" secondItem="r7W-Pf-9Zi" secondAttribute="top" constant="4" id="meh-NB-sMS"/>
+                                <constraint firstAttribute="bottom" secondItem="osr-Eg-GaL" secondAttribute="bottom" constant="4" id="thA-po-wbc"/>
+                                <constraint firstItem="osr-Eg-GaL" firstAttribute="leading" secondItem="r7W-Pf-9Zi" secondAttribute="leading" constant="10" id="zqo-zq-SEZ"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="uay-Ok-6LM"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2878,11 +2905,14 @@
                         <constraint firstItem="JvM-A9-A1d" firstAttribute="centerY" secondItem="USC-ll-v7E" secondAttribute="centerY" id="6b9-PV-mSh"/>
                         <constraint firstItem="AHD-vx-C9G" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="20" id="Aov-a1-oN5"/>
                         <constraint firstItem="h7V-if-B8x" firstAttribute="top" secondItem="uay-Ok-6LM" secondAttribute="top" constant="60" id="LnE-7O-XgO"/>
+                        <constraint firstItem="r7W-Pf-9Zi" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="20" id="MgR-Pf-8iV"/>
                         <constraint firstItem="uay-Ok-6LM" firstAttribute="trailing" secondItem="h7V-if-B8x" secondAttribute="trailing" constant="20" id="UTD-GT-x9P"/>
+                        <constraint firstItem="uay-Ok-6LM" firstAttribute="bottom" secondItem="r7W-Pf-9Zi" secondAttribute="bottom" constant="70" id="Wwp-ul-Fmx"/>
                         <constraint firstItem="Bq3-E6-maQ" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="8" id="eZW-vP-Ect"/>
                         <constraint firstItem="h7V-if-B8x" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="20" id="ifr-ZM-8O5"/>
                         <constraint firstItem="AHD-vx-C9G" firstAttribute="top" secondItem="h7V-if-B8x" secondAttribute="bottom" constant="20" id="n6b-Oo-0Sq"/>
                         <constraint firstItem="Bq3-E6-maQ" firstAttribute="top" secondItem="USC-ll-v7E" secondAttribute="top" constant="50" id="odo-ny-I38"/>
+                        <constraint firstItem="uay-Ok-6LM" firstAttribute="trailing" secondItem="r7W-Pf-9Zi" secondAttribute="trailing" constant="20" id="ooF-2T-xlF"/>
                         <constraint firstItem="JvM-A9-A1d" firstAttribute="centerX" secondItem="USC-ll-v7E" secondAttribute="centerX" id="pkb-xu-NTH"/>
                         <constraint firstItem="uay-Ok-6LM" firstAttribute="trailing" secondItem="AHD-vx-C9G" secondAttribute="trailing" constant="20" id="vzM-rF-t46"/>
                     </constraints>
@@ -3720,7 +3750,7 @@
     </scenes>
     <designables>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
@@ -3742,6 +3772,7 @@
         <image name="illustHeart" width="390" height="264"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="sample" width="594" height="352"/>
+        <image name="speaker" catalog="system" width="128" height="124"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
