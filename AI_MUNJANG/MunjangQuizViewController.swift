@@ -171,12 +171,19 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
         
         let tts = TTS()
+        //TTS가 시작시 버튼 비활성화
+        changeButtonStatus(false)
+        
         tts.setText(currentQuiz.title) {
+            //TTS가 완료된 후 버튼 활성화
+            self.changeButtonStatus(true)
+            
             if self.currentQuiz.type == "글" {
                 self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!)
             }
-            
+
         }
+        
     }
     
     func setupUI(){
