@@ -71,6 +71,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         analyzeSenButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
         
         
+        munhaeTestButton.layer.borderWidth = 1
+        munhaeTestButton.layer.borderColor = UIColor.darkGray.cgColor
+        munhaeTestButton.layer.cornerRadius = 8
+        
+        munhaeTestButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
+        munhaeTestButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         searchImage.isUserInteractionEnabled = true
         searchImage.addGestureRecognizer(tapGestureRecognizer)
