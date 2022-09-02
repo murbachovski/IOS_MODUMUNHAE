@@ -55,6 +55,8 @@
 		8455F0C528BCA40A00613946 /* AnalyzeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */; };
 		8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */; };
 		845D5A3C28C1C86100CB67DE /* MunhaeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */; };
+		845D5A3F28C1E63900CB67DE /* MunhaeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */; };
+		845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -157,6 +159,8 @@
 		8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeCollectionViewCell.swift; sourceTree = "<group>"; };
 		8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCollectionViewCell.swift; sourceTree = "<group>"; };
 		845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestViewController.swift; sourceTree = "<group>"; };
+		845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestModel.swift; sourceTree = "<group>"; };
+		845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestContentData.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -450,6 +454,8 @@
 				846E2BE528A3585100C5292D /* dummyContents.json */,
 				84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */,
 				846E2BE128A34FDD00C5292D /* QuizContentData.swift */,
+				845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */,
+				845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */,
 			);
 			name = QuizModel;
 			sourceTree = "<group>";
@@ -809,6 +815,7 @@
 				840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */,
 				8455F05E28B8585A00613946 /* AnalyzeResultViewController.swift in Sources */,
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
+				845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */,
 				842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */,
 				842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */,
 				8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */,
@@ -829,6 +836,7 @@
 				843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */,
 				842B037E2885417A0000BEDA /* Constnats.swift in Sources */,
 				84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */,
+				845D5A3F28C1E63900CB67DE /* MunhaeTestModel.swift in Sources */,
 				840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */,
 				846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */,
 				840071D8287BE67F00B07551 /* CGFloatExtension.swift in Sources */,

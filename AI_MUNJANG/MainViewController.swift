@@ -19,7 +19,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var sectionSix :QuizContents = []
     var sectionSeven :QuizContents = []
     var sectionEight :QuizContents = []
-
+    var downloadTask :URLSessionDownloadTask?
 
     
     var sectionTotal :[QuizContents] = []
@@ -121,9 +121,42 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         navigationController?.pushViewController(myPageViewController, animated: true)
     }
     @IBAction func clickedmunhaeTest(_ sender: Any) {
+        downloadTask = URLSession.shared.downloadTask(with: URL(string: "http://118.67.133.8/download_munhaeTest_json")!) {
+            urlOrNil, responseOrNil, errorOrNil in
+            // check for and handle errors:
+            // * errorOrNil should be nil
+            // * responseOrNil should be an HTTPURLResponse with statusCode in 200..<299
+
+            guard let fileURL = urlOrNil else { return }
+            do {
+                print("fileURL: \(fileURL)")
+                guard let res = responseOrNil else {return}
+                print("responseOrNil: \(res.url!)")
+                let documentsURL = try
+                    FileManager.default.url(for: .documentDirectory,
+                                            in: .userDomainMask,
+                                            appropriateFor: nil,
+                                            create: false)
+                print("documentsURL: \(documentsURL)")
+                print("lastPathComponent: \(fileURL.lastPathComponent)")
+                let savedURL = documentsURL.appendingPathComponent("munhaeTestContents.json")
+                if FileManager.default.fileExists(atPath: savedURL.path) {
+                    try! FileManager.default.removeItem(at: savedURL)
+                }
+                
+                
+                print("savedURL: \(savedURL)")
+                try FileManager.default.moveItem(at: fileURL, to: savedURL)
+                self.fetchJson(filename: "munhaeTestContents.json")
+            } catch {
+                print ("file error: \(error)")
+            }
+        }
+        downloadTask?.resume()
         
-        guard let munhaeTestViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestViewController")  as? MunhaeTestViewController else {return}
-        navigationController?.pushViewController(munhaeTestViewController, animated: true)
+        
+//        guard let munhaeTestViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestViewController")  as? MunhaeTestViewController else {return}
+//        navigationController?.pushViewController(munhaeTestViewController, animated: true)
     }
     
     @IBAction func clickedAnalyzeButton(_ sender: Any) {
@@ -234,6 +267,24 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             nowPage += 1
             bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
         }
+    
+    func fetchJson(filename: String) {
+    
+    let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    let fileURL = URL(fileURLWithPath: filename, relativeTo: directoryURL)
+
+    do {
+              let data = try Data(contentsOf:fileURL, options: .mappedIfSafe)
+              let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+              if let jsonResult = jsonResult as? [Dictionary<String, Any>]{
+                   print(jsonResult)
+                  let contents =  MunhaeTestContentData.shared.munhaeTestTotal
+                  print(contents)
+              }
+          } catch {
+               // handle error
+          }
+}
 }
 
 
