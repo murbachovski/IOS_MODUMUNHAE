@@ -17,8 +17,8 @@ class MunhaeTestContentData {
     
     func loadingContents(fileName:String){
         
-        guard let munhaeTestData = readLocalFile(forName:fileName) else { print("quizData is null"); return}
-        guard let munhaeTestContents = try? JSONDecoder().decode(MunhaeTestContents.self, from: munhaeTestData) else { print("quizContens is null");  return }
+        guard let munhaeTestData = readLocalFile(forName:fileName) else { print("munhaeTestContents is null"); return}
+        guard let munhaeTestContents = try? JSONDecoder().decode(MunhaeTestContents.self, from: munhaeTestData) else { print("munhaeTestContents is null");  return }
         munhaeTestTotal = munhaeTestContents
 //        print(munhaeTestTotal)
     }

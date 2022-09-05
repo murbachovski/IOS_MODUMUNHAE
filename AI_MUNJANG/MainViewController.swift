@@ -154,7 +154,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 print("savedURL: \(savedURL)")
                 try FileManager.default.moveItem(at: fileURL, to: savedURL)
-                self.fetchJson(filename: "munhaeTestContents.json")
+                self.fetchJson(filename: "munhaeTestContents.json") {
+                    print("fetchJson완료")
+                    DispatchQueue.main.async {
+                        self.changeMunhaeTestPage()
+                    }
+                    
+                }
             } catch {
                 print ("file error: \(error)")
             }
@@ -164,6 +170,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
 //        guard let munhaeTestViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestViewController")  as? MunhaeTestViewController else {return}
 //        navigationController?.pushViewController(munhaeTestViewController, animated: true)
+    }
+    
+     func changeMunhaeTestPage() {
+        guard let munhaeTestViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestViewController")  as? MunhaeTestViewController else {return}
+        navigationController?.pushViewController(munhaeTestViewController, animated: true)
     }
     
     @IBAction func clickedAnalyzeButton(_ sender: Any) {
@@ -275,7 +286,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
         }
     
-    func fetchJson(filename: String) {
+    func fetchJson(filename: String, completion: () -> Void) {
     
     let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let fileURL = URL(fileURLWithPath: filename, relativeTo: directoryURL)
@@ -287,6 +298,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                    print(jsonResult)
                   let contents =  MunhaeTestContentData.shared.munhaeTestTotal
                   print(contents)
+                  completion()
               }
           } catch {
                // handle error

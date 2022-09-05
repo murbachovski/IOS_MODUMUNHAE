@@ -7,6 +7,7 @@ import Foundation
 
 // MARK: - QuizContent
 struct MunhaeTestContent: Codable {
+    let testnumber: Int
     let id: Int
     let title: String
     let jimun: String?
@@ -14,6 +15,7 @@ struct MunhaeTestContent: Codable {
     let result: String
 
     enum CodingKeys: String, CodingKey {
+        case testnumber = "TestNumber"
         case id = "ID"
         case title = "Title"
         case jimun = "Jimun"

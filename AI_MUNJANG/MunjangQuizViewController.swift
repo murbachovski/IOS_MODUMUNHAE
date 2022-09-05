@@ -16,6 +16,7 @@ enum QuizStatus {
 }
 
 class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
+    
     @IBOutlet var quizProcessLabel: UILabel!
     
     @IBOutlet var correctOrNotView: UIView!
@@ -397,7 +398,6 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         startTTS()
    
     }
-    
     
     @IBAction func clickedTrueOrNotButton(_ sender: Any) {
 
