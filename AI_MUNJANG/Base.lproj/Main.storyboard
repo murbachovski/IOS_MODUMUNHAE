@@ -4008,6 +4008,7 @@
                         <outlet property="munhaeQuestionTitle" destination="FxL-S9-hPN" id="3Tx-bF-F0n"/>
                         <outlet property="munhaeQuizProcessLabel" destination="s2h-b0-nh1" id="rv7-No-Xqj"/>
                         <outlet property="munhaeStopContainer" destination="Rn8-GP-ECw" id="2st-4G-sYO"/>
+                        <outlet property="munhaeStopMessageView" destination="TuS-Wm-vi9" id="yg7-sh-fKQ"/>
                         <outlet property="munhaepaddingLabel" destination="F7J-g9-Bvd" id="wqu-Mw-4rY"/>
                         <outlet property="paddingLabel" destination="F7J-g9-Bvd" id="u2o-yh-te1"/>
                         <outlet property="quizContainerView" destination="sxk-xg-G8m" id="ITY-sK-wAW"/>
@@ -4172,14 +4173,14 @@
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 그만두시면 하트를 받지 못해요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6F-t3-Ual">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 그만두시면 문해력을 알 수 없어요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6F-t3-Ual">
                                     <rect key="frame" x="20" y="78" width="374" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eR-kg-L9f">
-                                    <rect key="frame" x="20" y="152" width="374" height="56"/>
+                                    <rect key="frame" x="20" y="136" width="374" height="56"/>
                                     <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="56" id="Dgc-gu-tke"/>
@@ -4193,9 +4194,12 @@
                                             <integer key="value" value="10"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clickedContinueButton:" destination="dzd-GK-NUf" eventType="touchUpInside" id="c6b-Zr-OVd"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgj-6s-H9J">
-                                    <rect key="frame" x="20" y="224" width="374" height="56"/>
+                                    <rect key="frame" x="20" y="208" width="374" height="56"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="56" id="Qwf-GQ-O5w"/>
                                     </constraints>
@@ -4204,6 +4208,9 @@
                                     <state key="normal" title="그만하기">
                                         <color key="titleColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </state>
+                                    <connections>
+                                        <action selector="clickedStopButton:" destination="dzd-GK-NUf" eventType="touchUpInside" id="Ie2-uV-N8P"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4212,7 +4219,7 @@
                                 <constraint firstAttribute="trailing" secondItem="B6F-t3-Ual" secondAttribute="trailing" constant="20" id="9gk-aG-uKo"/>
                                 <constraint firstItem="aTK-za-xOv" firstAttribute="top" secondItem="Rn8-GP-ECw" secondAttribute="top" constant="30" id="Ahn-6W-VPM"/>
                                 <constraint firstItem="2eR-kg-L9f" firstAttribute="leading" secondItem="Rn8-GP-ECw" secondAttribute="leading" constant="20" id="IfZ-Wi-hBp"/>
-                                <constraint firstItem="2eR-kg-L9f" firstAttribute="top" secondItem="B6F-t3-Ual" secondAttribute="bottom" constant="56" id="NjR-U5-cxP"/>
+                                <constraint firstItem="2eR-kg-L9f" firstAttribute="top" secondItem="B6F-t3-Ual" secondAttribute="bottom" constant="40" id="NjR-U5-cxP"/>
                                 <constraint firstItem="B6F-t3-Ual" firstAttribute="top" secondItem="aTK-za-xOv" secondAttribute="bottom" constant="25" id="Ojh-Fc-CiL"/>
                                 <constraint firstAttribute="height" constant="328" id="PYN-0r-mnm"/>
                                 <constraint firstItem="aTK-za-xOv" firstAttribute="centerX" secondItem="Rn8-GP-ECw" secondAttribute="centerX" id="RQd-WN-9DR"/>

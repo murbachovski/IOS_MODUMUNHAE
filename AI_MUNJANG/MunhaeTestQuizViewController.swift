@@ -84,6 +84,8 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         "문장":0,
         "문맥":0,
     ]
+    
+    //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -147,6 +149,17 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewWillDisappear(animated)
     }
     
+    
+    //MARK: - IBAction
+    
+    @IBAction func clickedContinueButton(_ sender: Any) {
+        munhaeStopMessageView.removeFromSuperview()
+    }
+    
+    @IBAction func clickedStopButton(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     @IBAction func clickedStart(_ sender: Any) {
         quizTextLabel.text = currentQuiz.title
         paddingLabel.text = currentQuiz.jimun ?? ""
@@ -159,10 +172,18 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         startTTS()
     }
     @IBAction func closedButton(_ sender: Any) {
-        dismiss(animated: true)
+        munhaeStopMessageView.frame.size.width = view.frame.size.width
+        view.addSubview(munhaeStopMessageView)
+//        dismiss(animated: true)
     }
     
     @IBAction func clickedSubmitButton(_ sender: Any) {
+        let isChecked = checkValidation()
+        if isChecked == false {
+            let alert = AlertService().alert(title: "", body: "보기 중 하나를 선택하세요.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion:nil, fourthButtonCompletion: nil)
+            present(alert, animated: true)
+            return
+        }
         for item in answerButtons {
             if item.isSelected == true {
                 if item.titleLabel?.text == currentQuiz.result {
@@ -193,6 +214,17 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }
         updateUI()
     }
+    
+    func checkValidation() -> Bool {
+        var isChecked = false
+        for item in answerButtons {
+            if item.isSelected == true {
+                isChecked = true
+            }
+        }
+        return isChecked
+    }
+    
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
         
             let tts = TTS()
