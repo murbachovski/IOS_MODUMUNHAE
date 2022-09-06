@@ -77,7 +77,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizPool:MunhaeTestContents = []
     
-    var currentQuizIndex = 19
+    var currentQuizIndex = 10
     lazy var currentQuiz = MunhaeTestContent(testnumber: 0, id: 0, title: "", jimun: nil, example: "", result: "")
 
     var answerButtons : [UIButton] = []
@@ -87,10 +87,10 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     var isBalwhaSound = true
     
     var testResult: [String: Double] = [
-        "글자":9.0,
-        "낱말":12.0,
-        "문장":8.0,
-        "문맥":8.0,
+        "글자":0.0,
+        "낱말":0.0,
+        "문장":0.0,
+        "문맥":0.0,
     ]
     
     //MARK: - View Life Cycle
