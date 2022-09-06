@@ -7,7 +7,7 @@
 
 import UIKit
 import AVFoundation
-
+import Charts
 
 enum TestQuizStatus {
     case NONE
@@ -16,6 +16,14 @@ enum TestQuizStatus {
 }
 
 class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
+    
+    @IBOutlet var resultContainerView: UIView!
+    
+    @IBOutlet var resultGuideLabel: UILabel!
+    
+    @IBOutlet var barChartView: BarChartView!
+    
+    @IBOutlet var testResultView: UIView!
     
     @IBOutlet var submitButton: UIButton!
     
@@ -69,7 +77,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizPool:MunhaeTestContents = []
     
-    var currentQuizIndex = 0
+    var currentQuizIndex = 19
     lazy var currentQuiz = MunhaeTestContent(testnumber: 0, id: 0, title: "", jimun: nil, example: "", result: "")
 
     var answerButtons : [UIButton] = []
@@ -78,16 +86,28 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var isBalwhaSound = true
     
-    var testResult: [String: Int] = [
-        "글자":0,
-        "낱말":0,
-        "문장":0,
-        "문맥":0,
+    var testResult: [String: Double] = [
+        "글자":9.0,
+        "낱말":12.0,
+        "문장":8.0,
+        "문맥":8.0,
     ]
     
     //MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultContainerView.backgroundColor = .white
+        resultContainerView.layer.cornerRadius = 10
+        resultContainerView.layer.shadowOpacity = 0.8
+        resultContainerView.layer.shadowColor = UIColor.lightGray.cgColor
+        resultContainerView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        resultContainerView.layer.shadowRadius = 2
+        resultContainerView.layer.masksToBounds = false
+        
+        setUpBarChart()
+        
         
         paddingLabel.layer.cornerRadius = 12
         paddingLabel.layer.masksToBounds = true
@@ -152,6 +172,30 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     //MARK: - IBAction
     
+    
+    
+    @IBAction func clickedConfirmResult(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func clickedPresentResult(_ sender: Any) {
+        view.addSubview(testResultView)
+        testResultView.frame = self.view.frame
+        let tmpKeyArray = ["글자", "낱말", "문장", "문맥"]
+        let tmpValueArray = [Double(testResult["글자"]!), Double(testResult["낱말"]!), Double(testResult["문장"]!), Double(testResult["문맥"]!)]
+        setChart(dataPoints: tmpKeyArray, values: tmpValueArray)
+        //TODO: 사용자의 시험결과에 대한 가이드로직 필요.
+        print("호출clickedPresentResult")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.setUpResultGuideLabel()
+        }
+    }
+    
+    func setUpResultGuideLabel() {
+        print("호출setUpResultGuideLabel")
+        resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은 문장과 문맥 영역에서 다소 약한 이해력을 가지고 있습니다. 문장과 문맥에 대해서 추가적인 학습이 필요합니다."
+    }
+    
     @IBAction func clickedContinueButton(_ sender: Any) {
         munhaeStopMessageView.removeFromSuperview()
     }
@@ -189,13 +233,13 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
                 if item.titleLabel?.text == currentQuiz.result {
                     print("정답입니다")
                     if 0 <= currentQuiz.id && currentQuiz.id < 4 {
-                        testResult["글자"] = testResult["글자"]! + 1
+                        testResult["글자"] = testResult["글자"]! + 3
                     }else if 4 <= currentQuiz.id && currentQuiz.id < 8 {
-                        testResult["낱말"] = testResult["낱말"]! + 1
+                        testResult["낱말"] = testResult["낱말"]! + 3
                     }else if 8 <= currentQuiz.id && currentQuiz.id < 14 {
-                        testResult["문장"] = testResult["문장"]! + 1
+                        testResult["문장"] = testResult["문장"]! + 2
                     }else if 14 <= currentQuiz.id && currentQuiz.id < 20 {
-                        testResult["문맥"] = testResult["문맥"]! + 1
+                        testResult["문맥"] = testResult["문맥"]! + 2
                     }
                     
                 }else {
@@ -209,6 +253,8 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }else{
 //            isCurrentMissionCompleted = true
             print("시험완료 : 결과 : \(testResult)")
+            completeView.frame = view.frame
+            view.addSubview(completeView)
             return
             //
         }
@@ -349,5 +395,75 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         exampleButton02.isUserInteractionEnabled = isStatus
         exampleButton03.isUserInteractionEnabled = isStatus
         exampleButton04.isUserInteractionEnabled = isStatus
+    }
+    //MARK: - Helper Method
+    fileprivate func setUpBarChart() {
+        barChartView.noDataText = "데이터가 없습니다."
+        barChartView.noDataFont = .systemFont(ofSize: 20)
+        barChartView.noDataTextColor = .lightGray
+    }
+    
+    func setChart(dataPoints: [String], values: [Double]) {
+        var dataEntries: [BarChartDataEntry] = []
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
+            dataEntries.append(dataEntry)
+        }
+
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "\(MyInfo.shared.displayName)님")
+        
+        // 선택 안되게
+        chartDataSet.highlightEnabled = false
+        // 줌 안되게
+        barChartView.doubleTapToZoomEnabled = false
+        
+        // X축 레이블 위치 조정
+        barChartView.xAxis.labelPosition = .bottom
+        // X축 레이블 포맷 지정
+        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dataPoints)
+        
+        // X축 레이블 갯수 최대로 설정 (이 코드 안쓸 시 Jan Mar May 이런식으로 띄엄띄엄 조금만 나옴)
+        barChartView.xAxis.setLabelCount(dataPoints.count, force: false)
+        
+        // 오른쪽 레이블 제거
+        barChartView.rightAxis.enabled = false
+        // 왼쪽 레이블 제거
+        barChartView.leftAxis.enabled = false
+        
+        //기본 애니메이션
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+        //옵션 애니메이션
+        //barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .easeInBounce)
+        
+        // 맥시멈
+        barChartView.leftAxis.axisMaximum = 12
+        // 미니멈
+        barChartView.leftAxis.axisMinimum = 0
+        
+        //background grid
+        barChartView.xAxis.drawAxisLineEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.leftAxis.gridColor = .clear
+        barChartView.rightAxis.gridColor = .clear
+        
+        // 차트 컬러
+        chartDataSet.colors = [hexStringToUIColor(hex: "#b7ecff"),
+                               hexStringToUIColor(hex: "#eeb7ff"),
+                               hexStringToUIColor(hex: "#ffcab7"),
+                               hexStringToUIColor(hex: "#c8ffb7")]
+        
+
+        // 데이터 삽입
+        let chartData = BarChartData(dataSet: chartDataSet)
+        barChartView.data = chartData
+        
+        //추후 수정가능 막대기 위에 숫자 표시 관련
+        barChartView.barData?.maxEntryCountSet?.drawValuesEnabled = false
+        
+        //legend숨김
+        barChartView.legend.enabled = false
+        
+        //width size
+        barChartView.barData?.barWidth = 0.5
     }
 }

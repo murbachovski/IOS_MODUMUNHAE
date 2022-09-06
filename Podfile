@@ -9,6 +9,7 @@ target 'AI_MUNJANG' do
 pod 'Firebase/Auth'
 pod 'NVActivityIndicatorView'
 pod 'FirebaseFirestore'
+pod 'Charts'
 
 
   target 'AI_MUNJANGTests' do

@@ -47,6 +47,7 @@
 		84458A7228BF41CB00A70F20 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 84458A7128BF41CB00A70F20 /* Zip */; };
 		84458A7528BF47F500A70F20 /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7328BF47F500A70F20 /* MunJangEightDetailViewController.swift */; };
 		84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7428BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift */; };
+		8448170628C6E6F600CC2490 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 8448170528C6E6F600CC2490 /* Charts */; };
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
 		844A4D5028B4AF73002C7F6B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A4D4F28B4AF73002C7F6B /* UserInfo.swift */; };
 		8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05B28B75F4700613946 /* AnalyzeViewController.swift */; };
@@ -208,6 +209,7 @@
 				84458A7228BF41CB00A70F20 /* Zip in Frameworks */,
 				551B0861840764B2CC3F53EB /* Pods_AI_MUNJANG.framework in Frameworks */,
 				84458A6F28BF419900A70F20 /* DropDown in Frameworks */,
+				8448170628C6E6F600CC2490 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +566,7 @@
 			packageProductDependencies = (
 				84458A6E28BF419900A70F20 /* DropDown */,
 				84458A7128BF41CB00A70F20 /* Zip */,
+				8448170528C6E6F600CC2490 /* Charts */,
 			);
 			productName = AI_MUNJANG;
 			productReference = C6ED5076287531AE00454F26 /* AI_MUNJANG.app */;
@@ -643,6 +646,7 @@
 			packageReferences = (
 				84458A6D28BF419900A70F20 /* XCRemoteSwiftPackageReference "DropDown" */,
 				84458A7028BF41CB00A70F20 /* XCRemoteSwiftPackageReference "Zip" */,
+				8448170428C6E6F600CC2490 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -1235,6 +1239,14 @@
 				kind = branch;
 			};
 		};
+		8448170428C6E6F600CC2490 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1247,6 +1259,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84458A7028BF41CB00A70F20 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		8448170528C6E6F600CC2490 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8448170428C6E6F600CC2490 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
