@@ -63,6 +63,8 @@
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
 		846E2BE628A3585200C5292D /* dummyContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 846E2BE528A3585100C5292D /* dummyContents.json */; };
+		84739D8128C8614B0052B20C /* ExampleAnotherMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84739D8028C8614B0052B20C /* ExampleAnotherMainViewController.swift */; };
+		84739D8328C871D80052B20C /* SampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84739D8228C871D80052B20C /* SampleCollectionViewCell.swift */; };
 		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
 		8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFD287D02DC008275FC /* CustomButtonView.swift */; };
 		8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DCFE287D02DC008275FC /* CustomButtonView.xib */; };
@@ -169,6 +171,8 @@
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
 		846E2BE528A3585100C5292D /* dummyContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummyContents.json; sourceTree = "<group>"; };
+		84739D8028C8614B0052B20C /* ExampleAnotherMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleAnotherMainViewController.swift; sourceTree = "<group>"; };
+		84739D8228C871D80052B20C /* SampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCollectionViewCell.swift; sourceTree = "<group>"; };
 		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		8474DCFD287D02DC008275FC /* CustomButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		8474DCFE287D02DC008275FC /* CustomButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButtonView.xib; sourceTree = "<group>"; };
@@ -397,6 +401,8 @@
 				C6ED50AE287534D900454F26 /* TestViewController.swift */,
 				840071D5287BE41300B07551 /* AdaptiveViewController.swift */,
 				8474DD07287D0573008275FC /* CommonUIViewController.swift */,
+				84739D8028C8614B0052B20C /* ExampleAnotherMainViewController.swift */,
+				84739D8228C871D80052B20C /* SampleCollectionViewCell.swift */,
 			);
 			name = Sample;
 			sourceTree = "<group>";
@@ -840,6 +846,7 @@
 				8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */,
 				846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,
+				84739D8128C8614B0052B20C /* ExampleAnotherMainViewController.swift in Sources */,
 				843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */,
 				84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */,
 				842B03A72887E7480000BEDA /* ChangePasswordViewController.swift in Sources */,
@@ -863,6 +870,7 @@
 				8474DD22287E6C78008275FC /* Utils.swift in Sources */,
 				8474DD08287D0573008275FC /* CommonUIViewController.swift in Sources */,
 				84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */,
+				84739D8328C871D80052B20C /* SampleCollectionViewCell.swift in Sources */,
 				8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */,
 				842B0361288502550000BEDA /* AlertService.swift in Sources */,
 				84458A7528BF47F500A70F20 /* MunJangEightDetailViewController.swift in Sources */,
