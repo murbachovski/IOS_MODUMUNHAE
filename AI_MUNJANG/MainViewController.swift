@@ -40,6 +40,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var searchImage: UIImageView!
     @IBOutlet var munhaeTestButton: UIButton!
     
+    @IBOutlet var munhaeVideoButton: UIButton!
     
     let munjangElements:[String] = ["문장","주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     let subElements: [String] = ["문장","대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
@@ -77,6 +78,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         munhaeTestButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
         munhaeTestButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
+        
+        munhaeVideoButton.layer.borderWidth = 1
+        munhaeVideoButton.layer.borderColor = UIColor.darkGray.cgColor
+        munhaeVideoButton.layer.cornerRadius = 8
+        
+        munhaeVideoButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
+        munhaeVideoButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         searchImage.isUserInteractionEnabled = true
@@ -127,6 +135,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         guard let myPageViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyPageViewController")  as? MyPageViewController else {return}
         navigationController?.pushViewController(myPageViewController, animated: true)
     }
+    
+    @IBAction func clickedMunhaeVideo(_ sender: Any) {
+        guard let munhaeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeVideoViewController")  as? MunhaeVideoViewController else {return}
+        self.navigationController?.pushViewController(munhaeVideoViewController, animated: true)
+    }
+    
+    
     @IBAction func clickedmunhaeTest(_ sender: Any) {
         downloadTask = URLSession.shared.downloadTask(with: URL(string: "http://118.67.133.8/download_munhaeTest_json")!) {
             urlOrNil, responseOrNil, errorOrNil in

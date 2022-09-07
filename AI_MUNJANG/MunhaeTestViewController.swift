@@ -38,7 +38,7 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel!.text = "예시\(indexPath.row)"
+        cell.textLabel!.text = "1. 당신의 문해력은?"
         return cell
     }
 

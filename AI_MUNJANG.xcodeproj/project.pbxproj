@@ -16,6 +16,7 @@
 		840071D8287BE67F00B07551 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D0287BE2EF00B07551 /* CGFloatExtension.swift */; };
 		840071D9287BE68100B07551 /* TextFieldsFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071CF287BE2EF00B07551 /* TextFieldsFont.swift */; };
 		840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071CE287BE2EF00B07551 /* StackViewExtension.swift */; };
+		8411A5B328C836EA0061A6F5 /* MunhaeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */; };
 		842B0361288502550000BEDA /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0360288502540000BEDA /* AlertService.swift */; };
 		842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03622885025D0000BEDA /* CustomAlertViewController.swift */; };
 		842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0364288504EB0000BEDA /* CustomCheckBoxLabel.swift */; };
@@ -123,6 +124,7 @@
 		840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLayoutConstraint.swift; sourceTree = "<group>"; };
 		840071D2287BE30500B07551 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		840071D5287BE41300B07551 /* AdaptiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveViewController.swift; sourceTree = "<group>"; };
+		8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeVideoViewController.swift; sourceTree = "<group>"; };
 		842B0360288502540000BEDA /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		842B03622885025D0000BEDA /* CustomAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		842B0364288504EB0000BEDA /* CustomCheckBoxLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckBoxLabel.swift; sourceTree = "<group>"; };
@@ -232,6 +234,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8411A5B428C836EF0061A6F5 /* MunhaeVideo */ = {
+			isa = PBXGroup;
+			children = (
+				8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */,
+			);
+			name = MunhaeVideo;
+			sourceTree = "<group>";
+		};
 		842B037C288541680000BEDA /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +547,7 @@
 				842B03A82888E3420000BEDA /* Subscription */,
 				84488C77288F861A008400AC /* MyPage */,
 				845D5A3D28C1C88500CB67DE /* MunhaeTest */,
+				8411A5B428C836EF0061A6F5 /* MunhaeVideo */,
 				84EBC3CB28A0B69B0089F9AC /* QuizModel */,
 				C6ED5077287531AE00454F26 /* Products */,
 				8474DD23287E6C7D008275FC /* Utils */,
@@ -857,6 +868,7 @@
 				84458A7528BF47F500A70F20 /* MunJangEightDetailViewController.swift in Sources */,
 				8474DD10287D33B8008275FC /* CustomTextView.swift in Sources */,
 				8474DD1C287E56D3008275FC /* CustomPasswordView.swift in Sources */,
+				8411A5B328C836EA0061A6F5 /* MunhaeVideoViewController.swift in Sources */,
 				C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */,
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
 				842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */,

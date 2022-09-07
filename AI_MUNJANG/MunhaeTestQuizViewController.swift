@@ -50,6 +50,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var exampleButtonImage04: UIImageView!
     
     
+    @IBOutlet var munhaeTestStartBackButton: UIButton!
     
     @IBOutlet var quizContainerView: UIView!
 
@@ -220,6 +221,11 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         view.addSubview(munhaeStopMessageView)
 //        dismiss(animated: true)
     }
+    
+    @IBAction func munhaeTestStartBackButton(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     
     @IBAction func clickedSubmitButton(_ sender: Any) {
         let isChecked = checkValidation()
