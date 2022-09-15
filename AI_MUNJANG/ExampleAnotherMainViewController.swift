@@ -9,6 +9,7 @@ import UIKit
 
 class ExampleAnotherMainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet var analyzeContainerView: UIView!
     
     @IBOutlet var cellInLabel: UILabel!
     
@@ -22,6 +23,10 @@ class ExampleAnotherMainViewController: UIViewController, UICollectionViewDataSo
         super.viewDidLoad()
         exampleCollectionView.delegate = self
         exampleCollectionView.dataSource = self
+        
+        analyzeContainerView.layer.borderWidth = 1
+        analyzeContainerView.layer.borderColor = UIColor.darkGray.cgColor
+        analyzeContainerView.layer.cornerRadius = 12
     }
     
     // MARK: - Navigation
@@ -32,7 +37,7 @@ class ExampleAnotherMainViewController: UIViewController, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,20 +51,17 @@ class ExampleAnotherMainViewController: UIViewController, UICollectionViewDataSo
         cell.layer.masksToBounds = false
         
         if indexPath.row == 0 {
-            cell.cellInLabel.text = "문장분석"
+            cell.cellInLabel.text = "기초 문해퀴즈"
             cell.sampleImage.image = UIImage(systemName: "wallet.pass")
         }else if indexPath.row == 1 {
-            cell.cellInLabel.text = "기초 문해퀴즈"
+            cell.cellInLabel.text = "실전 문해퀴즈"
             cell.sampleImage.image = UIImage(systemName: "phone.fill.connection")
         }else if indexPath.row == 2 {
-            cell.cellInLabel.text = "실전 문해퀴즈"
+            cell.cellInLabel.text = "문해영상 강의"
             cell.sampleImage.image = UIImage(systemName: "wallet.pass")
         }else if indexPath.row == 3 {
-            cell.cellInLabel.text = "문해영상 강의"
-            cell.sampleImage.image = UIImage(systemName: "phone.fill.connection")
-        }else if indexPath.row == 4 {
             cell.cellInLabel.text = "문해력 검사"
-            cell.sampleImage.image = UIImage(systemName: "wallet.pass")
+            cell.sampleImage.image = UIImage(systemName: "phone.fill.connection")
         }
         
        
@@ -67,7 +69,7 @@ class ExampleAnotherMainViewController: UIViewController, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 170, height: 170)
+        return CGSize(width: 160, height: 170)
     }
     
 }

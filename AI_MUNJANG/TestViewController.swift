@@ -59,9 +59,11 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         
         if indexPath.row == 0 {
             //단문AI 요청,
-            let url = "http://118.67.133.8/danmun/m"
-            let sen = "나는 학교에 가고 엄마는 회사에 간다."
-            requestByDanmun(url:url, sen: sen)
+            let url = "http://118.67.133.8/gpt_danmun_new"
+            let sen = "나는 학교에 가고 엄마와 회사에 간다."
+            requestByDanmun(url:url, sen: sen) { results in
+                print(results)
+            }
             
         }else if indexPath.row == 1 {
             //8필터 AI 요청,
@@ -69,7 +71,9 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             let url = "http://118.67.133.8/eight_logic/m" //단순 8필터 접근용
 //            let url = "http://127.0.0.1:5000/eight_logic/m"
             let sen = "엄마는 저녁을 먹는다."
-            requestByEight(url:url, sen: sen)
+            requestByEight(url:url, sen: sen) { resDic in
+                
+            }
         
         }else if indexPath.row == 2 {
             //아이패드와 모바일 대응

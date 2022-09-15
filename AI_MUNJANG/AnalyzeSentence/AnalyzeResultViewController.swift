@@ -18,10 +18,23 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     
     let samples = "이 나는 아침에 어디까지 맘고생하면 서서히우리는 학교에 간다."
     var arr:[String] = []
+    var analyzedData : [String: Any] = [:]
+    var dividedSentences : [String] = []
+    var originalSentence = ""
+    var analyzedEights : [String: Any] = [:]
+    var analyzedDataEights : [[String : Any]] = [[:]]
+    var pureSentence = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        originalSentence = (analyzedData["sen"] as! String)
+        pureSentence = (analyzedData["sen"] as! String).replacingOccurrences(of: "VV", with: " ")
+        dividedSentences = originalSentence.components(separatedBy: "VV")
+//        analyzedEights = analyzedData["eight_div_sen"] as! [String:Any]
+//        print("analyzedData_eight_div_sen:\(analyzedData["eight_div_sen"])")
+        analyzedDataEights = analyzedData["eight_div_sen"] as! [[String : Any]]
+        print("analyzedDataEights:\(analyzedDataEights)")
         // Do any additional setup after loading the view.
         analyzeCollectionView.delegate = self
         analyzeCollectionView.dataSource = self
@@ -30,8 +43,13 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         wordCollectionView.dataSource = self
         
         originSentenceLabel.font = UIFont(name: "NanumSquareEB", size: 17)
-        
-        arr = samples.components(separatedBy: " ")
+        originSentenceLabel.text = originalSentence.replacingOccurrences(of: "VV", with: "  ✓ ")
+        arr = pureSentence.components(separatedBy: " ")
+        for i in arr {
+            if i == "" {
+                arr.remove(at: arr.firstIndex(of: i)!)
+            }
+        }
         
     }
   
@@ -40,7 +58,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         if collectionView == wordCollectionView {
             return arr.count
         }else{
-            return 3
+            return analyzedDataEights.count
         }
         
         
@@ -67,18 +85,18 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
             cell.layer.shadowOffset = CGSize(width: 1, height: 1)
             cell.layer.shadowRadius = 2
             cell.layer.masksToBounds = false
+//            analyzedDataEights[indexPath.row]["대상확장"] as? String
             
-            if indexPath.row == 1 {
-                cell.senTitleLabel.text = "나무가 부러질 것 같다."
-                cell.senAdverbLabel.text = "-"
-                cell.adjectiveLabel.text = "_"
-                cell.subjectLabel.text = "바람"
-                cell.josaLabel.text = "이"
-                cell.adverbLabel.text = "강하게"
-                cell.predicateLabel.text = "불"
-                cell.eomiLabel.text = "어서"
-                cell.endSignLabel.text = "-"
-            }
+            let titleArray = (originSentenceLabel.text)?.components(separatedBy: "  ✓ ")
+            cell.senTitleLabel.text = titleArray![indexPath.row]
+            cell.senAdverbLabel.text = analyzedDataEights[indexPath.row]["문장확장"] as? String
+            cell.adjectiveLabel.text = analyzedDataEights[indexPath.row]["대상확장"] as? String
+            cell.subjectLabel.text = analyzedDataEights[indexPath.row]["대상"] as? String
+            cell.josaLabel.text = analyzedDataEights[indexPath.row]["대상알림"] as? String
+            cell.adverbLabel.text = analyzedDataEights[indexPath.row]["뒤정보확장"] as? String
+            cell.predicateLabel.text = analyzedDataEights[indexPath.row]["정보"] as? String
+            cell.eomiLabel.text = analyzedDataEights[indexPath.row]["정보알림"] as? String
+            cell.endSignLabel.text = analyzedDataEights[indexPath.row]["마침표"] as? String
             return cell
         }
         

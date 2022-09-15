@@ -9,7 +9,7 @@ import Foundation
 
 
 
-func requestByEight(url:String, sen:String){
+func requestByEight(url:String, sen:String, completion: @escaping ([String : Any]) -> Void){
     
     //
     var urlString = "\(url)?sen=\(sen)"
@@ -53,24 +53,24 @@ func requestByEight(url:String, sen:String){
         print("eight_div_sen : ", dicData["eight_div_sen"] ?? "")
         print("sen : ", dicData["sen"] ?? "")
         
-        guard let eight_div:Dictionary = (dicData["eight_div_sen"] as? Dictionary<String, Any>) else {return}
-        print("문장확장 : ", eight_div["문장확장"] ?? "")
-        print("대상확장 : ", eight_div["대상확장"] ?? "")
-        print("앞정보확장 : ", eight_div["앞정보확장"] ?? "")
-        print("대상 : ", eight_div["대상"] ?? "")
-        print("대상알림 : ", eight_div["대상알림"] ?? "")
-        print("뒤정보확장 : ", eight_div["뒤정보확장"] ?? "")
-        print("정보 : ", eight_div["정보"] ?? "")
-        print("정보알림 : ", eight_div["정보알림"] ?? "")
-        print("마침표 : ", eight_div["마침표"] ?? "")
-                         
+//        guard let eight_div:Dictionary = (dicData["eight_div_sen"] as? Dictionary<String, Any>) else {return}
+//        print("문장확장 : ", eight_div["문장확장"] ?? "")
+//        print("대상확장 : ", eight_div["대상확장"] ?? "")
+//        print("앞정보확장 : ", eight_div["앞정보확장"] ?? "")
+//        print("대상 : ", eight_div["대상"] ?? "")
+//        print("대상알림 : ", eight_div["대상알림"] ?? "")
+//        print("뒤정보확장 : ", eight_div["뒤정보확장"] ?? "")
+//        print("정보 : ", eight_div["정보"] ?? "")
+//        print("정보알림 : ", eight_div["정보알림"] ?? "")
+//        print("마침표 : ", eight_div["마침표"] ?? "")
+        completion(dicData)
     }
     task.resume()
 }
 
 
 
-func requestByDanmun(url:String, sen:String){
+func requestByDanmun(url:String, sen:String, completion: @escaping ([String]) -> Void){
     
     var urlString = "\(url)?sen=\(sen)"
     if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
@@ -110,9 +110,9 @@ func requestByDanmun(url:String, sen:String){
 
         print("===============================")
  
-        
-        let resultDiv : Array<String> = dicData["div_sen"] as! [String]
-        print("div_sen : ", resultDiv)
+        let resultDiv : Array<String> = dicData["changed_sen"] as! [String]
+        print("changed_sen : ", resultDiv)
+        completion(resultDiv)
           
     }
     task.resume()

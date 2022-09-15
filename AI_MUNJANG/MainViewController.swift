@@ -137,8 +137,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func clickedMunhaeVideo(_ sender: Any) {
-        guard let munhaeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeVideoViewController")  as? MunhaeVideoViewController else {return}
-        self.navigationController?.pushViewController(munhaeVideoViewController, animated: true)
+//        guard let munhaeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeVideoViewController")  as? MunhaeVideoViewController else {return}
+//        self.navigationController?.pushViewController(munhaeVideoViewController, animated: true)
+        
+        guard let munhaeBeforeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeBeforeVideoViewController")  as? MunhaeBeforeVideoViewController else {return}
+        self.navigationController?.pushViewController(munhaeBeforeVideoViewController, animated: true)
     }
     
     
