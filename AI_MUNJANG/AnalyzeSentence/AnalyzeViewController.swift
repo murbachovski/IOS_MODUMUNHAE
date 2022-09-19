@@ -36,27 +36,31 @@ class AnalyzeViewController: UIViewController {
         print("clicked Analyze Button")
         print(analyzeSentenceCustomTextView.textView.text!)
         let inputString = analyzeSentenceCustomTextView.textView.text!
+
+        checkIfMultiSentence(inputStr: inputString)
+        
+    
+    }
+    
+    
+    private func analyzeDanmunAfterEight(str:String){
+        let senToAnalyze:String = str
+        
         let urlString = "http://118.67.133.8/gpt_danmun_new"
-        requestByDanmun(url: urlString, sen: inputString) { results in
+        
+        requestByDanmun(url: urlString, sen: senToAnalyze) { results in
             print("단문results:\(results)")
             
             let changedSentence = results.joined(separator: " VV ")
             print(changedSentence)
             self.requestAnalyzeEight(inputString: changedSentence)
         }
-        
-        
-        
-//        guard let analyzeResultViewController = self.storyboard?.instantiateViewController(withIdentifier: "AnalyzeResultViewController")  as? AnalyzeResultViewController else {return}
-//        navigationController?.pushViewController(analyzeResultViewController, animated: true)
     }
+    
     
     func requestAnalyzeEight(inputString: String) {
         let urlString = "http://118.67.133.8/eight_logic/m"
-//        requestByEight(url: urlString, sen: inputString,, completion: ([String : Any]) -> Void
-        
-//            let inpurString = ""
-        
+
         requestByEight(url: urlString, sen: inputString) { resDic in
             print("resDic:\(resDic)")
             DispatchQueue.main.async {
@@ -66,4 +70,21 @@ class AnalyzeViewController: UIViewController {
             }
         }
     }
+}
+
+func checkIfMultiSentence(inputStr:String){
+    let urlString = "http://118.67.133.8/div_kiwi/m"
+    
+    requestByKiwi(url: urlString, sen: inputStr) { resDic in
+        
+        if resDic.count > 1 { //다문장
+            print("다문장 별도의 페이지로 이동 필요")
+        }else{ //단일문장
+            print("단일 문장이므로 바로 분석하고 결과 페이지로 이동")
+//           analyzeDanmunAfterEight(str: sentences[0])
+        }
+        
+        return resDic
+    }
+    
 }

@@ -33,7 +33,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         dividedSentences = originalSentence.components(separatedBy: "VV")
 //        analyzedEights = analyzedData["eight_div_sen"] as! [String:Any]
 //        print("analyzedData_eight_div_sen:\(analyzedData["eight_div_sen"])")
-        analyzedDataEights = analyzedData["eight_div_sen"] as! [[String : Any]]
+        guard let temp = analyzedData["eight_div_sen"] as? [[String : Any]] else {return}
+        analyzedDataEights = temp
         print("analyzedDataEights:\(analyzedDataEights)")
         // Do any additional setup after loading the view.
         analyzeCollectionView.delegate = self
@@ -85,12 +86,17 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
             cell.layer.shadowOffset = CGSize(width: 1, height: 1)
             cell.layer.shadowRadius = 2
             cell.layer.masksToBounds = false
-//            analyzedDataEights[indexPath.row]["대상확장"] as? String
+
             
             let titleArray = (originSentenceLabel.text)?.components(separatedBy: "  ✓ ")
             cell.senTitleLabel.text = titleArray![indexPath.row]
             cell.senAdverbLabel.text = analyzedDataEights[indexPath.row]["문장확장"] as? String
-            cell.adjectiveLabel.text = analyzedDataEights[indexPath.row]["대상확장"] as? String
+            
+            //관형사의 경우는 앞정보확장과 대상확장의 결합임
+            let beforeInfoExtension:String = analyzedDataEights[indexPath.row]["앞정보확장"] as? String ?? ""
+            let subjectExtension:String =  analyzedDataEights[indexPath.row]["대상확장"] as? String ?? ""
+            cell.adjectiveLabel.text = beforeInfoExtension + subjectExtension
+            
             cell.subjectLabel.text = analyzedDataEights[indexPath.row]["대상"] as? String
             cell.josaLabel.text = analyzedDataEights[indexPath.row]["대상알림"] as? String
             cell.adverbLabel.text = analyzedDataEights[indexPath.row]["뒤정보확장"] as? String
