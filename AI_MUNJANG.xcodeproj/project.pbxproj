@@ -16,6 +16,7 @@
 		840071D8287BE67F00B07551 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D0287BE2EF00B07551 /* CGFloatExtension.swift */; };
 		840071D9287BE68100B07551 /* TextFieldsFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071CF287BE2EF00B07551 /* TextFieldsFont.swift */; };
 		840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071CE287BE2EF00B07551 /* StackViewExtension.swift */; };
+		84010D3628D8169600493976 /* SenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84010D3528D8169600493976 /* SenListViewController.swift */; };
 		8411A5B328C836EA0061A6F5 /* MunhaeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */; };
 		842B0361288502550000BEDA /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B0360288502540000BEDA /* AlertService.swift */; };
 		842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03622885025D0000BEDA /* CustomAlertViewController.swift */; };
@@ -127,6 +128,7 @@
 		840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLayoutConstraint.swift; sourceTree = "<group>"; };
 		840071D2287BE30500B07551 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		840071D5287BE41300B07551 /* AdaptiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveViewController.swift; sourceTree = "<group>"; };
+		84010D3528D8169600493976 /* SenListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenListViewController.swift; sourceTree = "<group>"; };
 		8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeVideoViewController.swift; sourceTree = "<group>"; };
 		842B0360288502540000BEDA /* AlertService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		842B03622885025D0000BEDA /* CustomAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */,
 				8455F0C428BCA40900613946 /* AnalyzeCollectionViewCell.swift */,
 				8455F0C628BCB0FF00613946 /* WordCollectionViewCell.swift */,
+				84010D3528D8169600493976 /* SenListViewController.swift */,
 			);
 			path = AnalyzeSentence;
 			sourceTree = "<group>";
@@ -869,6 +872,7 @@
 				845D5A3F28C1E63900CB67DE /* MunhaeTestModel.swift in Sources */,
 				840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */,
 				846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */,
+				84010D3628D8169600493976 /* SenListViewController.swift in Sources */,
 				840071D8287BE67F00B07551 /* CGFloatExtension.swift in Sources */,
 				840071D9287BE68100B07551 /* TextFieldsFont.swift in Sources */,
 				8474DD22287E6C78008275FC /* Utils.swift in Sources */,

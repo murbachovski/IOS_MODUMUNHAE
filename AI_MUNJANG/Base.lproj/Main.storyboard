@@ -3299,6 +3299,46 @@
             </objects>
             <point key="canvasLocation" x="389" y="2334"/>
         </scene>
+        <!--Sen List View Controller-->
+        <scene sceneID="M44-js-Urh">
+            <objects>
+                <viewController storyboardIdentifier="SenListViewController" id="Q1I-40-Nzk" customClass="SenListViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2I6-we-ZkK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dVK-3z-SM3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Nc9-QN-iMU">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nc9-QN-iMU" id="Mgu-ZG-FWB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6YS-s3-gtq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6YS-s3-gtq" firstAttribute="bottom" secondItem="dVK-3z-SM3" secondAttribute="bottom" id="8QK-pk-Fes"/>
+                            <constraint firstItem="dVK-3z-SM3" firstAttribute="leading" secondItem="6YS-s3-gtq" secondAttribute="leading" id="fMg-13-fqJ"/>
+                            <constraint firstItem="6YS-s3-gtq" firstAttribute="trailing" secondItem="dVK-3z-SM3" secondAttribute="trailing" id="g0Y-Z7-fEB"/>
+                            <constraint firstItem="dVK-3z-SM3" firstAttribute="top" secondItem="6YS-s3-gtq" secondAttribute="top" id="jkL-cg-btX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="senListTableView" destination="dVK-3z-SM3" id="NmR-g8-IQ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AGF-v9-ud5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="3005"/>
+        </scene>
         <!--Analyze Result View Controller-->
         <scene sceneID="Acn-l7-VSj">
             <objects>
@@ -4591,11 +4631,9 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="F7J-g9-Bvd">
-            <size key="intrinsicContentSize" width="8" height="8"/>
-        </designable>
+        <designable name="F7J-g9-Bvd"/>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
         </designable>
     </designables>
     <resources>

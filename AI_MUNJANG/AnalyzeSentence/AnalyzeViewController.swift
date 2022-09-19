@@ -70,21 +70,28 @@ class AnalyzeViewController: UIViewController {
             }
         }
     }
-}
 
-func checkIfMultiSentence(inputStr:String){
-    let urlString = "http://118.67.133.8/div_kiwi/m"
-    
-    requestByKiwi(url: urlString, sen: inputStr) { resDic in
+
+    func checkIfMultiSentence(inputStr:String){
+        let urlString = "http://118.67.133.8/div_kiwi/m"
         
-        if resDic.count > 1 { //다문장
-            print("다문장 별도의 페이지로 이동 필요")
-        }else{ //단일문장
-            print("단일 문장이므로 바로 분석하고 결과 페이지로 이동")
-//           analyzeDanmunAfterEight(str: sentences[0])
+        requestByKiwi(url: urlString, sen: inputStr) {  resDic in
+            
+            if resDic.count > 1 { //다문장
+                print("다문장 별도의 페이지로 이동 필요")
+                DispatchQueue.main.async {
+                    guard let senListViewController = self.storyboard?.instantiateViewController(withIdentifier: "SenListViewController")  as? SenListViewController else {return}
+                    senListViewController.senList = resDic
+                    self.navigationController?.pushViewController(senListViewController, animated: true)
+                }
+            }else{ //단일문장
+                print("단일 문장이므로 바로 분석하고 결과 페이지로 이동")
+                self.analyzeDanmunAfterEight(str: resDic[0])
+            }
+            
         }
         
-        return resDic
-    }
-    
+}
+
+
 }

@@ -122,7 +122,7 @@ func requestByDanmun(url:String, sen:String, completion: @escaping ([String]) ->
 }
 
 
-func requestByKiwi(url:String, sen:String, completion: @escaping ([String]) -> [String]){
+func requestByKiwi(url:String, sen:String, completion: @escaping ([String]) -> Void){
     
     var urlString = "\(url)?sen=\(sen)"
     if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
