@@ -110,7 +110,7 @@ func requestByDanmun(url:String, sen:String, completion: @escaping ([String]) ->
 
         print("===============================")
  
-        guard let resultDiv : Array<String> = dicData["changed_sen"] as? [String] else {
+        guard let resultDiv : [String] = dicData["div_sen"] as? [String] else {
             
             return
         }

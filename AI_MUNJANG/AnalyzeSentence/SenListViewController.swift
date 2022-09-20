@@ -43,7 +43,7 @@ class SenListViewController: UIViewController, UITableViewDelegate, UITableViewD
     private func analyzeDanmunAfterEight(str:String){
         let senToAnalyze:String = str
         
-        let urlString = "http://118.67.133.8/gpt_danmun_new"
+        let urlString = "http://118.67.133.8/danmun/m"
         
         requestByDanmun(url: urlString, sen: senToAnalyze) { results in
             print("단문results:\(results)")
