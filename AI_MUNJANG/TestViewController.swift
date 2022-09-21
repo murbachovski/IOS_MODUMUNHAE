@@ -168,9 +168,9 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         else if indexPath.row == 17 {
             //exampleAnotherMain
-            guard let exampleAnotherMainViewController = self.storyboard?.instantiateViewController(withIdentifier: "ExampleAnotherMainViewController")  as? ExampleAnotherMainViewController else {return}
-            exampleAnotherMainViewController.modalPresentationStyle = .fullScreen
-            self.present(exampleAnotherMainViewController, animated: true)
+            guard let MunjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
+            MunjangEightViewController.modalPresentationStyle = .fullScreen
+            self.present(MunjangEightViewController, animated: true)
         }
         
     }
