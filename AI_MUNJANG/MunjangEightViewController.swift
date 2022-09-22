@@ -9,15 +9,7 @@ import UIKit
 
 class MunjangEightViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet var analyzeContainerView: UIView!
-    
-    @IBOutlet var cellInLabel: UILabel!
-    
     @IBOutlet var eightCollectionView: UICollectionView!
-    
-    @IBOutlet var backButton: UIButton!
-    
-    @IBOutlet var exampleImg: UIImageView!
     
     //
     var sectionOne :QuizContents = []
@@ -35,8 +27,8 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     //
     
     
-    let munjangElements:[String] = ["문장","주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
-    let subElements: [String] = ["문장","대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
+    let munjangElements:[String] = ["주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
+    let subElements: [String] = ["대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     
     
     
@@ -46,6 +38,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         eightCollectionView.dataSource = self
         
         self.eightCollectionView.register(UINib(nibName: "MunjangEightCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        self.navigationItem.backButtonTitle = " "
     }
     
     // MARK: - Navigation
@@ -79,7 +72,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 170)
+        return CGSize(width: 170, height: 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

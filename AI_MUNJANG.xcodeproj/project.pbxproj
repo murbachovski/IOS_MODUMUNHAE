@@ -314,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				C6ED507D287531AE00454F26 /* MainViewController.swift */,
+				84739D8028C8614B0052B20C /* MunjangEightViewController.swift */,
 				84EAC50228DAEB0B00DC6FEA /* MainCollectionViewCell.swift */,
 				84458A7428BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift */,
 				84458A7328BF47F500A70F20 /* MunJangEightDetailViewController.swift */,
@@ -410,7 +411,6 @@
 				C6ED50AE287534D900454F26 /* TestViewController.swift */,
 				840071D5287BE41300B07551 /* AdaptiveViewController.swift */,
 				8474DD07287D0573008275FC /* CommonUIViewController.swift */,
-				84739D8028C8614B0052B20C /* MunjangEightViewController.swift */,
 				84739D8228C871D80052B20C /* SampleCollectionViewCell.swift */,
 			);
 			name = Sample;

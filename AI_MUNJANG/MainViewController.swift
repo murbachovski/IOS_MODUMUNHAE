@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreMedia
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
@@ -140,9 +141,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                    return UICollectionViewCell()
                }
             
-//            셀의 내용 채우기
+//            셀의 내용 채우기  pencil scribble.variable pencil.and.outline play.rectangle
             cell.labelInContentView.text = mainTitleList[indexPath.row]
-            cell.imgViewInContentView.image = UIImage(systemName: "phone")
+            if indexPath.row == 0 {
+                cell.imgViewInContentView.image = UIImage(systemName: "questionmark")
+            }else if indexPath.row == 1 {
+                cell.imgViewInContentView.image = UIImage(systemName: "pencil")
+            }else if indexPath.row == 2 {
+                cell.imgViewInContentView.image = UIImage(systemName: "pencil.and.outline")
+            }else {
+                cell.imgViewInContentView.image = UIImage(systemName: "play.fill")
+            }
             
             //셀에 shadow추가
             cell.backgroundColor = .white
@@ -182,7 +191,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == mainCollectionView {
-            return CGSize(width: 160, height: 170)
+            return CGSize(width: 163, height: 175)
         }
         return CGSize(width: collectionView.frame.size.width, height: 140)
     }

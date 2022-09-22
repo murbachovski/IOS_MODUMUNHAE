@@ -64,7 +64,7 @@
                 <outlet property="mainTitle" destination="ydr-NB-gkk" id="N8P-cg-EM6"/>
                 <outlet property="subTitle" destination="aWM-0m-OZC" id="cVZ-NM-UAj"/>
             </connections>
-            <point key="canvasLocation" x="176.81159420289856" y="4.0178571428571423"/>
+            <point key="canvasLocation" x="-255" y="93"/>
         </collectionViewCell>
     </objects>
 </document>
