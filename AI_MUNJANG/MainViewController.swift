@@ -12,7 +12,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
   
     @IBOutlet var mainCollectionView: UICollectionView!
     
-//
+    @IBOutlet var collectionViewTopHeight: NSLayoutConstraint!
+    @IBOutlet var bannerBottomHeight: NSLayoutConstraint!
+    //
     var mainTitleList = ["문해력테스트", "문장 8경 미션", "실질문해 미션", "문해학습 동영상"]
     //문해력테스트에서 사용중
     var downloadTask :URLSessionDownloadTask?
@@ -58,6 +60,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if self.view.frame.size.height < 1920 {
+            bannerBottomHeight.constant = 0
+            collectionViewTopHeight.constant = 0
+        }
+    }
 
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -98,9 +107,24 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     @IBAction func clickedAnalyzeButton(_ sender: Any) {
-        print("clicked analyze Btn")
-        guard let analyzeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AnalyzeViewController")  as? AnalyzeViewController else {return}
-        self.navigationController?.pushViewController(analyzeViewController, animated: true)
+                
+            let alert = AlertService().alert(title: "구독", body: "사용자께서는 아직 구독 전이라 10회 사용 제한이 있습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다.", cancelTitle: "둘러볼게요.", confirTitle: "구독하기") {
+                // 사용자가 둘러보기 선택
+                
+                print("clicked analyze Btn")
+                guard let analyzeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AnalyzeViewController")  as? AnalyzeViewController else {return}
+                self.navigationController?.pushViewController(analyzeViewController, animated: true)
+            } fourthButtonCompletion: {
+                // 사용자가 구독하기 선택
+                
+                guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
+                subscriptionViewController.modalPresentationStyle = .fullScreen
+                self.present(subscriptionViewController, animated: true)
+                
+                print("cliocked subscribe")
+            }
+            present(alert, animated: true)
+        
         
     }
     
@@ -171,27 +195,42 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
-        if indexPath.row == 0 {
-            clickedmunhaeTest()
-        }else if indexPath.row == 1 {
-            guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
-            navigationController?.pushViewController(munjangEightViewController, animated: true)
-        }else if indexPath.row == 2 {
+        let alert = AlertService().alert(title: "구독", body: "사용자께서는 아직 구독 전이라 미션별 문제 풀이 제한이 있습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다.", cancelTitle: "둘러볼게요.", confirTitle: "구독하기") {
+            // 사용자가 둘러보기 선택
             
-        }else {
-            clickedMunhaeVideo()
+            if indexPath.row == 0 {
+                self.clickedmunhaeTest()
+            }else if indexPath.row == 1 {
+                guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
+                self.navigationController?.pushViewController(munjangEightViewController, animated: true)
+            }else if indexPath.row == 2 {
+                
+            }else {
+                self.clickedMunhaeVideo()
+            }
+            
+        } fourthButtonCompletion: {
+            // 사용자가 구독하기 선택
+            
+            guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
+            subscriptionViewController.modalPresentationStyle = .fullScreen
+            self.present(subscriptionViewController, animated: true)
+            
+            print("cliocked subscribe")
         }
-        
-
+        present(alert, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-       return 14 // Keep whatever fits for you
+       return 20 // Keep whatever fits for you
      }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == mainCollectionView {
-            return CGSize(width: 163, height: 175)
+//            return CGSize(width: CGFloat(140).relativeToIphone8Width(), height: CGFloat(140).relativeToIphone8Width())
+            let cellWidth = collectionView.frame.size.width - 40 - 20
+            
+            return CGSize(width: cellWidth / 2 , height: cellWidth / 2)
         }
         return CGSize(width: collectionView.frame.size.width, height: 140)
     }

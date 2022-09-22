@@ -11,6 +11,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     
     @IBOutlet var eightCollectionView: UICollectionView!
     
+    @IBOutlet var titleLabelTopHeight: NSLayoutConstraint!
     //
     var sectionOne :QuizContents = []
     var sectionTwo :QuizContents = []
@@ -39,6 +40,14 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         
         self.eightCollectionView.register(UINib(nibName: "MunjangEightCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         self.navigationItem.backButtonTitle = " "
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+//        if self.view.frame.size.height < 1920 {
+//            titleLabelTopHeight.constant = 20
+//        }
     }
     
     // MARK: - Navigation
@@ -72,7 +81,10 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 170, height: 80)
+//        return CGSize(width: 170, height: 80)
+        let cellWidth = collectionView.frame.size.width - 40 - 20
+        
+        return CGSize(width: cellWidth / 2 , height: cellWidth / 4)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
