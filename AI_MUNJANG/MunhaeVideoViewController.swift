@@ -10,7 +10,7 @@ import AVKit
 class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    @IBOutlet var videoTableView: UITabeView!
+    @IBOutlet var videoTableView: UITableView!
     
     
     //MARK: - Life Cycle
