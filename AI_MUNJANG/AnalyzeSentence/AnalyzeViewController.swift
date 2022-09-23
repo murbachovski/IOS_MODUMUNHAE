@@ -33,12 +33,37 @@ class AnalyzeViewController: UIViewController {
     }
 
     @IBAction func clickedAnalyze(_ sender: Any) {
-        print("clicked Analyze Button")
-        print(analyzeSentenceCustomTextView.textView.text!)
-        let inputString = analyzeSentenceCustomTextView.textView.text!
-
-        checkIfMultiSentence(inputStr: inputString)
         
+        if !Core.shared.isUserSubscription() {
+            let tmpUseCount = UserDefaults.standard.integer(forKey: "tmpUseCount")
+            print("😃 😃 😃 😃 😃 😃 😃 tmpUseCount:\(tmpUseCount)")
+            if tmpUseCount + 1 > 10{
+                let alert = AlertService().alert(title: "구독", body: "사용 횟수 10회 초과 입니다.", cancelTitle: "확인", confirTitle: "구독하기") {
+                    //이전 페이지로 이동
+                   self.navigationController?.popViewController(animated: true)
+                } fourthButtonCompletion: {
+                    // 사용자가 구독하기 선택
+                    guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
+                    subscriptionViewController.modalPresentationStyle = .fullScreen
+                    self.present(subscriptionViewController, animated: true)
+                    
+                    print("cliocked subscribe")
+                }
+                present(alert, animated: true)
+            }else {
+                UserDefaults.standard.set(tmpUseCount + 1, forKey: "tmpUseCount")
+                print("clicked Analyze Button")
+                print(analyzeSentenceCustomTextView.textView.text!)
+                let inputString = analyzeSentenceCustomTextView.textView.text!
+
+                checkIfMultiSentence(inputStr: inputString)
+            }
+        }else {
+            print(analyzeSentenceCustomTextView.textView.text!)
+            let inputString = analyzeSentenceCustomTextView.textView.text!
+
+            checkIfMultiSentence(inputStr: inputString)
+        }
     
     }
     
@@ -73,6 +98,14 @@ class AnalyzeViewController: UIViewController {
 
 
     func checkIfMultiSentence(inputStr:String){
+        if inputStr.isEmpty {
+            let alert = AlertService().alert(title: "", body: "분석할 문장을 입력해주세요", cancelTitle: "", confirTitle: "확인") {
+            } fourthButtonCompletion: {
+                print("cliocked subscribe")
+            }
+            present(alert, animated: true)
+            return
+        }
         let urlString = "http://118.67.133.8/div_kiwi/m"
         
         requestByKiwi(url: urlString, sen: inputStr) {  resDic in

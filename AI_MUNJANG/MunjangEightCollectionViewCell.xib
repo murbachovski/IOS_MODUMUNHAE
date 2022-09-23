@@ -25,42 +25,52 @@
                 <rect key="frame" x="0.0" y="0.0" width="170" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission 999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy7-ad-etE">
-                        <rect key="frame" x="18" y="33" width="71.5" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qy7-ad-etE">
+                        <rect key="frame" x="18" y="33" width="27.5" height="14.5"/>
                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="13"/>
                         <color key="textColor" red="0.20000000000000001" green="0.73725490199999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3Vm-Ju-ai1">
-                        <rect key="frame" x="109.5" y="15" width="45.5" height="50"/>
+                        <rect key="frame" x="65.5" y="15" width="89.5" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="주어" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydr-NB-gkk">
-                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="23"/>
+                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="23"/>
                                 <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="대상" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWM-0m-OZC">
-                                <rect key="frame" x="0.0" y="27" width="45.5" height="23"/>
+                                <rect key="frame" x="0.0" y="27" width="89.5" height="23"/>
                                 <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="13"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IfA-c7-HGO">
+                        <rect key="frame" x="122" y="32" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="1OI-Tq-FeB"/>
+                            <constraint firstAttribute="width" constant="40" id="k4l-ZU-aj1"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="3Vm-Ju-ai1" secondAttribute="trailing" constant="15" id="75y-8P-a0A"/>
                     <constraint firstAttribute="bottom" secondItem="3Vm-Ju-ai1" secondAttribute="bottom" constant="15" id="Erb-Uu-Pm2"/>
                     <constraint firstItem="qy7-ad-etE" firstAttribute="leading" secondItem="1iY-ic-Zuh" secondAttribute="leading" constant="18" id="Nq0-r5-tj0"/>
+                    <constraint firstAttribute="trailing" secondItem="IfA-c7-HGO" secondAttribute="trailing" constant="8" id="Q2o-gw-pJl"/>
                     <constraint firstItem="qy7-ad-etE" firstAttribute="centerY" secondItem="1iY-ic-Zuh" secondAttribute="centerY" id="V4X-yo-YGx"/>
                     <constraint firstItem="3Vm-Ju-ai1" firstAttribute="leading" secondItem="qy7-ad-etE" secondAttribute="trailing" constant="20" id="ioF-oO-vbG"/>
                     <constraint firstItem="3Vm-Ju-ai1" firstAttribute="top" secondItem="1iY-ic-Zuh" secondAttribute="top" constant="15" id="s4n-Ew-eaj"/>
+                    <constraint firstAttribute="bottom" secondItem="IfA-c7-HGO" secondAttribute="bottom" constant="8" id="tE6-3f-FwD"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="336" height="54"/>
             <connections>
                 <outlet property="digitTitle" destination="qy7-ad-etE" id="Qzm-oH-jPi"/>
+                <outlet property="lockImgView" destination="IfA-c7-HGO" id="ckX-Jc-UBA"/>
                 <outlet property="mainTitle" destination="ydr-NB-gkk" id="N8P-cg-EM6"/>
                 <outlet property="subTitle" destination="aWM-0m-OZC" id="cVZ-NM-UAj"/>
             </connections>

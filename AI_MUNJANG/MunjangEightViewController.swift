@@ -71,11 +71,17 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         cell.layer.shadowRadius = 2
         cell.layer.masksToBounds = false
         
-        cell.digitTitle.text = "\(indexPath.row)경"
+        cell.digitTitle.text = "\(indexPath.row + 1)경"
         
         cell.mainTitle.text = munjangElements[indexPath.row]
         cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
         cell.subTitle.text = subElements[indexPath.row]
+        
+        if !Core.shared.isUserSubscription() {
+            if indexPath.row != 0 {
+                cell.lockImgView.image = UIImage(named: "icLock32Px")
+            }
+        }
        
         return cell
     }
@@ -89,12 +95,36 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        if !Core.shared.isUserSubscription() {
+            if indexPath.row == 0 {
+                changeNextPage(num: indexPath.row)
+            }else {
+                //알림창노출
+                let alert = AlertService().alert(title: "구독", body: "구독 전이라 사용이 불가합니다.", cancelTitle: "확인", confirTitle: "구독하기") {
+                    // 사용자가 둘러보기 선택
+                } fourthButtonCompletion: {
+                    // 사용자가 구독하기 선택
+                    guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
+                    subscriptionViewController.modalPresentationStyle = .fullScreen
+                    self.present(subscriptionViewController, animated: true)
+                    
+                    print("cliocked subscribe")
+                }
+                present(alert, animated: true)
+            }
+        }else { //구독자들
+            changeNextPage(num: indexPath.row)
+        }
+    }
+    
+    func changeNextPage(num: Int) {
+        
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
-              munJangEightDetailViewController.naviTitle = "\(indexPath.row )경"
-              munJangEightDetailViewController.mainTitleText = munjangElements[indexPath.row]
+              munJangEightDetailViewController.naviTitle = "\(num + 1)경"
+              munJangEightDetailViewController.mainTitleText = munjangElements[num]
 
-              munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[indexPath.row]
-            print("😡😡😡 \(indexPath.row)경 선택")
+              munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
+            print("😡😡😡 \(num)경 선택")
 
             self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }

@@ -69,6 +69,8 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = jsonVideoContents[indexPath.row]
+        
         if isMember == false {
             if indexPath.row > 3 {
                 let alert = AlertService().alert(title: "", body: "동영상을 시청하기 위해서는 구독하셔야합니다", cancelTitle: "확인", confirTitle: "구독하러가기", thirdButtonCompletion: {
@@ -82,8 +84,10 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
                 })
                 present(alert, animated: true)
             }else {
-                playTheVideo(urlString: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")
+                playTheVideo(urlString: item["UrlName"] as! String)
             }
+        }else {
+            playTheVideo(urlString: item["UrlName"] as! String)
         }
     }
     func playTheVideo(urlString: String) {

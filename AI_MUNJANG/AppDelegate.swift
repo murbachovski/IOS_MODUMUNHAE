@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         UserDefaults.standard.register(defaults: ["versionNumber" : 1000])
         UserDefaults.standard.register(defaults: ["balwhaSound" : true])
+        UserDefaults.standard.register(defaults: ["tmpUseCount" : 0])
     
         
         //구독여부 판단 - 영수증의 유효성을 판단해야

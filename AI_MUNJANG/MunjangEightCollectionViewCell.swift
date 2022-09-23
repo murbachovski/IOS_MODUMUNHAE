@@ -14,4 +14,5 @@ class MunjangEightCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var subTitle: UILabel!
     
+    @IBOutlet var lockImgView: UIImageView!
 }
