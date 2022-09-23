@@ -11,5 +11,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imgViewInContentView: UIImageView!
     
+    @IBOutlet var lockImg: UIImageView!
+    
     @IBOutlet var labelInContentView: UILabel!
 }

@@ -180,13 +180,22 @@
                                                     <rect key="frame" x="0.0" y="64" width="128" height="24"/>
                                                     <color key="tintColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="0.84584927721088432" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DEb-Wd-og8">
+                                                    <rect key="frame" x="80" y="80" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="djC-pC-FjP"/>
+                                                        <constraint firstAttribute="height" constant="40" id="pLT-CF-TOT"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="zEg-Ho-Jab" secondAttribute="bottom" constant="40" id="4Ms-lf-nzH"/>
                                                 <constraint firstItem="zIN-i0-ajQ" firstAttribute="height" secondItem="hD0-Gz-lXH" secondAttribute="height" multiplier="0.5" id="72z-hh-vOE"/>
                                                 <constraint firstItem="zIN-i0-ajQ" firstAttribute="leading" secondItem="hD0-Gz-lXH" secondAttribute="leading" id="YLS-PU-0Oe"/>
+                                                <constraint firstAttribute="trailing" secondItem="DEb-Wd-og8" secondAttribute="trailing" constant="8" id="gTF-Cv-coI"/>
                                                 <constraint firstAttribute="trailing" secondItem="zIN-i0-ajQ" secondAttribute="trailing" id="hsW-wI-Dcv"/>
                                                 <constraint firstItem="zEg-Ho-Jab" firstAttribute="leading" secondItem="hD0-Gz-lXH" secondAttribute="leading" id="iU7-Yb-UcQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="DEb-Wd-og8" secondAttribute="bottom" constant="8" id="ir3-Jk-LcB"/>
                                                 <constraint firstItem="zEg-Ho-Jab" firstAttribute="top" secondItem="zIN-i0-ajQ" secondAttribute="bottom" id="nll-MJ-C6M"/>
                                                 <constraint firstAttribute="trailing" secondItem="zEg-Ho-Jab" secondAttribute="trailing" id="rdj-we-hDE"/>
                                                 <constraint firstItem="zIN-i0-ajQ" firstAttribute="top" secondItem="hD0-Gz-lXH" secondAttribute="top" id="yTA-Qs-s7p"/>
@@ -195,6 +204,7 @@
                                         <connections>
                                             <outlet property="imgViewInContentView" destination="zEg-Ho-Jab" id="Hbj-nU-gkD"/>
                                             <outlet property="labelInContentView" destination="zIN-i0-ajQ" id="s2B-XR-ja4"/>
+                                            <outlet property="lockImg" destination="DEb-Wd-og8" id="NVg-jO-9Bv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -4385,7 +4395,7 @@
                                     <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="dcB-n7-yd0" customClass="SampleCollectionViewCell" customModule="AI_MUNJANG" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="dcB-n7-yd0" customClass="ExampleCollectionViewCell" customModule="AI_MUNJANG" customModuleProvider="target">
                                         <rect key="frame" x="20" y="10" width="180" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hsV-cD-jtR">

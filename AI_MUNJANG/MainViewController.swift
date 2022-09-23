@@ -170,6 +170,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.labelInContentView.text = mainTitleList[indexPath.row]
             if indexPath.row == 0 {
                 cell.imgViewInContentView.image = UIImage(systemName: "questionmark")
+                cell.lockImg.image = UIImage(named: "icLock32Px")
+                
+                //TODO: -구독자는 이미지 변경 필요 9/23
             }else if indexPath.row == 1 {
                 cell.imgViewInContentView.image = UIImage(systemName: "pencil")
             }else if indexPath.row == 2 {
@@ -196,11 +199,22 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
-        let alert = AlertService().alert(title: "구독", body: "사용자께서는 아직 구독 전이라 미션별 문제 풀이 제한이 있습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다.", cancelTitle: "둘러볼게요.", confirTitle: "구독하기") {
+        var bodyMessage = "사용자께서는 아직 구독 전이라 미션별 문제 풀이 제한이 있습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
+        var cancelMessage = "둘러볼게요."
+        
+        
+        if indexPath.row == 0 {
+            bodyMessage = "사용자께서는 아직 구독 전이라 문해력 테스트를 이용할 수 없습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
+            cancelMessage = "확인"
+            
+        }
+        
+        
+        let alert = AlertService().alert(title: "구독", body: bodyMessage, cancelTitle: cancelMessage, confirTitle: "구독하기") {
             // 사용자가 둘러보기 선택
             
             if indexPath.row == 0 {
-                self.clickedmunhaeTest()
+                //
             }else if indexPath.row == 1 {
                 guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
                 self.navigationController?.pushViewController(munjangEightViewController, animated: true)
