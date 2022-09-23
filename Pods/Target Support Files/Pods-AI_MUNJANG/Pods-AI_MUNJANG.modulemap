@@ -1,0 +1,6 @@
+framework module Pods_AI_MUNJANG {
+  umbrella header "Pods-AI_MUNJANG-umbrella.h"
+
+  export *
+  module * { export * }
+}
