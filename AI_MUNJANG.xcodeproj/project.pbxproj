@@ -470,13 +470,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		8482B8F328AB79B60041BD16 /* DownloadImage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DownloadImage;
-			sourceTree = "<group>";
-		};
 		84EBC3CB28A0B69B0089F9AC /* QuizModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,7 +509,6 @@
 		C6ED506D287531AE00454F26 = {
 			isa = PBXGroup;
 			children = (
-				8482B8F328AB79B60041BD16 /* DownloadImage */,
 				C6ED5078287531AE00454F26 /* AI_MUNJANG */,
 				8B5FF546FE32A902A1BF68DD /* Pods */,
 				BC2FE6537C9C06F991C945DE /* Frameworks */,
