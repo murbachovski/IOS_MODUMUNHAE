@@ -61,7 +61,11 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         }
     }
     
-  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
+    }
     
     func setupUI(){
         subcontainer.layer.cornerRadius = 10
@@ -91,6 +95,21 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
            }
 
         cell.numberTitle.text = "\(indexPath.row + 1)번"
+        
+            //둘러보기 사용자를 위한 것
+        if Core.shared.isUserLogin() == false && Core.shared.isUserSubscription() == false {
+            let dataDic = UserDefaults.standard.object(forKey: "tourUserData") as! [String: Any]
+            print("불러 온 dataDic:\(dataDic)")
+            let completedMission = dataDic["1경"] as! [Int]
+            
+            if completedMission.contains(indexPath.row + 1) {
+                
+                cell.isDoneImage.isHidden = false
+            }else {
+                cell.isDoneImage.isHidden = true
+            }
+        }
+//        cell.isDoneImage.isHidden = true
         //셀에 shadow추가
         cell.backgroundColor = .white
         cell.layer.cornerRadius = 10

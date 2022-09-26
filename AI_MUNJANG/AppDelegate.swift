@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.register(defaults: ["versionNumber" : 1000])
         UserDefaults.standard.register(defaults: ["balwhaSound" : true])
         UserDefaults.standard.register(defaults: ["tmpUseCount" : 0])
-    
+        
+        //둘러보기 사용자를 위한 학습 진행 상황
+        UserDefaults.standard.register(defaults: ["tourUserData" : ["1경":[]]])
         
         //구독여부 판단 - 영수증의 유효성을 판단해야
         InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})

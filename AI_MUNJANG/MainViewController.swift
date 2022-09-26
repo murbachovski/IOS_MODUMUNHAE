@@ -4,9 +4,6 @@
 //
 //  Created by DONG CHEOL KIM on 2022/07/06.
 //
-//test용입니다
-//test용입니다22
-//test333
 import UIKit
 import CoreMedia
 

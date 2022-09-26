@@ -75,7 +75,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizPool:QuizContents = []
     
-    var currentQuizIndex = 0
+    var currentQuizIndex = 18
     var isCurrentMissionCompleted = false
     lazy var currentQuiz = QuizContent(id: "", type: "", section: 0, missionSubject: nil, mission: 0, title: "", jimun: "", example: "", result: nil, imageName: nil)
 
@@ -433,8 +433,18 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
 
     @IBAction func clickedMissionCompleted(_ sender: Any) {
-
+        
+        if Core.shared.isUserLogin() == false && Core.shared.isUserSubscription() == false {
+            let currentMission = currentQuiz.mission
+            var dataDic = UserDefaults.standard.object(forKey: "tourUserData") as! [String: Any]
+            print(dataDic)
+            var completedMission = dataDic["1경"] as! [Int]
+            completedMission.append(currentMission)
+            dataDic = ["1경": completedMission ]
+            UserDefaults.standard.set(dataDic, forKey: "tourUserData")
+        }
         dismiss(animated: true)
+        
     }
     
     @IBAction func clickedClose(_ sender: UIButton) {
