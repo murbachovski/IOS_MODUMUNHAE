@@ -88,6 +88,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        mainCollectionView.reloadData()
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#F9F9F9")
         print("사용자가 구독 중인가? : \(Core.shared.isUserSubscription())")
         
@@ -171,7 +172,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             cell.labelInContentView.text = mainTitleList[indexPath.row]
             if indexPath.row == 0 {
                 cell.imgViewInContentView.image = UIImage(systemName: "questionmark")
-                cell.lockImg.image = UIImage(named: "icLock32Px")
+                if !Core.shared.isUserSubscription(){
+                    cell.lockImg.image = UIImage(named: "icLock32Px")
+                }else{
+                    cell.lockImg.image = nil
+                }
+                
                 
                 //TODO: -구독자는 이미지 변경 필요 9/23
             }else if indexPath.row == 1 {
@@ -200,41 +206,64 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
-        var bodyMessage = "사용자께서는 아직 구독 전이라 미션별 문제 풀이 제한이 있습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
-        var cancelMessage = "둘러볼게요."
-        
-        
-        if indexPath.row == 0 {
-            bodyMessage = "사용자께서는 아직 구독 전이라 문해력 테스트를 이용할 수 없습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
-            cancelMessage = "확인"
+        if !Core.shared.isUserSubscription(){
             
-        }
         
         
-        let alert = AlertService().alert(title: "구독", body: bodyMessage, cancelTitle: cancelMessage, confirTitle: "구독하기") {
-            // 사용자가 둘러보기 선택
+            var bodyMessage = "사용자께서는 아직 구독 전이라 미션별 문제 풀이 제한이 있습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
+            var cancelMessage = "둘러볼게요."
+            
             
             if indexPath.row == 0 {
-                //
+                bodyMessage = "사용자께서는 아직 구독 전이라 문해력 테스트를 이용할 수 없습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
+                cancelMessage = "확인"
+                
+            }
+            
+            
+            let alert = AlertService().alert(title: "구독", body: bodyMessage, cancelTitle: cancelMessage, confirTitle: "구독하기") {
+                // 사용자가 둘러보기 선택
+                
+                if indexPath.row == 0 {
+                    //
+                }else if indexPath.row == 1 {
+                    guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
+                    self.navigationController?.pushViewController(munjangEightViewController, animated: true)
+                }else if indexPath.row == 2 {
+                    
+                }else {
+                    self.clickedMunhaeVideo()
+                }
+                
+            } fourthButtonCompletion: {
+                // 사용자가 구독하기 선택
+                
+                guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
+                subscriptionViewController.modalPresentationStyle = .fullScreen
+                self.present(subscriptionViewController, animated: true)
+                
+                print("cliocked subscribe")
+            }
+            present(alert, animated: true)
+        
+        }else{ //사용자가 구독중일 때
+            
+            if indexPath.row == 0 {
+                guard let munhaeTestViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestViewController")  as? MunhaeTestViewController else {return}
+                self.navigationController?.pushViewController(munhaeTestViewController, animated: true)
+                
             }else if indexPath.row == 1 {
                 guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
                 self.navigationController?.pushViewController(munjangEightViewController, animated: true)
+                
             }else if indexPath.row == 2 {
+                //TODO: 작업예정
                 
             }else {
                 self.clickedMunhaeVideo()
             }
-            
-        } fourthButtonCompletion: {
-            // 사용자가 구독하기 선택
-            
-            guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
-            subscriptionViewController.modalPresentationStyle = .fullScreen
-            self.present(subscriptionViewController, animated: true)
-            
-            print("cliocked subscribe")
         }
-        present(alert, animated: true)
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
