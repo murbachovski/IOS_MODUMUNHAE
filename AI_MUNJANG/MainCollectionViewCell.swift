@@ -14,4 +14,9 @@ class MainCollectionViewCell: UICollectionViewCell {
     @IBOutlet var lockImg: UIImageView!
     
     @IBOutlet var labelInContentView: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        lockImg.image = nil
+    }
 }

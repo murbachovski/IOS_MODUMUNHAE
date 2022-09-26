@@ -177,9 +177,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 }else{
                     cell.lockImg.image = nil
                 }
-                
-                
-                //TODO: -구독자는 이미지 변경 필요 9/23
             }else if indexPath.row == 1 {
                 cell.imgViewInContentView.image = UIImage(systemName: "pencil")
             }else if indexPath.row == 2 {
@@ -187,6 +184,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             }else {
                 cell.imgViewInContentView.image = UIImage(systemName: "play.fill")
             }
+            
+            
             
             //셀에 shadow추가
             cell.backgroundColor = .white
@@ -203,6 +202,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+//    -(void)prepareForReuse {
+//       [super prepareForReuse];
+//       self.yourimageview.image = nil; //and etc.
+//    }
+    
+     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
         
@@ -217,6 +223,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             if indexPath.row == 0 {
                 bodyMessage = "사용자께서는 아직 구독 전이라 문해력 테스트를 이용할 수 없습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
                 cancelMessage = "확인"
+                
+            }
+            
+            if indexPath.row == 3 {
+                bodyMessage = "사용자께서는 아직 구독 전이라 일부 동영상만 시청할 수 있습니다. \n 자유로운 사용을 하기위해 구독하시기 바랍니다."
+                cancelMessage = "둘러볼게요."
                 
             }
             
