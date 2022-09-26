@@ -61,30 +61,30 @@ class MyPageViewController: UIViewController {
     
     @objc func methodOfReceivedNotification(notification:Notification){
         print(notification.userInfo as Any)
+        
         if notification.object as! String == InAppProducts.product && isReferenceRestore == true {
             isReferenceRestore = false
-            let alert = AlertService().alert(title: "", body: "구독내역을 정상적으로 조회하였습니다.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil) {
-                InAppProducts.store.checkReceiptValidation(isProduction: true) { valid in
-                    
+
+            InAppProducts.store.checkReceiptValidation(isProduction: true) { valid in
                     DispatchQueue.main.async {
-                        print("구독내역이 정상적으로 조회된 경우")
+                        var bodyMessage = ""
                         if valid == true {
                             print("유효")
+                            bodyMessage = "구독내역을 정상적으로 복원하였습니다."
                             self.subscribeButton.isHidden = true
                         }else{
+                            bodyMessage = "구독내역이 없거나 구독일자가 유효하지 않습니다."
                             self.subscribeButton.isHidden = false
                             print("무효")
                         }
                         self.view.layoutIfNeeded()
                         
-                    }
-                    
-                
+                        let alert = AlertService().alert(title: "", body: bodyMessage, cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil) {}
+                        self.present(alert, animated: true)
                 }
-                
             }
-            present(alert, animated: true)
         }
+        
     }
     
     func setupUI(){

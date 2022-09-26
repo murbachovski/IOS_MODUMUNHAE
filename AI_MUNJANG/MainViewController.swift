@@ -236,8 +236,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 if indexPath.row == 0 {
                     //
                 }else if indexPath.row == 1 {
-                    guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
-                    self.navigationController?.pushViewController(munjangEightViewController, animated: true)
+
+                    self.clickedmunhaeTest()
                 }else if indexPath.row == 2 {
                     
                 }else {
@@ -258,8 +258,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }else{ //사용자가 구독중일 때
             
             if indexPath.row == 0 {
-                guard let munhaeTestViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestViewController")  as? MunhaeTestViewController else {return}
-                self.navigationController?.pushViewController(munhaeTestViewController, animated: true)
+
+                self.clickedmunhaeTest()
                 
             }else if indexPath.row == 1 {
                 guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}

@@ -2305,7 +2305,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="구독내역 조회">
+                                                        <state key="normal" title="구독내역 복원">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
@@ -4498,11 +4498,9 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="F7J-g9-Bvd">
-            <size key="intrinsicContentSize" width="8" height="8"/>
-        </designable>
+        <designable name="F7J-g9-Bvd"/>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
