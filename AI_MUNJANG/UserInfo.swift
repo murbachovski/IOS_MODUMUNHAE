@@ -11,7 +11,7 @@ import FirebaseFirestore
 struct UserInfo: Codable {
     
     let displayName: String
-    let learningProgress: Int
+    let learningProgress: Dictionary<String, Int>
     let numberOfHearts: Int
     
 }
@@ -20,7 +20,7 @@ class MyInfo {
     static let shared = MyInfo()
 
     var displayName: String = "홍길동"
-    var learningProgress: Int = 0
+    var learningProgress: [String : Int] = [:]
     var numberOfHearts: Int = 0
 
     private init() { }
@@ -34,7 +34,7 @@ class DataFromFirestore {
     func gettingDoc(userID:String, completionHandler: @escaping (UserInfo) -> Void) {
         db.collection("users").getDocuments() { (querySnapshot, err) in
             
-            var user :UserInfo = UserInfo(displayName: "", learningProgress: 0, numberOfHearts: 0)
+            var user :UserInfo = UserInfo(displayName: "", learningProgress: [:], numberOfHearts: 0)
             
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -72,9 +72,10 @@ class DataFromFirestore {
             }
         }
         
+        let learningDataDic: [String : Int] = ["2경" : 0,"3경" : 0, "4경" : 0, "5경" : 0, "6경" : 0, "7경" : 0, "8경" : 0]
         let path = db.collection("users").document(userID)
         path.updateData(["userinfo": ["displayName":userInfo.displayName,
-                                      "learningProgress":userInfo.learningProgress,
+                                      "learningProgress":learningDataDic,
                                       "numberOfHearts":userInfo.numberOfHearts]])
     }
     

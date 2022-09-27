@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, EightDetailDelegate {
   
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -28,9 +28,13 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     var mainTitleText:String = ""
     var subTitleText:String = ""
     
+    var toLearningMission = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
         layout.estimatedItemSize = CGSize(width: CGFloat(100).relativeToIphone8Width() , height: CGFloat(80).relativeToIphone8Width())
@@ -42,6 +46,8 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         setupUI()
         
         navigationItem.title = naviTitle
+        toLearningMission = MyInfo.shared.learningProgress[naviTitle]!
+        
         mainTitle.text = mainTitleText
         subTitle.text = subTitleText
         
@@ -63,7 +69,10 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    }
+    
+    func eightDetailDelegate() {
+        toLearningMission = toLearningMission + 1
         collectionView.reloadData()
     }
     
@@ -95,9 +104,17 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
            }
 
         cell.numberTitle.text = "\(indexPath.row + 1)번"
-        
-            //둘러보기 사용자를 위한 것
-        if Core.shared.isUserLogin() == false && Core.shared.isUserSubscription() == false {
+            
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 10
+        cell.layer.shadowOpacity = 0.8
+        cell.layer.shadowColor = UIColor.lightGray.cgColor
+        cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+        cell.layer.shadowRadius = 2
+        cell.layer.masksToBounds = false
+            
+            //둘러보기 사용자를 위한 것, //일반 구독자 구분 없이 1경에 한 해서만 UserDefaults에서 관리
+        if naviTitle == "1경" {
             let dataDic = UserDefaults.standard.object(forKey: "tourUserData") as! [String: Any]
             print("불러 온 dataDic:\(dataDic)")
             let completedMission = dataDic["1경"] as! [Int]
@@ -108,18 +125,21 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
             }else {
                 cell.isDoneImage.isHidden = true
             }
+        }else {
+            if indexPath.row < self.toLearningMission { //학습이 완료된 인덱스
+                cell.isDoneImage.isHidden = false
+            }else if indexPath.row == self.toLearningMission {
+                cell.backgroundColor = .red
+            }else {
+                cell.isDoneImage.isHidden = true
+                cell.backgroundColor = .lightGray
+                cell.isUserInteractionEnabled = false
+            }
+            
         }
 //        cell.isDoneImage.isHidden = true
         //셀에 shadow추가
-        cell.backgroundColor = .white
-        cell.layer.cornerRadius = 10
-        cell.layer.shadowOpacity = 0.8
-        cell.layer.shadowColor = UIColor.lightGray.cgColor
-        cell.layer.shadowOffset = CGSize(width: 1, height: 1)
-        cell.layer.shadowRadius = 2
-        cell.layer.masksToBounds = false
-        
-        
+
                 
         return cell
     }
@@ -133,6 +153,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         print("선택된 Mission 내용 : \(currentMissionContents[indexPath.row])")
         munjangQuizViewController.currentQuizPool = currentMissionContents[indexPath.row]
         munjangQuizViewController.descTitleLabel.text = currentMissionContents[indexPath.row][0].missionSubject
+        munjangQuizViewController.delegate = self
         present(munjangQuizViewController, animated: true)
       
     }

@@ -163,7 +163,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }else if indexPath.row == 16 {
             
             MyInfo.shared.displayName = "스미나"
-            MyInfo.shared.learningProgress = 3
+//            MyInfo.shared.learningProgress = 3
             MyInfo.shared.numberOfHearts = 104
         }
         else if indexPath.row == 17 {

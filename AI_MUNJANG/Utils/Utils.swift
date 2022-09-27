@@ -64,6 +64,20 @@ func changeLoginNC() { //LoginNavigationController
     ad.window?.rootViewController = vc
 }
 
+func saveCurrentMission(gyung: String, missionNum: Int) {
+    var userLearningProgress: [String : Int] = MyInfo.shared.learningProgress
+//    userLearningProgress[gyung] = missionNum
+    userLearningProgress.updateValue(missionNum, forKey: gyung)
+    print("@@@@@@@@@@@@\(userLearningProgress)")
+    MyInfo.shared.learningProgress = userLearningProgress
+}
+
+func retrieveCurrentMission(gyung: String) -> Int {
+    let userLearningProgress = MyInfo.shared.learningProgress
+    return userLearningProgress[gyung]!
+}
+
+
 
 extension Date {
     
@@ -210,4 +224,6 @@ extension String {
         let endIndex = index(from: r.upperBound)
         return String(self[startIndex..<endIndex])
     }
+    
+    
 }

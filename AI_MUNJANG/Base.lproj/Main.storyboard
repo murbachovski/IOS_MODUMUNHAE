@@ -4498,9 +4498,11 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="F7J-g9-Bvd"/>
+        <designable name="F7J-g9-Bvd">
+            <size key="intrinsicContentSize" width="8" height="8"/>
+        </designable>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
         </designable>
     </designables>
     <resources>

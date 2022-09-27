@@ -101,6 +101,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
             }else {
                 //알림창노출
                 let alert = AlertService().alert(title: "구독", body: "구독 전이라 사용이 불가합니다.", cancelTitle: "확인", confirTitle: "구독하기") {
+                    self.changeNextPage(num: indexPath.row)
                     // 사용자가 둘러보기 선택
                 } fourthButtonCompletion: {
                     // 사용자가 구독하기 선택
@@ -120,11 +121,16 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     func changeNextPage(num: Int) {
         
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
-              munJangEightDetailViewController.naviTitle = "\(num + 1)경"
+        if num + 1 != 1 {
+                let toLearningMission = retrieveCurrentMission(gyung: "\(num + 1)경")
+                munJangEightDetailViewController.toLearningMission = toLearningMission
+            }
+            munJangEightDetailViewController.naviTitle = "\(num + 1)경"
               munJangEightDetailViewController.mainTitleText = munjangElements[num]
 
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
-            print("😡😡😡 \(num)경 선택")
+            print("😡😡😡 \(num + 1)경 선택")
+        print("8경 메인에서의 사용자 정보:\(MyInfo.shared.learningProgress)")
 
             self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }

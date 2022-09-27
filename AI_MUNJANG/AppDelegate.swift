@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
-
+import FirebaseFirestore
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     MyInfo.shared.learningProgress = info.learningProgress
                     MyInfo.shared.numberOfHearts = info.numberOfHearts
                     
-                    print("applicationDidBecomeActive userInfo: \(MyInfo.shared)")
+                    print("😊😊😊😊😊😊😊applicationDidBecomeActive userInfo: \(MyInfo.shared)")
                 }
             }
             
@@ -59,12 +59,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Core.shared.isUserLogin() == true {
             if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
                 print("applicationWillResignActive is called: \(userID)")
-                
-                DataFromFirestore.share.settingDoc(userID: userID, userInfo: MyInfo.shared)
-                print("applicationWillResignActive userInfo: \(MyInfo.shared)")
+                sendUserInfo(userID: userID)
+//                DataFromFirestore.share.settingDoc(userID: userID, userInfo: MyInfo.shared)
+                print("😊😊😊😊😊😊😊applicationWillResignActive userInfo: \(MyInfo.shared)")
             }
             
         }
     }
   
+    func sendUserInfo(userID: String){
+        
+        
+        let db = Firestore.firestore()
+        
+        let path = db.collection("users")
+        
+        path.getDocuments { (snapshot, err) in
+            if let err = err {
+                print(err)
+            } else {
+                guard let snapshot = snapshot else { return }
+                for document in snapshot.documents {
+                    if document.documentID == userID {
+                        // 딕셔너리 데이터를 가져온다.
+                        guard var data = document["userinfo"] as? [String:Any] else { return }
+                        data.updateValue(MyInfo.shared.displayName, forKey: "displayName")
+                        data.updateValue(MyInfo.shared.learningProgress, forKey: "learningProgress")
+                        data.updateValue(MyInfo.shared.numberOfHearts, forKey: "numberOfHearts")
+                        
+                        // 서버의 딕셔너리 데이터를 수정된 데이터로 수정한다.
+                        path.document(userID).updateData(["userinfo" : data])
+                    }
+                }
+            }
+        }
+    }
+    
 }

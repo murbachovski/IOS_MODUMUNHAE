@@ -15,6 +15,10 @@ enum QuizStatus {
     case INCORRECT
 }
 
+protocol EightDetailDelegate: AnyObject {
+    func eightDetailDelegate()
+}
+
 class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet var quizProcessLabel: UILabel!
@@ -69,6 +73,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var startMissionButton: UIButton!
     @IBOutlet weak var hintButton: UIButton!
     
+    weak var delegate: EightDetailDelegate?
+    
     var audioPlayer: AVAudioPlayer? // AVAudioPlayer 인스턴스 참조체 저장
     
     var quizStatus:QuizStatus = .NONE
@@ -95,6 +101,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         answerButtons = [answer01Button, answer02Button, answer03Button]
         answerButtonImages = [button01Image, button02Image, button03Image]
@@ -414,7 +422,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             //미션클리어시 사용자의 정보를 업데이트
             //앱이 background 진입시 Firebase로 전송됨.
             MyInfo.shared.numberOfHearts = MyInfo.shared.numberOfHearts + 1
-            MyInfo.shared.learningProgress = currentQuiz.mission
+//            MyInfo.shared.learningProgress = currentQuiz.mission
             
             //completeView의 사용자이름과 하트수 수정
             displayUsernameOnMissionClear.text = "\(MyInfo.shared.displayName)님은 총 \(MyInfo.shared.numberOfHearts)개의 하트를 모았어요!"
@@ -434,16 +442,20 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBAction func clickedMissionCompleted(_ sender: Any) {
         
-        if Core.shared.isUserLogin() == false && Core.shared.isUserSubscription() == false {
             let currentMission = currentQuiz.mission
-            var dataDic = UserDefaults.standard.object(forKey: "tourUserData") as! [String: Any]
-            print(dataDic)
-            var completedMission = dataDic["1경"] as! [Int]
-            completedMission.append(currentMission)
-            dataDic = ["1경": completedMission ]
-            UserDefaults.standard.set(dataDic, forKey: "tourUserData")
+            if currentQuiz.section == 1 { // 1경에 데이터는 UserDefaults가 관리!!
+                var dataDic = UserDefaults.standard.object(forKey: "tourUserData") as! [String: Any]
+                print(dataDic)
+                var completedMission = dataDic["1경"] as! [Int]
+                completedMission.append(currentMission)
+                dataDic = ["1경": completedMission ]
+                UserDefaults.standard.set(dataDic, forKey: "tourUserData")
+            }else {// 그 와에 데이터는 fireStore연동!!
+                saveCurrentMission(gyung: "\(currentQuiz.section)경" , missionNum: currentQuiz.mission)
+            }
+        dismiss(animated: true) {
+            self.delegate?.eightDetailDelegate()
         }
-        dismiss(animated: true)
         
     }
     
