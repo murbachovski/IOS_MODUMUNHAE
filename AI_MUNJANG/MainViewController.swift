@@ -234,10 +234,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 // 사용자가 둘러보기 선택
                 
                 if indexPath.row == 0 {
-                    //
+                    
                 }else if indexPath.row == 1 {
-
-                    self.clickedmunhaeTest()
+                    guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
+                    self.navigationController?.pushViewController(munjangEightViewController, animated: true)
+                    
                 }else if indexPath.row == 2 {
                     
                 }else {
