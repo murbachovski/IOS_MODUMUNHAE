@@ -379,6 +379,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="100" height="80"/>
                                         <connections>
+                                            <outlet property="border" destination="axc-gd-Ikk" id="Gck-dl-81v"/>
                                             <outlet property="isDoneImage" destination="She-fr-QTM" id="MPU-Ls-P1K"/>
                                             <outlet property="numberTitle" destination="SuQ-6h-dTf" id="MLn-Sd-c4l"/>
                                         </connections>

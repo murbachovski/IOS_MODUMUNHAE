@@ -8,7 +8,6 @@
 import UIKit
 
 class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, EightDetailDelegate {
-  
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -46,7 +45,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         setupUI()
         
         navigationItem.title = naviTitle
-        toLearningMission = MyInfo.shared.learningProgress[naviTitle]!
+//        toLearningMission = MyInfo.shared.learningProgress[naviTitle]
         
         mainTitle.text = mainTitleText
         subTitle.text = subTitleText
@@ -129,10 +128,29 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
             if indexPath.row < self.toLearningMission { //학습이 완료된 인덱스
                 cell.isDoneImage.isHidden = false
             }else if indexPath.row == self.toLearningMission {
-                cell.backgroundColor = .red
+                cell.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
+                cell.isDoneImage.image = UIImage(named: "icPlay32Px")
+                cell.numberTitle.textColor = .white
+                cell.border.backgroundColor = .white
+                
+                let l = CAGradientLayer()
+                l.frame = cell.bounds
+                l.colors = [hexStringToUIColor(hex: "#04BF55").cgColor, hexStringToUIColor(hex: "#11998E").cgColor]
+                l.startPoint = CGPoint(x: 0, y: 0.5)
+                l.endPoint = CGPoint(x: 1, y: 0.5)
+                l.cornerRadius = 8
+                
+                cell.layer.insertSublayer(l, at: 0)
+                
+                cell.layer.cornerRadius = 10
+                cell.layer.shadowOpacity = 0.8
+                cell.layer.shadowColor = UIColor.lightGray.cgColor
+                cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+                cell.layer.shadowRadius = 2
+                cell.layer.masksToBounds = false
             }else {
                 cell.isDoneImage.isHidden = true
-                cell.backgroundColor = .lightGray
+                cell.backgroundColor = hexStringToUIColor(hex: "#f5f5f5")
                 cell.isUserInteractionEnabled = false
             }
             

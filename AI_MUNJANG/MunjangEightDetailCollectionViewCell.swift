@@ -9,6 +9,8 @@ import UIKit
 
 class MunjangEightDetailCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var border: UIView!
+    
     @IBOutlet weak var numberTitle: UILabel!
     
     @IBOutlet weak var isDoneImage: UIImageView!
