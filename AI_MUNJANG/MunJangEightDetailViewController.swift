@@ -172,8 +172,8 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         munjangQuizViewController.currentQuizPool = currentMissionContents[indexPath.row]
         munjangQuizViewController.descTitleLabel.text = currentMissionContents[indexPath.row][0].missionSubject
         munjangQuizViewController.delegate = self
+        munjangQuizViewController.currentGyung = naviTitle
         present(munjangQuizViewController, animated: true)
-      
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

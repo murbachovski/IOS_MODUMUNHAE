@@ -26,19 +26,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //둘러보기 사용자를 위한 학습 진행 상황
         UserDefaults.standard.register(defaults: ["tourUserData" : ["1경":[]]])
         
+        
+        //구독자가 미션 수행중 그만두는 지점을 userDefault에 저장. 실질문해 / 기초문해
+        UserDefaults.standard.register(defaults: ["basicStopStep" : ["2경":0, "3경":0, "4경":0, "5경":0, "6경":0, "7경":0, "8경":0]])
+        
         //구독여부 판단 - 영수증의 유효성을 판단해야
         InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})
         
         let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "DownloadViewController") as! DownloadViewController
         window?.rootViewController = vc
         
-        
-
+//        if MyInfo.shared.learningProgress.isEmpty &&  Core.shared.isUserLogin() == true {
+//            setUpFireStoreDB()
+//        }
         return true
     }
-    
     //앱이 로딩하거나 앱이 다시 화면에 진입시 로그인인 사용자의 userInfo를 갱신
-    func applicationDidBecomeActive(_ application: UIApplication) {
+    fileprivate func setUpMyInfoByUserId() {
         if Core.shared.isUserLogin() == true {
             if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
                 print("applicationDidBecomeActive is called: \(userID)")
@@ -50,8 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("😊😊😊😊😊😊😊applicationDidBecomeActive userInfo: \(MyInfo.shared)")
                 }
             }
-            
         }
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        setUpMyInfoByUserId()
     }
   
     //앱이 백그라운드로 들어가기 전에 사용자의 정보(userInfo)를 firebase에 전송

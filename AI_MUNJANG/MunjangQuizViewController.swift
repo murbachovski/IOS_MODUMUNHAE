@@ -21,6 +21,8 @@ protocol EightDetailDelegate: AnyObject {
 
 class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
+    var currentGyung = ""
+    
     @IBOutlet var quizProcessLabel: UILabel!
     
     @IBOutlet var correctOrNotView: UIView!
@@ -81,7 +83,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizPool:QuizContents = []
     
-    var currentQuizIndex = 18
+    var currentQuizIndex = 0
     var isCurrentMissionCompleted = false
     lazy var currentQuiz = QuizContent(id: "", type: "", section: 0, missionSubject: nil, mission: 0, title: "", jimun: "", example: "", result: nil, imageName: nil)
 
@@ -102,8 +104,6 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         answerButtons = [answer01Button, answer02Button, answer03Button]
         answerButtonImages = [button01Image, button02Image, button03Image]
 
@@ -121,8 +121,10 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         quizTextLabel.text = ""
         // Do any additional setup after loading the view.
-       
-        currentQuiz = currentQuizPool[0]
+        currentQuizIndex = retrieveStopStepByBasic(gyung: currentGyung)
+        currentQuiz = currentQuizPool[currentQuizIndex]
+        
+        
         print("CurrentQuiz : \(currentQuiz)")
         
         quizProgressView.progress = 0.0
@@ -130,6 +132,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         if currentQuiz.type == "Text" {
             isCompletedTypeAnimation = false
         }
+        
+        
         
         //TODO: descTitle 과 descSubTitle을 이곳에서 설정해야 currentQuiz 참조
         
@@ -152,6 +156,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }else{
             balwhaButton.setTitle("퀴즈 음성 OFF", for: .normal)
         }
+//        setupUI()
+        progressBarloc = Float(currentQuizIndex + 1) / Float(currentQuizPool.count)
+        quizProgressView.setProgress(progressBarloc, animated: true)
     }
     
     
@@ -219,8 +226,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             changeButtonStatus(false)
         }
         
-        
-        quizProcessLabel.text = "\(currentQuizIndex)/\(currentQuizPool.count)"
+        quizProcessLabel.text = "\(currentQuizIndex + 1)/\(currentQuizPool.count)"
         quizProcessLabel.font = UIFont(name: "NanumSquareEB", size: 17)
         quizProcessLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
 
@@ -471,6 +477,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func clickedStopMessageStop(_ sender: Any) {
+        
+        saveStopStepByBasic(gyung: "\(currentQuiz.section)경", step: currentQuizIndex)
+        print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경"))")
         dismiss(animated: true)
     }
     

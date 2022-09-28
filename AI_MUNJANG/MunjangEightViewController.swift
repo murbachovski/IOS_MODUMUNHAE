@@ -131,7 +131,6 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
             print("😡😡😡 \(num + 1)경 선택")
         print("8경 메인에서의 사용자 정보:\(MyInfo.shared.learningProgress)")
-
             self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }
 }

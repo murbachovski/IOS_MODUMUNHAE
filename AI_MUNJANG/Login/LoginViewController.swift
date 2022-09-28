@@ -251,6 +251,10 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
                 print(user.displayName ?? "displayName 없음")
                 print(user.email as Any)
                 Core.shared.setUserLogin()
+                
+                print("\(user.displayName ?? "displayName 없음")정상적으로 로그인되었습니다")
+                UserDefaults.standard.setValue(user.email, forKey: "userID")
+                self?.setUpMyInfoByUserId()
                 changeMainNC()
                
                 
@@ -354,8 +358,6 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
       authorizationController.presentationContextProvider = self
       authorizationController.performRequests()
     }
-    
-    
 }
 
 
@@ -396,9 +398,12 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                          print(error!.localizedDescription)
                          return
                        }
+          
+          Core.shared.setUserLogin()
           print(user.displayName ?? "알수 없음")
           print(user.email as Any)
-          Core.shared.setUserLogin()
+          UserDefaults.standard.setValue(user.email, forKey: "userID")
+          self.setUpMyInfoByUserId()
           changeMainNC()
           
       }
@@ -413,6 +418,19 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     print("Sign in with Apple errored: \(error)")
   }
     
-    
+    fileprivate func setUpMyInfoByUserId() {
+        if Core.shared.isUserLogin() == true {
+            if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
+                print("login is called: \(userID)")
+                DataFromFirestore.share.gettingDoc(userID: userID) { info in
+                    MyInfo.shared.displayName = info.displayName
+                    MyInfo.shared.learningProgress = info.learningProgress
+                    MyInfo.shared.numberOfHearts = info.numberOfHearts
+                    
+                    print("😊😊😊😊😊😊😊login userInfo: \(MyInfo.shared)")
+                }
+            }
+        }
+    }
 
 }

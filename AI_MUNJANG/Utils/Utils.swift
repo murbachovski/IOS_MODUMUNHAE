@@ -64,6 +64,21 @@ func changeLoginNC() { //LoginNavigationController
     ad.window?.rootViewController = vc
 }
 
+func saveStopStepByBasic(gyung: String, step: Int) {
+    var dataDic: [String : Int] = [:]
+    dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
+    dataDic.updateValue(step, forKey: gyung)
+    print(dataDic)
+    UserDefaults.standard.set(dataDic, forKey: "basicStopStep")
+}
+
+func retrieveStopStepByBasic(gyung: String) -> Int {
+    var dataDic: [String : Int] = [:]
+    dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
+    print(dataDic)
+    return dataDic[gyung]!
+}
+
 func saveCurrentMission(gyung: String, missionNum: Int) {
     var userLearningProgress: [String : Int] = MyInfo.shared.learningProgress
 //    userLearningProgress[gyung] = missionNum
@@ -223,24 +238,6 @@ extension String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
         return String(self[startIndex..<endIndex])
-    }
-}
-
-
-extension UIView {
-
-    func applyGradient(colours: [UIColor]) -> CAGradientLayer {
-        return self.applyGradient(colours: colours, locations: nil)
-    }
-
-
-    func applyGradient(colours: [UIColor], locations: [NSNumber]?) -> CAGradientLayer {
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.bounds
-        gradient.colors = colours.map { $0.cgColor }
-        gradient.locations = locations
-        self.layer.insertSublayer(gradient, at: 0)
-        return gradient
     }
 }
 
