@@ -14,5 +14,7 @@
 		<string>NanumSquareL.ttf</string>
 		<string>NanumSquareR.ttf</string>
 	</array>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>Main_ipad</string>
 </dict>
 </plist>
