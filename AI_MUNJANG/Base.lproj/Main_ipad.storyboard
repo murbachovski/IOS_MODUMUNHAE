@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e2K-mJ-jsy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -152,7 +152,7 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="979-Rz-ydy">
                                 <rect key="frame" x="5" y="330" width="758" height="758"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="979-Rz-ydy" secondAttribute="height" multiplier="1:1" id="ROc-aj-26N"/>
                                 </constraints>
@@ -751,13 +751,12 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-pZ-7dp">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="LJ6-qA-coG">
-                                <rect key="frame" x="234" y="412" width="300" height="200"/>
+                                <rect key="frame" x="269" y="435" width="230" height="154"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LJ6-qA-coG" secondAttribute="height" multiplier="3:2" id="lNd-o1-SfK"/>
-                                    <constraint firstAttribute="width" constant="300" id="nFA-p1-WGC"/>
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학습콘텐츠 다운로드 중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dR-mj-uuE">
@@ -793,6 +792,7 @@
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="trailing" secondItem="kbu-q0-bhn" secondAttribute="trailing" id="5PW-l3-dEM"/>
                             <constraint firstItem="7dR-mj-uuE" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" constant="24" id="JRX-4v-QWt"/>
                             <constraint firstItem="LJ6-qA-coG" firstAttribute="centerY" secondItem="2DR-Dh-Isw" secondAttribute="centerY" id="P6m-CN-bg6"/>
+                            <constraint firstItem="LJ6-qA-coG" firstAttribute="width" secondItem="XPM-pZ-7dp" secondAttribute="width" multiplier="0.3" id="YuF-MT-gCW"/>
                             <constraint firstItem="7dR-mj-uuE" firstAttribute="top" secondItem="ftA-q1-5fr" secondAttribute="bottom" constant="40" id="b2R-xp-piZ"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="top" secondItem="2DR-Dh-Isw" secondAttribute="top" id="fsQ-KH-0Ey"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" id="xOg-no-hCi"/>
@@ -4561,9 +4561,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

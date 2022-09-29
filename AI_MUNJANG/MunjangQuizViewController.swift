@@ -477,9 +477,12 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func clickedStopMessageStop(_ sender: Any) {
-        
-        saveStopStepByBasic(gyung: "\(currentQuiz.section)경", step: currentQuizIndex)
-        print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경"))")
+        let completedMission = retrieveCurrentMission(gyung: "\(currentQuiz.section)경")
+        if currentQuiz.mission > completedMission {
+            saveStopStepByBasic(gyung: "\(currentQuiz.section)경", step: currentQuizIndex)
+            print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경"))")
+        }
+
         dismiss(animated: true)
     }
     

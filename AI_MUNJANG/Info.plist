@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -14,6 +16,8 @@
 		<string>NanumSquareL.ttf</string>
 		<string>NanumSquareR.ttf</string>
 	</array>
+	<key>UILaunchImageFile</key>
+	<string></string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Main_ipad</string>
 	<key>UIMainStoryboardFile~iphone</key>
