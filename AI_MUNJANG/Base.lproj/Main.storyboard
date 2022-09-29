@@ -3718,6 +3718,9 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="단어를 눌러 뜻을 확인해보세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTS-7d-Uvz">
                                                 <rect key="frame" x="20" y="642.5" width="209" height="20.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="209" id="4Zg-2f-n5W"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3767,6 +3770,26 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tad-bx-Vv8">
+                                                <rect key="frame" x="20" y="789" width="374" height="52"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtH-eU-8el">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="52"/>
+                                                        <color key="tintColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="문장 추론"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13R-sF-9UK">
+                                                        <rect key="frame" x="197" y="0.0" width="177" height="52"/>
+                                                        <color key="tintColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="문장 교정"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="ES1-ya-WT4"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -3776,12 +3799,15 @@
                                             <constraint firstItem="CTS-7d-Uvz" firstAttribute="top" secondItem="k1v-wZ-f4g" secondAttribute="bottom" constant="4" id="QFj-ML-CoN"/>
                                             <constraint firstItem="h7p-v7-t3v" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" constant="20" id="R76-Qg-afs"/>
                                             <constraint firstItem="iDb-Wf-qWb" firstAttribute="top" secondItem="CTS-7d-Uvz" secondAttribute="bottom" constant="16" id="Uze-vU-ycY"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tad-bx-Vv8" secondAttribute="trailing" constant="20" id="WLv-pC-IRb"/>
                                             <constraint firstItem="CTS-7d-Uvz" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" constant="20" id="YND-Xu-X0m"/>
                                             <constraint firstAttribute="trailing" secondItem="iDb-Wf-qWb" secondAttribute="trailing" id="hCf-TJ-zmG"/>
+                                            <constraint firstItem="Tad-bx-Vv8" firstAttribute="top" secondItem="iDb-Wf-qWb" secondAttribute="bottom" constant="10" id="jG0-eL-BGW"/>
                                             <constraint firstItem="k1v-wZ-f4g" firstAttribute="top" secondItem="th2-dm-1wh" secondAttribute="bottom" id="jO0-pS-ns4"/>
                                             <constraint firstItem="k1v-wZ-f4g" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" constant="20" id="jn6-6d-e8v"/>
+                                            <constraint firstAttribute="bottom" secondItem="Tad-bx-Vv8" secondAttribute="bottom" constant="11" id="ntk-ne-JnU"/>
+                                            <constraint firstItem="Tad-bx-Vv8" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" constant="20" id="nwI-If-YH4"/>
                                             <constraint firstItem="th2-dm-1wh" firstAttribute="top" secondItem="h7p-v7-t3v" secondAttribute="bottom" constant="24" id="nwd-Lr-jM6"/>
-                                            <constraint firstAttribute="bottom" secondItem="iDb-Wf-qWb" secondAttribute="bottom" constant="73" id="qQd-DO-Mx7"/>
                                             <constraint firstAttribute="trailing" secondItem="th2-dm-1wh" secondAttribute="trailing" id="qlg-kR-NvC"/>
                                             <constraint firstItem="th2-dm-1wh" firstAttribute="leading" secondItem="cTP-Qw-BfP" secondAttribute="leading" id="vXw-Y5-iWx"/>
                                             <constraint firstAttribute="trailing" secondItem="h7p-v7-t3v" secondAttribute="trailing" constant="20" id="vbg-A3-ub5"/>
@@ -3811,6 +3837,8 @@
                     </view>
                     <connections>
                         <outlet property="analyzeCollectionView" destination="SUp-E4-ma6" id="xdB-fs-iUm"/>
+                        <outlet property="buttonCorrection" destination="13R-sF-9UK" id="3tb-of-4x2"/>
+                        <outlet property="buttonInference" destination="EtH-eU-8el" id="w0y-RU-th2"/>
                         <outlet property="originSentenceLabel" destination="h7p-v7-t3v" id="J6T-tB-u3g"/>
                         <outlet property="wordCollectionView" destination="iDb-Wf-qWb" id="BuT-Xt-mmB"/>
                     </connections>

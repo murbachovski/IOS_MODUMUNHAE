@@ -10,6 +10,8 @@ import UIKit
 class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
 
+    @IBOutlet var buttonCorrection: UIButton!
+    @IBOutlet var buttonInference: UIButton!
     
     @IBOutlet weak var analyzeCollectionView: UICollectionView!
     @IBOutlet weak var originSentenceLabel: UILabel!
@@ -51,6 +53,11 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
                 arr.remove(at: arr.firstIndex(of: i)!)
             }
         }
+        
+        buttonInference.layer.cornerRadius = 10
+        buttonInference.layer.borderWidth = 1
+        buttonInference.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
+        
         
     }
   
