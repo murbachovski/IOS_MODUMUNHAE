@@ -6,24 +6,20 @@ class InferenceViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var contentsDic: [String : Any] = [:]
-    var sectionHeader: [String] = []
-    var cellDataSource: [String] = []
+    var sectionHeader: [String] = ["나는 학교에 가고", "엄마는 회사에 간다."]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
-        contentsDic = ["나는 학교에 가고" :["나는", "학교에", "가고"],
-                       "엄마는 회사에 간다." :["엄마는", "회사에", "간다."]]
-//        sectionHeader = contentsDic.keys as! [String]
-        for i in contentsDic.keys {
-            sectionHeader.append(i)
-        }
-        cellDataSource = Array((contentsDic.values))
-//        for i in contentsDic.values {
-//            cellDataSource.append(i as! [String])
-//        }
+        self.navigationItem.backButtonTitle = " "
+        
+        contentsDic = ["나는 학교에 가고" :["나는 가고", "나는 학교에 가고"],
+                       "엄마는 회사에 간다." :["엄마는 가고", "엄마는 회사에 가고"]]
+        
+      
+
     }
 }
 
@@ -39,25 +35,18 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
         return sectionHeader[section]
     }
 
-//    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-//        return sectionFooter[section]
-//    }
-
     // MARK: - Row Cell
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellDataSource[section].count
+        return (contentsDic[sectionHeader[section]] as! [String]).count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-        let content = cellDataSource[indexPath.section] as! [String]
-        cell.textLabel?.text = content[indexPath.row] as! String
+        
+        cell.textLabel?.text = (contentsDic[sectionHeader[indexPath.section]] as! [String])[indexPath.row]
         cell.contentView.backgroundColor = .lightGray
-   
-//        cell.layer.cornerRadius=10 //set corner radius here
-//        cell.layer.borderColor = UIColor.lightGray.cgColor  // set cell border color here
-//        cell.layer.borderWidth = 2 // set border width here
+
         return cell
     }
     
