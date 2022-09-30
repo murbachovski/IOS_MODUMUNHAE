@@ -57,7 +57,12 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         buttonInference.layer.cornerRadius = 10
         buttonInference.layer.borderWidth = 1
         buttonInference.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
+        buttonInference.backgroundColor = .white
         
+        buttonCorrection.layer.cornerRadius = 10
+        buttonCorrection.layer.borderWidth = 1
+        buttonCorrection.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
+        buttonCorrection.backgroundColor = .white
         
     }
   
