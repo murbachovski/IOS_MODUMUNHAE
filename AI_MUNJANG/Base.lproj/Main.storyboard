@@ -3774,15 +3774,27 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtH-eU-8el">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="52"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="52" id="cUn-WK-sfI"/>
+                                                        </constraints>
                                                         <color key="tintColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="문장 추론"/>
+                                                        <connections>
+                                                            <action selector="clickedInferenceButton:" destination="5QS-d4-fk0" eventType="touchUpInside" id="NgT-7i-5S7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13R-sF-9UK">
                                                         <rect key="frame" x="197" y="0.0" width="177" height="52"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="52" id="mnM-xZ-YIS"/>
+                                                        </constraints>
                                                         <color key="tintColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="문장 교정"/>
+                                                        <connections>
+                                                            <action selector="clickedCorrectionButton:" destination="5QS-d4-fk0" eventType="touchUpInside" id="aJR-ql-RxU"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -3845,6 +3857,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qD0-O6-fgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031.8840579710145" y="2287.5"/>
+        </scene>
+        <!--Inference View Controller-->
+        <scene sceneID="izF-Dt-Led">
+            <objects>
+                <viewController storyboardIdentifier="InferenceViewController" id="vIl-20-A5W" customClass="InferenceViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xgg-C7-2cm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FML-LB-YOj">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="INN-vb-ED9">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="INN-vb-ED9" id="uWm-tx-I0P">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ijt-o0-zrW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ijt-o0-zrW" firstAttribute="trailing" secondItem="FML-LB-YOj" secondAttribute="trailing" constant="20" id="hqC-V6-5FR"/>
+                            <constraint firstItem="FML-LB-YOj" firstAttribute="leading" secondItem="Ijt-o0-zrW" secondAttribute="leading" constant="20" id="r3a-yg-KMs"/>
+                            <constraint firstItem="Ijt-o0-zrW" firstAttribute="bottom" secondItem="FML-LB-YOj" secondAttribute="bottom" id="sII-2x-ReR"/>
+                            <constraint firstItem="FML-LB-YOj" firstAttribute="top" secondItem="Ijt-o0-zrW" secondAttribute="top" id="yXt-gq-vQF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="FML-LB-YOj" id="QOz-LS-MvE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5G-2q-LjM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1717" y="2288"/>
         </scene>
         <!--Munhae Test Quiz View Controller-->
         <scene sceneID="aAD-Ye-9YH">

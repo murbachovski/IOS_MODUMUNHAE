@@ -37,7 +37,8 @@ class AnalyzeViewController: UIViewController {
         if !Core.shared.isUserSubscription() {
             let tmpUseCount = UserDefaults.standard.integer(forKey: "tmpUseCount")
             print("😃 😃 😃 😃 😃 😃 😃 tmpUseCount:\(tmpUseCount)")
-            if tmpUseCount + 1 > 10{
+            //TODO: -횟수제한
+            if tmpUseCount + 1 > 100{
                 let alert = AlertService().alert(title: "구독", body: "사용 횟수 10회 초과 입니다.", cancelTitle: "확인", confirTitle: "구독하기") {
                     //이전 페이지로 이동
                    self.navigationController?.popViewController(animated: true)

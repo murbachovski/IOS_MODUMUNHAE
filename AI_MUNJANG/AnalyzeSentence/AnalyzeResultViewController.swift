@@ -66,7 +66,14 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         
     }
   
-
+    @IBAction func clickedInferenceButton(_ sender: Any) {
+        guard let inferenceViewController = self.storyboard?.instantiateViewController(withIdentifier: "InferenceViewController")  as? InferenceViewController else {return}
+        navigationController?.pushViewController(inferenceViewController, animated: true)
+    }
+    
+    @IBAction func clickedCorrectionButton(_ sender: Any) {
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == wordCollectionView {
             return arr.count
