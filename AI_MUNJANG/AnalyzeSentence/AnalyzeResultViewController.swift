@@ -26,7 +26,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     var analyzedEights : [String: Any] = [:]
     var analyzedDataEights : [[String : Any]] = [[:]]
     var pureSentence = ""
-    
+    var titleArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,8 +67,17 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     }
   
     @IBAction func clickedInferenceButton(_ sender: Any) {
-        guard let inferenceViewController = self.storyboard?.instantiateViewController(withIdentifier: "InferenceViewController")  as? InferenceViewController else {return}
-        navigationController?.pushViewController(inferenceViewController, animated: true)
+        
+        let url = "http://118.67.133.8/sen_infer/m" //문장 추론 접근용
+        let sen = titleArray.joined(separator: " VV ")
+        requestByInfer(url: url, sen: sen) { dicData in
+            DispatchQueue.main.async {
+                guard let inferenceViewController = self.storyboard?.instantiateViewController(withIdentifier: "InferenceViewController")  as? InferenceViewController else {return}
+                inferenceViewController.contentsData = dicData
+                self.navigationController?.pushViewController(inferenceViewController, animated: true)
+            }
+        }
+        
     }
     
     @IBAction func clickedCorrectionButton(_ sender: Any) {
@@ -107,8 +116,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
             cell.layer.masksToBounds = false
 
             
-            let titleArray = (originSentenceLabel.text)?.components(separatedBy: "  ✓ ")
-            cell.senTitleLabel.text = titleArray![indexPath.row]
+            titleArray = ((originSentenceLabel.text)?.components(separatedBy: "  ✓ "))!
+            cell.senTitleLabel.text = titleArray[indexPath.row]
             cell.senAdverbLabel.text = analyzedDataEights[indexPath.row]["문장확장"] as? String
             
             //관형사의 경우는 앞정보확장과 대상확장의 결합임

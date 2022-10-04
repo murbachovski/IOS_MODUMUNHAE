@@ -68,11 +68,17 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }else if indexPath.row == 1 {
             //8필터 AI 요청,
 //            let url = "http://118.67.133.8/eight/m" //Ai모델접근용
-            let url = "http://118.67.133.8/eight_logic/m" //단순 8필터 접근용
+//            let url = "http://118.67.133.8/eight_logic/m" //단순 8필터 접근용
+            let url = "http://118.67.133.8/sen_infer/m" //문장 추론 접근용
 //            let url = "http://127.0.0.1:5000/eight_logic/m"
-            let sen = "엄마는 저녁을 먹는다."
-            requestByEight(url:url, sen: sen) { resDic in
-                
+            let sen = "나는 학교에 가고 VV 엄마는 저녁을 먹고 있다."
+//            requestByEight(url:url, sen: sen) { resDic in
+//            print(resDic)
+//            }
+            requestByInfer(url: url, sen: sen) { dicData in
+                for i in dicData {
+                    print(i)
+                }
             }
         
         }else if indexPath.row == 2 {
@@ -174,7 +180,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }else if indexPath.row == 18 {
             //exampleAnotherMain
             guard let inferenceViewController = self.storyboard?.instantiateViewController(withIdentifier: "InferenceViewController")  as? InferenceViewController else {return}
-            inferenceViewController.modalPresentationStyle = .fullScreen
+//            inferenceViewController.modalPresentationStyle = .fullScreen
             self.present(inferenceViewController, animated: true)
         }
         

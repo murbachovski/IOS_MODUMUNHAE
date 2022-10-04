@@ -4,9 +4,9 @@ import UIKit
 class InferenceViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var contentsData: [[String : Any]] = [[:]]
     var contentsDic: [String : Any] = [:]
-    var sectionHeader: [String] = ["나는 학교에 가고", "엄마는 회사에 간다."]
+    var sectionHeader: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,11 +15,10 @@ class InferenceViewController: UIViewController {
         
         self.navigationItem.backButtonTitle = " "
         
-        contentsDic = ["나는 학교에 가고" :["나는 가고", "나는 학교에 가고"],
-                       "엄마는 회사에 간다." :["엄마는 가고", "엄마는 회사에 가고"]]
-        
-      
-
+      print(contentsData)
+        for i in contentsData {
+            sectionHeader.append(i["sen"] as! String)
+        }
     }
 }
 
@@ -36,19 +35,20 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     // MARK: - Row Cell
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (contentsDic[sectionHeader[section]] as! [String]).count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-        
-        cell.textLabel?.text = (contentsDic[sectionHeader[indexPath.section]] as! [String])[indexPath.row]
-        cell.contentView.backgroundColor = .lightGray
-
-        return cell
-    }
+    //10/4일 문장 추론 작업중~~
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//        return (contentsData[sectionHeader[section]]["Infer_sen"] as! [String]).count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
+//
+//        cell.textLabel?.text = (contentsData[sectionHeader[indexPath.section]]["Infer_sen"] as! [String])[indexPath.row]
+//        cell.contentView.backgroundColor = .lightGray
+//
+//        return cell
+//    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
