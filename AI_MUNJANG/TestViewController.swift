@@ -71,7 +71,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
 //            let url = "http://118.67.133.8/eight_logic/m" //단순 8필터 접근용
             let url = "http://118.67.133.8/sen_infer/m" //문장 추론 접근용
 //            let url = "http://127.0.0.1:5000/eight_logic/m"
-            let sen = "나는 학교에 가고 VV 엄마는 저녁을 먹고 있다."
+            let sen = "나는 학교에 가고 VV 수업을 들었다."
 //            requestByEight(url:url, sen: sen) { resDic in
 //            print(resDic)
 //            }
