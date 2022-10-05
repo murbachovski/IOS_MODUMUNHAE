@@ -5,7 +5,7 @@ class InferenceViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var contentsData: [[String : Any]] = [[:]]
-    var contentsDic: [String : Any] = [:]
+//    var contentsDic: [String : Any] = [:]
     var sectionHeader: [String] = []
 
     override func viewDidLoad() {
@@ -35,20 +35,21 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     // MARK: - Row Cell
-    //10/4일 문장 추론 작업중~~
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return (contentsData[sectionHeader[section]]["Infer_sen"] as! [String]).count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-//
-//        cell.textLabel?.text = (contentsData[sectionHeader[indexPath.section]]["Infer_sen"] as! [String])[indexPath.row]
-//        cell.contentView.backgroundColor = .lightGray
-//
-//        return cell
-//    }
+//    10/4일 문장 추론 작업중~~
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return (contentsData[section]["infer_sen"] as! [String]).count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
+
+        cell.textLabel?.text = (contentsData[indexPath.section]["infer_sen"] as! [String])[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
+        cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+        
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
