@@ -13,7 +13,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
 
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입","비밀번호 재설정", "비밀번호 재설정 상세","회원탈퇴","회원탈퇴 사유", "비밀번호 변경", "구독페이지", "DummyJson 사용", "displayName 변경 및 hearts 추가 그리고 진도율 변경", "exampleAnotherMain", "문장추론"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입","비밀번호 재설정", "비밀번호 재설정 상세","회원탈퇴","회원탈퇴 사유", "비밀번호 변경", "구독페이지", "DummyJson 사용", "displayName 변경 및 hearts 추가 그리고 진도율 변경", "exampleAnotherMain", "문장추론", "문장교정"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,6 +182,21 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             guard let inferenceViewController = self.storyboard?.instantiateViewController(withIdentifier: "InferenceViewController")  as? InferenceViewController else {return}
 //            inferenceViewController.modalPresentationStyle = .fullScreen
             self.present(inferenceViewController, animated: true)
+        }else if indexPath.row == 19 {
+//            let url = "http://118.67.133.8/sen_correction/m"
+            let url = "http://127.0.0.1:5000/sen_correction/m"
+            let sen = "나는 학교에 가고 엄마와 회사에 간다."
+            requestByCorrection(url: url, sen: sen) { dicData in
+                for i in dicData {
+                    print(i)
+                    DispatchQueue.main.async {
+                        guard let correctionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CorrectionViewController")  as? CorrectionViewController else {return}
+                        correctionViewController.dicData = dicData
+                        correctionViewController.originSentence = sen
+                        self.present(correctionViewController, animated: true)
+                    }
+                }
+            }
         }
         
         
