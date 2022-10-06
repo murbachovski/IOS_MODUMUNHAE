@@ -3911,7 +3911,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Tss-oJ-QvY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3926,7 +3926,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VvQ-ak-evA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6Ot-W2-xeD" firstAttribute="leading" secondItem="VvQ-ak-evA" secondAttribute="leading" constant="20" id="3j1-73-qR4"/>
                             <constraint firstItem="LNp-jC-S2e" firstAttribute="top" secondItem="VvQ-ak-evA" secondAttribute="top" constant="20" id="75d-sx-ffx"/>
