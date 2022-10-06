@@ -81,6 +81,22 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     }
     
     @IBAction func clickedCorrectionButton(_ sender: Any) {
+        let url = "http://118.67.133.8/sen_correction/m"
+//        let url = "http://127.0.0.1:5000/sen_correction/m"
+//        let sen = "나는 학교에 가고 엄마와 회사에 간다."
+        let sen = titleArray.joined(separator: " ")
+        
+        requestByCorrection(url: url, sen: sen) { dicData in
+            for i in dicData {
+                print(i)
+                DispatchQueue.main.async {
+                    guard let correctionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CorrectionViewController")  as? CorrectionViewController else {return}
+                    correctionViewController.dicData = dicData
+                    correctionViewController.originSentence = sen
+                    self.present(correctionViewController, animated: true)
+                }
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
