@@ -42,7 +42,7 @@ func requestByEight(url:String, sen:String, completion: @escaping ([String : Any
                 }
                 print("")
                 print("===============================")
-                print("[ViewController >> Json String to Dictionary]")
+                print("[ViewController,😀😀😀requestByEight >> Json String to Dictionary]")
                 print("dicData : ", dicData)
                 print("result : ", dicData["result"] ?? "")
                 
@@ -103,7 +103,7 @@ func requestByDanmun(url:String, sen:String, completion: @escaping ([String]) ->
                 }
                 print("")
                 print("===============================")
-                print("[ViewController >> Json String to Dictionary]")
+                print("[ViewController,😁😁😁requestByDanmun >> Json String to Dictionary]")
                 print("dicData : ", dicData)
                 print("===============================")
                 print("")
@@ -155,7 +155,7 @@ func requestByKiwi(url:String, sen:String, completion: @escaping ([String]) -> V
                 }
                 print("")
                 print("===============================")
-                print("[ViewController >> Json String to Dictionary]")
+                print("[ViewController, 🥹🥹🥹requestByKiwi >> Json String to Dictionary]")
                 print("dicData : ", dicData)
                 print("===============================")
                 print("")
@@ -218,7 +218,7 @@ func requestByInfer(url:String, sen:String, completion: @escaping ([[String : An
                 }
                 print("")
                 print("===============================")
-                print("[ViewController >> Json String to Dictionary]")
+                print("[ViewController, 😁😁😁convertStringToDictionary >> Json String to Dictionary]")
                 print("dicData : ", dicData)
                 print("===============================")
                 print("")
@@ -263,7 +263,7 @@ func requestByCorrection(url:String, sen:String, completion: @escaping ([String 
                 }
                 print("")
                 print("===============================")
-                print("[ViewController >> Json String to Dictionary]")
+                print("[ViewController, 😆😆😆requestByCorrection >> Json String to Dictionary]")
                 print("dicData : ", dicData)
                 print("===============================")
                 print("")
