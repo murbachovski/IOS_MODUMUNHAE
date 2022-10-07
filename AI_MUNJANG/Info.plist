@@ -22,5 +22,7 @@
 	<string>Main_ipad</string>
 	<key>UIMainStoryboardFile~iphone</key>
 	<string>Main</string>
+	<key>UIStatusBarHidden~ipad</key>
+	<false/>
 </dict>
 </plist>
