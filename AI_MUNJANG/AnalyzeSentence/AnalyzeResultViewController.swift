@@ -93,11 +93,17 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
                     guard let correctionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CorrectionViewController")  as? CorrectionViewController else {return}
                     correctionViewController.dicData = dicData
                     correctionViewController.originSentence = sen
+                    correctionViewController.modalPresentationStyle = .fullScreen
                     self.present(correctionViewController, animated: true)
                 }
             }
         }
     }
+    
+    @IBAction func clickedClose(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == wordCollectionView {

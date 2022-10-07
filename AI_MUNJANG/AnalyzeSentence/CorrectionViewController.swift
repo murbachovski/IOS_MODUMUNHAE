@@ -85,6 +85,10 @@ class CorrectionViewController: UIViewController {
         let attributedText = NSMutableAttributedString(string: changedSentence)
         attributedText.addAttribute(NSAttributedString.Key.underlineStyle , value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(startIndexOfChangedWord!, changedWord.count))
         
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 6
+        attributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedText.length))
+        
         questionLabel.attributedText = attributedText
     }
     
@@ -125,13 +129,22 @@ class CorrectionViewController: UIViewController {
         }
          
         alertController.addTextField {
-            (txtUserInput) -> Void in
-            inputTextField = txtUserInput
+            (tf) -> Void in
+            inputTextField = tf
+            let heightConstraint = NSLayoutConstraint(item: tf, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40)
+            tf.addConstraint(heightConstraint)
+            tf.font = UIFont.boldSystemFont(ofSize: 24)
+            tf.textColor = hexStringToUIColor(hex: Constants.primaryColor)
         }
         
         alertController.addAction(changeAction)
         alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
+//        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true) {
+            UIView.animate(withDuration: 0.5, animations: {
+                alertController.view.center = CGPoint(x: alertController.view.center.x, y: alertController.view.center.y + 100)
+               })
+        }
 
     }
 
