@@ -416,6 +416,91 @@
             </objects>
             <point key="canvasLocation" x="4257.971014492754" y="807.58928571428567"/>
         </scene>
+        <!--Dummy Main View Controller-->
+        <scene sceneID="lk7-HL-kpw">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2za-Um-2bj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="DummyMainViewController" id="ksX-cY-1GT" customClass="DummyMainViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0WP-Qg-5gs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ezC-wj-dGh">
+                                <rect key="frame" x="20" y="214" width="374" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIK-8Z-wMm">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="철자력">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickedSpell:" destination="ksX-cY-1GT" eventType="touchUpInside" id="kmr-3e-PLg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d1-zi-kCN">
+                                        <rect key="frame" x="0.0" y="62" width="374" height="52"/>
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="어휘력">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ClickedVoca:" destination="ksX-cY-1GT" eventType="touchUpInside" id="Fan-DR-9lG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9So-0K-2It">
+                                        <rect key="frame" x="0.0" y="124" width="374" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="문장력">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ClickedSentence:" destination="ksX-cY-1GT" eventType="touchUpInside" id="TAk-mt-PXu"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DN-8I-aMt">
+                                        <rect key="frame" x="0.0" y="186" width="374" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="문맥력">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ClickedContext:" destination="ksX-cY-1GT" eventType="touchUpInside" id="ibB-L6-unk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne6-e9-17o">
+                                        <rect key="frame" x="0.0" y="248" width="374" height="52"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="주제력">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ClickedTopic:" destination="ksX-cY-1GT" eventType="touchUpInside" id="GLj-Zg-3WP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="gYr-cL-yoi"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="34W-KK-SrN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ezC-wj-dGh" firstAttribute="top" secondItem="34W-KK-SrN" secondAttribute="top" constant="170" id="Frt-16-hxw"/>
+                            <constraint firstItem="34W-KK-SrN" firstAttribute="trailing" secondItem="ezC-wj-dGh" secondAttribute="trailing" constant="20" id="OF0-qO-mB3"/>
+                            <constraint firstItem="ezC-wj-dGh" firstAttribute="leading" secondItem="34W-KK-SrN" secondAttribute="leading" constant="20" id="eZX-tz-aj5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="5084" y="809"/>
+        </scene>
         <!--Test View Controller-->
         <scene sceneID="g39-ML-jqZ">
             <objects>
@@ -4624,13 +4709,11 @@
     </scenes>
     <designables>
         <designable name="6Ot-W2-xeD">
-            <size key="intrinsicContentSize" width="58" height="28"/>
+            <size key="intrinsicContentSize" width="41.5" height="19"/>
         </designable>
-        <designable name="F7J-g9-Bvd">
-            <size key="intrinsicContentSize" width="8" height="8"/>
-        </designable>
+        <designable name="F7J-g9-Bvd"/>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
@@ -4657,6 +4740,9 @@
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

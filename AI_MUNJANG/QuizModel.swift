@@ -7,6 +7,8 @@ import Foundation
 
 // MARK: - QuizContent
 struct QuizContent: Codable {
+    let header: String
+    let level: String
     let id: String
     let type: String
     let section:Int
@@ -18,6 +20,8 @@ struct QuizContent: Codable {
     let result, imageName: String?
 
     enum CodingKeys: String, CodingKey {
+        case header: "Header"
+        case level: "Level"
         case id = "ID"
         case type = "Type"
         case mission = "Mission"

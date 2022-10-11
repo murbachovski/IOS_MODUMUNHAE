@@ -13,7 +13,7 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
 
     
-    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입","비밀번호 재설정", "비밀번호 재설정 상세","회원탈퇴","회원탈퇴 사유", "비밀번호 변경", "구독페이지", "DummyJson 사용", "displayName 변경 및 hearts 추가 그리고 진도율 변경", "exampleAnotherMain", "문장추론", "문장교정", "googleCrash"]
+    var tableViewItems = ["단문AI 요청", "8필터AI 요청", "Adaptive View", "OnBoarding", "공통 UI", "로그인 페이지","공통 팝업","약관등","회원가입","비밀번호 재설정", "비밀번호 재설정 상세","회원탈퇴","회원탈퇴 사유", "비밀번호 변경", "구독페이지", "DummyJson 사용", "displayName 변경 및 hearts 추가 그리고 진도율 변경", "exampleAnotherMain", "문장추론", "문장교정", "googleCrash", "더미메인"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -199,7 +199,13 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             }
         }else if indexPath.row == 20 {
             fatalError("Crash was triggered")
+        }else if indexPath.row == 21 {
+            //exampleAnotherMain
+            guard let dummyMainViewController = self.storyboard?.instantiateViewController(withIdentifier: "DummyMainViewController")  as? DummyMainViewController else {return}
+//            dummyMainViewController.modalPresentationStyle = .fullScreen
+            self.present(dummyMainViewController, animated: true)
         }
+        
     }
     
 

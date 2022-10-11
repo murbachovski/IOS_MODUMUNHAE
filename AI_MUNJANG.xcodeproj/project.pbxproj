@@ -44,6 +44,7 @@
 		842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */; };
 		842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */; };
 		8432B3B728DD6B95005E6583 /* videoContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8432B3B628DD6B95005E6583 /* videoContents.json */; };
+		8433AA6628F514B70044061A /* DummyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433AA6528F514B70044061A /* DummyMainViewController.swift */; };
 		843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27BB28A4CA9900E36E33 /* BannerCell.swift */; };
 		843F27BF28A5E74200E36E33 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27BE28A5E74200E36E33 /* success.mp3 */; };
 		843F27C128A5E97300E36E33 /* failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27C028A5E97300E36E33 /* failed.mp3 */; };
@@ -161,6 +162,7 @@
 		842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarView.swift; sourceTree = "<group>"; };
 		842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNaviBarView.xib; sourceTree = "<group>"; };
 		8432B3B628DD6B95005E6583 /* videoContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoContents.json; sourceTree = "<group>"; };
+		8433AA6528F514B70044061A /* DummyMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyMainViewController.swift; sourceTree = "<group>"; };
 		843F27BB28A4CA9900E36E33 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		843F27BE28A5E74200E36E33 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
 		843F27C028A5E97300E36E33 /* failed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = failed.mp3; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */,
 				84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */,
 				843F27BB28A4CA9900E36E33 /* BannerCell.swift */,
+				8433AA6528F514B70044061A /* DummyMainViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 				8474DD0E287D1A52008275FC /* CustomEmailView.swift in Sources */,
 				8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */,
 				840071D3287BE30500B07551 /* RoundedView.swift in Sources */,
+				8433AA6628F514B70044061A /* DummyMainViewController.swift in Sources */,
 				C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */,
 				8455F0C528BCA40A00613946 /* AnalyzeCollectionViewCell.swift in Sources */,
 				845D5A3C28C1C86100CB67DE /* MunhaeTestViewController.swift in Sources */,

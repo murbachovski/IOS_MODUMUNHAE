@@ -85,7 +85,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizIndex = 0
     var isCurrentMissionCompleted = false
-    lazy var currentQuiz = QuizContent(id: "", type: "", section: 0, missionSubject: nil, mission: 0, title: "", jimun: "", example: "", result: nil, imageName: nil)
+    lazy var currentQuiz = QuizContent(header: "", level: "", id: "", type: "", section: 0, missionSubject: nil, mission: 0, title: "", jimun: "", example: "", result: nil, imageName: nil)
 
     var answerButtons : [UIButton] = []
     var answerButtonImages : [UIImageView] = []
