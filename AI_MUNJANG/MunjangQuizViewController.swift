@@ -85,7 +85,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizIndex = 0
     var isCurrentMissionCompleted = false
-    lazy var currentQuiz = QuizContent(header: "", level: "", id: "", type: "", section: 0, missionSubject: nil, mission: 0, title: "", jimun: "", example: "", result: nil, imageName: nil)
+    lazy var currentQuiz = QuizContent(id: "", type: "", section: 0, missionSubject: nil, mission: 0, title: "", jimun: "", example: "", result: nil, imageName: nil)
 
     var answerButtons : [UIButton] = []
     var answerButtonImages : [UIImageView] = []
@@ -96,7 +96,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     let runLoop = CFRunLoopGetCurrent()
     
     var runloopStop = false
-    var isBalwhaSound = true
+//    var isBalwhaSound = true
     
     
     @IBOutlet weak var balwhaButton: UIButton!
@@ -153,12 +153,13 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         hintButton.layer.borderWidth = 1
         hintButton.layer.borderColor = UIColor.lightGray.cgColor
         
-        isBalwhaSound = UserDefaults.standard.bool(forKey: "balwhaSound")
-        if isBalwhaSound == true{
-            balwhaButton.setTitle("퀴즈 음성 ON", for: .normal)
-        }else{
-            balwhaButton.setTitle("퀴즈 음성 OFF", for: .normal)
-        }
+        //문제 읽어 주는 사운드
+//        isBalwhaSound = UserDefaults.standard.bool(forKey: "balwhaSound")
+//        if isBalwhaSound == true{
+//            balwhaButton.setTitle("퀴즈 음성 ON", for: .normal)
+//        }else{
+//            balwhaButton.setTitle("퀴즈 음성 OFF", for: .normal)
+//        }
 //        setupUI()
         progressBarloc = Float(currentQuizIndex + 1) / Float(currentQuizPool.count)
         quizProgressView.setProgress(progressBarloc, animated: true)
@@ -199,23 +200,25 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
         
    
-        if isBalwhaSound == true {
-            let tts = TTS()
-            //TTS가 시작시 버튼 비활성화
-            changeButtonStatus(false)
             
-            tts.setText(currentQuiz.title) {
-                //TTS가 완료된 후 버튼 활성화
-                self.changeButtonStatus(true)
-                
-                if self.currentQuiz.type == "글" {
-                    self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!, isBalwhaOn: true)
-                }
-
-            }
-        }else{
-            self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!, isBalwhaOn: false)
-        }
+        self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!, isBalwhaOn: false)
+//        if isBalwhaSound == true {
+//            let tts = TTS()
+//            //TTS가 시작시 버튼 비활성화
+//            changeButtonStatus(false)
+//
+//            tts.setText(currentQuiz.title) {
+//                //TTS가 완료된 후 버튼 활성화
+//                self.changeButtonStatus(true)
+//
+//                if self.currentQuiz.type == "글" {
+//                    self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!, isBalwhaOn: true)
+//                }
+//
+//            }
+//        }else{
+//            self.typeAnimate(label: self.quizTextLabel, str : self.currentQuiz.jimun!, isBalwhaOn: false)
+//        }
         
         
         
@@ -304,18 +307,18 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
 
-   
-    @IBAction func clickedBalwhaButton(_ sender: Any) {
-        isBalwhaSound = !isBalwhaSound
-        if isBalwhaSound == true{
-            balwhaButton.setImage(UIImage(systemName: "speaker"), for: .normal)
-            balwhaButton.setTitle("퀴즈 음성 ON", for: .normal)
-        }else{
-            balwhaButton.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
-            balwhaButton.setTitle("퀴즈 음성 OFF", for: .normal)
-        }
-        UserDefaults.standard.set(isBalwhaSound, forKey: "balwhaSound")
-    }
+        //문제 읽어 주는 사운드
+//    @IBAction func clickedBalwhaButton(_ sender: Any) {
+//        isBalwhaSound = !isBalwhaSound
+//        if isBalwhaSound == true{
+//            balwhaButton.setImage(UIImage(systemName: "speaker"), for: .normal)
+//            balwhaButton.setTitle("퀴즈 음성 ON", for: .normal)
+//        }else{
+//            balwhaButton.setImage(UIImage(systemName: "speaker.slash"), for: .normal)
+//            balwhaButton.setTitle("퀴즈 음성 OFF", for: .normal)
+//        }
+//        UserDefaults.standard.set(isBalwhaSound, forKey: "balwhaSound")
+//    }
     
     @IBAction func clickedBack(_ sender: Any) {
         dismiss(animated: true)

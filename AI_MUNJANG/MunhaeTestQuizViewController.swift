@@ -85,8 +85,6 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     var answerButtonImages : [UIImageView] = []
     var progressBarloc: Float = 0
     
-    var isBalwhaSound = true
-    
     var testResult: [String: Double] = [
         "글자":0.0,
         "낱말":0.0,
