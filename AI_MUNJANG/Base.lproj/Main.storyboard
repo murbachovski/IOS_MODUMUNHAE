@@ -4623,6 +4623,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="6Ot-W2-xeD">
+            <size key="intrinsicContentSize" width="58" height="28"/>
+        </designable>
         <designable name="F7J-g9-Bvd">
             <size key="intrinsicContentSize" width="8" height="8"/>
         </designable>

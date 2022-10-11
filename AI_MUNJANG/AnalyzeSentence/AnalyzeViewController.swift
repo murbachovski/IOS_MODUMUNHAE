@@ -23,7 +23,7 @@ class AnalyzeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        analyzeSentenceCustomTextView.changeRestrictedCharacters(res: 300)
         // Do any additional setup after loading the view.
         
         titleLabel.font = UIFont(name: "NanumSquareEB", size: 18)
@@ -81,8 +81,8 @@ class AnalyzeViewController: UIViewController {
                 self.indicator.startAnimating()
             }
         }
-        let urlString = "http://118.67.133.8/danmun/m"
-//        let urlString = "http://127.0.0.1:5000/danmun/m"
+//        let urlString = "http://118.67.133.8/danmun/m"
+        let urlString = "http://127.0.0.1:5000/danmun/m"
         
         requestByDanmun(url: urlString, sen: senToAnalyze) { results in
             print("단문results:\(results)")

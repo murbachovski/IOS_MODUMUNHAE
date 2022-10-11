@@ -33,7 +33,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         originalSentence = (analyzedData["sen"] as! String)
         pureSentence = (analyzedData["sen"] as! String).replacingOccurrences(of: "VV", with: " ")
         dividedSentences = originalSentence.components(separatedBy: "VV")
-//        analyzedEights = analyzedData["eight_div_sen"] as! [String:Any]
+//        analyzedEights = analyzedData["eight_div_senretrieveStopStepByBasic"] as! [String:Any]
 //        print("analyzedData_eight_div_sen:\(analyzedData["eight_div_sen"])")
         guard let temp = analyzedData["eight_div_sen"] as? [[String : Any]] else {return}
         analyzedDataEights = temp

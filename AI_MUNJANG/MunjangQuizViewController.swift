@@ -121,8 +121,11 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         quizTextLabel.text = ""
         // Do any additional setup after loading the view.
-        currentQuizIndex = retrieveStopStepByBasic(gyung: currentGyung)
+        if currentGyung != "1경" {
+            currentQuizIndex = retrieveStopStepByBasic(gyung: currentGyung)
+        }
         currentQuiz = currentQuizPool[currentQuizIndex]
+        
         
         
         print("CurrentQuiz : \(currentQuiz)")
@@ -477,11 +480,16 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func clickedStopMessageStop(_ sender: Any) {
-        let completedMission = retrieveCurrentMission(gyung: "\(currentQuiz.section)경")
-        if currentQuiz.mission > completedMission {
-            saveStopStepByBasic(gyung: "\(currentQuiz.section)경", step: currentQuizIndex)
-            print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경"))")
+        if currentGyung == "1경" {
+//            dismiss(animated: true)
+        }else {
+            let completedMission = retrieveCurrentMission(gyung: "\(currentQuiz.section)경")
+            if currentQuiz.mission > completedMission {
+                saveStopStepByBasic(gyung: "\(currentQuiz.section)경", step: currentQuizIndex)
+                print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경"))")
+            }
         }
+        
 
         dismiss(animated: true)
     }
