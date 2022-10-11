@@ -12,22 +12,12 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     @IBOutlet var eightCollectionView: UICollectionView!
     
     @IBOutlet var titleLabelTopHeight: NSLayoutConstraint!
-    //
-    var sectionOne :QuizContents = []
-    var sectionTwo :QuizContents = []
-    var sectionThree :QuizContents = []
-    var sectionFour :QuizContents = []
-    var sectionFive :QuizContents = []
-    var sectionSix :QuizContents = []
-    var sectionSeven :QuizContents = []
-    var sectionEight :QuizContents = []
     
     var sectionTotal :[QuizContents] = []
     
     var dataArray :Array<UIImage> = []
-    //
     
-    
+    var currentLevel = "Basic"
     let munjangElements:[String] = ["주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     let subElements: [String] = ["대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     
@@ -58,7 +48,12 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return munjangElements.count
+        if currentLevel == "Basic" {
+            return munjangElements.count
+        }else if currentLevel == "Advanced" {
+            return 1
+        }
+            return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -70,19 +65,31 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         cell.layer.shadowOffset = CGSize(width: 1, height: 1)
         cell.layer.shadowRadius = 2
         cell.layer.masksToBounds = false
-        
-        cell.digitTitle.text = "\(indexPath.row + 1)경"
-        
-        cell.mainTitle.text = munjangElements[indexPath.row]
-        cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
-        cell.subTitle.text = subElements[indexPath.row]
-        
-        if !Core.shared.isUserSubscription() {
-            if indexPath.row != 0 {
-                cell.lockImgView.image = UIImage(named: "icLock32Px")
+        if currentLevel == "Basic" {
+            cell.digitTitle.text = "\(indexPath.row + 1)경"
+            
+            cell.mainTitle.text = munjangElements[indexPath.row]
+            cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
+            cell.subTitle.text = subElements[indexPath.row]
+            
+            if !Core.shared.isUserSubscription() {
+                if indexPath.row != 0 {
+                    cell.lockImgView.image = UIImage(named: "icLock32Px")
+                }
+            }
+        }else {
+            cell.digitTitle.text = "\(indexPath.row + 1). 일상"
+            
+            cell.mainTitle.text = "사실"
+            cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
+            cell.subTitle.text = "의견"
+            
+            if !Core.shared.isUserSubscription() {
+                if indexPath.row != 0 {
+                    cell.lockImgView.image = UIImage(named: "icLock32Px")
+                }
             }
         }
-       
         return cell
     }
     

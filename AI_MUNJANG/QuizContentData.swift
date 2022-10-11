@@ -42,38 +42,42 @@ class QuizContentData {
         guard let quizData = readLocalFile(forName:fileName) else { print("quizData is null"); return}
         guard let quizContents = try? JSONDecoder().decode(QuizContents.self, from: quizData) else { print("quizContens is null");  return }
         
-        for  content in quizContents {
-
-            if content.section == 1 {
-                sectionZero.append(content)
+        for content in quizContents {
+            if content.level == "Basic" {
+                if content.section == 1 {
+                    sectionZero.append(content)
+                }
+                if content.section == 2 {
+                    sectionOne.append(content)
+                }
+                if content.section == 3 {
+                    sectionTwo.append(content)
+                }
+                if content.section == 4 {
+                    sectionThree.append(content)
+                }
+                if content.section == 5 {
+                    sectionFour.append(content)
+                }
+                if content.section == 6 {
+                    sectionFive.append(content)
+                }
+                if content.section == 7 {
+                    sectionSix.append(content)
+                }
+                if content.section == 8 {
+                    sectionSeven.append(content)
+                }
+                if content.section == 9 {
+                    sectionEight.append(content)
+                }
+                sectionTotal = [sectionZero, sectionOne, sectionTwo, sectionThree, sectionFour, sectionFive, sectionSix, sectionSeven, sectionEight]
+            }else {
+                if content.section == 1 {
+                    sectionZero.append(content)
+                }
+                sectionTotal = [sectionZero]
             }
-            if content.section == 2 {
-                sectionOne.append(content)
-            }
-            if content.section == 3 {
-                sectionTwo.append(content)
-            }
-            if content.section == 4 {
-                sectionThree.append(content)
-            }
-            if content.section == 5 {
-                sectionFour.append(content)
-            }
-            if content.section == 6 {
-                sectionFive.append(content)
-            }
-            if content.section == 7 {
-                sectionSix.append(content)
-            }
-            if content.section == 8 {
-                sectionSeven.append(content)
-            }
-            if content.section == 9 {
-                sectionEight.append(content)
-            }
-
-            sectionTotal = [sectionZero, sectionOne, sectionTwo, sectionThree, sectionFour, sectionFive, sectionSix, sectionSeven, sectionEight]
-            
         }
     }
     

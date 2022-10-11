@@ -235,12 +235,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 
                 if indexPath.row == 0 {
                     
-                }else if indexPath.row == 1 {
+                }else if indexPath.row == 1 {//기초문해
                     guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
+                    munjangEightViewController.currentLevel = "Basic"
                     self.navigationController?.pushViewController(munjangEightViewController, animated: true)
-                    
-                }else if indexPath.row == 2 {
-                    
+                }else if indexPath.row == 2 {//실질문해
+                    guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
+                    munjangEightViewController.currentLevel = "Advanced"
+                    self.navigationController?.pushViewController(munjangEightViewController, animated: true)
                 }else {
                     self.clickedMunhaeVideo()
                 }
