@@ -11,6 +11,7 @@ class QuizContentData {
 
     var isDummyContensts:Bool = false
     var sectionAdvancedZero :QuizContents = []
+    var sectionAdvancedOne :QuizContents = []
     var sectionZero :QuizContents = []
     var sectionOne :QuizContents = []
     var sectionTwo :QuizContents = []
@@ -78,7 +79,10 @@ class QuizContentData {
                 if content.section == 1 {
                     sectionAdvancedZero.append(content)
                 }
-                sectionAdvancedTotal = [sectionAdvancedZero]
+                if content.section == 2 {
+                    sectionAdvancedOne.append(content)
+                }
+                sectionAdvancedTotal = [sectionAdvancedZero, sectionAdvancedOne]
             }
         }
     }

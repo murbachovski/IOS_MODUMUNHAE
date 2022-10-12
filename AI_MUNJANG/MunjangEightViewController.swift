@@ -51,7 +51,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         if currentLevel == "Basic" {
             return munjangElements.count
         }else if currentLevel == "Advanced" {
-            return 1
+            return QuizContentData.shared.sectionAdvancedTotal.count
         }
             return 1
     }
@@ -129,7 +129,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
         if num + 1 != 1 {
-            let toLearningMission = retrieveCurrentMission(gyung: "\(num + 1)경", level: currentLevel)
+            let toLearningMission = retrieveCurrentMission(section: "\(num + 1)경", level: currentLevel)
                 munJangEightDetailViewController.toLearningMission = toLearningMission
             }
         if currentLevel == "Basic" {

@@ -21,7 +21,7 @@ protocol EightDetailDelegate: AnyObject {
 
 class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
-    var currentGyung = ""
+    var currentSection = ""
     
     @IBOutlet var quizProcessLabel: UILabel!
     
@@ -121,11 +121,11 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         quizTextLabel.text = ""
         // Do any additional setup after loading the view.
-        if currentGyung != "1경" {
+        if currentSection != "1경" {
             if currentQuiz.level == "Basic" {
-                currentQuizIndex = retrieveStopStepByBasic(gyung: currentGyung, level: "Basic")
+                currentQuizIndex = retrieveStopStepByBasic(section: currentSection, level: "Basic")
             }else{
-                currentQuizIndex = retrieveStopStepByBasic(gyung: "1경", level: "Advanced")
+                currentQuizIndex = retrieveStopStepByBasic(section: "1경", level: "Advanced")
             }
         }
         currentQuiz = currentQuizPool[currentQuizIndex]
@@ -467,7 +467,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
                 dataDic = ["1경": completedMission ]
                 UserDefaults.standard.set(dataDic, forKey: "tourUserData")
             }else {// 그 와에 데이터는 fireStore연동!!
-                saveCurrentMission(gyung: "\(currentQuiz.section)경" , level: currentQuiz.level, missionNum: currentQuiz.mission)
+                saveCurrentMission(section: "\(currentQuiz.section)경" , level: currentQuiz.level, missionNum: currentQuiz.mission)
             }
         dismiss(animated: true) {
             self.delegate?.eightDetailDelegate()
@@ -487,13 +487,13 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func clickedStopMessageStop(_ sender: Any) {
-        if currentGyung == "1경" {
+        if currentSection == "1" {
 //            dismiss(animated: true)
         }else {
-            let completedMission = retrieveCurrentMission(gyung: "\(currentQuiz.section)경", level: currentQuiz.level)
+            let completedMission = retrieveCurrentMission(section: "\(currentQuiz.section)", level: currentQuiz.level)
             if currentQuiz.mission > completedMission {
-                saveStopStepByBasic(gyung: "\(currentQuiz.section)경", level: currentQuiz.level, step: currentQuizIndex)
-                print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경", level: currentQuiz.level))")
+                saveStopStepByBasic(section: "\(currentQuiz.section)", level: currentQuiz.level, step: currentQuizIndex)
+                print("조회된: \(retrieveStopStepByBasic(section: "\(currentQuiz.section)", level: currentQuiz.level))")
             }
         }
         

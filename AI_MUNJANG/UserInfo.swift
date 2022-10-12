@@ -72,8 +72,8 @@ class DataFromFirestore {
         }
         
         let learningDataDic: [String:[String : Int]] = [
-            "Basic":["2경" : 0,"3경" : 0, "4경" : 0, "5경" : 0, "6경" : 0, "7경" : 0, "8경" : 0],
-            "Advanced":["1경" : 0]
+            "Basic":["2" : 0,"3" : 0, "4" : 0, "5" : 0, "6" : 0, "7" : 0, "8" : 0],
+            "Advanced":["1" : 0, "2" : 0]
         ]
         let path = db.collection("users").document(userID)
         path.updateData(["userinfo": ["displayName":userInfo.displayName,
