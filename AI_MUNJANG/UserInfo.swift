@@ -11,7 +11,7 @@ import FirebaseFirestore
 struct UserInfo: Codable {
     
     let displayName: String
-    let learningProgress: Dictionary<String, Int>
+    let learningProgress: Dictionary<String, Dictionary<String,Int>>
     let numberOfHearts: Int
     
 }

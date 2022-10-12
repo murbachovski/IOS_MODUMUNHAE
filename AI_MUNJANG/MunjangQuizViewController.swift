@@ -124,6 +124,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         if currentGyung != "1경" {
             if currentQuiz.level == "Basic" {
                 currentQuizIndex = retrieveStopStepByBasic(gyung: currentGyung, level: "Basic")
+            }else{
+                currentQuizIndex = retrieveStopStepByBasic(gyung: "1경", level: "Advanced")
             }
         }
         currentQuiz = currentQuizPool[currentQuizIndex]
