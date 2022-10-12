@@ -35,7 +35,6 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     // MARK: - Row Cell
-//    10/4일 문장 추론 작업중~~
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return (contentsData[section]["infer_sen"] as! [String]).count

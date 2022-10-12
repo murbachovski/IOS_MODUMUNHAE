@@ -177,11 +177,13 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
             guard let MunjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
             MunjangEightViewController.modalPresentationStyle = .fullScreen
             self.present(MunjangEightViewController, animated: true)
+            
         }else if indexPath.row == 18 {
             //exampleAnotherMain
             guard let inferenceViewController = self.storyboard?.instantiateViewController(withIdentifier: "InferenceViewController")  as? InferenceViewController else {return}
 //            inferenceViewController.modalPresentationStyle = .fullScreen
             self.present(inferenceViewController, animated: true)
+            
         }else if indexPath.row == 19 {
 //            let url = "http://118.67.133.8/sen_correction/m"
             let url = "http://127.0.0.1:5000/sen_correction/m"

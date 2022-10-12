@@ -10,6 +10,7 @@ class QuizContentData {
     static let shared = QuizContentData()
 
     var isDummyContensts:Bool = false
+    var sectionAdvancedZero :QuizContents = []
     var sectionZero :QuizContents = []
     var sectionOne :QuizContents = []
     var sectionTwo :QuizContents = []
@@ -21,6 +22,7 @@ class QuizContentData {
     var sectionEight :QuizContents = []
 
     var sectionTotal :[QuizContents] = []
+    var sectionAdvancedTotal :[QuizContents] = []
     
     private init() {
         loadingContents(fileName:"quizContents")
@@ -74,9 +76,9 @@ class QuizContentData {
                 sectionTotal = [sectionZero, sectionOne, sectionTwo, sectionThree, sectionFour, sectionFive, sectionSix, sectionSeven, sectionEight]
             }else {
                 if content.section == 1 {
-                    sectionZero.append(content)
+                    sectionAdvancedZero.append(content)
                 }
-                sectionTotal = [sectionZero]
+                sectionAdvancedTotal = [sectionAdvancedZero]
             }
         }
     }

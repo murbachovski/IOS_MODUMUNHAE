@@ -122,7 +122,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         quizTextLabel.text = ""
         // Do any additional setup after loading the view.
         if currentGyung != "1경" {
-            currentQuizIndex = retrieveStopStepByBasic(gyung: currentGyung)
+            if currentQuiz.level == "Basic" {
+                currentQuizIndex = retrieveStopStepByBasic(gyung: currentGyung, level: "Basic")
+            }
         }
         currentQuiz = currentQuizPool[currentQuizIndex]
         
@@ -463,7 +465,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
                 dataDic = ["1경": completedMission ]
                 UserDefaults.standard.set(dataDic, forKey: "tourUserData")
             }else {// 그 와에 데이터는 fireStore연동!!
-                saveCurrentMission(gyung: "\(currentQuiz.section)경" , missionNum: currentQuiz.mission)
+                saveCurrentMission(gyung: "\(currentQuiz.section)경" , level: currentQuiz.level, missionNum: currentQuiz.mission)
             }
         dismiss(animated: true) {
             self.delegate?.eightDetailDelegate()
@@ -486,10 +488,10 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         if currentGyung == "1경" {
 //            dismiss(animated: true)
         }else {
-            let completedMission = retrieveCurrentMission(gyung: "\(currentQuiz.section)경")
+            let completedMission = retrieveCurrentMission(gyung: "\(currentQuiz.section)경", level: currentQuiz.level)
             if currentQuiz.mission > completedMission {
-                saveStopStepByBasic(gyung: "\(currentQuiz.section)경", step: currentQuizIndex)
-                print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경"))")
+                saveStopStepByBasic(gyung: "\(currentQuiz.section)경", level: currentQuiz.level, step: currentQuizIndex)
+                print("조회된: \(retrieveStopStepByBasic(gyung: "\(currentQuiz.section)경", level: currentQuiz.level))")
             }
         }
         

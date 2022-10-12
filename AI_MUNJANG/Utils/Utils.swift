@@ -64,32 +64,45 @@ func changeLoginNC() { //LoginNavigationController
     ad.window?.rootViewController = vc
 }
 
-func saveStopStepByBasic(gyung: String, step: Int) {
+func saveStopStepByBasic(gyung: String, level: String, step: Int) {
     var dataDic: [String : Int] = [:]
-    dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
-    dataDic.updateValue(step, forKey: gyung)
-    print(dataDic)
-    UserDefaults.standard.set(dataDic, forKey: "basicStopStep")
+    if level == "Basic" {
+        dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
+        dataDic.updateValue(step, forKey: gyung)
+        print(dataDic)
+        UserDefaults.standard.set(dataDic, forKey: "basicStopStep")
+    }else {
+        dataDic = UserDefaults.standard.object(forKey: "advancedStopStep") as! [String : Int]
+        dataDic.updateValue(step, forKey: gyung)
+        print(dataDic)
+        UserDefaults.standard.set(dataDic, forKey: "advancedStopStep")
+    }
 }
 
-func retrieveStopStepByBasic(gyung: String) -> Int {
+func retrieveStopStepByBasic(gyung: String, level: String) -> Int {
     var dataDic: [String : Int] = [:]
-    dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
+    if level == "Basic" {
+        dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
+    }else {
+        dataDic = UserDefaults.standard.object(forKey: "advancedStopStep") as! [String : Int]
+    }
     print(dataDic)
     return dataDic[gyung]!
 }
 
-func saveCurrentMission(gyung: String, missionNum: Int) {
-    var userLearningProgress: [String : Int] = MyInfo.shared.learningProgress
+func saveCurrentMission(gyung: String, level: String, missionNum: Int) {
+    let userLearningProgress: [String : Any] = MyInfo.shared.learningProgress
 //    userLearningProgress[gyung] = missionNum
-    userLearningProgress.updateValue(missionNum, forKey: gyung)
+    var tmpProgress = userLearningProgress[level] as! [String : Int]
+    tmpProgress.updateValue(missionNum, forKey: gyung)
     print("@@@@@@@@@@@@\(userLearningProgress)")
     MyInfo.shared.learningProgress = userLearningProgress
 }
 
-func retrieveCurrentMission(gyung: String) -> Int {
+func retrieveCurrentMission(gyung: String, level: String) -> Int {
     let userLearningProgress = MyInfo.shared.learningProgress
-    return userLearningProgress[gyung]!
+    let tmpProgress = userLearningProgress[level] as! [String : Int]
+    return tmpProgress[gyung]!
 }
 
 

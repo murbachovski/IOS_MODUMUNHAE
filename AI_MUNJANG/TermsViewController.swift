@@ -292,7 +292,9 @@ extension TermsViewController: ASAuthorizationControllerDelegate {
           UserDefaults.standard.setValue(user.email, forKey: "userID")
           
           //회원가입시 MyInfo 구성
-          let learningDataDic: [String : Int] = ["2경" : 0,"3경" : 0, "4경" : 0, "5경" : 0, "6경" : 0, "7경" : 0, "8경" : 0]
+          let learningDataDic: [String: [String : Int]] = [
+              "Basic":["2경" : 0,"3경" : 0, "4경" : 0, "5경" : 0, "6경" : 0, "7경" : 0, "8경" : 0],
+              "Advanced":["1경" : 0]]
           MyInfo.shared.displayName = (user.email?.components(separatedBy: "@")[0])!
           MyInfo.shared.learningProgress = learningDataDic
           MyInfo.shared.numberOfHearts = 0

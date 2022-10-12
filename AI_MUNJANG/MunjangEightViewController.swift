@@ -129,13 +129,19 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
         if num + 1 != 1 {
-                let toLearningMission = retrieveCurrentMission(gyung: "\(num + 1)경")
+            let toLearningMission = retrieveCurrentMission(gyung: "\(num + 1)경", level: currentLevel)
                 munJangEightDetailViewController.toLearningMission = toLearningMission
             }
+        if currentLevel == "Basic" {
             munJangEightDetailViewController.naviTitle = "\(num + 1)경"
               munJangEightDetailViewController.mainTitleText = munjangElements[num]
-
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
+        }else {
+            munJangEightDetailViewController.naviTitle = "사실"
+              munJangEightDetailViewController.mainTitleText = "사실"
+              munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionAdvancedTotal[num]
+            print(munJangEightDetailViewController.currentSectionCotents.count)
+        }
             print("😡😡😡 \(num + 1)경 선택")
         print("8경 메인에서의 사용자 정보:\(MyInfo.shared.learningProgress)")
             self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
