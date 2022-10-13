@@ -120,17 +120,16 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         quizTextLabel.isHidden = true
         
         quizTextLabel.text = ""
+        let tmpLevel = currentQuizPool[0].level
         // Do any additional setup after loading the view.
-        if currentSection != "1경" {
-            if currentQuiz.level == "Basic" {
+        if currentSection != "1" {
+            if tmpLevel == "Basic" {
                 currentQuizIndex = retrieveStopStepByBasic(section: currentSection, level: "Basic")
-            }else{
-                currentQuizIndex = retrieveStopStepByBasic(section: "1경", level: "Advanced")
+            }else if tmpLevel == "Advanced"{
+                currentQuizIndex = retrieveStopStepByBasic(section: "1", level: "Advanced")
             }
         }
         currentQuiz = currentQuizPool[currentQuizIndex]
-        
-        
         
         print("CurrentQuiz : \(currentQuiz)")
         
@@ -462,12 +461,12 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             if currentQuiz.section == 1 { // 1경에 데이터는 UserDefaults가 관리!!
                 var dataDic = UserDefaults.standard.object(forKey: "tourUserData") as! [String: Any]
                 print(dataDic)
-                var completedMission = dataDic["1경"] as! [Int]
+                var completedMission = dataDic["1"] as! [Int]
                 completedMission.append(currentMission)
-                dataDic = ["1경": completedMission ]
+                dataDic = ["1": completedMission ]
                 UserDefaults.standard.set(dataDic, forKey: "tourUserData")
             }else {// 그 와에 데이터는 fireStore연동!!
-                saveCurrentMission(section: "\(currentQuiz.section)경" , level: currentQuiz.level, missionNum: currentQuiz.mission)
+                saveCurrentMission(section: "\(currentQuiz.section)" , level: currentQuiz.level, missionNum: currentQuiz.mission)
             }
         dismiss(animated: true) {
             self.delegate?.eightDetailDelegate()

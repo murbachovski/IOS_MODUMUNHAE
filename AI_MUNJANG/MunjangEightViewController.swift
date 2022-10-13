@@ -66,7 +66,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         cell.layer.shadowRadius = 2
         cell.layer.masksToBounds = false
         if currentLevel == "Basic" {
-            cell.digitTitle.text = "\(indexPath.row + 1)경"
+            cell.digitTitle.text = "\(indexPath.row + 1)"
             
             cell.mainTitle.text = munjangElements[indexPath.row]
             cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
@@ -129,11 +129,11 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
         if num + 1 != 1 {
-            let toLearningMission = retrieveCurrentMission(section: "\(num + 1)경", level: currentLevel)
+            let toLearningMission = retrieveCurrentMission(section: "\(num + 1)", level: currentLevel)
                 munJangEightDetailViewController.toLearningMission = toLearningMission
             }
         if currentLevel == "Basic" {
-            munJangEightDetailViewController.naviTitle = "\(num + 1)경"
+            munJangEightDetailViewController.naviTitle = "\(num + 1)"
               munJangEightDetailViewController.mainTitleText = munjangElements[num]
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
         }else {
@@ -142,8 +142,8 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionAdvancedTotal[num]
             print(munJangEightDetailViewController.currentSectionCotents.count)
         }
-            print("😡😡😡 \(num + 1)경 선택")
-        print("8경 메인에서의 사용자 정보:\(MyInfo.shared.learningProgress)")
+            print("😡😡😡 \(num + 1) 선택")
+        print("8 메인에서의 사용자 정보:\(MyInfo.shared.learningProgress)")
             self.navigationController?.pushViewController(munJangEightDetailViewController, animated: true)
     }
 }

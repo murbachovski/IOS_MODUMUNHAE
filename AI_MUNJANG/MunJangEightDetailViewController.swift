@@ -113,10 +113,10 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         cell.layer.masksToBounds = false
             
             //둘러보기 사용자를 위한 것, //일반 구독자 구분 없이 1경에 한 해서만 UserDefaults에서 관리
-        if naviTitle == "1경" {
+        if naviTitle == "1" {
             let dataDic = UserDefaults.standard.object(forKey: "tourUserData") as! [String: Any]
             print("불러 온 dataDic:\(dataDic)")
-            let completedMission = dataDic["1경"] as! [Int]
+            let completedMission = dataDic["1"] as! [Int]
             
             if completedMission.contains(indexPath.row + 1) {
                 

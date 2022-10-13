@@ -69,7 +69,6 @@
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
-		846E2BE628A3585200C5292D /* dummyContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 846E2BE528A3585100C5292D /* dummyContents.json */; };
 		84739D8128C8614B0052B20C /* MunjangEightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84739D8028C8614B0052B20C /* MunjangEightViewController.swift */; };
 		84739D8328C871D80052B20C /* SampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84739D8228C871D80052B20C /* SampleCollectionViewCell.swift */; };
 		8474DCFB287BFE0F008275FC /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */; };
@@ -92,7 +91,6 @@
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
 		84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */; };
 		84EBC3CD28A0B6BB0089F9AC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */; };
-		84EBC3D528A0F1090089F9AC /* quizContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 84EBC3D428A0F1090089F9AC /* quizContents.json */; };
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
@@ -185,7 +183,6 @@
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
-		846E2BE528A3585100C5292D /* dummyContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummyContents.json; sourceTree = "<group>"; };
 		84739D8028C8614B0052B20C /* MunjangEightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightViewController.swift; sourceTree = "<group>"; };
 		84739D8228C871D80052B20C /* SampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCollectionViewCell.swift; sourceTree = "<group>"; };
 		8474DCFA287BFE0F008275FC /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +205,6 @@
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangQuizViewController.swift; sourceTree = "<group>"; };
 		84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
-		84EBC3D428A0F1090089F9AC /* quizContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizContents.json; sourceTree = "<group>"; };
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -487,8 +483,6 @@
 		84EBC3CB28A0B69B0089F9AC /* QuizModel */ = {
 			isa = PBXGroup;
 			children = (
-				84EBC3D428A0F1090089F9AC /* quizContents.json */,
-				846E2BE528A3585100C5292D /* dummyContents.json */,
 				84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */,
 				846E2BE128A34FDD00C5292D /* QuizContentData.swift */,
 				845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */,
@@ -699,7 +693,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8432B3B728DD6B95005E6583 /* videoContents.json in Resources */,
-				84EBC3D528A0F1090089F9AC /* quizContents.json in Resources */,
 				842B038F288643080000BEDA /* NanumSquareEB.ttf in Resources */,
 				8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
@@ -715,7 +708,6 @@
 				8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */,
 				8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */,
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
-				846E2BE628A3585200C5292D /* dummyContents.json in Resources */,
 				842B0392288643080000BEDA /* NanumSquareR.ttf in Resources */,
 				84648ECF28E43A380036DC89 /* Main_ipad.storyboard in Resources */,
 				842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */,
