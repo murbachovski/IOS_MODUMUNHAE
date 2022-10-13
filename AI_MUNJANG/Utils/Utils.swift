@@ -64,22 +64,24 @@ func changeLoginNC() { //LoginNavigationController
     ad.window?.rootViewController = vc
 }
 
-func saveStopStepByBasic(section: String, level: String, step: Int) {
+func saveStopStep(section: String, level: String, step: Int) {
     var dataDic: [String : Int] = [:]
     if level == "Basic" {
         dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
         dataDic.updateValue(step, forKey: section)
+        MyInfo.shared.learningProgress.updateValue(dataDic, forKey: "Basic")
         print(dataDic)
         UserDefaults.standard.set(dataDic, forKey: "basicStopStep")
     }else {
         dataDic = UserDefaults.standard.object(forKey: "advancedStopStep") as! [String : Int]
         dataDic.updateValue(step, forKey: section)
         print(dataDic)
+        MyInfo.shared.learningProgress.updateValue(dataDic, forKey: "Advanced")
         UserDefaults.standard.set(dataDic, forKey: "advancedStopStep")
     }
 }
 
-func retrieveStopStepByBasic(section: String, level: String) -> Int {
+func retrieveStopStep(section: String, level: String) -> Int {
     var dataDic: [String : Int] = [:]
     if level == "Basic" {
         dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]

@@ -124,9 +124,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         // Do any additional setup after loading the view.
         if currentSection != "1" {
             if tmpLevel == "Basic" {
-                currentQuizIndex = retrieveStopStepByBasic(section: currentSection, level: "Basic")
+                currentQuizIndex = retrieveStopStep(section: currentSection, level: "Basic")
             }else if tmpLevel == "Advanced"{
-                currentQuizIndex = retrieveStopStepByBasic(section: "1", level: "Advanced")
+                currentQuizIndex = retrieveStopStep(section: "1", level: "Advanced")
             }
         }
         currentQuiz = currentQuizPool[currentQuizIndex]
@@ -491,8 +491,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }else {
             let completedMission = retrieveCurrentMission(section: "\(currentQuiz.section)", level: currentQuiz.level)
             if currentQuiz.mission > completedMission {
-                saveStopStepByBasic(section: "\(currentQuiz.section)", level: currentQuiz.level, step: currentQuizIndex)
-                print("조회된: \(retrieveStopStepByBasic(section: "\(currentQuiz.section)", level: currentQuiz.level))")
+                saveStopStep(section: "\(currentQuiz.section)", level: currentQuiz.level, step: currentQuizIndex)
+                print("조회된: \(retrieveStopStep(section: "\(currentQuiz.section)", level: currentQuiz.level))")
             }
         }
         

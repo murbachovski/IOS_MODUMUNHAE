@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //구독자가 미션 수행중 그만두는 지점을 userDefault에 저장. 실질문해 / 기초문해
         UserDefaults.standard.register(defaults: ["basicStopStep" : ["2":0, "3":0, "4":0, "5":0, "6":0, "7":0, "8":0]])
         
-        UserDefaults.standard.register(defaults: ["advancedStopStep" : ["1":0]])
+        UserDefaults.standard.register(defaults: ["advancedStopStep" : ["1":0, "2":0]])
         
         //구독여부 판단 - 영수증의 유효성을 판단해야
         InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})
