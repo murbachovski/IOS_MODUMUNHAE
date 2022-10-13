@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		09910C8354E46D1E4B218FF9 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BE1E7BA397B2DBCA101A46 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
 		1C46D827B841232FF1AE4B3B /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1308B43F21E263CEDD177B58 /* Pods_AI_MUNJANGTests.framework */; };
-		551B0861840764B2CC3F53EB /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */; };
 		840071D3287BE30500B07551 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D2287BE30500B07551 /* RoundedView.swift */; };
 		840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D5287BE41300B07551 /* AdaptiveViewController.swift */; };
 		840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */; };
@@ -50,11 +49,8 @@
 		843F27C128A5E97300E36E33 /* failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27C028A5E97300E36E33 /* failed.mp3 */; };
 		843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27C228A5EA4F00E36E33 /* TTS.swift */; };
 		844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844226DF2890F66700DCB93B /* GoogleService-Info.plist */; };
-		84458A6F28BF419900A70F20 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 84458A6E28BF419900A70F20 /* DropDown */; };
-		84458A7228BF41CB00A70F20 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 84458A7128BF41CB00A70F20 /* Zip */; };
 		84458A7528BF47F500A70F20 /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7328BF47F500A70F20 /* MunJangEightDetailViewController.swift */; };
 		84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7428BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift */; };
-		8448170628C6E6F600CC2490 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 8448170528C6E6F600CC2490 /* Charts */; };
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
 		844A4D5028B4AF73002C7F6B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A4D4F28B4AF73002C7F6B /* UserInfo.swift */; };
 		8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05B28B75F4700613946 /* AnalyzeViewController.swift */; };
@@ -85,12 +81,16 @@
 		8474DD22287E6C78008275FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD21287E6C78008275FC /* Utils.swift */; };
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
 		84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */; };
+		84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67728F7E7FC00ACFA18 /* Charts */; };
+		84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67B28F7E8D100ACFA18 /* DropDown */; };
+		84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67E28F7E8EE00ACFA18 /* Zip */; };
 		84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */; };
 		84E7B04C28AE2DF20009E8E1 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04B28AE2DF20009E8E1 /* Core.swift */; };
 		84EAC50328DAEB0B00DC6FEA /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC50228DAEB0B00DC6FEA /* MainCollectionViewCell.swift */; };
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
 		84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */; };
 		84EBC3CD28A0B6BB0089F9AC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */; };
+		B82F28AA489DEC3AB9CC4BE3 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */; };
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
@@ -224,10 +224,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84458A7228BF41CB00A70F20 /* Zip in Frameworks */,
-				551B0861840764B2CC3F53EB /* Pods_AI_MUNJANG.framework in Frameworks */,
-				84458A6F28BF419900A70F20 /* DropDown in Frameworks */,
-				8448170628C6E6F600CC2490 /* Charts in Frameworks */,
+				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
+				84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */,
+				84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */,
+				B82F28AA489DEC3AB9CC4BE3 /* Pods_AI_MUNJANG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,9 +592,9 @@
 			);
 			name = AI_MUNJANG;
 			packageProductDependencies = (
-				84458A6E28BF419900A70F20 /* DropDown */,
-				84458A7128BF41CB00A70F20 /* Zip */,
-				8448170528C6E6F600CC2490 /* Charts */,
+				84D8A67728F7E7FC00ACFA18 /* Charts */,
+				84D8A67B28F7E8D100ACFA18 /* DropDown */,
+				84D8A67E28F7E8EE00ACFA18 /* Zip */,
 			);
 			productName = AI_MUNJANG;
 			productReference = C6ED5076287531AE00454F26 /* AI_MUNJANG.app */;
@@ -672,9 +672,9 @@
 			);
 			mainGroup = C6ED506D287531AE00454F26;
 			packageReferences = (
-				84458A6D28BF419900A70F20 /* XCRemoteSwiftPackageReference "DropDown" */,
-				84458A7028BF41CB00A70F20 /* XCRemoteSwiftPackageReference "Zip" */,
-				8448170428C6E6F600CC2490 /* XCRemoteSwiftPackageReference "Charts" */,
+				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */,
+				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */,
+				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -1103,6 +1103,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D18360754053067223B5126A /* Pods-AI_MUNJANG.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AI_MUNJANG/AI_MUNJANG.entitlements;
@@ -1139,6 +1140,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F8A5C8B851B1083EB563982 /* Pods-AI_MUNJANG.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AI_MUNJANG/AI_MUNJANG.entitlements;
@@ -1292,23 +1294,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84458A6D28BF419900A70F20 /* XCRemoteSwiftPackageReference "DropDown" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		84458A7028BF41CB00A70F20 /* XCRemoteSwiftPackageReference "Zip" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/Zip.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		8448170428C6E6F600CC2490 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -1316,23 +1302,39 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84458A6E28BF419900A70F20 /* DropDown */ = {
+		84D8A67728F7E7FC00ACFA18 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84458A6D28BF419900A70F20 /* XCRemoteSwiftPackageReference "DropDown" */;
+			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+		84D8A67B28F7E8D100ACFA18 /* DropDown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */;
 			productName = DropDown;
 		};
-		84458A7128BF41CB00A70F20 /* Zip */ = {
+		84D8A67E28F7E8EE00ACFA18 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84458A7028BF41CB00A70F20 /* XCRemoteSwiftPackageReference "Zip" */;
+			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
-		};
-		8448170528C6E6F600CC2490 /* Charts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8448170428C6E6F600CC2490 /* XCRemoteSwiftPackageReference "Charts" */;
-			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
