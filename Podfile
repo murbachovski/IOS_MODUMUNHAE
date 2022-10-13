@@ -11,8 +11,6 @@ pod 'NVActivityIndicatorView'
 pod 'FirebaseFirestore'
 pod 'Firebase/Analytics'
 pod 'Firebase/Crashlytics'
-#pod 'Charts'
-
 
   target 'AI_MUNJANGTests' do
     inherit! :search_paths
