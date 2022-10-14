@@ -23,12 +23,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var titles :Array<String> = []
     var nowPage: Int = 0
     
-    @IBOutlet weak var analyzeSenButton: UIButton!
+//    @IBOutlet weak var analyzeSenButton: UIButton!
     
     @IBOutlet var bannerCollectionView: UICollectionView!
 
-    @IBOutlet weak var analyzeContainer: UIView!
-    @IBOutlet weak var searchImage: UIImageView!
+//    @IBOutlet weak var analyzeContainer: UIView!
+//    @IBOutlet weak var searchImage: UIImageView!
     
     
     override func viewDidLoad() {
@@ -46,23 +46,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationItem.backButtonTitle = " "
         setupUI()
         
-        analyzeContainer.layer.borderWidth = 1
-        analyzeContainer.layer.borderColor = UIColor.darkGray.cgColor
-        analyzeContainer.layer.cornerRadius = 8
+//        analyzeContainer.layer.borderWidth = 1
+//        analyzeContainer.layer.borderColor = UIColor.darkGray.cgColor
+//        analyzeContainer.layer.cornerRadius = 8
         
-        analyzeSenButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
-        analyzeSenButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
+//        analyzeSenButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
+//        analyzeSenButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        searchImage.isUserInteractionEnabled = true
-        searchImage.addGestureRecognizer(tapGestureRecognizer)
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+//        searchImage.isUserInteractionEnabled = true
+//        searchImage.addGestureRecognizer(tapGestureRecognizer)
 
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if self.view.frame.size.height < 1920 {
-            bannerBottomHeight.constant = 0
+//            bannerBottomHeight.constant = 0
             collectionViewTopHeight.constant = 0
         }
     }

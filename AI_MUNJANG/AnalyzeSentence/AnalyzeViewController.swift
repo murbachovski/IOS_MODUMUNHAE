@@ -73,6 +73,12 @@ class AnalyzeViewController: UIViewController {
     
     }
     
+    @IBAction func clickedCamera(_ sender: Any) {
+        guard let mLTextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MLTextViewController")  as? MLTextViewController else {return}
+        mLTextViewController.modalPresentationStyle = .fullScreen
+        self.present(mLTextViewController, animated: true)
+    }
+    
     
     private func analyzeDanmunAfterEight(str:String){
         let senToAnalyze:String = str
