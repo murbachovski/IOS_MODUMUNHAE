@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09910C8354E46D1E4B218FF9 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BE1E7BA397B2DBCA101A46 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
-		1C46D827B841232FF1AE4B3B /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1308B43F21E263CEDD177B58 /* Pods_AI_MUNJANGTests.framework */; };
+		57FF2C81C465B324752E3408 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */; };
 		840071D3287BE30500B07551 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D2287BE30500B07551 /* RoundedView.swift */; };
 		840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D5287BE41300B07551 /* AdaptiveViewController.swift */; };
 		840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */; };
@@ -92,7 +91,7 @@
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
 		84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */; };
 		84EBC3CD28A0B6BB0089F9AC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */; };
-		B82F28AA489DEC3AB9CC4BE3 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */; };
+		AF5BFBE7B5BE6ADCA59876F1 /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE350FB46DF8BDD20A4F0BF /* Pods_AI_MUNJANGTests.framework */; };
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
@@ -100,6 +99,7 @@
 		C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED5084287531AF00454F26 /* LaunchScreen.storyboard */; };
 		C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AA287532C500454F26 /* AiRequest.swift */; };
 		C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AE287534D900454F26 /* TestViewController.swift */; };
+		D2467344EC756D732F80BCF6 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FF2F7A8A2373656F3AB342 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,14 +120,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D4D7F5FAAEF391050E9E563 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		0E47345844093F77134BFCFC /* Pods-AI_MUNJANGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.release.xcconfig"; sourceTree = "<group>"; };
-		1308B43F21E263CEDD177B58 /* Pods_AI_MUNJANGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C254AE0B3A42AE6562B4D52 /* Pods-AI_MUNJANGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.debug.xcconfig"; sourceTree = "<group>"; };
-		601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		717B9C3D3E8E06FB519E88B3 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7F8A5C8B851B1083EB563982 /* Pods-AI_MUNJANG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.release.xcconfig"; sourceTree = "<group>"; };
-		82BE1E7BA397B2DBCA101A46 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG_AI_MUNJANGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE350FB46DF8BDD20A4F0BF /* Pods_AI_MUNJANGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF048CE1E844E5C5355B88A /* Pods-AI_MUNJANG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.release.xcconfig"; sourceTree = "<group>"; };
+		70231474539566B4E361D900 /* Pods-AI_MUNJANG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.debug.xcconfig"; sourceTree = "<group>"; };
+		7831F68970C78DA0735DC33C /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		840071CE287BE2EF00B07551 /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 		840071CF287BE2EF00B07551 /* TextFieldsFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsFont.swift; sourceTree = "<group>"; };
 		840071D0287BE2EF00B07551 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
@@ -209,6 +206,10 @@
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangQuizViewController.swift; sourceTree = "<group>"; };
 		84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		8530E89A381CCA969C25DBF2 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; sourceTree = "<group>"; };
+		87FF2F7A8A2373656F3AB342 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG_AI_MUNJANGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC04C232BD6911B4205CC2D4 /* Pods-AI_MUNJANGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5DAED85C7470F4A731152D6 /* Pods-AI_MUNJANGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -220,7 +221,6 @@
 		C6ED5096287531B000454F26 /* AI_MUNJANGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AI_MUNJANGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED50AA287532C500454F26 /* AiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRequest.swift; sourceTree = "<group>"; };
 		C6ED50AE287534D900454F26 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		D18360754053067223B5126A /* Pods-AI_MUNJANG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +231,7 @@
 				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
 				84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */,
 				84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */,
-				B82F28AA489DEC3AB9CC4BE3 /* Pods_AI_MUNJANG.framework in Frameworks */,
+				57FF2C81C465B324752E3408 /* Pods_AI_MUNJANG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +239,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C46D827B841232FF1AE4B3B /* Pods_AI_MUNJANGTests.framework in Frameworks */,
+				AF5BFBE7B5BE6ADCA59876F1 /* Pods_AI_MUNJANGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,13 +247,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09910C8354E46D1E4B218FF9 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */,
+				D2467344EC756D732F80BCF6 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7460C76901D48D8A9EDE20F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */,
+				87FF2F7A8A2373656F3AB342 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */,
+				3CE350FB46DF8BDD20A4F0BF /* Pods_AI_MUNJANGTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8411A5B428C836EF0061A6F5 /* MunhaeVideo */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,24 +517,14 @@
 		8B5FF546FE32A902A1BF68DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D18360754053067223B5126A /* Pods-AI_MUNJANG.debug.xcconfig */,
-				7F8A5C8B851B1083EB563982 /* Pods-AI_MUNJANG.release.xcconfig */,
-				0D4D7F5FAAEF391050E9E563 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */,
-				717B9C3D3E8E06FB519E88B3 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */,
-				4C254AE0B3A42AE6562B4D52 /* Pods-AI_MUNJANGTests.debug.xcconfig */,
-				0E47345844093F77134BFCFC /* Pods-AI_MUNJANGTests.release.xcconfig */,
+				70231474539566B4E361D900 /* Pods-AI_MUNJANG.debug.xcconfig */,
+				5CF048CE1E844E5C5355B88A /* Pods-AI_MUNJANG.release.xcconfig */,
+				7831F68970C78DA0735DC33C /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */,
+				8530E89A381CCA969C25DBF2 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */,
+				AC04C232BD6911B4205CC2D4 /* Pods-AI_MUNJANGTests.debug.xcconfig */,
+				B5DAED85C7470F4A731152D6 /* Pods-AI_MUNJANGTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		BC2FE6537C9C06F991C945DE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				601EDDD26E6E88482D07D08A /* Pods_AI_MUNJANG.framework */,
-				82BE1E7BA397B2DBCA101A46 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */,
-				1308B43F21E263CEDD177B58 /* Pods_AI_MUNJANGTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C6ED506D287531AE00454F26 = {
@@ -532,7 +532,7 @@
 			children = (
 				C6ED5078287531AE00454F26 /* AI_MUNJANG */,
 				8B5FF546FE32A902A1BF68DD /* Pods */,
-				BC2FE6537C9C06F991C945DE /* Frameworks */,
+				7460C76901D48D8A9EDE20F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -593,12 +593,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A0287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANG" */;
 			buildPhases = (
-				C61453041135CAB85F9BDE40 /* [CP] Check Pods Manifest.lock */,
+				7E37C165B8B65AF65839DA0D /* [CP] Check Pods Manifest.lock */,
 				C6ED5072287531AE00454F26 /* Sources */,
 				C6ED5073287531AE00454F26 /* Frameworks */,
 				C6ED5074287531AE00454F26 /* Resources */,
-				B4E93673FA0D78DA8774B377 /* [CP] Embed Pods Frameworks */,
 				849634C828EFC3FC00B1533B /* ShellScript */,
+				4D7DC27036451D6644703109 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -618,7 +618,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A3287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGTests" */;
 			buildPhases = (
-				D0DFFC547C1A994FF75E3A28 /* [CP] Check Pods Manifest.lock */,
+				D4CF9EFBDAA95337A812F941 /* [CP] Check Pods Manifest.lock */,
 				C6ED5088287531B000454F26 /* Sources */,
 				C6ED5089287531B000454F26 /* Frameworks */,
 				C6ED508A287531B000454F26 /* Resources */,
@@ -637,11 +637,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A6287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGUITests" */;
 			buildPhases = (
-				A4B9A0A5FBC4AC5E7F5E0679 /* [CP] Check Pods Manifest.lock */,
+				708317362CFC560BED8E7528 /* [CP] Check Pods Manifest.lock */,
 				C6ED5092287531B000454F26 /* Sources */,
 				C6ED5093287531B000454F26 /* Frameworks */,
 				C6ED5094287531B000454F26 /* Resources */,
-				CB157254BCFA205C3F14A2DC /* [CP] Embed Pods Frameworks */,
+				FE53CE6E8CB9B88F7B0935D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -686,9 +686,9 @@
 			);
 			mainGroup = C6ED506D287531AE00454F26;
 			packageReferences = (
-				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */,
-				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */,
-				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */,
+				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */,
+				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */,
+				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -746,26 +746,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		849634C828EFC3FC00B1533B /* ShellScript */ = {
+		4D7DC27036451D6644703109 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
-		A4B9A0A5FBC4AC5E7F5E0679 /* [CP] Check Pods Manifest.lock */ = {
+		708317362CFC560BED8E7528 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -787,24 +785,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4E93673FA0D78DA8774B377 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C61453041135CAB85F9BDE40 /* [CP] Check Pods Manifest.lock */ = {
+		7E37C165B8B65AF65839DA0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -826,24 +807,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CB157254BCFA205C3F14A2DC /* [CP] Embed Pods Frameworks */ = {
+		849634C828EFC3FC00B1533B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		D0DFFC547C1A994FF75E3A28 /* [CP] Check Pods Manifest.lock */ = {
+		D4CF9EFBDAA95337A812F941 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -863,6 +846,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE53CE6E8CB9B88F7B0935D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1117,9 +1117,8 @@
 		};
 		C6ED50A1287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D18360754053067223B5126A /* Pods-AI_MUNJANG.debug.xcconfig */;
+			baseConfigurationReference = 70231474539566B4E361D900 /* Pods-AI_MUNJANG.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AI_MUNJANG/AI_MUNJANG.entitlements;
@@ -1154,9 +1153,8 @@
 		};
 		C6ED50A2287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F8A5C8B851B1083EB563982 /* Pods-AI_MUNJANG.release.xcconfig */;
+			baseConfigurationReference = 5CF048CE1E844E5C5355B88A /* Pods-AI_MUNJANG.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AI_MUNJANG/AI_MUNJANG.entitlements;
@@ -1190,7 +1188,7 @@
 		};
 		C6ED50A4287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C254AE0B3A42AE6562B4D52 /* Pods-AI_MUNJANGTests.debug.xcconfig */;
+			baseConfigurationReference = AC04C232BD6911B4205CC2D4 /* Pods-AI_MUNJANGTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1211,7 +1209,7 @@
 		};
 		C6ED50A5287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E47345844093F77134BFCFC /* Pods-AI_MUNJANGTests.release.xcconfig */;
+			baseConfigurationReference = B5DAED85C7470F4A731152D6 /* Pods-AI_MUNJANGTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1232,7 +1230,7 @@
 		};
 		C6ED50A7287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D4D7F5FAAEF391050E9E563 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
+			baseConfigurationReference = 7831F68970C78DA0735DC33C /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1251,7 +1249,7 @@
 		};
 		C6ED50A8287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 717B9C3D3E8E06FB519E88B3 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
+			baseConfigurationReference = 8530E89A381CCA969C25DBF2 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1310,7 +1308,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -1318,7 +1316,7 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */ = {
+		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
 			requirement = {
@@ -1326,7 +1324,7 @@
 				kind = branch;
 			};
 		};
-		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */ = {
+		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -1339,17 +1337,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		84D8A67728F7E7FC00ACFA18 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */;
 			productName = Charts;
 		};
 		84D8A67B28F7E8D100ACFA18 /* DropDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */;
+			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */;
 			productName = DropDown;
 		};
 		84D8A67E28F7E8EE00ACFA18 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */;
+			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */;
 			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -8,7 +8,8 @@
 import UIKit
 import NVActivityIndicatorView
 
-class AnalyzeViewController: UIViewController {
+class AnalyzeViewController: UIViewController, MLTextDelegate {
+
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -76,6 +77,7 @@ class AnalyzeViewController: UIViewController {
     @IBAction func clickedCamera(_ sender: Any) {
         guard let mLTextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MLTextViewController")  as? MLTextViewController else {return}
         mLTextViewController.modalPresentationStyle = .fullScreen
+        mLTextViewController.delegate = self
         self.present(mLTextViewController, animated: true)
     }
     
@@ -98,7 +100,7 @@ class AnalyzeViewController: UIViewController {
                         self.indicator.stopAnimating()
                     }
                     
-                    let alert = AlertService().alert(title: "", body: "입력한 문장이 옳바르지 않습니다.", cancelTitle: "", confirTitle: "확인") {
+                    let alert = AlertService().alert(title: "", body: "입력한 문장이 올바르지 않습니다.", cancelTitle: "", confirTitle: "확인") {
                     } fourthButtonCompletion: {
                         print("cliocked subscribe")
                     }
@@ -169,6 +171,10 @@ class AnalyzeViewController: UIViewController {
         }
         
 }
+    
+    func mlTextDelegate(res:String) {
+        print(res)
+    }
 
 
 }

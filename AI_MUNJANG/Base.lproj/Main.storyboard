@@ -3190,10 +3190,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9RK-dD-eAQ">
-                                <rect key="frame" x="20" y="282" width="40" height="40"/>
+                                <rect key="frame" x="24" y="276" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="92g-8u-0JX"/>
-                                    <constraint firstAttribute="height" constant="40" id="KUx-Cv-8dR"/>
+                                    <constraint firstAttribute="width" constant="32" id="92g-8u-0JX"/>
+                                    <constraint firstAttribute="height" constant="32" id="KUx-Cv-8dR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3208,7 +3208,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="usU-Nq-yio" firstAttribute="top" secondItem="FNj-TX-hrD" secondAttribute="bottom" constant="20" id="7nw-Bu-OXB"/>
-                            <constraint firstItem="9RK-dD-eAQ" firstAttribute="leading" secondItem="Ddy-dV-7iY" secondAttribute="leading" constant="20" id="B1p-cT-fkF"/>
+                            <constraint firstItem="9RK-dD-eAQ" firstAttribute="leading" secondItem="Ddy-dV-7iY" secondAttribute="leading" constant="24" id="B1p-cT-fkF"/>
                             <constraint firstItem="usU-Nq-yio" firstAttribute="leading" secondItem="Ddy-dV-7iY" secondAttribute="leading" constant="20" id="DC2-gV-6Ux"/>
                             <constraint firstItem="Ddy-dV-7iY" firstAttribute="trailing" secondItem="1nY-Ai-xhg" secondAttribute="trailing" constant="20" id="Dph-QO-II9"/>
                             <constraint firstItem="FNj-TX-hrD" firstAttribute="top" secondItem="Ddy-dV-7iY" secondAttribute="top" constant="24" id="YRQ-tM-RYD"/>
@@ -3216,7 +3216,7 @@
                             <constraint firstItem="FNj-TX-hrD" firstAttribute="leading" secondItem="Ddy-dV-7iY" secondAttribute="leading" constant="20" id="gRn-ej-lJq"/>
                             <constraint firstItem="1nY-Ai-xhg" firstAttribute="top" secondItem="usU-Nq-yio" secondAttribute="bottom" constant="12" id="nOV-2t-ztA"/>
                             <constraint firstItem="Ddy-dV-7iY" firstAttribute="trailing" secondItem="FNj-TX-hrD" secondAttribute="trailing" constant="20" id="vv8-IZ-uEb"/>
-                            <constraint firstItem="9RK-dD-eAQ" firstAttribute="top" secondItem="usU-Nq-yio" secondAttribute="bottom" constant="14" id="x3E-Wp-szZ"/>
+                            <constraint firstItem="9RK-dD-eAQ" firstAttribute="top" secondItem="usU-Nq-yio" secondAttribute="bottom" constant="8" id="x3E-Wp-szZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -3283,13 +3283,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XCj-zd-E5u" firstAttribute="trailing" secondItem="F5f-ih-bGu" secondAttribute="trailing" id="DYF-EE-D5n"/>
-                            <constraint firstItem="YWB-Tc-scS" firstAttribute="trailing" secondItem="F5f-ih-bGu" secondAttribute="trailing" id="E96-LN-cAW"/>
+                            <constraint firstItem="YWB-Tc-scS" firstAttribute="trailing" secondItem="osN-vf-UBb" secondAttribute="trailing" id="E96-LN-cAW"/>
                             <constraint firstItem="F5f-ih-bGu" firstAttribute="top" secondItem="YWB-Tc-scS" secondAttribute="bottom" id="OFi-VJ-GAB"/>
-                            <constraint firstItem="YWB-Tc-scS" firstAttribute="leading" secondItem="osN-vf-UBb" secondAttribute="leadingMargin" constant="-32" id="fnP-wa-Og3"/>
-                            <constraint firstItem="YWB-Tc-scS" firstAttribute="top" secondItem="osN-vf-UBb" secondAttribute="topMargin" constant="-9" id="v4A-Jn-DuE"/>
+                            <constraint firstItem="YWB-Tc-scS" firstAttribute="leading" secondItem="osN-vf-UBb" secondAttribute="leadingMargin" id="fnP-wa-Og3"/>
+                            <constraint firstItem="YWB-Tc-scS" firstAttribute="top" secondItem="osN-vf-UBb" secondAttribute="topMargin" id="v4A-Jn-DuE"/>
                             <constraint firstItem="F5f-ih-bGu" firstAttribute="leading" secondItem="XCj-zd-E5u" secondAttribute="leading" id="vwi-2j-oPv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textImageView" destination="YWB-Tc-scS" id="inx-R9-b1o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XD4-u0-2UD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
