@@ -40,6 +40,7 @@
 		842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */; };
 		842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */; };
 		842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */; };
+		842E96E428FE999900923706 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 842E96E328FE999900923706 /* Charts */; };
 		8432B3B728DD6B95005E6583 /* videoContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8432B3B628DD6B95005E6583 /* videoContents.json */; };
 		8433AA6628F514B70044061A /* DummyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433AA6528F514B70044061A /* DummyMainViewController.swift */; };
 		843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27BB28A4CA9900E36E33 /* BannerCell.swift */; };
@@ -80,7 +81,6 @@
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
 		848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */; };
 		84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */; };
-		84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67728F7E7FC00ACFA18 /* Charts */; };
 		84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67B28F7E8D100ACFA18 /* DropDown */; };
 		84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67E28F7E8EE00ACFA18 /* Zip */; };
 		84D8A68228F7ECDB00ACFA18 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A68128F7ECDB00ACFA18 /* HomeViewController.swift */; };
@@ -229,9 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
-				84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */,
 				84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */,
 				848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */,
+				842E96E428FE999900923706 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,9 +607,9 @@
 			);
 			name = AI_MUNJANG;
 			packageProductDependencies = (
-				84D8A67728F7E7FC00ACFA18 /* Charts */,
 				84D8A67B28F7E8D100ACFA18 /* DropDown */,
 				84D8A67E28F7E8EE00ACFA18 /* Zip */,
+				842E96E328FE999900923706 /* Charts */,
 			);
 			productName = AI_MUNJANG;
 			productReference = C6ED5076287531AE00454F26 /* AI_MUNJANG.app */;
@@ -688,9 +688,9 @@
 			);
 			mainGroup = C6ED506D287531AE00454F26;
 			packageReferences = (
-				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */,
-				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */,
-				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */,
+				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */,
+				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */,
+				842E96E228FE999900923706 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -1344,15 +1344,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */ = {
+		842E96E228FE999900923706 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 4.1.0;
 			};
 		};
-		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */ = {
+		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
 			requirement = {
@@ -1360,7 +1360,7 @@
 				kind = branch;
 			};
 		};
-		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */ = {
+		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -1371,19 +1371,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		84D8A67728F7E7FC00ACFA18 /* Charts */ = {
+		842E96E328FE999900923706 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */;
+			package = 842E96E228FE999900923706 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 		84D8A67B28F7E8D100ACFA18 /* DropDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */;
+			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */;
 			productName = DropDown;
 		};
 		84D8A67E28F7E8EE00ACFA18 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */;
+			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
