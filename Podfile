@@ -1,16 +1,19 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
 
 target 'AI_MUNJANG' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for AI_MUNJANG
-pod 'Firebase/Auth'
+pod 'FirebaseAuth'
 pod 'NVActivityIndicatorView'
 pod 'FirebaseFirestore'
-pod 'Firebase/Analytics'
-pod 'Firebase/Crashlytics'
+pod 'FirebaseAnalytics'
+pod 'FirebaseCrashlytics'
+pod 'GoogleMLKit/TextRecognitionKorean', '2.3.0'
+pod 'GoogleUtilities','7.8.0'
+
 
   target 'AI_MUNJANGTests' do
     inherit! :search_paths

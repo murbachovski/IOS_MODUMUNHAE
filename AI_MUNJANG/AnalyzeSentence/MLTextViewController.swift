@@ -9,8 +9,8 @@ import UIKit
 import MobileCoreServices
 import AVFoundation
 import Photos
-//import MLKitTextRecognitionKorean
-//import MLKitVision
+import MLKitTextRecognitionKorean
+import MLKitVision
 
 
 protocol MLTextDelegate: AnyObject {
