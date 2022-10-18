@@ -55,58 +55,84 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
     //MARK: - 카메라,앨범 사용권한 질의
     //카메라 사용권한에 대한 질의
     func checkCameraPermission(){
-           AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-               if granted {
-                   print("Camera: 권한 허용")
-                   DispatchQueue.main.async {
-                       self.showCamera()
-                   }
+        
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .authorized: // The user has previously granted access to the camera.
+                print("Camera: 권한 허용")
+                DispatchQueue.main.async {
+                    self.showCamera()
+                }
+            
+            case .notDetermined: // The user has not yet been asked for camera access.
+                AVCaptureDevice.requestAccess(for: .video) { granted in
+                    if granted {
+                        print("Camera: 권한 허용")
+                        DispatchQueue.main.async {
+                            self.showCamera()
+                        }
+                    }
+                }
+            
+            case .denied: // The user has previously denied access.
+                print("Camera: 권한 거부")
+                DispatchQueue.main.async {
+                    let alert = AlertService().alert(title: "알림", body: "카메라 사용에 대한 접근권한이 없는 상태입니다.\n 설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
+                        self.dismiss(animated: true)
+                    } fourthButtonCompletion: {
+                        self.openSettings()
+                    }
+                    self.present(alert, animated: true)
                     
-               } else {
-                   print("Camera: 권한 거부")
-                   DispatchQueue.main.async {
-                       let alert = AlertService().alert(title: "알림", body: "카메라 사용에 대한 접근권한이 없는 상태입니다.\n 설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
-                           self.dismiss(animated: true)
-                       } fourthButtonCompletion: {
-                           self.openSettings()
-                       }
-                       self.present(alert, animated: true)
-                       
-                   }
-                   
-               }
-           })
+                }
+                return
+
+            case .restricted: // The user can't grant access due to restrictions.
+                return
+        @unknown default:
+            return
         }
+}
     
     //앨범에 대한 접근권한여부 질의
     func checkAlbumPermission(){
+        let photos = PHPhotoLibrary.authorizationStatus()
+        if photos == .notDetermined {
             PHPhotoLibrary.requestAuthorization( { status in
                 switch status{
-                case .authorized:
-                    print("Album: 권한 허용")
-                    DispatchQueue.main.async {
-                        self.showPohotoAlbumn()
-                    }
-                    
-                case .denied:
-                    print("Album: 권한 거부")
-                    DispatchQueue.main.async {
-                        let alert = AlertService().alert(title: "알림", body: "사진 앨범에 대한 접근권한이 없는 상태입니다.\n 설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
-                            self.dismiss(animated: true)
-                        } fourthButtonCompletion: {
-                            self.openSettings()
+                    case .authorized:
+                        print("Album: 권한 허용")
+                        DispatchQueue.main.async {
+                            self.showPohotoAlbumn()
                         }
-                        self.present(alert, animated: true)
-                    }
-                    
-
-                case .restricted, .notDetermined:
-                    print("Album: 선택하지 않음")
-                default:
-                    break
+                    default:
+                        break
+                }
+            })
+        }else {
+            PHPhotoLibrary.requestAuthorization( { status in
+                switch status{
+                    case .authorized:
+                        print("Album: 권한 허용")
+                        DispatchQueue.main.async {
+                            self.showPohotoAlbumn()
+                        }
+                        
+                    case .denied:
+                        print("Album: 권한 거부")
+                        DispatchQueue.main.async {
+                            let alert = AlertService().alert(title: "알림", body: "사진 앨범에 대한 접근권한이 없는 상태입니다.\n 설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
+                                self.dismiss(animated: true)
+                            } fourthButtonCompletion: {
+                                self.openSettings()
+                            }
+                            self.present(alert, animated: true)
+                        }
+                    default:
+                        break
                 }
             })
         }
+}
     
     
 

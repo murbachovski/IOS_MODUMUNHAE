@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57FF2C81C465B324752E3408 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */; };
 		840071D3287BE30500B07551 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D2287BE30500B07551 /* RoundedView.swift */; };
 		840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D5287BE41300B07551 /* AdaptiveViewController.swift */; };
 		840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */; };
@@ -231,7 +230,6 @@
 				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
 				84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */,
 				84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */,
-				57FF2C81C465B324752E3408 /* Pods_AI_MUNJANG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +597,7 @@
 				C6ED5074287531AE00454F26 /* Resources */,
 				849634C828EFC3FC00B1533B /* ShellScript */,
 				4D7DC27036451D6644703109 /* [CP] Embed Pods Frameworks */,
+				1BA77FFF2BD4FC23D18632D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -642,6 +641,7 @@
 				C6ED5093287531B000454F26 /* Frameworks */,
 				C6ED5094287531B000454F26 /* Resources */,
 				FE53CE6E8CB9B88F7B0935D7 /* [CP] Embed Pods Frameworks */,
+				5B3BEBC0F082AD67C62964DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -686,9 +686,9 @@
 			);
 			mainGroup = C6ED506D287531AE00454F26;
 			packageReferences = (
-				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */,
-				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */,
-				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */,
+				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */,
+				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */,
+				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -746,6 +746,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1BA77FFF2BD4FC23D18632D0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4D7DC27036451D6644703109 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -761,6 +778,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B3BEBC0F082AD67C62964DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		708317362CFC560BED8E7528 /* [CP] Check Pods Manifest.lock */ = {
@@ -1308,7 +1342,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */ = {
+		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -1316,7 +1350,7 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */ = {
+		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
 			requirement = {
@@ -1324,7 +1358,7 @@
 				kind = branch;
 			};
 		};
-		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */ = {
+		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -1337,17 +1371,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		84D8A67728F7E7FC00ACFA18 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */;
+			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
 		84D8A67B28F7E8D100ACFA18 /* DropDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */;
+			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */;
 			productName = DropDown;
 		};
 		84D8A67E28F7E8EE00ACFA18 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */;
+			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */

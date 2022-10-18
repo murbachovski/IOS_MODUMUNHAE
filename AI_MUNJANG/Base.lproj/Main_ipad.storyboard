@@ -2284,9 +2284,9 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4Q-xQ-mas">
-                                                        <rect key="frame" x="34" y="4" width="90" height="40"/>
+                                                        <rect key="frame" x="34" y="4" width="150" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="90" id="Dxi-hi-x9t"/>
+                                                            <constraint firstAttribute="width" constant="150" id="Dxi-hi-x9t"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -2298,9 +2298,9 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofz-qE-mjI">
-                                                        <rect key="frame" x="140" y="4" width="120" height="40"/>
+                                                        <rect key="frame" x="200" y="4" width="150" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="N9O-hT-gBY"/>
+                                                            <constraint firstAttribute="width" constant="150" id="N9O-hT-gBY"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
