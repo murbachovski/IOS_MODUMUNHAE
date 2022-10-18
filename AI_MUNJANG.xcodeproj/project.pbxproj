@@ -78,6 +78,7 @@
 		8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */; };
 		8474DD22287E6C78008275FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD21287E6C78008275FC /* Utils.swift */; };
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
+		848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */; };
 		84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */; };
 		84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67728F7E7FC00ACFA18 /* Charts */; };
 		84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67B28F7E8D100ACFA18 /* DropDown */; };
@@ -230,6 +231,7 @@
 				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
 				84D8A67828F7E7FC00ACFA18 /* Charts in Frameworks */,
 				84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */,
+				848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,9 +688,9 @@
 			);
 			mainGroup = C6ED506D287531AE00454F26;
 			packageReferences = (
-				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */,
-				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */,
-				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */,
+				84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */,
+				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */,
+				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -1342,7 +1344,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */ = {
+		84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -1350,7 +1352,7 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */ = {
+		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
 			requirement = {
@@ -1358,7 +1360,7 @@
 				kind = branch;
 			};
 		};
-		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */ = {
+		84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -1371,17 +1373,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		84D8A67728F7E7FC00ACFA18 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 84D8A67628F7E7FC00ACFA18 /* XCRemoteSwiftPackageReference "Charts.git" */;
 			productName = Charts;
 		};
 		84D8A67B28F7E8D100ACFA18 /* DropDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */;
+			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown.git" */;
 			productName = DropDown;
 		};
 		84D8A67E28F7E8EE00ACFA18 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */;
+			package = 84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip.git" */;
 			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */

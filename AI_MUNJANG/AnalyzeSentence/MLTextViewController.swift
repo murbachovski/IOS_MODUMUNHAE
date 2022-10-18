@@ -26,12 +26,43 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var resultText = ""
     
+    @IBOutlet weak var btnCamera: UIButton!
+    
+    @IBOutlet weak var btnAlbumn: UIButton!
+    
+    @IBOutlet weak var btnConfirm: UIButton!
+    
+    
     @IBOutlet weak var textImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        btnCamera.backgroundColor = .white
+        btnCamera.layer.cornerRadius = 10
+        btnCamera.layer.shadowOpacity = 0.8
+        btnCamera.layer.shadowColor = UIColor.lightGray.cgColor
+        btnCamera.layer.shadowOffset = CGSize(width: 1, height: 1)
+        btnCamera.layer.shadowRadius = 2
+        btnCamera.layer.masksToBounds = false
+        
+        btnAlbumn.backgroundColor = .white
+        btnAlbumn.layer.cornerRadius = 10
+        btnAlbumn.layer.shadowOpacity = 0.8
+        btnAlbumn.layer.shadowColor = UIColor.lightGray.cgColor
+        btnAlbumn.layer.shadowOffset = CGSize(width: 1, height: 1)
+        btnAlbumn.layer.shadowRadius = 2
+        btnAlbumn.layer.masksToBounds = false
+        
+        btnConfirm.backgroundColor = .white
+        btnConfirm.layer.cornerRadius = 10
+        btnConfirm.layer.shadowOpacity = 0.8
+        btnConfirm.layer.shadowColor = UIColor.lightGray.cgColor
+        btnConfirm.layer.shadowOffset = CGSize(width: 1, height: 1)
+        btnConfirm.layer.shadowRadius = 2
+        btnConfirm.layer.masksToBounds = false
         
     }
     
@@ -54,6 +85,10 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
             dismiss(animated: true) {
                 self.delegate?.mlTextDelegate(res: self.resultText)
         }
+    }
+    
+    @IBAction func clickedClose(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     //MARK: - 카메라,앨범 사용권한 질의
