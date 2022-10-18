@@ -3237,57 +3237,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YWB-Tc-scS">
-                                <rect key="frame" x="-12" y="35" width="426" height="589"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy2" translatesAutoresizingMaskIntoConstraints="NO" id="YWB-Tc-scS">
+                                <rect key="frame" x="20" y="44" width="374" height="589"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="589" id="biQ-CW-Xm5"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="F5f-ih-bGu">
-                                <rect key="frame" x="0.0" y="624" width="414" height="150"/>
+                                <rect key="frame" x="20" y="657" width="374" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oz3-h5-Aib">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="카메라"/>
-                                        <connections>
-                                            <action selector="clickedCameraButton:" destination="ERw-hQ-WIC" eventType="touchUpInside" id="xeJ-QN-23c"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FQ-M0-83X">
-                                        <rect key="frame" x="0.0" y="53" width="414" height="44"/>
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="앨범"/>
-                                        <connections>
-                                            <action selector="clickedAlbumButton:" destination="ERw-hQ-WIC" eventType="touchUpInside" id="qpL-JO-QSS"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="P22-Dq-egc">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="55.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oz3-h5-Aib">
+                                                <rect key="frame" x="0.0" y="0.0" width="182.5" height="55.5"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="카메라"/>
+                                                <connections>
+                                                    <action selector="clickedCameraButton:" destination="ERw-hQ-WIC" eventType="touchUpInside" id="xeJ-QN-23c"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FQ-M0-83X">
+                                                <rect key="frame" x="191.5" y="0.0" width="182.5" height="55.5"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="앨범"/>
+                                                <connections>
+                                                    <action selector="clickedAlbumButton:" destination="ERw-hQ-WIC" eventType="touchUpInside" id="qpL-JO-QSS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSE-Kf-Bbf">
-                                        <rect key="frame" x="0.0" y="106" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="64.5" width="374" height="55.5"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="clickedConfirm:" destination="ERw-hQ-WIC" eventType="touchUpInside" id="JQh-S2-WDC"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="dOi-2o-Gy3"/>
+                                    <constraint firstAttribute="height" constant="120" id="dOi-2o-Gy3"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XCj-zd-E5u"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XCj-zd-E5u" firstAttribute="trailing" secondItem="F5f-ih-bGu" secondAttribute="trailing" id="DYF-EE-D5n"/>
-                            <constraint firstItem="YWB-Tc-scS" firstAttribute="trailing" secondItem="osN-vf-UBb" secondAttribute="trailing" id="E96-LN-cAW"/>
-                            <constraint firstItem="F5f-ih-bGu" firstAttribute="top" secondItem="YWB-Tc-scS" secondAttribute="bottom" id="OFi-VJ-GAB"/>
-                            <constraint firstItem="YWB-Tc-scS" firstAttribute="leading" secondItem="osN-vf-UBb" secondAttribute="leadingMargin" id="fnP-wa-Og3"/>
+                            <constraint firstItem="XCj-zd-E5u" firstAttribute="trailing" secondItem="F5f-ih-bGu" secondAttribute="trailing" constant="20" id="DYF-EE-D5n"/>
+                            <constraint firstItem="F5f-ih-bGu" firstAttribute="top" secondItem="YWB-Tc-scS" secondAttribute="bottom" constant="24" id="OFi-VJ-GAB"/>
+                            <constraint firstAttribute="trailing" secondItem="YWB-Tc-scS" secondAttribute="trailing" constant="20" id="P9G-xh-QYn"/>
+                            <constraint firstItem="YWB-Tc-scS" firstAttribute="leading" secondItem="XCj-zd-E5u" secondAttribute="leading" constant="20" id="hOr-jx-8zj"/>
                             <constraint firstItem="YWB-Tc-scS" firstAttribute="top" secondItem="osN-vf-UBb" secondAttribute="topMargin" id="v4A-Jn-DuE"/>
-                            <constraint firstItem="F5f-ih-bGu" firstAttribute="leading" secondItem="XCj-zd-E5u" secondAttribute="leading" id="vwi-2j-oPv"/>
+                            <constraint firstItem="F5f-ih-bGu" firstAttribute="leading" secondItem="XCj-zd-E5u" secondAttribute="leading" constant="20" id="vwi-2j-oPv"/>
                         </constraints>
                     </view>
                     <connections>
@@ -4684,17 +4697,16 @@
     </scenes>
     <designables>
         <designable name="6Ot-W2-xeD">
-            <size key="intrinsicContentSize" width="57.5" height="27"/>
+            <size key="intrinsicContentSize" width="41.5" height="19"/>
         </designable>
-        <designable name="F7J-g9-Bvd">
-            <size key="intrinsicContentSize" width="8" height="8"/>
-        </designable>
+        <designable name="F7J-g9-Bvd"/>
         <designable name="pVQ-02-xFM">
-            <size key="intrinsicContentSize" width="191.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="175.5" height="20.5"/>
         </designable>
     </designables>
     <resources>
         <image name="camera64" width="64" height="64"/>
+        <image name="dummy2" width="1067" height="1068"/>
         <image name="edit" width="32" height="32"/>
         <image name="group2" width="183" height="44"/>
         <image name="house" catalog="system" width="128" height="106"/>
@@ -4749,6 +4761,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -24,6 +24,8 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
     var delegate:MLTextDelegate?
     var selectedImage:UIImage?
     
+    var resultText = ""
+    
     @IBOutlet weak var textImageView: UIImageView!
     
     
@@ -48,8 +50,10 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
     
     //사용작 선택한 이미지를 확인하고 확인버튼 클릭시
     @IBAction func clickedConfirm(_ sender: Any) {
-        dismiss(animated: true)
-        delegate?.mlTextDelegate(res:"Sample")
+        useMLForImageToText()
+            dismiss(animated: true) {
+                self.delegate?.mlTextDelegate(res: self.resultText)
+        }
     }
     
     //MARK: - 카메라,앨범 사용권한 질의
@@ -205,14 +209,15 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
         }
     }
     
-    /*
     //MARK: - 이미지내의 텍스트를 추출하기
     func useMLForImageToText() {
      
         let koreanOptions = KoreanTextRecognizerOptions()
         let koreanTextRecognizer = TextRecognizer.textRecognizer(options: koreanOptions)
-
-        let image = VisionImage(image: UIImage(named: "sample_text")!)
+        guard let selectedImage = selectedImage else {
+            return
+        }
+        let image = VisionImage(image: selectedImage)
         image.orientation = imageOrientation(deviceOrientation: UIDevice.current.orientation, cameraPostion: .back)
         
         koreanTextRecognizer.process(image) { result, error in
@@ -221,8 +226,8 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
                 print("Error")
                 return
             }
-            let resultText = result.text
-            print("resultTEXT: \(resultText)")
+            self.resultText = result.text
+            print("resultTEXT: \(self.resultText)")
         }
         // Do any additional setup after loading the view.
     }
@@ -243,5 +248,4 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
             return .up
         }
     }
-*/
 }

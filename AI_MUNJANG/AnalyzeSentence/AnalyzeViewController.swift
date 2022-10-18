@@ -173,7 +173,7 @@ class AnalyzeViewController: UIViewController, MLTextDelegate {
 }
     
     func mlTextDelegate(res:String) {
-        print(res)
+        analyzeSentenceCustomTextView.textView.text = res
     }
 
 
