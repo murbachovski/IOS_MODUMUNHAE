@@ -75,11 +75,14 @@ class TestViewController: UIViewController,UITableViewDataSource, UITableViewDel
 //            requestByEight(url:url, sen: sen) { resDic in
 //            print(resDic)
 //            }
-            requestByInfer(url: url, sen: sen) { dicData in
-                for i in dicData {
-                    print(i)
-                }
-            }
+            print("함수 실행 속동:", "+", progressTime({
+                print(requestByInfer(url: url, sen: sen) { dicData in
+                    for i in dicData {
+                        print(i)
+                    }
+                })
+            }))
+            
         
         }else if indexPath.row == 2 {
             //아이패드와 모바일 대응

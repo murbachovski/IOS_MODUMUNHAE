@@ -14,6 +14,12 @@ public func isValidPassword(password:String) -> Bool {
     return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
 }
 
+public func progressTime(_ closure: () -> ()) -> TimeInterval {
+    let start = CFAbsoluteTimeGetCurrent()
+    closure()
+    let diff = CFAbsoluteTimeGetCurrent() - start
+    return (diff)
+}
 
 func hexStringToUIColor (hex:String, alpha:CGFloat = 1.0) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -51,15 +57,22 @@ func getFontName() {
     }
 
 func changeMainNC() { //
-    let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
+    let vc = UIStoryboard(name: whichStoryBoard(), bundle: .main).instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
     let ad = UIApplication.shared.delegate as! AppDelegate
     ad.window?.rootViewController = vc
 }
 
+func whichStoryBoard() -> String {
+    var boardName = "Main"
+    if UIDevice.current.userInterfaceIdiom == .pad {
+        boardName = "Main_ipad"
+    }
+    return boardName
+}
 
 func changeLoginNC() { //LoginNavigationController
     
-    let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "LoginNavigationController") as! UINavigationController
+    let vc = UIStoryboard(name: whichStoryBoard(), bundle: .main).instantiateViewController(withIdentifier: "LoginNavigationController") as! UINavigationController
     let ad = UIApplication.shared.delegate as! AppDelegate
     ad.window?.rootViewController = vc
 }

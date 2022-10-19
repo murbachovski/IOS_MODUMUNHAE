@@ -15,6 +15,7 @@
 		840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071CE287BE2EF00B07551 /* StackViewExtension.swift */; };
 		84010D3628D8169600493976 /* SenListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84010D3528D8169600493976 /* SenListViewController.swift */; };
 		8411A5B328C836EA0061A6F5 /* MunhaeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */; };
+		8421186B28FFC63B00B47D03 /* Main_ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8421186928FFC63B00B47D03 /* Main_ipad.storyboard */; };
 		84261F3F28E68D8200E5E100 /* InferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84261F3E28E68D8200E5E100 /* InferenceViewController.swift */; };
 		84261F4128ED604000E5E100 /* CorrectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84261F4028ED603D00E5E100 /* CorrectionViewController.swift */; };
 		84261F4328ED654900E5E100 /* CorrectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84261F4228ED654900E5E100 /* CorrectionCollectionViewCell.swift */; };
@@ -60,7 +61,6 @@
 		845D5A3C28C1C86100CB67DE /* MunhaeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */; };
 		845D5A3F28C1E63900CB67DE /* MunhaeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */; };
 		845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */; };
-		84648ECF28E43A380036DC89 /* Main_ipad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84648ECD28E43A380036DC89 /* Main_ipad.storyboard */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -133,6 +133,7 @@
 		840071D5287BE41300B07551 /* AdaptiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveViewController.swift; sourceTree = "<group>"; };
 		84010D3528D8169600493976 /* SenListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenListViewController.swift; sourceTree = "<group>"; };
 		8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeVideoViewController.swift; sourceTree = "<group>"; };
+		8421186A28FFC63B00B47D03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_ipad.storyboard; sourceTree = "<group>"; };
 		84261F3E28E68D8200E5E100 /* InferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceViewController.swift; sourceTree = "<group>"; };
 		84261F4028ED603D00E5E100 /* CorrectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionViewController.swift; sourceTree = "<group>"; };
 		84261F4228ED654900E5E100 /* CorrectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -178,7 +179,6 @@
 		845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestViewController.swift; sourceTree = "<group>"; };
 		845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestModel.swift; sourceTree = "<group>"; };
 		845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestContentData.swift; sourceTree = "<group>"; };
-		84648ECE28E43A380036DC89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_ipad.storyboard; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -553,7 +553,7 @@
 				84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */,
 				C6ED5079287531AE00454F26 /* AppDelegate.swift */,
 				C6ED507F287531AE00454F26 /* Main.storyboard */,
-				84648ECD28E43A380036DC89 /* Main_ipad.storyboard */,
+				8421186928FFC63B00B47D03 /* Main_ipad.storyboard */,
 				844226DF2890F66700DCB93B /* GoogleService-Info.plist */,
 				C6ED5082287531AF00454F26 /* Assets.xcassets */,
 				C6ED5087287531AF00454F26 /* Info.plist */,
@@ -713,6 +713,7 @@
 				8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
 				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
+				8421186B28FFC63B00B47D03 /* Main_ipad.storyboard in Resources */,
 				842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */,
 				C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */,
 				C6ED5083287531AF00454F26 /* Assets.xcassets in Resources */,
@@ -725,7 +726,6 @@
 				8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */,
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
 				842B0392288643080000BEDA /* NanumSquareR.ttf in Resources */,
-				84648ECF28E43A380036DC89 /* Main_ipad.storyboard in Resources */,
 				842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */,
 				8474DD00287D02DC008275FC /* CustomButtonView.xib in Resources */,
 			);
@@ -1008,10 +1008,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84648ECD28E43A380036DC89 /* Main_ipad.storyboard */ = {
+		8421186928FFC63B00B47D03 /* Main_ipad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84648ECE28E43A380036DC89 /* Base */,
+				8421186A28FFC63B00B47D03 /* Base */,
 			);
 			name = Main_ipad.storyboard;
 			sourceTree = "<group>";

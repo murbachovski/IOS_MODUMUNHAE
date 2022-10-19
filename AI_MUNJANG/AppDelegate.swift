@@ -37,13 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //구독여부 판단 - 영수증의 유효성을 판단해야
         InAppProducts.store.checkReceiptValidation(isProduction: true, completion: { _ in})
-            
-        
-        var boardName = "Main"
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            boardName = "Main_ipad"
-        }
-        let vc = UIStoryboard(name: boardName, bundle: .main).instantiateViewController(withIdentifier: "DownloadViewController") as! DownloadViewController
+
+        let vc = UIStoryboard(name: whichStoryBoard(), bundle: .main).instantiateViewController(withIdentifier: "DownloadViewController") as! DownloadViewController
         window?.rootViewController = vc
         
 //        if MyInfo.shared.learningProgress.isEmpty &&  Core.shared.isUserLogin() == true {

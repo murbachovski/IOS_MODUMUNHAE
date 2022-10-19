@@ -143,14 +143,16 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
     }
     
     fileprivate func changeViewController() {
+
+        let boardName = whichStoryBoard()
         if Core.shared.isNewUser(){
-            let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+            let vc = UIStoryboard(name: boardName, bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
             vc.modalPresentationStyle = .fullScreen
             vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true)
             
         }else{
-            let nc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
+            let nc = UIStoryboard(name: boardName, bundle: .main).instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
             nc.modalPresentationStyle = .fullScreen
             nc.modalTransitionStyle = .crossDissolve
             self.present(nc, animated: true)
@@ -269,8 +271,9 @@ class DownloadViewController: UIViewController, URLSessionDataDelegate {
                             self.setupContents()
                             
                             print("🥶🥶clickedZipDownload is called Finished🥶🥶")
+                            
                             if Core.shared.isNewUser(){
-                                let vc = UIStoryboard(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
+                                let vc = UIStoryboard(name: whichStoryBoard(), bundle: .main).instantiateViewController(withIdentifier: "OnBoardingViewController") as! OnBoardingViewController
                                 vc.modalPresentationStyle = .fullScreen
                                 vc.modalTransitionStyle = .crossDissolve
                                 self.present(vc, animated: true)

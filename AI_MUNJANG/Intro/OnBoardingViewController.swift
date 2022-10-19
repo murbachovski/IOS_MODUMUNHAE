@@ -27,7 +27,6 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
         configureView()
-  
     }
 
   
