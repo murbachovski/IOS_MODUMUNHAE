@@ -45,6 +45,8 @@ class CustomEmailView: UIView, UITextFieldDelegate{
         
     }
 
+
+    
     //방법 1: loadNibNamed(_:owner:options:) 사용
     func customInit() {
         if let view = Bundle.main.loadNibNamed("CustomEmailView", owner: self, options: nil)?.first as? UIView {
@@ -59,6 +61,12 @@ class CustomEmailView: UIView, UITextFieldDelegate{
             textField.autocorrectionType = .no
             
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification , object: nil)
+            
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                titleLabel.font = titleLabel.font.withSize(20)
+                textField.font = textField.font?.withSize(20)
+                subLabel.font = subLabel.font.withSize(15)
+            }
 
         }
     }

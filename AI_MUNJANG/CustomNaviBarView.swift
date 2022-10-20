@@ -13,6 +13,7 @@ class CustomNaviBarView: UIView {
 
     var completionHandler: ()->Void = {}
     
+    @IBOutlet var subTitle: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,10 @@ class CustomNaviBarView: UIView {
             view.frame = self.bounds
             
             addSubview(view)
+            
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                subTitle.font = subTitle.font.withSize(22)
+            }
             
         }
     }

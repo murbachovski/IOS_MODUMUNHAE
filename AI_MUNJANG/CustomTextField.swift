@@ -34,6 +34,9 @@ class CustomTextField: UIView, UITextFieldDelegate{
             
             addSubview(view)
             
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                textField.font = textField.font?.withSize(20)
+            }
         }
     }
     

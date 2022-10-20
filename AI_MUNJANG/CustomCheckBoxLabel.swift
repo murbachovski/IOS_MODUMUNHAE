@@ -45,6 +45,11 @@ class CustomCheckBoxLabel: UIView {
             checkButtonLabel.addGestureRecognizer(tapGesture)
             checkButtonLabel.isUserInteractionEnabled = true
             
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                
+                checkButtonLabel.font = checkButtonLabel.font.withSize(16)
+                checkSubButton.titleLabel?.font =  checkSubButton.titleLabel?.font.withSize(16)
+            }
         }
     }
     

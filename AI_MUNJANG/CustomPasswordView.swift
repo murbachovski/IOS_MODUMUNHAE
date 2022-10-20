@@ -50,7 +50,12 @@ class CustomPasswordView: UIView, UITextFieldDelegate{
             textField.autocorrectionType = .no
             textField.rightViewMode = .always
            
-
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                titleLabel.font = titleLabel.font.withSize(20)
+                textField.font = textField.font?.withSize(20)
+                noticeLabel.font = noticeLabel.font.withSize(15)
+            }
+            
         }
     }
     

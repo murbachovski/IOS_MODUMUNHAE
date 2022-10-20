@@ -52,6 +52,7 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
         allCheckLabel.checkButtonLabel.text = "모두 동의합니다."
         allCheckLabel.checkButton.tag = 0
         allCheckLabel.checkSubButton.isHidden = true
+        
         allCheckLabel.checkButtonLabel.font =  UIFont(name: "NanumSquareB", size: 15)
         
         useTermsCheckLabel.checkButtonLabel.text = "[필수] 이용약관 동의"

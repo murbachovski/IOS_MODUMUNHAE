@@ -71,6 +71,8 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
         passwordView.checkEmailDelegate = self
         passwordView.noticeLabel.text = "영문,숫자,기호를 모두 조합하여 8~12자로 입력해주세요."
         
+        
+        
         passwordConfirmView.textField.isSecureTextEntry = true
         passwordConfirmView.textField.textContentType = .oneTimeCode
         passwordConfirmView.textField.enablePasswordToggle()
@@ -79,6 +81,11 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
         passwordConfirmView.checkConfirmPasswordDelegate = self
         passwordConfirmView.titleLabel.text = "비밀번호 재확인"
         passwordConfirmView.textField.placeholder = "비밀번호를 다시 입력해주세요."
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            passwordConfirmView.titleLabel.font = passwordConfirmView.titleLabel.font.withSize(20)
+            passwordConfirmView.textField.font = passwordConfirmView.textField.font?.withSize(20)
+        }
                 
         registerView.button.layer.cornerRadius = 8
         registerView.button.setTitle("완료", for: .normal)
