@@ -21,6 +21,83 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="gfU-8H-b0D">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="PRe-oi-4bG" customClass="HomeViewController" customModule="AI_MUNJANG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ozZ-dG-Weg">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSI-vU-4iB" userLabel="container">
+                                <rect key="frame" x="20" y="220" width="728" height="272.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-GE-Hxf">
+                                        <rect key="frame" x="20" y="20" width="648" height="232.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="어떤 문장을 분석해드릴까요? ">
+                                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedAnalyze:" destination="PRe-oi-4bG" eventType="touchUpInside" id="mGF-hB-VEq"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="e3w-wp-SIA">
+                                        <rect key="frame" x="676" y="121" width="32" height="30.5"/>
+                                        <color key="tintColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="Frz-FN-sFq"/>
+                                            <constraint firstAttribute="height" constant="32" id="JP3-q3-cUc"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="e3w-wp-SIA" firstAttribute="leading" secondItem="rmm-GE-Hxf" secondAttribute="trailing" constant="8" id="Pp6-Eo-Z0p"/>
+                                    <constraint firstItem="rmm-GE-Hxf" firstAttribute="top" secondItem="WSI-vU-4iB" secondAttribute="top" constant="20" symbolic="YES" id="RVT-kw-MS3"/>
+                                    <constraint firstAttribute="bottom" secondItem="rmm-GE-Hxf" secondAttribute="bottom" constant="20" symbolic="YES" id="XjE-Kb-IGr"/>
+                                    <constraint firstItem="e3w-wp-SIA" firstAttribute="centerY" secondItem="WSI-vU-4iB" secondAttribute="centerY" id="aKQ-nR-dky"/>
+                                    <constraint firstAttribute="trailing" secondItem="e3w-wp-SIA" secondAttribute="trailing" constant="20" id="cEq-o3-izP"/>
+                                    <constraint firstItem="rmm-GE-Hxf" firstAttribute="leading" secondItem="WSI-vU-4iB" secondAttribute="leading" constant="20" id="p8Y-tq-In7"/>
+                                    <constraint firstAttribute="width" secondItem="WSI-vU-4iB" secondAttribute="height" multiplier="187:70" id="pqg-ep-uGK"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfr-Qj-KuW">
+                                <rect key="frame" x="20" y="542.5" width="728" height="26"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="문장 학습 하러 가기">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedContents:" destination="PRe-oi-4bG" eventType="touchUpInside" id="g4K-d3-sk7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oNx-sS-kdf"/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xfr-Qj-KuW" firstAttribute="top" secondItem="WSI-vU-4iB" secondAttribute="bottom" constant="50" id="6CG-fB-kTy"/>
+                            <constraint firstItem="WSI-vU-4iB" firstAttribute="top" secondItem="oNx-sS-kdf" secondAttribute="top" constant="150" id="7RD-r5-JyS"/>
+                            <constraint firstItem="WSI-vU-4iB" firstAttribute="leading" secondItem="oNx-sS-kdf" secondAttribute="leading" constant="20" id="CUm-Td-dDP"/>
+                            <constraint firstItem="xfr-Qj-KuW" firstAttribute="leading" secondItem="oNx-sS-kdf" secondAttribute="leading" constant="20" id="IaE-IQ-npi"/>
+                            <constraint firstItem="oNx-sS-kdf" firstAttribute="trailing" secondItem="WSI-vU-4iB" secondAttribute="trailing" constant="20" id="vAU-MI-J8p"/>
+                            <constraint firstItem="oNx-sS-kdf" firstAttribute="trailing" secondItem="xfr-Qj-KuW" secondAttribute="trailing" constant="20" id="wp3-x2-vqj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jdi-7z-ZlO"/>
+                    <connections>
+                        <outlet property="containerView" destination="WSI-vU-4iB" id="LaU-3t-Ruw"/>
+                        <outlet property="labelContents" destination="xfr-Qj-KuW" id="dif-r3-n80"/>
+                        <outlet property="searchImage" destination="e3w-wp-SIA" id="bC0-qo-lSi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3zZ-Cs-smL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2492.1875" y="1485.9375"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -53,13 +130,13 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꾸준하게 키워가는  나의 문해력" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDW-jb-uyb">
-                                                            <rect key="frame" x="183" y="5" width="176.5" height="57.5"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                            <rect key="frame" x="215.5" y="5" width="111.5" height="36"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <color key="textColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust1" translatesAutoresizingMaskIntoConstraints="NO" id="pFc-Jj-mk1">
-                                                            <rect key="frame" x="390.5" y="5" width="140" height="124"/>
+                                                            <rect key="frame" x="358" y="5" width="140" height="124"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="124" id="ZS6-rC-l3s"/>
                                                                 <constraint firstAttribute="width" constant="140" id="idI-Ef-TJD"/>
@@ -112,7 +189,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIN-i0-ajQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="64"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -206,7 +283,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="WaK-kb-ozq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="19"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -218,7 +295,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="- 무엇이 어찌하다 - 무엇이 어찌하다 - 무엇이 어찌하다">
                                                         <attributes>
-                                                            <font key="NSFont" metaFont="system" size="17"/>
+                                                            <font key="NSFont" metaFont="system" size="10"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -260,7 +337,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JGe-er-fM7">
-                                <rect key="frame" x="0.0" y="268" width="768" height="756"/>
+                                <rect key="frame" x="30" y="268" width="708" height="756"/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1QY-r4-L5z">
                                     <size key="itemSize" width="100" height="80"/>
@@ -278,11 +355,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1번" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuQ-6h-dTf">
-                                                    <rect key="frame" x="38.5" y="9" width="23" height="24"/>
+                                                    <rect key="frame" x="42" y="9" width="16" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="xiv-XH-Dft"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -330,10 +407,10 @@
                             <constraint firstItem="zPv-xb-wr2" firstAttribute="bottom" secondItem="JGe-er-fM7" secondAttribute="bottom" id="Aor-Gs-Jvs"/>
                             <constraint firstAttribute="trailing" secondItem="4hw-Sf-7Er" secondAttribute="trailing" id="Aqa-Ks-zsn"/>
                             <constraint firstItem="lmb-LB-92t" firstAttribute="top" secondItem="zPv-xb-wr2" secondAttribute="top" id="P8q-JW-ITT"/>
-                            <constraint firstItem="JGe-er-fM7" firstAttribute="leading" secondItem="zPv-xb-wr2" secondAttribute="leading" id="PcQ-h3-Hvy"/>
+                            <constraint firstItem="JGe-er-fM7" firstAttribute="leading" secondItem="zPv-xb-wr2" secondAttribute="leading" constant="30" id="PcQ-h3-Hvy"/>
                             <constraint firstItem="JGe-er-fM7" firstAttribute="top" secondItem="lmb-LB-92t" secondAttribute="bottom" constant="8" id="YKc-eV-mSK"/>
                             <constraint firstItem="lmb-LB-92t" firstAttribute="leading" secondItem="zPv-xb-wr2" secondAttribute="leading" id="Ymx-Vg-23p"/>
-                            <constraint firstItem="zPv-xb-wr2" firstAttribute="trailing" secondItem="JGe-er-fM7" secondAttribute="trailing" id="m5z-gb-gDR"/>
+                            <constraint firstItem="zPv-xb-wr2" firstAttribute="trailing" secondItem="JGe-er-fM7" secondAttribute="trailing" constant="30" id="m5z-gb-gDR"/>
                             <constraint firstItem="zPv-xb-wr2" firstAttribute="trailing" secondItem="lmb-LB-92t" secondAttribute="trailing" id="njE-pU-S2L"/>
                             <constraint firstItem="lmb-LB-92t" firstAttribute="top" secondItem="4hw-Sf-7Er" secondAttribute="bottom" id="pM3-v7-1wg"/>
                             <constraint firstItem="4hw-Sf-7Er" firstAttribute="top" secondItem="fPB-Iy-TNh" secondAttribute="top" id="wvy-03-Mz7"/>
@@ -492,26 +569,10 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
-                                                <fragment content="비">
+                                                <fragment content="비밀번호 찾기/재설정">
                                                     <attributes>
                                                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        <integer key="NSUnderline" value="1"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="밀번">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" size="16" name="AppleSDGothicNeo-Regular"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                        <integer key="NSUnderline" value="1"/>
-                                                    </attributes>
-                                                </fragment>
-                                                <fragment content="호 찾기/재설정">
-                                                    <attributes>
-                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="16"/>
+                                                        <font key="NSFont" size="10" name=".AppleSDGothicNeoI-Regular"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         <integer key="NSUnderline" value="1"/>
                                                     </attributes>
@@ -542,7 +603,7 @@
                                                         <fragment content="이메일 회원가입">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="16"/>
+                                                                <font key="NSFont" size="10" name=".AppleSDGothicNeoI-Regular"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 <integer key="NSUnderline" value="1"/>
                                                             </attributes>
@@ -559,25 +620,25 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-AC-h0A">
-                                <rect key="frame" x="24" y="575" width="720" height="82"/>
+                                <rect key="frame" x="24" y="575" width="720" height="84"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소셜계정으로 이용하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D7-gC-42A">
-                                        <rect key="frame" x="0.0" y="0.0" width="720" height="18"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="15"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="720" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="l2r-a6-n4Y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="10"/>
                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0o-Ot-9e8" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="26" width="720" height="56"/>
+                                        <rect key="frame" x="0.0" y="28" width="720" height="56"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="B8n-iH-IM9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="82" id="luJ-2p-H5y"/>
-                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jqd-zy-sHn">
                                 <rect key="frame" x="20" y="944" width="728" height="56"/>
@@ -594,11 +655,11 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c30-xf-1sD">
-                                <rect key="frame" x="685" y="87" width="59" height="24"/>
+                                <rect key="frame" x="707" y="87" width="37" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="ztg-gK-ZGD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="10"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="둘러보기">
                                     <color key="titleColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -654,29 +715,6 @@
             </objects>
             <point key="canvasLocation" x="3540.579710144928" y="90.401785714285708"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="HHG-Ya-mN8">
-            <objects>
-                <navigationController storyboardIdentifier="mainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="e2K-mJ-jsy" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="icArrowLeft32Px" backIndicatorTransitionMaskImage="icArrowLeft32Px" id="UoR-s3-7da">
-                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="hidesShadow" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nTd-th-U8G"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ckt-bE-5YV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2686" y="809"/>
-        </scene>
         <!--Download View Controller-->
         <scene sceneID="ZUZ-1b-0cc">
             <objects>
@@ -687,49 +725,49 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-pZ-7dp">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <color key="backgroundColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group" translatesAutoresizingMaskIntoConstraints="NO" id="LJ6-qA-coG">
-                                <rect key="frame" x="269" y="435" width="230" height="154"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="LJ6-qA-coG" secondAttribute="height" multiplier="3:2" id="lNd-o1-SfK"/>
-                                </constraints>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="학습콘텐츠 다운로드 중" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dR-mj-uuE">
                                 <rect key="frame" x="24" y="884" width="720" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5LC-cw-W4E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
+                                <color key="textColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-q1-5fr" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="354" y="784" width="60" height="60"/>
+                                <rect key="frame" x="364" y="804" width="40" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="kdM-pW-Lg7"/>
-                                    <constraint firstAttribute="width" constant="60" id="kjR-Po-KlK"/>
+                                    <constraint firstAttribute="height" constant="40" id="kdM-pW-Lg7"/>
+                                    <constraint firstAttribute="width" constant="40" id="kjR-Po-KlK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color">
-                                        <color key="value" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="typeName" value=".lineSpinFadeLoader"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoImg" translatesAutoresizingMaskIntoConstraints="NO" id="9Ro-JP-C7S">
+                                <rect key="frame" x="184" y="387" width="400" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="KOP-5L-H4J"/>
+                                    <constraint firstAttribute="width" constant="400" id="mkG-zv-Dj7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kbu-q0-bhn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LJ6-qA-coG" firstAttribute="centerX" secondItem="2DR-Dh-Isw" secondAttribute="centerX" id="1aq-AO-BmT"/>
                             <constraint firstItem="ftA-q1-5fr" firstAttribute="centerX" secondItem="2DR-Dh-Isw" secondAttribute="centerX" id="4F4-sP-AHW"/>
                             <constraint firstItem="kbu-q0-bhn" firstAttribute="trailing" secondItem="7dR-mj-uuE" secondAttribute="trailing" constant="24" id="4HP-uw-Kpg"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="trailing" secondItem="kbu-q0-bhn" secondAttribute="trailing" id="5PW-l3-dEM"/>
                             <constraint firstItem="7dR-mj-uuE" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" constant="24" id="JRX-4v-QWt"/>
-                            <constraint firstItem="LJ6-qA-coG" firstAttribute="centerY" secondItem="2DR-Dh-Isw" secondAttribute="centerY" id="P6m-CN-bg6"/>
-                            <constraint firstItem="LJ6-qA-coG" firstAttribute="width" secondItem="XPM-pZ-7dp" secondAttribute="width" multiplier="0.3" id="YuF-MT-gCW"/>
+                            <constraint firstItem="9Ro-JP-C7S" firstAttribute="centerX" secondItem="2DR-Dh-Isw" secondAttribute="centerX" id="QBW-ck-7ua"/>
                             <constraint firstItem="7dR-mj-uuE" firstAttribute="top" secondItem="ftA-q1-5fr" secondAttribute="bottom" constant="40" id="b2R-xp-piZ"/>
+                            <constraint firstItem="9Ro-JP-C7S" firstAttribute="centerY" secondItem="2DR-Dh-Isw" secondAttribute="centerY" id="erA-vr-Okf"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="top" secondItem="2DR-Dh-Isw" secondAttribute="top" id="fsQ-KH-0Ey"/>
                             <constraint firstItem="XPM-pZ-7dp" firstAttribute="leading" secondItem="kbu-q0-bhn" secondAttribute="leading" id="xOg-no-hCi"/>
                             <constraint firstAttribute="bottom" secondItem="XPM-pZ-7dp" secondAttribute="bottom" id="y9q-4X-Ahs"/>
@@ -743,7 +781,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEl-ha-Ief" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2685.507246376812" y="1693.5267857142856"/>
+            <point key="canvasLocation" x="3450.78125" y="1693.359375"/>
         </scene>
         <!--Munhae Test View Controller-->
         <scene sceneID="Q8U-h7-lfZ">
@@ -783,7 +821,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghQ-sO-TNP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3596" y="1513"/>
+            <point key="canvasLocation" x="4360.9375" y="1512.890625"/>
         </scene>
         <!--Munhae Video View Controller-->
         <scene sceneID="Cnm-hH-xq3">
@@ -823,7 +861,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFU-dF-jXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4368" y="1513"/>
+            <point key="canvasLocation" x="5133.59375" y="1512.890625"/>
         </scene>
         <!--CommonUI View Controller-->
         <scene sceneID="j2i-Mt-tmM">
@@ -941,7 +979,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAc-JL-p6U">
                                         <rect key="frame" x="0.0" y="0.0" width="728" height="56"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="다음">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1141,7 +1179,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cHW-rm-P9O"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1192,7 +1230,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="uYB-dy-uer"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="10"/>
                                 <color key="textColor" red="0.94117647058823528" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1498,17 +1536,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 탈퇴 시 홍길동님의 하트 10개는 모두 삭제되며, 다시 가입해도 복구되지 않습니다.  - 회원 탈퇴와 구독권 해지는 별도로 진행되므로 반드시 회원 탈퇴 전 구독권을 해지해 주세요. " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjB-6a-gAy">
-                                <rect key="frame" x="30" y="92" width="708" height="70"/>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                <rect key="frame" x="30" y="92" width="708" height="53.5"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ra1-CJ-ull">
-                                <rect key="frame" x="30" y="170" width="708" height="40"/>
+                                <rect key="frame" x="30" y="153.5" width="708" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tPA-rv-18r"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="구독권 해지하러 가기 &gt;">
                                     <color key="titleColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1518,40 +1556,41 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JtR-Em-mNH" userLabel="border">
-                                <rect key="frame" x="20" y="218" width="728" height="1"/>
+                                <rect key="frame" x="20" y="201.5" width="728" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="bch-Sg-tuc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQB-Z7-n3C" customClass="CustomCheckBoxLabel" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="239" width="768" height="40"/>
+                                <rect key="frame" x="0.0" y="222.5" width="768" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="q6b-eY-z8Q"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4q-LB-KgU" customClass="CustomCheckBoxLabel" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="287" width="768" height="40"/>
+                                <rect key="frame" x="0.0" y="270.5" width="768" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3jo-f8-BAN"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴를 위해 필수 항목에 동의해주세요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xYM-5j-hEi">
-                                <rect key="frame" x="24" y="347" width="720" height="30"/>
+                                <rect key="frame" x="24" y="330.5" width="720" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FCP-5R-sSr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.37327274659999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lhR-9c-njU">
-                                <rect key="frame" x="20" y="405" width="728" height="52"/>
+                                <rect key="frame" x="20" y="388.5" width="728" height="52"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnR-J9-T0Z">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="52"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="취소">
                                             <color key="titleColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
@@ -1563,6 +1602,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWB-Xo-WJi">
                                         <rect key="frame" x="372" y="0.0" width="356" height="52"/>
                                         <color key="backgroundColor" red="0.792156862745098" green="0.792156862745098" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="다음">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1673,7 +1713,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="hJw-gh-gKJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="1" green="0.37327274659999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1682,7 +1722,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="14x-kA-JFL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1698,7 +1738,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECe-of-F4k">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="52"/>
-                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="취소">
                                             <color key="titleColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
@@ -1711,6 +1751,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="le4-x5-LcZ">
                                         <rect key="frame" x="372" y="0.0" width="356" height="52"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="다음">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1909,7 +1950,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4bJ-za-PTt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1919,10 +1960,255 @@
                                     <constraint firstAttribute="height" constant="80" id="nmA-3l-xwK"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="내가 궁금한 문장을 분석해주는 문장분석, 다양한 문장 구성 요소를 학습할 수 있는 문장구경, 매일 꾸준히 이용하며 문해력을 향상시켜보세요!">
+                                    <fragment content="내가">
                                         <attributes>
                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" metaFont="system" size="17"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="궁금한">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="문장을">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="분석해주는">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="문장분석">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=", ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="다양한">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="문장">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="구성">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="요소를">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="학습할">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="수">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="있는">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="문장구경">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=", ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="매일">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="꾸준히">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="이용하며">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="문해력을">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="향상시켜보세요">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="8" name=".AppleSDGothicNeoI-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="!">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" metaFont="system" size="8"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -1936,23 +2222,23 @@
                                         <rect key="frame" x="30" y="8" width="668" height="30"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="D0G-8q-JRf">
-                                                <rect key="frame" x="0.0" y="14.5" width="274" height="1"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="288.5" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="QTt-T8-89K"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="무제한 이용 구독권" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeD-wa-arQ">
-                                                <rect key="frame" x="282" y="0.0" width="104.5" height="30"/>
+                                                <rect key="frame" x="296.5" y="0.0" width="75" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="pI0-8J-x4t"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="xKe-4m-g9d">
-                                                <rect key="frame" x="394.5" y="14.5" width="273.5" height="1"/>
+                                                <rect key="frame" x="379.5" y="14.5" width="288.5" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="iNW-gd-Nzu"/>
@@ -1971,7 +2257,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="₩ 10,000 /월">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="system" size="37"/>
+                                                    <font key="NSFont" size="15" name=".AppleSDGothicNeoI-Regular"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -1984,7 +2270,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="r1l-54-QLg"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="구독하기"/>
@@ -2021,9 +2307,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-Qi-JwL">
-                                <rect key="frame" x="20" y="436" width="728" height="143.5"/>
+                                <rect key="frame" x="20" y="436" width="728" height="67"/>
                                 <string key="text">- 구독해지는 현재 사용기간이 종료되기 24시간 전까지 가능하며, 취소할 경우, 사용기간 종료후에 자동으로 구독이 중단됩니다.  - 사용기간 종료 24시간 전까지 취소하지 않으면, 동일한 기간으로 자동 갱신합니다.  - 회원 탈퇴와 구독 해지는 별도로 진행되므로 반드시 회원탈퇴 전 구독을 해지해주세요.  - 구독해지 전 회원탈퇴를 하셨다면,  App Stroe에서 해지 가능합니다.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2108,8 +2394,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="728" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동 님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-6a-Gmq">
-                                                                <rect key="frame" x="8" y="0.0" width="64" height="32"/>
-                                                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
+                                                                <rect key="frame" x="8" y="0.0" width="58.5" height="32"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="15"/>
                                                                 <color key="textColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -2141,19 +2427,19 @@
                                                         <rect key="frame" x="0.0" y="44" width="728" height="48"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보유 하트 개수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvr-x8-vKi">
-                                                                <rect key="frame" x="12" y="12" width="86.5" height="24"/>
-                                                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                                <rect key="frame" x="12" y="12" width="60" height="24"/>
+                                                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1004" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phw-C4-Ylb">
-                                                                <rect key="frame" x="677" y="8" width="39" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="691.5" y="8" width="24.5" height="30"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icHeart32Px" translatesAutoresizingMaskIntoConstraints="NO" id="wSV-2N-BUq">
-                                                                <rect key="frame" x="642" y="7" width="32" height="32"/>
+                                                                <rect key="frame" x="656.5" y="7" width="32" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="32" id="Kfq-Ab-4CZ"/>
                                                                     <constraint firstAttribute="height" constant="32" id="KvK-Hq-CxM"/>
@@ -2205,7 +2491,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="AuM-W1-dXb"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="10"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2224,7 +2510,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="Dxi-hi-x9t"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="구독관리">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2238,7 +2524,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="150" id="N9O-hT-gBY"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="구독내역 복원">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2262,11 +2548,11 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모두의 문해력 정보" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkG-vi-wzC">
-                                                <rect key="frame" x="20" y="344" width="112.5" height="34"/>
+                                                <rect key="frame" x="20" y="344" width="78" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="HtE-Nj-2PS"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="10"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -2281,14 +2567,14 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고객센터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGR-eu-TO0">
-                                                        <rect key="frame" x="36" y="12" width="52" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                        <rect key="frame" x="36" y="12" width="44" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="070-7778-8688" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLs-eU-c3Q">
-                                                        <rect key="frame" x="600.5" y="12" width="103.5" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                        <rect key="frame" x="629.5" y="12" width="74.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -2325,14 +2611,14 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfG-uC-emt">
-                                                        <rect key="frame" x="36" y="12" width="26" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                        <rect key="frame" x="36" y="12" width="18.5" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3G-e8-qLV">
-                                                        <rect key="frame" x="670.5" y="12" width="33.5" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                        <rect key="frame" x="681" y="12" width="23" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -2375,7 +2661,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="180" id="Ch9-Db-fMQ"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                        <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="10"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="(주)서감도가 하는 일">
                                                             <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2401,6 +2687,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="dSv-Ae-HCf"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="로그아웃">
                                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2415,7 +2702,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="urW-wO-K9b"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="회원탈퇴">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2607,7 +2894,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="33a-bs-N85"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2650,7 +2937,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="xgB-nw-alo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
@@ -2673,7 +2960,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="kRF-5r-Lj3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
@@ -2696,7 +2983,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="GLb-gL-3sU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal">
@@ -2719,7 +3006,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="5j8-Qz-3z2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="힌트">
@@ -2798,7 +3085,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션 1. 문장인지 확인하라" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-if-B8x">
-                            <rect key="frame" x="20" y="80" width="374" height="50"/>
+                            <rect key="frame" x="20" y="60" width="374" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ASc-TX-H5y"/>
                             </constraints>
@@ -2807,7 +3094,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장을 읽기 전에 문장이 맞는지 확인한다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-vx-C9G">
-                            <rect key="frame" x="20" y="150" width="374" height="40"/>
+                            <rect key="frame" x="20" y="130" width="374" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="raU-CR-UZW"/>
                             </constraints>
@@ -2821,7 +3108,7 @@
                                 <constraint firstAttribute="width" constant="130" id="IPu-9Y-eL2"/>
                                 <constraint firstAttribute="height" constant="130" id="ZAu-dG-K20"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="미션 수행하기">
                                 <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2844,7 +3131,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osr-Eg-GaL">
                                     <rect key="frame" x="10" y="4" width="354" height="52"/>
-                                    <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="20"/>
+                                    <fontDescription key="fontDescription" name="NanumSquareR" family="NanumSquare" pointSize="12"/>
                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -2903,7 +3190,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="31" id="8RV-Jp-yd4"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="19"/>
+                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="12"/>
                                     <color key="textColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -2913,7 +3200,7 @@
                                     <constraints>
                                         <constraint firstAttribute="height" constant="56" id="yLL-jw-UF6"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="다음">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2956,30 +3243,30 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘했어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjx-4T-0hE">
-                            <rect key="frame" x="171" y="240" width="72" height="23"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <rect key="frame" x="184" y="248.33333333333334" width="46" height="14.666666666666657"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKh-XK-ccf">
-                            <rect key="frame" x="128.5" y="617" width="157" height="21"/>
+                            <rect key="frame" x="150.66666666666666" y="617" width="112.99999999999997" height="13.666666666666629"/>
                             <attributedString key="attributedText">
                                 <fragment content="하트">
                                     <attributes>
-                                        <font key="NSFont" metaFont="system" size="17"/>
+                                        <font key="NSFont" metaFont="cellTitle"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
                                 <fragment content=" 1 ">
                                     <attributes>
                                         <color key="NSColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <font key="NSFont" metaFont="system" size="17"/>
+                                        <font key="NSFont" metaFont="cellTitle"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
                                 <fragment content="개를 받았습니다.">
                                     <attributes>
-                                        <font key="NSFont" metaFont="system" size="17"/>
+                                        <font key="NSFont" metaFont="cellTitle"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -2992,7 +3279,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="OWW-PQ-BZG"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="확인">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3007,8 +3294,8 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동님은 총 50000개의 하트를 모았어요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJu-ah-Jcb">
-                            <rect key="frame" x="0.0" y="654" width="414" height="21"/>
-                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="19"/>
+                            <rect key="frame" x="0.0" y="646.66666666666663" width="414" height="14"/>
+                            <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -3036,26 +3323,27 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LW-9o-s98" userLabel="stopSubContainer">
-                            <rect key="frame" x="0.0" y="602" width="414" height="328"/>
+                            <rect key="frame" x="0.0" y="578" width="414" height="328"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잠깐만요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhQ-vJ-8j5">
-                                    <rect key="frame" x="171" y="30" width="72" height="23"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                    <rect key="frame" x="184" y="30.000000000000004" width="46" height="14.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 그만두시면 하트를 받지 못해요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dB7-bp-bvR">
-                                    <rect key="frame" x="20" y="78" width="374" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <rect key="frame" x="20" y="69.666666666666629" width="374" height="14.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psE-cs-fm5">
-                                    <rect key="frame" x="20" y="152" width="374" height="56"/>
+                                    <rect key="frame" x="20" y="140" width="374" height="56"/>
                                     <color key="backgroundColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="56" id="T67-D9-svx"/>
                                     </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="계속하기">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3070,11 +3358,11 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXa-xJ-qbE">
-                                    <rect key="frame" x="20" y="224" width="374" height="56"/>
+                                    <rect key="frame" x="20" y="212" width="374" height="56"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="56" id="QoB-8s-Xct"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="12"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="그만하기">
                                         <color key="titleColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3106,7 +3394,7 @@
                     <constraints>
                         <constraint firstItem="4LW-9o-s98" firstAttribute="leading" secondItem="VU1-iw-baf" secondAttribute="leading" id="N8W-LX-Tqv"/>
                         <constraint firstItem="VU1-iw-baf" firstAttribute="trailing" secondItem="4LW-9o-s98" secondAttribute="trailing" id="oy6-eQ-FV3"/>
-                        <constraint firstItem="VU1-iw-baf" firstAttribute="bottom" secondItem="4LW-9o-s98" secondAttribute="bottom" constant="-34" id="zNN-Gv-QCq"/>
+                        <constraint firstItem="VU1-iw-baf" firstAttribute="bottom" secondItem="4LW-9o-s98" secondAttribute="bottom" constant="-10" id="zNN-Gv-QCq"/>
                     </constraints>
                 </view>
             </objects>
@@ -4023,7 +4311,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해력 검사" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgN-9p-Xcy">
-                            <rect key="frame" x="20" y="100" width="374" height="50"/>
+                            <rect key="frame" x="20" y="80" width="374" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="lpI-7b-wj9"/>
                             </constraints>
@@ -4032,7 +4320,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글자, 낱말, 문장, 문맥에 대한 이해도를 테스트합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPV-vA-dBf">
-                            <rect key="frame" x="20" y="180" width="374" height="60"/>
+                            <rect key="frame" x="20" y="160" width="374" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="66e-QN-4UM"/>
                             </constraints>
@@ -4298,30 +4586,30 @@
                                 <rect key="frame" x="0.0" y="20" width="768" height="170"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꾸준하게 키워가는 나의 문해력" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Du7-hH-7BQ">
-                                        <rect key="frame" x="20" y="0.0" width="171.5" height="57.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <rect key="frame" x="230" y="0.0" width="107.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <color key="textColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust1" translatesAutoresizingMaskIntoConstraints="NO" id="HJj-lV-LQx">
-                                        <rect key="frame" x="511" y="10" width="237" height="140"/>
+                                        <rect key="frame" x="346" y="10" width="237" height="140"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="Cjg-Aj-x9f"/>
-                                            <constraint firstAttribute="width" constant="237" id="oVU-B5-z62"/>
+                                            <constraint firstAttribute="width" constant="237" id="fIR-jw-TGL"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="3GR-xW-Zgj"/>
-                                    <constraint firstAttribute="bottom" secondItem="HJj-lV-LQx" secondAttribute="bottom" constant="20" id="KLK-fp-ffU"/>
-                                    <constraint firstItem="Du7-hH-7BQ" firstAttribute="top" secondItem="WMf-dW-6oK" secondAttribute="top" id="hq3-5e-DQl"/>
-                                    <constraint firstItem="Du7-hH-7BQ" firstAttribute="leading" secondItem="WMf-dW-6oK" secondAttribute="leading" constant="20" id="k2y-Kw-m2c"/>
-                                    <constraint firstAttribute="trailing" secondItem="HJj-lV-LQx" secondAttribute="trailing" constant="20" id="qgP-ui-SRm"/>
+                                    <constraint firstAttribute="bottom" secondItem="HJj-lV-LQx" secondAttribute="bottom" constant="20" id="C48-Pd-MJd"/>
+                                    <constraint firstItem="Du7-hH-7BQ" firstAttribute="top" secondItem="WMf-dW-6oK" secondAttribute="top" id="GZy-cI-baq"/>
+                                    <constraint firstItem="Du7-hH-7BQ" firstAttribute="leading" secondItem="WMf-dW-6oK" secondAttribute="leading" constant="230" id="NtF-M1-0bH"/>
+                                    <constraint firstItem="HJj-lV-LQx" firstAttribute="top" secondItem="WMf-dW-6oK" secondAttribute="top" constant="10" id="S0X-Ts-4Wz"/>
+                                    <constraint firstItem="HJj-lV-LQx" firstAttribute="leading" secondItem="Du7-hH-7BQ" secondAttribute="trailing" constant="8.5" id="WtQ-zz-SrV"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vAV-ID-McS" userLabel="ExampleCollection View" customClass="WordCollectionView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="210" width="768" height="764"/>
+                                <rect key="frame" x="0.0" y="210" width="768" height="804"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="71L-Mj-0oo">
                                     <size key="itemSize" width="180" height="180"/>
@@ -4373,7 +4661,7 @@
                         <constraints>
                             <constraint firstItem="vAV-ID-McS" firstAttribute="top" secondItem="WMf-dW-6oK" secondAttribute="bottom" constant="20" id="DPC-Ad-5xY"/>
                             <constraint firstAttribute="trailing" secondItem="WMf-dW-6oK" secondAttribute="trailing" id="NTv-wl-kHY"/>
-                            <constraint firstAttribute="bottom" secondItem="vAV-ID-McS" secondAttribute="bottom" constant="50" id="O1G-Cq-FVi"/>
+                            <constraint firstAttribute="bottom" secondItem="vAV-ID-McS" secondAttribute="bottom" constant="10" id="O1G-Cq-FVi"/>
                             <constraint firstItem="vAV-ID-McS" firstAttribute="leading" secondItem="VEM-iG-g2u" secondAttribute="leading" id="Rzj-ew-Rrp"/>
                             <constraint firstItem="WMf-dW-6oK" firstAttribute="top" secondItem="VEM-iG-g2u" secondAttribute="top" id="Vfb-Dq-O8o"/>
                             <constraint firstItem="vAV-ID-McS" firstAttribute="trailing" secondItem="VEM-iG-g2u" secondAttribute="trailing" id="efF-t5-77r"/>
@@ -4429,7 +4717,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Njq-aF-9Bg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4368" y="1513"/>
+            <point key="canvasLocation" x="5133.59375" y="1512.890625"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="dQs-c3-Ddf">
+            <objects>
+                <navigationController storyboardIdentifier="mainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="gV4-ex-3N9" customClass="mainNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kw2-ca-f1k">
+                        <rect key="frame" x="0.0" y="20" width="768" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PRe-oi-4bG" kind="relationship" relationship="rootViewController" id="gjP-vZ-Ans"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9PI-o1-N3X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726.5625" y="1485.9375"/>
         </scene>
     </scenes>
     <designables>
@@ -4440,7 +4746,6 @@
     </designables>
     <resources>
         <image name="edit" width="32" height="32"/>
-        <image name="group" width="149" height="102"/>
         <image name="group2" width="183" height="44"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="icArrowLeft32Px" width="32" height="32"/>
@@ -4455,6 +4760,8 @@
         <image name="icVersion24Px" width="24" height="24"/>
         <image name="illust1" width="390" height="251"/>
         <image name="illustHeart" width="390" height="264"/>
+        <image name="logoImg" width="652" height="692"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="phone.fill.connection" catalog="system" width="128" height="123"/>
         <image name="sample" width="594" height="352"/>
         <image name="speaker" catalog="system" width="128" height="123"/>
