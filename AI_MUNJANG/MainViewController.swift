@@ -279,7 +279,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-       return 20 // Keep whatever fits for you
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 40
+        }else {
+            return 20
+        }
+        
      }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -287,7 +292,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 //            return CGSize(width: CGFloat(140).relativeToIphone8Width(), height: CGFloat(140).relativeToIphone8Width())
             let cellWidth = collectionView.frame.size.width - 40 - 20
             
-            return CGSize(width: cellWidth / 2 , height: cellWidth / 2)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                return CGSize(width: cellWidth / 2.1 , height: cellWidth / 2.1)
+            }else {
+                return CGSize(width: cellWidth / 2 , height: cellWidth / 2)
+            }
         }
         return CGSize(width: collectionView.frame.size.width, height: 140)
     }
