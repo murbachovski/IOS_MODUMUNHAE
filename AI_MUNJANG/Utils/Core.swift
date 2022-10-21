@@ -73,5 +73,19 @@ class Core {
         UserDefaults.standard.set(false, forKey: "isSignup")
     }
     
+    //쿠폰 캠페인 활성화 여부
+    func isCouponeCampaign()-> Bool {
+        return UserDefaults.standard.bool(forKey: "isCouponeCampaign")
+    }
+    
+    func setCouponeCampaign(){
+        UserDefaults.standard.set(true, forKey: "isCouponeCampaign")
+        
+    }
+    
+    func setCouponeCampaignNo(){
+        UserDefaults.standard.set(false, forKey: "isCouponeCampaign")
+    }
+    
     
 }

@@ -23,12 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Firebase 초기화
         FirebaseApp.configure()
         UserDefaults.standard.register(defaults: ["versionNumber" : 1000])
-//        UserDefaults.standard.register(defaults: ["balwhaSound" : true])
         UserDefaults.standard.register(defaults: ["tmpUseCount" : 0])
         
         //둘러보기 사용자를 위한 학습 진행 상황
         UserDefaults.standard.register(defaults: ["tourUserData" : ["1":[]]])
         
+        //쿠폰 캠페인 운영중인지 여부
+        UserDefaults.standard.register(defaults: ["isCouponeCampaign" : false])
         
         //구독자가 미션 수행중 그만두는 지점을 userDefault에 저장. 실질문해 / 기초문해
         UserDefaults.standard.register(defaults: ["basicStopStep" : ["2":0, "3":0, "4":0, "5":0, "6":0, "7":0, "8":0]])

@@ -17,6 +17,8 @@ class MyPageViewController: UIViewController {
     
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var subscribeButton: UIButton! //구독여부
+    @IBOutlet weak var subscribeByCoupon: UIButton!
+    
     @IBOutlet weak var resignButton: UIButton!
     
     @IBOutlet weak var manageSubscriptionButton: UIButton!
@@ -31,7 +33,8 @@ class MyPageViewController: UIViewController {
    
     @IBOutlet weak var editButton: UIButton!
     
-   
+    @IBOutlet weak var subscribeContainer: UIStackView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,19 +48,27 @@ class MyPageViewController: UIViewController {
         
         setupUI()
         NotificationCenter.default.addObserver(self, selector: #selector(methodOfReceivedNotification(notification:)), name: .IAPHelperPurchaseNotification, object: nil)
-        
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         if Core.shared.isUserSubscription(){
-            subscribeButton.isHidden = true
+            subscribeContainer.isHidden = true
         }else{
-            subscribeButton.isHidden = false
+            subscribeContainer.isHidden = false
+            
+            if Core.shared.isCouponeCampaign() == true{
+                subscribeByCoupon.isHidden = false
+                subscribeButton.setTitle("구독하기", for: .normal)
+            }else{
+                subscribeByCoupon.isHidden = true
+                subscribeButton.setTitle("구독하고 무제한으로 이용하기", for: .normal)
+            }
         }
-        
     }
+    
     
     @objc func methodOfReceivedNotification(notification:Notification){
         print(notification.userInfo as Any)
@@ -150,6 +161,10 @@ class MyPageViewController: UIViewController {
         print("cliocked subscribe")
     }
     
+    @IBAction func clickedSubscribeByCoupon(_ sender: Any) {
+        
+        
+    }
     
     @IBAction func clickedLogout(_ sender: UIButton) {
         if sender.titleLabel?.text != "로그인" {

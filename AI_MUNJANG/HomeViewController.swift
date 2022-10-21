@@ -33,9 +33,28 @@ class HomeViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         searchImage.isUserInteractionEnabled = true
         searchImage.addGestureRecognizer(tapGestureRecognizer)
+        
+        retrieveCouponeCampaign { usable in
+            if usable == true{
+                Core.shared.setCouponeCampaign()
+            }else{
+                Core.shared.setCouponeCampaignNo()
+            }
+        }
+        
+        //캠페인 활성화 여부 판단
+        retrieveCouponeCampaign { usable in
+            if usable == true {
+                Core.shared.setCouponeCampaign()
+            }else{
+                Core.shared.setCouponeCampaignNo()
+            }
+        }
     }
         
      @objc func clickedUserIcon() {
+         
+         
          guard let myPageViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyPageViewController")  as? MyPageViewController else {return}
          navigationController?.pushViewController(myPageViewController, animated: true)
      }

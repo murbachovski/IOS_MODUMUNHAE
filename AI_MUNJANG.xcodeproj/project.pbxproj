@@ -61,6 +61,8 @@
 		845D5A3C28C1C86100CB67DE /* MunhaeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */; };
 		845D5A3F28C1E63900CB67DE /* MunhaeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */; };
 		845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */; };
+		84607866290253BE0051CACB /* Coupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84607865290253BE0051CACB /* Coupons.swift */; };
+		84607868290254440051CACB /* coupons_3000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84607867290254440051CACB /* coupons_3000.txt */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -179,6 +181,8 @@
 		845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestViewController.swift; sourceTree = "<group>"; };
 		845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestModel.swift; sourceTree = "<group>"; };
 		845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestContentData.swift; sourceTree = "<group>"; };
+		84607865290253BE0051CACB /* Coupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons.swift; sourceTree = "<group>"; };
+		84607867290254440051CACB /* coupons_3000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coupons_3000.txt; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -444,7 +448,9 @@
 		8474DD02287D02FB008275FC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				84607867290254440051CACB /* coupons_3000.txt */,
 				C6ED50AA287532C500454F26 /* AiRequest.swift */,
+				84607865290253BE0051CACB /* Coupons.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -710,6 +716,7 @@
 			files = (
 				8432B3B728DD6B95005E6583 /* videoContents.json in Resources */,
 				842B038F288643080000BEDA /* NanumSquareEB.ttf in Resources */,
+				84607868290254440051CACB /* coupons_3000.txt in Resources */,
 				8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
 				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
@@ -957,6 +964,7 @@
 				8474DD22287E6C78008275FC /* Utils.swift in Sources */,
 				8474DD08287D0573008275FC /* CommonUIViewController.swift in Sources */,
 				84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */,
+				84607866290253BE0051CACB /* Coupons.swift in Sources */,
 				84739D8328C871D80052B20C /* SampleCollectionViewCell.swift in Sources */,
 				8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */,
 				84DD8FC628F94F4300CF783F /* MLTextViewController.swift in Sources */,

@@ -2243,19 +2243,35 @@
                                                             <constraint firstAttribute="trailing" secondItem="Phw-C4-Ylb" secondAttribute="trailing" constant="12" id="tYT-5Q-9Rv"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jha-uZ-YMh" customClass="ActualGradientButton" customModule="AI_MUNJANG" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3hq-Fe-lTQ">
                                                         <rect key="frame" x="0.0" y="104" width="374" height="56"/>
-                                                        <color key="backgroundColor" red="0.96862745100000003" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="56" id="9la-VU-ydW"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <state key="normal" title="구독하고 무제한으로 이용하기"/>
-                                                        <connections>
-                                                            <action selector="clickedSubscribe:" destination="sgu-oM-7xb" eventType="touchUpInside" id="dw9-dX-IVO"/>
-                                                        </connections>
-                                                    </button>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jha-uZ-YMh" customClass="ActualGradientButton" customModule="AI_MUNJANG" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="182" height="56"/>
+                                                                <color key="backgroundColor" red="0.96862745100000003" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="56" id="9la-VU-ydW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="17"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="구독하고 무제한으로 이용하기"/>
+                                                                <connections>
+                                                                    <action selector="clickedSubscribe:" destination="sgu-oM-7xb" eventType="touchUpInside" id="dw9-dX-IVO"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtq-R7-aPu" customClass="ActualGradientButton" customModule="AI_MUNJANG" customModuleProvider="target">
+                                                                <rect key="frame" x="192" y="0.0" width="182" height="56"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="쿠폰등록">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="clickedSubscribeByCoupon:" destination="sgu-oM-7xb" eventType="touchUpInside" id="AdO-PD-18I"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="mwD-8z-m13" firstAttribute="top" secondItem="OJS-Bk-Gnc" secondAttribute="top" id="txh-xS-8Su"/>
@@ -2565,6 +2581,8 @@
                         <outlet property="resignButton" destination="Z5z-4q-ncO" id="og8-K4-gBI"/>
                         <outlet property="restoreSubscriptionButton" destination="ofz-qE-mjI" id="luq-Os-vou"/>
                         <outlet property="subscribeButton" destination="jha-uZ-YMh" id="w1d-0m-5jP"/>
+                        <outlet property="subscribeByCoupon" destination="Vtq-R7-aPu" id="U68-MQ-oMS"/>
+                        <outlet property="subscribeContainer" destination="3hq-Fe-lTQ" id="akE-MX-0XB"/>
                         <outlet property="usernameLabel" destination="kHe-6a-Gmq" id="cV8-Nw-Z9n"/>
                     </connections>
                 </viewController>
