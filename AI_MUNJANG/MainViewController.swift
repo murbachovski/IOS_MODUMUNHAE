@@ -198,13 +198,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
-    
-//    -(void)prepareForReuse {
-//       [super prepareForReuse];
-//       self.yourimageview.image = nil; //and etc.
-//    }
-    
-     
+
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("clicked : \(indexPath.row)")
@@ -269,8 +263,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.navigationController?.pushViewController(munjangEightViewController, animated: true)
                 
             }else if indexPath.row == 2 {
-                //TODO: 작업예정
-                
+                guard let munjangEightViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangEightViewController")  as? MunjangEightViewController else {return}
+                munjangEightViewController.currentLevel = "Advanced"
+                self.navigationController?.pushViewController(munjangEightViewController, animated: true)
             }else {
                 self.clickedMunhaeVideo()
             }

@@ -13,6 +13,7 @@ struct UserInfo: Codable {
     let displayName: String
     let learningProgress: Dictionary<String, Dictionary<String,Int>>
     let numberOfHearts: Int
+    let couponID: String
     
 }
 
@@ -22,7 +23,8 @@ class MyInfo {
     var displayName: String = "홍길동"
     var learningProgress: [String : Any] = [:]
     var numberOfHearts: Int = 0
-
+    var couponID: String = ""
+    
     private init() { }
 }
 
@@ -33,7 +35,7 @@ class DataFromFirestore {
     func gettingDoc(userID:String, completionHandler: @escaping (UserInfo) -> Void) {
         db.collection("users").getDocuments() { (querySnapshot, err) in
             
-            var user :UserInfo = UserInfo(displayName: "", learningProgress: [:], numberOfHearts: 0)
+            var user :UserInfo = UserInfo(displayName: "", learningProgress: [:], numberOfHearts: 0, couponID: "")
             
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -78,7 +80,8 @@ class DataFromFirestore {
         let path = db.collection("users").document(userID)
         path.updateData(["userinfo": ["displayName":userInfo.displayName,
                                       "learningProgress":learningDataDic,
-                                      "numberOfHearts":userInfo.numberOfHearts]])
+                                      "numberOfHearts":userInfo.numberOfHearts,
+                                      "couponID":userInfo.couponID]])
     }
     
     

@@ -63,6 +63,7 @@
 		845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */; };
 		84607866290253BE0051CACB /* Coupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84607865290253BE0051CACB /* Coupons.swift */; };
 		84607868290254440051CACB /* coupons_3000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84607867290254440051CACB /* coupons_3000.txt */; };
+		8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846078692902752E0051CACB /* CouponRegViewController.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -183,6 +184,7 @@
 		845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestContentData.swift; sourceTree = "<group>"; };
 		84607865290253BE0051CACB /* Coupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons.swift; sourceTree = "<group>"; };
 		84607867290254440051CACB /* coupons_3000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coupons_3000.txt; sourceTree = "<group>"; };
+		846078692902752E0051CACB /* CouponRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponRegViewController.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				84488C78288F865B008400AC /* MyPageViewController.swift */,
 				846B089428977C2E00A6D4BD /* HomePageViewController.swift */,
+				846078692902752E0051CACB /* CouponRegViewController.swift */,
 			);
 			name = MyPage;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */,
+				8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */,
 				8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */,
 				84E7B04C28AE2DF20009E8E1 /* Core.swift in Sources */,
 				C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */,

@@ -99,6 +99,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         data.updateValue(MyInfo.shared.displayName, forKey: "displayName")
                         data.updateValue(MyInfo.shared.learningProgress, forKey: "learningProgress")
                         data.updateValue(MyInfo.shared.numberOfHearts, forKey: "numberOfHearts")
+                        data.updateValue(MyInfo.shared.couponID, forKey: "couponID")
+                        
                         
                         // 서버의 딕셔너리 데이터를 수정된 데이터로 수정한다.
                         path.document(userID).updateData(["userinfo" : data])

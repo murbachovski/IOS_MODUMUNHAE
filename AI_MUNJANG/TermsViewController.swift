@@ -299,6 +299,7 @@ extension TermsViewController: ASAuthorizationControllerDelegate {
           MyInfo.shared.displayName = (user.email?.components(separatedBy: "@")[0])!
           MyInfo.shared.learningProgress = learningDataDic
           MyInfo.shared.numberOfHearts = 0
+          MyInfo.shared.couponID = ""
           
           
           //MyInfo를 Firebase에 전송

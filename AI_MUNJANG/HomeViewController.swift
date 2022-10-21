@@ -34,13 +34,6 @@ class HomeViewController: UIViewController {
         searchImage.isUserInteractionEnabled = true
         searchImage.addGestureRecognizer(tapGestureRecognizer)
         
-        retrieveCouponeCampaign { usable in
-            if usable == true{
-                Core.shared.setCouponeCampaign()
-            }else{
-                Core.shared.setCouponeCampaignNo()
-            }
-        }
         
         //캠페인 활성화 여부 판단
         retrieveCouponeCampaign { usable in

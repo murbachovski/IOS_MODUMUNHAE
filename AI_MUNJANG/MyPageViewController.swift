@@ -163,6 +163,19 @@ class MyPageViewController: UIViewController {
     
     @IBAction func clickedSubscribeByCoupon(_ sender: Any) {
         
+        if Core.shared.isUserLogin() {
+            guard let couponRegViewController = self.storyboard?.instantiateViewController(withIdentifier: "CouponRegViewController")  as? CouponRegViewController else {return}
+            couponRegViewController.modalPresentationStyle = .fullScreen
+            present(couponRegViewController, animated: true)
+        }else{
+            let alert = AlertService().alert(title: "", body: "쿠폰을 등록하기 위해 로그인 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
+                changeLoginNC()
+            }
+            present(alert, animated: true)
+            
+        }
+        
+        
         
     }
     
