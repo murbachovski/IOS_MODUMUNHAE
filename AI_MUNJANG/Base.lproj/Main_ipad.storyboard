@@ -3529,7 +3529,7 @@
                                                 <rect key="frame" x="0.0" y="138" width="768" height="480"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장분석" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgf-hv-vqk">
-                                                        <rect key="frame" x="20" y="22" width="42" height="14.5"/>
+                                                        <rect key="frame" x="20" y="22" width="160" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3921,16 +3921,40 @@
                                                             </collectionViewCell>
                                                         </cells>
                                                     </collectionView>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neb-Pl-9GJ">
+                                                        <rect key="frame" x="207" y="12" width="100" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="COO-k6-kcL"/>
+                                                            <constraint firstAttribute="height" constant="20" id="wVO-to-Vdl"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="문장추론"/>
+                                                    </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UzQ-i3-wo7">
+                                                        <rect key="frame" x="334" y="12" width="100" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="bOl-uc-4zv"/>
+                                                            <constraint firstAttribute="width" constant="100" id="wm1-rz-i8j"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="문장교정"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="SUp-E4-ma6" firstAttribute="leading" secondItem="th2-dm-1wh" secondAttribute="leading" id="2Nj-Ey-JaI"/>
                                                     <constraint firstItem="Jgf-hv-vqk" firstAttribute="leading" secondItem="th2-dm-1wh" secondAttribute="leading" constant="20" id="2Vw-CI-Zsw"/>
                                                     <constraint firstItem="Jgf-hv-vqk" firstAttribute="top" secondItem="th2-dm-1wh" secondAttribute="top" constant="22" id="6QK-b2-eR1"/>
+                                                    <constraint firstItem="UzQ-i3-wo7" firstAttribute="leading" secondItem="neb-Pl-9GJ" secondAttribute="trailing" constant="27" id="7Qk-2j-fjS"/>
                                                     <constraint firstAttribute="height" constant="480" id="Jes-i3-Mte"/>
+                                                    <constraint firstItem="neb-Pl-9GJ" firstAttribute="centerX" secondItem="th2-dm-1wh" secondAttribute="centerX" id="MyE-2T-mKh"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jgf-hv-vqk" secondAttribute="trailing" constant="20" symbolic="YES" id="PA1-jy-gge"/>
                                                     <constraint firstAttribute="trailing" secondItem="SUp-E4-ma6" secondAttribute="trailing" id="bTl-p2-ar2"/>
+                                                    <constraint firstItem="neb-Pl-9GJ" firstAttribute="top" secondItem="th2-dm-1wh" secondAttribute="top" constant="12" id="fBR-eh-KzF"/>
+                                                    <constraint firstItem="UzQ-i3-wo7" firstAttribute="top" secondItem="th2-dm-1wh" secondAttribute="top" constant="12" id="kcn-iy-Y0W"/>
                                                     <constraint firstItem="SUp-E4-ma6" firstAttribute="top" secondItem="Jgf-hv-vqk" secondAttribute="bottom" constant="8" id="qgT-Go-8MS"/>
+                                                    <constraint firstItem="UzQ-i3-wo7" firstAttribute="centerX" secondItem="th2-dm-1wh" secondAttribute="centerX" id="tep-7c-K11"/>
+                                                    <constraint firstItem="neb-Pl-9GJ" firstAttribute="leading" secondItem="Jgf-hv-vqk" secondAttribute="trailing" constant="27" id="wUU-nm-sit"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="국어사전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1v-wZ-f4g">
@@ -4034,6 +4058,8 @@
                     </view>
                     <connections>
                         <outlet property="analyzeCollectionView" destination="SUp-E4-ma6" id="xdB-fs-iUm"/>
+                        <outlet property="buttonCorrection" destination="UzQ-i3-wo7" id="cN6-eT-PaL"/>
+                        <outlet property="buttonInference" destination="neb-Pl-9GJ" id="QkA-JW-za3"/>
                         <outlet property="originSentenceLabel" destination="h7p-v7-t3v" id="J6T-tB-u3g"/>
                         <outlet property="wordCollectionView" destination="iDb-Wf-qWb" id="BuT-Xt-mmB"/>
                     </connections>

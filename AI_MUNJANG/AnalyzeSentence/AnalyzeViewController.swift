@@ -25,6 +25,9 @@ class AnalyzeViewController: UIViewController, MLTextDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         analyzeSentenceCustomTextView.changeRestrictedCharacters(res: 300)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            analyzeSentenceCustomTextView.label.font = analyzeSentenceCustomTextView.label.font.withSize(10)
+        }
         // Do any additional setup after loading the view.
         
         titleLabel.font = UIFont(name: "NanumSquareEB", size: 18)
