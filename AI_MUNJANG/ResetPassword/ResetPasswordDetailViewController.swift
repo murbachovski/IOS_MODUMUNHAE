@@ -26,7 +26,14 @@ class ResetPasswordDetailViewController: UIViewController {
         
         
         subLabel.layer.cornerRadius = 10
-        subLabel.asFont(targetString: "3분 내에 이메일이 오지 않는다면", font: UIFont(name: "NanumSquareB", size: 15))
+        
+        if UIDevice.current.userInterfaceIdiom == .pad
+        {
+            subLabel.font = UIFont(name: "NaumSquareB", size: 17)
+            
+        }else{
+            subLabel.asFont(targetString: "3분 내에 이메일이 오지 않는다면?", font: UIFont(name: "NanumSquareB", size: 15))
+        }
         
         
     }
