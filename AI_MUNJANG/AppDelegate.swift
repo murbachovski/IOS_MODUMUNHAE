@@ -56,6 +56,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     MyInfo.shared.displayName = info.displayName
                     MyInfo.shared.learningProgress = info.learningProgress
                     MyInfo.shared.numberOfHearts = info.numberOfHearts
+                    MyInfo.shared.couponID = info.couponID
+                    
+                    if info.couponID.count > 10 { //couponID가 있다면(10은 임의숫자), 유효기간을 점검한다.
+                        checkTheValidateCouponUser(docID: info.couponID)
+                    }
                     
                     print("😊😊😊😊😊😊😊applicationDidBecomeActive userInfo: \(MyInfo.shared)")
                 }

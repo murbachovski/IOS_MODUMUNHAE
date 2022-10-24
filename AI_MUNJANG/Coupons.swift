@@ -95,8 +95,30 @@ func setUpCouponRecord(docID:String, completionHandler: @escaping (Bool) -> Void
             
 //MARK: - 쿠폰결제후 사용자의의 유효기간 점검
 //정상적인 쿠폰 사용자라 하더라도 앱이 로딩될때마다 유효기간이 만료되었는지 확인하는 소스 있어야한다.
+//유효기간이 만료시, setUserCancelSubscription 설정
 func checkTheValidateCouponUser(docID:String){
-    
+    print(docID)
+    let db = Firestore.firestore()
+    let docRef = db.collection("coupons").document(docID)
+    docRef.getDocument { (document, error) in
+        
+        if let document = document, document.exists {
+            
+            guard let dueDate = document.data()!["dueDate"] as? String else{ return}
+            print(dueDate)
+            let due:Date = stringToDate(strDate: dueDate)
+            if due < Date() { //현재 날짜보다 작다면 유효기간이 만료된 것
+                print("쿠폰 유효기간 만료됨")
+                Core.shared.setUserCancelSubscription()
+            }else{
+                print("쿠폰 유효기간 유효함")
+            }
+            print(due)
+            
+        } else {
+            print("Document does not exist")
+        }
+    }
 }
 
 //MARK: - 쿠폰 캠페인 운용중인지 여부확인

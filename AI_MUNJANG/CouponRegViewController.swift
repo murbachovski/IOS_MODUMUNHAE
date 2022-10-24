@@ -45,20 +45,30 @@ class CouponRegViewController: UIViewController, UITextFieldDelegate {
                     textField.resignFirstResponder()
                                                     
                     var bodyMessage = ""
+                    var regSuccess = false
                     if success == true{
                         bodyMessage = "쿠폰이 정상적으로 등록되었습니다."
+                        regSuccess = true
                     }else{
-                        bodyMessage = "쿠폰 등록이 오류가 발생했습니다."
+                        bodyMessage = "쿠폰 등록에 오류가 발생했습니다."
                     }
                     
-                    let alert = AlertService().alert(title: "", body: bodyMessage, cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil) {}
+                    let alert = AlertService().alert(title: "", body: bodyMessage, cancelTitle: "", confirTitle: "확인", fourthButtonCompletion:  {
+                        if regSuccess == true {
+                            self.dismiss(animated: true)
+                        }
+                    })
+                    
                     
                     
                     self.present(alert, animated: true)
                     
                 }
             }else{
-                
+                print("사용할 수 없는 쿠폰입니다.")
+                let alert = AlertService().alert(title: "", body: "사용할 수 없는 쿠폰입니다", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil) {}
+
+                self.present(alert, animated: true)
             }
             
         }
