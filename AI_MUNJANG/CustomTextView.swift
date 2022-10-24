@@ -42,6 +42,8 @@ class CustomTextView: UIView,UITextViewDelegate {
 
             textView.textContainerInset = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
             textView.font = .systemFont(ofSize: 16)
+          
+                
             textView.text = textViewPlaceHolder
             textView.textColor = .lightGray
         }
@@ -51,12 +53,12 @@ class CustomTextView: UIView,UITextViewDelegate {
         if textView.text == textViewPlaceHolder {
             textView.text = nil
             textView.textColor = .black
-            containerView.layer.borderColor = UIColor.darkGray.cgColor
+//            containerView.layer.borderColor = UIColor.darkGray.cgColor
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        containerView.layer.borderColor = UIColor.black.cgColor
+//        containerView.layer.borderColor = UIColor.black.cgColor
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             textView.text = textViewPlaceHolder
             textView.textColor = .lightGray
@@ -80,13 +82,24 @@ class CustomTextView: UIView,UITextViewDelegate {
     
     private func updateCountLabel(characterCount: Int) {
          label.text = "\(characterCount)/\(restrictedCharacters)자"
+            
          label.asColor(targetString: "\(characterCount)", color: characterCount == 0 ? .lightGray : .blue)
-     }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            label.asFont(targetString: label.text!, font:UIFont(name: "NanumSquareR", size: 20) )
+        }
+    }
     
     
     func changePlaceHolder(placeholder:String){ //외부에서 플레이스홀더를 설정하는 메서드
         textViewPlaceHolder = placeholder
         textView.text = placeholder
+
+    }
+    
+    func changeBorderColor(color:UIColor){ //외부에서 boarderColor변경
+        
+        containerView.layer.borderColor = color.cgColor
+        
     }
 
     func changeRestrictedCharacters(res:Int){ 

@@ -10,7 +10,8 @@ import NVActivityIndicatorView
 
 class AnalyzeViewController: UIViewController, MLTextDelegate {
 
-
+    @IBOutlet weak var cameraButton: UIButton!
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var analyzeSentenceCustomTextView: CustomTextView!
@@ -26,18 +27,28 @@ class AnalyzeViewController: UIViewController, MLTextDelegate {
         super.viewDidLoad()
         analyzeSentenceCustomTextView.changeRestrictedCharacters(res: 300)
         if UIDevice.current.userInterfaceIdiom == .pad {
-            analyzeSentenceCustomTextView.label.font = analyzeSentenceCustomTextView.label.font.withSize(10)
+            analyzeSentenceCustomTextView.textView.font = .systemFont(ofSize: 20)
+            analyzeSentenceCustomTextView.label.font = UIFont(name: "NanumSquareR", size: 20)
         }
         // Do any additional setup after loading the view.
         
-        titleLabel.font = UIFont(name: "NanumSquareEB", size: 18)
+        analyzeSentenceCustomTextView.changePlaceHolder(placeholder: "분석하고 싶은 한 문장을 입력해주세요.")
+        analyzeSentenceCustomTextView.changeBorderColor(color: .white)
         analyzeSentenceCustomTextView.textView.becomeFirstResponder()
         
-        analyzeButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
-        analyzeButton.layer.cornerRadius = 4
-        analyzeButton.layer.borderWidth = 1
-        analyzeButton.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
+        analyzeButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 17)
+        analyzeButton.layer.cornerRadius = 8
+        analyzeButton.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
+        
 
+        cameraButton.backgroundColor = UIColor.white
+        cameraButton.layer.cornerRadius = cameraButton.frame.size.height / 2
+        cameraButton.layer.shadowOpacity = 0.8
+        cameraButton.layer.shadowColor = UIColor.darkGray.cgColor
+        cameraButton.layer.shadowOffset = CGSize(width: 1, height: 1)
+        cameraButton.layer.shadowRadius = 2
+        cameraButton.layer.masksToBounds = true
+        
         navigationItem.title = "문장분석"
     }
 
@@ -93,7 +104,7 @@ class AnalyzeViewController: UIViewController, MLTextDelegate {
             }
         }
         let urlString = "http://118.67.133.8/danmun/m"
-//        let urlString = "http://127.0.0.1:5000/danmun/m"
+
         
         requestByDanmun(url: urlString, sen: senToAnalyze) { results in
             print("단문results:\(results)")

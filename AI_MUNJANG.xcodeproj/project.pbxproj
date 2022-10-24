@@ -1167,6 +1167,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 70231474539566B4E361D900 /* Pods-AI_MUNJANG.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AI_MUNJANG/AI_MUNJANG.entitlements;
@@ -1203,6 +1207,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CF048CE1E844E5C5355B88A /* Pods-AI_MUNJANG.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					"$(ARCHS_STANDARD)",
+					x86_64,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = AI_MUNJANG/AI_MUNJANG.entitlements;
