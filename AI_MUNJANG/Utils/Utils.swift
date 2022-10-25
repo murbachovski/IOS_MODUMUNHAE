@@ -269,5 +269,13 @@ extension String {
     }
 }
 
+extension UIViewController {
 
+        func setBackButton(){
+            let yourBackImage = UIImage(named: "backbutton")
+            navigationController?.navigationBar.backIndicatorImage = yourBackImage
+            navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+        }
+
+    }
 

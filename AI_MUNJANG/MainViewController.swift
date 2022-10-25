@@ -57,6 +57,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 //        searchImage.isUserInteractionEnabled = true
 //        searchImage.addGestureRecognizer(tapGestureRecognizer)
 
+        self.setBackButton()
     }
     
     override func viewDidLayoutSubviews() {

@@ -64,6 +64,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         buttonCorrection.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
         buttonCorrection.backgroundColor = .white
         
+        self.navigationItem.backButtonTitle = " "
     }
   
     @IBAction func clickedInferenceButton(_ sender: Any) {

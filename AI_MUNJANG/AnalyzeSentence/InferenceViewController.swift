@@ -14,11 +14,13 @@ class InferenceViewController: UIViewController {
         tableView.dataSource = self
         
         self.navigationItem.backButtonTitle = " "
+        self.title = "문장추론"
         
       print(contentsData)
         for i in contentsData {
             sectionHeader.append(i["sen"] as! String)
         }
+        
     }
 }
 
@@ -43,7 +45,7 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
 
-        cell.textLabel?.text = (contentsData[indexPath.section]["infer_sen"] as! [String])[indexPath.row]
+        cell.textLabel?.text = "- \((contentsData[indexPath.section]["infer_sen"] as! [String])[indexPath.row])"
         cell.textLabel?.numberOfLines = 0
         cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
         
@@ -72,5 +74,16 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
                                       byRoundingCorners: corners,
                                       cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
         cell.layer.mask = maskLayer
+        
+     
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.textLabel?.textColor = hexStringToUIColor(hex: Constants.primaryColor)
+            header.textLabel?.font = UIFont(name: "NanumSquareEB", size: 16)
+            header.textLabel?.frame = header.bounds
+            
+            }
     }
 }
