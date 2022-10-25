@@ -26,10 +26,9 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
     
     var resultText = ""
     
+    
     @IBOutlet weak var btnCamera: UIButton!
-    
     @IBOutlet weak var btnAlbumn: UIButton!
-    
     @IBOutlet weak var btnConfirm: UIButton!
     
     
@@ -40,28 +39,15 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
         super.viewDidLoad()
         
         
-        btnCamera.backgroundColor = .white
-        btnCamera.layer.cornerRadius = 10
-        btnCamera.layer.shadowOpacity = 0.8
-        btnCamera.layer.shadowColor = UIColor.lightGray.cgColor
-        btnCamera.layer.shadowOffset = CGSize(width: 1, height: 1)
-        btnCamera.layer.shadowRadius = 2
+        btnCamera.backgroundColor = hexStringToUIColor(hex: "#f7f9fb")
+        btnCamera.layer.cornerRadius = btnCamera.frame.size.height / 2
         btnCamera.layer.masksToBounds = false
         
-        btnAlbumn.backgroundColor = .white
-        btnAlbumn.layer.cornerRadius = 10
-        btnAlbumn.layer.shadowOpacity = 0.8
-        btnAlbumn.layer.shadowColor = UIColor.lightGray.cgColor
-        btnAlbumn.layer.shadowOffset = CGSize(width: 1, height: 1)
-        btnAlbumn.layer.shadowRadius = 2
+        btnAlbumn.backgroundColor = hexStringToUIColor(hex: "#f7f9fb")
+        btnAlbumn.layer.cornerRadius = btnAlbumn.frame.size.height / 2
         btnAlbumn.layer.masksToBounds = false
         
-        btnConfirm.backgroundColor = .white
         btnConfirm.layer.cornerRadius = 10
-        btnConfirm.layer.shadowOpacity = 0.8
-        btnConfirm.layer.shadowColor = UIColor.lightGray.cgColor
-        btnConfirm.layer.shadowOffset = CGSize(width: 1, height: 1)
-        btnConfirm.layer.shadowRadius = 2
         btnConfirm.layer.masksToBounds = false
         
     }
@@ -115,6 +101,7 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
             case .denied: // The user has previously denied access.
                 print("Camera: 권한 거부")
                 DispatchQueue.main.async {
+                    
                     let alert = AlertService().alert(title: "알림", body: "카메라 사용에 대한 접근권한이 없는 상태입니다.\n 설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
                         self.dismiss(animated: true)
                     } fourthButtonCompletion: {
