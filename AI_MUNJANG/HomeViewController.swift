@@ -9,9 +9,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet var labelContents: UIButton!
     @IBOutlet var containerView: UIView!
-    @IBOutlet var searchImage: UIImageView!
+    
+    @IBOutlet weak var topTitleLabel: UILabel!
+    
+    @IBOutlet weak var middleTitleLabel: UILabel!
+    
+    @IBOutlet weak var bottomTitleLabel: UILabel!
+    
+    @IBOutlet weak var bottomTitleContainerView: UIView!
+    
+    
+    @IBOutlet weak var homeSenImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +39,13 @@ class HomeViewController: UIViewController {
         containerView.layer.shadowRadius = 2
         containerView.layer.masksToBounds = false
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        searchImage.isUserInteractionEnabled = true
-        searchImage.addGestureRecognizer(tapGestureRecognizer)
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickedAnalyze))
+        bottomTitleContainerView.isUserInteractionEnabled = true
+        bottomTitleContainerView.addGestureRecognizer(tapRecognizer)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickedContents))
+        homeSenImageView.isUserInteractionEnabled = true
+        homeSenImageView.addGestureRecognizer(tapGestureRecognizer)
         
         
         //캠페인 활성화 여부 판단
@@ -43,6 +56,20 @@ class HomeViewController: UIViewController {
                 Core.shared.setCouponeCampaignNo()
             }
         }
+        
+        bottomTitleContainerView.layer.cornerRadius = 12
+   
+        
+        let attrString = NSMutableAttributedString(string: topTitleLabel.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        topTitleLabel.attributedText = attrString
+        topTitleLabel.font = UIFont(name: "NanumSquareEB", size: 24)
+        topTitleLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
+        
+        middleTitleLabel.font = UIFont(name: "NanumSquareEB", size: 18)
+     
     }
         
      @objc func clickedUserIcon() {
@@ -52,31 +79,17 @@ class HomeViewController: UIViewController {
          navigationController?.pushViewController(myPageViewController, animated: true)
      }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
-//        clickedAnalyzeButton(tappedImage)
-        clickedAnalyze(tappedImage)
-    }
+   
     
-    @IBAction func clickedContents(_ sender: UIButton) {
+    @objc func clickedContents() {
         guard let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController")  as? MainViewController else {return}
         navigationController?.pushViewController(mainViewController, animated: true)
     }
     
-    @IBAction func clickedAnalyze(_ sender: Any) {
+    @objc func clickedAnalyze() {
         guard let analyzeViewController = self.storyboard?.instantiateViewController(withIdentifier: "AnalyzeViewController")  as? AnalyzeViewController else {return}
         navigationController?.pushViewController(analyzeViewController, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
