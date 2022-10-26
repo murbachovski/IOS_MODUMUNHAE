@@ -88,15 +88,11 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         let sen = titleArray.joined(separator: " ")
         
         requestByCorrection(url: url, sen: sen) { dicData in
-            for i in dicData {
-                print(i)
-                DispatchQueue.main.async {
-                    guard let correctionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CorrectionViewController")  as? CorrectionViewController else {return}
-                    correctionViewController.dicData = dicData
-                    correctionViewController.originSentence = sen
-                    correctionViewController.modalPresentationStyle = .fullScreen
-                    self.present(correctionViewController, animated: true)
-                }
+            DispatchQueue.main.async {
+                guard let correctionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CorrectionViewController")  as? CorrectionViewController else {return}
+                correctionViewController.dicData = dicData
+                correctionViewController.originSentence = sen
+                self.navigationController?.pushViewController(correctionViewController, animated: true)
             }
         }
     }

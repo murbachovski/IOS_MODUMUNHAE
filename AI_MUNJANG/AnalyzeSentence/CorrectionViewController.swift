@@ -42,11 +42,44 @@ class CorrectionViewController: UIViewController {
         
         
         composeQuestion()
+        self.title = "문장교정"
+        
+     
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        userInput()
+//        userInput()
+        userInputByCustomAlert()
+    }
+    
+    func userInputByCustomAlert(){
+
+        let alert = AlertService().alertTF {
+            print("cancel Button clicked")
+            self.navigationController?.popViewController(animated: true)
+        } confirmButtonCompletion: { res in
+            print(res)
+            let trimmed = res.trimmingCharacters(in: .whitespacesAndNewlines)
+            if trimmed.count > 0 {
+                if trimmed == self.originWord {
+                    print("사용자 정답")
+                    self.alertBySuccess(success: true)
+                }else {
+                    print("사용자 오답")
+                    self.alertBySuccess(success: false)
+                }
+            }else {
+                print("No input")
+                self.alertBySuccess(success: false)
+            }
+          
+        }
+
+        alert.modalPresentationStyle = .overCurrentContext
+        alert.modalTransitionStyle = .crossDissolve
+        
+        present(alert, animated: true)
     }
     
     func composeQuestion() {
@@ -92,61 +125,6 @@ class CorrectionViewController: UIViewController {
         questionLabel.attributedText = attributedText
     }
     
-    func userInput() {
-    
-        var inputTextField: UITextField?
-        
-        let alertController = UIAlertController(
-            title: "밑줄 친 부분을 고치세요.",
-            message: "",
-            preferredStyle: .alert)
-        
-        let changeAction = UIAlertAction(
-            title: "수정",
-            style: .default) { (action) -> Void in
-                if let inputString = inputTextField?.text {
-                    if inputString.count > 0 {
-                        if inputString == self.originWord {
-                            print("사용자 정답")
-                            self.alertBySuccess(success: true)
-                        }else {
-                            print("사용자 오답")
-                            self.alertBySuccess(success: false)
-                        }
-                    }else {
-                        print("No input")
-                        self.alertBySuccess(success: false)
-                    }
-                } else {
-                    print("No input")
-                    self.alertBySuccess(success: false)
-                }
-            }
-        let cancelAction = UIAlertAction(
-            title: "취소",
-            style: .cancel) { (action) -> Void in
-                self.dismiss(animated: true)
-        }
-         
-        alertController.addTextField {
-            (tf) -> Void in
-            inputTextField = tf
-            let heightConstraint = NSLayoutConstraint(item: tf, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 40)
-            tf.addConstraint(heightConstraint)
-            tf.font = UIFont.boldSystemFont(ofSize: 24)
-            tf.textColor = hexStringToUIColor(hex: Constants.primaryColor)
-        }
-        
-        alertController.addAction(changeAction)
-        alertController.addAction(cancelAction)
-//        self.present(alertController, animated: true, completion: nil)
-        self.present(alertController, animated: true) {
-            UIView.animate(withDuration: 0.5, animations: {
-                alertController.view.center = CGPoint(x: alertController.view.center.x, y: alertController.view.center.y + 100)
-               })
-        }
-
-    }
 
     func alertBySuccess(success: Bool) {
         var messageTo = ""
@@ -155,17 +133,15 @@ class CorrectionViewController: UIViewController {
         }else {
             messageTo = "틀렸습니다. \n 다시 한번 도전해보세요."
         }
-        let alert = UIAlertController(title: "", message: messageTo, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { action in
-            self.dismiss(animated: true)
+        
+        let alert = AlertService().alert(title: "", body: messageTo, cancelTitle: "취소", confirTitle: "계속") {
+            self.navigationController?.popViewController(animated: true)
+        } fourthButtonCompletion: {
+            self.composeQuestion()
+            self.userInputByCustomAlert()
         }
-        let confirmAction = UIAlertAction(title: "확인", style: .default) { action in
-                self.composeQuestion()
-                self.userInput()
-        }
-        alert.addAction(cancelAction)
-        alert.addAction(confirmAction)
-        self.present(alert, animated: true)
-    }
+        
+        present(alert, animated: true)
 
+    }
 }

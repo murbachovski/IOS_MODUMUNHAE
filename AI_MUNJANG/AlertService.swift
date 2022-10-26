@@ -26,4 +26,17 @@ class AlertService {
         
     }
     
+    func alertTF(cancelButtonCompletion:(@escaping () ->Void), confirmButtonCompletion:(@escaping (String) ->Void)) -> CustomTFAlertViewController {
+        
+        let storyboard = UIStoryboard(name: whichStoryBoard(), bundle: .main)
+        let alertVC = storyboard.instantiateViewController(withIdentifier: "CustomTFAlertViewController") as! CustomTFAlertViewController
+ 
+        
+        alertVC.cancelButtonAction = cancelButtonCompletion
+        alertVC.confirmButtonAction = confirmButtonCompletion
+        return alertVC
+        
+    }
+    
+    
 }

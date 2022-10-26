@@ -84,6 +84,13 @@ class CustomAlertViewController: UIViewController {
         
         thirdButton.layer.borderWidth = 1
         thirdButton.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
+        
+        let attrString = NSMutableAttributedString(string: bodyLabel.text!)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        bodyLabel.attributedText = attrString
+        bodyLabel.textAlignment = .center
     }
     
     @IBAction func didTapFirst(_ sender: Any) {

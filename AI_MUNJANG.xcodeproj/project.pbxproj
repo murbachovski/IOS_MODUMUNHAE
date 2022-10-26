@@ -84,6 +84,7 @@
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
 		848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */; };
 		84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */; };
+		84B9BF282907CEA600F06B8E /* CustomTFAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */; };
 		84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67B28F7E8D100ACFA18 /* DropDown */; };
 		84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67E28F7E8EE00ACFA18 /* Zip */; };
 		84D8A68228F7ECDB00ACFA18 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A68128F7ECDB00ACFA18 /* HomeViewController.swift */; };
@@ -204,6 +205,7 @@
 		8474DD21287E6C78008275FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8474DD26287EB63C008275FC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestQuizViewController.swift; sourceTree = "<group>"; };
+		84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFAlertViewController.swift; sourceTree = "<group>"; };
 		84D8A68128F7ECDB00ACFA18 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84DD8FC528F94F4300CF783F /* MLTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextViewController.swift; sourceTree = "<group>"; };
 		84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 				842B0366288504FE0000BEDA /* CustomCheckBoxLabel.xib */,
 				842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */,
 				842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */,
+				84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */,
 			);
 			name = CommonUI;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B9BF282907CEA600F06B8E /* CustomTFAlertViewController.swift in Sources */,
 				84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */,
 				8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */,
 				8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */,
