@@ -13,6 +13,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     @IBOutlet var buttonCorrection: UIButton!
     @IBOutlet var buttonInference: UIButton!
     
+    @IBOutlet weak var labelAnalyze: UILabel!
+    
     @IBOutlet weak var analyzeCollectionView: UICollectionView!
     @IBOutlet weak var originSentenceLabel: UILabel!
     
@@ -33,8 +35,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         originalSentence = (analyzedData["sen"] as! String)
         pureSentence = (analyzedData["sen"] as! String).replacingOccurrences(of: "VV", with: " ")
         dividedSentences = originalSentence.components(separatedBy: "VV")
-//        analyzedEights = analyzedData["eight_div_senretrieveStopStepByBasic"] as! [String:Any]
-//        print("analyzedData_eight_div_sen:\(analyzedData["eight_div_sen"])")
+
         guard let temp = analyzedData["eight_div_sen"] as? [[String : Any]] else {return}
         analyzedDataEights = temp
         print("analyzedDataEights:\(analyzedDataEights)")
@@ -45,7 +46,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         wordCollectionView.delegate = self
         wordCollectionView.dataSource = self
         
-        originSentenceLabel.font = UIFont(name: "NanumSquareEB", size: 17)
+        originSentenceLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ?  20 : 17)
         originSentenceLabel.text = originalSentence.replacingOccurrences(of: "VV", with: "  ✓ ")
         arr = pureSentence.components(separatedBy: " ")
         for i in arr {
@@ -54,15 +55,20 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
             }
         }
         
-        buttonInference.layer.cornerRadius = 10
-        buttonInference.layer.borderWidth = 1
-        buttonInference.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
-        buttonInference.backgroundColor = .white
         
-        buttonCorrection.layer.cornerRadius = 10
-        buttonCorrection.layer.borderWidth = 1
-        buttonCorrection.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
-        buttonCorrection.backgroundColor = .white
+        buttonInference.layer.cornerRadius = buttonInference.frame.size.height / 2
+        buttonInference.layer.shadowOpacity = 0.8
+        buttonInference.layer.shadowColor = UIColor.lightGray.cgColor
+        buttonInference.layer.shadowOffset = CGSize(width: 1, height: 1)
+        buttonInference.layer.shadowRadius = 2
+        buttonInference.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
+        
+        buttonCorrection.layer.cornerRadius = buttonCorrection.frame.size.height / 2
+        buttonCorrection.layer.shadowOpacity = 0.8
+        buttonCorrection.layer.shadowColor = UIColor.lightGray.cgColor
+        buttonCorrection.layer.shadowOffset = CGSize(width: 1, height: 1)
+        buttonCorrection.layer.shadowRadius = 2
+        buttonCorrection.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
         
         self.navigationItem.backButtonTitle = " "
     }
