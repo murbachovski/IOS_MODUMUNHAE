@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
         paragraphStyle.lineSpacing = 4
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
         topTitleLabel.attributedText = attrString
-        topTitleLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 50: 24)
+        topTitleLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 40: 24)
         topTitleLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
         
         middleTitleLabel.font = UIFont(name: "NanumSquareEB", size: 18)

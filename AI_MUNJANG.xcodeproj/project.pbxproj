@@ -65,6 +65,7 @@
 		84607866290253BE0051CACB /* Coupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84607865290253BE0051CACB /* Coupons.swift */; };
 		84607868290254440051CACB /* coupons_3000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84607867290254440051CACB /* coupons_3000.txt */; };
 		8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846078692902752E0051CACB /* CouponRegViewController.swift */; };
+		8460E0D3290C011D00B1A0D0 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
 		846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B089428977C2E00A6D4BD /* HomePageViewController.swift */; };
 		846E2BE228A34FDD00C5292D /* QuizContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E2BE128A34FDD00C5292D /* QuizContentData.swift */; };
@@ -188,6 +189,7 @@
 		84607865290253BE0051CACB /* Coupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons.swift; sourceTree = "<group>"; };
 		84607867290254440051CACB /* coupons_3000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coupons_3000.txt; sourceTree = "<group>"; };
 		846078692902752E0051CACB /* CouponRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponRegViewController.swift; sourceTree = "<group>"; };
+		8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
 		846B089428977C2E00A6D4BD /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		846E2BE128A34FDD00C5292D /* QuizContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizContentData.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			children = (
 				8432B3B628DD6B95005E6583 /* videoContents.json */,
 				8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */,
+				8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */,
 			);
 			name = MunhaeVideo;
 			sourceTree = "<group>";
@@ -977,6 +980,7 @@
 				8474DD08287D0573008275FC /* CommonUIViewController.swift in Sources */,
 				84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */,
 				84607866290253BE0051CACB /* Coupons.swift in Sources */,
+				8460E0D3290C011D00B1A0D0 /* VideoTableViewCell.swift in Sources */,
 				84739D8328C871D80052B20C /* SampleCollectionViewCell.swift in Sources */,
 				8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */,
 				84DD8FC628F94F4300CF783F /* MLTextViewController.swift in Sources */,
@@ -1189,6 +1193,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AI_MUNJANG/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "모두의 문해력";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1228,6 +1233,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AI_MUNJANG/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "모두의 문해력";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

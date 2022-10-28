@@ -8,7 +8,7 @@ import UIKit
 import CoreMedia
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-  
+ 
     @IBOutlet var mainCollectionView: UICollectionView!
     
     @IBOutlet var collectionViewTopHeight: NSLayoutConstraint!
@@ -46,16 +46,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationItem.backButtonTitle = " "
         setupUI()
         
-//        analyzeContainer.layer.borderWidth = 1
-//        analyzeContainer.layer.borderColor = UIColor.darkGray.cgColor
-//        analyzeContainer.layer.cornerRadius = 8
-        
-//        analyzeSenButton.titleLabel?.font = UIFont(name: "NanumSquareEB", size: 15)
-//        analyzeSenButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 0)
-        
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-//        searchImage.isUserInteractionEnabled = true
-//        searchImage.addGestureRecognizer(tapGestureRecognizer)
+        //#if DEBUG
+        //        testBarButton.isHidden = false
+        //#else
+        //        testBarButton.isHidden = true
+        //#endif
 
         self.setBackButton()
     }

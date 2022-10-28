@@ -39,6 +39,12 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
               }
         
         // Do any additional setup after loading the view.
+
+        
+        videoTableView.separatorStyle = .none
+
+        
+        self.title  = "문해학습 동영상"
     }
     
     
@@ -48,19 +54,28 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as? VideoTableViewCell else { return UITableViewCell() }
         let item = jsonVideoContents[indexPath.row]
-        cell.textLabel!.text = "\(item["No"]!)" + "   \(item["Title"]!)"
+        cell.indexLabel.text = item["No"] as! String
+        cell.titleLabel.text = item["Title"] as! String
+        
+        cell.videoImageView.clipsToBounds = true
+        cell.videoImageView.layer.cornerRadius = 8
+        
+        
+
+        cell.indexLabel.font = UIFont(name: "NanumSquareR", size: UIDevice.current.userInterfaceIdiom == .pad ? 11 : 15)
+        cell.indexLabel.textColor = hexStringToUIColor(hex: "#333333")
+        cell.titleLabel.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 12: 16)
+
         if isMember == false {
-            if indexPath.row > 3 {
-                cell.imageView!.image = UIImage(named: "icLock32Px")
-                cell.textLabel?.textColor = .lightGray
+            if indexPath.row > 2 {
+                cell.videoImageView!.image = UIImage(named: "thumnail_lock")
             }else {
                 
-                let image = UIImage(systemName: "lock.open.fill")?.withRenderingMode(.alwaysTemplate)
-                cell.imageView!.image = image
-                cell.imageView!.tintColor = hexStringToUIColor(hex: Constants.primaryColor)
+                let unlockImage = UIImage(named: "thumnail_unlock")
+                cell.videoImageView!.image = unlockImage
+                
                 
             }
         }
@@ -72,8 +87,8 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
         let item = jsonVideoContents[indexPath.row]
         
         if isMember == false {
-            if indexPath.row > 3 {
-                let alert = AlertService().alert(title: "", body: "동영상을 시청하기 위해서는 구독하셔야합니다", cancelTitle: "확인", confirTitle: "구독하러가기", thirdButtonCompletion: {
+            if indexPath.row > 2 {
+                let alert = AlertService().alert(title: "", body: "동영상을 시청하기 위해서는 \n구독하셔야합니다", cancelTitle: "확인", confirTitle: "구독하러가기", thirdButtonCompletion: {
                     
                 }, fourthButtonCompletion: {
                     guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
@@ -90,6 +105,12 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
             playTheVideo(urlString: item["UrlName"] as! String)
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIDevice.current.userInterfaceIdiom == .pad ? 110: 90
+    }
+    
+    
     func playTheVideo(urlString: String) {
         
         let videoURL = URL(string: urlString)
@@ -101,14 +122,6 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
           player.play()
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
