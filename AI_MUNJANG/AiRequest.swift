@@ -279,3 +279,47 @@ func requestByCorrection(url:String, sen:String, completion: @escaping ([String 
     }
     task.resume()
 }
+
+func requestByIndex(url:String, sen:String, completion: @escaping ([String : Any]) -> Void){
+    
+    //
+    var urlString = "\(url)?sen=\(sen)"
+    if let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+        print(encodedString)
+        urlString = encodedString
+    }
+
+    let newUrl = URL(string: urlString)
+    var request = URLRequest(url: newUrl!)
+    
+    request.httpMethod = "POST"
+
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard let data = data else {
+        print(String(describing: error))
+
+        return
+      }
+
+        let str = String(decoding: data, as: UTF8.self)
+               print("결과물: \(str)")
+        
+        var dicData : Dictionary<String, Any> = [String : Any]()
+                do {
+                    // 딕셔너리에 데이터 저장 실시
+                    dicData = try JSONSerialization.jsonObject(with: Data(str.utf8), options: []) as! [String:Any]
+                } catch {
+                    print(error.localizedDescription)
+                }
+                print("")
+                print("===============================")
+                print("[ViewController, 😆😆😆requestByIndex >> Json String to Dictionary]")
+                print("dicData : ", dicData)
+                print("===============================")
+                print("")
+
+        print("===============================")
+        completion(dicData)
+    }
+    task.resume()
+}

@@ -53,6 +53,7 @@
 		84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7428BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift */; };
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
 		844A4D5028B4AF73002C7F6B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A4D4F28B4AF73002C7F6B /* UserInfo.swift */; };
+		8451F6CB290BB63A008C49F6 /* SenIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451F6CA290BB63A008C49F6 /* SenIndexViewController.swift */; };
 		8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05B28B75F4700613946 /* AnalyzeViewController.swift */; };
 		8455F05E28B8585A00613946 /* AnalyzeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */; };
 		8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */; };
@@ -175,6 +176,7 @@
 		84488C78288F865B008400AC /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AI_MUNJANG.entitlements; sourceTree = "<group>"; };
 		844A4D4F28B4AF73002C7F6B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		8451F6CA290BB63A008C49F6 /* SenIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenIndexViewController.swift; sourceTree = "<group>"; };
 		8455F05B28B75F4700613946 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
 		8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeResultViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MunjangEightCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				84261F4028ED603D00E5E100 /* CorrectionViewController.swift */,
 				84261F4228ED654900E5E100 /* CorrectionCollectionViewCell.swift */,
 				84DD8FC528F94F4300CF783F /* MLTextViewController.swift */,
+				8451F6CA290BB63A008C49F6 /* SenIndexViewController.swift */,
 			);
 			path = AnalyzeSentence;
 			sourceTree = "<group>";
@@ -922,6 +925,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B9BF282907CEA600F06B8E /* CustomTFAlertViewController.swift in Sources */,
+				8451F6CB290BB63A008C49F6 /* SenIndexViewController.swift in Sources */,
 				84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */,
 				8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */,
 				8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */,

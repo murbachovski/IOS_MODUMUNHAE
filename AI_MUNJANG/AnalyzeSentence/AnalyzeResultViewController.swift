@@ -9,7 +9,7 @@ import UIKit
 
 class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-
+    @IBOutlet var buttonIndex: UIButton!
     @IBOutlet var buttonCorrection: UIButton!
     @IBOutlet var buttonInference: UIButton!
     
@@ -70,6 +70,13 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         buttonCorrection.layer.shadowRadius = 2
         buttonCorrection.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
         
+        buttonIndex.layer.cornerRadius = buttonIndex.frame.size.height / 2
+        buttonIndex.layer.shadowOpacity = 0.8
+        buttonIndex.layer.shadowColor = UIColor.lightGray.cgColor
+        buttonIndex.layer.shadowOffset = CGSize(width: 1, height: 1)
+        buttonIndex.layer.shadowRadius = 2
+        buttonIndex.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
+        
         self.navigationItem.backButtonTitle = " "
     }
   
@@ -99,6 +106,22 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
                 correctionViewController.dicData = dicData
                 correctionViewController.originSentence = sen
                 self.navigationController?.pushViewController(correctionViewController, animated: true)
+            }
+        }
+    }
+    
+    @IBAction func clickedIndexButton(_ sender: Any) {
+        let url = "http://118.67.133.8/sen_index/m"
+//        let url = "http://127.0.0.1:5000/sen_index/m"
+//        let sen = "나는 학교에 가고 엄마와 회사에 간다."
+        let sen = titleArray.joined(separator: " ")
+        
+        requestByIndex(url: url, sen: sen) { dicData in
+            DispatchQueue.main.async {
+                guard let senIndexViewController = self.storyboard?.instantiateViewController(withIdentifier: "SenIndexViewController")  as? SenIndexViewController else {return}
+//                senIndexViewController.dicData = dicData
+                senIndexViewController.originSentence = sen
+                self.navigationController?.pushViewController(senIndexViewController, animated: true)
             }
         }
     }
