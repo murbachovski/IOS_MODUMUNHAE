@@ -11,6 +11,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
  
     @IBOutlet var mainCollectionView: UICollectionView!
     
+    
     @IBOutlet var collectionViewTopHeight: NSLayoutConstraint!
     @IBOutlet var bannerBottomHeight: NSLayoutConstraint!
     //
@@ -23,17 +24,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     var titles :Array<String> = []
     var nowPage: Int = 0
     
-//    @IBOutlet weak var analyzeSenButton: UIButton!
-    
+
     @IBOutlet var bannerCollectionView: UICollectionView!
 
-//    @IBOutlet weak var analyzeContainer: UIView!
-//    @IBOutlet weak var searchImage: UIImageView!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //RELEASE 모드에서 테스트 버튼이 보이지 않도록
+#if DEBUG
+#else
+        self.navigationItem.rightBarButtonItem =  nil;
+
+#endif
         let layout = UICollectionViewFlowLayout()
         
         mainCollectionView.collectionViewLayout = layout
@@ -45,12 +49,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         self.navigationItem.backButtonTitle = " "
         setupUI()
-        
-        //#if DEBUG
-        //        testBarButton.isHidden = false
-        //#else
-        //        testBarButton.isHidden = true
-        //#endif
+  
 
         self.setBackButton()
     }
