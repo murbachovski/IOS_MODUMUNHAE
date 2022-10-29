@@ -91,7 +91,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
             cell.digitTitle.text = "\(indexPath.row + 1)"
             
             cell.mainTitle.text = munjangElements[indexPath.row]
-            cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
+            cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
             cell.subTitle.text = subElements[indexPath.row]
             
             if !Core.shared.isUserSubscription() {
