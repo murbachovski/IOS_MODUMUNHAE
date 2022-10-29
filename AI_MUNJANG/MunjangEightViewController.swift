@@ -107,9 +107,8 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
                 changeNextPage(num: indexPath.row)
             }else {
                 //알림창노출
-                let alert = AlertService().alert(title: "", body: "사용자게서는 구독 전이라 \n사용이 불가합니다.", cancelTitle: "확인", confirTitle: "구독하기") {
-//                    self.changeNextPage(num: indexPath.row)
-                    // 사용자가 둘러보기 선택
+                let alert = AlertService().alert(title: "", body: "사용자께서는 구독 전이라 \n사용이 불가합니다.", cancelTitle: "확인", confirTitle: "구독하기") {
+
                 } fourthButtonCompletion: {
                     // 사용자가 구독하기 선택
                     guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
@@ -121,7 +120,16 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
                 present(alert, animated: true)
             }
         }else { //구독자들
-            changeNextPage(num: indexPath.row)
+            
+            if !Core.shared.isUserLogin() {
+                let alert = AlertService().alert(title: "", body: "사용자의 원활한 사용을 위해 \n로그인이 필요합니다.", cancelTitle: "취소", confirTitle: "확인",thirdButtonCompletion: nil, fourthButtonCompletion: {
+                    changeLoginNC()
+                })
+                self.present(alert, animated: true)
+            }else{
+                changeNextPage(num: indexPath.row)
+            }
+            
         }
     }
     
