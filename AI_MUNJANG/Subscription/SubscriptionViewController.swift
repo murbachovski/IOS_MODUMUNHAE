@@ -105,7 +105,7 @@ class SubscriptionViewController: UIViewController {
             InAppProducts.store.buyProduct(monthProduct)
             
         }else{
-            let alert = AlertService().alert(title: "", body: "상품을 구독하기 위해 로그인 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
+            let alert = AlertService().alert(title: "", body: "상품을 구독하기 위해 \n로그인 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
                 changeLoginNC()
             }
             present(alert, animated: true)

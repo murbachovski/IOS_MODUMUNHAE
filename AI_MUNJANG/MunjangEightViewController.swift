@@ -107,8 +107,8 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
                 changeNextPage(num: indexPath.row)
             }else {
                 //알림창노출
-                let alert = AlertService().alert(title: "구독", body: "구독 전이라 사용이 불가합니다.", cancelTitle: "확인", confirTitle: "구독하기") {
-                    self.changeNextPage(num: indexPath.row)
+                let alert = AlertService().alert(title: "", body: "사용자게서는 구독 전이라 \n사용이 불가합니다.", cancelTitle: "확인", confirTitle: "구독하기") {
+//                    self.changeNextPage(num: indexPath.row)
                     // 사용자가 둘러보기 선택
                 } fourthButtonCompletion: {
                     // 사용자가 구독하기 선택

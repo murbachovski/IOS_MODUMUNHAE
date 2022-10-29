@@ -58,8 +58,8 @@ class AnalyzeViewController: UIViewController, MLTextDelegate {
             let tmpUseCount = UserDefaults.standard.integer(forKey: "tmpUseCount")
             print("😃 😃 😃 😃 😃 😃 😃 tmpUseCount:\(tmpUseCount)")
             //TODO: -횟수제한
-            if tmpUseCount + 1 > 1000{
-                let alert = AlertService().alert(title: "구독", body: "사용 횟수 10회 초과 입니다.", cancelTitle: "확인", confirTitle: "구독하기") {
+            if tmpUseCount + 1 > 30{
+                let alert = AlertService().alert(title: "", body: "사용 횟수 30회 초과 입니다.", cancelTitle: "확인", confirTitle: "구독하기") {
                     //이전 페이지로 이동
                    self.navigationController?.popViewController(animated: true)
                 } fourthButtonCompletion: {

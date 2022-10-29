@@ -235,7 +235,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
                     }else if errorInforKey as! String == "ERROR_NETWORK_REQUEST_FAILED" {
                         errorString = "네트워크 연결이 불안정합니다."
                     }else{
-                        errorString = "알 수 없는 원인으로 로그인 요청에 장애가 발생했습니다. 나중에 다시 시도해 주세요."
+                        errorString = "알 수 없는 원인으로 \n로그인 요청에 장애가 발생했습니다. \n나중에 다시 시도해 주세요."
                     }
                     
                     let alert = AlertService().alert(title: "", body:errorString, cancelTitle: "", confirTitle: "확인", thirdButtonCompletion: nil, fourthButtonCompletion: nil)

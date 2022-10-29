@@ -102,7 +102,7 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
                 print("Camera: 권한 거부")
                 DispatchQueue.main.async {
                     
-                    let alert = AlertService().alert(title: "알림", body: "카메라 사용에 대한 접근권한이 없는 상태입니다.\n 설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
+                    let alert = AlertService().alert(title: "알림", body: "카메라 사용에 대한 \n접근권한이 없는 상태입니다.\n설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
                         self.dismiss(animated: true)
                     } fourthButtonCompletion: {
                         self.openSettings()
@@ -146,7 +146,7 @@ class MLTextViewController: UIViewController, UINavigationControllerDelegate, UI
                     case .denied:
                         print("Album: 권한 거부")
                         DispatchQueue.main.async {
-                            let alert = AlertService().alert(title: "알림", body: "사진 앨범에 대한 접근권한이 없는 상태입니다.\n 설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
+                            let alert = AlertService().alert(title: "알림", body: "사진 앨범에 대한 \n접근권한이 없는 상태입니다.\n설정페이지로 이동하시겠습니까?", cancelTitle: "아니오", confirTitle: "예") {
                                 self.dismiss(animated: true)
                             } fourthButtonCompletion: {
                                 self.openSettings()

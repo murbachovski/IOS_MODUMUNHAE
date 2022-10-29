@@ -84,7 +84,7 @@ class MyPageViewController: UIViewController {
                             bodyMessage = "구독내역을 정상적으로 복원하였습니다."
                             self.subscribeButton.isHidden = true
                         }else{
-                            bodyMessage = "구독내역이 없거나 구독일자가 유효하지 않습니다."
+                            bodyMessage = "구독내역이 없거나 \n구독일자가 유효하지 않습니다."
                             self.subscribeButton.isHidden = false
                             print("무효")
                         }
@@ -168,7 +168,7 @@ class MyPageViewController: UIViewController {
             couponRegViewController.modalPresentationStyle = .fullScreen
             present(couponRegViewController, animated: true)
         }else{
-            let alert = AlertService().alert(title: "", body: "쿠폰을 등록하기 위해 로그인 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
+            let alert = AlertService().alert(title: "", body: "쿠폰을 등록하기 위해 \n로그인 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
                 changeLoginNC()
             }
             present(alert, animated: true)

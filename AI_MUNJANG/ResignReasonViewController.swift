@@ -111,7 +111,7 @@ class ResignReasonViewController: UIViewController,CheckButtonDelegate {
             if error != nil {
                 if let errorCode = error?._code { //Xcode가 다른 함수에서 사용된 FIRAuthErrorUserInfoNameKey를 인식하지 못해 errorCode로 접근하여 분기 처리함.
                     if errorCode == 17014 {
-                        let alert = AlertService().alert(title: "", body: "회원탈퇴는 중요한 행위이므로 다시 한번 로그인 해주세요.", cancelTitle: "취소", confirTitle: "확인", fourthButtonCompletion: nil)
+                        let alert = AlertService().alert(title: "", body: "회원탈퇴는 중요한 행위이므로 \n다시 한번 로그인 해주세요.", cancelTitle: "취소", confirTitle: "확인", fourthButtonCompletion: nil)
                         self!.present(alert, animated: true)
                     }
                 }

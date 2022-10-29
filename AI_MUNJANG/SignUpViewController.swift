@@ -235,7 +235,7 @@ class SignUpViewController: UIViewController, ShowDropDelegate, CheckEmailAndPas
                      
                      if errorInforKey as! String == "ERROR_EMAIL_ALREADY_IN_USE" {
                          print("ERROR_EMAIL_ALREADY_IN_USE")
-                         let alert = AlertService().alert(title: "", body: "\(withEmail)은 이미 가입한 계정입니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: nil)
+                         let alert = AlertService().alert(title: "", body: "\(withEmail)은 \n이미 가입한 계정입니다.", cancelTitle: "", confirTitle: "확인", fourthButtonCompletion: nil)
                          self!.present(alert, animated: true)
                      }
                  }
