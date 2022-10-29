@@ -20,9 +20,26 @@ class InferenceViewController: UIViewController {
         for i in contentsData {
             sectionHeader.append(i["sen"] as! String)
         }
+        displayHomeBtn()
+    }
+    
+    
+    fileprivate func displayHomeBtn() {
+        //백버튼의 타이틀을 지우기위해
+        navigationItem.backButtonTitle = ""
         
+        //백버튼외에 추가적으로 홈버튼을 채우기 위해
+        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
+        let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
+        navigationItem.leftBarButtonItem = homeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
+    }
+    
+    @objc func homeBtnTapped(){
+        changeMainNC()
     }
 }
+
 
 extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
 

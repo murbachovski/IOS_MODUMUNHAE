@@ -29,7 +29,13 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         eightCollectionView.dataSource = self
         
         self.eightCollectionView.register(UINib(nibName: "MunjangEightCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        self.navigationItem.backButtonTitle = " "
+        if currentLevel == "Basic"{
+            self.navigationItem.title = "문장8경"
+        }else{
+            self.navigationItem.title = "실질문해"
+        }
+        
+        displayHomeBtn()
     }
     
     override func viewDidLayoutSubviews() {
@@ -38,6 +44,22 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
 //        if self.view.frame.size.height < 1920 {
 //            titleLabelTopHeight.constant = 20
 //        }
+    }
+    
+    
+    fileprivate func displayHomeBtn() {
+        //백버튼의 타이틀을 지우기위해
+        navigationItem.backButtonTitle = ""
+        
+        //백버튼외에 추가적으로 홈버튼을 채우기 위해
+        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
+        let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
+        navigationItem.leftBarButtonItem = homeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
+    }
+    
+    @objc func homeBtnTapped(){
+        changeMainNC()
     }
     
     // MARK: - Navigation
@@ -122,10 +144,15 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         }else { //구독자들
             
             if !Core.shared.isUserLogin() {
-                let alert = AlertService().alert(title: "", body: "사용자의 원활한 사용을 위해 \n로그인이 필요합니다.", cancelTitle: "취소", confirTitle: "확인",thirdButtonCompletion: nil, fourthButtonCompletion: {
-                    changeLoginNC()
-                })
-                self.present(alert, animated: true)
+                if indexPath.row == 0 {
+                    changeNextPage(num: indexPath.row)
+                }else {
+                    let alert = AlertService().alert(title: "", body: "앱의 원활한 사용을 위해 \n로그인이 필요합니다.", cancelTitle: "취소", confirTitle: "확인",thirdButtonCompletion: nil, fourthButtonCompletion: {
+                        changeLoginNC()
+                    })
+                    self.present(alert, animated: true)
+                }
+                
             }else{
                 changeNextPage(num: indexPath.row)
             }

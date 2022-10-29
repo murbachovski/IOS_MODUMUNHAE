@@ -30,6 +30,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     var pureSentence = ""
     var titleArray: [String] = []
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         originalSentence = (analyzedData["sen"] as! String)
@@ -77,7 +79,9 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         buttonIndex.layer.shadowRadius = 2
         buttonIndex.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
        
-        self.navigationItem.backButtonTitle = " "
+        
+        
+        displayHomeBtn()
     }
   
     @IBAction func clickedInferenceButton(_ sender: Any) {
@@ -166,6 +170,22 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         dismiss(animated: true)
     }
     
+    //MARK: - HELPER
+    
+    fileprivate func displayHomeBtn() {
+        //백버튼의 타이틀을 지우기위해
+        navigationItem.backButtonTitle = ""
+        
+        //백버튼외에 추가적으로 홈버튼을 채우기 위해
+        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
+        let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
+        navigationItem.leftBarButtonItem = homeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
+    }
+    
+    @objc func homeBtnTapped(){
+        changeMainNC()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == wordCollectionView {

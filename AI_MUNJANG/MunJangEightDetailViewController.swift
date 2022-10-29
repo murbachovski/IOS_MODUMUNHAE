@@ -45,7 +45,6 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         setupUI()
         
         navigationItem.title = naviTitle
-//        toLearningMission = MyInfo.shared.learningProgress[naviTitle]
         
         mainTitle.text = mainTitleText
         subTitle.text = subTitleText
@@ -64,11 +63,29 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
             return front.first!.mission < behind.first!.mission
 
         }
+        
+        displayHomeBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    fileprivate func displayHomeBtn() {
+        //백버튼의 타이틀을 지우기위해
+        navigationItem.backButtonTitle = ""
+        
+        //백버튼외에 추가적으로 홈버튼을 채우기 위해
+        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
+        let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
+        navigationItem.leftBarButtonItem = homeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
+    }
+    
+    @objc func homeBtnTapped(){
+        changeMainNC()
+    }
+    
     
     func eightDetailDelegate() {
         toLearningMission = toLearningMission + 1

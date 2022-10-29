@@ -28,8 +28,25 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         print("grouped:\(grouped)")
         groupedContents = grouped
         
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "문해력 테스트"
+        displayHomeBtn()
     }
+    
+    fileprivate func displayHomeBtn() {
+        //백버튼의 타이틀을 지우기위해
+        navigationItem.backButtonTitle = ""
+        
+        //백버튼외에 추가적으로 홈버튼을 채우기 위해
+        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
+        let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
+        navigationItem.leftBarButtonItem = homeButtonItem
+        navigationItem.leftItemsSupplementBackButton = true
+    }
+    
+    @objc func homeBtnTapped(){
+        changeMainNC()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return MunhaeTestContentData.shared.munhaeTestTotal["TestNumber"]

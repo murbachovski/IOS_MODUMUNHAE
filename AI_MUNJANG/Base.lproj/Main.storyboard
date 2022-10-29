@@ -3085,7 +3085,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션 1. 문장인지 확인하라" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7V-if-B8x">
-                            <rect key="frame" x="20" y="60" width="374" height="50"/>
+                            <rect key="frame" x="20" y="108" width="374" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="ASc-TX-H5y"/>
                             </constraints>
@@ -3094,7 +3094,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장을 읽기 전에 문장이 맞는지 확인한다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHD-vx-C9G">
-                            <rect key="frame" x="20" y="130" width="374" height="40"/>
+                            <rect key="frame" x="20" y="178" width="374" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="raU-CR-UZW"/>
                             </constraints>
@@ -3118,10 +3118,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bq3-E6-maQ">
-                            <rect key="frame" x="8" y="50" width="32" height="32"/>
+                            <rect key="frame" x="372" y="50" width="34" height="34"/>
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="icArrowLeft32Px"/>
+                            <state key="normal" image="icClose32Px"/>
                             <connections>
                                 <action selector="clickedBack:" destination="OMf-Fe-WXr" eventType="touchUpInside" id="sho-Zx-cbl"/>
                             </connections>
@@ -3134,7 +3134,7 @@
                         <constraint firstItem="AHD-vx-C9G" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="20" id="Aov-a1-oN5"/>
                         <constraint firstItem="h7V-if-B8x" firstAttribute="top" secondItem="uay-Ok-6LM" secondAttribute="top" constant="60" id="LnE-7O-XgO"/>
                         <constraint firstItem="uay-Ok-6LM" firstAttribute="trailing" secondItem="h7V-if-B8x" secondAttribute="trailing" constant="20" id="UTD-GT-x9P"/>
-                        <constraint firstItem="Bq3-E6-maQ" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="8" id="eZW-vP-Ect"/>
+                        <constraint firstItem="uay-Ok-6LM" firstAttribute="trailing" secondItem="Bq3-E6-maQ" secondAttribute="trailing" constant="8" id="ae0-BW-8OF"/>
                         <constraint firstItem="h7V-if-B8x" firstAttribute="leading" secondItem="uay-Ok-6LM" secondAttribute="leading" constant="20" id="ifr-ZM-8O5"/>
                         <constraint firstItem="AHD-vx-C9G" firstAttribute="top" secondItem="h7V-if-B8x" secondAttribute="bottom" constant="20" id="n6b-Oo-0Sq"/>
                         <constraint firstItem="Bq3-E6-maQ" firstAttribute="top" secondItem="USC-ll-v7E" secondAttribute="top" constant="50" id="odo-ny-I38"/>
@@ -4603,7 +4603,7 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해력 검사" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgN-9p-Xcy">
-                            <rect key="frame" x="20" y="80" width="374" height="50"/>
+                            <rect key="frame" x="20" y="128" width="374" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="lpI-7b-wj9"/>
                             </constraints>
@@ -4612,7 +4612,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글자, 낱말, 문장, 문맥에 대한 이해도를 테스트합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPV-vA-dBf">
-                            <rect key="frame" x="20" y="160" width="374" height="60"/>
+                            <rect key="frame" x="20" y="208" width="374" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="66e-QN-4UM"/>
                             </constraints>
@@ -4637,10 +4637,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbe-U4-lxp">
-                            <rect key="frame" x="8" y="50" width="32" height="32"/>
+                            <rect key="frame" x="372" y="50" width="34" height="34"/>
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" image="icArrowLeft32Px"/>
+                            <state key="normal" image="icClose32Px"/>
                             <connections>
                                 <action selector="munhaeTestStartBackButton:" destination="dzd-GK-NUf" eventType="touchUpInside" id="c6T-os-8ga"/>
                             </connections>
@@ -4651,10 +4651,10 @@
                     <constraints>
                         <constraint firstItem="AeQ-xD-VH1" firstAttribute="centerY" secondItem="9Ry-oD-J0v" secondAttribute="centerY" id="FeS-uR-0vS"/>
                         <constraint firstItem="AeQ-xD-VH1" firstAttribute="centerX" secondItem="9Ry-oD-J0v" secondAttribute="centerX" id="JtR-F1-jp5"/>
+                        <constraint firstItem="Qqt-fs-TEe" firstAttribute="trailing" secondItem="Hbe-U4-lxp" secondAttribute="trailing" constant="8" id="PeT-o7-agv"/>
                         <constraint firstItem="ZgN-9p-Xcy" firstAttribute="top" secondItem="Qqt-fs-TEe" secondAttribute="top" constant="80" id="Q8D-nH-jga"/>
                         <constraint firstItem="qPV-vA-dBf" firstAttribute="top" secondItem="ZgN-9p-Xcy" secondAttribute="bottom" constant="30" id="ZGs-l5-2Wn"/>
                         <constraint firstItem="Qqt-fs-TEe" firstAttribute="trailing" secondItem="ZgN-9p-Xcy" secondAttribute="trailing" constant="20" id="boD-GR-OwQ"/>
-                        <constraint firstItem="Hbe-U4-lxp" firstAttribute="leading" secondItem="Qqt-fs-TEe" secondAttribute="leading" constant="8" id="g3q-8R-CQw"/>
                         <constraint firstItem="Hbe-U4-lxp" firstAttribute="top" secondItem="9Ry-oD-J0v" secondAttribute="top" constant="50" id="orZ-F7-ydw"/>
                         <constraint firstItem="qPV-vA-dBf" firstAttribute="leading" secondItem="Qqt-fs-TEe" secondAttribute="leading" constant="20" id="pAY-aO-YdN"/>
                         <constraint firstItem="ZgN-9p-Xcy" firstAttribute="leading" secondItem="Qqt-fs-TEe" secondAttribute="leading" constant="20" id="rMv-It-fUq"/>

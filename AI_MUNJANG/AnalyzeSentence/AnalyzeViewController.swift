@@ -69,7 +69,8 @@ class AnalyzeViewController: UIViewController, MLTextDelegate {
         cameraButton.layer.shadowRadius = 2
         cameraButton.layer.masksToBounds = true
         
-        navigationItem.title = "문장분석"
+        self.title = "문장분석"
+        self.navigationItem.backButtonTitle = " "
     }
 
     @IBAction func clickedAnalyze(_ sender: Any) {

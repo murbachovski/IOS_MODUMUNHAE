@@ -78,7 +78,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     var currentQuizPool:MunhaeTestContents = []
     
-    var currentQuizIndex = 18
+    var currentQuizIndex = 0
     lazy var currentQuiz = MunhaeTestContent(testnumber: 0, id: 0, title: "", jimun: nil, example: "", result: "")
 
     var answerButtons : [UIButton] = []
