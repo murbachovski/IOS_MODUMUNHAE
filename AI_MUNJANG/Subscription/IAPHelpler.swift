@@ -171,8 +171,8 @@ extension IAPHelper: SKPaymentTransactionObserver {
       
     func checkReceiptValidation(isProduction: Bool = true, completion: @escaping( (Bool)->Void)) {
             let completionArg = completion
-            let receiptFileURL = Bundle.main.appStoreReceiptURL
-            let receiptData = try? Data(contentsOf: receiptFileURL!)
+        guard let receiptFileURL = Bundle.main.appStoreReceiptURL else {return}
+        let receiptData = try? Data(contentsOf: receiptFileURL)
             guard let recieptString = receiptData?.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0)) else{
                 print("영수증 복원에 장애(구매이력없어서).")
                     return

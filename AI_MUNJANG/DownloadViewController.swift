@@ -7,11 +7,12 @@
 
 import UIKit
 import Zip
-import NVActivityIndicatorView
+//import NVActivityIndicatorView
 
 class DownloadViewController: UIViewController, URLSessionDataDelegate {
     @IBOutlet var guideLabel: UILabel!
-    @IBOutlet var indicator: NVActivityIndicatorView!
+//    @IBOutlet var indicator: NVActivityIndicatorView!
+    @IBOutlet var indicator: UIActivityIndicatorView!
     
     var curVersion = UserDefaults.standard.integer(forKey: "version_number")
     var serverVersion = 0

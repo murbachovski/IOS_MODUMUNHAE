@@ -760,7 +760,7 @@
                                 <color key="textColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-q1-5fr" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftA-q1-5fr" customClass="UIActivityIndicatorView">
                                 <rect key="frame" x="364" y="804" width="40" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -5052,7 +5052,7 @@
             <size key="intrinsicContentSize" width="175.5" height="20.5"/>
         </designable>
         <designable name="wm6-qc-A62">
-            <size key="intrinsicContentSize" width="41.5" height="19"/>
+            <size key="intrinsicContentSize" width="42" height="20"/>
         </designable>
     </designables>
     <resources>
