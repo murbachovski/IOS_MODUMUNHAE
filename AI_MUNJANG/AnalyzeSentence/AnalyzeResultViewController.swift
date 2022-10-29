@@ -20,7 +20,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     
     @IBOutlet weak var wordCollectionView: UICollectionView!
     
-    let samples = "이 나는 아침에 어디까지 맘고생하면 서서히우리는 학교에 간다."
+    
     var arr:[String] = []
     var analyzedData : [String: Any] = [:]
     var dividedSentences : [String] = []
@@ -76,7 +76,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         buttonIndex.layer.shadowOffset = CGSize(width: 1, height: 1)
         buttonIndex.layer.shadowRadius = 2
         buttonIndex.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
-        
+       
         self.navigationItem.backButtonTitle = " "
     }
   
@@ -121,10 +121,46 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
                 guard let senIndexViewController = self.storyboard?.instantiateViewController(withIdentifier: "SenIndexViewController")  as? SenIndexViewController else {return}
 //                senIndexViewController.dicData = dicData
                 senIndexViewController.originSentence = sen
+                senIndexViewController.senGrade = dicData["grade"] as! String
+                
+                // 낱말지수 구하기
+                var tmpWordData:[String] = []
+                let part_lex_grade_dic = dicData["part_lex_grade"] as! [String:Any]
+                
+                for (k, v) in  part_lex_grade_dic{
+                    let value = "\(v)"
+                    if value == "1" {
+                        tmpWordData.append("\(k) - 초급")
+                    }else if value == "2" {
+                        tmpWordData.append("\(k) - 중급")
+                    }else if value == "3" {
+                        tmpWordData.append("\(k) - 고급")
+                    }else{
+                        tmpWordData.append("\(k) - 전문")
+                    }
+                }
+                tmpWordData.sort()
+                
+                //형태소 지수 구하기
+                var tmpMorphsData:[String] = []
+                let tmpKorTag = dicData["kor_tag"] as! [String:String]
+                let totalLexTag = dicData["total_lex_tag"] as! [String:String]
+                for (k,v) in totalLexTag{
+                    let value = tmpKorTag[v]!
+                    tmpMorphsData.append("\(k) - \(value)")
+                }
+                tmpMorphsData.sort()
+                
+                
+                senIndexViewController.wordData = tmpWordData
+                senIndexViewController.morphData = tmpMorphsData
+                senIndexViewController.phraseData = dicData["phrases"] as! [String]
                 self.navigationController?.pushViewController(senIndexViewController, animated: true)
             }
         }
     }
+    
+    
     
     @IBAction func clickedClose(_ sender: Any) {
         dismiss(animated: true)

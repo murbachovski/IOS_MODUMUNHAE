@@ -29,7 +29,7 @@ class HomePageViewController: UIViewController, WKNavigationDelegate {
             // 기타 옵션
             activityIndicator.color = hexStringToUIColor(hex: Constants.primaryColor)
             activityIndicator.hidesWhenStopped = true
-            activityIndicator.style = .medium
+            activityIndicator.style = .large
             
             // stopAnimating을 걸어주는 이유는, 최초에 해당 indicator가 선언되었을 때, 멈춘 상태로 있기 위해서
             activityIndicator.stopAnimating()

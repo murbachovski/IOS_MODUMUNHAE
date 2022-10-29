@@ -14,12 +14,33 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var originLabel: UILabel!
     let sectionHeader = ["낱말 지수", "형태소 지수", "절 지수"]
     var originSentence = ""
+    var senGrade = ""
+    
+    var wordData:[String] = []
+    var morphData:[String] = []
+    var phraseData:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "문장지수"
+        
         indexTableView.dataSource = self
         indexTableView.delegate = self
+        
         originLabel.text = originSentence
+        originLabel.backgroundColor = .white
+        originLabel.layer.cornerRadius = 10
+        originLabel.layer.shadowOpacity = 0.8
+        originLabel.layer.shadowColor = UIColor.lightGray.cgColor
+        originLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
+        originLabel.layer.shadowRadius = 2
+        originLabel.layer.masksToBounds = false
+        originLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 17)
+        
+        gradLabel.text = "문장 등급 : \(senGrade)"
+        gradLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 20)
+        gradLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,16 +53,34 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: - Row Cell
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 { //낱말 지수
+            return wordData.count
+        }else if section == 1 {//형태소 지수
+            return morphData.count
+        }else { //절 지수
+            return phraseData.count
+        }
         
-        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "indexCell")!
         
-        cell.textLabel?.text = "TEST"
-        cell.textLabel?.numberOfLines = 0
-        cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+        if indexPath.section == 0{
+            cell.textLabel?.text = wordData[indexPath.row]
+            cell.textLabel?.numberOfLines = 0
+            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+        }else if indexPath.section == 1{
+            cell.textLabel?.text = morphData[indexPath.row]
+            cell.textLabel?.numberOfLines = 0
+            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+        }else{
+            cell.textLabel?.text = phraseData[indexPath.row]
+            cell.textLabel?.numberOfLines = 0
+            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+        }
+    
+        
         
         return cell
     }

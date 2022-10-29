@@ -24,9 +24,5 @@
 	<string>Main</string>
 	<key>UIStatusBarHidden~ipad</key>
 	<false/>
-	<key>NSCameraUsageDescription</key>
-	<string>이미지 내에 있는 문자를 인식하기 위해 카메라를 사용합니다.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>이미지 내에 있는 문자를 인식하기 위해 카메라를 사용합니다.</string>
 </dict>
 </plist>
