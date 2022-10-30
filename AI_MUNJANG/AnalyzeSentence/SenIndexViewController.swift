@@ -86,18 +86,19 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
         
         if indexPath.section == 0{
             cell.textLabel?.text = wordData[indexPath.row]
-            cell.textLabel?.numberOfLines = 0
-            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+            
         }else if indexPath.section == 1{
             cell.textLabel?.text = morphData[indexPath.row]
-            cell.textLabel?.numberOfLines = 0
-            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+            
         }else{
             cell.textLabel?.text = phraseData[indexPath.row]
-            cell.textLabel?.numberOfLines = 0
-            cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+            
         }
-    
+        cell.textLabel?.numberOfLines = 0
+        cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            cell.textLabel?.font = UIFont(name: "NanumSquareR", size: 20)
+        }
         
         
         return cell
@@ -129,10 +130,14 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIDevice.current.userInterfaceIdiom == .pad ? 60: 44
+    }
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView {
             header.textLabel?.textColor = hexStringToUIColor(hex: Constants.primaryColor)
-            header.textLabel?.font = UIFont(name: "NanumSquareEB", size: 16)
+            header.textLabel?.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 20: 16)
             header.textLabel?.frame = header.bounds
             
         }

@@ -64,9 +64,9 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
         
         
 
-        cell.indexLabel.font = UIFont(name: "NanumSquareR", size: UIDevice.current.userInterfaceIdiom == .pad ? 11 : 15)
+        cell.indexLabel.font = UIFont(name: "NanumSquareR", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 15)
         cell.indexLabel.textColor = hexStringToUIColor(hex: "#333333")
-        cell.titleLabel.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 12: 16)
+        cell.titleLabel.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 16)
 
         if isMember == false {
             if indexPath.row > 2 {

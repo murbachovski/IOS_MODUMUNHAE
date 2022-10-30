@@ -36,7 +36,13 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout
-        layout.estimatedItemSize = CGSize(width: CGFloat(100).relativeToIphone8Width() , height: CGFloat(80).relativeToIphone8Width())
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            layout.estimatedItemSize = CGSize(width: 200, height: 160)
+            
+        }else{
+            layout.estimatedItemSize = CGSize(width: CGFloat(100).relativeToIphone8Width() , height: CGFloat(80).relativeToIphone8Width())
+            
+        }
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .clear
@@ -194,7 +200,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-       return 14 // Keep whatever fits for you
+        return UIDevice.current.userInterfaceIdiom == .pad ? 30: 14 // Keep whatever fits for you
      }
 
 }

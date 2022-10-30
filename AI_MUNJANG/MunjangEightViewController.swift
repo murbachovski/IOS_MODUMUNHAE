@@ -93,6 +93,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
             cell.mainTitle.text = munjangElements[indexPath.row]
             cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
             cell.subTitle.text = subElements[indexPath.row]
+            cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
             
             if !Core.shared.isUserSubscription() {
                 if indexPath.row != 0 {
@@ -103,8 +104,10 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
             cell.digitTitle.text = "\(indexPath.row + 1). 일상"
             
             cell.mainTitle.text = "사실"
-            cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: 15)
+            cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
+            
             cell.subTitle.text = "의견"
+            cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
             
             if !Core.shared.isUserSubscription() {
                 if indexPath.row != 0 {
@@ -118,8 +121,12 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        return CGSize(width: 170, height: 80)
         let cellWidth = collectionView.frame.size.width - 40 - 20
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return CGSize(width: cellWidth / 2.5 , height: cellWidth / 5)
+        }else{
+            return CGSize(width: cellWidth / 2 , height: cellWidth / 4)
+        }
         
-        return CGSize(width: cellWidth / 2 , height: cellWidth / 4)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -59,7 +59,10 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         if indexPath.row == 0 {
             cell.textLabel!.text = "1. 당신의 문해력은?"
         }else if indexPath.row == 1 {
-            cell.textLabel!.text = "2. 오답유형의 문제를 반복 추천하는 문해력 테스트"
+            cell.textLabel!.text = "2. 오답유형의 문제를 반복 추천"
+        }
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            cell.textLabel?.font = UIFont(name: "NanumSquare", size: 20)
         }
         return cell
     }
@@ -83,6 +86,11 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         present(munhaeTestQuizViewController, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIDevice.current.userInterfaceIdiom == .pad ? 60: 44
+    }
+    
     
     func setupRecommentTestPool()-> MunhaeTestContents{
         

@@ -65,8 +65,18 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = "- \((contentsData[indexPath.section]["infer_sen"] as! [String])[indexPath.row])"
         cell.textLabel?.numberOfLines = 0
         cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
-        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            cell.textLabel?.font = UIFont(name: "NanumSquareR", size: 20)
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return 60
+        }else{
+            return 44
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
@@ -98,7 +108,7 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView {
             header.textLabel?.textColor = hexStringToUIColor(hex: Constants.primaryColor)
-            header.textLabel?.font = UIFont(name: "NanumSquareEB", size: 16)
+            header.textLabel?.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 20: 16)
             header.textLabel?.frame = header.bounds
             
             }

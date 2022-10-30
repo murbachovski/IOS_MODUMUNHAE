@@ -116,7 +116,7 @@ func saveCurrentMission(section: String, level: String, missionNum: Int) {
 
 func retrieveCurrentMission(section: String, level: String) -> Int {
     let userLearningProgress = MyInfo.shared.learningProgress
-    let tmpProgress = userLearningProgress[level] as! [String : Int]
+    guard let tmpProgress = userLearningProgress[level] as? [String : Int] else{return 0}
     return tmpProgress[section]!
 }
 
