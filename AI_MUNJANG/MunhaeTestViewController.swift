@@ -50,22 +50,75 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return MunhaeTestContentData.shared.munhaeTestTotal["TestNumber"]
-        return groupedContents.count
+//        return groupedContents.count
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel!.text = "1. 당신의 문해력은?"
+        if indexPath.row == 0 {
+            cell.textLabel!.text = "1. 당신의 문해력은?"
+        }else if indexPath.row == 1 {
+            cell.textLabel!.text = "2. 오답유형의 문제를 반복 추천하는 문해력 테스트"
+        }
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+
         guard let munhaeTestQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestQuizViewController")  as? MunhaeTestQuizViewController else {return}
         munhaeTestQuizViewController.modalPresentationStyle = .fullScreen
-        print("선택된 시험 \(indexPath.row)")
-        print("선택된 시험 내용 : \(groupedContents[indexPath.row])")
-        munhaeTestQuizViewController.currentQuizPool = groupedContents[indexPath.row]
+        if indexPath.row == 0 {
+            
+            print("선택된 시험 \(indexPath.row)")
+            print("선택된 시험 내용 : \(groupedContents[indexPath.row])")
+            munhaeTestQuizViewController.currentQuizPool = groupedContents[indexPath.row]
+            munhaeTestQuizViewController.isRecommendPool = false
+        }else if indexPath.row == 1 {
+            
+            print("😀선택된 시험은 문장8경 추천문제풀")
+            munhaeTestQuizViewController.currentQuizPool = setupRecommentTestPool()
+            munhaeTestQuizViewController.isRecommendPool = true
+        }
         present(munhaeTestQuizViewController, animated: true)
     }
     
+    func setupRecommentTestPool()-> MunhaeTestContents{
+        
+        //1. tmpContent를 quizContents에서 발췌 24
+        
+        //2. quizContents의 유형을 MunhaeTestContent로 전환
+        
+        //3 .MunhaeTestContents를 반환
+        
+    //    return
+        var tmpListTt = [QuizContent]()
+        for k in 0..<8{
+            var tmpList = [QuizContent]()
+            var tmp = QuizContentData.shared.sectionTotal[k]
+            
+            for i in tmp {
+                if i.type == "글"{
+                    tmpList.append(i)
+                }
+            }
+            tmpListTt += tmpList.shuffled().prefix(3)
+        }
+        
+        print(tmpListTt)
+        print(tmpListTt.count)
+        var recommendPool: MunhaeTestContents = [MunhaeTestContent]()
+        for (index, element) in tmpListTt.enumerated() {
+            //element.section을 testnumber로 치환하여 틀린문제를 추적한다.
+            let tmpContent = MunhaeTestContent(testnumber:element.section , id: index + 1, title: element.title, jimun: element.jimun, example: element.example, result: element.result!)
+            recommendPool.append(tmpContent)
+        }
+        
+        print("recommentPool : \(recommendPool)")
+        return recommendPool
+        
+    }
+    
 }
+

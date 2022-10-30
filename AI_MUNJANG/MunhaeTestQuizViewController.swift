@@ -17,6 +17,7 @@ enum TestQuizStatus {
 
 class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
+    @IBOutlet weak var moreQuizButton: UIButton!
     @IBOutlet var resultContainerView: UIView!
     
     @IBOutlet var resultGuideLabel: UILabel!
@@ -91,8 +92,17 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         "문장":0.0,
         "문맥":0.0,
     ]
+    var testRecommendResult: [String: Double] = [:]
+    var testRecommentFailResult:[String] = []
+    var testFailResult: [String] = []
+    
+     var isRecommendPool = false
+    
+    var nonPassedRecommendSection = [String]()
     
     //MARK: - View Life Cycle
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,8 +114,6 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         resultContainerView.layer.shadowOffset = CGSize(width: 1, height: 1)
         resultContainerView.layer.shadowRadius = 2
         resultContainerView.layer.masksToBounds = false
-        
-        setUpBarChart()
         
         
         paddingLabel.layer.cornerRadius = 12
@@ -124,11 +132,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         quizContainerView.layer.shadowRadius = 2
         quizContainerView.layer.masksToBounds = false
         
-        quizTextLabel.text = ""
-        // Do any additional setup after loading the view.
-       
-        currentQuiz = currentQuizPool[0]
-        print("CurrentQuiz : \(currentQuiz)")
+        
         
         quizProgressView.progress = 0.0
         quizProgressView.tintColor = hexStringToUIColor(hex: Constants.primaryColor)
@@ -142,7 +146,12 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         descriptionStartButton.layer.borderWidth = 1
         descriptionStartButton.layer.borderColor = UIColor.darkGray.cgColor
         descriptionStartButton.layer.cornerRadius = descriptionStartButton.frame.size.width / 2
+       
+        
+        initView()
     }
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -168,23 +177,75 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewWillDisappear(animated)
     }
     
-    
+    fileprivate func initView() {
+        currentQuizIndex = 0
+        testRecommentFailResult = []
+        testRecommentFailResult = []
+        setUpBarChart()
+        quizTextLabel.text = ""
+        nonPassedRecommendSection = []
+        
+        currentQuiz = currentQuizPool[0]
+        print("CurrentQuiz : \(currentQuiz)")
+        setupUI()
+    }
     //MARK: - IBAction
     
     
     
+    @IBAction func clickedMoreQuizButton(_ sender: Any) {
+        //데이터 초기화
+        
+        currentQuizPool = setupRecommentTestPool(dataSection: nonPassedRecommendSection)
+        initView()
+        
+        
+        //결과화면 닫기
+        testResultView.removeFromSuperview()
+        completeView.removeFromSuperview()
+        
+    }
     @IBAction func clickedConfirmResult(_ sender: Any) {
         dismiss(animated: true)
     }
     
     @IBAction func clickedPresentResult(_ sender: Any) {
+        
         view.addSubview(testResultView)
         testResultView.frame = self.view.frame
-        let tmpKeyArray = ["글자", "낱말", "문장", "문맥"]
-        let tmpValueArray = [Double(testResult["글자"]!), Double(testResult["낱말"]!), Double(testResult["문장"]!), Double(testResult["문맥"]!)]
+        //일단 moreQuizbutton을 숨김
+        moreQuizButton.isHidden = true
+        var tmpKeyArray = [String]()
+        var tmpValueArray = [Double]()
+        if isRecommendPool == false {
+            
+            tmpKeyArray = ["글자", "낱말", "문장", "문맥"]
+            tmpValueArray = [Double(testResult["글자"]!), Double(testResult["낱말"]!), Double(testResult["문장"]!), Double(testResult["문맥"]!)]
+        }else{
+            
+            //정답을 하나도 맞추지 못한 영역이라도  0점이라도 주어 그래프에 표시되어야
+            //(틀린영역 - 맞춘점수가 있는 영역)하여 기재되지 못한 영역을 찾는다
+            
+            let missingSection = testRecommentFailResult.filter { !(testRecommendResult.keys.contains($0)) }
+            if missingSection.count > 0 {
+                for k in 0..<missingSection.count{
+                    testRecommendResult[missingSection[k]] = 0
+                }
+            }
+            
+            
+            let sortedDic = testRecommendResult.sorted { $0.0 < $1.0 }
+            for i in 0..<sortedDic.count {
+                tmpKeyArray.append(sortedDic[i].key)
+                tmpValueArray.append(sortedDic[i].value)
+            }
+
+        
+        }
         setChart(dataPoints: tmpKeyArray, values: tmpValueArray)
         //TODO: 사용자의 시험결과에 대한 가이드로직 필요.
         print("호출clickedPresentResult")
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             self.setUpResultGuideLabel()
         }
@@ -192,7 +253,46 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     func setUpResultGuideLabel() {
         print("호출setUpResultGuideLabel")
-        resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은 문장과 문맥 영역에서 다소 약한 이해력을 가지고 있습니다. 문장과 문맥에 대해서 추가적인 학습이 필요합니다."
+        if isRecommendPool {
+            
+            let nonPassedSection = testRecommendResult.filter({$0.value <= 7.0}).keys.sorted()
+            nonPassedRecommendSection = nonPassedSection //낙제받은 팔경의 문제를 나중에 재구성하기 위해
+            
+            
+            let normalPassedSection = testRecommendResult.filter({$0.value <= 7.0 && $0.value < 9.0}).keys.sorted()
+
+            if nonPassedSection.count > 0{ //낙제
+                moreQuizButton.isHidden = false
+                resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은 \(nonPassedSection.map{String($0)}.joined(separator: ",")) 영역에서  미진한 실력을 가지고 있습니다."
+            }else{
+                moreQuizButton.isHidden = true
+                if normalPassedSection.count > 0 {
+                    resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은  문장을 이해하는 보통의 실력을 가지고 있습니다."
+                }else{
+                    resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은  문장을 이해하는 좋은 실력을 가지고 있습니다."
+                }
+                
+
+            }
+            
+        }else {
+//            testResult = testResult.filter({$0.value <= 6.0})
+            moreQuizButton.isHidden = true
+            let nonPassedSection = testResult.filter({$0.value <= 7.0}).keys.sorted()
+            let normalPassedSection = testResult.filter({$0.value >= 7.0 && $0.value <= 9.0}).keys.sorted()
+//            let goodPassedSection = testRecommendResult.filter({$0.value >= 9.0}).keys.sorted()
+            
+            if nonPassedSection.count > 0 {
+                resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은 \(nonPassedSection.map{String($0)}.joined(separator: ",")) 영역에서 다소 미진한 실력을 가지고 있습니다."
+            }else{
+                if normalPassedSection.count > 0 {
+                    resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은 문해력을 이해하는 보통의 실력을 가지고 있습니다."
+                }else{
+                    resultGuideLabel.text = "\(MyInfo.shared.displayName) 님은 문해력을 이해하는 좋은 실력을 가지고 있습니다."
+                }
+            }
+        }
+        
     }
     
     @IBAction func clickedContinueButton(_ sender: Any) {
@@ -226,6 +326,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func clickedSubmitButton(_ sender: Any) {
+        
         let isChecked = checkValidation()
         if isChecked == false {
             let alert = AlertService().alert(title: "", body: "보기 중 하나를 선택하세요.", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion:nil, fourthButtonCompletion: nil)
@@ -236,18 +337,75 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
             if item.isSelected == true {
                 if item.titleLabel?.text == currentQuiz.result {
                     print("정답입니다")
-                    if 0 <= currentQuiz.id && currentQuiz.id < 4 {
-                        testResult["글자"] = testResult["글자"]! + 3
-                    }else if 4 <= currentQuiz.id && currentQuiz.id < 8 {
-                        testResult["낱말"] = testResult["낱말"]! + 3
-                    }else if 8 <= currentQuiz.id && currentQuiz.id < 14 {
-                        testResult["문장"] = testResult["문장"]! + 2
-                    }else if 14 <= currentQuiz.id && currentQuiz.id < 20 {
-                        testResult["문맥"] = testResult["문맥"]! + 2
+                    
+                    
+                    if isRecommendPool == false{
+                        //currentQuiz의 1문제 점수, 서버에서 내려오는 값중 글자,낱말 등을 구분하기 어려워
+                        //개별점수를 문제개수에 따라 하드코딩함
+                        
+                        let scorePerChar = 10.0 / Double(4)
+                        let scorePerWord = 10.0 / Double(4)
+                        let scorePerSen = 10.0 / Double(6)
+                        let scorePerContext = 10.0 / Double(6)
+                        
+                        if 0 <= currentQuiz.id && currentQuiz.id < 4 { //4문제
+                            testResult["글자"] = testResult["글자"]! + scorePerChar
+                        }else if 4 <= currentQuiz.id && currentQuiz.id < 8 { //4문제
+                            testResult["낱말"] = testResult["낱말"]! + scorePerWord
+                        }else if 8 <= currentQuiz.id && currentQuiz.id < 14 { //6문제
+                            testResult["문장"] = testResult["문장"]! + scorePerSen
+                        }else if 14 <= currentQuiz.id && currentQuiz.id < 20 { //6문제
+                            testResult["문맥"] = testResult["문맥"]! + scorePerContext
+                        }
+                    }else{ //추천 문제 풀이
+                        
+                        //currentQuiz의 1문제 점수
+                        var currentQuizSectionCount = 0
+                        var currentQuizSectionTotal = [MunhaeTestContent]()
+                        for item in currentQuizPool {
+                            if item.testnumber == currentQuiz.testnumber{
+                                currentQuizSectionTotal.append(item)
+                            }
+                        }
+                        currentQuizSectionCount = currentQuizSectionTotal.count
+                        let scorePerQuiz = 10.0 / Double(currentQuizSectionCount)
+                        
+                        testRecommendResult["\(currentQuiz.testnumber)경"] = (testRecommendResult["\(currentQuiz.testnumber)경"] ?? 0.0) + 1.0 * scorePerQuiz
+                        
                     }
+                    
                     
                 }else {
                     print("오답")
+                    //한문제라도 틀리면 사용자 취약 부분으로 제시함
+                    if isRecommendPool {
+                        if !testRecommentFailResult.contains("\(currentQuiz.testnumber)경"){
+                            testRecommentFailResult.append("\(currentQuiz.testnumber)경")
+                        }
+                        
+                    }else{
+                        if 0 <= currentQuiz.id && currentQuiz.id < 4 {
+                            if !testFailResult.contains("글자"){
+                                testFailResult.append("글자")
+                            }
+                        }else if 4 <= currentQuiz.id && currentQuiz.id < 8 {
+                            if !testFailResult.contains("낱말"){
+                                testFailResult.append("낱말")
+                            }
+                        }else if 8 <= currentQuiz.id && currentQuiz.id < 14 {
+                            if !testFailResult.contains("문장"){
+                                testFailResult.append("문장")
+                            }
+                        }else if 14 <= currentQuiz.id && currentQuiz.id < 20 {
+                            if !testFailResult.contains("문맥"){
+                                testFailResult.append("문맥")
+                            }
+                        }
+                        
+                        
+                    }
+                    
+                    
                 }
             }
         }
@@ -255,8 +413,12 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
             currentQuizIndex += 1
             currentQuiz = currentQuizPool[currentQuizIndex]
         }else{
-//            isCurrentMissionCompleted = true
-            print("시험완료 : 결과 : \(testResult)")
+            if isRecommendPool == false {
+                print("시험완료 : 결과 : \(testResult)")
+            }else{
+                print("시험완료 : 결과 : \(testRecommendResult)")
+            }
+            
             completeView.frame = view.frame
             view.addSubview(completeView)
             return
@@ -289,6 +451,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     func setupUI(){
         
+        print("😀현재문제😀: \(currentQuiz)")
         for item in answerButtons {
             item.setTitleColor(.black, for: .normal)
             item.isSelected = false
@@ -325,15 +488,26 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         exampleButton02.layer.borderWidth = 1
         exampleButton02.layer.borderColor = UIColor.lightGray.cgColor
         
-        exampleButton03.isHidden = false
-        exampleButton03.setTitle(exampleArray[2].trimmingCharacters(in: .whitespaces), for: .normal)
-        exampleButton03.layer.cornerRadius = 8
-        exampleButton03.layer.borderWidth = 1
-        exampleButton03.layer.borderColor = UIColor.lightGray.cgColor
-        
-        if exampleCount == 3 {
+        if exampleCount == 2 {
+            exampleButton03.isHidden = true
+            
+        }else if exampleCount == 3 {
             exampleButton04.isHidden = true
+            
+            exampleButton03.isHidden = false
+            exampleButton03.setTitle(exampleArray[2].trimmingCharacters(in: .whitespaces), for: .normal)
+            exampleButton03.layer.cornerRadius = 8
+            exampleButton03.layer.borderWidth = 1
+            exampleButton03.layer.borderColor = UIColor.lightGray.cgColor
+            
         }else {
+            
+            exampleButton03.isHidden = false
+            exampleButton03.setTitle(exampleArray[2].trimmingCharacters(in: .whitespaces), for: .normal)
+            exampleButton03.layer.cornerRadius = 8
+            exampleButton03.layer.borderWidth = 1
+            exampleButton03.layer.borderColor = UIColor.lightGray.cgColor
+            
             exampleButton04.isHidden = false
             exampleButton04.setTitle(exampleArray[3].trimmingCharacters(in: .whitespaces), for: .normal)
             exampleButton04.layer.cornerRadius = 8
@@ -377,11 +551,6 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
         
-//        if sender.titleLabel?.text == currentQuiz.result {
-//
-//        }else{
-//
-//        }
         
 
     }
@@ -469,5 +638,46 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         //width size
         barChartView.barData?.barWidth = 0.5
+    }
+    
+    
+    func setupRecommentTestPool(dataSection:[String])-> MunhaeTestContents{
+        
+        
+        //1. tmpContent를 quizContents에서 발췌 24
+        
+        //2. quizContents의 유형을 MunhaeTestContent로 전환
+        
+        //3 .MunhaeTestContents를 반환
+        let listStringToSetup = dataSection.map({$0.replacingOccurrences(of: "경", with: "")})
+        let listIntToSetup = listStringToSetup.map({Int($0)})
+        var tmpListTt = [QuizContent]()
+        for k in 0..<8{
+            if listIntToSetup.contains(k+1){
+                var tmpList = [QuizContent]()
+                let tmp = QuizContentData.shared.sectionTotal[k]
+                
+                for i in tmp {
+                    if i.type == "글"{
+                        tmpList.append(i)
+                    }
+                }
+                tmpListTt += tmpList.shuffled().prefix(Int(24/(listIntToSetup.count)))
+            }
+            
+        }
+        
+        print(tmpListTt)
+        print(tmpListTt.count)
+        var recommendPool: MunhaeTestContents = [MunhaeTestContent]()
+        for (index, element) in tmpListTt.enumerated() {
+            //element.section을 testnumber로 치환(경)하여 틀린문제를 추적한다.
+            let tmpContent = MunhaeTestContent(testnumber:element.section , id: index + 1, title: element.title, jimun: element.jimun, example: element.example, result: element.result!)
+            recommendPool.append(tmpContent)
+        }
+        
+        print("recommentPool : \(recommendPool)")
+        return recommendPool
+        
     }
 }
