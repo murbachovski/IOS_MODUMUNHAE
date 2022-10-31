@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import WebKit
+
 import PDFKit
 class TermsDetailViewController: UIViewController {
 
     @IBOutlet weak var titleOfTerms: UILabel!
-    @IBOutlet var webView: WKWebView!
+    
     @IBOutlet var containerView: UIView!
     
     var titleOfLabel:String = ""
@@ -21,38 +21,28 @@ class TermsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleOfTerms.text = titleOfLabel
+        titleOfTerms.font = UIFont(name: "NanumSquareB", size: 17)
         
-        let pdfView = PDFView(frame: self.view.bounds)
+
         
-//        let pdfView = PDFView(frame: self.containerView.bounds)
-        containerView = pdfView
-        pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.addSubview(pdfView)
+        let pdfView = PDFView()
+        pdfView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(pdfView)
+        pdfView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        pdfView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+        pdfView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        pdfView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
 
-        pdfView.autoScales = true
-
+        pdfView.maxScaleFactor = 4.0;
+        pdfView.minScaleFactor = pdfView.scaleFactorForSizeToFit;
+        pdfView.autoScales = true;
+        
         let fileURL = Bundle.main.url(forResource: fileName, withExtension: "pdf")
         pdfView.document = PDFDocument(url:fileURL!)
         
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//
-//        //        let pdfView = PDFView(frame: self.view.bounds)
-//
-//                let pdfView = PDFView(frame: self.containerView.bounds)
-//                containerView = pdfView
-//                pdfView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-//        //        self.view.addSubview(pdfView)
-//
-//                pdfView.autoScales = true
-//
-//                let fileURL = Bundle.main.url(forResource: "useTerms", withExtension: "pdf")
-//                pdfView.document = PDFDocument(url:fileURL!)
-//    }
 
-    
 
     @IBAction func closeButton(_ sender: UIButton) {
         self.dismiss(animated: true)
