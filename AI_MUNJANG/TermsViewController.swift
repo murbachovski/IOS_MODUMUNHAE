@@ -148,20 +148,25 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
 
     func checkSubButtonClicked(_ sender: UIButton) {
         var titleOfLabel = ""
-            
+        var pdfFileName = ""
+        
         if sender.tag == 1 {
             titleOfLabel = "이용약관"
+            pdfFileName = "useTerms"
         }else if sender.tag == 2 {
             titleOfLabel = "개인정보 수집・이용"
+            pdfFileName = "useTerms"//개인 정보 관련 파일명 교체
         }else if sender.tag == 3 {
             titleOfLabel = "14세 이상"
         }else if sender.tag == 4 {
             titleOfLabel = "마케팅 정보 수신"
+            pdfFileName = "useTerms"//마케팅 정보 수신 관련 파일명 교체
         }
         
         let termsDetailViewController = storyboard?.instantiateViewController(withIdentifier: "TermsDetailViewController") as! TermsDetailViewController
         termsDetailViewController.modalPresentationStyle = .fullScreen
         termsDetailViewController.titleOfLabel = titleOfLabel
+        termsDetailViewController.fileName = pdfFileName
         present(termsDetailViewController, animated: true)
     }
 
