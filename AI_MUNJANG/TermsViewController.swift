@@ -35,7 +35,7 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
         super.viewDidLoad()
 
         setupUI()
-
+        fourteenCheckLabel.checkSubButton.isHidden = true
     }
     
     

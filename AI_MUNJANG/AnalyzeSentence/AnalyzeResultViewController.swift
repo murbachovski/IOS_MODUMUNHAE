@@ -125,7 +125,7 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
                 guard let senIndexViewController = self.storyboard?.instantiateViewController(withIdentifier: "SenIndexViewController")  as? SenIndexViewController else {return}
 //                senIndexViewController.dicData = dicData
                 senIndexViewController.originSentence = sen
-                senIndexViewController.senGrade = dicData["grade"] as! String
+                senIndexViewController.senGrade = dicData["grade"] as! Int
                 
                 // 낱말지수 구하기
                 var tmpWordData:[String] = []

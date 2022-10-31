@@ -153,6 +153,7 @@ class AnalyzeViewController: UIViewController, MLTextDelegate {
     
     func requestAnalyzeEight(inputString: String) {
         let urlString = "http://118.67.133.8/eight_logic/m"
+//        let urlString = "http://127.0.0.1:5000/eight_logic/m"
 
         requestByEight(url: urlString, sen: inputString) { resDic in
             print("resDic:\(resDic)")

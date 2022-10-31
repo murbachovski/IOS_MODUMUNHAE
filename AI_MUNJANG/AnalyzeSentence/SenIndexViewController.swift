@@ -14,7 +14,7 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var originLabel: UILabel!
     let sectionHeader = ["낱말 지수", "형태소 지수", "절 지수"]
     var originSentence = ""
-    var senGrade = ""
+    var senGrade = 0
     
     var wordData:[String] = []
     var morphData:[String] = []
@@ -38,7 +38,18 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
         originLabel.layer.masksToBounds = false
         originLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 17)
         
-        gradLabel.text = "문장 등급 : \(senGrade)"
+        var scoreGrade = ""
+        
+        if senGrade < 15000 {
+            scoreGrade = "초급"
+        }else if senGrade >= 15000 && senGrade < 30000{
+            scoreGrade = "중급"
+        }else if senGrade >= 30000 && senGrade < 50000 {
+            scoreGrade = "고급"
+        }else {
+            scoreGrade = "전문"
+        }
+        gradLabel.text = "문장 지수 : \(senGrade)(\(scoreGrade))"
         gradLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 20)
         gradLabel.textColor = hexStringToUIColor(hex: Constants.primaryColor)
         
