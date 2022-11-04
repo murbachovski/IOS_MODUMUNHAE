@@ -82,14 +82,14 @@ func saveStopStep(section: String, level: String, step: Int) {
     if level == "Basic" {
         dataDic = UserDefaults.standard.object(forKey: "basicStopStep") as! [String : Int]
         dataDic.updateValue(step, forKey: section)
-        MyInfo.shared.learningProgress.updateValue(dataDic, forKey: "Basic")
-        print(dataDic)
+//        MyInfo.shared.learningProgress.updateValue(dataDic, forKey: "Basic")
+        print("basicStopStep: \(dataDic)")
         UserDefaults.standard.set(dataDic, forKey: "basicStopStep")
     }else {
         dataDic = UserDefaults.standard.object(forKey: "advancedStopStep") as! [String : Int]
         dataDic.updateValue(step, forKey: section)
-        print(dataDic)
-        MyInfo.shared.learningProgress.updateValue(dataDic, forKey: "Advanced")
+        print("advancedStopStep:\(dataDic)")
+//        MyInfo.shared.learningProgress.updateValue(dataDic, forKey: "Advanced")
         UserDefaults.standard.set(dataDic, forKey: "advancedStopStep")
     }
 }
@@ -101,22 +101,25 @@ func retrieveStopStep(section: String, level: String) -> Int {
     }else {
         dataDic = UserDefaults.standard.object(forKey: "advancedStopStep") as! [String : Int]
     }
-    print(dataDic)
+    print("retrieveStopStep: \(dataDic[section]!)")
     return dataDic[section]!
 }
 
 func saveCurrentMission(section: String, level: String, missionNum: Int) {
-    let userLearningProgress: [String : Any] = MyInfo.shared.learningProgress
+    var userLearningProgress: [String : Any] = MyInfo.shared.learningProgress
     
     var tmpProgress = userLearningProgress[level] as! [String : Int]
     tmpProgress.updateValue(missionNum, forKey: section)
     print("@@@@@@@@@@@@\(userLearningProgress)")
+    userLearningProgress[level] = tmpProgress
     MyInfo.shared.learningProgress = userLearningProgress
+    print("saveCurrentMission@@@@ \(MyInfo.shared.learningProgress)")
 }
 
 func retrieveCurrentMission(section: String, level: String) -> Int {
     let userLearningProgress = MyInfo.shared.learningProgress
     guard let tmpProgress = userLearningProgress[level] as? [String : Int] else{return 0}
+    print(tmpProgress[section]!)
     return tmpProgress[section]!
 }
 

@@ -123,6 +123,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         let tmpLevel = currentQuizPool[0].level
         // Do any additional setup after loading the view.
         if currentSection != "1" {
+            
+            
             if tmpLevel == "Basic" {
                 currentQuizIndex = retrieveStopStep(section: currentSection, level: "Basic")
             }else if tmpLevel == "Advanced"{
@@ -467,6 +469,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
                 UserDefaults.standard.set(dataDic, forKey: "tourUserData")
             }else {// 그 와에 데이터는 fireStore연동!!
                 saveCurrentMission(section: "\(currentQuiz.section)" , level: currentQuiz.level, missionNum: currentQuiz.mission)
+                saveStopStep(section: "\(currentQuiz.section)", level: currentQuiz.level, step: 0)
             }
         dismiss(animated: true) {
             self.delegate?.eightDetailDelegate()

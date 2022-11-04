@@ -3274,7 +3274,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동님은 총 50000개의 하트를 모았어요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJu-ah-Jcb">
-                            <rect key="frame" x="0.0" y="654" width="414" height="21"/>
+                            <rect key="frame" x="0.0" y="654" width="414" height="22.333333333333371"/>
                             <fontDescription key="fontDescription" name="NanumSquareB" family="NanumSquare" pointSize="19"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

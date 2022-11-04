@@ -161,6 +161,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
                 }
                 
             }else{
+                print("clicked \(indexPath.row+1)경 클릭")
                 changeNextPage(num: indexPath.row)
             }
             
@@ -171,7 +172,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         
         guard let munJangEightDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunJangEightDetailViewController")  as? MunJangEightDetailViewController else {return}
         if num + 1 != 1 {
-            let toLearningMission = retrieveCurrentMission(section: "\(num + 1)", level: currentLevel)
+            let toLearningMission = retrieveCurrentMission(section: "\(num+1)", level: currentLevel)
                 munJangEightDetailViewController.toLearningMission = toLearningMission
             }
         if currentLevel == "Basic" {

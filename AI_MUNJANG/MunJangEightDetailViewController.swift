@@ -94,7 +94,9 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     
     
     func eightDetailDelegate() {
+
         toLearningMission = toLearningMission + 1
+        print("eightdetaildelegate: \(toLearningMission)")
         collectionView.reloadData()
     }
     
@@ -111,6 +113,7 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         mainContainer.layer.shadowRadius = 1
         mainContainer.layer.masksToBounds = false
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
@@ -149,8 +152,12 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
             }
         }else {
             if indexPath.row < self.toLearningMission { //학습이 완료된 인덱스
+                cell.isUserInteractionEnabled = true
                 cell.isDoneImage.isHidden = false
+                print("😀학습완료:\(indexPath.row): \(cell)")
             }else if indexPath.row == self.toLearningMission {
+                cell.isUserInteractionEnabled = true
+                print("😀학습할:\(indexPath.row): \(cell)")
                 cell.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor)
                 cell.isDoneImage.image = UIImage(named: "icPlay32Px")
                 cell.numberTitle.textColor = .white
@@ -172,9 +179,11 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
                 cell.layer.shadowRadius = 2
                 cell.layer.masksToBounds = false
             }else {
+                print("😀학습예정:\(indexPath.row): \(cell)")
                 cell.isDoneImage.isHidden = true
                 cell.backgroundColor = hexStringToUIColor(hex: "#f5f5f5")
                 cell.isUserInteractionEnabled = false
+                
             }
             
         }
