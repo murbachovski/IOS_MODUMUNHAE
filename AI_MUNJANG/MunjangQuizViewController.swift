@@ -144,15 +144,22 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         
         //TODO: descTitle 과 descSubTitle을 이곳에서 설정해야 currentQuiz 참조
-        
-        descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 20)        
-        
-        descSubTitleLabel.font = UIFont(name: "NanumSquareB", size: 17)
-        
-        startMissionButton.layer.borderWidth = 1
-        startMissionButton.layer.borderColor = UIColor.darkGray.cgColor
-        startMissionButton.layer.cornerRadius = startMissionButton.frame.size.width / 2
-        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 22)
+            descTitleLabel.text = "문장8경 미션"
+            descSubTitleLabel.font = UIFont(name: "NanumSquareB", size: 20)
+        }else {
+            descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 18)
+            descTitleLabel.text = "문장8경 미션"
+            descSubTitleLabel.font = UIFont(name: "NanumSquareB", size: 14)
+        }
+//        startMissionButton.layer.borderWidth = 1
+//        startMissionButton.layer.borderColor = UIColor.darkGray.cgColor
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            startMissionButton.layer.cornerRadius = 10
+        }else {
+            startMissionButton.layer.cornerRadius = startMissionButton.frame.size.width / 7
+        }
         
         hintButton.layer.cornerRadius = 8
         hintButton.layer.borderWidth = 1
