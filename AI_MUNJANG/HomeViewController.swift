@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var bottomTitleContainerView: UIView!
     
-    
+    var test = ""
     @IBOutlet weak var homeSenImageView: UIImageView!
     
     override func viewDidLoad() {
