@@ -138,14 +138,15 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         quizProgressView.tintColor = hexStringToUIColor(hex: Constants.primaryColor)
         
         //TODO: descTitle 과 descSubTitle을 이곳에서 설정해야 currentQuiz 참조
-        
-        descriptionTitle.font = UIFont(name: "NanumSquareEB", size: 20)
-        
-        descriptionTitle.font = UIFont(name: "NanumSquareB", size: 17)
-        
-        descriptionStartButton.layer.borderWidth = 1
-        descriptionStartButton.layer.borderColor = UIColor.darkGray.cgColor
-        descriptionStartButton.layer.cornerRadius = descriptionStartButton.frame.size.width / 2
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            descriptionTitle.font = UIFont(name: "NanumSquareEB", size: 22)
+            descriptionSubTitle.font = UIFont(name: "NanumSquareB", size: 20)
+            descriptionStartButton.layer.cornerRadius = 10
+        }else {
+            descriptionTitle.font = UIFont(name: "NanumSquareEB", size: 18)
+            descriptionSubTitle.font = UIFont(name: "NanumSquareB", size: 14)
+            descriptionStartButton.layer.cornerRadius = descriptionStartButton.frame.size.width / 7
+        }
        
         
         initView()
