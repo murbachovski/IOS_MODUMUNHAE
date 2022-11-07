@@ -449,7 +449,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         setupUI()
-        startTTS()
+//        startTTS()
    
     }
     

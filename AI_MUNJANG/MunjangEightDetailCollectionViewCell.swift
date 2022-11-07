@@ -23,6 +23,7 @@ class MunjangEightDetailCollectionViewCell: UICollectionViewCell {
                 i.removeFromSuperlayer()
                 self.numberTitle.textColor = .black
                 self.border.backgroundColor = .lightGray
+                self.isDoneImage.image = UIImage(named: "icDone32Px")
             }
         }
     }
