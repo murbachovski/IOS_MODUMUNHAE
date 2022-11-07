@@ -291,6 +291,27 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         }else{
             quizTextLabel.isHidden = false
             quizImage.isHidden = true
+            //ex) "마지막 하나 남은 방울토마토마저 썩어버렸다. #& 마저"
+            
+            if let isUnderline = currentQuiz.jimun?.contains("#&"){
+                if isUnderline {
+                    let splitTexts = currentQuiz.jimun?.components(separatedBy: "#&")
+                    let tmpJimun = splitTexts?[0].trimmingCharacters(in: .whitespaces)
+                    let tmpUnderline = splitTexts?[1].trimmingCharacters(in: .whitespaces)
+
+                    
+                    let tmpJimunAttributed = NSMutableAttributedString.init(string: tmpJimun!)
+                    let originStr = NSString(string: tmpJimun!)
+                    let theRange = originStr.range(of: tmpUnderline!)
+                    tmpJimunAttributed.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:theRange)
+                    
+                    quizTextLabel.attributedText = tmpJimunAttributed
+                    
+                }else{
+                    quizTextLabel.text = currentQuiz.jimun
+                }
+            }
+            
             
             quizTextLabel.layer.cornerRadius = 12
             quizTextLabel.layer.masksToBounds = true
