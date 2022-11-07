@@ -200,7 +200,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         print("clicked Start Mission")
         descriptionView.removeFromSuperview()
-        startTTS()
+//        startTTS()
     }
     
     @IBAction func clickedHintButton(_ sender: Any) {

@@ -2961,6 +2961,9 @@
                             <state key="normal" title="미션 수행하기">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="clickedStartMission:" destination="OMf-Fe-WXr" eventType="touchUpInside" id="sm8-Xg-h7y"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmH-w8-E9I">
                             <rect key="frame" x="714" y="50" width="34" height="34"/>
@@ -4244,6 +4247,9 @@
                             <state key="normal" title="테스트 시작">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="clickedStart:" destination="dzd-GK-NUf" eventType="touchUpInside" id="2W9-H2-Tb3"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6B-sO-UPr">
                             <rect key="frame" x="714" y="50" width="34" height="34"/>
