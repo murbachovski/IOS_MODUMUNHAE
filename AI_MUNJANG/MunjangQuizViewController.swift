@@ -161,6 +161,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             startMissionButton.layer.cornerRadius = startMissionButton.frame.size.width / 7
         }
         
+
         hintButton.layer.cornerRadius = 8
         hintButton.layer.borderWidth = 1
         hintButton.layer.borderColor = UIColor.lightGray.cgColor
