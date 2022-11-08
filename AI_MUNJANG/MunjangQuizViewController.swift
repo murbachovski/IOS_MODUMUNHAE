@@ -260,7 +260,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         answer01Button.layer.borderColor = UIColor.lightGray.cgColor
         
         
-        answer02Button.setTitle(exampleArray[1].trimmingCharacters(in: .whitespaces), for: .normal)
+        answer02Button.setTitle(exampleArray[1].trimmingCharacters(in: .whitespaces)
+                            , for: .normal)
         answer02Button.layer.cornerRadius = 8
         answer02Button.layer.borderWidth = 1
         answer02Button.layer.borderColor = UIColor.lightGray.cgColor
@@ -442,6 +443,9 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     func updateUI(){
+        
+        
+        
         progressBarloc = Float(currentQuizIndex) / Float(currentQuizPool.count)
         quizProgressView.setProgress(progressBarloc, animated: true)
         if quizStatus == .CORRECT{
