@@ -17,6 +17,7 @@ public struct InAppProducts {
 
 class SubscriptionViewController: UIViewController {
 
+    @IBOutlet var indicator: UIActivityIndicatorView!
     @IBOutlet weak var subscribeContainer: UIView!
     @IBOutlet weak var customNaviView: CustomNaviBarView!
     @IBOutlet weak var subscribeChargeLabel: UILabel!
@@ -30,7 +31,7 @@ class SubscriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        indicator.color = UIColor.systemGray6
         // Do any additional setup after loading the view.
         //상품을 조회
         InAppProducts.store.requestProducts { success, products in
@@ -43,6 +44,14 @@ class SubscriptionViewController: UIViewController {
 
         setupUI()
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//
+//        if indicator.isAnimating {
+//            indicator.stopAnimating()
+//        }
+//    }
     
     @objc func methodOfReceivedNotification(notification:Notification){
         print(notification.userInfo as Any)
@@ -98,12 +107,13 @@ class SubscriptionViewController: UIViewController {
         print("subscribe clicked")
         isClickedSubscribeButton = true
         if Core.shared.isUserLogin() {
+            //시작
+            indicator.color = UIColor.green
+            self.indicator.startAnimating()
             guard let monthProduct = monthProduct else {
                 return
             }
-
             InAppProducts.store.buyProduct(monthProduct)
-            
         }else{
             let alert = AlertService().alert(title: "", body: "상품을 구독하기 위해 \n로그인 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
                 changeLoginNC()
@@ -111,6 +121,6 @@ class SubscriptionViewController: UIViewController {
             present(alert, animated: true)
         }
     }
-    
 
+    
 }

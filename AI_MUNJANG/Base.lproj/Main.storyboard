@@ -2250,18 +2250,33 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wti-Qi-JwL">
-                                <rect key="frame" x="20" y="460" width="374" height="215"/>
+                                <rect key="frame" x="20" y="460" width="374" height="265"/>
                                 <string key="text">- 구독해지는 현재 사용기간이 종료되기 24시간 전까지 가능하며, 취소할 경우, 사용기간 종료후에 자동으로 구독이 중단됩니다.  - 사용기간 종료 24시간 전까지 취소하지 않으면, 동일한 기간으로 자동 갱신합니다.  - 회원 탈퇴와 구독 해지는 별도로 진행되므로 반드시 회원탈퇴 전 구독을 해지해주세요.  - 구독해지 전 회원탈퇴를 하셨다면,  App Stroe에서 해지 가능합니다.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujz-cZ-R9r" customClass="UIActivityIndicatorView">
+                                <rect key="frame" x="182" y="776" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Eol-LC-ykm"/>
+                                    <constraint firstAttribute="height" constant="50" id="ydt-aB-ASq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeName" value=".lineSpinFadeLoader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rGa-IX-CcG"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="Wti-Qi-JwL" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" constant="20" id="4EN-xV-vxa"/>
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="Xfh-u6-V19" secondAttribute="trailing" constant="20" id="6nA-gg-yUm"/>
+                            <constraint firstItem="ujz-cZ-R9r" firstAttribute="centerX" secondItem="KG9-ed-y2O" secondAttribute="centerX" id="AGa-Z0-cZq"/>
                             <constraint firstItem="8Ez-op-yai" firstAttribute="top" secondItem="owD-NX-dlG" secondAttribute="bottom" constant="20" id="ETo-5i-Ynv"/>
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="owD-NX-dlG" secondAttribute="trailing" id="FJZ-KZ-Z7E"/>
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="Wti-Qi-JwL" secondAttribute="trailing" constant="20" id="G1k-ZJ-xIi"/>
@@ -2269,11 +2284,13 @@
                             <constraint firstItem="Xfh-u6-V19" firstAttribute="top" secondItem="u8F-jV-edm" secondAttribute="bottom" constant="20" id="K1y-Z1-0Yl"/>
                             <constraint firstItem="owD-NX-dlG" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" id="Ltq-SW-tRW"/>
                             <constraint firstItem="u8F-jV-edm" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" constant="20" id="LuG-me-cGQ"/>
+                            <constraint firstItem="rGa-IX-CcG" firstAttribute="bottom" secondItem="ujz-cZ-R9r" secondAttribute="bottom" constant="36" id="NA7-tl-fdw"/>
                             <constraint firstItem="Wti-Qi-JwL" firstAttribute="top" secondItem="Xfh-u6-V19" secondAttribute="bottom" constant="30" id="NIg-lQ-4vZ"/>
                             <constraint firstItem="R4U-Ln-rlk" firstAttribute="leading" secondItem="KG9-ed-y2O" secondAttribute="leading" id="RFd-ZN-DlJ"/>
                             <constraint firstItem="owD-NX-dlG" firstAttribute="top" secondItem="R4U-Ln-rlk" secondAttribute="bottom" id="cwf-Ar-CoD"/>
                             <constraint firstItem="R4U-Ln-rlk" firstAttribute="top" secondItem="KG9-ed-y2O" secondAttribute="top" id="f1m-dK-LnW"/>
                             <constraint firstAttribute="trailing" secondItem="R4U-Ln-rlk" secondAttribute="trailing" id="mB1-4f-JYz"/>
+                            <constraint firstItem="ujz-cZ-R9r" firstAttribute="top" secondItem="Wti-Qi-JwL" secondAttribute="bottom" constant="51" id="oHj-lE-acK"/>
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="8Ez-op-yai" secondAttribute="trailing" constant="20" id="rZd-fy-oc5"/>
                             <constraint firstItem="Xfh-u6-V19" firstAttribute="leading" secondItem="rGa-IX-CcG" secondAttribute="leading" constant="20" id="szq-PT-iN9"/>
                             <constraint firstItem="rGa-IX-CcG" firstAttribute="trailing" secondItem="u8F-jV-edm" secondAttribute="trailing" constant="20" id="tGc-80-fxz"/>
@@ -2282,6 +2299,7 @@
                     </view>
                     <connections>
                         <outlet property="customNaviView" destination="owD-NX-dlG" id="7VY-xc-Sdb"/>
+                        <outlet property="indicator" destination="ujz-cZ-R9r" id="nyX-Tp-KJy"/>
                         <outlet property="mainTitle" destination="8Ez-op-yai" id="m52-V0-zHN"/>
                         <outlet property="subTitle" destination="u8F-jV-edm" id="fUv-Gb-xA3"/>
                         <outlet property="subscribeButton" destination="6hy-xU-vua" id="pME-7g-1Zl"/>
