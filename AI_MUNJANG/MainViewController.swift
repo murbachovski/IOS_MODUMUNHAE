@@ -44,8 +44,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
         
-        bannerCollectionView.delegate = self
-        bannerCollectionView.dataSource = self
+//        bannerCollectionView.delegate = self
+//        bannerCollectionView.dataSource = self
         
         self.navigationItem.backButtonTitle = " "
         setupUI()
@@ -58,7 +58,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLayoutSubviews()
         if self.view.frame.size.height < 1920 {
 //            bannerBottomHeight.constant = 0
-            collectionViewTopHeight.constant = 0
+//            collectionViewTopHeight.constant = 0
         }
     }
 
@@ -84,13 +84,13 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#F9F9F9")
         print("사용자가 구독 중인가? : \(Core.shared.isUserSubscription())")
         
-        bannerTimer()
+//        bannerTimer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.barTintColor = .white
-        timer?.invalidate()
+//        timer?.invalidate()
         
     }
 
@@ -297,27 +297,27 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             nowPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
         }
 //MARK: -Helper Method
-    // 2초마다 실행되는 타이머
-    var timer :Timer?
-    func bannerTimer() {
-            timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (Timer) in
-                self.bannerMove()
-            }
-        }
+//    // 2초마다 실행되는 타이머
+//    var timer :Timer?
+//    func bannerTimer() {
+//            timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (Timer) in
+//                self.bannerMove()
+//            }
+//        }
         // 배너 움직이는 매서드
-        func bannerMove() {
-            print("nowPage: \(nowPage)")
-            // 현재페이지가 마지막 페이지일 경우
-            if nowPage == dataArray.count-1 {
-            // 맨 처음 페이지로 돌아감
-                bannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
-                nowPage = 0
-                return
-            }
-            // 다음 페이지로 전환
-            nowPage += 1
-            bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
-        }
+//        func bannerMove() {
+//            print("nowPage: \(nowPage)")
+//            // 현재페이지가 마지막 페이지일 경우
+//            if nowPage == dataArray.count-1 {
+//            // 맨 처음 페이지로 돌아감
+//                bannerCollectionView.scrollToItem(at: NSIndexPath(item: 0, section: 0) as IndexPath, at: .right, animated: true)
+//                nowPage = 0
+//                return
+//            }
+//            // 다음 페이지로 전환
+//            nowPage += 1
+//            bannerCollectionView.scrollToItem(at: NSIndexPath(item: nowPage, section: 0) as IndexPath, at: .right, animated: true)
+//        }
     
    //MARK: -문해력테스트
     func clickedmunhaeTest() {
