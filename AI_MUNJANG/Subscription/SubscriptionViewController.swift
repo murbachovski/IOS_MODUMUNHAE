@@ -108,7 +108,7 @@ class SubscriptionViewController: UIViewController {
         isClickedSubscribeButton = true
         if Core.shared.isUserLogin() {
             //시작
-            indicator.color = UIColor.green
+            indicator.color = hexStringToUIColor(hex: "#04BF55")
             self.indicator.startAnimating()
             guard let monthProduct = monthProduct else {
                 return

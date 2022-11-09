@@ -8,7 +8,8 @@ import UIKit
 import CoreMedia
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
- 
+    
+    @IBOutlet var mainTitleLabel: UILabel!
     @IBOutlet var mainCollectionView: UICollectionView!
     
     
@@ -31,7 +32,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "문장학습"
         //RELEASE 모드에서 테스트 버튼이 보이지 않도록
 #if DEBUG
 #else
@@ -163,30 +164,34 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 //            셀의 내용 채우기  pencil scribble.variable pencil.and.outline play.rectangle
             cell.labelInContentView.text = mainTitleList[indexPath.row]
             if indexPath.row == 0 {
-                cell.imgViewInContentView.image = UIImage(systemName: "questionmark")
+                cell.imgViewInContentView.image = UIImage(named: "cell1")
+                cell.lockImg.image = UIImage(named: "icTest40Px")
                 if !Core.shared.isUserSubscription(){
-                    cell.lockImg.image = UIImage(named: "icLock32Px")
-                }else{
-                    cell.lockImg.image = nil
+//                    if indexPath.row == 0 {
+//                        cell.labelInContentView.textColor = UIColor.lightGray
+//                    }
                 }
             }else if indexPath.row == 1 {
-                cell.imgViewInContentView.image = UIImage(systemName: "pencil")
+                cell.imgViewInContentView.image = UIImage(named: "cell2")
+                cell.lockImg.image = UIImage(named: "ic8K40Px")
             }else if indexPath.row == 2 {
-                cell.imgViewInContentView.image = UIImage(systemName: "pencil.and.outline")
+                cell.imgViewInContentView.image = UIImage(named: "cell3")
+                cell.lockImg.image = UIImage(named: "icLight40Px")
             }else {
-                cell.imgViewInContentView.image = UIImage(systemName: "play.fill")
+                cell.imgViewInContentView.image = UIImage(named: "cell4")
+                cell.lockImg.image = UIImage(named: "icVideo40Px")
             }
             
             
             
             //셀에 shadow추가
-            cell.backgroundColor = .white
-            cell.layer.cornerRadius = 10
-            cell.layer.shadowOpacity = 0.8
-            cell.layer.shadowColor = UIColor.lightGray.cgColor
-            cell.layer.shadowOffset = CGSize(width: 1, height: 1)
-            cell.layer.shadowRadius = 2
-            cell.layer.masksToBounds = false
+//            cell.backgroundColor = .white
+//            cell.layer.cornerRadius = 10
+//            cell.layer.shadowOpacity = 0.8
+//            cell.layer.shadowColor = UIColor.lightGray.cgColor
+//            cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+//            cell.layer.shadowRadius = 2
+//            cell.layer.masksToBounds = false
             
         
             return cell
@@ -199,8 +204,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         print("clicked : \(indexPath.row)")
         
         if !Core.shared.isUserSubscription(){
-            
-        
         
             var bodyMessage = "사용자께서는 아직 구독 전이라 \n미션별 문제 풀이 제한이 있습니다. \n자유로운 사용을 하기위해 \n구독하시기 바랍니다."
             var cancelMessage = "둘러볼게요."
@@ -250,7 +253,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         }else{ //사용자가 구독중일 때
             
             if indexPath.row == 0 {
-
+    
                 self.clickedmunhaeTest()
                 
             }else if indexPath.row == 1 {
@@ -285,7 +288,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             if UIDevice.current.userInterfaceIdiom == .pad {
                 return CGSize(width: cellWidth / 2.1 , height: cellWidth / 2.1)
             }else {
-                return CGSize(width: cellWidth / 2 , height: cellWidth / 2)
+                return CGSize(width: cellWidth / 2 , height: cellWidth / 2.8)
             }
         }
         return CGSize(width: collectionView.frame.size.width, height: 140)
