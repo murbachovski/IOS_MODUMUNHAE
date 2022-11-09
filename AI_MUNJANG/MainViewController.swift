@@ -136,7 +136,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         if collectionView == bannerCollectionView {
                 return UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         }   else {
-                return UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
+                if UIDevice.current.userInterfaceIdiom == .pad{
+                    return UIEdgeInsets(top: 50, left: 80, bottom: 0, right: 80)
+                }
+            return UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 20)
         }
     }
     
@@ -286,7 +289,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let cellWidth = collectionView.frame.size.width - 40 - 20
             
             if UIDevice.current.userInterfaceIdiom == .pad {
-                return CGSize(width: cellWidth / 2.1 , height: cellWidth / 2.1)
+                return CGSize(width: cellWidth / 2.5 , height: cellWidth / 5)
             }else {
                 return CGSize(width: cellWidth / 2 , height: cellWidth / 2.8)
             }
