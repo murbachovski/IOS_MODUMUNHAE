@@ -41,6 +41,7 @@
 		842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */; };
 		842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */; };
 		842B03AE2888E4BF0000BEDA /* CustomNaviBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */; };
+		842BB3CE291CEDDB002CF4CD /* coupon4000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842BB3CD291CEDDA002CF4CD /* coupon4000.txt */; };
 		842E96E428FE999900923706 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 842E96E328FE999900923706 /* Charts */; };
 		8432B3B728DD6B95005E6583 /* videoContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8432B3B628DD6B95005E6583 /* videoContents.json */; };
 		8433AA6628F514B70044061A /* DummyMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433AA6528F514B70044061A /* DummyMainViewController.swift */; };
@@ -63,7 +64,6 @@
 		845D5A3F28C1E63900CB67DE /* MunhaeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */; };
 		845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */; };
 		84607866290253BE0051CACB /* Coupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84607865290253BE0051CACB /* Coupons.swift */; };
-		84607868290254440051CACB /* coupons_3000.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84607867290254440051CACB /* coupons_3000.txt */; };
 		8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846078692902752E0051CACB /* CouponRegViewController.swift */; };
 		8460E0D3290C011D00B1A0D0 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */; };
 		846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B08922893C7B300A6D4BD /* IAPHelpler.swift */; };
@@ -166,6 +166,7 @@
 		842B03A92888E35F0000BEDA /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
 		842B03AB2888E4AC0000BEDA /* CustomNaviBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarView.swift; sourceTree = "<group>"; };
 		842B03AD2888E4BF0000BEDA /* CustomNaviBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNaviBarView.xib; sourceTree = "<group>"; };
+		842BB3CD291CEDDA002CF4CD /* coupon4000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coupon4000.txt; sourceTree = "<group>"; };
 		8432B3B628DD6B95005E6583 /* videoContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoContents.json; sourceTree = "<group>"; };
 		8433AA6528F514B70044061A /* DummyMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyMainViewController.swift; sourceTree = "<group>"; };
 		843F27BB28A4CA9900E36E33 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
@@ -188,7 +189,6 @@
 		845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestModel.swift; sourceTree = "<group>"; };
 		845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestContentData.swift; sourceTree = "<group>"; };
 		84607865290253BE0051CACB /* Coupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons.swift; sourceTree = "<group>"; };
-		84607867290254440051CACB /* coupons_3000.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = coupons_3000.txt; sourceTree = "<group>"; };
 		846078692902752E0051CACB /* CouponRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponRegViewController.swift; sourceTree = "<group>"; };
 		8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		846B08922893C7B300A6D4BD /* IAPHelpler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelpler.swift; sourceTree = "<group>"; };
@@ -462,7 +462,7 @@
 		8474DD02287D02FB008275FC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				84607867290254440051CACB /* coupons_3000.txt */,
+				842BB3CD291CEDDA002CF4CD /* coupon4000.txt */,
 				C6ED50AA287532C500454F26 /* AiRequest.swift */,
 				84607865290253BE0051CACB /* Coupons.swift */,
 			);
@@ -731,7 +731,6 @@
 			files = (
 				8432B3B728DD6B95005E6583 /* videoContents.json in Resources */,
 				842B038F288643080000BEDA /* NanumSquareEB.ttf in Resources */,
-				84607868290254440051CACB /* coupons_3000.txt in Resources */,
 				8474DD12287D33C3008275FC /* CustomTextView.xib in Resources */,
 				8475D5EB290FBE7F00284F72 /* useTerms.pdf in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
@@ -740,6 +739,7 @@
 				842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */,
 				C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */,
 				C6ED5083287531AF00454F26 /* Assets.xcassets in Resources */,
+				842BB3CE291CEDDB002CF4CD /* coupon4000.txt in Resources */,
 				843F27C128A5E97300E36E33 /* failed.mp3 in Resources */,
 				844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */,
 				C6ED5081287531AE00454F26 /* Main.storyboard in Resources */,

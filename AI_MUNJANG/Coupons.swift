@@ -12,7 +12,7 @@ import FirebaseFirestore
 func generateCoupons(){
         let db = Firestore.firestore()
        // Write Data to Firestore(🙄🙄🙄🙄🙄생성- 쿠폰3000개를 기록)
-       if let filepath = Bundle.main.path(forResource: "coupons_3000", ofType: "txt") {
+       if let filepath = Bundle.main.path(forResource: "coupon4000", ofType: "txt") {
            do {
                let contents = try String(contentsOfFile: filepath)
                
@@ -72,7 +72,10 @@ func setUpCouponRecord(docID:String, completionHandler: @escaping (Bool) -> Void
 
     let currentTime = Date()
     let createdTimeString = dateToString(date: currentTime)
-    let dueTime = Calendar.current.date(byAdding: .day, value: 180, to: currentTime)
+    var validDuringDays = 0
+    let tmpMonth = docID.components(separatedBy: "#")[0] //쿠폰의 예) 1#SEO0_O6IDWP51ENAK
+    validDuringDays = Int(tmpMonth)! * 30 // 1개월마다 * 30일, 향후 임의의 개월이 오더라도
+    let dueTime = Calendar.current.date(byAdding: .day, value: validDuringDays, to: currentTime)
     let dueTimeString = dateToString(date: dueTime!)
     docRef.getDocument { (document, error) in
         if let document = document, document.exists {
