@@ -73,7 +73,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet var descriptionStartButton: UIButton!
     
-    var audioPlayer: AVAudioPlayer? // AVAudioPlayer 인스턴스 참조체 저장
+//    var audioPlayer: AVAudioPlayer? // AVAudioPlayer 인스턴스 참조체 저장
     
     var quizStatus: TestQuizStatus = .NONE
     
@@ -157,9 +157,8 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        submitButton.layer.borderWidth = 1
-        submitButton.layer.borderColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
-        submitButton.layer.cornerRadius = submitButton.frame.size.height / 2
+        submitButton.layer.backgroundColor = hexStringToUIColor(hex: Constants.primaryColor).cgColor
+        submitButton.layer.cornerRadius = 10
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -313,7 +312,8 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         print("clicked Start Mission")
         munhaeDescriptionView.removeFromSuperview()
-        startTTS()
+        //문제 읽어 주는 기능
+//        startTTS()
     }
     @IBAction func closedButton(_ sender: Any) {
         munhaeStopMessageView.frame.size.width = view.frame.size.width
@@ -440,14 +440,14 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
         
-            let tts = TTS()
-            //TTS가 시작시 버튼 비활성화
-            changeButtonStatus(false)
-            
-            tts.setText(currentQuiz.title) {
-                //TTS가 완료된 후 버튼 활성화
-                self.changeButtonStatus(true)
-        }
+//            let tts = TTS()
+//            //TTS가 시작시 버튼 비활성화
+//            changeButtonStatus(false)
+//
+//            tts.setText(currentQuiz.title) {
+//                //TTS가 완료된 후 버튼 활성화
+//                self.changeButtonStatus(true)
+//        }
     }
     
     func setupUI(){
@@ -561,7 +561,7 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
         quizProgressView.setProgress(progressBarloc, animated: true)
         
         setupUI()
-        startTTS()
+//        startTTS()
    
     }
     fileprivate func changeButtonStatus(_ isStatus: Bool) {

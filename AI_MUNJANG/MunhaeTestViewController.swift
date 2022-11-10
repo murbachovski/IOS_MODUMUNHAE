@@ -10,11 +10,11 @@ import UIKit
 class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     
-
     @IBOutlet var munhaeTestTableView: UITableView!
     var groupedContents: [MunhaeTestContents] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         munhaeTestTableView.delegate = self
         munhaeTestTableView.dataSource = self
         
@@ -41,6 +41,7 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
         navigationItem.leftBarButtonItem = homeButtonItem
         navigationItem.leftItemsSupplementBackButton = true
+        homeButtonItem.imageInsets = UIEdgeInsets(top: -4, left: -5, bottom: 0, right: 0)
     }
     
     @objc func homeBtnTapped(){
@@ -104,7 +105,7 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         var tmpListTt = [QuizContent]()
         for k in 0..<8{
             var tmpList = [QuizContent]()
-            var tmp = QuizContentData.shared.sectionTotal[k]
+            let tmp = QuizContentData.shared.sectionTotal[k]
             
             for i in tmp {
                 if i.type == "글"{

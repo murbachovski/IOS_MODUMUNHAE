@@ -64,8 +64,10 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
         //백버튼외에 추가적으로 홈버튼을 채우기 위해
         let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
         let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
+        
         navigationItem.leftBarButtonItem = homeButtonItem
         navigationItem.leftItemsSupplementBackButton = true
+        homeButtonItem.imageInsets = UIEdgeInsets(top: -4, left: -5, bottom: 0, right: 0)
     }
     
     @objc func homeBtnTapped(){
