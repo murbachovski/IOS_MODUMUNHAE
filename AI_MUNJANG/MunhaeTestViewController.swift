@@ -65,11 +65,15 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         if UIDevice.current.userInterfaceIdiom == .pad {
             cell.textLabel?.font = UIFont(name: "NanumSquare", size: 20)
         }
+        munhaeTestTableView.frame = munhaeTestTableView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 0, right: 10))
+        cell.textLabel?.textColor = .white
+        cell.contentView.backgroundColor = hexStringToUIColor(hex: "04BF83")
+        cell.contentView.layer.cornerRadius = 10
+
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
 
         guard let munhaeTestQuizViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeTestQuizViewController")  as? MunhaeTestQuizViewController else {return}
         munhaeTestQuizViewController.modalPresentationStyle = .fullScreen
