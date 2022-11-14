@@ -9,9 +9,15 @@ import UIKit
 
 class MunjangEightViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
+    
+    @IBOutlet var imgView: UIImageView!
+    @IBOutlet var subImgView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var subTitleLabel: UILabel!
+    
     @IBOutlet var eightCollectionView: UICollectionView!
     
-    @IBOutlet var titleLabelTopHeight: NSLayoutConstraint!
+//    @IBOutlet var titleLabelTopHeight: NSLayoutConstraint!
     
     var sectionTotal :[QuizContents] = []
     
@@ -21,10 +27,6 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     let munjangElements:[String] = ["주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     let subElements: [String] = ["대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-            return .lightContent
-        }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,9 +35,12 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         
         self.eightCollectionView.register(UINib(nibName: "MunjangEightCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         if currentLevel == "Basic"{
-            self.navigationItem.title = ""
+//            self.navigationItem.title = ""
         }else{
-            self.navigationItem.title = "실질문해"
+//            self.navigationItem.title = ""
+            self.imgView.image = UIImage(named: "bg6")
+            self.titleLabel?.text = "실질문해 미션"
+            self.subTitleLabel?.text = "미션을 수행하며 문장의 8가지 성분을 알아가보기."
         }
         
         displayHomeBtn()

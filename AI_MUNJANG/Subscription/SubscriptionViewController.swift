@@ -80,8 +80,8 @@ class SubscriptionViewController: UIViewController {
         subscribeContainer.layer.masksToBounds = false
         
         
-        let mainString = "￦2,000 /월"
-        let stringToColor = "￦2,000"
+        let mainString = "￦10,000 /월"
+        let stringToColor = "￦10,000"
         let range = (mainString as NSString).range(of: stringToColor)
 
         let mutableAttributedString = NSMutableAttributedString.init(string: mainString)

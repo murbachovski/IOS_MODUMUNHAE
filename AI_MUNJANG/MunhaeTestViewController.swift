@@ -28,20 +28,21 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         print("grouped:\(grouped)")
         groupedContents = grouped
         
-        self.navigationItem.title = "문해력 테스트"
+//        self.navigationItem.title = ""
         displayHomeBtn()
     }
     
     fileprivate func displayHomeBtn() {
         //백버튼의 타이틀을 지우기위해
         navigationItem.backButtonTitle = ""
-        
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         //백버튼외에 추가적으로 홈버튼을 채우기 위해
-        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
+        let imgIcon = UIImage(named: "whiteicHome32Px")?.withRenderingMode(.alwaysOriginal)
         let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
         navigationItem.leftBarButtonItem = homeButtonItem
+        navigationItem.titleView?.tintColor = .white
         navigationItem.leftItemsSupplementBackButton = true
-        homeButtonItem.imageInsets = UIEdgeInsets(top: -4, left: -5, bottom: 0, right: 0)
+        homeButtonItem.imageInsets = UIEdgeInsets(top: -6, left: -25, bottom: 0, right: 0)
     }
     
     @objc func homeBtnTapped(){
@@ -67,10 +68,14 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         }else {
             cell.textLabel?.font = UIFont(name: "NanumSquareR", size: 15)
         }
-        munhaeTestTableView.frame = munhaeTestTableView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
-        cell.textLabel?.textColor = .white
-        cell.contentView.backgroundColor = hexStringToUIColor(hex: "04BF83")
-        cell.contentView.layer.cornerRadius = 10
+        munhaeTestTableView.frame = munhaeTestTableView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10))
+//        cell.textLabel?.textColor = .white
+        cell.textLabel?.textColor = .black
+//        cell.contentView.backgroundColor = hexStringToUIColor(hex: "04BF83")
+//        cell.contentView.layer.borderWidth = 2
+//        cell.contentView.layer.borderColor = UIColor.red.cgColor
+//        cell.contentView.backgroundColor = UIColor.systemGray6
+//        cell.contentView.layer.cornerRadius = 10
         
         return cell
     }
