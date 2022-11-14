@@ -42,9 +42,10 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
 
         
         videoTableView.separatorStyle = .none
-
+        navigationItem.backButtonTitle = ""
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
-        self.title  = "문해학습 동영상"
+        self.title  = ""
     }
     
     
@@ -56,8 +57,8 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as? VideoTableViewCell else { return UITableViewCell() }
         let item = jsonVideoContents[indexPath.row]
-        cell.indexLabel.text = item["No"] as! String
-        cell.titleLabel.text = item["Title"] as! String
+        cell.indexLabel.text = item["No"] as? String
+        cell.titleLabel.text = item["Title"] as! String?
         
         cell.videoImageView.clipsToBounds = true
         cell.videoImageView.layer.cornerRadius = 8
