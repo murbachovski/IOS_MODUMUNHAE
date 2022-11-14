@@ -98,7 +98,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다양한 학습 콘텐츠로 문해력 UP!" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVA-R7-tvc">
-                                <rect key="frame" x="20" y="140" width="200" height="70"/>
+                                <rect key="frame" x="25" y="140" width="200" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8Xb-lU-T6l"/>
                                     <constraint firstAttribute="width" constant="200" id="hvm-Ww-ARW"/>
@@ -118,7 +118,7 @@
                             <constraint firstItem="979-Rz-ydy" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="ah1-3c-ZBz"/>
                             <constraint firstAttribute="trailing" secondItem="979-Rz-ydy" secondAttribute="trailing" id="j2d-4K-Yib"/>
                             <constraint firstItem="979-Rz-ydy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jXf-lT-7sX"/>
-                            <constraint firstItem="QVA-R7-tvc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lnp-n3-26g"/>
+                            <constraint firstItem="QVA-R7-tvc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="lnp-n3-26g"/>
                             <constraint firstItem="d91-b9-3uO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ngK-HA-R79"/>
                             <constraint firstItem="d91-b9-3uO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vnU-4I-rTT"/>
                         </constraints>
@@ -516,7 +516,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="소셜계정으로 이용하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D7-gC-42A">
                                         <rect key="frame" x="0.0" y="0.0" width="366" height="18"/>
                                         <fontDescription key="fontDescription" name="NanumSquareOTF_acR" family="NanumSquareOTF_ac" pointSize="15"/>
-                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0o-Ot-9e8" customClass="CustomButtonView" customModule="AI_MUNJANG" customModuleProvider="target">
@@ -4598,7 +4598,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8T-b1-Yg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" ambiguous="YES" id="yf4-vo-jhx">
+                <view contentMode="scaleToFill" id="yf4-vo-jhx">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
@@ -4613,7 +4613,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글자, 낱말, 문장, 문맥에 대한 이해도를 테스트합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-0F-969">
-                            <rect key="frame" x="33.666666666666657" y="142" width="324" height="24"/>
+                            <rect key="frame" x="33.666666666666657" y="142" width="348" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="324" id="ZlQ-5c-HAX"/>
                                 <constraint firstAttribute="height" constant="24" id="qqf-Fg-j5I"/>
@@ -4623,7 +4623,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eY-9r-whR">
-                            <rect key="frame" x="336" y="0.0" width="34" height="34"/>
+                            <rect key="frame" x="360" y="0.0" width="34" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="34" id="Bde-gV-EiU"/>
                                 <constraint firstAttribute="height" constant="34" id="RKk-va-1eE"/>
@@ -4636,7 +4636,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust" translatesAutoresizingMaskIntoConstraints="NO" id="jG3-TB-iS6">
-                            <rect key="frame" x="81" y="230" width="230" height="230"/>
+                            <rect key="frame" x="81" y="230" width="254" height="230"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="230" id="96w-hC-eGL"/>
                                 <constraint firstAttribute="height" constant="230" id="IaN-en-i3W"/>
