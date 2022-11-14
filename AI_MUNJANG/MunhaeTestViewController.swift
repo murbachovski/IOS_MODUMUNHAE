@@ -64,6 +64,8 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
             cell.textLabel?.font = UIFont(name: "NanumSquare", size: 20)
+        }else {
+            cell.textLabel?.font = UIFont(name: "NanumSquareR", size: 15)
         }
         munhaeTestTableView.frame = munhaeTestTableView.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
         cell.textLabel?.textColor = .white

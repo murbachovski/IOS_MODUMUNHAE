@@ -4915,34 +4915,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMf-dW-6oK">
-                                <rect key="frame" x="0.0" y="48" width="414" height="170"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꾸준하게 키워가는 나의 문해력" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Du7-hH-7BQ">
-                                        <rect key="frame" x="20" y="0.0" width="171.5" height="57.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" red="0.015686274509803921" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust1" translatesAutoresizingMaskIntoConstraints="NO" id="HJj-lV-LQx">
-                                        <rect key="frame" x="157" y="10" width="237" height="140"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="Cjg-Aj-x9f"/>
-                                            <constraint firstAttribute="width" constant="237" id="oVU-B5-z62"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="3GR-xW-Zgj"/>
-                                    <constraint firstAttribute="bottom" secondItem="HJj-lV-LQx" secondAttribute="bottom" constant="20" id="KLK-fp-ffU"/>
-                                    <constraint firstItem="Du7-hH-7BQ" firstAttribute="top" secondItem="WMf-dW-6oK" secondAttribute="top" id="hq3-5e-DQl"/>
-                                    <constraint firstItem="Du7-hH-7BQ" firstAttribute="leading" secondItem="WMf-dW-6oK" secondAttribute="leading" constant="20" id="k2y-Kw-m2c"/>
-                                    <constraint firstAttribute="trailing" secondItem="HJj-lV-LQx" secondAttribute="trailing" constant="20" id="qgP-ui-SRm"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vAV-ID-McS" userLabel="ExampleCollection View" customClass="WordCollectionView" customModule="AI_MUNJANG" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="238" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="296" width="414" height="550"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="71L-Mj-0oo">
                                     <size key="itemSize" width="180" height="180"/>
@@ -4988,17 +4962,56 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg 4" translatesAutoresizingMaskIntoConstraints="NO" id="VNn-RZ-5rL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="276" id="JEO-ba-Bdu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic8K40Px" translatesAutoresizingMaskIntoConstraints="NO" id="BZJ-FK-KIu">
+                                <rect key="frame" x="187" y="118" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="jmW-yc-F7b"/>
+                                    <constraint firstAttribute="height" constant="40" id="zqc-jG-LV4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장8경 미션" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaV-k4-HG2">
+                                <rect key="frame" x="0.0" y="181" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="zwm-kO-sp4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미션을 수행하며 문장의 8가지 성분을 알아가보기." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZu-Za-4CA">
+                                <rect key="frame" x="0.0" y="216" width="414" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WEl-vD-VLS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VEM-iG-g2u"/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vAV-ID-McS" firstAttribute="top" secondItem="WMf-dW-6oK" secondAttribute="bottom" constant="20" id="DPC-Ad-5xY"/>
-                            <constraint firstAttribute="trailing" secondItem="WMf-dW-6oK" secondAttribute="trailing" id="NTv-wl-kHY"/>
+                            <constraint firstItem="KZu-Za-4CA" firstAttribute="leading" secondItem="VEM-iG-g2u" secondAttribute="leading" id="4Yr-UP-n4R"/>
+                            <constraint firstItem="BZJ-FK-KIu" firstAttribute="centerX" secondItem="VNn-RZ-5rL" secondAttribute="centerX" id="4bT-m2-NYN"/>
+                            <constraint firstItem="VNn-RZ-5rL" firstAttribute="top" secondItem="4o0-M7-x2X" secondAttribute="top" id="4uC-u0-GGx"/>
+                            <constraint firstItem="VEM-iG-g2u" firstAttribute="trailing" secondItem="VNn-RZ-5rL" secondAttribute="trailing" id="ClM-Zw-b9B"/>
+                            <constraint firstItem="VEM-iG-g2u" firstAttribute="trailing" secondItem="PaV-k4-HG2" secondAttribute="trailing" id="Hg8-77-Zuh"/>
+                            <constraint firstItem="KZu-Za-4CA" firstAttribute="top" secondItem="PaV-k4-HG2" secondAttribute="bottom" constant="5" id="KF4-EW-ztp"/>
+                            <constraint firstItem="vAV-ID-McS" firstAttribute="top" secondItem="VNn-RZ-5rL" secondAttribute="bottom" constant="20" id="Nhy-gB-j9C"/>
                             <constraint firstAttribute="bottom" secondItem="vAV-ID-McS" secondAttribute="bottom" constant="50" id="O1G-Cq-FVi"/>
+                            <constraint firstItem="PaV-k4-HG2" firstAttribute="leading" secondItem="VEM-iG-g2u" secondAttribute="leading" id="QFi-jz-dhC"/>
                             <constraint firstItem="vAV-ID-McS" firstAttribute="leading" secondItem="VEM-iG-g2u" secondAttribute="leading" id="Rzj-ew-Rrp"/>
-                            <constraint firstItem="WMf-dW-6oK" firstAttribute="top" secondItem="VEM-iG-g2u" secondAttribute="top" id="Vfb-Dq-O8o"/>
+                            <constraint firstItem="VEM-iG-g2u" firstAttribute="trailing" secondItem="KZu-Za-4CA" secondAttribute="trailing" id="ZOe-Ww-Bs6"/>
+                            <constraint firstItem="KZu-Za-4CA" firstAttribute="bottom" secondItem="VNn-RZ-5rL" secondAttribute="bottom" constant="-30" id="cTV-lb-qiV"/>
                             <constraint firstItem="vAV-ID-McS" firstAttribute="trailing" secondItem="VEM-iG-g2u" secondAttribute="trailing" id="efF-t5-77r"/>
-                            <constraint firstItem="WMf-dW-6oK" firstAttribute="leading" secondItem="4o0-M7-x2X" secondAttribute="leading" id="qXw-Eo-zY9"/>
+                            <constraint firstItem="BZJ-FK-KIu" firstAttribute="centerY" secondItem="VNn-RZ-5rL" secondAttribute="centerY" id="fEp-wy-7IC"/>
+                            <constraint firstItem="VNn-RZ-5rL" firstAttribute="leading" secondItem="VEM-iG-g2u" secondAttribute="leading" id="pRf-mT-mKT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -5132,11 +5145,13 @@
     </designables>
     <resources>
         <image name="bg" width="417" height="370"/>
+        <image name="bg 4" width="390" height="276"/>
         <image name="edit" width="32" height="32"/>
         <image name="group2" width="183" height="44"/>
         <image name="home" width="269" height="233"/>
         <image name="home_sen" width="350" height="124"/>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="ic8K40Px" width="40" height="40"/>
         <image name="icArrowLeft32Px" width="32" height="32"/>
         <image name="icClose32Px" width="34" height="34"/>
         <image name="icCorrect24Px" width="24" height="24"/>
@@ -5149,7 +5164,6 @@
         <image name="icon_camera" width="50" height="46"/>
         <image name="icon_default" width="26" height="22"/>
         <image name="illust" width="230" height="230"/>
-        <image name="illust1" width="390" height="251"/>
         <image name="illustHeart" width="390" height="264"/>
         <image name="image_default" width="350" height="350"/>
         <image name="logoImg" width="652" height="692"/>
