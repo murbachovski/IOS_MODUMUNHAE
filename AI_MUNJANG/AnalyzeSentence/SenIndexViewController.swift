@@ -67,7 +67,7 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
         
         navigationItem.leftBarButtonItem = homeButtonItem
         navigationItem.leftItemsSupplementBackButton = true
-        homeButtonItem.imageInsets = UIEdgeInsets(top: -4, left: -5, bottom: 0, right: 0)
+        homeButtonItem.imageInsets = UIEdgeInsets(top: -6, left: -25, bottom: 0, right: 0)
     }
     
     @objc func homeBtnTapped(){
