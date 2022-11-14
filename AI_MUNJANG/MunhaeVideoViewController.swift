@@ -43,7 +43,7 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
         
         videoTableView.separatorStyle = .none
         navigationItem.backButtonTitle = ""
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.title  = ""
     }
@@ -128,9 +128,9 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
     fileprivate func displayHomeBtn() {
         //백버튼의 타이틀을 지우기위해
         navigationItem.backButtonTitle = ""
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
         //백버튼외에 추가적으로 홈버튼을 채우기 위해
-        let imgIcon = UIImage(named: "whiteicHome32Px")?.withRenderingMode(.alwaysOriginal)
+        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
         let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
         navigationItem.leftBarButtonItem = homeButtonItem
         navigationItem.leftItemsSupplementBackButton = true
