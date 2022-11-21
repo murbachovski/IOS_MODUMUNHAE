@@ -25,7 +25,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
     
     var currentLevel = "Basic"
     let munjangElements:[String] = ["주어", "서술어","조사", "어미","관형어","부사어","문장부사어","마침부호"]
-    let subElements: [String] = ["대상", "정보","조사", "어미","관형어","부사어","문장부사어","마침부호"]
+    let subElements: [String] = ["대상", "정보","대상알림", "정보알림","대상에 뜻 추가","정보에 뜻 추가","문장에 뜻 추가","문장알림"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
 //            self.navigationItem.title = ""
             self.imgView.image = UIImage(named: "bg6")
             self.titleLabel?.text = "실질문해 미션"
-            self.subTitleLabel?.text = "미션을 수행하며 문장의 8가지 성분을 알아가보기."
+            self.subTitleLabel?.text = "문해를 통해 문제를 해결하기"
         }
         
         displayHomeBtn()
@@ -102,7 +102,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
             cell.mainTitle.text = munjangElements[indexPath.row]
             cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
             cell.subTitle.text = subElements[indexPath.row]
-            cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
+            cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 22:  11)
             
             if !Core.shared.isUserSubscription() {
                 if indexPath.row != 0 {
@@ -110,17 +110,34 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
                 }
             }
         }else {
-            cell.digitTitle.text = "\(indexPath.row + 1). 일상"
-            
-            cell.mainTitle.text = "사실"
-            cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
-            
-            cell.subTitle.text = "의견"
-            cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
-            
-            if !Core.shared.isUserSubscription() {
-                if indexPath.row != 0 {
-                    cell.lockImgView.image = UIImage(named: "icLock32Px")
+            if indexPath.row == 0 {
+                cell.digitTitle.text = "\(indexPath.row + 1)."
+                
+                cell.mainTitle.text = "사실과 의견"
+                cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
+                
+                cell.subTitle.text = "구별하기"
+                cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
+                
+                if !Core.shared.isUserSubscription() {
+                    if indexPath.row != 0 {
+                        cell.lockImgView.image = UIImage(named: "icLock32Px")
+                    }
+                }
+            }
+            if indexPath.row == 1{
+                cell.digitTitle.text = "\(indexPath.row + 1)."
+                
+                cell.mainTitle.text = "글을 읽고"
+                cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
+                
+                cell.subTitle.text = "문제를 해결하기"
+                cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
+                
+                if !Core.shared.isUserSubscription() {
+                    if indexPath.row != 0 {
+                        cell.lockImgView.image = UIImage(named: "icLock32Px")
+                    }
                 }
             }
         }

@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet var collectionViewTopHeight: NSLayoutConstraint!
     @IBOutlet var bannerBottomHeight: NSLayoutConstraint!
     //
-    var mainTitleList = ["문해력테스트", "문장 8경 미션", "실질문해 미션", "문해학습 동영상"]
+    var mainTitleList = ["문해력테스트", "기초문해 미션", "실질문해 미션", "문해학습 동영상"]
     //문해력테스트에서 사용중
     var downloadTask :URLSessionDownloadTask?
 

@@ -37,6 +37,7 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
         
         let userHeartCount = 10
         let userHeartCountText = "하트 \(userHeartCount)개"
+        let subAndResign = "회원 탈퇴와 구독권 해지는 별도로 진행"
         noticeToUserLabel.text = "- 탈퇴 시 홍길동님의 \(userHeartCountText)는 모두 삭제되며, 다시 가입해도 복구되지 않습니다.\n\n- 회원 탈퇴와 구독권 해지는 별도로 진행되므로 반드시 회원 탈퇴 전 구독권을 해지해 주세요."
         //전체적으로 폰트 적용
         let attStringSub = NSMutableAttributedString(string: noticeToUserLabel.text!)
@@ -55,8 +56,14 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
         attStringSub.addAttribute(NSAttributedString.Key.font, value: accentFont, range: theRange)
         
         noticeToUserLabel.attributedText = attStringSub
-      
-
+        
+        //강조 칼라 적용
+        let fullText = noticeToUserLabel.text ?? ""
+        let attributedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: subAndResign)
+        attributedString.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        noticeToUserLabel.attributedText = attributedString
+        
         
         confirmView.checkButtonDelegate = self
         confirmView.checkButton.tag = 1
@@ -164,6 +171,13 @@ class ResignViewController: UIViewController, CheckButtonDelegate {
        }
 
    }
+    
+//        func asColor(targetString: String, color: UIColor) {
+//            let fullText = noticeToUserLabel.text ?? ""
+//            let attributedString = NSMutableAttributedString(string: fullText)
+//            let range = (fullText as NSString).range(of: "회원 탈퇴와 구독권 해지는 별도로 진행")
+//            attributedString.addAttribute(.foregroundColor, value: color, range: range)
+//        }
     
 }
 

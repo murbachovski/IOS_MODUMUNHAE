@@ -208,6 +208,8 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         
         let alert = AlertService().alert(title: "", body: "문장인지 먼저 확인하세요", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion:nil, fourthButtonCompletion: nil)
         present(alert, animated: true)
+        
+        //실질문해 힌트버튼 분기 이쪽?
     }
     
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
