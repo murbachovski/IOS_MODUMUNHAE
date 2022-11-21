@@ -117,7 +117,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
                 cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
                 
                 cell.subTitle.text = "구별하기"
-                cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
+                cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 22:  11)
                 
                 if !Core.shared.isUserSubscription() {
                     if indexPath.row != 0 {
@@ -128,11 +128,11 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
             if indexPath.row == 1{
                 cell.digitTitle.text = "\(indexPath.row + 1)."
                 
-                cell.mainTitle.text = "글을 읽고"
+                cell.mainTitle.text = "문제 해결"
                 cell.mainTitle.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
                 
-                cell.subTitle.text = "문제를 해결하기"
-                cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24:  13)
+                cell.subTitle.text = "사고력 키우기"
+                cell.subTitle.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 22:  11)
                 
                 if !Core.shared.isUserSubscription() {
                     if indexPath.row != 0 {

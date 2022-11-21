@@ -214,7 +214,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             if indexPath.row == 0 {
                 bodyMessage = "사용자께서는 아직 구독 전이라 \n문해력 테스트를 이용할 수 없습니다. \n자유로운 사용을 하기위해 \n구독하시기 바랍니다."
-                cancelMessage = "확인"
+                cancelMessage = "돌아가기"
                 
             }
             

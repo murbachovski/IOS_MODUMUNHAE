@@ -203,13 +203,41 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
 //        startTTS()
     }
     
+    
     @IBAction func clickedHintButton(_ sender: Any) {
         print("clicked the hint")
+        var bodyMessage = ""
+        let tmpLevel = currentQuizPool[0].level
+        let tmpSection = currentQuizPool[0].section
+        print(currentQuizPool)
+        if tmpLevel == "Basic" {
+            if tmpSection == 1{
+                bodyMessage = "주어를 확인하세요."
+            }else if tmpSection == 2{
+                bodyMessage = "서술어를 확인하세요."
+            }else if tmpSection == 3{
+                bodyMessage = "조사를 확인하세요."
+            }else if tmpSection == 4{
+                bodyMessage = "관형어를 확인하세요."
+            }else if tmpSection == 5{
+                bodyMessage = "부사어를 확인하세요."
+            }else if tmpSection == 6{
+                bodyMessage = "문장부사어를 확인하세요."
+            }else if tmpSection == 7{
+                bodyMessage = "마침부호를 확인하세요."
+            }
+        }
         
-        let alert = AlertService().alert(title: "", body: "문장인지 먼저 확인하세요", cancelTitle: "", confirTitle: "확인", thirdButtonCompletion:nil, fourthButtonCompletion: nil)
+        //실질문해영역
+        if tmpLevel == "Advanced" {
+            if tmpSection == 1{
+                bodyMessage = "사실은 객관적 근거가 있어야 합니다."
+            }else if tmpSection == 2{
+                bodyMessage = "문제가 해결되었는지 확인하세요."
+            }
+        }
+        let alert = AlertService().alert(title: "", body: bodyMessage, cancelTitle: "", confirTitle: "확인", thirdButtonCompletion:nil, fourthButtonCompletion: nil)
         present(alert, animated: true)
-        
-        //실질문해 힌트버튼 분기 이쪽?
     }
     
     fileprivate func startTTS() { //TTS호출을 별도롤 분리, 미션을 설명하는 화면이 사라질 떄 호출할 예정
