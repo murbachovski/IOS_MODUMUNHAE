@@ -394,8 +394,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //MARK: -문해학습 동영상
     func clickedMunhaeVideo() {
-        guard let munhaeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeVideoViewController")  as? MunhaeVideoViewController else {return}
-        self.navigationController?.pushViewController(munhaeVideoViewController, animated: true)
+        guard let munhaeVideoListViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeVideoListViewController")  as? MunhaeVideoListViewController else {return}
+        self.navigationController?.pushViewController(munhaeVideoListViewController, animated: true)
     }
     
 

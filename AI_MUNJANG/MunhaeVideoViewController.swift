@@ -9,6 +9,14 @@ import UIKit
 import AVKit
 class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var backBtn: UIButton!
+    @IBOutlet var munhaeVideoStartBackButton: UIButton!
+    @IBOutlet var descriptionTitle: UILabel!
+    
+    @IBOutlet var descriptionSubTitle: UILabel!
+    
+    @IBOutlet var descriptionStartButton: UIButton!
+    @IBOutlet var munhaeVideoDescription: UIView!
     
     @IBOutlet var videoTableView: UITableView!
     var jsonVideoContents: [Dictionary<String, Any>] = [[:]]
@@ -17,6 +25,16 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            descriptionTitle.font = UIFont(name: "NanumSquareEB", size: 22)
+            descriptionSubTitle.font = UIFont(name: "NanumSquareB", size: 20)
+            descriptionStartButton.layer.cornerRadius = 10
+        }else {
+            descriptionTitle.font = UIFont(name: "NanumSquareEB", size: 18)
+            descriptionSubTitle.font = UIFont(name: "NanumSquareB", size: 14)
+            descriptionStartButton.layer.cornerRadius = descriptionStartButton.frame.size.width / 7
+        }
         
         isMember = Core.shared.isUserSubscription()
         videoTableView.delegate = self
@@ -39,15 +57,34 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
               }
         
         // Do any additional setup after loading the view.
-        displayHomeBtn()
+        
         
         videoTableView.separatorStyle = .none
-        navigationItem.backButtonTitle = ""
+//        navigationItem.backButtonTitle = ""
 //        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.title  = ""
+//        displayHomeBtn()
     }
     
+//    fileprivate func displayHomeBtn() {
+//        //백버튼의 타이틀을 지우기위해
+//        navigationItem.backButtonTitle = ""
+////        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        //백버튼외에 추가적으로 홈버튼을 채우기 위해
+//        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
+//        let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
+//        navigationItem.leftBarButtonItem = homeButtonItem
+////        navigationItem.titleView?.tintColor = .white
+//        navigationItem.leftItemsSupplementBackButton = true
+//        homeButtonItem.imageInsets = UIEdgeInsets(top: -6, left: -25, bottom: 0, right: 0)
+//    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        munhaeVideoDescription.frame = view.frame
+        view.addSubview(munhaeVideoDescription)
+    }
     
     //MARK: - TabelView DataSource, Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,19 +161,24 @@ class MunhaeVideoViewController: UIViewController, UITableViewDelegate, UITableV
           player.play()
         }
     }
-   
-    fileprivate func displayHomeBtn() {
-        //백버튼의 타이틀을 지우기위해
-        navigationItem.backButtonTitle = ""
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
-        //백버튼외에 추가적으로 홈버튼을 채우기 위해
-        let imgIcon = UIImage(named: "icHome32Px")?.withRenderingMode(.alwaysOriginal)
-        let homeButtonItem = UIBarButtonItem(image: imgIcon, style: .plain, target: self, action: #selector(homeBtnTapped))
-        navigationItem.leftBarButtonItem = homeButtonItem
-        navigationItem.leftItemsSupplementBackButton = true
-        homeButtonItem.imageInsets = UIEdgeInsets(top: -6, left: -25, bottom: 0, right: 0)
+
+//    @objc func homeBtnTapped(){
+//        changeMainNC()
+//    }
+    
+    @IBAction func clickedStart(_ sender: Any) {
+        print("clicked Start TEST")
+        munhaeVideoDescription.removeFromSuperview()
+        //문제 읽어 주는 기능
+//        startTTS()
     }
-    @objc func homeBtnTapped(){
-        changeMainNC()
+    
+    @IBAction func munhaeVideoStartBackButton(_ sender: Any) {
+        dismiss(animated: true)
     }
+    
+    @IBAction func clickedBackBtn(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
 }

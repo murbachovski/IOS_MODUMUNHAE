@@ -50,6 +50,7 @@
 		843F27C128A5E97300E36E33 /* failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27C028A5E97300E36E33 /* failed.mp3 */; };
 		843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27C228A5EA4F00E36E33 /* TTS.swift */; };
 		844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844226DF2890F66700DCB93B /* GoogleService-Info.plist */; };
+		844488DA292C711100C335EC /* MunhaeVideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844488D9292C711100C335EC /* MunhaeVideoListViewController.swift */; };
 		84458A7528BF47F500A70F20 /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7328BF47F500A70F20 /* MunJangEightDetailViewController.swift */; };
 		84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7428BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift */; };
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
@@ -174,6 +175,7 @@
 		843F27C028A5E97300E36E33 /* failed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = failed.mp3; sourceTree = "<group>"; };
 		843F27C228A5EA4F00E36E33 /* TTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTS.swift; sourceTree = "<group>"; };
 		844226DF2890F66700DCB93B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		844488D9292C711100C335EC /* MunhaeVideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeVideoListViewController.swift; sourceTree = "<group>"; };
 		84458A7328BF47F500A70F20 /* MunJangEightDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunJangEightDetailViewController.swift; sourceTree = "<group>"; };
 		84458A7428BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunjangEightDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		84488C78288F865B008400AC /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				8432B3B628DD6B95005E6583 /* videoContents.json */,
+				844488D9292C711100C335EC /* MunhaeVideoListViewController.swift */,
 				8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */,
 				8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */,
 			);
@@ -962,6 +965,7 @@
 				846B08932893C7B300A6D4BD /* IAPHelpler.swift in Sources */,
 				8474DD0E287D1A52008275FC /* CustomEmailView.swift in Sources */,
 				8474DCFF287D02DC008275FC /* CustomButtonView.swift in Sources */,
+				844488DA292C711100C335EC /* MunhaeVideoListViewController.swift in Sources */,
 				840071D3287BE30500B07551 /* RoundedView.swift in Sources */,
 				84D8A68228F7ECDB00ACFA18 /* HomeViewController.swift in Sources */,
 				8433AA6628F514B70044061A /* DummyMainViewController.swift in Sources */,
