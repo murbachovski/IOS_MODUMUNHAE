@@ -210,6 +210,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         let tmpLevel = currentQuizPool[0].level
         let tmpSection = currentQuizPool[0].section
         print(currentQuizPool)
+        //기초문해영역
         if tmpLevel == "Basic" {
             if tmpSection == 1{
                 bodyMessage = "주어를 확인하세요."
@@ -218,12 +219,14 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             }else if tmpSection == 3{
                 bodyMessage = "조사를 확인하세요."
             }else if tmpSection == 4{
-                bodyMessage = "관형어를 확인하세요."
+                bodyMessage = "어미를 확인하세요."
             }else if tmpSection == 5{
-                bodyMessage = "부사어를 확인하세요."
+                bodyMessage = "관형어를 확인하세요."
             }else if tmpSection == 6{
-                bodyMessage = "문장부사어를 확인하세요."
+                bodyMessage = "부사어를 확인하세요."
             }else if tmpSection == 7{
+                bodyMessage = "문장부사어를 확인하세요."
+            }else if tmpSection == 8{
                 bodyMessage = "마침부호를 확인하세요."
             }
         }
