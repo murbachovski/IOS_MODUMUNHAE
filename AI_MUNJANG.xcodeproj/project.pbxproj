@@ -56,6 +56,9 @@
 		84488C79288F865B008400AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84488C78288F865B008400AC /* MyPageViewController.swift */; };
 		844A4D5028B4AF73002C7F6B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844A4D4F28B4AF73002C7F6B /* UserInfo.swift */; };
 		8451F6CB290BB63A008C49F6 /* SenIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8451F6CA290BB63A008C49F6 /* SenIndexViewController.swift */; };
+		8452E278292DF1A400987CFF /* MunjangVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452E277292DF1A400987CFF /* MunjangVideoViewController.swift */; };
+		8452E27C292E073B00987CFF /* MunmaekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452E27B292E073B00987CFF /* MunmaekViewController.swift */; };
+		8452E27E292E075900987CFF /* BaksaMunhaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8452E27D292E075900987CFF /* BaksaMunhaeViewController.swift */; };
 		8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05B28B75F4700613946 /* AnalyzeViewController.swift */; };
 		8455F05E28B8585A00613946 /* AnalyzeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */; };
 		8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */; };
@@ -87,6 +90,9 @@
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
 		8475D5EB290FBE7F00284F72 /* useTerms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8475D5EA290FBE7F00284F72 /* useTerms.pdf */; };
 		848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */; };
+		8486B9A5292E0AA0000D90A9 /* videoMunmaekContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8486B9A4292E0AA0000D90A9 /* videoMunmaekContents.json */; };
+		8486B9A7292E0AD8000D90A9 /* videoBaksaMunhaeContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8486B9A6292E0AD8000D90A9 /* videoBaksaMunhaeContents.json */; };
+		8486B9A9292E0F0A000D90A9 /* videoMunjangContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8486B9A8292E0F0A000D90A9 /* videoMunjangContents.json */; };
 		84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */; };
 		84B9BF282907CEA600F06B8E /* CustomTFAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */; };
 		84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67B28F7E8D100ACFA18 /* DropDown */; };
@@ -182,6 +188,9 @@
 		84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AI_MUNJANG.entitlements; sourceTree = "<group>"; };
 		844A4D4F28B4AF73002C7F6B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		8451F6CA290BB63A008C49F6 /* SenIndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenIndexViewController.swift; sourceTree = "<group>"; };
+		8452E277292DF1A400987CFF /* MunjangVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangVideoViewController.swift; sourceTree = "<group>"; };
+		8452E27B292E073B00987CFF /* MunmaekViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunmaekViewController.swift; sourceTree = "<group>"; };
+		8452E27D292E075900987CFF /* BaksaMunhaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaksaMunhaeViewController.swift; sourceTree = "<group>"; };
 		8455F05B28B75F4700613946 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
 		8455F05D28B8585A00613946 /* AnalyzeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeResultViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		8455F06B28B9FBF800613946 /* MunjangEightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MunjangEightCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -212,6 +221,9 @@
 		8474DD21287E6C78008275FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8474DD26287EB63C008275FC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8475D5EA290FBE7F00284F72 /* useTerms.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = useTerms.pdf; sourceTree = "<group>"; };
+		8486B9A4292E0AA0000D90A9 /* videoMunmaekContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoMunmaekContents.json; sourceTree = "<group>"; };
+		8486B9A6292E0AD8000D90A9 /* videoBaksaMunhaeContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoBaksaMunhaeContents.json; sourceTree = "<group>"; };
+		8486B9A8292E0F0A000D90A9 /* videoMunjangContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = videoMunjangContents.json; path = ../../../videoMunjangContents.json; sourceTree = "<group>"; };
 		84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestQuizViewController.swift; sourceTree = "<group>"; };
 		84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFAlertViewController.swift; sourceTree = "<group>"; };
 		84D8A68128F7ECDB00ACFA18 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -283,9 +295,15 @@
 		8411A5B428C836EF0061A6F5 /* MunhaeVideo */ = {
 			isa = PBXGroup;
 			children = (
+				8486B9A8292E0F0A000D90A9 /* videoMunjangContents.json */,
 				8432B3B628DD6B95005E6583 /* videoContents.json */,
+				8486B9A4292E0AA0000D90A9 /* videoMunmaekContents.json */,
+				8486B9A6292E0AD8000D90A9 /* videoBaksaMunhaeContents.json */,
 				844488D9292C711100C335EC /* MunhaeVideoListViewController.swift */,
 				8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */,
+				8452E277292DF1A400987CFF /* MunjangVideoViewController.swift */,
+				8452E27B292E073B00987CFF /* MunmaekViewController.swift */,
+				8452E27D292E075900987CFF /* BaksaMunhaeViewController.swift */,
 				8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */,
 			);
 			name = MunhaeVideo;
@@ -738,15 +756,18 @@
 				8475D5EB290FBE7F00284F72 /* useTerms.pdf in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
 				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
+				8486B9A7292E0AD8000D90A9 /* videoBaksaMunhaeContents.json in Resources */,
 				8421186B28FFC63B00B47D03 /* Main_ipad.storyboard in Resources */,
 				842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */,
 				C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */,
 				C6ED5083287531AF00454F26 /* Assets.xcassets in Resources */,
 				842BB3CE291CEDDB002CF4CD /* coupon4000.txt in Resources */,
+				8486B9A5292E0AA0000D90A9 /* videoMunmaekContents.json in Resources */,
 				843F27C128A5E97300E36E33 /* failed.mp3 in Resources */,
 				844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */,
 				C6ED5081287531AE00454F26 /* Main.storyboard in Resources */,
 				843F27BF28A5E74200E36E33 /* success.mp3 in Resources */,
+				8486B9A9292E0F0A000D90A9 /* videoMunjangContents.json in Resources */,
 				842B0398288647850000BEDA /* CustomTextField.xib in Resources */,
 				8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */,
 				8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */,
@@ -947,9 +968,11 @@
 				C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */,
 				840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */,
 				84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */,
+				8452E27E292E075900987CFF /* BaksaMunhaeViewController.swift in Sources */,
 				8455F05E28B8585A00613946 /* AnalyzeResultViewController.swift in Sources */,
 				84EAC50328DAEB0B00DC6FEA /* MainCollectionViewCell.swift in Sources */,
 				8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */,
+				8452E278292DF1A400987CFF /* MunjangVideoViewController.swift in Sources */,
 				845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */,
 				842B03A528869AFC0000BEDA /* ResignReasonViewController.swift in Sources */,
 				842B0365288504EB0000BEDA /* CustomCheckBoxLabel.swift in Sources */,
@@ -999,6 +1022,7 @@
 				8411A5B328C836EA0061A6F5 /* MunhaeVideoViewController.swift in Sources */,
 				C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */,
 				840071DA287BE68300B07551 /* StackViewExtension.swift in Sources */,
+				8452E27C292E073B00987CFF /* MunmaekViewController.swift in Sources */,
 				842B03AA2888E35F0000BEDA /* SubscriptionViewController.swift in Sources */,
 				842B03A02886931E0000BEDA /* ResetPasswordDetailViewController.swift in Sources */,
 				84488C79288F865B008400AC /* MyPageViewController.swift in Sources */,

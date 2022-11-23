@@ -62,11 +62,11 @@ class MunhaeVideoListViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if indexPath.row == 0 {
-            cell.textLabel!.text = "1. OT"
+            cell.textLabel!.text = "1. 문맥 읽기의 짜릿함"
         }else if indexPath.row == 1 {
-            cell.textLabel!.text = "2. 문맥박사"
+            cell.textLabel!.text = "2. 문장박사"
         }else if indexPath.row == 2 {
-            cell.textLabel!.text = "3. 문장박사"
+            cell.textLabel!.text = "3. 문맥박사"
         }else if indexPath.row == 3 {
             cell.textLabel!.text = "4. 문해박사"
         }
@@ -92,10 +92,22 @@ class MunhaeVideoListViewController: UIViewController, UITableViewDelegate, UITa
         guard let munhaeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunhaeVideoViewController")  as? MunhaeVideoViewController else {return}
         munhaeVideoViewController.modalPresentationStyle = .fullScreen
         if indexPath.row == 0 {
-//            guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}
-//            subscriptionViewController.modalPresentationStyle = .fullScreen
-//            self.present(subscriptionViewController, animated: true)
+            //기존문해박사
         }else if indexPath.row == 1 {
+            //문장박사
+            guard let munjangVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunjangVideoViewController")  as? MunjangVideoViewController else {return}
+            munjangVideoViewController.modalPresentationStyle = .fullScreen
+            self.present(munjangVideoViewController, animated: true)
+        }else if indexPath.row == 2 {
+            //문맥박사
+            guard let munmaekViewController = self.storyboard?.instantiateViewController(withIdentifier: "MunmaekViewController")  as? MunmaekViewController else {return}
+            munmaekViewController.modalPresentationStyle = .fullScreen
+            self.present(munmaekViewController, animated: true)
+        }else if indexPath.row == 3 {
+            //문해박사
+            guard let baksaMunhaeViewController = self.storyboard?.instantiateViewController(withIdentifier: "BaksaMunhaeViewController")  as? BaksaMunhaeViewController else {return}
+            baksaMunhaeViewController.modalPresentationStyle = .fullScreen
+            self.present(baksaMunhaeViewController, animated: true)
         }
         present(munhaeVideoViewController, animated: true)
     }
