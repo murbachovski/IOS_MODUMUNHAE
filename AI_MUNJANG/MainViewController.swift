@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet var collectionViewTopHeight: NSLayoutConstraint!
     @IBOutlet var bannerBottomHeight: NSLayoutConstraint!
     //
-    var mainTitleList = ["문해력테스트", "기초문해 미션", "실질문해 미션", "문해학습 동영상"]
+    var mainTitleList = ["문해력 테스트", "기초문해 미션", "실질문해 미션", "문해학습 동영상"]
     //문해력테스트에서 사용중
     var downloadTask :URLSessionDownloadTask?
 
@@ -104,7 +104,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func clickedAnalyzeButton(_ sender: Any) {
                 
-            let alert = AlertService().alert(title: "", body: "사용자께서는 아직 구독 전이라 \n10회 사용 제한이 있습니다. \n 자유롭게 사용하려면 \n구독해주시기 바랍니다.", cancelTitle: "둘러볼게요.", confirTitle: "구독하기") {
+            let alert = AlertService().alert(title: "", body: "사용자께서는 아직 구독 전이라 \n10회 사용 제한이 있습니다. \n 자유롭게 사용하려면 \n구독해 주시기 바랍니다.", cancelTitle: "둘러볼게요.", confirTitle: "구독하기") {
                 // 사용자가 둘러보기 선택
                 
                 print("clicked analyze Btn")
@@ -208,19 +208,19 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         if !Core.shared.isUserSubscription(){
         
-            var bodyMessage = "사용자께서는 아직 구독 전이라 \n미션별 문제 풀이 제한이 있습니다. \n자유롭게 사용하려면 \n구독해주시기 바랍니다."
-            var cancelMessage = "둘러볼게요."
+            var bodyMessage = "사용자께서는 아직 구독 전이라 \n미션별 문제 풀이 제한이 있습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
+            var cancelMessage = "둘러보기"
             
             
             if indexPath.row == 0 {
-                bodyMessage = "사용자께서는 아직 구독 전이라 \n문해력 테스트를 이용할 수 없습니다. \n자유롭게 사용하려면 \n구독해주시기 바랍니다."
+                bodyMessage = "사용자께서는 아직 구독 전이라 \n문해력 테스트를 이용할 수 없습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
                 cancelMessage = "돌아가기"
                 
             }
             
             if indexPath.row == 3 {
-                bodyMessage = "사용자께서는 아직 구독 전이라 \n일부 동영상만 시청할 수 있습니다. \n자유롭게 사용하려면 \n구독해주시기 바랍니다."
-                cancelMessage = "둘러볼게요."
+                bodyMessage = "사용자께서는 아직 구독 전이라 \n일부 동영상만 시청할 수 있습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
+                cancelMessage = "둘러보기"
                 
             }
             
