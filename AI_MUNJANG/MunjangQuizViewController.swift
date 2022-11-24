@@ -127,8 +127,10 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             
             if tmpLevel == "Basic" {
                 currentQuizIndex = retrieveStopStep(section: currentSection, level: "Basic")
+                descTitleLabel.text = "기초문해 미션"
             }else if tmpLevel == "Advanced"{
                 currentQuizIndex = retrieveStopStep(section: "1", level: "Advanced")
+                descTitleLabel.text = "실질문해 미션"
             }
         }
         currentQuiz = currentQuizPool[currentQuizIndex]
@@ -146,13 +148,19 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         //TODO: descTitle 과 descSubTitle을 이곳에서 설정해야 currentQuiz 참조
         if UIDevice.current.userInterfaceIdiom == .pad {
             descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 22)
-            descTitleLabel.text = "문장8경 미션"
             descSubTitleLabel.font = UIFont(name: "NanumSquareB", size: 20)
         }else {
             descTitleLabel.font = UIFont(name: "NanumSquareEB", size: 18)
-            descTitleLabel.text = "문장8경 미션"
             descSubTitleLabel.font = UIFont(name: "NanumSquareB", size: 14)
         }
+        
+        let ttmpLevel = currentQuizPool[0].level
+        if ttmpLevel == "Basic" {
+            descTitleLabel.text = "기초문해 미션"
+        }else if ttmpLevel == "Advanced"{
+            descTitleLabel.text = "실질문해 미션"
+        }
+        
 //        startMissionButton.layer.borderWidth = 1
 //        startMissionButton.layer.borderColor = UIColor.darkGray.cgColor
         if UIDevice.current.userInterfaceIdiom == .pad {

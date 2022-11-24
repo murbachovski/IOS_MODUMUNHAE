@@ -207,18 +207,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         print("clicked : \(indexPath.row)")
         
         if !Core.shared.isUserSubscription(){
-            var bodyMessage = "사용자께서는 아직 구독 전이라 \n미션별 문제 풀이 제한이 있습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
+            var bodyMessage = "사용자께서는 아직 구독 전이라 \n미션별 문제 풀이 제한이 있습니다. \n자유롭게 사용하려면 \n구독해주세요."
             var cancelMessage = "둘러보기"
             
             if indexPath.row == 0 {
                 
-                bodyMessage = "사용자께서는 아직 구독 전이라 \n문해력 테스트를 이용할 수 없습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
+                bodyMessage = "사용자께서는 아직 구독 전이라 \n문해력 테스트를 이용할 수 없습니다. \n자유롭게 사용하려면 \n구독해주세요."
                 cancelMessage = "돌아가기"
                 
             }
             
             if indexPath.row == 3 {
-                bodyMessage = "사용자께서는 아직 구독 전이라 \n일부 동영상만 시청할 수 있습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
+                bodyMessage = "사용자께서는 아직 구독 전이라 \n일부 동영상만 시청할 수 있습니다. \n자유롭게 사용하려면 \n구독해주세요."
                 cancelMessage = "둘러보기"
                 
             }

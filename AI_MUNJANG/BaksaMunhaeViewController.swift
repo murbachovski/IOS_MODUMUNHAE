@@ -102,9 +102,9 @@ class BaksaMunhaeViewController: UIViewController, UITableViewDelegate, UITableV
         
         
 
-        cell.indexLabel.font = UIFont(name: "NanumSquareR", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 15)
+        cell.indexLabel.font = UIFont(name: "NanumSquareR", size: UIDevice.current.userInterfaceIdiom == .pad ? 24 : 13)
         cell.indexLabel.textColor = hexStringToUIColor(hex: "#333333")
-        cell.titleLabel.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 16)
+        cell.titleLabel.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 14)
 
         if isMember == false {
             if indexPath.row > 10 {
