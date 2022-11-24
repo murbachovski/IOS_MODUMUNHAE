@@ -103,8 +103,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     @IBAction func clickedAnalyzeButton(_ sender: Any) {
-                
-            let alert = AlertService().alert(title: "", body: "사용자께서는 아직 구독 전이라 \n10회 사용 제한이 있습니다. \n 자유롭게 사용하려면 \n구독해 주시기 바랍니다.", cancelTitle: "둘러볼게요.", confirTitle: "구독하기") {
+            
+            let alert = AlertService().alert(title: "", body: "사용자께서는 아직 구독 전이라 \n10회 사용 제한이 있습니다. \n 자유롭게 사용하려면 \n구독해 주시기 바랍니다.", cancelTitle: "둘러볼게요.", confirTitle: "구독하기"){
                 // 사용자가 둘러보기 선택
                 
                 print("clicked analyze Btn")
@@ -207,12 +207,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         print("clicked : \(indexPath.row)")
         
         if !Core.shared.isUserSubscription(){
-        
             var bodyMessage = "사용자께서는 아직 구독 전이라 \n미션별 문제 풀이 제한이 있습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
             var cancelMessage = "둘러보기"
             
-            
             if indexPath.row == 0 {
+                
                 bodyMessage = "사용자께서는 아직 구독 전이라 \n문해력 테스트를 이용할 수 없습니다. \n자유롭게 사용하려면 \n구독해 주시기 바랍니다."
                 cancelMessage = "돌아가기"
                 
@@ -227,7 +226,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
             let alert = AlertService().alert(title: "", body: bodyMessage, cancelTitle: cancelMessage, confirTitle: "구독하기") {
                 // 사용자가 둘러보기 선택
-                
                 if indexPath.row == 0 {
                     
                 }else if indexPath.row == 1 {//기초문해
