@@ -155,7 +155,7 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
             pdfFileName = "useTerms"
         }else if sender.tag == 2 {
             titleOfLabel = "개인정보 수집・이용"
-            pdfFileName = "useTerms"//개인 정보 관련 파일명 교체
+            pdfFileName = "usePersonal"//개인 정보 관련 파일명 교체
         }else if sender.tag == 3 {
             titleOfLabel = "14세 이상"
         }else if sender.tag == 4 {
