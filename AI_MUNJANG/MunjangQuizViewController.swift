@@ -115,7 +115,6 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
         quizContainerView.layer.shadowOffset = CGSize(width: 1, height: 1)
         quizContainerView.layer.shadowRadius = 2
         quizContainerView.layer.masksToBounds = false
-        
         quizImage.isHidden = true
         quizTextLabel.isHidden = true
         

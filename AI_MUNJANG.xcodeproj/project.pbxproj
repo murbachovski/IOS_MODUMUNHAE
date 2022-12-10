@@ -68,6 +68,8 @@
 		845D5A3C28C1C86100CB67DE /* MunhaeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */; };
 		845D5A3F28C1E63900CB67DE /* MunhaeTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */; };
 		845D5A4128C1E70600CB67DE /* MunhaeTestContentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */; };
+		845DFB4729445C080072428B /* marketing.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 845DFB4629445C070072428B /* marketing.pdf */; };
+		845DFB4A2944603F0072428B /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 845DFB492944603F0072428B /* DropDown */; };
 		84607866290253BE0051CACB /* Coupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84607865290253BE0051CACB /* Coupons.swift */; };
 		8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846078692902752E0051CACB /* CouponRegViewController.swift */; };
 		8460E0D3290C011D00B1A0D0 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */; };
@@ -96,7 +98,6 @@
 		8486B9A7292E0AD8000D90A9 /* videoBaksaMunhaeContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8486B9A6292E0AD8000D90A9 /* videoBaksaMunhaeContents.json */; };
 		84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */; };
 		84B9BF282907CEA600F06B8E /* CustomTFAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */; };
-		84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67B28F7E8D100ACFA18 /* DropDown */; };
 		84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67E28F7E8EE00ACFA18 /* Zip */; };
 		84D8A68228F7ECDB00ACFA18 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A68128F7ECDB00ACFA18 /* HomeViewController.swift */; };
 		84DD8FC628F94F4300CF783F /* MLTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD8FC528F94F4300CF783F /* MLTextViewController.swift */; };
@@ -201,6 +202,7 @@
 		845D5A3B28C1C86100CB67DE /* MunhaeTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestViewController.swift; sourceTree = "<group>"; };
 		845D5A3E28C1E63900CB67DE /* MunhaeTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestModel.swift; sourceTree = "<group>"; };
 		845D5A4028C1E70600CB67DE /* MunhaeTestContentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestContentData.swift; sourceTree = "<group>"; };
+		845DFB4629445C070072428B /* marketing.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = marketing.pdf; sourceTree = "<group>"; };
 		84607865290253BE0051CACB /* Coupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupons.swift; sourceTree = "<group>"; };
 		846078692902752E0051CACB /* CouponRegViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponRegViewController.swift; sourceTree = "<group>"; };
 		8460E0D2290C011D00B1A0D0 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
@@ -259,7 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
-				84D8A67C28F7E8D100ACFA18 /* DropDown in Frameworks */,
+				845DFB4A2944603F0072428B /* DropDown in Frameworks */,
 				848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */,
 				842E96E428FE999900923706 /* Charts in Frameworks */,
 			);
@@ -593,6 +595,7 @@
 		C6ED5078287531AE00454F26 /* AI_MUNJANG */ = {
 			isa = PBXGroup;
 			children = (
+				845DFB4629445C070072428B /* marketing.pdf */,
 				8414223E292F460D001F05EC /* usePersonal.pdf */,
 				8475D5EA290FBE7F00284F72 /* useTerms.pdf */,
 				84488C7A2890E63D008400AC /* AI_MUNJANG.entitlements */,
@@ -652,9 +655,9 @@
 			);
 			name = AI_MUNJANG;
 			packageProductDependencies = (
-				84D8A67B28F7E8D100ACFA18 /* DropDown */,
 				84D8A67E28F7E8EE00ACFA18 /* Zip */,
 				842E96E328FE999900923706 /* Charts */,
+				845DFB492944603F0072428B /* DropDown */,
 			);
 			productName = AI_MUNJANG;
 			productReference = C6ED5076287531AE00454F26 /* AI_MUNJANG.app */;
@@ -733,9 +736,9 @@
 			);
 			mainGroup = C6ED506D287531AE00454F26;
 			packageReferences = (
-				84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */,
 				84D8A67D28F7E8EE00ACFA18 /* XCRemoteSwiftPackageReference "Zip" */,
 				842E96E228FE999900923706 /* XCRemoteSwiftPackageReference "Charts" */,
+				845DFB482944603F0072428B /* XCRemoteSwiftPackageReference "DropDown" */,
 			);
 			productRefGroup = C6ED5077287531AE00454F26 /* Products */;
 			projectDirPath = "";
@@ -759,6 +762,7 @@
 				8475D5EB290FBE7F00284F72 /* useTerms.pdf in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
 				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
+				845DFB4729445C080072428B /* marketing.pdf in Resources */,
 				8486B9A7292E0AD8000D90A9 /* videoBaksaMunhaeContents.json in Resources */,
 				8421186B28FFC63B00B47D03 /* Main_ipad.storyboard in Resources */,
 				848385AD292F01DF0008D64C /* videoMunjangContents.json in Resources */,
@@ -1132,6 +1136,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1193,6 +1198,9 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1226,6 +1234,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = U5UDA93KMM;
+				"EXCLUDED_ARCHS[sdk=macosx*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AI_MUNJANG/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "모두의 문해력";
@@ -1424,7 +1433,7 @@
 				minimumVersion = 4.1.0;
 			};
 		};
-		84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */ = {
+		845DFB482944603F0072428B /* XCRemoteSwiftPackageReference "DropDown" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AssistoLab/DropDown.git";
 			requirement = {
@@ -1448,9 +1457,9 @@
 			package = 842E96E228FE999900923706 /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = Charts;
 		};
-		84D8A67B28F7E8D100ACFA18 /* DropDown */ = {
+		845DFB492944603F0072428B /* DropDown */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 84D8A67A28F7E8D100ACFA18 /* XCRemoteSwiftPackageReference "DropDown" */;
+			package = 845DFB482944603F0072428B /* XCRemoteSwiftPackageReference "DropDown" */;
 			productName = DropDown;
 		};
 		84D8A67E28F7E8EE00ACFA18 /* Zip */ = {

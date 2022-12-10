@@ -160,7 +160,7 @@ class TermsViewController: UIViewController, CheckButtonDelegate, ASAuthorizatio
             titleOfLabel = "14세 이상"
         }else if sender.tag == 4 {
             titleOfLabel = "마케팅 정보 수신"
-            pdfFileName = "useTerms"//마케팅 정보 수신 관련 파일명 교체
+            pdfFileName = "marketing"//마케팅 정보 수신 관련 파일명 교체
         }
         
         let termsDetailViewController = storyboard?.instantiateViewController(withIdentifier: "TermsDetailViewController") as! TermsDetailViewController

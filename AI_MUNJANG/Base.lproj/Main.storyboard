@@ -381,7 +381,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxk-xg-G8m" userLabel="quizContainer">
                                 <rect key="frame" x="20" y="163" width="374" height="250"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-g9-Bvd" customClass="PaddingLabel" customModule="AI_MUNJANG" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-g9-Bvd" customClass="PaddingLabel" customModule="AI_MUNJANG" customModuleProvider="target">
                                         <rect key="frame" x="20" y="8" width="334" height="234"/>
                                         <color key="backgroundColor" red="0.96862745100000003" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -395,10 +395,10 @@
                                                 <real key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
-                                                <real key="value" value="4"/>
+                                                <real key="value" value="95"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
-                                                <real key="value" value="4"/>
+                                                <real key="value" value="95"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
@@ -585,7 +585,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B8T-b1-Yg4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="yf4-vo-jhx">
+                <view contentMode="scaleToFill" ambiguous="YES" id="yf4-vo-jhx">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
@@ -600,7 +600,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글자, 낱말, 문장, 문맥에 대한 이해도를 테스트합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYp-0F-969">
-                            <rect key="frame" x="33.666666666666657" y="142" width="348" height="24"/>
+                            <rect key="frame" x="33.666666666666657" y="142" width="324" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="324" id="ZlQ-5c-HAX"/>
                                 <constraint firstAttribute="height" constant="24" id="qqf-Fg-j5I"/>
@@ -610,7 +610,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eY-9r-whR">
-                            <rect key="frame" x="360" y="0.0" width="34" height="34"/>
+                            <rect key="frame" x="336" y="0.0" width="34" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="34" id="Bde-gV-EiU"/>
                                 <constraint firstAttribute="height" constant="34" id="RKk-va-1eE"/>
@@ -623,7 +623,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust" translatesAutoresizingMaskIntoConstraints="NO" id="jG3-TB-iS6">
-                            <rect key="frame" x="81" y="230" width="254" height="230"/>
+                            <rect key="frame" x="81" y="230" width="230" height="230"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="230" id="96w-hC-eGL"/>
                                 <constraint firstAttribute="height" constant="230" id="IaN-en-i3W"/>
@@ -1257,14 +1257,58 @@
                                         <rect key="frame" x="0.0" y="8" width="374" height="234"/>
                                         <color key="backgroundColor" red="0.96862745098039216" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="바구니에 야채가 가득하다.">
+                                            <fragment content="바구니에">
                                                 <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="4" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="야채가">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="가득하다">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=".">
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1822,12 +1866,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFU-dF-jXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" ambiguous="YES" id="U45-2B-46D">
+                <view contentMode="scaleToFill" id="U45-2B-46D">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해학습 동영상" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-pU-2NV">
-                            <rect key="frame" x="120" y="94" width="150" height="31"/>
+                            <rect key="frame" x="132" y="94" width="150" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="150" id="37F-Wd-3YX"/>
                                 <constraint firstAttribute="height" constant="31" id="RUp-F7-QJE"/>
@@ -1837,7 +1881,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해 멘토 학습 가이드" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zte-Do-zxM">
-                            <rect key="frame" x="33.666666666666657" y="142" width="324" height="24"/>
+                            <rect key="frame" x="33.666666666666657" y="142" width="348" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="Set-a5-PhU"/>
                                 <constraint firstAttribute="width" constant="324" id="SvU-E3-e2n"/>
@@ -1847,7 +1891,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2u-38-Jle">
-                            <rect key="frame" x="336" y="0.0" width="34" height="34"/>
+                            <rect key="frame" x="360" y="0.0" width="34" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="34" id="cu1-gg-349"/>
                                 <constraint firstAttribute="width" constant="34" id="p8h-JZ-gkJ"/>
@@ -1860,7 +1904,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust" translatesAutoresizingMaskIntoConstraints="NO" id="6BN-rP-KQj">
-                            <rect key="frame" x="81" y="230" width="230" height="230"/>
+                            <rect key="frame" x="81" y="230" width="254" height="230"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="230" id="7nQ-6y-2Ef"/>
                                 <constraint firstAttribute="height" constant="230" id="zdL-FJ-5z4"/>
@@ -5646,12 +5690,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojh-df-D2f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="abr-ub-bIM">
+                <view contentMode="scaleToFill" ambiguous="YES" id="abr-ub-bIM">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해학습 동영상" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj1-Qg-3E1">
-                            <rect key="frame" x="132" y="94" width="150" height="31"/>
+                            <rect key="frame" x="120" y="94" width="150" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="150" id="MpN-gy-xfP"/>
                                 <constraint firstAttribute="height" constant="31" id="soz-Zv-zlJ"/>
@@ -5661,7 +5705,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해 멘토 학습 가이드" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LG-hJ-Mzl">
-                            <rect key="frame" x="33.666666666666657" y="142" width="348" height="24"/>
+                            <rect key="frame" x="33.666666666666657" y="142" width="324" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="ABd-on-whR"/>
                                 <constraint firstAttribute="width" constant="324" id="z3W-wb-YUR"/>
@@ -5671,7 +5715,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFC-Au-YDW">
-                            <rect key="frame" x="360" y="0.0" width="34" height="34"/>
+                            <rect key="frame" x="336" y="0.0" width="34" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="34" id="oEv-kD-Shp"/>
                                 <constraint firstAttribute="height" constant="34" id="slV-LM-Qsa"/>
@@ -5684,7 +5728,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust" translatesAutoresizingMaskIntoConstraints="NO" id="Gn6-Qq-0tK">
-                            <rect key="frame" x="81" y="230" width="254" height="230"/>
+                            <rect key="frame" x="81" y="230" width="230" height="230"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="230" id="ujG-2I-UXf"/>
                                 <constraint firstAttribute="width" constant="230" id="zXQ-4q-Ck3"/>
@@ -5996,12 +6040,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJO-ze-VG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="yVX-8a-nb3">
+                <view contentMode="scaleToFill" ambiguous="YES" id="yVX-8a-nb3">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해학습 동영상" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0K-uy-xon">
-                            <rect key="frame" x="132" y="94" width="150" height="31"/>
+                            <rect key="frame" x="120" y="94" width="150" height="31"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="150" id="VkK-72-aPv"/>
                                 <constraint firstAttribute="height" constant="31" id="fXh-9K-D8d"/>
@@ -6011,7 +6055,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문해 멘토 학습 가이드" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjy-0q-ynj">
-                            <rect key="frame" x="33.666666666666657" y="142" width="348" height="24"/>
+                            <rect key="frame" x="33.666666666666657" y="142" width="324" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="324" id="JSN-UU-ACM"/>
                                 <constraint firstAttribute="height" constant="24" id="oDl-FY-fRx"/>
@@ -6021,7 +6065,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRY-fY-Isb">
-                            <rect key="frame" x="360" y="0.0" width="34" height="34"/>
+                            <rect key="frame" x="336" y="0.0" width="34" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="34" id="kaq-nR-VdJ"/>
                                 <constraint firstAttribute="width" constant="34" id="rXs-DJ-feu"/>
@@ -6034,7 +6078,7 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="illust" translatesAutoresizingMaskIntoConstraints="NO" id="j76-Is-79V">
-                            <rect key="frame" x="81" y="230" width="254" height="230"/>
+                            <rect key="frame" x="81" y="230" width="230" height="230"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="230" id="8bR-8p-X3j"/>
                                 <constraint firstAttribute="height" constant="230" id="po0-Hn-EMR"/>
