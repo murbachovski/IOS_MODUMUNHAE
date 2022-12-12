@@ -18,11 +18,11 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     @IBOutlet weak var subcontainer: UIView!
     
     @IBOutlet weak var detailLabel: UILabel!
-    
+    var recievedSectionIndex = 0
     var currentSectionCotents : QuizContents = []
     var currentMissionContents : [QuizContents] = []
     
-    
+    var currentLevel = "Basic"
     var naviTitle:String = ""
     var mainTitleText:String = ""
     var subTitleText:String = ""
@@ -32,6 +32,33 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if currentLevel == "Basic" {
+            if recievedSectionIndex == 1 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }else if recievedSectionIndex == 2 {
+                detailLabel.text = "테스트"
+            }else if recievedSectionIndex == 3 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }else if recievedSectionIndex == 4 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }else if recievedSectionIndex == 5 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }else if recievedSectionIndex == 6 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }else if recievedSectionIndex == 7 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }else if recievedSectionIndex == 8 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }
+        }else {
+            if recievedSectionIndex == 1 {
+                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+            }else if recievedSectionIndex == 2 {
+                detailLabel.text = "테스트"
+            }
+        }
+        
+            
         
         
         let layout = UICollectionViewFlowLayout()

@@ -2685,7 +2685,7 @@
                             <color key="textColor" red="0.015686274510000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글자, 낱말 문장, 문맥에 대한 이해도를 테스트합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eo-wE-BPG">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문장 뜻을 구성하는 8가지를 퀴즈로 알아 봅니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eo-wE-BPG">
                             <rect key="frame" x="20" y="171" width="728" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="0hK-x3-nbs"/>

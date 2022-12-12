@@ -205,11 +205,15 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
             munJangEightDetailViewController.naviTitle = "\(num + 1)"
               munJangEightDetailViewController.mainTitleText = munjangElements[num]
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
+            munJangEightDetailViewController.recievedSectionIndex = num + 1
+            munJangEightDetailViewController.currentLevel = currentLevel
         }else {
             munJangEightDetailViewController.naviTitle = "사실"
               munJangEightDetailViewController.mainTitleText = "사실"
               munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionAdvancedTotal[num]
             print(munJangEightDetailViewController.currentSectionCotents.count)
+            munJangEightDetailViewController.recievedSectionIndex = num + 1
+            munJangEightDetailViewController.currentLevel = currentLevel
         }
             print("😡😡😡 \(num + 1) 선택")
         print("8 메인에서의 사용자 정보:\(MyInfo.shared.learningProgress)")
