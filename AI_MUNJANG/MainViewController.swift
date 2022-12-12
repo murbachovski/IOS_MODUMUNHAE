@@ -169,7 +169,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             if UIDevice.current.userInterfaceIdiom == .pad {
                 cell.labelInContentView.font = UIFont(name: "NanumSquareEB", size: 24)
             }
-            cell.labelInContentView.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
+            
             if indexPath.row == 0 {
                 cell.imgViewInContentView.image = UIImage(named: "cell1")
                 cell.lockImg.image = UIImage(named: "icTest40Px")
