@@ -1,98 +1,50 @@
 [
   {
     "No": "1강",
-    "Title": "TEST4",
+    "Title": "우리가 글을 읽을 때까지",
     "Time": "3분 26초",
-    "UrlName": "https://vimeo.com/701911500/39222f3b2f"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774093068/rendition/720p/file.mp4?loc=external&signature=1883e69a06133fd2fead7952dfc71e8f2457e160030cdd7083cb3f028898a109"
   },
   {
     "No": "2강",
-    "Title": "문맥을 배워야 하는 이유",
+    "Title": "글이 무엇일까",
     "Time": "4분 46초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701912278/rendition/720p/file.mp4?loc=external&signature=92b211243dd662dc417c5b496fa8258a3f60c042f13c6ceaee5bedd97e464899"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774092872/rendition/720p/file.mp4?loc=external&signature=d3b248934c9f6701137a4e74b24103df37f481709e56f1ed2b69717a32032764"
   },
   {
     "No": "3강",
-    "Title": "서감문해 멘토 프로그램 안내",
+    "Title": "글의 주제가 무엇일까",
     "Time": "9분 1초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701912621/rendition/720p/file.mp4?loc=external&signature=8976bdf94a8c1ac505c63830e112925afb502ca121eb48c0598cbfcb56ac03e7"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774092726/rendition/720p/file.mp4?loc=external&signature=f06a1136bc22c1b03055992231b29e82801756717f51ff39750b28d5742f5b72"
   },
   {
     "No": "4강",
-    "Title": "문장 읽기",
+    "Title": "글의 주제문을 찾는 아주 쉬운 방법",
     "Time": "11분 21초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701912980/rendition/720p/file.mp4?loc=external&signature=74f1d4c418d8b16c6626638be3f25da267085326e36dee8a6637c70fd4dcd59b"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774092575/rendition/720p/file.mp4?loc=external&signature=7dc63b299ecbcfdbf214c683ef626c1a90b8d28d122180394da24fb4d56b8c7a"
   },
   {
     "No": "5강",
-    "Title": "대상 찾기",
+    "Title": "글의 주제문 읽기-줄글",
     "Time": "10분 30초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701917712/rendition/720p/file.mp4?loc=external&signature=29f8d528579d539cbd100ac1db256a8b9a88b7f4ca3742a6ac7828f77dc8d7a9"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774096519/rendition/720p/file.mp4?loc=external&signature=4f31fb78c16f5de066eb94e647a3f9b55e7eb9052e9066e5686e89cc1458da3c"
   },
   {
     "No": "6강",
-    "Title": "정보 찾기",
+    "Title": "글의 주제문 읽기-문서글",
     "Time": "7분 21초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701918980/rendition/720p/file.mp4?loc=external&signature=0e989e0df5841dc5497e1fb360bcdf854e6b3d955d6d77fdff1af3e0e45b3cb0"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774096406/rendition/720p/file.mp4?loc=external&signature=89795d1acaa352f9c5adaa266733123bd6e9e5d662aadc154c81bf68d9ec6563"
   },
   {
     "No": "7강",
-    "Title": "뜻깔 찾기",
+    "Title": "글의 주제문 읽기-그림글/표글/그래프글",
     "Time": "7분 48초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701920000/rendition/720p/file.mp4?loc=external&signature=f6743b4d6e303b1f24f70873a9f029005509cc11d963e8cf15f071f5b59f9a08"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774096236/rendition/720p/file.mp4?loc=external&signature=efe1ac6b502711d71925fa14a98f2ce9229b2f1071e65be2bf2ea093f163305a"
   },
   {
     "No": "8강",
-    "Title": "문맥 읽기란?",
+    "Title": "글 고쳐 읽기",
     "Time": "8분 57초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701920710/rendition/720p/file.mp4?loc=external&signature=53f837819bd5ef4d037a0a88a92f308b0a0c944ed1bae1f367c80626ee3c5949"
+    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/774096103/rendition/720p/file.mp4?loc=external&signature=d2b93737414bcb721055b7b78125e572f6f0f8645a98786cef89a7137a8d1eb4"
   },
-  {
-    "No": "9강",
-    "Title": "문맥의 특징",
-    "Time": "13분 37초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701921264/rendition/720p/file.mp4?loc=external&signature=5fff4b8f3b7146893c7f682e91c695e9c1869f031339d3ea2d9fb9015394d455"
-  },
-  {
-    "No": "10강",
-    "Title": "문맥의 결과",
-    "Time": "5분 44초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/701922116/rendition/720p/file.mp4?loc=external&signature=2f61c78b387b126a82bba64e1e4b2b6cd107f814a6d1bcf5b2a2290a7085bf02"
-  },
-  {
-    "No": "11강",
-    "Title": "문맥의 표시",
-    "Time": "3분 21초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/703952501/rendition/720p/file.mp4?loc=external&signature=6e97303217cbe96d2473b8485e5109c41ae1448093d21153831a3539a7f00ba1"
-  },
-  {
-    "No": "12강",
-    "Title": "문맥 읽기",
-    "Time": "3분 48초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/703952645/rendition/720p/file.mp4?loc=external&signature=6292eeb3e49e0e6208fbea54f6d6375ac19bebfad04365d151737c32a2dac489"
-  },
-  {
-    "No": "13강",
-    "Title": "글읽기",
-    "Time": "9분 33초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/703952820/rendition/720p/file.mp4?loc=external&signature=41cf6ddb6c3d91dfa5e29cd8c0e232374823fdde12d324f7c6c41395ed4b06b7"
-  },
-  {
-    "No": "14강",
-    "Title": "줄글",
-    "Time": "11분 37초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/703953163/rendition/720p/file.mp4?loc=external&signature=62123621f373d1bf0bd3296bb8ad0648796b1097d59bd45edb966dd77c638e96"
-  },
-  {
-    "No": "15강",
-    "Title": "문서글",
-    "Time": "5분 20초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/703953642/rendition/720p/file.mp4?loc=external&signature=5ffb7601a6c3d8a4bc1aff5a0b3f41530a43da5abe519040f986d3c0f3702fde"
-  },
-  {
-    "No": "16강",
-    "Title": "그래프글",
-    "Time": "13분 32초",
-    "UrlName": "https://player.vimeo.com/progressive_redirect/playback/703953918/rendition/720p/file.mp4?loc=external&signature=f2b823345b86e23225ef05a56fc784c1aa6809e6a96b289ab30b52213acd5277"
-  }
 ]
