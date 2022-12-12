@@ -107,7 +107,7 @@ class MunmaekViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.titleLabel.font = UIFont(name: "NanumSquareB", size: UIDevice.current.userInterfaceIdiom == .pad ? 24: 14)
 
         if isMember == false {
-            if indexPath.row > 10 {
+            if indexPath.row > 2 {
                 cell.videoImageView!.image = UIImage(named: "thumnail_lock")
             }else {
                 
