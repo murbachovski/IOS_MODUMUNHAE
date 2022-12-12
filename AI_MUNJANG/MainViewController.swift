@@ -166,6 +166,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             
 //            셀의 내용 채우기  pencil scribble.variable pencil.and.outline play.rectangle
             cell.labelInContentView.text = mainTitleList[indexPath.row]
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                cell.labelInContentView.font = UIFont(name: "NanumSquareEB", size: 24)
+            }
+            cell.labelInContentView.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 26:  15)
             if indexPath.row == 0 {
                 cell.imgViewInContentView.image = UIImage(named: "cell1")
                 cell.lockImg.image = UIImage(named: "icTest40Px")
@@ -287,7 +291,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let cellWidth = collectionView.frame.size.width - 40 - 20
             
             if UIDevice.current.userInterfaceIdiom == .pad {
-                return CGSize(width: cellWidth / 2.5 , height: cellWidth / 5)
+                return CGSize(width: cellWidth / 2.5 , height: cellWidth / 4)
             }else {
                 return CGSize(width: cellWidth / 2 , height: cellWidth / 2.8)
             }
