@@ -32,29 +32,33 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if currentLevel != "Basic" {
+            subcontainer.backgroundColor = UIColor(hex: "#F5D14Eff")
+        }
         if currentLevel == "Basic" {
             if recievedSectionIndex == 1 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "무엇_주어 혹은 대상 "
             }else if recievedSectionIndex == 2 {
-                detailLabel.text = "테스트"
+                detailLabel.text = "어떠하더라_서술어 혹은 정보 "
             }else if recievedSectionIndex == 3 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "조사 혹은 주어을 중심으로 다양한 뜻을 추가하는 알림 "
             }else if recievedSectionIndex == 4 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "어미 혹은 서술어를 중심으로 다양한 뜻을 추가하는 알림 "
             }else if recievedSectionIndex == 5 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "관형어 혹은 이미 주어진, 서술어 혹은 정보 "
             }else if recievedSectionIndex == 6 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "부사어 혹은 이미 주어진, 서술어 혹은 정보에 추가하는 알림 "
             }else if recievedSectionIndex == 7 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "문장부사어 혹은 문장의 뜻에 추가하는 알림 "
             }else if recievedSectionIndex == 8 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "마침부호 "
             }
         }else {
             if recievedSectionIndex == 1 {
-                detailLabel.text = "-무엇이 무엇이다 \n-무엇이 어찌한다 \n-무엇이 어떠하다에서 ‘무엇’"
+                detailLabel.text = "\'사실\'은 누구나 확인할 수 있는 것\'의견\'은 누구나 확인할 수 없는 것"
             }else if recievedSectionIndex == 2 {
-                detailLabel.text = "테스트"
+                detailLabel.text = "어려움이나 불편함 즉 문제를 사라지게 하는 것"
             }
         }
         
