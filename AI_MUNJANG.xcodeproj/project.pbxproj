@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29710EC6E88B73320A8BA5A4 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94D4B81CC258BF213C5EF55 /* Pods_AI_MUNJANG.framework */; };
-		2CFB2C61145A1612D66D5665 /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA7C4C4F652F116AC79CAFA /* Pods_AI_MUNJANGTests.framework */; };
+		01E0490E7463E031FB46336C /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBBD330E6047079F21DBA5D /* Pods_AI_MUNJANG.framework */; };
+		615F0126841EBF90A5522705 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57FEF510BEBD6E62E94EE7D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
 		840071D3287BE30500B07551 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D2287BE30500B07551 /* RoundedView.swift */; };
 		840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D5287BE41300B07551 /* AdaptiveViewController.swift */; };
 		840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */; };
@@ -115,7 +115,7 @@
 		C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED5084287531AF00454F26 /* LaunchScreen.storyboard */; };
 		C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AA287532C500454F26 /* AiRequest.swift */; };
 		C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AE287534D900454F26 /* TestViewController.swift */; };
-		C7D52A2D23DEC90E5DB30A92 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3F4002983DEC7923DFB50D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
+		D4896AC354E9F324765E6784 /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95A06BF2ED61F7807414F5A /* Pods_AI_MUNJANGTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,9 +136,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1CA7C4C4F652F116AC79CAFA /* Pods_AI_MUNJANGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C789438C16DC3B739CDB25B /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5A4EC62F10F0403C9D370E13 /* Pods-AI_MUNJANGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E2535075DF34400A7FC7449 /* Pods-AI_MUNJANG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.debug.xcconfig"; sourceTree = "<group>"; };
+		1E442AF4787EEE646C6D70E0 /* Pods-AI_MUNJANGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		372BC6B3BFA0C2536A05AF40 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6BBBD330E6047079F21DBA5D /* Pods_AI_MUNJANG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		840071CE287BE2EF00B07551 /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 		840071CF287BE2EF00B07551 /* TextFieldsFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsFont.swift; sourceTree = "<group>"; };
 		840071D0287BE2EF00B07551 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
@@ -236,9 +237,9 @@
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangQuizViewController.swift; sourceTree = "<group>"; };
 		84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
-		8B462BB99991B44549C57178 /* Pods-AI_MUNJANG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.debug.xcconfig"; sourceTree = "<group>"; };
-		8C746FF82B8C7FF67FF8984D /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A4BE4996EC251BD8529756CC /* Pods-AI_MUNJANG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.release.xcconfig"; sourceTree = "<group>"; };
+		9795220EC180671965E2E237 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9B63288D19745E11DCAA43A6 /* Pods-AI_MUNJANGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.release.xcconfig"; sourceTree = "<group>"; };
+		C57FEF510BEBD6E62E94EE7D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG_AI_MUNJANGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -250,9 +251,8 @@
 		C6ED5096287531B000454F26 /* AI_MUNJANGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AI_MUNJANGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED50AA287532C500454F26 /* AiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRequest.swift; sourceTree = "<group>"; };
 		C6ED50AE287534D900454F26 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		D94D4B81CC258BF213C5EF55 /* Pods_AI_MUNJANG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6F5D73A0B0F87C62F1323BF /* Pods-AI_MUNJANGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.release.xcconfig"; sourceTree = "<group>"; };
-		EA3F4002983DEC7923DFB50D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG_AI_MUNJANGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95A06BF2ED61F7807414F5A /* Pods_AI_MUNJANGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58A5F7F807D8866A39F29AF /* Pods-AI_MUNJANG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,7 +263,7 @@
 				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
 				845DFB4A2944603F0072428B /* DropDown in Frameworks */,
 				842E96E428FE999900923706 /* Charts in Frameworks */,
-				29710EC6E88B73320A8BA5A4 /* Pods_AI_MUNJANG.framework in Frameworks */,
+				01E0490E7463E031FB46336C /* Pods_AI_MUNJANG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CFB2C61145A1612D66D5665 /* Pods_AI_MUNJANGTests.framework in Frameworks */,
+				D4896AC354E9F324765E6784 /* Pods_AI_MUNJANGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +279,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7D52A2D23DEC90E5DB30A92 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */,
+				615F0126841EBF90A5522705 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,22 +552,22 @@
 		8B5FF546FE32A902A1BF68DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8B462BB99991B44549C57178 /* Pods-AI_MUNJANG.debug.xcconfig */,
-				A4BE4996EC251BD8529756CC /* Pods-AI_MUNJANG.release.xcconfig */,
-				8C746FF82B8C7FF67FF8984D /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */,
-				2C789438C16DC3B739CDB25B /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */,
-				5A4EC62F10F0403C9D370E13 /* Pods-AI_MUNJANGTests.debug.xcconfig */,
-				E6F5D73A0B0F87C62F1323BF /* Pods-AI_MUNJANGTests.release.xcconfig */,
+				1E2535075DF34400A7FC7449 /* Pods-AI_MUNJANG.debug.xcconfig */,
+				F58A5F7F807D8866A39F29AF /* Pods-AI_MUNJANG.release.xcconfig */,
+				9795220EC180671965E2E237 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */,
+				372BC6B3BFA0C2536A05AF40 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */,
+				1E442AF4787EEE646C6D70E0 /* Pods-AI_MUNJANGTests.debug.xcconfig */,
+				9B63288D19745E11DCAA43A6 /* Pods-AI_MUNJANGTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		93805845674DD8E75A177E00 /* Frameworks */ = {
+		92EE67278006EB89FADEA0DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D94D4B81CC258BF213C5EF55 /* Pods_AI_MUNJANG.framework */,
-				EA3F4002983DEC7923DFB50D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */,
-				1CA7C4C4F652F116AC79CAFA /* Pods_AI_MUNJANGTests.framework */,
+				6BBBD330E6047079F21DBA5D /* Pods_AI_MUNJANG.framework */,
+				C57FEF510BEBD6E62E94EE7D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */,
+				D95A06BF2ED61F7807414F5A /* Pods_AI_MUNJANGTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -577,7 +577,7 @@
 			children = (
 				C6ED5078287531AE00454F26 /* AI_MUNJANG */,
 				8B5FF546FE32A902A1BF68DD /* Pods */,
-				93805845674DD8E75A177E00 /* Frameworks */,
+				92EE67278006EB89FADEA0DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -641,13 +641,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A0287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANG" */;
 			buildPhases = (
-				DF1608501E1DFE954D45765B /* [CP] Check Pods Manifest.lock */,
+				528E87BCA85D530A276FAAB6 /* [CP] Check Pods Manifest.lock */,
 				C6ED5072287531AE00454F26 /* Sources */,
 				C6ED5073287531AE00454F26 /* Frameworks */,
 				C6ED5074287531AE00454F26 /* Resources */,
 				849634C828EFC3FC00B1533B /* ShellScript */,
-				DC18A697021A2713E3F85EE7 /* [CP] Embed Pods Frameworks */,
-				21EFB50A0A1A383840C1266E /* [CP] Copy Pods Resources */,
+				637F08E54796D28938206904 /* [CP] Embed Pods Frameworks */,
+				01B1C44246329EA62ADD3041 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -667,7 +667,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A3287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGTests" */;
 			buildPhases = (
-				D946C0B3119A458B1D01F848 /* [CP] Check Pods Manifest.lock */,
+				16A1436C1FD3F0C9474695D7 /* [CP] Check Pods Manifest.lock */,
 				C6ED5088287531B000454F26 /* Sources */,
 				C6ED5089287531B000454F26 /* Frameworks */,
 				C6ED508A287531B000454F26 /* Resources */,
@@ -686,12 +686,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A6287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGUITests" */;
 			buildPhases = (
-				0E50DF06F289314853A39100 /* [CP] Check Pods Manifest.lock */,
+				02BEAB5B189B68186374623B /* [CP] Check Pods Manifest.lock */,
 				C6ED5092287531B000454F26 /* Sources */,
 				C6ED5093287531B000454F26 /* Frameworks */,
 				C6ED5094287531B000454F26 /* Resources */,
-				215BB817C357FEB6C76A7F19 /* [CP] Embed Pods Frameworks */,
-				B6698F2FA78E75C81D5738C4 /* [CP] Copy Pods Resources */,
+				DA7A4D440276816B0E236B4A /* [CP] Embed Pods Frameworks */,
+				59E5685905720444B8727449 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -803,7 +803,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0E50DF06F289314853A39100 /* [CP] Check Pods Manifest.lock */ = {
+		01B1C44246329EA62ADD3041 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		02BEAB5B189B68186374623B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -825,77 +842,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		215BB817C357FEB6C76A7F19 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		21EFB50A0A1A383840C1266E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		849634C828EFC3FC00B1533B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		B6698F2FA78E75C81D5738C4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D946C0B3119A458B1D01F848 /* [CP] Check Pods Manifest.lock */ = {
+		16A1436C1FD3F0C9474695D7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -917,26 +864,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DC18A697021A2713E3F85EE7 /* [CP] Embed Pods Frameworks */ = {
+		528E87BCA85D530A276FAAB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF1608501E1DFE954D45765B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -951,9 +881,79 @@
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-AI_MUNJANG-checkManifestLockResult.txt",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59E5685905720444B8727449 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		637F08E54796D28938206904 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		849634C828EFC3FC00B1533B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		DA7A4D440276816B0E236B4A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1102,6 +1102,8 @@
 		C6ED509E287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1137,7 +1139,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				EXCLUDED_ARCHS = "";
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1165,6 +1166,8 @@
 		C6ED509F287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1199,8 +1202,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EXCLUDED_ARCHS = arm64;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1222,7 +1224,7 @@
 		};
 		C6ED50A1287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B462BB99991B44549C57178 /* Pods-AI_MUNJANG.debug.xcconfig */;
+			baseConfigurationReference = 1E2535075DF34400A7FC7449 /* Pods-AI_MUNJANG.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -1265,7 +1267,7 @@
 		};
 		C6ED50A2287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4BE4996EC251BD8529756CC /* Pods-AI_MUNJANG.release.xcconfig */;
+			baseConfigurationReference = F58A5F7F807D8866A39F29AF /* Pods-AI_MUNJANG.release.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -1306,7 +1308,7 @@
 		};
 		C6ED50A4287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A4EC62F10F0403C9D370E13 /* Pods-AI_MUNJANGTests.debug.xcconfig */;
+			baseConfigurationReference = 1E442AF4787EEE646C6D70E0 /* Pods-AI_MUNJANGTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1327,7 +1329,7 @@
 		};
 		C6ED50A5287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6F5D73A0B0F87C62F1323BF /* Pods-AI_MUNJANGTests.release.xcconfig */;
+			baseConfigurationReference = 9B63288D19745E11DCAA43A6 /* Pods-AI_MUNJANGTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1348,7 +1350,7 @@
 		};
 		C6ED50A7287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C746FF82B8C7FF67FF8984D /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
+			baseConfigurationReference = 9795220EC180671965E2E237 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1367,7 +1369,7 @@
 		};
 		C6ED50A8287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C789438C16DC3B739CDB25B /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
+			baseConfigurationReference = 372BC6B3BFA0C2536A05AF40 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
