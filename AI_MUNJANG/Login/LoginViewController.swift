@@ -131,7 +131,7 @@ class LoginViewController: UIViewController, ShowDropDelegate, CheckEmailAndPass
         
         
         appleLoginButtonView.button.layer.cornerRadius = 8
-        appleLoginButtonView.button.setTitle("  Apple 계정으로 로그인", for: .normal)
+        appleLoginButtonView.button.setTitle("  Apple로 로그인", for: .normal)
         appleLoginButtonView.button.setImage(UIImage(named: "Apple Logo"), for: .normal)
         appleLoginButtonView.button.titleLabel?.font =  UIFont(name: "NanumSquareEB", size: 17)
         appleLoginButtonView.button.backgroundColor = .black
@@ -442,6 +442,10 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             if let userID = UserDefaults.standard.value(forKey: "userID") as? String {
                 print("login is called: \(userID)")
                 DataFromFirestore.share.gettingDoc(userID: userID) { info in
+                    if info.couponID != ""{ //로그인시 사용자의 쿠폰이 유효하다면 couponID가 존재, 그애 따라  쿠폰 구독을 설정 및 해제
+                    Core.shared.setUserSubscription()
+                    }
+                    MyInfo.shared.couponID = info.couponID
                     MyInfo.shared.displayName = info.displayName
                     MyInfo.shared.learningProgress = info.learningProgress
                     MyInfo.shared.numberOfHearts = info.numberOfHearts

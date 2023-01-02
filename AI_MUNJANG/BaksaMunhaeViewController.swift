@@ -127,7 +127,7 @@ class BaksaMunhaeViewController: UIViewController, UITableViewDelegate, UITableV
         
         if isMember == false {
             if indexPath.row > 2 {
-                let alert = AlertService().alert(title: "", body: "동영상을 시청하기 위해서는 \n구독하셔야합니다", cancelTitle: "확인", confirTitle: "구독하러가기", thirdButtonCompletion: {
+                let alert = AlertService().alert(title: "", body: "동영상 시청에 제한이 있습니다.\n 자유롭게 사용하려면 구독해 주세요.", cancelTitle: "확인", confirTitle: "구독하러가기", thirdButtonCompletion: {
                     
                 }, fourthButtonCompletion: {
                     guard let subscriptionViewController = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController")  as? SubscriptionViewController else {return}

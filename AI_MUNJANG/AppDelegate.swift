@@ -57,9 +57,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     MyInfo.shared.learningProgress = info.learningProgress
                     MyInfo.shared.numberOfHearts = info.numberOfHearts
                     MyInfo.shared.couponID = info.couponID
-                    
+        
                     if info.couponID.count > 10 { //couponID가 있다면(10은 임의숫자), 유효기간을 점검한다.
+                        
+                    Core.shared.setUserSubscription()
+                        
                         checkTheValidateCouponUser(docID: info.couponID)
+                    }else {
+                        print("쿠폰은 없지만 구독한 경우 사용을 풀어주기 위해서 12/20")
+                        if Core.shared.isUserSubscription() {
+                            Core.shared.setUserSubscription()
+                        }
+                        print("쿠폰없으므로 사용제한 12/20")
+                        Core.shared.setUserCancelSubscription()
                     }
                     
                     print("😊😊😊😊😊😊😊applicationDidBecomeActive userInfo: \(MyInfo.shared)")
@@ -104,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         data.updateValue(MyInfo.shared.displayName, forKey: "displayName")
                         data.updateValue(MyInfo.shared.learningProgress, forKey: "learningProgress")
                         data.updateValue(MyInfo.shared.numberOfHearts, forKey: "numberOfHearts")
-                        data.updateValue(MyInfo.shared.couponID, forKey: "couponID")
+//                        data.updateValue(MyInfo.shared.couponID, forKey: "couponID")
                         
                         
                         // 서버의 딕셔너리 데이터를 수정된 데이터로 수정한다.

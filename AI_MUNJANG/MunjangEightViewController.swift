@@ -38,9 +38,9 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
 //            self.navigationItem.title = ""
         }else{
 //            self.navigationItem.title = ""
-            self.imgView.image = UIImage(named: "bg6")
-            self.titleLabel?.text = "실질문해 미션"
-            self.subTitleLabel?.text = "문해를 통해 문제를 해결하기"
+                self.imgView.image = UIImage(named: "bg6")
+                self.titleLabel?.text = "실질문해 미션"
+                self.subTitleLabel?.text = "문해를 통해 문제를 해결하기"
         }
         
         displayHomeBtn()
@@ -162,7 +162,7 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
                 changeNextPage(num: indexPath.row)
             }else {
                 //알림창노출
-                let alert = AlertService().alert(title: "", body: "사용자께서는 구독 전이라 \n사용이 불가합니다.", cancelTitle: "확인", confirTitle: "구독하기") {
+                let alert = AlertService().alert(title: "", body: "문제 풀이 제한이 있습니다.\n자유롭게 사용하려면 구독해 주세요.", cancelTitle: "확인", confirTitle: "구독하기") {
 
                 } fourthButtonCompletion: {
                     // 사용자가 구독하기 선택
@@ -204,9 +204,9 @@ class MunjangEightViewController: UIViewController, UICollectionViewDataSource, 
         if currentLevel == "Basic" {
             munJangEightDetailViewController.naviTitle = "\(num + 1)"
               munJangEightDetailViewController.mainTitleText = munjangElements[num]
-              munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
             munJangEightDetailViewController.recievedSectionIndex = num + 1
             munJangEightDetailViewController.currentLevel = currentLevel
+              munJangEightDetailViewController.currentSectionCotents = QuizContentData.shared.sectionTotal[num]
         }else {
             munJangEightDetailViewController.naviTitle = "사실"
               munJangEightDetailViewController.mainTitleText = "사실"

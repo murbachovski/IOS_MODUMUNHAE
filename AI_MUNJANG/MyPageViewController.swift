@@ -60,10 +60,10 @@ class MyPageViewController: UIViewController {
             subscribeContainer.isHidden = false
             
             if Core.shared.isCouponeCampaign() == true{
-                subscribeByCoupon.isHidden = false
+//                subscribeByCoupon.isHidden = false
                 subscribeButton.setTitle("구독하기", for: .normal)
             }else{
-                subscribeByCoupon.isHidden = true
+//                subscribeByCoupon.isHidden = true
                 subscribeButton.setTitle("구독하고 무제한으로 이용하기", for: .normal)
             }
         }

@@ -7,7 +7,7 @@ target 'AI_MUNJANG' do
 
   # Pods for AI_MUNJANG
 pod 'FirebaseAuth'
-#pod 'NVActivityIndicatorView'
+pod 'NVActivityIndicatorView'
 pod 'FirebaseFirestore'
 pod 'FirebaseAnalytics'
 pod 'FirebaseCrashlytics'

@@ -7,8 +7,9 @@
 
 import UIKit
 
-class SenIndexViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-
+class SenIndexViewController: UIViewController, UITableViewDelegate  {
+//    UITableViewDataSource
+    //12.13 대표님께서 낱말, 형태소, 절 지수 삭제를 요청하심.
     @IBOutlet var indexTableView: UITableView!
     @IBOutlet var gradLabel: UILabel!
     @IBOutlet var originLabel: UILabel!
@@ -25,7 +26,7 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.title = "문장지수"
         
-        indexTableView.dataSource = self
+//        indexTableView.dataSource = self
         indexTableView.delegate = self
         
         originLabel.text = originSentence
@@ -83,76 +84,76 @@ class SenIndexViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // MARK: - Row Cell
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { //낱말 지수
-            return wordData.count
-        }else if section == 1 {//형태소 지수
-            return morphData.count
-        }else { //절 지수
-            return phraseData.count
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "indexCell")!
-        
-        if indexPath.section == 0{
-            cell.textLabel?.text = wordData[indexPath.row]
-            
-        }else if indexPath.section == 1{
-            cell.textLabel?.text = morphData[indexPath.row]
-            
-        }else{
-            cell.textLabel?.text = phraseData[indexPath.row]
-            
-        }
-        cell.textLabel?.numberOfLines = 0
-        cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            cell.textLabel?.font = UIFont(name: "NanumSquareR", size: 20)
-        }
-        
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
-    {
-        let cornerRadius = 10
-        var corners: UIRectCorner = []
-        
-        if indexPath.row == 0
-        {
-            corners.update(with: .topLeft)
-            corners.update(with: .topRight)
-        }
-        
-        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
-        {
-            corners.update(with: .bottomLeft)
-            corners.update(with: .bottomRight)
-        }
-        
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: cell.bounds,
-                                      byRoundingCorners: corners,
-                                      cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
-        cell.layer.mask = maskLayer
-        
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIDevice.current.userInterfaceIdiom == .pad ? 60: 44
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        if let header = view as? UITableViewHeaderFooterView {
-            header.textLabel?.textColor = hexStringToUIColor(hex: Constants.primaryColor)
-            header.textLabel?.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 20: 16)
-            header.textLabel?.frame = header.bounds
-            
-        }
-    }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        if section == 0 { //낱말 지수
+//            return wordData.count
+//        }else if section == 1 {//형태소 지수
+//            return morphData.count
+//        }else { //절 지수
+//            return phraseData.count
+//        }
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "indexCell")!
+//
+//        if indexPath.section == 0{
+//            cell.textLabel?.text = wordData[indexPath.row]
+//
+//        }else if indexPath.section == 1{
+//            cell.textLabel?.text = morphData[indexPath.row]
+//
+//        }else{
+//            cell.textLabel?.text = phraseData[indexPath.row]
+//
+//        }
+//        cell.textLabel?.numberOfLines = 0
+//        cell.contentView.backgroundColor = hexStringToUIColor(hex: "#F7F9FB")
+//        if UIDevice.current.userInterfaceIdiom == .pad {
+//            cell.textLabel?.font = UIFont(name: "NanumSquareR", size: 20)
+//        }
+//
+//
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+//    {
+//        let cornerRadius = 10
+//        var corners: UIRectCorner = []
+//
+//        if indexPath.row == 0
+//        {
+//            corners.update(with: .topLeft)
+//            corners.update(with: .topRight)
+//        }
+//
+//        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1
+//        {
+//            corners.update(with: .bottomLeft)
+//            corners.update(with: .bottomRight)
+//        }
+//
+//        let maskLayer = CAShapeLayer()
+//        maskLayer.path = UIBezierPath(roundedRect: cell.bounds,
+//                                      byRoundingCorners: corners,
+//                                      cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
+//        cell.layer.mask = maskLayer
+//
+//
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UIDevice.current.userInterfaceIdiom == .pad ? 60: 44
+//    }
+//
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        if let header = view as? UITableViewHeaderFooterView {
+//            header.textLabel?.textColor = hexStringToUIColor(hex: Constants.primaryColor)
+//            header.textLabel?.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ? 20: 16)
+//            header.textLabel?.frame = header.bounds
+//
+//        }
+//    }
 }

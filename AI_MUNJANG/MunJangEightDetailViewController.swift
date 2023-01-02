@@ -18,11 +18,12 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
     @IBOutlet weak var subcontainer: UIView!
     
     @IBOutlet weak var detailLabel: UILabel!
-    var recievedSectionIndex = 0
+    
     var currentSectionCotents : QuizContents = []
     var currentMissionContents : [QuizContents] = []
     
     var currentLevel = "Basic"
+    var recievedSectionIndex = 0
     var naviTitle:String = ""
     var mainTitleText:String = ""
     var subTitleText:String = ""
@@ -34,25 +35,25 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
         super.viewDidLoad()
         
         if currentLevel != "Basic" {
-            subcontainer.backgroundColor = UIColor(hex: "#F5D14Eff")
+            subcontainer.backgroundColor = UIColor.systemYellow
         }
         if currentLevel == "Basic" {
             if recievedSectionIndex == 1 {
-                detailLabel.text = "무엇_주어 혹은 대상 "
+                detailLabel.text = "제1 뜻: 무엇_주어 혹은 대상 "
             }else if recievedSectionIndex == 2 {
-                detailLabel.text = "어떠하더라_서술어 혹은 정보 "
+                detailLabel.text = "제2 뜻: 어떠하더라_서술어 혹은 정보 "
             }else if recievedSectionIndex == 3 {
-                detailLabel.text = "조사 혹은 주어을 중심으로 \n다양한 뜻을 추가하는 알림 "
+                detailLabel.text = "제3 뜻: 조사 혹은 주어을 중심으로 \n다양한 뜻을 추가하는 알림 "
             }else if recievedSectionIndex == 4 {
-                detailLabel.text = "어미 혹은 서술어를 중심으로 \n다양한 뜻을 추가하는 알림 "
+                detailLabel.text = "제4 뜻: 어미 혹은 서술어를 중심으로 \n다양한 뜻을 추가하는 알림 "
             }else if recievedSectionIndex == 5 {
-                detailLabel.text = "관형어 혹은 이미 주어진, 서술어 혹은 정보 "
+                detailLabel.text = "제5 뜻: 관형어 혹은 이미 주어진 \n서술어 혹은 정보 "
             }else if recievedSectionIndex == 6 {
-                detailLabel.text = "부사어 혹은 이미 주어진 \n서술어 혹은 정보에 추가하는 알림 "
+                detailLabel.text = "제6 뜻: 부사어 혹은 이미 주어진 \n서술어 혹은 정보에 추가하는 알림 "
             }else if recievedSectionIndex == 7 {
-                detailLabel.text = "문장부사어 혹은 문장의 뜻에 \n 추가하는 알림 "
+                detailLabel.text = "제7 뜻: 문장부사어 혹은 문장의 뜻에 \n추가하는 알림 "
             }else if recievedSectionIndex == 8 {
-                detailLabel.text = "마침부호 "
+                detailLabel.text = "제8 뜻: 마침부호 "
             }
         }else {
             if recievedSectionIndex == 1 {
@@ -61,9 +62,6 @@ class MunJangEightDetailViewController: UIViewController, UICollectionViewDataSo
                 detailLabel.text = "어려움이나 불편함 \n즉 문제를 사라지게 하는 것"
             }
         }
-        
-            
-        
         
         let layout = UICollectionViewFlowLayout()
         collectionView.collectionViewLayout = layout

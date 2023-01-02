@@ -107,6 +107,8 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        currentQuiz = currentQuizPool[currentQuizIndex]
+        
         resultContainerView.backgroundColor = .white
         resultContainerView.layer.cornerRadius = 10
         resultContainerView.layer.shadowOpacity = 0.8
@@ -468,6 +470,25 @@ class MunhaeTestQuizViewController: UIViewController, AVAudioPlayerDelegate {
             quizContainerView.isHidden = false
         }
         paddingLabel.text = currentQuiz.jimun ?? ""
+        
+        if let isUnderline = currentQuiz.jimun?.contains("#&"){
+            if isUnderline {
+                let splitTexts = currentQuiz.jimun?.components(separatedBy: "#&")
+                let tmpJimun = splitTexts?[0].trimmingCharacters(in: .whitespaces)
+                let tmpUnderline = splitTexts?[1].trimmingCharacters(in: .whitespaces)
+
+                
+                let tmpJimunAttributed = NSMutableAttributedString.init(string: tmpJimun!)
+                let originStr = NSString(string: tmpJimun!)
+                let theRange = originStr.range(of: tmpUnderline!)
+                tmpJimunAttributed.addAttribute(NSAttributedString.Key.underlineStyle, value: 1, range:theRange)
+                
+                quizTextLabel.attributedText = tmpJimunAttributed
+                
+            }else{
+                quizTextLabel.text = currentQuiz.jimun
+            }
+        }
         
         munhaeQuizProcessLabel.text = "\(currentQuizIndex + 1)/\(currentQuizPool.count)"
         munhaeQuizProcessLabel.font = UIFont(name: "NanumSquareEB", size: 17)

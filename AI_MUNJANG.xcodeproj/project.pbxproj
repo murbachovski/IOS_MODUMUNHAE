@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01E0490E7463E031FB46336C /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBBD330E6047079F21DBA5D /* Pods_AI_MUNJANG.framework */; };
-		615F0126841EBF90A5522705 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57FEF510BEBD6E62E94EE7D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
 		840071D3287BE30500B07551 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D2287BE30500B07551 /* RoundedView.swift */; };
 		840071D6287BE41300B07551 /* AdaptiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D5287BE41300B07551 /* AdaptiveViewController.swift */; };
 		840071D7287BE67C00B07551 /* AdaptiveLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840071D1287BE2EF00B07551 /* AdaptiveLayoutConstraint.swift */; };
@@ -51,6 +49,9 @@
 		843F27BC28A4CA9900E36E33 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27BB28A4CA9900E36E33 /* BannerCell.swift */; };
 		843F27BF28A5E74200E36E33 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27BE28A5E74200E36E33 /* success.mp3 */; };
 		843F27C128A5E97300E36E33 /* failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 843F27C028A5E97300E36E33 /* failed.mp3 */; };
+		843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F27C228A5EA4F00E36E33 /* TTS.swift */; };
+		843FEB0C295144650007D7EF /* videoBaksaMunhaeContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 843FEB0B295144650007D7EF /* videoBaksaMunhaeContents.json */; };
+		843FEB0E2951447C0007D7EF /* videoBaksaMunhaeContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 843FEB0D2951447C0007D7EF /* videoBaksaMunhaeContents.json */; };
 		844226E02890F66700DCB93B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 844226DF2890F66700DCB93B /* GoogleService-Info.plist */; };
 		844488DA292C711100C335EC /* MunhaeVideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844488D9292C711100C335EC /* MunhaeVideoListViewController.swift */; };
 		84458A7528BF47F500A70F20 /* MunJangEightDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84458A7328BF47F500A70F20 /* MunJangEightDetailViewController.swift */; };
@@ -90,24 +91,24 @@
 		8474DD1C287E56D3008275FC /* CustomPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD1B287E56D3008275FC /* CustomPasswordView.swift */; };
 		8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8474DD1D287E573C008275FC /* CustomPasswordView.xib */; };
 		8474DD20287E5DA0008275FC /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */; };
+		8474DD22287E6C78008275FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD21287E6C78008275FC /* Utils.swift */; };
 		8474DD27287EB63C008275FC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8474DD26287EB63C008275FC /* LoginViewController.swift */; };
 		8475D5EB290FBE7F00284F72 /* useTerms.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8475D5EA290FBE7F00284F72 /* useTerms.pdf */; };
+		848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */; };
 		848385AD292F01DF0008D64C /* videoMunjangContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 848385AC292F01DF0008D64C /* videoMunjangContents.json */; };
 		8486B9A5292E0AA0000D90A9 /* videoMunmaekContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8486B9A4292E0AA0000D90A9 /* videoMunmaekContents.json */; };
-		8486B9A7292E0AD8000D90A9 /* videoBaksaMunhaeContents.json in Resources */ = {isa = PBXBuildFile; fileRef = 8486B9A6292E0AD8000D90A9 /* videoBaksaMunhaeContents.json */; };
 		84B2FCBF28C597FF002B4365 /* MunhaeTestQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */; };
 		84B9BF282907CEA600F06B8E /* CustomTFAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */; };
-		84C6E66C2946BDF5001C85CC /* TTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E6692946BDF5001C85CC /* TTS.swift */; };
-		84C6E66D2946BDF5001C85CC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E66A2946BDF5001C85CC /* Utils.swift */; };
-		84C6E66E2946BDF5001C85CC /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6E66B2946BDF5001C85CC /* Core.swift */; };
 		84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 84D8A67E28F7E8EE00ACFA18 /* Zip */; };
 		84D8A68228F7ECDB00ACFA18 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D8A68128F7ECDB00ACFA18 /* HomeViewController.swift */; };
 		84DD8FC628F94F4300CF783F /* MLTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DD8FC528F94F4300CF783F /* MLTextViewController.swift */; };
 		84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */; };
+		84E7B04C28AE2DF20009E8E1 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E7B04B28AE2DF20009E8E1 /* Core.swift */; };
 		84EAC50328DAEB0B00DC6FEA /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC50228DAEB0B00DC6FEA /* MainCollectionViewCell.swift */; };
 		84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */; };
 		84EBC3CA289CA6B00089F9AC /* MunjangQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */; };
 		84EBC3CD28A0B6BB0089F9AC /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */; };
+		AF5BFBE7B5BE6ADCA59876F1 /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE350FB46DF8BDD20A4F0BF /* Pods_AI_MUNJANGTests.framework */; };
 		C6ED507A287531AE00454F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED5079287531AE00454F26 /* AppDelegate.swift */; };
 		C6ED507E287531AE00454F26 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED507D287531AE00454F26 /* MainViewController.swift */; };
 		C6ED5081287531AE00454F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED507F287531AE00454F26 /* Main.storyboard */; };
@@ -115,7 +116,7 @@
 		C6ED5086287531AF00454F26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6ED5084287531AF00454F26 /* LaunchScreen.storyboard */; };
 		C6ED50AB287532C500454F26 /* AiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AA287532C500454F26 /* AiRequest.swift */; };
 		C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ED50AE287534D900454F26 /* TestViewController.swift */; };
-		D4896AC354E9F324765E6784 /* Pods_AI_MUNJANGTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95A06BF2ED61F7807414F5A /* Pods_AI_MUNJANGTests.framework */; };
+		D2467344EC756D732F80BCF6 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87FF2F7A8A2373656F3AB342 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,10 +137,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E2535075DF34400A7FC7449 /* Pods-AI_MUNJANG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.debug.xcconfig"; sourceTree = "<group>"; };
-		1E442AF4787EEE646C6D70E0 /* Pods-AI_MUNJANGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.debug.xcconfig"; sourceTree = "<group>"; };
-		372BC6B3BFA0C2536A05AF40 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6BBBD330E6047079F21DBA5D /* Pods_AI_MUNJANG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE350FB46DF8BDD20A4F0BF /* Pods_AI_MUNJANGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CF048CE1E844E5C5355B88A /* Pods-AI_MUNJANG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.release.xcconfig"; sourceTree = "<group>"; };
+		70231474539566B4E361D900 /* Pods-AI_MUNJANG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.debug.xcconfig"; sourceTree = "<group>"; };
+		7831F68970C78DA0735DC33C /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		840071CE287BE2EF00B07551 /* StackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewExtension.swift; sourceTree = "<group>"; };
 		840071CF287BE2EF00B07551 /* TextFieldsFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsFont.swift; sourceTree = "<group>"; };
 		840071D0287BE2EF00B07551 /* CGFloatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
@@ -181,6 +183,9 @@
 		843F27BB28A4CA9900E36E33 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		843F27BE28A5E74200E36E33 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
 		843F27C028A5E97300E36E33 /* failed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = failed.mp3; sourceTree = "<group>"; };
+		843F27C228A5EA4F00E36E33 /* TTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTS.swift; sourceTree = "<group>"; };
+		843FEB0B295144650007D7EF /* videoBaksaMunhaeContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoBaksaMunhaeContents.json; sourceTree = "<group>"; };
+		843FEB0D2951447C0007D7EF /* videoBaksaMunhaeContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoBaksaMunhaeContents.json; sourceTree = "<group>"; };
 		844226DF2890F66700DCB93B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		844488D9292C711100C335EC /* MunhaeVideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeVideoListViewController.swift; sourceTree = "<group>"; };
 		84458A7328BF47F500A70F20 /* MunJangEightDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunJangEightDetailViewController.swift; sourceTree = "<group>"; };
@@ -220,26 +225,25 @@
 		8474DD1B287E56D3008275FC /* CustomPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPasswordView.swift; sourceTree = "<group>"; };
 		8474DD1D287E573C008275FC /* CustomPasswordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPasswordView.xib; sourceTree = "<group>"; };
 		8474DD1F287E5DA0008275FC /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		8474DD21287E6C78008275FC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8474DD26287EB63C008275FC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8475D5EA290FBE7F00284F72 /* useTerms.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = useTerms.pdf; sourceTree = "<group>"; };
 		848385AC292F01DF0008D64C /* videoMunjangContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoMunjangContents.json; sourceTree = "<group>"; };
 		8486B9A4292E0AA0000D90A9 /* videoMunmaekContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoMunmaekContents.json; sourceTree = "<group>"; };
-		8486B9A6292E0AD8000D90A9 /* videoBaksaMunhaeContents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = videoBaksaMunhaeContents.json; sourceTree = "<group>"; };
 		84B2FCBE28C597FF002B4365 /* MunhaeTestQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunhaeTestQuizViewController.swift; sourceTree = "<group>"; };
 		84B9BF272907CEA600F06B8E /* CustomTFAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTFAlertViewController.swift; sourceTree = "<group>"; };
-		84C6E6692946BDF5001C85CC /* TTS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTS.swift; sourceTree = "<group>"; };
-		84C6E66A2946BDF5001C85CC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		84C6E66B2946BDF5001C85CC /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		84D8A68128F7ECDB00ACFA18 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84DD8FC528F94F4300CF783F /* MLTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextViewController.swift; sourceTree = "<group>"; };
 		84E7B04928AE23C60009E8E1 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		84E7B04B28AE2DF20009E8E1 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		84EAC50228DAEB0B00DC6FEA /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C3289B886E0089F9AC /* MunjangEightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangEightCollectionViewCell.swift; sourceTree = "<group>"; };
 		84EBC3C9289CA6B00089F9AC /* MunjangQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunjangQuizViewController.swift; sourceTree = "<group>"; };
 		84EBC3CC28A0B6BA0089F9AC /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
-		9795220EC180671965E2E237 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		9B63288D19745E11DCAA43A6 /* Pods-AI_MUNJANGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.release.xcconfig"; sourceTree = "<group>"; };
-		C57FEF510BEBD6E62E94EE7D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG_AI_MUNJANGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8530E89A381CCA969C25DBF2 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig"; sourceTree = "<group>"; };
+		87FF2F7A8A2373656F3AB342 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANG_AI_MUNJANGUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC04C232BD6911B4205CC2D4 /* Pods-AI_MUNJANGTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.debug.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5DAED85C7470F4A731152D6 /* Pods-AI_MUNJANGTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANGTests.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANGTests/Pods-AI_MUNJANGTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6ED5076287531AE00454F26 /* AI_MUNJANG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI_MUNJANG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED5079287531AE00454F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6ED507D287531AE00454F26 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -251,8 +255,6 @@
 		C6ED5096287531B000454F26 /* AI_MUNJANGUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AI_MUNJANGUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6ED50AA287532C500454F26 /* AiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiRequest.swift; sourceTree = "<group>"; };
 		C6ED50AE287534D900454F26 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		D95A06BF2ED61F7807414F5A /* Pods_AI_MUNJANGTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AI_MUNJANGTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F58A5F7F807D8866A39F29AF /* Pods-AI_MUNJANG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AI_MUNJANG.release.xcconfig"; path = "Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,8 +264,8 @@
 			files = (
 				84D8A67F28F7E8EE00ACFA18 /* Zip in Frameworks */,
 				845DFB4A2944603F0072428B /* DropDown in Frameworks */,
+				848096CF206BA91C83A4ECF9 /* Pods_AI_MUNJANG.framework in Frameworks */,
 				842E96E428FE999900923706 /* Charts in Frameworks */,
-				01E0490E7463E031FB46336C /* Pods_AI_MUNJANG.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4896AC354E9F324765E6784 /* Pods_AI_MUNJANGTests.framework in Frameworks */,
+				AF5BFBE7B5BE6ADCA59876F1 /* Pods_AI_MUNJANGTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,20 +281,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615F0126841EBF90A5522705 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */,
+				D2467344EC756D732F80BCF6 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7460C76901D48D8A9EDE20F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A94251BE1E3C8CCF01C67B8 /* Pods_AI_MUNJANG.framework */,
+				87FF2F7A8A2373656F3AB342 /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */,
+				3CE350FB46DF8BDD20A4F0BF /* Pods_AI_MUNJANGTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8411A5B428C836EF0061A6F5 /* MunhaeVideo */ = {
 			isa = PBXGroup;
 			children = (
 				8432B3B628DD6B95005E6583 /* videoContents.json */,
 				848385AC292F01DF0008D64C /* videoMunjangContents.json */,
 				8486B9A4292E0AA0000D90A9 /* videoMunmaekContents.json */,
-				8486B9A6292E0AD8000D90A9 /* videoBaksaMunhaeContents.json */,
+				843FEB0B295144650007D7EF /* videoBaksaMunhaeContents.json */,
+				843FEB0D2951447C0007D7EF /* videoBaksaMunhaeContents.json */,
 				844488D9292C711100C335EC /* MunhaeVideoListViewController.swift */,
 				8411A5B228C836EA0061A6F5 /* MunhaeVideoViewController.swift */,
 				8452E277292DF1A400987CFF /* MunjangVideoViewController.swift */,
@@ -507,9 +520,9 @@
 		8474DD23287E6C7D008275FC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				84C6E66B2946BDF5001C85CC /* Core.swift */,
-				84C6E6692946BDF5001C85CC /* TTS.swift */,
-				84C6E66A2946BDF5001C85CC /* Utils.swift */,
+				8474DD21287E6C78008275FC /* Utils.swift */,
+				843F27C228A5EA4F00E36E33 /* TTS.swift */,
+				84E7B04B28AE2DF20009E8E1 /* Core.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -552,24 +565,14 @@
 		8B5FF546FE32A902A1BF68DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E2535075DF34400A7FC7449 /* Pods-AI_MUNJANG.debug.xcconfig */,
-				F58A5F7F807D8866A39F29AF /* Pods-AI_MUNJANG.release.xcconfig */,
-				9795220EC180671965E2E237 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */,
-				372BC6B3BFA0C2536A05AF40 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */,
-				1E442AF4787EEE646C6D70E0 /* Pods-AI_MUNJANGTests.debug.xcconfig */,
-				9B63288D19745E11DCAA43A6 /* Pods-AI_MUNJANGTests.release.xcconfig */,
+				70231474539566B4E361D900 /* Pods-AI_MUNJANG.debug.xcconfig */,
+				5CF048CE1E844E5C5355B88A /* Pods-AI_MUNJANG.release.xcconfig */,
+				7831F68970C78DA0735DC33C /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */,
+				8530E89A381CCA969C25DBF2 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */,
+				AC04C232BD6911B4205CC2D4 /* Pods-AI_MUNJANGTests.debug.xcconfig */,
+				B5DAED85C7470F4A731152D6 /* Pods-AI_MUNJANGTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		92EE67278006EB89FADEA0DE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6BBBD330E6047079F21DBA5D /* Pods_AI_MUNJANG.framework */,
-				C57FEF510BEBD6E62E94EE7D /* Pods_AI_MUNJANG_AI_MUNJANGUITests.framework */,
-				D95A06BF2ED61F7807414F5A /* Pods_AI_MUNJANGTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C6ED506D287531AE00454F26 = {
@@ -577,7 +580,7 @@
 			children = (
 				C6ED5078287531AE00454F26 /* AI_MUNJANG */,
 				8B5FF546FE32A902A1BF68DD /* Pods */,
-				92EE67278006EB89FADEA0DE /* Frameworks */,
+				7460C76901D48D8A9EDE20F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -641,13 +644,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A0287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANG" */;
 			buildPhases = (
-				528E87BCA85D530A276FAAB6 /* [CP] Check Pods Manifest.lock */,
+				7E37C165B8B65AF65839DA0D /* [CP] Check Pods Manifest.lock */,
 				C6ED5072287531AE00454F26 /* Sources */,
 				C6ED5073287531AE00454F26 /* Frameworks */,
 				C6ED5074287531AE00454F26 /* Resources */,
 				849634C828EFC3FC00B1533B /* ShellScript */,
-				637F08E54796D28938206904 /* [CP] Embed Pods Frameworks */,
-				01B1C44246329EA62ADD3041 /* [CP] Copy Pods Resources */,
+				4D7DC27036451D6644703109 /* [CP] Embed Pods Frameworks */,
+				1BA77FFF2BD4FC23D18632D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -667,7 +670,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A3287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGTests" */;
 			buildPhases = (
-				16A1436C1FD3F0C9474695D7 /* [CP] Check Pods Manifest.lock */,
+				D4CF9EFBDAA95337A812F941 /* [CP] Check Pods Manifest.lock */,
 				C6ED5088287531B000454F26 /* Sources */,
 				C6ED5089287531B000454F26 /* Frameworks */,
 				C6ED508A287531B000454F26 /* Resources */,
@@ -686,12 +689,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6ED50A6287531B000454F26 /* Build configuration list for PBXNativeTarget "AI_MUNJANGUITests" */;
 			buildPhases = (
-				02BEAB5B189B68186374623B /* [CP] Check Pods Manifest.lock */,
+				708317362CFC560BED8E7528 /* [CP] Check Pods Manifest.lock */,
 				C6ED5092287531B000454F26 /* Sources */,
 				C6ED5093287531B000454F26 /* Frameworks */,
 				C6ED5094287531B000454F26 /* Resources */,
-				DA7A4D440276816B0E236B4A /* [CP] Embed Pods Frameworks */,
-				59E5685905720444B8727449 /* [CP] Copy Pods Resources */,
+				FE53CE6E8CB9B88F7B0935D7 /* [CP] Embed Pods Frameworks */,
+				5B3BEBC0F082AD67C62964DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -762,8 +765,8 @@
 				8475D5EB290FBE7F00284F72 /* useTerms.pdf in Resources */,
 				842B0390288643080000BEDA /* NanumSquareL.ttf in Resources */,
 				8474DD0C287D16E4008275FC /* CustomEmailView.xib in Resources */,
+				843FEB0E2951447C0007D7EF /* videoBaksaMunhaeContents.json in Resources */,
 				845DFB4729445C080072428B /* marketing.pdf in Resources */,
-				8486B9A7292E0AD8000D90A9 /* videoBaksaMunhaeContents.json in Resources */,
 				8421186B28FFC63B00B47D03 /* Main_ipad.storyboard in Resources */,
 				848385AD292F01DF0008D64C /* videoMunjangContents.json in Resources */,
 				842B0367288504FE0000BEDA /* CustomCheckBoxLabel.xib in Resources */,
@@ -778,6 +781,7 @@
 				8414223F292F460D001F05EC /* usePersonal.pdf in Resources */,
 				842B0398288647850000BEDA /* CustomTextField.xib in Resources */,
 				8474DD1E287E573C008275FC /* CustomPasswordView.xib in Resources */,
+				843FEB0C295144650007D7EF /* videoBaksaMunhaeContents.json in Resources */,
 				8455F06C28B9FBF800613946 /* MunjangEightCollectionViewCell.xib in Resources */,
 				842B0391288643080000BEDA /* NanumSquareB.ttf in Resources */,
 				842B0392288643080000BEDA /* NanumSquareR.ttf in Resources */,
@@ -803,7 +807,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01B1C44246329EA62ADD3041 /* [CP] Copy Pods Resources */ = {
+		1BA77FFF2BD4FC23D18632D0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -820,7 +824,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		02BEAB5B189B68186374623B /* [CP] Check Pods Manifest.lock */ = {
+		4D7DC27036451D6644703109 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B3BEBC0F082AD67C62964DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		708317362CFC560BED8E7528 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -842,29 +880,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		16A1436C1FD3F0C9474695D7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AI_MUNJANGTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		528E87BCA85D530A276FAAB6 /* [CP] Check Pods Manifest.lock */ = {
+		7E37C165B8B65AF65839DA0D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -886,43 +902,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		59E5685905720444B8727449 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG-AI_MUNJANGUITests/Pods-AI_MUNJANG-AI_MUNJANGUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		637F08E54796D28938206904 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AI_MUNJANG/Pods-AI_MUNJANG-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		849634C828EFC3FC00B1533B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -935,11 +917,33 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		DA7A4D440276816B0E236B4A /* [CP] Embed Pods Frameworks */ = {
+		D4CF9EFBDAA95337A812F941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AI_MUNJANGTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE53CE6E8CB9B88F7B0935D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -965,11 +969,10 @@
 			files = (
 				84B9BF282907CEA600F06B8E /* CustomTFAlertViewController.swift in Sources */,
 				8451F6CB290BB63A008C49F6 /* SenIndexViewController.swift in Sources */,
-				84C6E66E2946BDF5001C85CC /* Core.swift in Sources */,
 				84458A7628BF47F500A70F20 /* MunjangEightDetailCollectionViewCell.swift in Sources */,
 				8460786A2902752E0051CACB /* CouponRegViewController.swift in Sources */,
 				8455F05C28B75F4700613946 /* AnalyzeViewController.swift in Sources */,
-				84C6E66D2946BDF5001C85CC /* Utils.swift in Sources */,
+				84E7B04C28AE2DF20009E8E1 /* Core.swift in Sources */,
 				C6ED50AF287534D900454F26 /* TestViewController.swift in Sources */,
 				842B0383288556680000BEDA /* TermsDetailViewController.swift in Sources */,
 				842B03AC2888E4AC0000BEDA /* CustomNaviBarView.swift in Sources */,
@@ -989,6 +992,7 @@
 				846B089528977C2E00A6D4BD /* HomePageViewController.swift in Sources */,
 				842B03632885025D0000BEDA /* CustomAlertViewController.swift in Sources */,
 				84739D8128C8614B0052B20C /* MunjangEightViewController.swift in Sources */,
+				843F27C328A5EA4F00E36E33 /* TTS.swift in Sources */,
 				84E7B04A28AE23C60009E8E1 /* DownloadViewController.swift in Sources */,
 				842B03A72887E7480000BEDA /* ChangePasswordViewController.swift in Sources */,
 				842B03A328869ACF0000BEDA /* ResignViewController.swift in Sources */,
@@ -1015,10 +1019,10 @@
 				840071D8287BE67F00B07551 /* CGFloatExtension.swift in Sources */,
 				840071D9287BE68100B07551 /* TextFieldsFont.swift in Sources */,
 				84261F4328ED654900E5E100 /* CorrectionCollectionViewCell.swift in Sources */,
+				8474DD22287E6C78008275FC /* Utils.swift in Sources */,
 				8474DD08287D0573008275FC /* CommonUIViewController.swift in Sources */,
 				84EBC3C4289B886E0089F9AC /* MunjangEightCollectionViewCell.swift in Sources */,
 				84607866290253BE0051CACB /* Coupons.swift in Sources */,
-				84C6E66C2946BDF5001C85CC /* TTS.swift in Sources */,
 				8460E0D3290C011D00B1A0D0 /* VideoTableViewCell.swift in Sources */,
 				84739D8328C871D80052B20C /* SampleCollectionViewCell.swift in Sources */,
 				8455F0C728BCB10000613946 /* WordCollectionViewCell.swift in Sources */,
@@ -1102,8 +1106,6 @@
 		C6ED509E287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1138,7 +1140,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1166,8 +1168,6 @@
 		C6ED509F287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALLOW_TARGET_PLATFORM_SPECIALIZATION = NO;
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1203,6 +1203,8 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=*]" = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1214,7 +1216,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1224,7 +1225,7 @@
 		};
 		C6ED50A1287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E2535075DF34400A7FC7449 /* Pods-AI_MUNJANG.debug.xcconfig */;
+			baseConfigurationReference = 70231474539566B4E361D900 /* Pods-AI_MUNJANG.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -1255,7 +1256,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seogamdo.AI-MUNJANG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1267,7 +1268,7 @@
 		};
 		C6ED50A2287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F58A5F7F807D8866A39F29AF /* Pods-AI_MUNJANG.release.xcconfig */;
+			baseConfigurationReference = 5CF048CE1E844E5C5355B88A /* Pods-AI_MUNJANG.release.xcconfig */;
 			buildSettings = {
 				ARCHS = (
 					"$(ARCHS_STANDARD)",
@@ -1296,7 +1297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seogamdo.AI-MUNJANG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1308,7 +1309,7 @@
 		};
 		C6ED50A4287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E442AF4787EEE646C6D70E0 /* Pods-AI_MUNJANGTests.debug.xcconfig */;
+			baseConfigurationReference = AC04C232BD6911B4205CC2D4 /* Pods-AI_MUNJANGTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1329,7 +1330,7 @@
 		};
 		C6ED50A5287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B63288D19745E11DCAA43A6 /* Pods-AI_MUNJANGTests.release.xcconfig */;
+			baseConfigurationReference = B5DAED85C7470F4A731152D6 /* Pods-AI_MUNJANGTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1350,7 +1351,7 @@
 		};
 		C6ED50A7287531B000454F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9795220EC180671965E2E237 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
+			baseConfigurationReference = 7831F68970C78DA0735DC33C /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1369,7 +1370,7 @@
 		};
 		C6ED50A8287531B000454F26 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 372BC6B3BFA0C2536A05AF40 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
+			baseConfigurationReference = 8530E89A381CCA969C25DBF2 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

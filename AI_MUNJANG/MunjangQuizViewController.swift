@@ -130,6 +130,7 @@ class MunjangQuizViewController: UIViewController, AVAudioPlayerDelegate {
             }else if tmpLevel == "Advanced"{
                 currentQuizIndex = retrieveStopStep(section: "1", level: "Advanced")
                 descTitleLabel.text = "실질문해 미션"
+                descSubTitleLabel.text = "기초문해력으로 문제를 해결합니다."
             }
         }
         currentQuiz = currentQuizPool[currentQuizIndex]

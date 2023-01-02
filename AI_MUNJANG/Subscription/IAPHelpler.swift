@@ -214,8 +214,11 @@ extension IAPHelper: SKPaymentTransactionObserver {
                     let expireDateStr = expireDate.toStringUTC(dateFormat: "yyyy-MM-dd HH:mm:ss VV")
                     print("currentDate: \(currentDateStr): KCT-TIME: \(Date().toStringKST(dateFormat: "yyyy-MM-dd HH:mm:ss VV"))")
                     print("expireDate: \(expireDate)")
-                    
+
                     if expireDateStr < currentDateStr {
+                        if  MyInfo.shared.couponID != ""{
+                           return
+                        }
                         print("☠️구독 만료일자가 지나서 사용자의 사용을 제한해야")
                         Core.shared.setUserCancelSubscription()
                         completionArg(false)

@@ -15,6 +15,7 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         munhaeTestTableView.delegate = self
         munhaeTestTableView.dataSource = self
         
@@ -59,9 +60,9 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         if indexPath.row == 0 {
-            cell.textLabel!.text = "1. 당신의 문해력은?"
+            cell.textLabel!.text = "당신의 문해력 1회차"
         }else if indexPath.row == 1 {
-            cell.textLabel!.text = "2. 오답유형의 문제를 반복 추천"
+            cell.textLabel!.text = "당신의 문해력_오답 유형"
         }
         if UIDevice.current.userInterfaceIdiom == .pad {
             cell.textLabel?.font = UIFont(name: "NanumSquare", size: 20)
@@ -139,6 +140,8 @@ class MunhaeTestViewController: UIViewController, UITableViewDelegate, UITableVi
         return recommendPool
         
     }
+    
+    
     
     class ViewController: UIViewController {
 

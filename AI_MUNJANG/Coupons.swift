@@ -113,6 +113,9 @@ func checkTheValidateCouponUser(docID:String){
             if due < Date() { //현재 날짜보다 작다면 유효기간이 만료된 것
                 print("쿠폰 유효기간 만료됨")
                 Core.shared.setUserCancelSubscription()
+                //만료시 firebase DB의 couponID삭제, 사용자의 DB에서 couponID삭제
+                 guard let userID = document.data()!["user"] as? String else{ return}
+                 deleteCouponID(userID)
             }else{
                 print("쿠폰 유효기간 유효함")
             }
@@ -123,6 +126,32 @@ func checkTheValidateCouponUser(docID:String){
         }
     }
 }
+
+func deleteCouponID(_ userID:String){
+        let db = Firestore.firestore()
+        
+        let path = db.collection("users")
+        
+        path.getDocuments { (snapshot, err) in
+            if let err = err {
+                print(err)
+            } else {
+                guard let snapshot = snapshot else { return }
+                for document in snapshot.documents {
+                    if document.documentID == userID {
+                        // 딕셔너리 데이터를 가져온다.
+                        guard var data = document["userinfo"] as? [String:Any] else { return }
+
+                        data.updateValue("", forKey: "couponID")
+                        
+                        
+                        // 서버의 딕셔너리 데이터를 수정된 데이터로 수정한다.
+                        path.document(userID).updateData(["userinfo" : data])
+                    }
+                }
+            }
+        }
+    }
 
 //MARK: - 쿠폰 캠페인 운용중인지 여부확인
 //쿠폰 캠페인 운영여부를 알아야 앱에서 쿠폰버튼을 활성화할 지 여부 판단

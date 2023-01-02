@@ -81,7 +81,7 @@ class SubscriptionViewController: UIViewController {
         
         
         let mainString = "￦9,900 /월"
-        let stringToColor = "￦9,900"
+        let stringToColor = "9,900"
         let range = (mainString as NSString).range(of: stringToColor)
 
         let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
@@ -115,7 +115,7 @@ class SubscriptionViewController: UIViewController {
             }
             InAppProducts.store.buyProduct(monthProduct)
         }else{
-            let alert = AlertService().alert(title: "", body: "상품을 구독하기 위해 \n로그인 하시겠습니까?", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
+            let alert = AlertService().alert(title: "", body: "상품을 구독하기 위해 로그인 합니다.\n로그인 후 다시 구독해 주세요.", cancelTitle: "취소", confirTitle: "확인", thirdButtonCompletion: nil) {
                 changeLoginNC()
             }
             present(alert, animated: true)
