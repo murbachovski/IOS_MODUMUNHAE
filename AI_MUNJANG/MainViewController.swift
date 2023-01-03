@@ -286,7 +286,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let cellWidth = collectionView.frame.size.width - 40 - 20
             
             if UIDevice.current.userInterfaceIdiom == .pad {
-                return CGSize(width: cellWidth / 2.5 , height: cellWidth / 5)
+                return CGSize(width: cellWidth / 2.5 , height: cellWidth / 4.5)
             }else {
                 return CGSize(width: cellWidth / 2 , height: cellWidth / 2.8)
             }
