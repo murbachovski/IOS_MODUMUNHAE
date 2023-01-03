@@ -1353,7 +1353,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7831F68970C78DA0735DC33C /* Pods-AI_MUNJANG-AI_MUNJANGUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U5UDA93KMM;
@@ -1372,7 +1372,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8530E89A381CCA969C25DBF2 /* Pods-AI_MUNJANG-AI_MUNJANGUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U5UDA93KMM;

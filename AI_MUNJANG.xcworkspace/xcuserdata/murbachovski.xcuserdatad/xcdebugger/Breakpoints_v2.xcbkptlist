@@ -132,34 +132,34 @@
             landmarkType = "9">
             <Locations>
                <Location
-                  uuid = "81A34D82-2701-483E-AD03-4032934D2EF3 - caea5ce8ac6c6ee1"
+                  uuid = "81A34D82-2701-483E-AD03-4032934D2EF3 - 9d16f9aaf9470f2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in AI_MUNJANG.retrieveCoupon(docID: Swift.String, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
                   moduleName = "AI_MUNJANG"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Verbatim/ios_AiMunjang/ios_AiMunjang/AI_MUNJANG/Coupons.swift"
+                  urlString = "file:///Users/murbachovski/Desktop/ios_AiMunjang/AI_MUNJANG/Coupons.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
                   endingLineNumber = "48"
-                  offsetFromSymbolStart = "228">
+                  offsetFromSymbolStart = "173">
                </Location>
                <Location
-                  uuid = "81A34D82-2701-483E-AD03-4032934D2EF3 - caea5ce8ac6c6ee1"
+                  uuid = "81A34D82-2701-483E-AD03-4032934D2EF3 - 9d16f9aaf9470f2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in AI_MUNJANG.retrieveCoupon(docID: Swift.String, completionHandler: (Swift.Bool) -&gt; ()) -&gt; ()"
                   moduleName = "AI_MUNJANG"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Verbatim/ios_AiMunjang/ios_AiMunjang/AI_MUNJANG/Coupons.swift"
+                  urlString = "file:///Users/murbachovski/Desktop/ios_AiMunjang/AI_MUNJANG/Coupons.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
                   endingLineNumber = "48"
-                  offsetFromSymbolStart = "268">
+                  offsetFromSymbolStart = "208">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -274,6 +274,22 @@
             endingLineNumber = "69"
             landmarkName = "setUpCouponRecord(docID:completionHandler:)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99447470-A5C5-4DD5-9150-2DEC50CD2609"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AI_MUNJANG/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
