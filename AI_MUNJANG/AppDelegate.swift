@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Firebase 초기화
         FirebaseApp.configure()
-        UserDefaults.standard.register(defaults: ["versionNumber" : 1000])
+        UserDefaults.standard.register(defaults: ["versionNumber" : 1004])
         UserDefaults.standard.register(defaults: ["tmpUseCount" : 0])
         
         //둘러보기 사용자를 위한 학습 진행 상황
