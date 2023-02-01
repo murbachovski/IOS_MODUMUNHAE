@@ -3,7 +3,7 @@
 //  AI_MUNJANG
 //
 //  Created by admin on 2022/08/26.
-//
+// 2023.02.01 단문분할 표시 제거. 문장 추론이 불안하다..
 
 import UIKit
 
@@ -35,7 +35,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
         originalSentence = (analyzedData["sen"] as! String)
-        pureSentence = (analyzedData["sen"] as! String).replacingOccurrences(of: "VV", with: " ")
+        pureSentence = (analyzedData["sen"] as! String).replacingOccurrences(of: "VV", with: "")
+        //with 안에 ""띄어쓰기를 제거함 23.02.01
         dividedSentences = originalSentence.components(separatedBy: "VV")
 
         guard let temp = analyzedData["eight_div_sen"] as? [[String : Any]] else {return}
@@ -49,7 +50,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
         wordCollectionView.dataSource = self
         
         originSentenceLabel.font = UIFont(name: "NanumSquareEB", size: UIDevice.current.userInterfaceIdiom == .pad ?  20 : 17)
-        originSentenceLabel.text = originalSentence.replacingOccurrences(of: "VV", with: "  ✓ ")
+        originSentenceLabel.text = pureSentence
+        // originalSentence.replacingOccurrences(of: "VV", with: "  ✓ ")  -> pureSentence로 변경함 23.02.01
         arr = pureSentence.components(separatedBy: " ")
         for i in arr {
             if i == "" {
@@ -87,7 +89,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
     @IBAction func clickedInferenceButton(_ sender: Any) {
         
         let url = "http://118.67.133.8/sen_infer/m" //문장 추론 접근용
-        let sen = titleArray.joined(separator: " VV ")
+        let sen = originalSentence
+        // titleArray.joined(separator: " VV ") => originalSentence로 변경함
         requestByInfer(url: url, sen: sen) { dicData in
             DispatchQueue.main.async {
                 guard let inferenceViewController = self.storyboard?.instantiateViewController(withIdentifier: "InferenceViewController")  as? InferenceViewController else {return}
@@ -222,7 +225,8 @@ class AnalyzeResultViewController: UIViewController ,UICollectionViewDataSource,
 
             
             titleArray = ((originSentenceLabel.text)?.components(separatedBy: "  ✓ "))!
-            cell.senTitleLabel.text = titleArray[indexPath.row]
+            cell.senTitleLabel.text = pureSentence
+            // titleArray[indexPath.row] => pureSentence로 변경함
             cell.senAdverbLabel.text = analyzedDataEights[indexPath.row]["문장확장"] as? String
             
             //관형사의 경우는 앞정보확장과 대상확장의 결합임
