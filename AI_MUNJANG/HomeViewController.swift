@@ -4,7 +4,7 @@
 //
 //  Created by murba chovski on 2022/10/13.
 //
-//23.03.08.MOVE_TEST
+//23.03.08.MOVE_TEST_AND_SOURCE_READ
 import UIKit
 
 class HomeViewController: UIViewController {
